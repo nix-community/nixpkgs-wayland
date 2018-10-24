@@ -1,5 +1,9 @@
 # nix-overlay-sway
 
+## NOTE
+
+OCT 23: This is non-functional. I'm working on it right now. Help me in #nixos. :)
+
 ## Overview
 
 This is a `nixpkgs` overlay containing `HEAD` revisions of:
