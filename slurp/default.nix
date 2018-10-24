@@ -4,15 +4,18 @@
 , scdoc, buildDocs ? true
 }:
 
+let
+  metadata = import ./metadata.nix;
+in
 stdenv.mkDerivation rec {
   name = "slurp-${version}";
-  version = "d907d308eb1eebf9b1be4a047edbc8f163bdd4b7";
+  version = metadata.rev;
 
   src = fetchFromGitHub {
     owner = "emersion";
     repo = "slurp";
     rev = version;
-    sha256 = "07aa3pwqm2a1cf60sipnzrdk1d7m0193jz22s15wqzxh93v3013l";
+    sha256 = metadata.sha256;
   };
 
   nativeBuildInputs = [ pkgconfig meson ninja ] ++ stdenv.lib.optional buildDocs [ scdoc ];
