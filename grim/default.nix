@@ -9,13 +9,13 @@ let
 in
 stdenv.mkDerivation rec {
   name = "grim-${version}";
-  version = "${metadata.rev}";
+  version = metadata.rev;
 
   src = fetchFromGitHub {
     owner = "emersion";
     repo = "grim";
     rev = version;
-    sha256 = "${metadata.sha256}";
+    sha256 = metadata.sha256;
   };
 
   nativeBuildInputs = [ pkgconfig meson ninja ] ++ stdenv.lib.optional buildDocs [ scdoc ];
