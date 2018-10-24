@@ -4,7 +4,8 @@ let
 in
 {
   wlroots          = super.callPackage ./wlroots { inherit self super; };
-  #sway-beta        = super.callPackage ./sway-beta;
+  sway-beta        = super.callPackage ./sway-beta { inherit self super; };
+
   grim             = super.callPackage ./grim {};
   slurp            = super.callPackage ./slurp {};
   waybar           = super.callPackage ./waybar {};
