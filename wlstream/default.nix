@@ -4,15 +4,18 @@
 , ffmpeg_4, libpulseaudio
 }:
 
+let
+  metadata = import ./metadata.nix;
+in
 stdenv.mkDerivation rec {
   name = "wlstream-${version}";
-  version = "182076a94562b128c3a97ecc53cc68905ea86838";
+  version = metadata.rev;
 
   src = fetchFromGitHub {
     owner = "atomnuker";
     repo = "wlstream";
     rev = version;
-    sha256 = "01qbcgfl3g9kfwn1jf1z9pdj3bvf5lmg71d1vwkcllc2az24bjqp";
+    sha256 = metadata.sha256;
   };
 
   patches = [ ./0001-meson-add-libdrm-dependency.patch ];
