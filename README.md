@@ -1,8 +1,11 @@
 # nix-overlay-sway
 
-## NOTE
+## Status
 
-OCT 23: This is non-functional. I'm working on it right now. Help me in #nixos. :)
+**Status**: Semi-functional
+
+* `waybar` is tricky to build
+* `redshift-wayland` needs to use some sort of `pythonOverride` thing I think.
 
 ## Overview
 
@@ -12,19 +15,30 @@ This is a `nixpkgs` overlay containing `HEAD` revisions of:
  - `wlstream`
  - `grim`
  - `slurp`
- - `waybar`
- - `redshift-wayland` (`redshift` (with `minus7` patches))
+ - (not working) `waybar`
+ - (not working) `redshift-wayland` (`redshift` (with `minus7` patches))
 
 Feel free to run the update script and send a PR if something is out-of-date.
 
-## Updating
+## Automation
 
-`./update.sh` will update the various packages' `metadata.nix` files
-that contain their src `rev` and `sha256` values.
+* `./update.sh` will update the various packages' `metadata.nix` files
+  that contain their src `rev` and `sha256` values.
+
+* `./update.sh` also updates the `nixpkgs/metadata.nix` to point to the latest
+  `nixos-unstable`. This is used by `build.nix` to pre-build these packages
+  against the latest `nixos-unstable` nixpkgs.
+
+* `nix-build build.nix` will build all of the packages in the overlay against
+  the versions of each dependency (specified in `./<dep>/metadata.nix`). This
+  includes `nixpkgs`, plus each `pkg` in the overlay)
+
+* [nixcfg](https://github.com/colemickens/nixcfg) contains the script(s) used
+  to upload the cached NARs to the binary mirror specified in this README.
 
 ## Binary Cache
 
-I run a cache. It sometimes contains these packages against `nixos-unstable`.
+I run a cache. It sometimes, might contain packages as built by the process described above.
 
 * cache: `https://nixcache.cluster.lol`
 * public key: `nixcache.cluster.lol-1:DzcbPT+vsJ5LdN1WjWxJPmu+BeU891mgsrRa2X+95XM=`
@@ -36,5 +50,5 @@ I run a cache. It sometimes contains these packages against `nixos-unstable`.
 
 ## Notes
 
-* This is meant to be used with a nixpkgs near `nixos-unstable`
+* This is meant to be used with a nixpkgs near `nixos-unstable`.
 
