@@ -1,11 +1,6 @@
 # nix-overlay-sway
 
-## Status
-
-**Status**: Semi-functional
-
-* `waybar` is tricky to build
-* `redshift-wayland` needs to use some sort of `pythonOverride` thing I think.
+Automated. pre-built packages for Wayland (sway/wlroots) tools for NixOS.
 
 ## Overview
 
@@ -15,26 +10,21 @@ This is a `nixpkgs` overlay containing `HEAD` revisions of:
  - `wlstream`
  - `grim`
  - `slurp`
- - (not working) `waybar`
- - (not working) `redshift-wayland` (`redshift` (with `minus7` patches))
+ - (not working) ~~`waybar`~~
+ - (not working) ~~`redshift-wayland` (`redshift` (with `minus7` patches))~~
 
 Feel free to run the update script and send a PR if something is out-of-date.
 
 ## Automation
 
-* `./update.sh` will update the various packages' `metadata.nix` files
-  that contain their src `rev` and `sha256` values.
+* `./update.sh`
+  * updates `./<pkg>/metadata.nix` with the latest commit+hash for each package.
+  * updates `nixpkgs/metadata.nix` to `nixpkgs-channels#nixos-unstable`.
 
-* `./update.sh` also updates the `nixpkgs/metadata.nix` to point to the latest
-  `nixos-unstable`. This is used by `build.nix` to pre-build these packages
-  against the latest `nixos-unstable` nixpkgs.
+* `nix-build build.nix` builds all overlay packages with the nixpkgs specified in `./nixpkgs`.
 
-* `nix-build build.nix` will build all of the packages in the overlay against
-  the versions of each dependency (specified in `./<dep>/metadata.nix`). This
-  includes `nixpkgs`, plus each `pkg` in the overlay)
-
-* [nixcfg](https://github.com/colemickens/nixcfg) contains the script(s) used
-  to upload the cached NARs to the binary mirror specified in this README.
+* (Sidenote: [nixcfg/utils/azure](https://github.com/colemickens/nixcfg/tree/master/utils/azure) contains the script(s) used
+  to upload the cached NARs to the binary mirror specified in this README.)
 
 ## Binary Cache
 
