@@ -1,16 +1,46 @@
-{ self, super, pkgs, fetchFromGitHub }:
+{ stdenv, fetchFromGitHub
+, meson, ninja
+, pkgconfig, scdoc
+, wayland, libxkbcommon, pcre, json_c, dbus
+, pango, cairo, libinput, libcap, pam, gdk_pixbuf
+, wlroots, wayland-protocols
+, buildDocs ? true
+}:
 
 let
-  meta = import ./metadata.nix;
+  metadata = import ./metadata.nix;
 in
-  super.sway-beta.overrideAttrs (old: rec {
-    name = "sway-beta-${meta.rev}";
-    version = meta.rev;
-    src = fetchFromGitHub {
-      owner = "swaywm";
-      repo = "sway";
-      rev = meta.rev;
-      sha256 = meta.sha256;
-    };
-  })
+stdenv.mkDerivation rec {
+  name = "${pname}-${version}";
+  pname = "sway";
+  version = metadata.rev;
 
+  src = fetchFromGitHub {
+    owner = "swaywm";
+    repo = "sway";
+    rev = version;
+    sha256 = metadata.sha256;
+  };
+
+  nativeBuildInputs = [
+    pkgconfig meson ninja
+  ] ++ stdenv.lib.optional buildDocs scdoc;
+
+  buildInputs = [
+    wayland libxkbcommon pcre json_c dbus
+    pango cairo libinput libcap pam gdk_pixbuf
+    wlroots wayland-protocols
+  ];
+
+  enableParallelBuilding = true;
+
+  mesonFlags = "-Dsway-version=${version}";
+
+  meta = with stdenv.lib; {
+    description = "i3-compatible window manager for Wayland";
+    homepage    = https://swaywm.org;
+    license     = licenses.mit;
+    platforms   = platforms.linux;
+    maintainers = with maintainers; [ primeos synthetica ]; # Trying to keep it up-to-date.
+  };
+}
