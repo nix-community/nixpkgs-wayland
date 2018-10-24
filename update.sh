@@ -2,17 +2,11 @@
 set -euo pipefail
 set -x
 
-##
-## use github api to get latest commit for a repo
-## use nix-prefetch-url to get the hash
-## update files in place with `update-source-version`
-##
-
 export nixpkgs=/etc/nixpkgs-sway
 export NIX_PATH=nixpkgs=${nixpkgs}
 
-# TODO: ew
-token="$(cat /etc/nixos/secrets/github-colebot-token)"
+GHUSER="${GHUSER:-"$(cat /etc/nixos/secrets/github-username)"}"
+GHPASS="${GHPASS:-"$(cat /etc/nixos/secrets/github-token)"}"
 
 # update: <derivation-name> <github-repo-owner> <github-repo-name> <ref>
 function update() {
@@ -20,7 +14,7 @@ function update() {
   owner="${2}"
   repo="${3}"
   ref="${4}"
-  rev="$(curl -u colebot:$token --silent --fail "https://api.github.com/repos/${owner}/${repo}/commits?sha=${ref}" | jq -r ".[0].sha")"
+  rev="$(curl -u "${GHUSER}:${GHPASS}" --silent --fail "https://api.github.com/repos/${owner}/${repo}/commits?sha=${ref}" | jq -r ".[0].sha")"
   sha256="$(nix-prefetch-url --unpack "https://github.com/${owner}/${repo}/archive/${rev}.tar.gz" 2>/dev/null)"
 
   mkdir -p "./${attr}"

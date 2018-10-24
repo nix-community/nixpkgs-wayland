@@ -2,10 +2,7 @@
 
 Automated, pre-built packages for Wayland (sway/wlroots) tools for NixOS.
 
-## NOTE: WARNING
-
-This is still potentially unusable, certain vital commits are not in nixpkgs yet.
-When they are this warning will be removed.
+Last (auto) updated: [ <!--update-->2018-10-24T04:18:33-07:00<!--update--> ].
 
 ## Overview
 
@@ -37,7 +34,10 @@ in
 {
   nixpkgs.overlays = [ swayOverlay ];
 
-  environment.systemPackages = with pkgs; [ sway-beta grim slurp ];
+  environment.systemPackages = with pkgs; [
+    sway-beta grim slurp wlstream
+    redshift-wayland waybar
+  ];
 }
 ```
 
