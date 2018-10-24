@@ -6,15 +6,18 @@
 , git
 }:
 
+let
+  metadata = import ./metadata.nix;
+in
 stdenv.mkDerivation rec {
   name = "waybar-${version}";
-  version = "a63650aa67351bc17d3c5b30a4ea151271edad16";
+  version = metadata.rev;
 
   src = fetchFromGitHub {
     owner = "Alexays";
     repo = "Waybar";
     rev = version;
-    sha256 = "0mbipvbh79zx842gj0b2kpcvw9sd3wp360x2xyppirkrxw4dis0d";
+    sha256 = metadata.sha256;
   };
 
   patches = [
