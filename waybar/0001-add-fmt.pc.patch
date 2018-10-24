@@ -1,0 +1,30 @@
+From 7ad56220fd23cfce7c1c3e3bc269fa88d34070eb Mon Sep 17 00:00:00 2001
+From: Cole Mickens <cole.mickens@gmail.com>
+Date: Tue, 23 Oct 2018 22:59:36 -0700
+Subject: [PATCH] add fmt.pc
+
+---
+ fmt.pc | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
+ create mode 100644 fmt.pc
+
+diff --git a/fmt.pc b/fmt.pc
+new file mode 100644
+index 0000000..075f5a4
+--- /dev/null
++++ b/fmt.pc
+@@ -0,0 +1,11 @@
++prefix=@out@
++exec_prefix=${prefix}
++libdir=${exec_prefix}/lib
++includedir=${prefix}/include
++
++Name: fmt
++Description: A modern formatting library
++Version: @version@
++Libs: -L${libdir} -lfmt
++Cflags: -I${includedir}
++
+-- 
+2.16.2
+

@@ -1,0 +1,34 @@
+From 9ec190e1add3ad7579620c96676317634e4e92f3 Mon Sep 17 00:00:00 2001
+From: Cole Mickens <cole.mickens@gmail.com>
+Date: Tue, 23 Oct 2018 23:15:04 -0700
+Subject: [PATCH] add outprefix
+
+---
+ meson.build       | 2 +-
+ meson_options.txt | 1 +
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/meson.build b/meson.build
+index 986b423..23c7d8c 100644
+--- a/meson.build
++++ b/meson.build
+@@ -97,7 +97,7 @@ executable(
+ install_data(
+     './resources/config',
+     './resources/style.css',
+-    install_dir: '/etc/xdg/waybar',
++    install_dir: join_paths(get_option('outprefix'), 'etc/xdg/waybar'),
+ )
+ 
+ clangtidy = find_program('clang-tidy', required: false)
+diff --git a/meson_options.txt b/meson_options.txt
+index 2d49311..eda0c0c 100644
+--- a/meson_options.txt
++++ b/meson_options.txt
+@@ -1,2 +1,3 @@
+ option('libnl', type: 'feature', value: 'auto', description: 'Enable libnl support for network related features')
+ option('pulseaudio', type: 'feature', value: 'auto', description: 'Enable support for pulseaudio')
++option('outprefix', type: 'string', value : '/', description: 'output prefix directory')
+-- 
+2.16.2
+

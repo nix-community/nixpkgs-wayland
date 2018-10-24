@@ -4,10 +4,24 @@
 , libpulseaudio, libinput, libnl, gtkmm3
 , fmt, jsoncpp
 , git
+, python3Packages # TODO: temporary (meson480)
 }:
 
 let
   metadata = import ./metadata.nix;
+  meson480 = meson.overrideAttrs (oldAttrs: rec {
+    name = pname + "-" + version;
+    pname = "meson";
+    version = "0.48.0";
+
+    src = python3Packages.fetchPypi {
+      inherit pname version;
+      sha256 = "0qawsm6px1vca3babnqwn0hmkzsxy4w0gi345apd2qk3v0cv7ipc";
+    };
+    patches = builtins.filter # Remove gir-fallback-path.patch
+      (str: !(stdenv.lib.hasSuffix "gir-fallback-path.patch" str))
+      oldAttrs.patches;
+  });
 in
 stdenv.mkDerivation rec {
   name = "waybar-${version}";
@@ -21,12 +35,12 @@ stdenv.mkDerivation rec {
   };
 
   patches = [
-    ./waybar-gcc7.patch
-    #./waybar-meson.patch
-    ./waybar-prefix.patch
+    ./00001-waybar-gcc7.patch
+    ./00002-waybar-outprefix.patch
+    #./00003-waybar-meson.patch
   ];
 
-  nativeBuildInputs = [ meson ninja pkgconfig ];
+  nativeBuildInputs = [ meson480 ninja pkgconfig ];
   buildInputs = [
     wayland wayland-protocols sway wlroots
     libpulseaudio libinput libnl gtkmm3
@@ -34,7 +48,7 @@ stdenv.mkDerivation rec {
   ];
   mesonFlags = [
     "-Dauto_features=enabled"
-#    "-Dprefix=$(out)"
+    "-Doutprefix=$out"
   ];
 
   enableParallelBuilding = true;
@@ -47,3 +61,4 @@ stdenv.mkDerivation rec {
     maintainers = with maintainers; [ colemickens ];
   };
 }
+

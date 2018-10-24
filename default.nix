@@ -7,7 +7,10 @@ let
   slurp            = super.callPackage ./slurp {};
   wlstream         = super.callPackage ./wlstream {};
   waybar           = super.callPackage ./waybar {};
-  redshift-wayland = super.callPackage ./redshift-wayland {};
+  redshift-wayland = super.callPackage ./redshift-wayland {
+    inherit (super.python3Packages) python pygobject3 pyxdg wrapPython;
+    geoclue = super.geoclue2;
+  };
 
   swaypkgs = {
     inherit wlroots;
@@ -15,8 +18,10 @@ let
     inherit grim;
     inherit slurp;
     inherit wlstream;
-    #inherit waybar;
-    #inherit redshift-wayland;
+    inherit waybar;
+    inherit redshift-wayland;
   };
 in
+  # also expose the list of packages as a package for
+  # easy building from `build.nix`.
   swaypkgs // { inherit swaypkgs; }
