@@ -4,15 +4,18 @@
 , scdoc, buildDocs ? true
 }:
 
+let
+  metadata = import ./metadata.nix;
+in
 stdenv.mkDerivation rec {
   name = "grim-${version}";
-  version = "97202f22003200edcc3fb5966ddc9b19cfe1c6f9";
+  version = "${metadata.rev}";
 
   src = fetchFromGitHub {
     owner = "emersion";
     repo = "grim";
     rev = version;
-    sha256 = "1cq8v4wiqjzg0p84f7l04ydbpirbplfm8zwmg2j2f28qcl5igylp";
+    sha256 = "${metadata.sha256}";
   };
 
   nativeBuildInputs = [ pkgconfig meson ninja ] ++ stdenv.lib.optional buildDocs [ scdoc ];
