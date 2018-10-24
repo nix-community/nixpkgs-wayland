@@ -2,7 +2,10 @@
 
 Automated, pre-built packages for Wayland (sway/wlroots) tools for NixOS.
 
-STATUS: Last Updated: <!--update-->2018-10-23T21:40:47-07:00<!--update-->
+## NOTE: WARNING
+
+This is still potentially unusable, certain vital commits are not in nixpkgs yet.
+When they are this warning will be removed.
 
 ## Overview
 
@@ -12,8 +15,8 @@ This is a `nixpkgs` overlay containing `HEAD` revisions of:
  - `wlstream`
  - `grim`
  - `slurp`
- - (not working) ~~`waybar`~~
- - (not working) ~~`redshift-wayland` (`redshift` (with `minus7` patches))~~
+ - `waybar`
+ - `redshift-wayland` (`redshift` (with `minus7` patches))
 
 Feel free to run the update script and send a PR if something is out-of-date.
 
