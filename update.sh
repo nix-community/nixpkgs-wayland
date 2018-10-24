@@ -41,7 +41,7 @@ update "wlstream"  "atomnuker" "wlstream"         "master"
 update "waybar"    "Alexays"   "waybar"           "master"
 update "nixpkgs"   "nixos"     "nixpkgs-channels" "nixos-unstable"
 
-nix-build build.nix
+nix-build --no-out-link build.nix
 
 d="$(date -Iseconds)"
 m="(.+)"
