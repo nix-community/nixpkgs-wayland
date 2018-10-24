@@ -1,3 +1,16 @@
-{ self, super }:
+{ self, super, pkgs, fetchFromGitHub }:
 
-super.sway-beta
+let
+  meta = import ./metadata.nix;
+in
+  super.sway-beta.overrideAttrs (old: rec {
+    name = "sway-beta-${meta.rev}";
+    version = meta.rev;
+    src = fetchFromGitHub {
+      owner = "swaywm";
+      repo = "sway";
+      rev = meta.rev;
+      sha256 = meta.sha256;
+    };
+  })
+
