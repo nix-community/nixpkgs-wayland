@@ -15,6 +15,27 @@ This is a `nixpkgs` overlay containing `HEAD` revisions of:
 
 Feel free to run the update script and send a PR if something is out-of-date.
 
+## Example Usage
+
+This is what I use in my configuration. It should work regardless of if you've
+cloned this overlay locally.
+
+```
+{ ... }:
+let
+  nos = "https://github.com/colemickens/nix-overlay-sway/archive/master.tar.gz";
+  swayOverlay =
+    if builtins.pathExists /etc/nix-overlay-sway
+    then (import /etc/nix-overlay-sway)
+    else (import (builtins.fetchTarball nos));
+in
+{
+  nixpkgs.overlays = [ swayOverlay ];
+
+  environment.systemPackages = with pkgs; [ sway-beta grim slurp ];
+}
+```
+
 ## Automation
 
 * `./update.sh`
