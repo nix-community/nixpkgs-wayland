@@ -44,5 +44,7 @@ update "nixpkgs"   "nixos"     "nixpkgs-channels" "nixos-unstable"
 nix-build build.nix
 
 d="$(date -Iseconds)"
-sed -i -E "s/<!---->(.+)<!---->/<!---->${d}<!---->/g" README.md
+m="(.+)"
+t="<!--update-->"
+sed -i -E "s/${t}${m}${t}/${t}${d}${t}/g" README.md
 

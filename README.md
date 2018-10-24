@@ -2,7 +2,7 @@
 
 Automated, pre-built packages for Wayland (sway/wlroots) tools for NixOS.
 
-STATUS: Last Updated: <!---->2018-10-23T21:37:16-07:00<!---->
+STATUS: Last Updated: <!--update-->2018-10-23T21:40:47-07:00<!--update-->
 
 ## Overview
 
