@@ -11,13 +11,16 @@ set -x
 export nixpkgs=/etc/nixpkgs-sway
 export NIX_PATH=nixpkgs=${nixpkgs}
 
+# TODO: ew
+token="$(cat /etc/nixos/secrets/github-colebot-token)"
+
 # update: <derivation-name> <github-repo-owner> <github-repo-name> <ref>
 function update() {
   attr="${1}"
   owner="${2}"
   repo="${3}"
   ref="${4}"
-  rev="$(curl --silent --fail "https://api.github.com/repos/${owner}/${repo}/commits?sha=${ref}" | jq -r ".[0].sha")"
+  rev="$(curl -u colebot:$token --silent --fail "https://api.github.com/repos/${owner}/${repo}/commits?sha=${ref}" | jq -r ".[0].sha")"
   sha256="$(nix-prefetch-url --unpack "https://github.com/${owner}/${repo}/archive/${rev}.tar.gz" 2>/dev/null)"
 
   mkdir -p "./${attr}"
@@ -39,4 +42,7 @@ update "waybar"    "Alexays"   "waybar"           "master"
 update "nixpkgs"   "nixos"     "nixpkgs-channels" "nixos-unstable"
 
 nix-build build.nix
+
+d="$(date -Iseconds)"
+sed -i -E "s/<!---->(.+)<!---->/<!---->${d}<!---->/g" README.md
 

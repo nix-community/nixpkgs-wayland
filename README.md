@@ -1,6 +1,8 @@
 # nix-overlay-sway
 
-Automated. pre-built packages for Wayland (sway/wlroots) tools for NixOS.
+Automated, pre-built packages for Wayland (sway/wlroots) tools for NixOS.
+
+STATUS: Last Updated: <!---->2018-10-23T21:37:16-07:00<!---->
 
 ## Overview
 
@@ -20,7 +22,7 @@ Feel free to run the update script and send a PR if something is out-of-date.
 This is what I use in my configuration. It should work regardless of if you've
 cloned this overlay locally.
 
-```
+```nix
 { ... }:
 let
   nos = "https://github.com/colemickens/nix-overlay-sway/archive/master.tar.gz";
