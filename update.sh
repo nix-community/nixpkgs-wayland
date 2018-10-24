@@ -27,6 +27,7 @@ EOF
 }
 
 #      attr_name   repo_owner  repo_name          repo_rev
+if [[ -z "${SKIP:-}" ]]; then
 update "wlroots"   "swaywm"    "wlroots"          "master"
 update "sway-beta" "swaywm"    "sway"             "master"
 update "slurp"     "emersion"  "slurp"            "master"
@@ -34,11 +35,16 @@ update "grim"      "emersion"  "grim"             "master"
 update "wlstream"  "atomnuker" "wlstream"         "master"
 update "waybar"    "Alexays"   "waybar"           "master"
 update "nixpkgs"   "nixos"     "nixpkgs-channels" "nixos-unstable"
+fi
 
-nix-build --no-out-link build.nix
+results="$(nix-build --no-out-link build.nix)"
+readarray -t out <<< "$(echo "${results}")"
 
 d="$(date -Iseconds)"
 m="(.+)"
 t="<!--update-->"
 sed -i -E "s/${t}${m}${t}/${t}${d}${t}/g" README.md
 
+if [[ -e "/etc/nixcfg/utils/azure/nix-copy-azure.sh" ]]; then
+  "/etc/nixcfg/utils/azure/nix-copy-azure.sh" "${out[@]}"
+fi
