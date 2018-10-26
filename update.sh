@@ -33,7 +33,7 @@ update "sway-beta" "swaywm"    "sway"             "master"
 update "slurp"     "emersion"  "slurp"            "master"
 update "grim"      "emersion"  "grim"             "master"
 update "wlstream"  "atomnuker" "wlstream"         "master"
-update "waybar"    "Alexays"   "waybar"           "master"
+#update "waybar"    "Alexays"   "waybar"           "master"
 update "nixpkgs"   "nixos"     "nixpkgs-channels" "nixos-unstable"
 fi
 
