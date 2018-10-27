@@ -20,6 +20,8 @@ This is a `nixpkgs` overlay containing `HEAD` revisions of:
 | redshift-wayland | [2018-09-01 12:25](https://github.com/minus7/redshift/commits/a2177ed9942477868ccc514372f32a0fbcbe189e) |
 <!--pkgs-->
 
+Auto-update script last run: <!--update-->2018-10-27 04:37<!--update-->.
+
 Please open an issue if something is out of date.
 
 ## Example Usage

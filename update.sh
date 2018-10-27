@@ -18,8 +18,8 @@ function update() {
   rev=""
   commitdate=""
   url="https://api.github.com/repos/${owner}/${repo}/commits?sha=${ref}"
-  #commit="$(curl --silent --fail "${url}")"
-  commit="$(curl -u "${GHUSER}:${GHPASS}" --silent --fail "${url}")"
+  commit="$(curl --silent --fail "${url}")"
+  #commit="$(curl -u "${GHUSER}:${GHPASS}" --silent --fail "${url}")"
   rev="$(echo "${commit}" | jq -r ".[0].sha")"
   commitdate="$(echo "${commit}" | jq -r ".[0].commit.committer.date")"
   sha256="$(nix-prefetch-url --unpack "https://github.com/${owner}/${repo}/archive/${rev}.tar.gz" 2>/dev/null)"
@@ -72,8 +72,12 @@ rg \
   --multiline '(?s)(.*)<!--pkgs-->(.*)<!--pkgs-->(.*)' \
   "README.md" \
   --replace "\$1${replace}\$3" \
-  > README2.md
-mv README2.md README.md
+  > README2.md; mv README2.md README.md
+rg \
+  --multiline '(?s)(.*)<!--update-->(.*)<!--update-->(.*)' \
+  "README.md" \
+  --replace "\$1<!--update-->$(date '+%Y-%m-%d %H:%M')<!--update-->\$3" \
+  > README2.md; mv README2.md README.md
 
 # optimisitically upload any "builtattrs" to our cache
 copy="/etc/nixcfg/utils/azure/nix-copy-azure.sh"
