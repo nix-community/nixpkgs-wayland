@@ -7,7 +7,7 @@ GHPASS="${GHPASS:-"$(cat /etc/nixos/secrets/github-token)"}"
 
 # keep track of what we build and only upload at the end
 builtattrs=()
-pkglist=""
+pkgentries=()
 
 function update() {
   attr="${1}"
@@ -18,8 +18,8 @@ function update() {
   rev=""
   commitdate=""
   url="https://api.github.com/repos/${owner}/${repo}/commits?sha=${ref}"
-  commit="$(curl --silent --fail "${url}")"
-  #commit="$(curl -u "${GHUSER}:${GHPASS}" --silent --fail "${url}")"
+  #commit="$(curl --silent --fail "${url}")"
+  commit="$(curl -u "${GHUSER}:${GHPASS}" --silent --fail "${url}")"
   rev="$(echo "${commit}" | jq -r ".[0].sha")"
   commitdate="$(echo "${commit}" | jq -r ".[0].commit.committer.date")"
   sha256="$(nix-prefetch-url --unpack "https://github.com/${owner}/${repo}/archive/${rev}.tar.gz" 2>/dev/null)"
@@ -33,15 +33,14 @@ function update() {
   readarray -t out <<< "$(echo "${results}")"
   builtattrs=("${builtattrs[@]}" "${out[@]}")
 
-  # update the README with the latest date/url
-  d="$(date -Iseconds)"
+  d="$(date '+%Y-%M-%d %H:%M' --date="${commitdate}")"
   m='(.*)'
-  txt="| ${attr} | [${commitdate}](https://github.com/${owner}/${repo}/commits/${rev}) |"
-  pkglist="$(printf "%s\n%s" "${pkglist}" "${txt}")" # bashism
+  txt="| ${attr} | [${d}](https://github.com/${owner}/${repo}/commits/${rev}) |"
+  pkgentries=("${pkgentries[@]}" "${txt}")
 }
 
 #      attr_name          repo_owner   repo_name          repo_rev
-update "nixpkgs"          "nixos"      "nixpkgs-channels" "nixos-unstable"
+#update "nixpkgs"          "nixos"      "nixpkgs-channels" "nixos-unstable"
 update "wlroots"          "swaywm"     "wlroots"          "master"
 update "sway-beta"        "swaywm"     "sway"             "master"
 update "slurp"            "emersion"   "slurp"            "master"
@@ -51,6 +50,7 @@ update "waybar"           "Alexays"    "waybar"           "master"
 update "wayfire"          "WayfireWM"  "wayfire"          "master"
 update "wf-config"        "WayfireWM"  "wf-config"        "master"
 update "redshift-wayland" "minus7"     "redshift"         "wayland"
+
 #update "bspwc"      "Bl4ckb0ne"  "bspwc"            "master"
 #update "mahogany"   "sdilts"     "mahogany"         "master"
 #update "tablecloth" "topisani"   "tablecloth"       "master"
@@ -60,18 +60,22 @@ update "redshift-wayland" "minus7"     "redshift"         "wayland"
 #update "waymonad"   "waymonad"   "waymonad"         "master"
 
 # update README.md
-replace="$(printf "| Attribute Name | Last Upstream Commit Time |\n")"
-replace="$(printf "%s| -------------- | ------------------------- |\n" "${replace}")"
-replace="$(printf "%s%s\n" "${replace}" "${pkglist}")"
+replace="$(printf "<!--pkgs-->")"
+replace="$(printf "%s\n| Attribute Name | Last Upstream Commit Time |" "${replace}")"
+replace="$(printf "%s\n| -------------- | ------------------------- |" "${replace}")"
+for p in "${pkgentries[@]}"; do
+  replace="$(printf "%s\n%s\n" "${replace}" "${p}")"
+done
+replace="$(printf "%s\n<!--pkgs-->" "${replace}")"
+
 rg \
   --multiline '(?s)(.*)<!--pkgs-->(.*)<!--pkgs-->(.*)' \
   "README.md" \
-  --replace "\$1<!--pkgs-->${replace}<!--pkgs-->\$3" \
+  --replace "\$1${replace}\$3" \
   > README2.md
 mv README2.md README.md
 
 # optimisitically upload any "builtattrs" to our cache
-unset builtattrs[0]
 copy="/etc/nixcfg/utils/azure/nix-copy-azure.sh"
 [[ -f "${copy}" ]] \
   && printf "==> uploading" \
