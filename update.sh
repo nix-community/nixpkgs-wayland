@@ -40,16 +40,17 @@ fi
   pkglist="$(printf "%s\n%s" "${pkglist}" "${txt}")" # bashism
 }
 
-#      attr_name    repo_owner   repo_name          repo_rev
-update "nixpkgs"    "nixos"      "nixpkgs-channels" "nixos-unstable"
-update "wlroots"    "swaywm"     "wlroots"          "master"
-update "sway-beta"  "swaywm"     "sway"             "master"
-update "slurp"      "emersion"   "slurp"            "master"
-update "grim"       "emersion"   "grim"             "master"
-update "wlstream"   "atomnuker"  "wlstream"         "master"
-update "waybar"     "Alexays"    "waybar"           "master"
-update "wayfire"    "WayfireWM"  "wayfire"          "master"
-update "wf-config"  "WayfireWM"  "wf-config"        "master"
+#      attr_name          repo_owner   repo_name          repo_rev
+update "nixpkgs"          "nixos"      "nixpkgs-channels" "nixos-unstable"
+update "wlroots"          "swaywm"     "wlroots"          "master"
+update "sway-beta"        "swaywm"     "sway"             "master"
+update "slurp"            "emersion"   "slurp"            "master"
+update "grim"             "emersion"   "grim"             "master"
+update "wlstream"         "atomnuker"  "wlstream"         "master"
+update "waybar"           "Alexays"    "waybar"           "master"
+update "wayfire"          "WayfireWM"  "wayfire"          "master"
+update "wf-config"        "WayfireWM"  "wf-config"        "master"
+update "redshift-wayland" "minus7"     "redshift"         "wayland"
 #update "bspwc"      "Bl4ckb0ne"  "bspwc"            "master"
 #update "mahogany"   "sdilts"     "mahogany"         "master"
 #update "tablecloth" "topisani"   "tablecloth"       "master"

@@ -7,15 +7,18 @@
 , withWayland ? stdenv.isLinux, wayland, wayland-protocols, wlroots
 , withGeoclue ? stdenv.isLinux, geoclue }:
 
+let
+  metadata = import ./metadata.nix;
+in
 stdenv.mkDerivation rec {
   name = "redshift-${version}";
-  version = "a2177ed9942477868ccc514372f32a0fbcbe189e";
+  version = metadata.rev;
 
   src = fetchFromGitHub {
     owner = "minus7";
     repo = "redshift";
-    rev = "${version}";
-    sha256 = "1ka8gjjddkjvcxnnyk9y9rqj1askjcf6ikajyh7a7wfj6z5j9c2j";
+    rev = version;
+    sha256 = metadata.sha256;
   };
 
   patches = [
