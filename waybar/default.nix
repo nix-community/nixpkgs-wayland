@@ -2,9 +2,11 @@
 , meson, ninja, pkgconfig
 , wayland, wayland-protocols, sway, wlroots
 , libpulseaudio, libinput, libnl, gtkmm3
-, fmt, jsoncpp
+, fmt, jsoncpp, libdbusmenu-gtk3
+, glib
 , git
 , python3Packages # TODO: temporary (meson480)
+, fetchpatch
 }:
 
 let
@@ -33,22 +35,20 @@ stdenv.mkDerivation rec {
     rev = version;
     sha256 = metadata.sha256;
   };
-
   patches = [
-    ./00001-waybar-gcc7.patch
-    ./00002-waybar-outprefix.patch
-    #./00003-waybar-meson.patch
+    ./0001-gcc7.patch
   ];
 
   nativeBuildInputs = [ meson480 ninja pkgconfig ];
   buildInputs = [
     wayland wayland-protocols sway wlroots
     libpulseaudio libinput libnl gtkmm3
-    git fmt jsoncpp
+    git fmt jsoncpp libdbusmenu-gtk3
+    glib
   ];
   mesonFlags = [
     "-Dauto_features=enabled"
-    "-Doutprefix=$out"
+    "-Dout=$out"
   ];
 
   enableParallelBuilding = true;
