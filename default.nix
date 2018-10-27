@@ -10,6 +10,7 @@ swaypkgs = {
   waybar           = self.callPackage ./waybar {};
   wf-config        = self.callPackage ./wf-config {};
   wayfire          = self.callPackage ./wayfire {};
+  tablecloth       = self.callPackage ./tablecloth {};
   redshift-wayland = self.callPackage ./redshift-wayland {
     inherit (self.python3Packages) python pygobject3 pyxdg wrapPython;
     geoclue = self.geoclue2;
