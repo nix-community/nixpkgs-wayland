@@ -2,49 +2,65 @@
 set -euo pipefail
 set -x
 
-export nixpkgs=/etc/nixpkgs-sway
-export NIX_PATH=nixpkgs=${nixpkgs}
-
 GHUSER="${GHUSER:-"$(cat /etc/nixos/secrets/github-username)"}"
 GHPASS="${GHPASS:-"$(cat /etc/nixos/secrets/github-token)"}"
 
-# update: <derivation-name> <github-repo-owner> <github-repo-name> <ref>
+# keep track of what we build and only upload at the end
+declare -a builtattrs
+
 function update() {
   attr="${1}"
   owner="${2}"
   repo="${3}"
   ref="${4}"
-  rev="$(curl -u "${GHUSER}:${GHPASS}" --silent --fail "https://api.github.com/repos/${owner}/${repo}/commits?sha=${ref}" | jq -r ".[0].sha")"
+
+rev=""
+commitdate=""
+if [[ "${SKIP:-}" == "" ]]; then
+  commit="$(curl -u "${GHUSER}:${GHPASS}" --silent --fail "https://api.github.com/repos/${owner}/${repo}/commits?sha=${ref}")"
+  rev="$(echo "${commit}" | jq -r ".[0].sha")"
+  commitdate="$(echo "${commit}" | jq -r ".[0].commit.committer.date")"
   sha256="$(nix-prefetch-url --unpack "https://github.com/${owner}/${repo}/archive/${rev}.tar.gz" 2>/dev/null)"
 
+  printf '==> update: %s/%s: %s\n' "${owner}" "${repo}" "${rev}"
   mkdir -p "./${attr}"
-  cat<<EOF >"./${attr}/metadata.nix"
-{
-  rev = "${rev}";
-  sha256 = "${sha256}";
-}
-EOF
-}
-
-#      attr_name   repo_owner  repo_name          repo_rev
-if [[ -z "${SKIP:-}" ]]; then
-update "wlroots"   "swaywm"    "wlroots"          "master"
-update "sway-beta" "swaywm"    "sway"             "master"
-update "slurp"     "emersion"  "slurp"            "master"
-update "grim"      "emersion"  "grim"             "master"
-update "wlstream"  "atomnuker" "wlstream"         "master"
-#update "waybar"    "Alexays"   "waybar"           "master"
-update "nixpkgs"   "nixos"     "nixpkgs-channels" "nixos-unstable"
+  printf '{\n  rev = "%s";\n  sha256 = "%s";\n}\n' "${rev}" "${sha256}" > "./${attr}/metadata.nix"
 fi
 
-results="$(nix-build --no-out-link build.nix)"
-readarray -t out <<< "$(echo "${results}")"
+  printf '==> build: %s/%s: %s\n' "${owner}" "${repo}" "${rev}"
+  results="$(nix-build --no-out-link build.nix -A "${attr}")"
+  readarray -t out <<< "$(echo "${results}")"
+  builtattrs=("${builtattrs[@]}" "${out[@]}")
 
-d="$(date -Iseconds)"
-m="(.+)"
-t="<!--update-->"
-sed -i -E "s/${t}${m}${t}/${t}${d}${t}/g" README.md
+  # update the README with the latest date/url
+  d="$(date -Iseconds)"
+  m='(.*)'
+  t="<!--update-${attr}-->"
+  txt="[commit ${commitdate} ${rev}](https://github.com/${owner}/${repo}/commits/${rev})"
+  sed -i -E "s|${t}${m}${t}|${t}${txt}${t}|g" README.md
+}
 
-if [[ -e "/etc/nixcfg/utils/azure/nix-copy-azure.sh" ]]; then
-  "/etc/nixcfg/utils/azure/nix-copy-azure.sh" "${out[@]}"
-fi
+#      attr_name    repo_owner   repo_name          repo_rev
+update "nixpkgs"    "nixos"      "nixpkgs-channels" "nixos-unstable"
+update "wlroots"    "swaywm"     "wlroots"          "master"
+update "sway-beta"  "swaywm"     "sway"             "master"
+update "slurp"      "emersion"   "slurp"            "master"
+update "grim"       "emersion"   "grim"             "master"
+update "wlstream"   "atomnuker"  "wlstream"         "master"
+update "waybar"     "Alexays"    "waybar"           "master"
+update "wayfire"    "WayfireWM"  "wayfire"          "master"
+update "wf-config"  "WayfireWM"  "wf-config"        "master"
+#update "bspwc"      "Bl4ckb0ne"  "bspwc"            "master"
+#update "mahogany"   "sdilts"     "mahogany"         "master"
+#update "tablecloth" "topisani"   "tablecloth"       "master"
+#update "trinkster"  "Dreyri"     "trinkster"        "master"
+#update "way-cooler" "way-cooler" "way-cooler"       "master"
+#update "waybox"     "wizbright"  "waybox"           "master"
+#update "waymonad"   "waymonad"   "waymonad"         "master"
+
+# optimisitically upload any "builtattrs" to our cache
+unset builtattrs[0]
+copy="/etc/nixcfg/utils/azure/nix-copy-azure.sh"
+[[ -f "${copy}" ]] \
+  && printf "==> uploading" \
+  && "${copy}" "${builtattrs[@]}"
