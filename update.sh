@@ -15,10 +15,11 @@ function update() {
   repo="${3}"
   ref="${4}"
 
-rev=""
-commitdate=""
-if [[ "${SKIP:-}" == "" ]]; then
-  commit="$(curl -u "${GHUSER}:${GHPASS}" --silent --fail "https://api.github.com/repos/${owner}/${repo}/commits?sha=${ref}")"
+  rev=""
+  commitdate=""
+  url="https://api.github.com/repos/${owner}/${repo}/commits?sha=${ref}"
+  commit="$(curl --silent --fail "${url}")"
+  #commit="$(curl -u "${GHUSER}:${GHPASS}" --silent --fail "${url}")"
   rev="$(echo "${commit}" | jq -r ".[0].sha")"
   commitdate="$(echo "${commit}" | jq -r ".[0].commit.committer.date")"
   sha256="$(nix-prefetch-url --unpack "https://github.com/${owner}/${repo}/archive/${rev}.tar.gz" 2>/dev/null)"
@@ -26,7 +27,6 @@ if [[ "${SKIP:-}" == "" ]]; then
   printf '==> update: %s/%s: %s\n' "${owner}" "${repo}" "${rev}"
   mkdir -p "./${attr}"
   printf '{\n  rev = "%s";\n  sha256 = "%s";\n}\n' "${rev}" "${sha256}" > "./${attr}/metadata.nix"
-fi
 
   printf '==> build: %s/%s: %s\n' "${owner}" "${repo}" "${rev}"
   results="$(nix-build --no-out-link build.nix -A "${attr}")"
@@ -60,9 +60,9 @@ update "redshift-wayland" "minus7"     "redshift"         "wayland"
 #update "waymonad"   "waymonad"   "waymonad"         "master"
 
 # update README.md
-replace="$(printf "| Attribute Name | Last Upstream Commit Time |\n" "${pkglist}")"
-replace="$(printf "| -------------- | ------------------------- |\n" "${pkglist}")"
-replace="$(printf "%s\n" "${pkglist}")"
+replace="$(printf "| Attribute Name | Last Upstream Commit Time |\n")"
+replace="$(printf "%s| -------------- | ------------------------- |\n" "${replace}")"
+replace="$(printf "%s%s\n" "${replace}" "${pkglist}")"
 rg \
   --multiline '(?s)(.*)<!--pkgs-->(.*)<!--pkgs-->(.*)' \
   "README.md" \
