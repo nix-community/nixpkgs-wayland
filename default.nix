@@ -8,6 +8,8 @@ swaypkgs = {
   slurp            = self.callPackage ./slurp {};
   wlstream         = self.callPackage ./wlstream {};
   waybar           = self.callPackage ./waybar {};
+  wf-config        = self.callPackage ./wf-config {};
+  wayfire          = self.callPackage ./wayfire {};
   redshift-wayland = self.callPackage ./redshift-wayland {
     inherit (self.python3Packages) python pygobject3 pyxdg wrapPython;
     geoclue = self.geoclue2;
