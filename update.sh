@@ -33,7 +33,7 @@ function update() {
   readarray -t out <<< "$(echo "${results}")"
   builtattrs=("${builtattrs[@]}" "${out[@]}")
 
-  d="$(date '+%Y-%M-%d %H:%M' --date="${commitdate}")"
+  d="$(date '+%Y-%m-%d %H:%M' --date="${commitdate}")"
   m='(.*)'
   txt="| ${attr} | [${d}](https://github.com/${owner}/${repo}/commits/${rev}) |"
   pkgentries=("${pkgentries[@]}" "${txt}")
