@@ -6,7 +6,8 @@ GHUSER="${GHUSER:-"$(cat /etc/nixos/secrets/github-username)"}"
 GHPASS="${GHPASS:-"$(cat /etc/nixos/secrets/github-token)"}"
 
 # keep track of what we build and only upload at the end
-declare -a builtattrs
+builtattrs=()
+pkglist=""
 
 function update() {
   attr="${1}"
@@ -35,9 +36,8 @@ fi
   # update the README with the latest date/url
   d="$(date -Iseconds)"
   m='(.*)'
-  t="<!--update-${attr}-->"
-  txt="[commit ${commitdate} ${rev}](https://github.com/${owner}/${repo}/commits/${rev})"
-  sed -i -E "s|${t}${m}${t}|${t}${txt}${t}|g" README.md
+  txt="| ${attr} | [${commitdate}](https://github.com/${owner}/${repo}/commits/${rev}) |"
+  pkglist="$(printf "%s\n%s" "${pkglist}" "${txt}")" # bashism
 }
 
 #      attr_name    repo_owner   repo_name          repo_rev
@@ -57,6 +57,17 @@ update "wf-config"  "WayfireWM"  "wf-config"        "master"
 #update "way-cooler" "way-cooler" "way-cooler"       "master"
 #update "waybox"     "wizbright"  "waybox"           "master"
 #update "waymonad"   "waymonad"   "waymonad"         "master"
+
+# update README.md
+replace="$(printf "| Attribute Name | Last Upstream Commit Time |\n" "${pkglist}")"
+replace="$(printf "| -------------- | ------------------------- |\n" "${pkglist}")"
+replace="$(printf "%s\n" "${pkglist}")"
+rg \
+  --multiline '(?s)(.*)<!--pkgs-->(.*)<!--pkgs-->(.*)' \
+  "README.md" \
+  --replace "\$1<!--pkgs-->${replace}<!--pkgs-->\$3" \
+  > README2.md
+mv README2.md README.md
 
 # optimisitically upload any "builtattrs" to our cache
 unset builtattrs[0]
