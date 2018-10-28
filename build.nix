@@ -5,5 +5,4 @@ let
   };
 
 in
-  pkgs.swaypkgs // { nixpkgs = {}; }
-
+  pkgs.swaypkgs

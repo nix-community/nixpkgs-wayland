@@ -28,6 +28,8 @@ function update() {
   mkdir -p "./${attr}"
   printf '{\n  rev = "%s";\n  sha256 = "%s";\n}\n' "${rev}" "${sha256}" > "./${attr}/metadata.nix"
 
+  if [[ "${attr}" == "nixpkgs" ]]; then return; fi
+
   printf '==> build: %s/%s: %s\n' "${owner}" "${repo}" "${rev}"
   results="$(nix-build --no-out-link build.nix -A "${attr}")"
   readarray -t out <<< "$(echo "${results}")"
