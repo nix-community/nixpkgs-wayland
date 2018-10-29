@@ -14,7 +14,7 @@ This is a `nixpkgs` overlay containing `HEAD` revisions of:
 | slurp | [2018-10-24 12:37](https://github.com/emersion/slurp/commits/0dbd03991462397eb92bb40af712c837c898ebf1) |
 | grim | [2018-10-24 12:39](https://github.com/emersion/grim/commits/61df6f0a9531520c898718874c460826bc7e2b42) |
 | wlstream | [2018-07-15 14:10](https://github.com/atomnuker/wlstream/commits/182076a94562b128c3a97ecc53cc68905ea86838) |
-| waybar | [2018-10-27 02:23](https://github.com/Alexays/waybar/commits/ed3e4b13959874a168d62885d8ea1c7617db43b8) |
+| waybar | [2018-10-28 06:40](https://github.com/Alexays/waybar/commits/4307e4fd8e05d5cde2b2315b6a239b5b3fc5541a) |
 | wayfire | [2018-10-27 01:31](https://github.com/WayfireWM/wayfire/commits/f2abe624c8f45d69ca51a7bf88933804589fb230) |
 | wf-config | [2018-10-22 00:05](https://github.com/WayfireWM/wf-config/commits/8f7046e6c67d4a277b0793b56ff6535f53997bc5) |
 | redshift-wayland | [2018-09-01 12:25](https://github.com/minus7/redshift/commits/a2177ed9942477868ccc514372f32a0fbcbe189e) |
