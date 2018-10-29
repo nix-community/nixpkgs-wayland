@@ -10,7 +10,7 @@ This is a `nixpkgs` overlay containing `HEAD` revisions of:
 | Attribute Name | Last Upstream Commit Time |
 | -------------- | ------------------------- |
 | wlroots | [2018-10-27 10:32](https://github.com/swaywm/wlroots/commits/f34b7f88006c3be5fc5283d86f206ac75cf20093) |
-| sway-beta | [2018-10-27 17:20](https://github.com/swaywm/sway/commits/2ccf511cbadd9eef476d42234874d0cf008311e4) |
+| sway-beta | [2018-10-28 11:52](https://github.com/swaywm/sway/commits/1c2a356dcf43f2fbd633a2e2badabbfd4b9e6cb3) |
 | slurp | [2018-10-24 12:37](https://github.com/emersion/slurp/commits/0dbd03991462397eb92bb40af712c837c898ebf1) |
 | grim | [2018-10-24 12:39](https://github.com/emersion/grim/commits/61df6f0a9531520c898718874c460826bc7e2b42) |
 | wlstream | [2018-07-15 14:10](https://github.com/atomnuker/wlstream/commits/182076a94562b128c3a97ecc53cc68905ea86838) |
