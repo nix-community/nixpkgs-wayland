@@ -2,6 +2,7 @@
 , meson, ninja, pkgconfig
 , libdrm, wayland, wayland-protocols
 , ffmpeg_4, libpulseaudio
+, fetchpatch
 }:
 
 let
@@ -17,8 +18,13 @@ stdenv.mkDerivation rec {
     rev = version;
     sha256 = metadata.sha256;
   };
+  patches = [
+    (fetchpatch {
+      url = "https://github.com/atomnuker/wlstream/pull/4/commits/23e43186fd1ebeb553c89317f69613e67b266cd3.patch";
+      sha256 = "1n5vv2cf1h0q920sxd1ksyfn0ld7f9h72mpp8478ln0r3hjz4f1k";
+    })
+  ];
 
-  patches = [ ./0001-meson-add-libdrm-dependency.patch ];
   enableParallelBuilding = true;
   nativeBuildInputs = [ meson ninja pkgconfig ];
   buildInputs = [
