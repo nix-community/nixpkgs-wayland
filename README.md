@@ -9,18 +9,18 @@ This is a `nixpkgs` overlay containing `HEAD` revisions of:
 <!--pkgs-->
 | Attribute Name | Last Upstream Commit Time |
 | -------------- | ------------------------- |
-| wlroots | [2018-10-29 17:59](https://github.com/swaywm/wlroots/commits/70ca7daeb232ac591a78111fc2cc31093cbbbc3b) |
-| sway-beta | [2018-10-31 17:03](https://github.com/swaywm/sway/commits/480b03b734e6d1d068859b254d8ace4fb07b2c54) |
+| wlroots | [2018-11-01 13:52](https://github.com/swaywm/wlroots/commits/675cf8457ef3493112def366d7090731172ee872) |
+| sway-beta | [2018-11-01 11:01](https://github.com/swaywm/sway/commits/b1aec1ef14459e3458ebb85a69bccad97e7658e7) |
 | slurp | [2018-10-24 12:37](https://github.com/emersion/slurp/commits/0dbd03991462397eb92bb40af712c837c898ebf1) |
 | grim | [2018-10-24 12:39](https://github.com/emersion/grim/commits/61df6f0a9531520c898718874c460826bc7e2b42) |
 | wlstream | [2018-07-15 14:10](https://github.com/atomnuker/wlstream/commits/182076a94562b128c3a97ecc53cc68905ea86838) |
-| waybar | [2018-10-30 08:32](https://github.com/Alexays/waybar/commits/c3e185546d5fa9f9dfeb96d06f3caa5ec8bb962e) |
-| wayfire | [2018-10-31 05:45](https://github.com/WayfireWM/wayfire/commits/75d36e8dfa63d269c1be979b9e5b2d6be077b4f1) |
+| waybar | [2018-11-01 01:27](https://github.com/Alexays/waybar/commits/9d4048983db4dd1e7224ce9b34ca4853570cae85) |
+| wayfire | [2018-11-01 03:05](https://github.com/WayfireWM/wayfire/commits/f634aff42ae8a29794d3977675a09e72832f2414) |
 | wf-config | [2018-10-22 00:05](https://github.com/WayfireWM/wf-config/commits/8f7046e6c67d4a277b0793b56ff6535f53997bc5) |
 | redshift-wayland | [2018-09-01 12:25](https://github.com/minus7/redshift/commits/a2177ed9942477868ccc514372f32a0fbcbe189e) |
 <!--pkgs-->
 
-Auto-update script last run: <!--update-->2018-10-31 17:28<!--update-->.
+Auto-update script last run: <!--update-->2018-11-01 16:54<!--update-->.
 
 Please open an issue if something is out of date.
 
