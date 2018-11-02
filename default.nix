@@ -1,7 +1,10 @@
 self: super:
 let
 swaypkgs = {
+  # patched deps
   fmt              = self.callPackage ./fmt { inherit self super; };
+
+  # wlroots-related
   wlroots          = self.callPackage ./wlroots {};
   sway-beta        = self.callPackage ./sway-beta {};
   grim             = self.callPackage ./grim {};
@@ -14,6 +17,10 @@ swaypkgs = {
     inherit (self.python3Packages) python pygobject3 pyxdg wrapPython;
     geoclue = self.geoclue2;
   };
+
+  # arcan-related
+  arcan            = self.callPackage ./arcan {};
+  durden           = self.callPackage ./durden {};
 };
 in
   swaypkgs // { inherit swaypkgs; }
