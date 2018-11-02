@@ -20,7 +20,7 @@ This is a `nixpkgs` overlay containing `HEAD` revisions of:
 | redshift-wayland | [2018-09-01 12:25](https://github.com/minus7/redshift/commits/a2177ed9942477868ccc514372f32a0fbcbe189e) |
 <!--pkgs-->
 
-Auto-update script last run: <!--update-->2018-11-01 16:54<!--update-->.
+Auto-update script last run: <!--update-->2018-11-02 03:25<!--update-->.
 
 Please open an issue if something is out of date.
 
@@ -59,7 +59,15 @@ in
 * (Sidenote: [nixcfg/utils/azure](https://github.com/colemickens/nixcfg/tree/master/utils/azure) contains the script(s) used
   to upload the cached NARs to the binary mirror specified in this README.)
 
-## Binary Cache
+## Binary Cache (Cachix)
+
+I'm now publishing these builds to [`nixpkgs-wayland` on cachix](https://nixpkgs-wayland.cachix.org).
+
+```
+nix-build build.nix | cachix push nixpkgs-wayland
+```
+
+## Binary Cache (Manual)
 
 I run a cache. It sometimes, might contain packages as built by the process described above.
 
