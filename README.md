@@ -1,4 +1,4 @@
-# nix-overlay-sway
+# nixpkgs-wayland
 
 Automated, pre-built packages for Wayland (sway/wlroots) tools for NixOS.
 
