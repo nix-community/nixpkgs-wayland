@@ -66,12 +66,12 @@ in stdenv.mkDerivation rec {
     # screencopy dmabuf-capture input-inhibitor layer-shell idle-inhibit idle
     # screenshot output-layout multi-pointer rotation tablet touch pointer
     # simple
-    mkdir -p $examples/bin
-    for binary in $(find ./examples -executable -type f | grep -vE '\.so'); do
-      patchelf \
-        --set-rpath "$examples/lib:${stdenv.lib.makeLibraryPath buildInputs}" \
-        "$binary"
-      cp "$binary" $examples/bin/
+    cd ./examples
+    for binary in $(find . -executable -type f -printf '%P\n' | grep -vE '\.so'); do
+       patchelf \
+         --set-rpath "$examples/lib:${stdenv.lib.makeLibraryPath buildInputs}" \
+         "$binary"
+      cp "$binary" "$examples/bin/wlroots-$binary"
     done
   '';
 
