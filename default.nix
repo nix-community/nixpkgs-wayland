@@ -19,8 +19,8 @@ swaypkgs = {
   };
 
   # arcan-related
-  arcan            = self.callPackage ./arcan {};
-  durden           = self.callPackage ./durden {};
+  #arcan            = self.callPackage ./arcan {};
+  #durden           = self.callPackage ./durden {};
 };
 in
   swaypkgs // { inherit swaypkgs; }

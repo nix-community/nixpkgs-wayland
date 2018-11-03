@@ -18,15 +18,11 @@ in stdenv.mkDerivation rec {
     sha256 = metadata.sha256;
   };
 
-  nativeBuildInputs = [ meson ninja pkgconfig ];
+  nativeBuildInputs = [ cmake pkgconfig ];
 
   buildInputs = [
-    wayland libGL wayland-protocols libinput libxkbcommon pixman
-    xcbutilwm libX11 libcap xcbutilimage xcbutilerrors mesa_noglu
-    libpng ffmpeg_4
-  ];
-
-  mesonFlags = [
+    wayland wayland-protocols
+    lbisdm openal-soft opengl freetype
   ];
 
   meta = with stdenv.lib; {
