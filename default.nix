@@ -1,29 +1,29 @@
-self: super:
+self: pkgs:
 let
 swaypkgs = {
   # patched deps
-  fmt              = self.callPackage ./fmt {};
+  fmt              = pkgs.callPackage ./fmt {};
 
   # wlroots-related
-  wlroots          = self.callPackage ./wlroots {};
-  sway-beta        = self.callPackage ./sway-beta {};
-  grim             = self.callPackage ./grim {};
-  slurp            = self.callPackage ./slurp {};
-  mako             = self.callPackage ./mako {};
-  kanshi           = self.callPackage ./kanshi {};
-  wlstream         = self.callPackage ./wlstream {};
-  oguri            = self.callPackage ./oguri {};
-  waybar           = self.callPackage ./waybar {};
-  wf-config        = self.callPackage ./wf-config {};
-  wayfire          = self.callPackage ./wayfire {};
-  redshift-wayland = self.callPackage ./redshift-wayland {
-    inherit (self.python3Packages) python pygobject3 pyxdg wrapPython;
-    geoclue = self.geoclue2;
+  wlroots          = pkgs.callPackage ./wlroots {};
+  sway-beta        = pkgs.callPackage ./sway-beta {};
+  grim             = pkgs.callPackage ./grim {};
+  slurp            = pkgs.callPackage ./slurp {};
+  mako             = pkgs.callPackage ./mako {};
+  kanshi           = pkgs.callPackage ./kanshi {};
+  wlstream         = pkgs.callPackage ./wlstream {};
+  oguri            = pkgs.callPackage ./oguri {};
+  waybar           = pkgs.callPackage ./waybar {};
+  wf-config        = pkgs.callPackage ./wf-config {};
+  wayfire          = pkgs.callPackage ./wayfire {};
+  redshift-wayland = pkgs.callPackage ./redshift-wayland {
+    inherit (pkgs.python3Packages) python pygobject3 pyxdg wrapPython;
+    geoclue = pkgs.geoclue2;
   };
 
   # i3-related
-  wmfocus          = self.callPackage ./wmfocus {};
-  i3status-rust    = self.callPackage ./i3status-rust {};
+  wmfocus          = pkgs.callPackage ./wmfocus {};
+  i3status-rust    = pkgs.callPackage ./i3status-rust {};
 };
 in
   swaypkgs // { inherit swaypkgs; }
