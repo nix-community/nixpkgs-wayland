@@ -13,6 +13,7 @@ This is a `nixpkgs` overlay containing `HEAD` revisions of:
 | sway-beta | [2018-11-03 09:57](https://github.com/swaywm/sway/commits/c18cd9dd0369452a8b09ac2290d4a0a5b29d6ded) |
 | slurp | [2018-10-24 12:37](https://github.com/emersion/slurp/commits/0dbd03991462397eb92bb40af712c837c898ebf1) |
 | grim | [2018-10-24 12:39](https://github.com/emersion/grim/commits/61df6f0a9531520c898718874c460826bc7e2b42) |
+| mako | [2018-11-03 07:23](https://github.com/emersion/mako/commits/d1e6585eb5c06f1e05c3ec77230a263d73cc103c) |
 | wlstream | [2018-07-15 14:10](https://github.com/atomnuker/wlstream/commits/182076a94562b128c3a97ecc53cc68905ea86838) |
 | waybar | [2018-11-02 15:00](https://github.com/Alexays/waybar/commits/6ab01b1ad4dbdca9fed580930ee23f4bbec404f5) |
 | wayfire | [2018-11-01 03:05](https://github.com/WayfireWM/wayfire/commits/f634aff42ae8a29794d3977675a09e72832f2414) |
