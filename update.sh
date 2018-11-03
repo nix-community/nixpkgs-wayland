@@ -44,6 +44,8 @@ function update() {
 
 #      attr_name          repo_owner   repo_name          repo_rev
 update "nixpkgs"          "nixos"      "nixpkgs-channels" "nixos-unstable"
+update "fmt"              "fmtlib"     "fmt"              "master"
+
 update "wlroots"          "swaywm"     "wlroots"          "master"
 update "sway-beta"        "swaywm"     "sway"             "master"
 update "slurp"            "emersion"   "slurp"            "master"

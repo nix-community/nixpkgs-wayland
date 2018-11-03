@@ -9,6 +9,7 @@ This is a `nixpkgs` overlay containing `HEAD` revisions of:
 <!--pkgs-->
 | Attribute Name | Last Upstream Commit Time |
 | -------------- | ------------------------- |
+| fmt | [2018-10-28 09:28](https://github.com/fmtlib/fmt/commits/36161284e246b400a7967df2de98cba1bf9f0fbe) |
 | wlroots | [2018-11-01 13:52](https://github.com/swaywm/wlroots/commits/675cf8457ef3493112def366d7090731172ee872) |
 | sway-beta | [2018-11-03 09:57](https://github.com/swaywm/sway/commits/c18cd9dd0369452a8b09ac2290d4a0a5b29d6ded) |
 | slurp | [2018-10-24 12:37](https://github.com/emersion/slurp/commits/0dbd03991462397eb92bb40af712c837c898ebf1) |
@@ -21,7 +22,7 @@ This is a `nixpkgs` overlay containing `HEAD` revisions of:
 | redshift-wayland | [2018-09-01 12:25](https://github.com/minus7/redshift/commits/a2177ed9942477868ccc514372f32a0fbcbe189e) |
 <!--pkgs-->
 
-Auto-update script last run: <!--update-->2018-11-03 15:22<!--update-->.
+Auto-update script last run: <!--update-->2018-11-03 15:34<!--update-->.
 
 Please open an issue if something is out of date.
 
