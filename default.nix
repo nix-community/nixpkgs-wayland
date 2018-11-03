@@ -9,6 +9,7 @@ swaypkgs = {
   sway-beta        = self.callPackage ./sway-beta {};
   grim             = self.callPackage ./grim {};
   slurp            = self.callPackage ./slurp {};
+  mako             = self.callPackage ./mako {};
   wlstream         = self.callPackage ./wlstream {};
   waybar           = self.callPackage ./waybar {};
   wf-config        = self.callPackage ./wf-config {};
