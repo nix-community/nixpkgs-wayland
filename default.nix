@@ -2,7 +2,7 @@ self: super:
 let
 swaypkgs = {
   # patched deps
-  fmt              = self.callPackage ./fmt { inherit self super; };
+  fmt              = self.callPackage ./fmt {};
 
   # wlroots-related
   wlroots          = self.callPackage ./wlroots {};
