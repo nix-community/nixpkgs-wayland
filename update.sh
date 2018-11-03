@@ -2,6 +2,7 @@
 set -euo pipefail
 set -x
 
+cachixremote="nixpkgs-wayland"
 GHUSER="${GHUSER:-"$(cat /etc/nixos/secrets/github-username)"}"
 GHPASS="${GHPASS:-"$(cat /etc/nixos/secrets/github-token)"}"
 
@@ -81,8 +82,5 @@ rg \
   --replace "\$1<!--update-->$(date '+%Y-%m-%d %H:%M')<!--update-->\$3" \
   > README2.md; mv README2.md README.md
 
-# optimisitically upload any "builtattrs" to our cache
-copy="/etc/nixcfg/utils/azure/nix-copy-azure.sh"
-[[ -f "${copy}" ]] \
-  && printf "==> uploading" \
-  && "${copy}" "${builtattrs[@]}"
+nix-build build.nix | cachix push "${cachixremote}"
+
