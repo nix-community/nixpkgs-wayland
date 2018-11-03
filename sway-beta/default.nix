@@ -15,13 +15,12 @@ stdenv.mkDerivation rec {
   pname = "sway";
   version = metadata.rev;
 
-  src = /home/cole/code/sway;
-  #src = fetchFromGitHub {
-  #  owner = "swaywm";
-  #  repo = "sway";
-  #  rev = version;
-  #  sha256 = metadata.sha256;
-  #};
+  src = fetchFromGitHub {
+    owner = "swaywm";
+    repo = "sway";
+    rev = version;
+    sha256 = metadata.sha256;
+  };
 
   nativeBuildInputs = [
     pkgconfig meson ninja
