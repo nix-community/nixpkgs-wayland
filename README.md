@@ -71,5 +71,5 @@ nix-build build.nix | cachix push nixpkgs-wayland
 
 ## Notes
 
-* This is meant to be used with (and is built [and partially tested] against) a nixpkgs near `nixos-unstable`.
+* This is meant to be used with (and is built [and partially tested] against) a nixpkgs near `nixos-unstable` or `nixos-18.09`.
 

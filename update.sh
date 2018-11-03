@@ -29,21 +29,17 @@ function update() {
   mkdir -p "./${attr}"
   printf '{\n  rev = "%s";\n  sha256 = "%s";\n}\n' "${rev}" "${sha256}" > "./${attr}/metadata.nix"
 
-  if [[ "${attr}" == "nixpkgs" ]]; then return; fi
-
-  printf '==> build: %s/%s: %s\n' "${owner}" "${repo}" "${rev}"
-  results="$(nix-build --no-out-link build.nix -A "${attr}")"
-  readarray -t out <<< "$(echo "${results}")"
-  builtattrs=("${builtattrs[@]}" "${out[@]}")
+  if [[ "${attr}" == nixpkgs* ]]; then return; fi
 
   d="$(date '+%Y-%m-%d %H:%M' --date="${commitdate}")"
-  m='(.*)'
   txt="| ${attr} | [${d}](https://github.com/${owner}/${repo}/commits/${rev}) |"
   pkgentries=("${pkgentries[@]}" "${txt}")
 }
 
+update "nixpkgs-nixos-unstable" "nixos" "nixpkgs-channels" "nixos-unstable"
+update "nixpkgs-nixos-18.09"    "nixos" "nixpkgs-channels" "nixos-18.09"
+
 #      attr_name          repo_owner   repo_name          repo_rev
-update "nixpkgs"          "nixos"      "nixpkgs-channels" "nixos-unstable"
 update "fmt"              "fmtlib"     "fmt"              "master"
 
 update "wlroots"          "swaywm"     "wlroots"          "master"
@@ -74,16 +70,14 @@ for p in "${pkgentries[@]}"; do
 done
 replace="$(printf "%s\n<!--pkgs-->" "${replace}")"
 
-rg \
-  --multiline '(?s)(.*)<!--pkgs-->(.*)<!--pkgs-->(.*)' \
-  "README.md" \
+rg --multiline '(?s)(.*)<!--pkgs-->(.*)<!--pkgs-->(.*)' "README.md" \
   --replace "\$1${replace}\$3" \
-  > README2.md; mv README2.md README.md
-rg \
-  --multiline '(?s)(.*)<!--update-->(.*)<!--update-->(.*)' \
-  "README.md" \
-  --replace "\$1<!--update-->$(date '+%Y-%m-%d %H:%M')<!--update-->\$3" \
-  > README2.md; mv README2.md README.md
+    > README2.md; mv README2.md README.md
 
+rg --multiline '(?s)(.*)<!--update-->(.*)<!--update-->(.*)' "README.md" \
+  --replace "\$1<!--update-->$(date '+%Y-%m-%d %H:%M')<!--update-->\$3" \
+    > README2.md; mv README2.md README.md
+
+# build all and push to cachix
 nix-build build.nix | cachix push "${cachixremote}"
 
