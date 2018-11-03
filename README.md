@@ -39,10 +39,10 @@ cloned this overlay locally.
 ```nix
 { ... }:
 let
-  nos = "https://github.com/colemickens/nix-overlay-sway/archive/master.tar.gz";
+  nos = "https://github.com/colemickens/nixpkgs-wayland/archive/master.tar.gz";
   swayOverlay =
-    if builtins.pathExists /etc/nix-overlay-sway
-    then (import /etc/nix-overlay-sway)
+    if builtins.pathExists /etc/nixpkgs-wayland
+    then (import /etc/nixpkgs-wayland)
     else (import (builtins.fetchTarball nos));
 in
 {
