@@ -46,6 +46,7 @@ update "sway-beta"        "swaywm"     "sway"             "master"
 update "slurp"            "emersion"   "slurp"            "master"
 update "grim"             "emersion"   "grim"             "master"
 update "mako"             "emersion"   "mako"             "master"
+update "kanshi"           "emersion"   "kanshi"           "master"
 update "wlstream"         "atomnuker"  "wlstream"         "master"
 update "waybar"           "Alexays"    "waybar"           "master"
 update "wayfire"          "WayfireWM"  "wayfire"          "master"
@@ -61,6 +62,7 @@ update "redshift-wayland" "minus7"     "redshift"         "wayland"
 #update "waymonad"   "waymonad"   "waymonad"         "master"
 
 # update README.md
+set +x
 replace="$(printf "<!--pkgs-->")"
 replace="$(printf "%s\n| Attribute Name | Last Upstream Commit Time |" "${replace}")"
 replace="$(printf "%s\n| -------------- | ------------------------- |" "${replace}")"
@@ -68,6 +70,7 @@ for p in "${pkgentries[@]}"; do
   replace="$(printf "%s\n%s\n" "${replace}" "${p}")"
 done
 replace="$(printf "%s\n<!--pkgs-->" "${replace}")"
+set -x
 
 rg --multiline '(?s)(.*)<!--pkgs-->(.*)<!--pkgs-->(.*)' "README.md" \
   --replace "\$1${replace}\$3" \
@@ -78,5 +81,5 @@ rg --multiline '(?s)(.*)<!--update-->(.*)<!--update-->(.*)' "README.md" \
     > README2.md; mv README2.md README.md
 
 # build all and push to cachix
-nix-build --no-out-link build.nix | cachix push "${cachixremote}"
+nix-build --no-out-link --keep-going build.nix | cachix push "${cachixremote}"
 

@@ -16,6 +16,7 @@ This overlay is built and (somewhat) tested against `nixos-unstable`.
 | slurp | [2018-10-24 12:37](https://github.com/emersion/slurp/commits/0dbd03991462397eb92bb40af712c837c898ebf1) |
 | grim | [2018-10-24 12:39](https://github.com/emersion/grim/commits/61df6f0a9531520c898718874c460826bc7e2b42) |
 | mako | [2018-11-03 07:23](https://github.com/emersion/mako/commits/d1e6585eb5c06f1e05c3ec77230a263d73cc103c) |
+| kanshi | [2018-11-03 07:08](https://github.com/emersion/kanshi/commits/b70796587861cc4b860853f68ab8669d5fb5a083) |
 | wlstream | [2018-07-15 14:10](https://github.com/atomnuker/wlstream/commits/182076a94562b128c3a97ecc53cc68905ea86838) |
 | waybar | [2018-11-03 05:36](https://github.com/Alexays/waybar/commits/26182c222b6994666640ea0a89cfa97fbcf7229f) |
 | wayfire | [2018-11-01 03:05](https://github.com/WayfireWM/wayfire/commits/f634aff42ae8a29794d3977675a09e72832f2414) |
@@ -23,7 +24,7 @@ This overlay is built and (somewhat) tested against `nixos-unstable`.
 | redshift-wayland | [2018-09-01 12:25](https://github.com/minus7/redshift/commits/a2177ed9942477868ccc514372f32a0fbcbe189e) |
 <!--pkgs-->
 
-Auto-update script last run: <!--update-->2018-11-03 18:00<!--update-->.
+Auto-update script last run: <!--update-->2018-11-03 20:52<!--update-->.
 
 Please open an issue if something is out of date.
 
