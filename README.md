@@ -1,10 +1,11 @@
 # nixpkgs-wayland
 
-Automated, pre-built packages for Wayland (sway/wlroots) tools for NixOS.
-
 ## Overview
 
-This is a `nixpkgs` overlay containing `HEAD` revisions of:
+Automated, pre-built packages for Wayland (sway/wlroots) tools for NixOS.
+
+This overlay is built and (somewhat) tested against `nixos-unstable`.
+(See the usage section for other options if your system is not on `nixos-unstable`.)
 
 <!--pkgs-->
 | Attribute Name | Last Upstream Commit Time |
@@ -69,7 +70,5 @@ I'm now publishing these builds to [`nixpkgs-wayland` on cachix](https://nixpkgs
 nix-build build.nix | cachix push nixpkgs-wayland
 ```
 
-## Notes
-
-* This is meant to be used with (and is built [and partially tested] against) a nixpkgs near `nixos-unstable` or `nixos-18.09`.
+The update script `./update.sh` also does this automatically.
 

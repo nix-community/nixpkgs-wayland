@@ -5,6 +5,6 @@ let
 in
   [
     pkgs-unstable.swaypkgs
-    pkgs-release.swaypkgs
+    #pkgs-release.swaypkgs
   ]
 
