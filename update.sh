@@ -3,11 +3,8 @@ set -euo pipefail
 set -x
 
 cachixremote="nixpkgs-wayland"
-GHUSER="${GHUSER:-"$(cat /etc/nixos/secrets/github-username)"}"
-GHPASS="${GHPASS:-"$(cat /etc/nixos/secrets/github-token)"}"
 
 # keep track of what we build and only upload at the end
-builtattrs=()
 pkgentries=()
 
 function update() {
@@ -17,20 +14,21 @@ function update() {
   ref="${4}"
 
   rev=""
-  commitdate=""
   url="https://api.github.com/repos/${owner}/${repo}/commits?sha=${ref}"
-  commit="$(curl --silent --fail "${url}")"
-  #commit="$(curl -u "${GHUSER}:${GHPASS}" --silent --fail "${url}")"
-  rev="$(echo "${commit}" | jq -r ".[0].sha")"
-  commitdate="$(echo "${commit}" | jq -r ".[0].commit.committer.date")"
-  sha256="$(nix-prefetch-url --unpack "https://github.com/${owner}/${repo}/archive/${rev}.tar.gz" 2>/dev/null)"
-
-  printf '==> update: %s/%s: %s\n' "${owner}" "${repo}" "${rev}"
-  mkdir -p "./${attr}"
-  printf '{\n  rev = "%s";\n  sha256 = "%s";\n}\n' "${rev}" "${sha256}" > "./${attr}/metadata.nix"
+  rev="$(git ls-remote "https://github.com/${owner}/${repo}" HEAD | cut -d '	' -f1)"
+  [[ -f "./${attr}/metadata.nix" ]] && oldrev="$(nix eval -f "./${attr}/metadata.nix" rev --raw)"
+  if [[ "${oldrev:-}" != "${rev}" ]]; then
+    revdata="$(curl -L --fail "https://api.github.com/repos/${owner}/${repo}/commits/${rev}")"
+    revdate="$(echo "${revdata}" | jq -r ".commit.committer.date")"
+    sha256="$(nix-prefetch-url --unpack "https://github.com/${owner}/${repo}/archive/${rev}.tar.gz" 2>/dev/null)"
+    printf '{\n  rev = "%s";\n  sha256 = "%s";\n  revdate = "%s";\n}\n' \
+      "${rev}" "${sha256}" "${revdate}" > "./${attr}/metadata.nix"
+    echo "${attr}" was updated to "${rev}" "${revdate}"
+  fi
 
   if [[ "${attr}" == nixpkgs* ]]; then return; fi
 
+  commitdate="$(nix eval -f "./${attr}/metadata.nix" revdate --raw)"
   d="$(date '+%Y-%m-%d %H:%M' --date="${commitdate}")"
   txt="| ${attr} | [${d}](https://github.com/${owner}/${repo}/commits/${rev}) |"
   pkgentries=("${pkgentries[@]}" "${txt}")
@@ -79,5 +77,5 @@ rg --multiline '(?s)(.*)<!--update-->(.*)<!--update-->(.*)' "README.md" \
     > README2.md; mv README2.md README.md
 
 # build all and push to cachix
-nix-build build.nix | cachix push "${cachixremote}"
+nix-build --no-out-link build.nix | cachix push "${cachixremote}"
 
