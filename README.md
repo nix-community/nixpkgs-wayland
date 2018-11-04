@@ -55,16 +55,15 @@ in
 
 * `./update.sh`
   * updates `./<pkg>/metadata.nix` with the latest commit+hash for each package.
-  * updates `nixpkgs/metadata.nix` to `nixpkgs-channels#nixos-unstable`.
+  * updates `pkgs-*/metadata.nix` to their respective channels
 
-* `nix-build build.nix` builds all overlay packages with the nixpkgs specified in `./nixpkgs`.
+* `nix-build build.nix` builds all overlay packages with certain revs of `nixpkgs`.
 
-* (Sidenote: [nixcfg/utils/azure](https://github.com/colemickens/nixcfg/tree/master/utils/azure) contains the script(s) used
-  to upload the cached NARs to the binary mirror specified in this README.)
 
 ## Binary Cache (Cachix)
 
-I'm now publishing these builds to [`nixpkgs-wayland` on cachix](https://nixpkgs-wayland.cachix.org).
+I'm now publishing these builds to
+[`nixpkgs-wayland` on cachix](https://nixpkgs-wayland.cachix.org).
 
 ```
 nix-build build.nix | cachix push nixpkgs-wayland
