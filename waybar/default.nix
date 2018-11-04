@@ -35,9 +35,6 @@ stdenv.mkDerivation rec {
     rev = version;
     sha256 = metadata.sha256;
   };
-  patches = [
-    ./0001-gcc7.patch
-  ];
 
   nativeBuildInputs = [ meson480 ninja pkgconfig ];
   buildInputs = [
