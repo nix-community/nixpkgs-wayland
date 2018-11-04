@@ -15,7 +15,7 @@ function update() {
 
   rev=""
   url="https://api.github.com/repos/${owner}/${repo}/commits?sha=${ref}"
-  rev="$(git ls-remote "https://github.com/${owner}/${repo}" HEAD | cut -d '	' -f1)"
+  rev="$(git ls-remote "https://github.com/${owner}/${repo}" "${ref}" | cut -d '	' -f1)"
   [[ -f "./${attr}/metadata.nix" ]] && oldrev="$(nix eval -f "./${attr}/metadata.nix" rev --raw)"
   if [[ "${oldrev:-}" != "${rev}" ]]; then
     revdata="$(curl -L --fail "https://api.github.com/repos/${owner}/${repo}/commits/${rev}")"
@@ -26,7 +26,7 @@ function update() {
     echo "${attr}" was updated to "${rev}" "${revdate}"
   fi
 
-  if [[ "${attr}" == nixpkgs* ]]; then return; fi
+  if [[ "${attr}" == pkgs* ]]; then return; fi
 
   commitdate="$(nix eval -f "./${attr}/metadata.nix" revdate --raw)"
   d="$(date '+%Y-%m-%d %H:%M' --date="${commitdate}")"
@@ -34,10 +34,11 @@ function update() {
   pkgentries=("${pkgentries[@]}" "${txt}")
 }
 
-update "nixpkgs-nixos-unstable" "nixos" "nixpkgs-channels" "nixos-unstable"
-update "nixpkgs-nixos-18.09"    "nixos" "nixpkgs-channels" "nixos-18.09"
 
 #      attr_name          repo_owner   repo_name          repo_rev
+update "pkgs-unstable"    "nixos"      "nixpkgs-channels" "nixos-unstable"
+update "pkgs-18.09"       "nixos"      "nixpkgs-channels" "nixos-18.09"
+
 update "fmt"              "fmtlib"     "fmt"              "master"
 
 update "wlroots"          "swaywm"     "wlroots"          "master"

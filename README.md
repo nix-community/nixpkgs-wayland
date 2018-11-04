@@ -19,10 +19,10 @@ This is a `nixpkgs` overlay containing `HEAD` revisions of:
 | waybar | [2018-11-03 05:36](https://github.com/Alexays/waybar/commits/26182c222b6994666640ea0a89cfa97fbcf7229f) |
 | wayfire | [2018-11-01 03:05](https://github.com/WayfireWM/wayfire/commits/f634aff42ae8a29794d3977675a09e72832f2414) |
 | wf-config | [2018-10-22 00:05](https://github.com/WayfireWM/wf-config/commits/8f7046e6c67d4a277b0793b56ff6535f53997bc5) |
-| redshift-wayland | [2018-07-05 21:11](https://github.com/minus7/redshift/commits/910c4c6aabe9783f3b611c3cdc18081a4b55fe71) |
+| redshift-wayland | [2018-09-01 12:25](https://github.com/minus7/redshift/commits/a2177ed9942477868ccc514372f32a0fbcbe189e) |
 <!--pkgs-->
 
-Auto-update script last run: <!--update-->2018-11-03 17:28<!--update-->.
+Auto-update script last run: <!--update-->2018-11-03 18:00<!--update-->.
 
 Please open an issue if something is out of date.
 
