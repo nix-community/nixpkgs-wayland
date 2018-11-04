@@ -27,7 +27,7 @@ Auto-update script last run: <!--update-->2018-11-03 18:00<!--update-->.
 
 Please open an issue if something is out of date.
 
-## Example Usage
+## Usage
 
 This is what I use in my configuration. It should work regardless of if you've
 cloned this overlay locally.
@@ -51,7 +51,7 @@ in
 }
 ```
 
-## Automation
+## Updates
 
 * `./update.sh`
   * updates `./<pkg>/metadata.nix` with the latest commit+hash for each package.
@@ -60,7 +60,7 @@ in
 * `nix-build build.nix` builds all overlay packages with certain revs of `nixpkgs`.
 
 
-## Binary Cache (Cachix)
+## Binary Cache
 
 I'm now publishing these builds to
 [`nixpkgs-wayland` on cachix](https://nixpkgs-wayland.cachix.org).
@@ -70,4 +70,16 @@ nix-build build.nix | cachix push nixpkgs-wayland
 ```
 
 The update script `./update.sh` also does this automatically.
+
+### Usage
+
+To use the cache:
+
+```bash
+# install cachix
+nix-env -iA cachix -f https://github.com/NixOS/nixpkgs/tarball/889c72032f8595fcd7542c6032c208f6b8033db6
+
+# trust and utilize the cache for this repo
+cachix use nixpkgs-wayland
+```
 
