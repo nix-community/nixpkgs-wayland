@@ -1,5 +1,8 @@
-{ stdenv, fetchFromGitHub, rustPlatform,
-  xorg, python3, pkgconfig, cairo, libxkbcommon }:
+{
+  stdenv, fetchFromGitHub, rustPlatform
+, libudev, pkgconfig
+}:
+
 let
   metadata = import ./metadata.nix;
   pname = "kanshi";
@@ -9,31 +12,27 @@ rustPlatform.buildRustPackage {
   inherit pname version;
   name = "${pname}-${version}";
 
-  nativeBuildInputs = [ python3 pkgconfig ];
-  buildInputs = [ cairo libxkbcommon xorg.xcbutilkeysyms ];
+  nativeBuildInputs = [ pkgconfig ];
+  buildInputs = [ libudev ];
 
-  # For now, this is the only available featureset. This is also why the file is
-  # in the i3 folder, even though it might be useful for more than just i3
-  # users.
-  cargoBuildFlags = ["--features i3"];
+  cargoBuildFlags = [];
 
-  src = fetchFromGitHub {
-    owner = "emersion";
-    repo = pname;
-    rev = version;
-    sha256 = metadata.sha256;
-  };
+  src = /home/cole/code/kanshi;
+  #src = fetchFromGitHub {
+  #  owner = "emersion";
+  #  repo = pname;
+  #  rev = version;
+  #  sha256 = metadata.sha256;
+  #};
 
-  cargoSha256 = "0lwzw8gf970ybblaxxkwn3pxrncxp0hhvykffbzirs7fic4fnvsg";
+  cargoSha256Version = 2;
+  cargoSha256 = "098q1g04d5mpwlw1gshm78x28ki4gwhlkwqsd8vrfhp96v97n1sf";
 
   meta = with stdenv.lib; {
-    description = ''
-      Tool that allows you to rapidly choose a specific window directly
-      without having to use the mouse or directional keyboard navigation.
-    '';
-    maintainers = with maintainers; [ synthetica ];
+    description = "Dynamic display configuration";
+    homepage = "https://github.com/emersion/kanshi";
+    maintainers = with maintainers; [ colemickens ];
     platforms = platforms.linux;
-    license = licenses.mit;
-    homepage = https://github.com/svenstaro/wmfocus;
+    #license = licenses.unknown; # TODO: ???
   };
 }
