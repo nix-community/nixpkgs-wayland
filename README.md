@@ -18,13 +18,13 @@ This overlay is built and (somewhat) tested against `nixos-unstable`.
 | mako | [2018-11-03 07:23](https://github.com/emersion/mako/commits/d1e6585eb5c06f1e05c3ec77230a263d73cc103c) |
 | kanshi | [2018-11-04 00:35](https://github.com/emersion/kanshi/commits/a3eccd20ae64943e0ee2d1f3cf0576d6198f18ab) |
 | wlstream | [2018-07-15 14:10](https://github.com/atomnuker/wlstream/commits/182076a94562b128c3a97ecc53cc68905ea86838) |
-| waybar | [2018-11-03 05:36](https://github.com/Alexays/waybar/commits/26182c222b6994666640ea0a89cfa97fbcf7229f) |
+| waybar | [2018-11-05 00:26](https://github.com/Alexays/waybar/commits/e63f287bb0c002762278cc21fe0686057600f246) |
 | wayfire | [2018-11-01 03:05](https://github.com/WayfireWM/wayfire/commits/f634aff42ae8a29794d3977675a09e72832f2414) |
 | wf-config | [2018-10-22 00:05](https://github.com/WayfireWM/wf-config/commits/8f7046e6c67d4a277b0793b56ff6535f53997bc5) |
 | redshift-wayland | [2018-09-01 12:25](https://github.com/minus7/redshift/commits/a2177ed9942477868ccc514372f32a0fbcbe189e) |
 <!--pkgs-->
 
-Auto-update script last run: <!--update-->2018-11-04 22:23<!--update-->.
+Auto-update script last run: <!--update-->2018-11-05 02:06<!--update-->.
 
 Please open an issue if something is out of date.
 
