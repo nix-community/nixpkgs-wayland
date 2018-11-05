@@ -21,7 +21,7 @@ stdenv.mkDerivation rec {
   patches = [
     (fetchpatch {
       url = "https://github.com/atomnuker/wlstream/pull/4/commits/23e43186fd1ebeb553c89317f69613e67b266cd3.patch";
-      sha256 = "1n5vv2cf1h0q920sxd1ksyfn0ld7f9h72mpp8478ln0r3hjz4f1k";
+      sha256 = "03v0xppjb3ns0rkdinidhp3di4k127f5gxrjklwrid5jppfgg264";
     })
   ];
 
