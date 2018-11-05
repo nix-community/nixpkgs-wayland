@@ -62,13 +62,6 @@ update "i3status-rust"    "greshake"   "i3status-rust"    "master"
 # misc
 update "ripasso"          "cortex"     "ripasso"          "master"
 
-#update "mahogany"   "sdilts"     "mahogany"         "master"
-#update "tablecloth" "topisani"   "tablecloth"       "master"
-#update "trinkster"  "Dreyri"     "trinkster"        "master"
-#update "way-cooler" "way-cooler" "way-cooler"       "master"
-#update "waybox"     "wizbright"  "waybox"           "master"
-#update "waymonad"   "waymonad"   "waymonad"         "master"
-
 # update README.md
 set +x
 replace="$(printf "<!--pkgs-->")"
