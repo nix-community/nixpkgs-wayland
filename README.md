@@ -18,6 +18,7 @@ This overlay is built and (somewhat) tested against `nixos-unstable`.
 | mako | [2018-11-03 07:23](https://github.com/emersion/mako/commits/d1e6585eb5c06f1e05c3ec77230a263d73cc103c) |
 | kanshi | [2018-11-05 02:42](https://github.com/emersion/kanshi/commits/ed21acce0c52f7893c903f46b09b4a3b55e2c198) |
 | wlstream | [2018-07-15 14:10](https://github.com/atomnuker/wlstream/commits/182076a94562b128c3a97ecc53cc68905ea86838) |
+| oguri | [2018-10-28 11:30](https://github.com/vilhalmer/oguri/commits/23bbd965f4744039c1c5a8e1d9604d6b8f6ab75f) |
 | waybar | [2018-11-05 02:59](https://github.com/Alexays/waybar/commits/d6af63d84a0bf5c4b94e4a0e5281ca634a71e3b5) |
 | wayfire | [2018-11-01 03:05](https://github.com/WayfireWM/wayfire/commits/f634aff42ae8a29794d3977675a09e72832f2414) |
 | wf-config | [2018-10-22 00:05](https://github.com/WayfireWM/wf-config/commits/8f7046e6c67d4a277b0793b56ff6535f53997bc5) |
@@ -25,7 +26,7 @@ This overlay is built and (somewhat) tested against `nixos-unstable`.
 | wmfocus | [2018-11-01 11:17](https://github.com/svenstaro/wmfocus/commits/d6f5ff88b7fb5d2eedde3c5989ae49a656ac5adb) |
 <!--pkgs-->
 
-Auto-update script last run: <!--update-->2018-11-05 03:35<!--update-->.
+Auto-update script last run: <!--update-->2018-11-05 03:43<!--update-->.
 
 Please open an issue if something is out of date.
 
