@@ -20,6 +20,7 @@ swaypkgs = {
     inherit (pkgs.python3Packages) python pygobject3 pyxdg wrapPython;
     geoclue = pkgs.geoclue2;
   };
+  bspwc            = pkgs.callPackage ./bspwc {};
 
   # i3-related
   wmfocus          = pkgs.callPackage ./wmfocus {};
