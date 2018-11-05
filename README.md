@@ -12,7 +12,7 @@ This overlay is built and (somewhat) tested against `nixos-unstable`.
 | -------------- | ------------------------- |
 | fmt | [2018-11-03 16:51](https://github.com/fmtlib/fmt/commits/a23d592472b375a92df9c6040ccbe4b9065b5d6d) |
 | wlroots | [2018-11-04 05:31](https://github.com/swaywm/wlroots/commits/d7b010024a4e46acb1eb5c54c1ce31dd816fb995) |
-| sway-beta | [2018-11-04 14:30](https://github.com/swaywm/sway/commits/bcbd0a9b45ea7d8969b58183a12240e74e90f9f0) |
+| sway-beta | [2018-11-05 12:31](https://github.com/swaywm/sway/commits/994c35e37527e754c6389db3e1c892d2937f2f7f) |
 | slurp | [2018-10-24 12:37](https://github.com/emersion/slurp/commits/0dbd03991462397eb92bb40af712c837c898ebf1) |
 | grim | [2018-10-24 12:39](https://github.com/emersion/grim/commits/61df6f0a9531520c898718874c460826bc7e2b42) |
 | mako | [2018-11-03 07:23](https://github.com/emersion/mako/commits/d1e6585eb5c06f1e05c3ec77230a263d73cc103c) |
