@@ -23,6 +23,7 @@ swaypkgs = {
 
   # i3-related
   wmfocus          = self.callPackage ./wmfocus {};
+  i3status-rust    = self.callPackage ./i3status-rust {};
 };
 in
   swaypkgs // { inherit swaypkgs; }
