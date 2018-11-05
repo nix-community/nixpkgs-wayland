@@ -29,8 +29,8 @@ stdenv.mkDerivation rec {
   enableParallelBuilding = true;
 
   meta = with stdenv.lib; {
-    description = "Wayland compositor based on BSPWM";
-    homepage    = "https://github.com/Bl4ckb0ne/bspwc";
+    description = "An openbox clone on Wayland (WIP)";
+    homepage    = "https://github.com/wizbright/waybox";
     license     = licenses.mit;
     platforms   = platforms.linux;
     maintainers = with maintainers; [ colemickens ];
