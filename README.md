@@ -19,7 +19,7 @@ This overlay is built and (somewhat) tested against `nixos-unstable`.
 | kanshi | [2018-11-05 02:42](https://github.com/emersion/kanshi/commits/ed21acce0c52f7893c903f46b09b4a3b55e2c198) |
 | wlstream | [2018-07-15 14:10](https://github.com/atomnuker/wlstream/commits/182076a94562b128c3a97ecc53cc68905ea86838) |
 | oguri | [2018-10-28 11:30](https://github.com/vilhalmer/oguri/commits/23bbd965f4744039c1c5a8e1d9604d6b8f6ab75f) |
-| waybar | [2018-11-05 02:59](https://github.com/Alexays/waybar/commits/d6af63d84a0bf5c4b94e4a0e5281ca634a71e3b5) |
+| waybar | [2018-11-05 12:06](https://github.com/Alexays/waybar/commits/0933aad75f72d54d169bce2f0bd440876a414dc3) |
 | wayfire | [2018-11-01 03:05](https://github.com/WayfireWM/wayfire/commits/f634aff42ae8a29794d3977675a09e72832f2414) |
 | wf-config | [2018-10-22 00:05](https://github.com/WayfireWM/wf-config/commits/8f7046e6c67d4a277b0793b56ff6535f53997bc5) |
 | redshift-wayland | [2018-09-01 12:25](https://github.com/minus7/redshift/commits/a2177ed9942477868ccc514372f32a0fbcbe189e) |
@@ -28,7 +28,7 @@ This overlay is built and (somewhat) tested against `nixos-unstable`.
 | ripasso | [2018-10-25 16:45](https://github.com/cortex/ripasso/commits/a0e1d18320a17e3d6a1d5fc540591a139bcb63bf) |
 <!--pkgs-->
 
-Auto-update script last run: <!--update-->2018-11-05 04:46<!--update-->.
+Auto-update script last run: <!--update-->2018-11-05 13:29<!--update-->.
 
 Please open an issue if something is out of date.
 
