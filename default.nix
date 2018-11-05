@@ -19,10 +19,6 @@ swaypkgs = {
     inherit (self.python3Packages) python pygobject3 pyxdg wrapPython;
     geoclue = self.geoclue2;
   };
-
-  # arcan-related
-  #arcan            = self.callPackage ./arcan {};
-  #durden           = self.callPackage ./durden {};
 };
 in
   swaypkgs // { inherit swaypkgs; }
