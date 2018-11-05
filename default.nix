@@ -12,6 +12,7 @@ swaypkgs = {
   mako             = self.callPackage ./mako {};
   kanshi           = self.callPackage ./kanshi {};
   wlstream         = self.callPackage ./wlstream {};
+  oguri            = self.callPackage ./oguri {};
   waybar           = self.callPackage ./waybar {};
   wf-config        = self.callPackage ./wf-config {};
   wayfire          = self.callPackage ./wayfire {};
