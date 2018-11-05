@@ -53,6 +53,7 @@ update "waybar"           "Alexays"    "waybar"           "master"
 update "wayfire"          "WayfireWM"  "wayfire"          "master"
 update "wf-config"        "WayfireWM"  "wf-config"        "master"
 update "redshift-wayland" "minus7"     "redshift"         "wayland"
+update "waycooler"        "way-cooler" "way-cooler"       "master"
 
 # i3-related
 update "wmfocus"          "svenstaro"  "wmfocus"          "master"
