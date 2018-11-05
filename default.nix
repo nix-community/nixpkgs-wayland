@@ -19,6 +19,9 @@ swaypkgs = {
     inherit (self.python3Packages) python pygobject3 pyxdg wrapPython;
     geoclue = self.geoclue2;
   };
+
+  # i3-related
+  wmfocus          = self.callPackage ./wmfocus {};
 };
 in
   swaypkgs // { inherit swaypkgs; }

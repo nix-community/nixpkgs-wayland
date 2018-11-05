@@ -53,6 +53,9 @@ update "wayfire"          "WayfireWM"  "wayfire"          "master"
 update "wf-config"        "WayfireWM"  "wf-config"        "master"
 update "redshift-wayland" "minus7"     "redshift"         "wayland"
 
+# i3-related
+update "wmfocus"          "svenstaro"  "wmfocus"          "master"
+
 #update "bspwc"      "Bl4ckb0ne"  "bspwc"            "master"
 #update "mahogany"   "sdilts"     "mahogany"         "master"
 #update "tablecloth" "topisani"   "tablecloth"       "master"
