@@ -23,7 +23,6 @@ rustPlatform.buildRustPackage {
     rev = version;
     sha256 = metadata.sha256;
   };
-  patches = [ ./0001-update-dependencies.patch ];
 
   cargoSha256Version = 2;
   cargoSha256 = "098q1g04d5mpwlw1gshm78x28ki4gwhlkwqsd8vrfhp96v97n1sf";
