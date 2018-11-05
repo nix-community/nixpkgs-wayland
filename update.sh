@@ -58,6 +58,9 @@ update "redshift-wayland" "minus7"     "redshift"         "wayland"
 update "wmfocus"          "svenstaro"  "wmfocus"          "master"
 update "i3status-rust"    "greshake"   "i3status-rust"    "master"
 
+# misc
+update "ripasso"          "cortex"     "ripasso"          "master"
+
 #update "bspwc"      "Bl4ckb0ne"  "bspwc"            "master"
 #update "mahogany"   "sdilts"     "mahogany"         "master"
 #update "tablecloth" "topisani"   "tablecloth"       "master"
