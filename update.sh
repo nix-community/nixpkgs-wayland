@@ -56,8 +56,12 @@ update "pkgs/waybox"           "wizbright"  "waybox"           "master"
 update "pkgs/wl-clipboard"     "bugaevc"    "wl-clipboard"     "master"
 
 # i3-related
-update "pkgs/wmfocus"          "svenstaro"  "wmfocus"          "master"
-update "pkgs/i3status-rust"    "greshake"   "i3status-rust"    "master"
+update "pkgs/wmfocus"       "svenstaro" "wmfocus"       "master"
+update "pkgs/i3status-rust" "greshake"  "i3status-rust" "master"
+
+# arcan-related
+update "pkgs/arcan"  "letoram" "arcan"  "master"
+update "pkgs/durden" "letoram" "durden" "master"
 
 # update README.md
 set +x

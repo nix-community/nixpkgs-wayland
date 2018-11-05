@@ -27,6 +27,10 @@ waylandPkgs = {
   # i3-related
   wmfocus          = pkgs.callPackage ./pkgs/wmfocus {};
   i3status-rust    = pkgs.callPackage ./pkgs/i3status-rust {};
+
+  # arcan-related
+  arcan            = self.callPackage ./pkgs/arcan {};
+  durden           = self.callPackage ./pkgs/durden {};
 };
 in
   waylandPkgs // { inherit waylandPkgs; }
