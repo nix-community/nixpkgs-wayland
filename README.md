@@ -25,9 +25,10 @@ This overlay is built and (somewhat) tested against `nixos-unstable`.
 | redshift-wayland | [2018-09-01 12:25](https://github.com/minus7/redshift/commits/a2177ed9942477868ccc514372f32a0fbcbe189e) |
 | wmfocus | [2018-11-01 11:17](https://github.com/svenstaro/wmfocus/commits/d6f5ff88b7fb5d2eedde3c5989ae49a656ac5adb) |
 | i3status-rust | [2018-11-02 08:41](https://github.com/greshake/i3status-rust/commits/2b3ccf48721b3944281ee44a7e7562083471062d) |
+| ripasso | [2018-10-25 16:45](https://github.com/cortex/ripasso/commits/a0e1d18320a17e3d6a1d5fc540591a139bcb63bf) |
 <!--pkgs-->
 
-Auto-update script last run: <!--update-->2018-11-05 03:58<!--update-->.
+Auto-update script last run: <!--update-->2018-11-05 04:46<!--update-->.
 
 Please open an issue if something is out of date.
 
