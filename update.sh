@@ -53,6 +53,7 @@ update "waybar"           "Alexays"    "waybar"           "master"
 update "wayfire"          "WayfireWM"  "wayfire"          "master"
 update "wf-config"        "WayfireWM"  "wf-config"        "master"
 update "redshift-wayland" "minus7"     "redshift"         "wayland"
+update "bspwc"            "Bl4ckb0ne"  "bspwc"            "master"
 
 # i3-related
 update "wmfocus"          "svenstaro"  "wmfocus"          "master"
@@ -61,7 +62,6 @@ update "i3status-rust"    "greshake"   "i3status-rust"    "master"
 # misc
 update "ripasso"          "cortex"     "ripasso"          "master"
 
-#update "bspwc"      "Bl4ckb0ne"  "bspwc"            "master"
 #update "mahogany"   "sdilts"     "mahogany"         "master"
 #update "tablecloth" "topisani"   "tablecloth"       "master"
 #update "trinkster"  "Dreyri"     "trinkster"        "master"
