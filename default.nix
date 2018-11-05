@@ -21,6 +21,7 @@ swaypkgs = {
     geoclue = pkgs.geoclue2;
   };
   bspwc            = pkgs.callPackage ./bspwc {};
+  waybox           = pkgs.callPackage ./waybox {};
 
   # i3-related
   wmfocus          = pkgs.callPackage ./wmfocus {};

@@ -54,6 +54,7 @@ update "wayfire"          "WayfireWM"  "wayfire"          "master"
 update "wf-config"        "WayfireWM"  "wf-config"        "master"
 update "redshift-wayland" "minus7"     "redshift"         "wayland"
 update "bspwc"            "Bl4ckb0ne"  "bspwc"            "master"
+update "waybox"           "wizbright"  "waybox"           "master"
 
 # i3-related
 update "wmfocus"          "svenstaro"  "wmfocus"          "master"
