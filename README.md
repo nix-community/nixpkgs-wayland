@@ -13,7 +13,7 @@ This overlay is built and (somewhat) tested against `nixos-unstable`.
 | pkgs-unstable | [2018-11-04 02:08](https://github.com/nixos/nixpkgs-channels/commits/179b8146e668636fe59ef7663a6c8cd15d00db7e) |
 | pkgs-18.09 | [2018-11-05 16:53](https://github.com/nixos/nixpkgs-channels/commits/6d6e4e6b558989246ba99d13ddbafb8744cdb0b6) |
 | fmt | [2018-11-05 17:31](https://github.com/fmtlib/fmt/commits/6b26e3f2d7132d8a772ce3052bf7f9a7ecc81bb3) |
-| wlroots | [2018-11-04 05:31](https://github.com/swaywm/wlroots/commits/d7b010024a4e46acb1eb5c54c1ce31dd816fb995) |
+| wlroots | [2018-11-06 03:46](https://github.com/swaywm/wlroots/commits/2bf482e90f04dd7e402b37cb1d6c4d7fa958887c) |
 | sway-beta | [2018-11-05 12:31](https://github.com/swaywm/sway/commits/994c35e37527e754c6389db3e1c892d2937f2f7f) |
 | slurp | [2018-10-24 12:37](https://github.com/emersion/slurp/commits/0dbd03991462397eb92bb40af712c837c898ebf1) |
 | grim | [2018-10-24 12:39](https://github.com/emersion/grim/commits/61df6f0a9531520c898718874c460826bc7e2b42) |
@@ -32,7 +32,7 @@ This overlay is built and (somewhat) tested against `nixos-unstable`.
 | ripasso | [2018-10-25 16:45](https://github.com/cortex/ripasso/commits/a0e1d18320a17e3d6a1d5fc540591a139bcb63bf) |
 <!--pkgs-->
 
-Auto-update script last run: <!--update-->2018-11-05 23:27<!--update-->.
+Auto-update script last run: <!--update-->2018-11-06 04:59<!--update-->.
 
 Please open an issue if something is out of date.
 
