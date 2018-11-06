@@ -1,32 +1,32 @@
 self: pkgs:
 let
-swaypkgs = {
+waylandpkgs = {
   # patched deps
-  fmt              = pkgs.callPackage ./fmt {};
+  fmt              = pkgs.callPackage ./pkgs/fmt {};
 
   # wlroots-related
-  wlroots          = pkgs.callPackage ./wlroots {};
-  sway-beta        = pkgs.callPackage ./sway-beta {};
-  grim             = pkgs.callPackage ./grim {};
-  slurp            = pkgs.callPackage ./slurp {};
-  mako             = pkgs.callPackage ./mako {};
-  kanshi           = pkgs.callPackage ./kanshi {};
-  wlstream         = pkgs.callPackage ./wlstream {};
-  oguri            = pkgs.callPackage ./oguri {};
-  waybar           = pkgs.callPackage ./waybar {};
-  wf-config        = pkgs.callPackage ./wf-config {};
-  wayfire          = pkgs.callPackage ./wayfire {};
-  redshift-wayland = pkgs.callPackage ./redshift-wayland {
+  wlroots          = pkgs.callPackage ./pkgs/wlroots {};
+  sway-beta        = pkgs.callPackage ./pkgs/sway-beta {};
+  grim             = pkgs.callPackage ./pkgs/grim {};
+  slurp            = pkgs.callPackage ./pkgs/slurp {};
+  mako             = pkgs.callPackage ./pkgs/mako {};
+  kanshi           = pkgs.callPackage ./pkgs/kanshi {};
+  wlstream         = pkgs.callPackage ./pkgs/wlstream {};
+  oguri            = pkgs.callPackage ./pkgs/oguri {};
+  waybar           = pkgs.callPackage ./pkgs/waybar {};
+  wf-config        = pkgs.callPackage ./pkgs/wf-config {};
+  wayfire          = pkgs.callPackage ./pkgs/wayfire {};
+  redshift-wayland = pkgs.callPackage ./pkgs/redshift-wayland {
     inherit (pkgs.python3Packages) python pygobject3 pyxdg wrapPython;
     geoclue = pkgs.geoclue2;
   };
-  bspwc            = pkgs.callPackage ./bspwc {};
-  waybox           = pkgs.callPackage ./waybox {};
+  bspwc            = pkgs.callPackage ./pkgs/bspwc {};
+  waybox           = pkgs.callPackage ./pkgs/waybox {};
 
   # i3-related
-  wmfocus          = pkgs.callPackage ./wmfocus {};
-  i3status-rust    = pkgs.callPackage ./i3status-rust {};
+  wmfocus          = pkgs.callPackage ./pkgs/wmfocus {};
+  i3status-rust    = pkgs.callPackage ./pkgs/i3status-rust {};
 };
 in
-  swaypkgs // { inherit swaypkgs; }
+  waylandpkgs // { inherit waylandpkgs; }
 
