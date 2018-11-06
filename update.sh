@@ -26,8 +26,6 @@ function update() {
     echo "${attr}" was updated to "${rev}" "${revdate}"
   fi
 
-  if [[ "${attr}" == pkgs* ]]; then return; fi
-
   commitdate="$(nix eval -f "./${attr}/metadata.nix" revdate --raw)"
   d="$(date '+%Y-%m-%d %H:%M' --date="${commitdate}")"
   txt="| ${attr} | [${d}](https://github.com/${owner}/${repo}/commits/${rev}) |"
