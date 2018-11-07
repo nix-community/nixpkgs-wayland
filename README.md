@@ -12,9 +12,9 @@ This overlay is built and (somewhat) tested against `nixos-unstable`.
 | -------------- | ------------------------- |
 | pkgs-unstable | [2018-11-04 02:08](https://github.com/nixos/nixpkgs-channels/commits/179b8146e668636fe59ef7663a6c8cd15d00db7e) |
 | pkgs-18.09 | [2018-11-05 16:53](https://github.com/nixos/nixpkgs-channels/commits/6d6e4e6b558989246ba99d13ddbafb8744cdb0b6) |
-| fmt | [2018-11-05 17:31](https://github.com/fmtlib/fmt/commits/6b26e3f2d7132d8a772ce3052bf7f9a7ecc81bb3) |
-| wlroots | [2018-11-06 03:46](https://github.com/swaywm/wlroots/commits/2bf482e90f04dd7e402b37cb1d6c4d7fa958887c) |
-| sway-beta | [2018-11-05 12:31](https://github.com/swaywm/sway/commits/994c35e37527e754c6389db3e1c892d2937f2f7f) |
+| fmt | [2018-11-06 17:22](https://github.com/fmtlib/fmt/commits/34030deca9e64ef0523eff48993fc028d01df1fe) |
+| wlroots | [2018-11-06 06:24](https://github.com/swaywm/wlroots/commits/bcd19a8824588adeafdae84114b83cac05a45065) |
+| sway-beta | [2018-11-06 12:58](https://github.com/swaywm/sway/commits/4a21981855a340c549db99d286590c369895da87) |
 | slurp | [2018-10-24 12:37](https://github.com/emersion/slurp/commits/0dbd03991462397eb92bb40af712c837c898ebf1) |
 | grim | [2018-10-24 12:39](https://github.com/emersion/grim/commits/61df6f0a9531520c898718874c460826bc7e2b42) |
 | mako | [2018-11-03 07:23](https://github.com/emersion/mako/commits/d1e6585eb5c06f1e05c3ec77230a263d73cc103c) |
@@ -28,11 +28,11 @@ This overlay is built and (somewhat) tested against `nixos-unstable`.
 | bspwc | [2018-10-19 05:58](https://github.com/Bl4ckb0ne/bspwc/commits/6a8ba7bc17146544f6e0446f473ff290e77e3256) |
 | waybox | [2018-10-06 13:44](https://github.com/wizbright/waybox/commits/24669f24f6ce41f99088483f5c55c41498a57662) |
 | wmfocus | [2018-11-01 11:17](https://github.com/svenstaro/wmfocus/commits/d6f5ff88b7fb5d2eedde3c5989ae49a656ac5adb) |
-| i3status-rust | [2018-11-02 08:41](https://github.com/greshake/i3status-rust/commits/2b3ccf48721b3944281ee44a7e7562083471062d) |
+| i3status-rust | [2018-11-06 08:19](https://github.com/greshake/i3status-rust/commits/a72c86cf02b97a7a031f3352ef0fda9e546604aa) |
 | ripasso | [2018-10-25 16:45](https://github.com/cortex/ripasso/commits/a0e1d18320a17e3d6a1d5fc540591a139bcb63bf) |
 <!--pkgs-->
 
-Auto-update script last run: <!--update-->2018-11-06 04:59<!--update-->.
+Auto-update script last run: <!--update-->2018-11-06 18:28<!--update-->.
 
 Please open an issue if something is out of date.
 
