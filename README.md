@@ -47,11 +47,11 @@ let
   nos = "https://github.com/colemickens/nixpkgs-wayland/archive/master.tar.gz";
   swayOverlay =
     if builtins.pathExists /etc/nixpkgs-wayland
-    then (import /etc/nixpkgs-wayland)
-    else (import (builtins.fetchTarball nos));
+    then /etc/nixpkgs-wayland
+    else builtins.fetchTarball nos;
 in
 {
-  nixpkgs.overlays = [ swayOverlay ];
+  imports = [ "${wayland-pkgs}/nixos" ];
 
   environment.systemPackages = with pkgs; [
     sway-beta grim slurp wlstream
