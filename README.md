@@ -13,8 +13,8 @@ This overlay is built and (somewhat) tested against `nixos-unstable`.
 | pkgs-unstable | [2018-11-06 15:05](https://github.com/nixos/nixpkgs-channels/commits/6141939d6e0a77c84905efd560c03c3032164ef1) |
 | pkgs-18.09 | [2018-11-07 17:13](https://github.com/nixos/nixpkgs-channels/commits/a4c4cbb613cc3e15186de0fdb04082fa7e38f6a0) |
 | fmt | [2018-11-08 16:26](https://github.com/fmtlib/fmt/commits/1385050e267d645259d9fb66f016bdb2addb70a6) |
-| wlroots | [2018-11-09 12:45](https://github.com/swaywm/wlroots/commits/ca570fa63cb187ba078d95e0973da8562687673f) |
-| sway-beta | [2018-11-08 17:07](https://github.com/swaywm/sway/commits/7fa7f4f48d17e0470c800b258061d188ceb705da) |
+| wlroots | [2018-11-10 06:38](https://github.com/swaywm/wlroots/commits/3181c4bec06d2fe51da052c0a08c8287725ec900) |
+| sway-beta | [2018-11-10 05:06](https://github.com/swaywm/sway/commits/80a1c340a9c8c8aac5fe4dd7bc1dc15b43fce0dc) |
 | slurp | [2018-10-24 12:37](https://github.com/emersion/slurp/commits/0dbd03991462397eb92bb40af712c837c898ebf1) |
 | grim | [2018-10-24 12:39](https://github.com/emersion/grim/commits/61df6f0a9531520c898718874c460826bc7e2b42) |
 | mako | [2018-11-03 07:23](https://github.com/emersion/mako/commits/d1e6585eb5c06f1e05c3ec77230a263d73cc103c) |
@@ -32,7 +32,7 @@ This overlay is built and (somewhat) tested against `nixos-unstable`.
 | ripasso | [2018-10-25 16:45](https://github.com/cortex/ripasso/commits/a0e1d18320a17e3d6a1d5fc540591a139bcb63bf) |
 <!--pkgs-->
 
-Auto-update script last run: <!--update-->2018-11-09 17:13<!--update-->.
+Auto-update script last run: <!--update-->2018-11-10 17:20<!--update-->.
 
 Please open an issue if something is out of date.
 
