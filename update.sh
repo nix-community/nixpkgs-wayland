@@ -33,30 +33,29 @@ function update() {
 }
 
 
-#      attr_name          repo_owner   repo_name          repo_rev
-update "pkgs-unstable"    "nixos"      "nixpkgs-channels" "nixos-unstable"
-update "pkgs-18.09"       "nixos"      "nixpkgs-channels" "nixos-18.09"
+# update <attr_name> <repo_owner> <repo_name> <repo_rev>
+update "nixpkgs/nixos-unstable" "nixos" "nixpkgs-channels" "nixos-unstable"
 
-update "fmt"              "fmtlib"     "fmt"              "master"
+update "pkgs/fmt"              "fmtlib"     "fmt"              "master"
 
-update "wlroots"          "swaywm"     "wlroots"          "master"
-update "sway-beta"        "swaywm"     "sway"             "master"
-update "slurp"            "emersion"   "slurp"            "master"
-update "grim"             "emersion"   "grim"             "master"
-update "mako"             "emersion"   "mako"             "master"
-update "kanshi"           "emersion"   "kanshi"           "master"
-update "wlstream"         "atomnuker"  "wlstream"         "master"
-update "oguri"            "vilhalmer"  "oguri"            "master"
-update "waybar"           "Alexays"    "waybar"           "master"
-update "wayfire"          "WayfireWM"  "wayfire"          "master"
-update "wf-config"        "WayfireWM"  "wf-config"        "master"
-update "redshift-wayland" "minus7"     "redshift"         "wayland"
-update "bspwc"            "Bl4ckb0ne"  "bspwc"            "master"
-update "waybox"           "wizbright"  "waybox"           "master"
+update "pkgs/wlroots"          "swaywm"     "wlroots"          "master"
+update "pkgs/sway-beta"        "swaywm"     "sway"             "master"
+update "pkgs/slurp"            "emersion"   "slurp"            "master"
+update "pkgs/grim"             "emersion"   "grim"             "master"
+update "pkgs/mako"             "emersion"   "mako"             "master"
+update "pkgs/kanshi"           "emersion"   "kanshi"           "master"
+update "pkgs/wlstream"         "atomnuker"  "wlstream"         "master"
+update "pkgs/oguri"            "vilhalmer"  "oguri"            "master"
+update "pkgs/waybar"           "Alexays"    "waybar"           "master"
+update "pkgs/wayfire"          "WayfireWM"  "wayfire"          "master"
+update "pkgs/wf-config"        "WayfireWM"  "wf-config"        "master"
+update "pkgs/redshift-wayland" "minus7"     "redshift"         "wayland"
+update "pkgs/bspwc"            "Bl4ckb0ne"  "bspwc"            "master"
+update "pkgs/waybox"           "wizbright"  "waybox"           "master"
 
 # i3-related
-update "wmfocus"          "svenstaro"  "wmfocus"          "master"
-update "i3status-rust"    "greshake"   "i3status-rust"    "master"
+update "pkgs/wmfocus"          "svenstaro"  "wmfocus"          "master"
+update "pkgs/i3status-rust"    "greshake"   "i3status-rust"    "master"
 
 # update README.md
 set +x
