@@ -38,27 +38,65 @@ Please open an issue if something is out of date.
 
 ## Usage
 
-This is what I use in my configuration. It should work regardless of if you've
-cloned this overlay locally.
+There are two ways to use this overlay on NixOS, depending on which
+nixpkgs channel you follow.
+
+### Usage (nixos-unstable)
+
+This usage just utilizes [`overlay` functionality from `nixpkgs`]().
+
+Note that when using the overlay, the module will automatically reference the correct
+`sway-beta` package, just as the environment packages come from `pkg`.
 
 ```nix
-{ ... }:
+{ config, lib, pkgs, ... }:
 let
-  nos = "https://github.com/colemickens/nixpkgs-wayland/archive/master.tar.gz";
-  swayOverlay =
-    if builtins.pathExists /etc/nixpkgs-wayland
-    then (import /etc/nixpkgs-wayland)
-    else (import (builtins.fetchTarball nos));
+  url = "https://github.com/colemickens/nixpkgs-wayland/archive/master.tar.gz";
+  waylandOverlay = (import (builtins.fetchTarball url));
 in
-{
-  nixpkgs.overlays = [ swayOverlay ];
-
-  environment.systemPackages = with pkgs; [
-    sway-beta grim slurp wlstream
-    redshift-wayland waybar
-  ];
-}
+  {
+    nixpkgs.overlays = [ waylandOverlay ];
+    programs.sway-beta.enable = true;
+    programs.sway-beta.extraPackages = with pkgs; [
+      grim slurp mako wlstream redshift-wayland # essentials
+      waybar i3status-rust # optional bars
+    ];
+  }
 ```
+
+### Usage (nixos-18.09)
+
+Rather than maintaining an unknown number of backports from nixos-unstable to here
+for supporting `nixos-18.09` users, these instructions will pull in select packages
+from `nixos-unstable + this overlay` to your environment.
+
+```nix
+{ config, lib, pkgs, ... }:
+let
+  url = "https://github.com/colemickens/nixpkgs-wayland/archive/master.tar.gz";
+  waylandPkgs = import "${builtins.fetchTarball url}/build.nix";
+in
+  {
+    nixpkgs.overlays = [ (self: super: { sway-beta = waylandPkgs.sway-beta; }) ];
+    environment.systemPackages =
+      with pkgs; [
+        vim git
+      ] ++
+      (with swaypkgs; [
+        grim slurp mako wlstream redshift-wayland # essentials
+        waybar i3status-rust # optional bars
+      ]);
+  }
+```
+
+Note: The `sway-beta` module is not available to you. As a result, you need to manually
+start sway with `dbus-launch` and you may have issues with `swaylock` due
+to the missing security functionality.
+
+```
+dbus-launch --exit-with-session $(which sway-beta)
+```
+
 
 ## Updates
 
