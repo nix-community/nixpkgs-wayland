@@ -27,6 +27,12 @@ waylandPkgs = {
   # i3-related
   wmfocus          = pkgs.callPackage ./pkgs/wmfocus {};
   i3status-rust    = pkgs.callPackage ./pkgs/i3status-rust {};
+
+  # misc
+  alacritty        = pkgs.callPackage ./pkgs/alacritty {
+    inherit (pkgs.xorg) libXcursor libXxf86vm libXi;
+    inherit (pkgs.darwin.apple_sdk.frameworks) AppKit CoreFoundation CoreGraphics CoreServices CoreText Foundation OpenGL;
+  };
 };
 in
   waylandPkgs // { inherit waylandPkgs; }

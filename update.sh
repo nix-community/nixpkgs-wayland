@@ -58,6 +58,9 @@ update "pkgs/wl-clipboard"     "bugaevc"    "wl-clipboard"     "master"
 update "pkgs/wmfocus"          "svenstaro"  "wmfocus"          "master"
 update "pkgs/i3status-rust"    "greshake"   "i3status-rust"    "master"
 
+# misc
+update "pkgs/alacritty"        "jwilm"      "alacritty"        "master"
+
 # update README.md
 set +x
 replace="$(printf "<!--pkgs-->")"

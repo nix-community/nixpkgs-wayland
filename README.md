@@ -35,11 +35,11 @@ This overlay is built and (somewhat) tested against `nixos-unstable`.
 | pkgs/wl-clipboard | [2018-11-13 06:19](https://github.com/bugaevc/wl-clipboard/commits/48c2aed5ed7afe58100751f39e1b9ca05e946570) |
 | pkgs/wmfocus | [2018-11-01 11:17](https://github.com/svenstaro/wmfocus/commits/d6f5ff88b7fb5d2eedde3c5989ae49a656ac5adb) |
 | pkgs/i3status-rust | [2018-11-12 05:55](https://github.com/greshake/i3status-rust/commits/b198b11e4b02b1a3b20fbfca103c35040435ad08) |
+| pkgs/alacritty | [2018-11-14 15:47](https://github.com/jwilm/alacritty/commits/82d0c5ea44f0f8b487c4b9856d50914ed7262fff) |
 <!--pkgs-->
+</details>
 
-</details><br/>
-
-Auto-update script last run: <!--update-->2018-11-14 15:58<!--update-->.
+Auto-update script last run: <!--update-->2018-11-14 16:05<!--update-->.
 
 ## Usage
 
