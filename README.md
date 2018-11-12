@@ -14,14 +14,14 @@ This overlay is built and (somewhat) tested against `nixos-unstable`.
 | pkgs-18.09 | [2018-11-07 17:13](https://github.com/nixos/nixpkgs-channels/commits/a4c4cbb613cc3e15186de0fdb04082fa7e38f6a0) |
 | fmt | [2018-11-08 16:26](https://github.com/fmtlib/fmt/commits/1385050e267d645259d9fb66f016bdb2addb70a6) |
 | wlroots | [2018-11-10 06:38](https://github.com/swaywm/wlroots/commits/3181c4bec06d2fe51da052c0a08c8287725ec900) |
-| sway-beta | [2018-11-10 05:06](https://github.com/swaywm/sway/commits/80a1c340a9c8c8aac5fe4dd7bc1dc15b43fce0dc) |
+| sway-beta | [2018-11-11 13:16](https://github.com/swaywm/sway/commits/ee6b0ce24ae74cfae5d41985cacdff6065c8f534) |
 | slurp | [2018-10-24 12:37](https://github.com/emersion/slurp/commits/0dbd03991462397eb92bb40af712c837c898ebf1) |
 | grim | [2018-10-24 12:39](https://github.com/emersion/grim/commits/61df6f0a9531520c898718874c460826bc7e2b42) |
-| mako | [2018-11-03 07:23](https://github.com/emersion/mako/commits/d1e6585eb5c06f1e05c3ec77230a263d73cc103c) |
+| mako | [2018-11-11 13:05](https://github.com/emersion/mako/commits/ecc483a6a8da89f05d33010f3b49d372a186ae9a) |
 | kanshi | [2018-11-05 02:42](https://github.com/emersion/kanshi/commits/ed21acce0c52f7893c903f46b09b4a3b55e2c198) |
 | wlstream | [2018-07-15 14:10](https://github.com/atomnuker/wlstream/commits/182076a94562b128c3a97ecc53cc68905ea86838) |
 | oguri | [2018-10-28 11:30](https://github.com/vilhalmer/oguri/commits/23bbd965f4744039c1c5a8e1d9604d6b8f6ab75f) |
-| waybar | [2018-11-09 14:02](https://github.com/Alexays/waybar/commits/72226683263327fe22045081b3b9da05b9cd3e27) |
+| waybar | [2018-11-11 04:41](https://github.com/Alexays/waybar/commits/3dc0f7ccf9cbfacf8c5eed13e19320bbd43288e8) |
 | wayfire | [2018-11-09 01:00](https://github.com/WayfireWM/wayfire/commits/7ee5a6524145584b38690bd9a75b23638db4152d) |
 | wf-config | [2018-10-22 00:05](https://github.com/WayfireWM/wf-config/commits/8f7046e6c67d4a277b0793b56ff6535f53997bc5) |
 | redshift-wayland | [2018-11-07 12:03](https://github.com/minus7/redshift/commits/420d0d534c9f03abc4d634a7d3d7629caf29b4b6) |
@@ -32,7 +32,7 @@ This overlay is built and (somewhat) tested against `nixos-unstable`.
 | ripasso | [2018-10-25 16:45](https://github.com/cortex/ripasso/commits/a0e1d18320a17e3d6a1d5fc540591a139bcb63bf) |
 <!--pkgs-->
 
-Auto-update script last run: <!--update-->2018-11-10 17:20<!--update-->.
+Auto-update script last run: <!--update-->2018-11-12 02:32<!--update-->.
 
 Please open an issue if something is out of date.
 
