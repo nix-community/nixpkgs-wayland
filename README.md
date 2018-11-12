@@ -31,10 +31,9 @@ This overlay is built and (somewhat) tested against `nixos-unstable`.
 | waybox | [2018-10-06 13:44](https://github.com/wizbright/waybox/commits/24669f24f6ce41f99088483f5c55c41498a57662) |
 | wmfocus | [2018-11-01 11:17](https://github.com/svenstaro/wmfocus/commits/d6f5ff88b7fb5d2eedde3c5989ae49a656ac5adb) |
 | i3status-rust | [2018-11-09 14:22](https://github.com/greshake/i3status-rust/commits/47cb862c6e1763ae038d79915c2a4c28b073dd8e) |
-| ripasso | [2018-10-25 16:45](https://github.com/cortex/ripasso/commits/a0e1d18320a17e3d6a1d5fc540591a139bcb63bf) |
 <!--pkgs-->
 
-Auto-update script last run: <!--update-->2018-11-12 02:32<!--update-->.
+Auto-update script last run: <!--update-->2018-11-12 03:20<!--update-->.
 
 Please open an issue if something is out of date.
 

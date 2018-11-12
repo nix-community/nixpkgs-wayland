@@ -26,9 +26,6 @@ swaypkgs = {
   # i3-related
   wmfocus          = pkgs.callPackage ./wmfocus {};
   i3status-rust    = pkgs.callPackage ./i3status-rust {};
-
-  # misc
-  ripasso          = self.callPackage ./ripasso {};
 };
 in
   swaypkgs // { inherit swaypkgs; }
