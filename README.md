@@ -42,6 +42,8 @@ Please open an issue if something is out of date.
 There are two ways to use this overlay on NixOS, depending on which
 nixpkgs channel you follow.
 
+You can also use this [with Nix on Ubuntu, there is a full walkthrough](docs/sway-on-ubuntu/README.md).
+
 ### Usage (nixos-unstable)
 
 This usage just utilizes [`overlay` functionality from `nixpkgs`]().
