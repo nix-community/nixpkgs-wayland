@@ -7,6 +7,8 @@ Automated, pre-built packages for Wayland (sway/wlroots) tools for NixOS.
 This overlay is built and (somewhat) tested against `nixos-unstable`.
 (See the usage section for other options if your system is not on `nixos-unstable`.)
 
+(Sister repositories: [nixpkgs-kubernetes](https://github.com/colemickens/nixpkgs-kubernetes), [nixpkgs-colemickens](https://github.com/colemickens/nixpkgs-colemickens))
+
 <!--pkgs-->
 | Attribute Name | Last Upstream Commit Time |
 | -------------- | ------------------------- |
