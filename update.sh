@@ -58,9 +58,6 @@ update "waybox"           "wizbright"  "waybox"           "master"
 update "wmfocus"          "svenstaro"  "wmfocus"          "master"
 update "i3status-rust"    "greshake"   "i3status-rust"    "master"
 
-# misc
-update "ripasso"          "cortex"     "ripasso"          "master"
-
 # update README.md
 set +x
 replace="$(printf "<!--pkgs-->")"
