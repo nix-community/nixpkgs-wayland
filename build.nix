@@ -4,6 +4,6 @@ let
   };
 in
   [
-    pkgs.waylandpkgs
+    pkgs.waylandPkgs
   ]
 

@@ -1,6 +1,6 @@
 self: pkgs:
 let
-waylandpkgs = {
+waylandPkgs = {
   # patched deps
   fmt              = pkgs.callPackage ./pkgs/fmt {};
 
@@ -28,5 +28,5 @@ waylandpkgs = {
   i3status-rust    = pkgs.callPackage ./pkgs/i3status-rust {};
 };
 in
-  waylandpkgs // { inherit waylandpkgs; }
+  waylandPkgs // { inherit waylandPkgs; }
 

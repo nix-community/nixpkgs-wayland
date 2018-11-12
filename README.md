@@ -9,6 +9,10 @@ This overlay is built and (somewhat) tested against `nixos-unstable`.
 
 (Sister repositories: [nixpkgs-kubernetes](https://github.com/colemickens/nixpkgs-kubernetes), [nixpkgs-colemickens](https://github.com/colemickens/nixpkgs-colemickens))
 
+## Packages
+
+<details><summary><em><b>Full list of Packages</b></em></summary>
+
 <!--pkgs-->
 | Attribute Name | Last Upstream Commit Time |
 | -------------- | ------------------------- |
@@ -32,9 +36,9 @@ This overlay is built and (somewhat) tested against `nixos-unstable`.
 | pkgs/i3status-rust | [2018-11-09 14:22](https://github.com/greshake/i3status-rust/commits/47cb862c6e1763ae038d79915c2a4c28b073dd8e) |
 <!--pkgs-->
 
-Auto-update script last run: <!--update-->2018-11-12 03:41<!--update-->.
+</details><br/>
 
-Please open an issue if something is out of date.
+Auto-update script last run: <!--update-->2018-11-12 04:04<!--update-->.
 
 ## Usage
 
@@ -81,10 +85,8 @@ in
   {
     nixpkgs.overlays = [ (self: super: { sway-beta = waylandPkgs.sway-beta; }) ];
     environment.systemPackages =
-      with pkgs; [
-        vim git
-      ] ++
-      (with swaypkgs; [
+      with pkgs; [ vim git ] ++
+      (with waylandPkgs; [
         grim slurp mako wlstream redshift-wayland # essentials
         waybar i3status-rust # optional bars
       ]);
@@ -102,33 +104,15 @@ dbus-launch --exit-with-session $(which sway-beta)
 
 ## Updates
 
-* `./update.sh`
-  * updates `./<pkg>/metadata.nix` with the latest commit+hash for each package.
-  * updates `pkgs-*/metadata.nix` to their respective channels
-
-* `nix-build build.nix` builds all overlay packages with certain revs of `nixpkgs`.
-
+* `./update.sh`:
+  * updates `pkgs/<pkg>/metadata.nix` with the latest commit+hash for each package
+  * updates `nixpkgs/<channel>/metadata.nix` per the upstream channel
+  * calls `nix-build build.nix` to build all packages against `nixos-unstable`
+  * pushes to [nixpkgs-wayland on cachix](https://nixpkgs-wayland.cachix.org)
 
 ## Binary Cache
 
-I'm now publishing these builds to
-[`nixpkgs-wayland` on cachix](https://nixpkgs-wayland.cachix.org).
+Packages are built as described in the section above and are published to cachix.
 
-```
-nix-build build.nix | cachix push nixpkgs-wayland
-```
-
-The update script `./update.sh` also does this automatically.
-
-### Usage
-
-To use the cache:
-
-```bash
-# install cachix
-nix-env -iA cachix -f https://github.com/NixOS/nixpkgs/tarball/889c72032f8595fcd7542c6032c208f6b8033db6
-
-# trust and utilize the cache for this repo
-cachix use nixpkgs-wayland
-```
+See usage instructions at [`nixpkgs-wayland` on cachix](https://nixpkgs-wayland.cachix.org).
 
