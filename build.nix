@@ -3,7 +3,5 @@ let
     overlays = [ (import ./default.nix) ];
   };
 in
-  [
-    pkgs.waylandPkgs
-  ]
+  pkgs.waylandPkgs
 

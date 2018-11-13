@@ -84,6 +84,7 @@ let
 in
   {
     nixpkgs.overlays = [ (self: super: { sway-beta = waylandPkgs.sway-beta; }) ];
+    hardware.opengl.enable = true;
     environment.systemPackages =
       with pkgs; [ vim git ] ++
       (with waylandPkgs; [
