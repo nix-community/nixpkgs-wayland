@@ -18,8 +18,8 @@ This overlay is built and (somewhat) tested against `nixos-unstable`.
 | -------------- | ------------------------- |
 | nixpkgs/nixos-unstable | [2018-11-06 15:05](https://github.com/nixos/nixpkgs-channels/commits/6141939d6e0a77c84905efd560c03c3032164ef1) |
 | pkgs/fmt | [2018-11-08 16:26](https://github.com/fmtlib/fmt/commits/1385050e267d645259d9fb66f016bdb2addb70a6) |
-| pkgs/wlroots | [2018-11-10 06:38](https://github.com/swaywm/wlroots/commits/3181c4bec06d2fe51da052c0a08c8287725ec900) |
-| pkgs/sway-beta | [2018-11-11 13:16](https://github.com/swaywm/sway/commits/ee6b0ce24ae74cfae5d41985cacdff6065c8f534) |
+| pkgs/wlroots | [2018-11-12 13:15](https://github.com/swaywm/wlroots/commits/4aff85cc8e6f90e60522a7a830424e41a6f06b77) |
+| pkgs/sway-beta | [2018-11-12 17:35](https://github.com/swaywm/sway/commits/27b930df24b59fdbc8996f86e702849e8a3678b1) |
 | pkgs/slurp | [2018-10-24 12:37](https://github.com/emersion/slurp/commits/0dbd03991462397eb92bb40af712c837c898ebf1) |
 | pkgs/grim | [2018-10-24 12:39](https://github.com/emersion/grim/commits/61df6f0a9531520c898718874c460826bc7e2b42) |
 | pkgs/mako | [2018-11-11 13:05](https://github.com/emersion/mako/commits/ecc483a6a8da89f05d33010f3b49d372a186ae9a) |
@@ -33,12 +33,12 @@ This overlay is built and (somewhat) tested against `nixos-unstable`.
 | pkgs/bspwc | [2018-10-19 05:58](https://github.com/Bl4ckb0ne/bspwc/commits/6a8ba7bc17146544f6e0446f473ff290e77e3256) |
 | pkgs/waybox | [2018-10-06 13:44](https://github.com/wizbright/waybox/commits/24669f24f6ce41f99088483f5c55c41498a57662) |
 | pkgs/wmfocus | [2018-11-01 11:17](https://github.com/svenstaro/wmfocus/commits/d6f5ff88b7fb5d2eedde3c5989ae49a656ac5adb) |
-| pkgs/i3status-rust | [2018-11-09 14:22](https://github.com/greshake/i3status-rust/commits/47cb862c6e1763ae038d79915c2a4c28b073dd8e) |
+| pkgs/i3status-rust | [2018-11-12 05:55](https://github.com/greshake/i3status-rust/commits/b198b11e4b02b1a3b20fbfca103c35040435ad08) |
 <!--pkgs-->
 
 </details><br/>
 
-Auto-update script last run: <!--update-->2018-11-12 04:04<!--update-->.
+Auto-update script last run: <!--update-->2018-11-12 21:56<!--update-->.
 
 ## Usage
 
