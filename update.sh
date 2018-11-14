@@ -52,6 +52,7 @@ update "pkgs/wf-config"        "WayfireWM"  "wf-config"        "master"
 update "pkgs/redshift-wayland" "minus7"     "redshift"         "wayland"
 update "pkgs/bspwc"            "Bl4ckb0ne"  "bspwc"            "master"
 update "pkgs/waybox"           "wizbright"  "waybox"           "master"
+update "pkgs/wl-clipboard"     "bugaevc"    "wl-clipboard"     "master"
 
 # i3-related
 update "pkgs/wmfocus"          "svenstaro"  "wmfocus"          "master"

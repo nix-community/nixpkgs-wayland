@@ -32,13 +32,14 @@ This overlay is built and (somewhat) tested against `nixos-unstable`.
 | pkgs/redshift-wayland | [2018-11-07 12:03](https://github.com/minus7/redshift/commits/420d0d534c9f03abc4d634a7d3d7629caf29b4b6) |
 | pkgs/bspwc | [2018-10-19 05:58](https://github.com/Bl4ckb0ne/bspwc/commits/6a8ba7bc17146544f6e0446f473ff290e77e3256) |
 | pkgs/waybox | [2018-10-06 13:44](https://github.com/wizbright/waybox/commits/24669f24f6ce41f99088483f5c55c41498a57662) |
+| pkgs/wl-clipboard | [2018-11-13 06:19](https://github.com/bugaevc/wl-clipboard/commits/48c2aed5ed7afe58100751f39e1b9ca05e946570) |
 | pkgs/wmfocus | [2018-11-01 11:17](https://github.com/svenstaro/wmfocus/commits/d6f5ff88b7fb5d2eedde3c5989ae49a656ac5adb) |
 | pkgs/i3status-rust | [2018-11-12 05:55](https://github.com/greshake/i3status-rust/commits/b198b11e4b02b1a3b20fbfca103c35040435ad08) |
 <!--pkgs-->
 
 </details><br/>
 
-Auto-update script last run: <!--update-->2018-11-14 15:27<!--update-->.
+Auto-update script last run: <!--update-->2018-11-14 15:58<!--update-->.
 
 ## Usage
 
