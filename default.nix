@@ -22,6 +22,7 @@ waylandPkgs = {
   };
   bspwc            = pkgs.callPackage ./pkgs/bspwc {};
   waybox           = pkgs.callPackage ./pkgs/waybox {};
+  wl-clipboard     = pkgs.callPackage ./pkgs/wl-clipboard {};
 
   # i3-related
   wmfocus          = pkgs.callPackage ./pkgs/wmfocus {};
