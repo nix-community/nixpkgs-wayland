@@ -17,16 +17,16 @@ This overlay is built and (somewhat) tested against `nixos-unstable`.
 | Attribute Name | Last Upstream Commit Time |
 | -------------- | ------------------------- |
 | nixpkgs/nixos-unstable | [2018-11-06 15:05](https://github.com/nixos/nixpkgs-channels/commits/6141939d6e0a77c84905efd560c03c3032164ef1) |
-| pkgs/fmt | [2018-11-08 16:26](https://github.com/fmtlib/fmt/commits/1385050e267d645259d9fb66f016bdb2addb70a6) |
-| pkgs/wlroots | [2018-11-12 22:53](https://github.com/swaywm/wlroots/commits/df7d4a71fb52d47279a93ee398220ff63d916ab7) |
-| pkgs/sway-beta | [2018-11-12 17:35](https://github.com/swaywm/sway/commits/27b930df24b59fdbc8996f86e702849e8a3678b1) |
-| pkgs/slurp | [2018-10-24 12:37](https://github.com/emersion/slurp/commits/0dbd03991462397eb92bb40af712c837c898ebf1) |
-| pkgs/grim | [2018-10-24 12:39](https://github.com/emersion/grim/commits/61df6f0a9531520c898718874c460826bc7e2b42) |
-| pkgs/mako | [2018-11-11 13:05](https://github.com/emersion/mako/commits/ecc483a6a8da89f05d33010f3b49d372a186ae9a) |
+| pkgs/fmt | [2018-11-14 12:07](https://github.com/fmtlib/fmt/commits/f2ee988105b950558ce996cc7cb0ce0972e6d974) |
+| pkgs/wlroots | [2018-11-13 11:47](https://github.com/swaywm/wlroots/commits/040d62de0076a349612b7c2c28c5dc5e93bb9760) |
+| pkgs/sway-beta | [2018-11-13 11:59](https://github.com/swaywm/sway/commits/47cca240e26992782622a3dc360ed3afec83b47f) |
+| pkgs/slurp | [2018-11-14 09:48](https://github.com/emersion/slurp/commits/15b9fe5ade241ab4fbe2702007698425a516b66f) |
+| pkgs/grim | [2018-11-14 09:38](https://github.com/emersion/grim/commits/c50a34720cf3d1ab90aba20de800be34e0530e0a) |
+| pkgs/mako | [2018-11-14 09:54](https://github.com/emersion/mako/commits/ce1978865935dbff1b3bf3065ff607a4178fe57b) |
 | pkgs/kanshi | [2018-11-05 02:42](https://github.com/emersion/kanshi/commits/ed21acce0c52f7893c903f46b09b4a3b55e2c198) |
 | pkgs/wlstream | [2018-07-15 14:10](https://github.com/atomnuker/wlstream/commits/182076a94562b128c3a97ecc53cc68905ea86838) |
 | pkgs/oguri | [2018-10-28 11:30](https://github.com/vilhalmer/oguri/commits/23bbd965f4744039c1c5a8e1d9604d6b8f6ab75f) |
-| pkgs/waybar | [2018-11-11 04:41](https://github.com/Alexays/waybar/commits/3dc0f7ccf9cbfacf8c5eed13e19320bbd43288e8) |
+| pkgs/waybar | [2018-11-14 10:14](https://github.com/Alexays/waybar/commits/1665003d231f6a5b7c53d5020758b1f394ec35aa) |
 | pkgs/wayfire | [2018-11-09 01:00](https://github.com/WayfireWM/wayfire/commits/7ee5a6524145584b38690bd9a75b23638db4152d) |
 | pkgs/wf-config | [2018-10-22 00:05](https://github.com/WayfireWM/wf-config/commits/8f7046e6c67d4a277b0793b56ff6535f53997bc5) |
 | pkgs/redshift-wayland | [2018-11-07 12:03](https://github.com/minus7/redshift/commits/420d0d534c9f03abc4d634a7d3d7629caf29b4b6) |
@@ -38,7 +38,7 @@ This overlay is built and (somewhat) tested against `nixos-unstable`.
 
 </details><br/>
 
-Auto-update script last run: <!--update-->2018-11-12 23:48<!--update-->.
+Auto-update script last run: <!--update-->2018-11-14 15:27<!--update-->.
 
 ## Usage
 
