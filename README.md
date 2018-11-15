@@ -4,8 +4,7 @@
 
 Automated, pre-built packages for Wayland (sway/wlroots) tools for NixOS.
 
-This overlay is built and (somewhat) tested against `nixos-unstable`.
-(See the usage section for other options if your system is not on `nixos-unstable`.)
+Packages from this overlay are regularly updated and built against `nixos-unstable` and `nixpkgs-unstable`.
 
 (Sister repositories: [nixpkgs-kubernetes](https://github.com/colemickens/nixpkgs-kubernetes), [nixpkgs-colemickens](https://github.com/colemickens/nixpkgs-colemickens))
 
@@ -38,14 +37,13 @@ This overlay is built and (somewhat) tested against `nixos-unstable`.
 | pkgs/i3status-rust | [2018-11-12 05:55](https://github.com/greshake/i3status-rust/commits/b198b11e4b02b1a3b20fbfca103c35040435ad08) |
 <!--pkgs-->
 
-</details><br/>
+</details>
 
 ## Usage
 
-There are two ways to use this overlay on NixOS, depending on which
-nixpkgs channel you follow.
+Continue reading for usage instructions on NixOS (only the `nixos-unstable` is supported!).
 
-You can also use this [with Nix on Ubuntu, there is a full walkthrough](docs/sway-on-ubuntu/README.md).
+You can also use this [with Nix on Ubuntu. Please see the full walkthrough](docs/sway-on-ubuntu/).
 
 ### Usage (nixos-unstable)
 
@@ -70,45 +68,13 @@ in
   }
 ```
 
-### Usage (nixos-18.09)
-
-Rather than maintaining an unknown number of backports from nixos-unstable to here
-for supporting `nixos-18.09` users, these instructions will pull in select packages
-from `nixos-unstable + this overlay` to your environment.
-
-```nix
-{ config, lib, pkgs, ... }:
-let
-  url = "https://github.com/colemickens/nixpkgs-wayland/archive/master.tar.gz";
-  waylandPkgs = import "${builtins.fetchTarball url}/build.nix";
-in
-  {
-    nixpkgs.overlays = [ (self: super: { sway-beta = waylandPkgs.sway-beta; }) ];
-    hardware.opengl.enable = true;
-    environment.systemPackages =
-      with pkgs; [ vim git ] ++
-      (with waylandPkgs; [
-        grim slurp mako wlstream redshift-wayland # essentials
-        waybar i3status-rust # optional bars
-      ]);
-  }
-```
-
-Note: The `sway-beta` module is not available to you. As a result, you need to manually
-start sway with `dbus-launch` and you may have issues with `swaylock` due
-to the missing security functionality.
-
-```
-dbus-launch --exit-with-session $(which sway-beta)
-```
-
-
 ## Updates
 
 * `./update.sh`:
   * updates `pkgs/<pkg>/metadata.nix` with the latest commit+hash for each package
   * updates `nixpkgs/<channel>/metadata.nix` per the upstream channel
   * calls `nix-build build.nix` to build all packages against `nixos-unstable`
+  * calls `nix-build build.nixpkgs.nix` to build all packages against `nixpkgs-unstable`
   * pushes to [nixpkgs-wayland on cachix](https://nixpkgs-wayland.cachix.org)
 
 ## Binary Cache
