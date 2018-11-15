@@ -73,10 +73,6 @@ rg --multiline '(?s)(.*)<!--pkgs-->(.*)<!--pkgs-->(.*)' "README.md" \
   --replace "\$1${replace}\$3" \
     > README2.md; mv README2.md README.md
 
-rg --multiline '(?s)(.*)<!--update-->(.*)<!--update-->(.*)' "README.md" \
-  --replace "\$1<!--update-->$(date '+%Y-%m-%d %H:%M')<!--update-->\$3" \
-    > README2.md; mv README2.md README.md
-
 # build all and push to cachix
 nix-build --no-out-link --keep-going build.nix | cachix push "${cachixremote}"
 
