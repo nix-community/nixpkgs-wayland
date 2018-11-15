@@ -35,6 +35,7 @@ function update() {
 
 # update <attr_name> <repo_owner> <repo_name> <repo_rev>
 update "nixpkgs/nixos-unstable" "nixos" "nixpkgs-channels" "nixos-unstable"
+update "nixpkgs/nixpkgs-unstable" "nixos" "nixpkgs-channels" "nixpkgs-unstable"
 
 update "pkgs/fmt"              "fmtlib"     "fmt"              "master"
 
@@ -75,4 +76,5 @@ rg --multiline '(?s)(.*)<!--pkgs-->(.*)<!--pkgs-->(.*)' "README.md" \
 
 # build all and push to cachix
 nix-build --no-out-link --keep-going build.nix | cachix push "${cachixremote}"
+nix-build --no-out-link --keep-going build.nixpkgs.nix | cachix push "${cachixremote}"
 
