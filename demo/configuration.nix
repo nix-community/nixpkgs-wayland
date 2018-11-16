@@ -23,5 +23,15 @@
   };
 
   services.xserver.enable = false;
+
+  services.mingetty.helpLine = ''
+
+       Welcome to the Sway demo
+
+    login: demo
+    password: demo1234
+
+    Once logged-in, type `sway` to start the desktop environment.
+  '';
 }
 

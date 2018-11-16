@@ -48,17 +48,17 @@ interval = 5
 # resolution = true
 # interval = 2
 
-[[block]]
-block = "backlight"
-device = "intel_backlight"
+#[[block]]
+#block = "backlight"
+#device = "intel_backlight"
 
 [[block]]
 block = "sound"
 on_click = "pavucontrol"
 
-[[block]]
-block = "battery"
-interval = 10
+#[[block]]
+#block = "battery"
+#interval = 10
 
 [[block]]
 block = "time"

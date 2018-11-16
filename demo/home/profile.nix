@@ -20,6 +20,8 @@
   programs.termite.enable = true;
   programs.termite.scrollbackLines = 10000;
 
+  programs.firefox.enable = true;
+
   # FIXME: doesn't work yet
   xsession.enable = true;
   xsession.windowManager.command = "sway";
