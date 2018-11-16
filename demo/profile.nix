@@ -10,7 +10,8 @@ in
 
   nixpkgs.overlays = [ (import ../.) ];
 
-  networking.networkmanager.enable = true;
+  # When this is enabled, the QEMU VM goes blank after boot
+  #networking.networkmanager.enable = true;
 
   fonts.fonts = with pkgs; [
     dejavu_fonts    # just a basic good fond
@@ -46,9 +47,6 @@ in
 
   # manage those with home-manager
   programs.sway-beta.extraPackages = [];
-
-  # Sway doesn't support login managers
-  services.xserver.enable = false;
 
   # Add the required groups for the user to get access
   users.extraUsers."${user}" = {

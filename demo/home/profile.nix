@@ -26,19 +26,15 @@
 
   xdg.enable = true;
   xdg.configFile."sway/config" = {
-    source = ./sway-config;
+    source = pkgs.substituteAll {
+      name = "sway-config";
+      src = ./sway-config;
+      wallpaper = ./wallpaper.jpg;
+      i3status = ./i3status-rs.toml;
+    };
     onChange = ''
       echo "Reloading sway"
       #FIXME: swaymsg reload
-    '';
-  };
-
-  xdg.configFile."sway/status.toml" = {
-    source = ./sway-status.toml;
-    onChange = ''
-      echo "Reloading sway"
-      #FIXME: unable to retrive socket path
-      #swaymsg reload
     '';
   };
 

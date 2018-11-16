@@ -1,6 +1,6 @@
 { ... }: {
   imports = [
-    #(import ./profile.nix { user = "demo"; })
+    (import ./profile.nix { user = "demo"; })
   ];
 
   nix.trustedUsers = [ "root" "@wheel" ];

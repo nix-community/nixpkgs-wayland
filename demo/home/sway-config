@@ -24,7 +24,7 @@ set $menu dmenu_path | dmenu | xargs swaymsg exec
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in __DATADIR__/backgrounds/sway/)
-output * bg ~/Pictures/Wallpapers/falcon-heavy-boosters-wallpaper-2.jpg fill
+output * bg @wallpaper@ fill
 
 output eDP-1 scale 1.5
 
@@ -40,7 +40,7 @@ output eDP-1 scale 1.5
 # Example configuration:
 #
 exec swayidle \
-    timeout 300 'swaylock -c 000000' \
+    timeout 500 'swaylock -c 000000' \
     timeout 600 'swaymsg "output * dpms off"' \
        resume 'swaymsg "output * dpms on"' \
     before-sleep 'swaylock -c 000000'
@@ -230,7 +230,7 @@ bar {
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
     #status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
-    status_command i3status-rs ~/.config/sway/status.toml
+    status_command i3status-rs @i3status@
 
     colors {
         statusline #ffffff
