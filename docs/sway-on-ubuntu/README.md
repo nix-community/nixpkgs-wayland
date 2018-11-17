@@ -1,13 +1,8 @@
-# "sway-on-ubuntu"
-
-"sway-on-ubuntu" is a bad name, but so is "sway-on-ubuntu-via-nixpkgs".
-
-**!!**: *Please do not file bugs against Sway when using these packages.*
+# Sway on non-NixOS Distributions
 
 ## Walkthrough - NixGL + Sway on Ubuntu
 
-This guide will walk you through running `sway` on Ubuntu via `nix` and `nixpkgs`.
-In theory, this should work with a number of Ubuntu versions, but was tested with 18.10 under KVM.
+This guide will walk you through running `sway` on Ubuntu 18.10 via `nix` and `nixpkgs`.
 
 At a high-level:
 1. Install `nix`
@@ -19,10 +14,19 @@ At a high-level:
 
 ### Quick Version
 
-If you'd like the quick version, you can run `./execute` (aka `/docs/sway-on-ubuntu/execute.sh`)
-and then skip to the last step ("Run Sway").
+If you'd like the quick version, you can use the quickshot `execute.sh` script in this directory:
+```
+cd /tmp
+wget https://raw.githubusercontent.com/colemickens/nixpkgs-wayland/master/docs/sway-on-ubuntu/execute.sh
+chmod +x execute.sh
+./execute.sh
+```
 
-### Full Version
+[![Quick Steps Video on YouTube](https://img.youtube.com/vi/Sri_24TJtFI/0.jpg)](https://www.youtube.com/watch?v=Sri_24TJtFI)
+
+You can then skip to the end.
+
+### Detailed Version
 
 #### Install Nix
 
@@ -70,7 +74,8 @@ assuming enough RAM, CPU, etc.
 
 ```bash
 mkdir -p $HOME/.config/nixpkgs/overlays
-git clone https://github.com/colemickens/nixpkgs-wayland.git $HOME/.config/nixpkgs/overlays/nixpkgs-wayland
+git clone https://github.com/colemickens/nixpkgs-wayland.git \
+  $HOME/.config/nixpkgs/overlays/nixpkgs-wayland
 ```
 
 #### Install NixGL and Sway
@@ -83,25 +88,25 @@ the use of a wrapper. I've added some summary details to the NixOS Wiki:
 
 (Change the attribute to be installed per your GL vendor.)
 ```bash
-nix-env -iE '(import (builtins.fetchurl { url = "https://raw.githubusercontent.com/guibou/nixGL/master/default.nix"; })).nixGLIntel
+curl -L --fail https://raw.githubusercontent.com/guibou/nixGL/master/default.nix > /tmp/nixgl.nix
+```
+**Install Sway and related tools**
+```bash
+nix-env -iA nixGLIntel -f /tmp/nixgl.nix
+nix-env -iA nixpkgs.sway-beta nixpkgs.dmenu nixpkgs.mako nixpkgs.slurp nixpkgs.grim
 ```
 
-**Install Sway and a config file**
+This will install `sway-beta` the default configured channel for the Nix install you
+performed at the beginning, which is named `nixpkgs`. In our case though, `sway-beta`
+is overriden to a newer version by use of this overlay.
 
+**Install a demo Sway config**
 Install the default sway config:
 ```bash
-nix-env -iA nixpkgs.sway-beta nixpkgs.dmenu
-```
-
-This will install `sway-beta` from `nixpkgs` (the channel that Nix is configured to follow out
-of the box). In this case, `sway-beta` is actually a newer version coming from this overlay.
-
-```bash
-mkdir -p $HOME/.config/sway/config
+mkdir -p $HOME/.config/sway
 wget 'https://raw.githubusercontent.com/swaywm/sway/master/config.in' \
   -O $HOME/.config/sway/config
 
-# accomodate nested sway, remove missing BG, set $term
 sed -i 's|Mod4|Mod1|g' ~/.config/sway/config
 sed -i '/Sway_Wallpaper_Blue_1920x1080.png/d' ~/.config/sway/config
 sed -i 's|urxvt|gnome-terminal|g' ~/.config/sway/config
@@ -112,8 +117,11 @@ sed -i 's|urxvt|gnome-terminal|g' ~/.config/sway/config
 Let's drop to a TTY and try sway. **Note, this will stop GDM and your current session!**
 
 ```bash
-# from GNOME
+# stop the graphical session
 sudo systemctl isolate multi-user.target
+
+# switch to another TTY
+# ctrl+alt+f3
 
 # on TTY
 nixGLIntel sway
