@@ -62,8 +62,23 @@ in
     nixpkgs.overlays = [ waylandOverlay ];
     programs.sway-beta.enable = true;
     programs.sway-beta.extraPackages = with pkgs; [
-      grim slurp mako wlstream redshift-wayland # essentials
-      waybar i3status-rust # optional bars
+      waybar # polybar-alike
+      i3status-rust # simpler bar written in Rust
+
+      grim     # screen image capture
+      slurp    # screen are selection tool
+      mako     # notification daemon
+      wlstream # screen recorder
+      oguri    # animated background utility
+      wmfocus  # fast window picker utility
+      kanshi   # dynamic display configuration helper
+      redshift-wayland # patched to work with wayland gamma protocol
+    ];
+    environment.systemPackages = with pkgs; [
+      # other compositors/window-managers
+      wayfire  # 3D wayland compositor
+      waybox   # An openbox clone on Wayland
+      bspwc    # Wayland compositor based on BSPWM
     ];
   }
 ```
