@@ -50,7 +50,7 @@ You can also use this [with Nix on Ubuntu. Please see the full walkthrough](docs
 This usage just utilizes [`overlay` functionality from `nixpkgs`]().
 
 Note that when using the overlay, the module will automatically reference the correct
-`sway-beta` package, just as the environment packages come from `pkg`.
+`sway-beta` package since the newer package is overlayed ontop of `pkgs`.
 
 ```nix
 { config, lib, pkgs, ... }:
@@ -67,6 +67,11 @@ in
     ];
   }
 ```
+
+### Quick Tips: `sway`
+
+* Usage of display managers with `sway` is not supported upstream, you should run it from a TTY.
+* You will likely want a default config file to place at `$HOME/.config/sway/config`. You can use the upstream default as a starting point: https://github.com/swaywm/sway/blob/master/config.in
 
 ## Updates
 
