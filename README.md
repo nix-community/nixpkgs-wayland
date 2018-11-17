@@ -15,15 +15,15 @@ Packages from this overlay are regularly updated and built against `nixos-unstab
 <!--pkgs-->
 | Attribute Name | Last Upstream Commit Time |
 | -------------- | ------------------------- |
-| nixpkgs/nixos-unstable | [2018-11-06 15:05](https://github.com/nixos/nixpkgs-channels/commits/6141939d6e0a77c84905efd560c03c3032164ef1) |
+| nixpkgs/nixos-unstable | [2018-11-17 02:18](https://github.com/nixos/nixpkgs-channels/commits/80738ed9dc0ce48d7796baed5364eef8072c794d) |
 | nixpkgs/nixpkgs-unstable | [2018-11-13 13:30](https://github.com/nixos/nixpkgs-channels/commits/0249f7d48afcab7b8e4e73c9444718f28f5f68a2) |
-| pkgs/fmt | [2018-11-14 16:25](https://github.com/fmtlib/fmt/commits/19e008876ba1c678d01c94f624d317920f0dbccf) |
+| pkgs/fmt | [2018-11-17 08:38](https://github.com/fmtlib/fmt/commits/16b78ee629b81425df96dc4c1a6ccf6ecf6c1fbe) |
 | pkgs/wlroots | [2018-11-13 11:47](https://github.com/swaywm/wlroots/commits/040d62de0076a349612b7c2c28c5dc5e93bb9760) |
 | pkgs/sway-beta | [2018-11-17 08:04](https://github.com/swaywm/sway/commits/eda3bfeed5097c71634332bfe998188b028abf02) |
 | pkgs/slurp | [2018-11-14 09:48](https://github.com/emersion/slurp/commits/15b9fe5ade241ab4fbe2702007698425a516b66f) |
 | pkgs/grim | [2018-11-16 05:47](https://github.com/emersion/grim/commits/bced8c88165bd15cf97d3b55a9241b0a6ee1fe3c) |
 | pkgs/mako | [2018-11-14 09:54](https://github.com/emersion/mako/commits/ce1978865935dbff1b3bf3065ff607a4178fe57b) |
-| pkgs/kanshi | [2018-11-05 02:42](https://github.com/emersion/kanshi/commits/ed21acce0c52f7893c903f46b09b4a3b55e2c198) |
+| pkgs/kanshi | [2018-11-17 15:15](https://github.com/emersion/kanshi/commits/1d3f30124358283287bd77dda46bac9d36e8a74f) |
 | pkgs/wlstream | [2018-07-15 14:10](https://github.com/atomnuker/wlstream/commits/182076a94562b128c3a97ecc53cc68905ea86838) |
 | pkgs/oguri | [2018-10-28 11:30](https://github.com/vilhalmer/oguri/commits/23bbd965f4744039c1c5a8e1d9604d6b8f6ab75f) |
 | pkgs/waybar | [2018-11-16 03:01](https://github.com/Alexays/waybar/commits/69fceb1c92b537176ca6e88716b126f97284dfa3) |
