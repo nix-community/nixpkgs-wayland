@@ -41,7 +41,7 @@ Packages from this overlay are regularly updated and built against `nixos-unstab
 
 ## Usage
 
-Continue reading for usage instructions on NixOS (only the `nixos-unstable` is supported!).
+Continue reading for usage instructions on NixOS (only the `nixos-unstable` channel is supported!).
 
 You can also use this [with Nix on Ubuntu. Please see the full walkthrough](docs/sway-on-ubuntu/).
 
