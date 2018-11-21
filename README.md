@@ -16,18 +16,18 @@ Packages from this overlay are regularly updated and built against `nixos-unstab
 | Attribute Name | Last Upstream Commit Time |
 | -------------- | ------------------------- |
 | nixpkgs/nixos-unstable | [2018-11-17 02:18](https://github.com/nixos/nixpkgs-channels/commits/80738ed9dc0ce48d7796baed5364eef8072c794d) |
-| nixpkgs/nixpkgs-unstable | [2018-11-13 13:30](https://github.com/nixos/nixpkgs-channels/commits/0249f7d48afcab7b8e4e73c9444718f28f5f68a2) |
-| pkgs/fmt | [2018-11-17 08:38](https://github.com/fmtlib/fmt/commits/16b78ee629b81425df96dc4c1a6ccf6ecf6c1fbe) |
+| nixpkgs/nixpkgs-unstable | [2018-11-17 17:42](https://github.com/nixos/nixpkgs-channels/commits/5ba0796bf2a82fd77ca14f7851321cb7fe880f27) |
+| pkgs/fmt | [2018-11-20 15:43](https://github.com/fmtlib/fmt/commits/b7b8548559fb6af7d3c385c16d5c702e70d06e52) |
 | pkgs/wlroots | [2018-11-13 11:47](https://github.com/swaywm/wlroots/commits/040d62de0076a349612b7c2c28c5dc5e93bb9760) |
-| pkgs/sway-beta | [2018-11-17 08:04](https://github.com/swaywm/sway/commits/eda3bfeed5097c71634332bfe998188b028abf02) |
+| pkgs/sway-beta | [2018-11-20 13:53](https://github.com/swaywm/sway/commits/cecf00b924a76feb503d58113462acb4e14e53bf) |
 | pkgs/slurp | [2018-11-14 09:48](https://github.com/emersion/slurp/commits/15b9fe5ade241ab4fbe2702007698425a516b66f) |
 | pkgs/grim | [2018-11-16 05:47](https://github.com/emersion/grim/commits/bced8c88165bd15cf97d3b55a9241b0a6ee1fe3c) |
 | pkgs/mako | [2018-11-14 09:54](https://github.com/emersion/mako/commits/ce1978865935dbff1b3bf3065ff607a4178fe57b) |
-| pkgs/kanshi | [2018-11-17 15:15](https://github.com/emersion/kanshi/commits/1d3f30124358283287bd77dda46bac9d36e8a74f) |
+| pkgs/kanshi | [2018-11-18 02:39](https://github.com/emersion/kanshi/commits/02bd8c270638b3ca0d77c72f744c10a5c70aeb11) |
 | pkgs/wlstream | [2018-07-15 14:10](https://github.com/atomnuker/wlstream/commits/182076a94562b128c3a97ecc53cc68905ea86838) |
 | pkgs/oguri | [2018-10-28 11:30](https://github.com/vilhalmer/oguri/commits/23bbd965f4744039c1c5a8e1d9604d6b8f6ab75f) |
-| pkgs/waybar | [2018-11-16 03:01](https://github.com/Alexays/waybar/commits/69fceb1c92b537176ca6e88716b126f97284dfa3) |
-| pkgs/wayfire | [2018-11-17 05:20](https://github.com/WayfireWM/wayfire/commits/fb413e2c07eb04e84555fa4c0bca09a9fec71817) |
+| pkgs/waybar | [2018-11-20 14:24](https://github.com/Alexays/waybar/commits/b3559328f1a503a05d22cc2b1bbe0ca489862b00) |
+| pkgs/wayfire | [2018-11-20 13:17](https://github.com/WayfireWM/wayfire/commits/b0d5870183a20f22d30a153ebf0af1ac6662ba54) |
 | pkgs/wf-config | [2018-10-22 00:05](https://github.com/WayfireWM/wf-config/commits/8f7046e6c67d4a277b0793b56ff6535f53997bc5) |
 | pkgs/redshift-wayland | [2018-11-07 12:03](https://github.com/minus7/redshift/commits/420d0d534c9f03abc4d634a7d3d7629caf29b4b6) |
 | pkgs/bspwc | [2018-10-19 05:58](https://github.com/Bl4ckb0ne/bspwc/commits/6a8ba7bc17146544f6e0446f473ff290e77e3256) |
