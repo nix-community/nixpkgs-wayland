@@ -16,17 +16,17 @@ Packages from this overlay are regularly updated and built against `nixos-unstab
 | Attribute Name | Last Upstream Commit Time |
 | -------------- | ------------------------- |
 | nixpkgs/nixos-unstable | [2018-11-17 02:18](https://github.com/nixos/nixpkgs-channels/commits/80738ed9dc0ce48d7796baed5364eef8072c794d) |
-| nixpkgs/nixpkgs-unstable | [2018-11-17 17:42](https://github.com/nixos/nixpkgs-channels/commits/5ba0796bf2a82fd77ca14f7851321cb7fe880f27) |
-| pkgs/fmt | [2018-11-20 15:43](https://github.com/fmtlib/fmt/commits/b7b8548559fb6af7d3c385c16d5c702e70d06e52) |
-| pkgs/wlroots | [2018-11-13 11:47](https://github.com/swaywm/wlroots/commits/040d62de0076a349612b7c2c28c5dc5e93bb9760) |
-| pkgs/sway-beta | [2018-11-20 13:53](https://github.com/swaywm/sway/commits/cecf00b924a76feb503d58113462acb4e14e53bf) |
-| pkgs/slurp | [2018-11-14 09:48](https://github.com/emersion/slurp/commits/15b9fe5ade241ab4fbe2702007698425a516b66f) |
-| pkgs/grim | [2018-11-16 05:47](https://github.com/emersion/grim/commits/bced8c88165bd15cf97d3b55a9241b0a6ee1fe3c) |
+| nixpkgs/nixpkgs-unstable | [2018-11-19 06:23](https://github.com/nixos/nixpkgs-channels/commits/3ae0407d3c9dbb7cdf049b69ebb32e62c39357e7) |
+| pkgs/fmt | [2018-11-22 13:57](https://github.com/fmtlib/fmt/commits/e37d6a9840d504e3977ea193411decb4a3529d7d) |
+| pkgs/wlroots | [2018-11-22 10:17](https://github.com/swaywm/wlroots/commits/c70b8f64b7f1ea0a603517c7e6852ef3743a483a) |
+| pkgs/sway-beta | [2018-11-22 00:16](https://github.com/swaywm/sway/commits/77554f545e1b386ae0f4896bdf4c817524a15e60) |
+| pkgs/slurp | [2018-11-21 23:50](https://github.com/emersion/slurp/commits/95d8ec7e6b706961ffba3705033a9f57636aa65c) |
+| pkgs/grim | [2018-11-21 23:44](https://github.com/emersion/grim/commits/9c2e630da91227f2d315381bcadee1116cb90229) |
 | pkgs/mako | [2018-11-14 09:54](https://github.com/emersion/mako/commits/ce1978865935dbff1b3bf3065ff607a4178fe57b) |
 | pkgs/kanshi | [2018-11-18 02:39](https://github.com/emersion/kanshi/commits/02bd8c270638b3ca0d77c72f744c10a5c70aeb11) |
 | pkgs/wlstream | [2018-07-15 14:10](https://github.com/atomnuker/wlstream/commits/182076a94562b128c3a97ecc53cc68905ea86838) |
 | pkgs/oguri | [2018-10-28 11:30](https://github.com/vilhalmer/oguri/commits/23bbd965f4744039c1c5a8e1d9604d6b8f6ab75f) |
-| pkgs/waybar | [2018-11-20 14:24](https://github.com/Alexays/waybar/commits/b3559328f1a503a05d22cc2b1bbe0ca489862b00) |
+| pkgs/waybar | [2018-11-22 07:50](https://github.com/Alexays/waybar/commits/8db94f7efda7ed305fb54f2e0a0cb7f0a63803a0) |
 | pkgs/wayfire | [2018-11-20 13:17](https://github.com/WayfireWM/wayfire/commits/b0d5870183a20f22d30a153ebf0af1ac6662ba54) |
 | pkgs/wf-config | [2018-10-22 00:05](https://github.com/WayfireWM/wf-config/commits/8f7046e6c67d4a277b0793b56ff6535f53997bc5) |
 | pkgs/redshift-wayland | [2018-11-07 12:03](https://github.com/minus7/redshift/commits/420d0d534c9f03abc4d634a7d3d7629caf29b4b6) |
@@ -34,7 +34,7 @@ Packages from this overlay are regularly updated and built against `nixos-unstab
 | pkgs/waybox | [2018-10-06 13:44](https://github.com/wizbright/waybox/commits/24669f24f6ce41f99088483f5c55c41498a57662) |
 | pkgs/wl-clipboard | [2018-11-13 06:19](https://github.com/bugaevc/wl-clipboard/commits/48c2aed5ed7afe58100751f39e1b9ca05e946570) |
 | pkgs/wmfocus | [2018-11-01 11:17](https://github.com/svenstaro/wmfocus/commits/d6f5ff88b7fb5d2eedde3c5989ae49a656ac5adb) |
-| pkgs/i3status-rust | [2018-11-12 05:55](https://github.com/greshake/i3status-rust/commits/b198b11e4b02b1a3b20fbfca103c35040435ad08) |
+| pkgs/i3status-rust | [2018-11-22 15:44](https://github.com/greshake/i3status-rust/commits/8d9a5d91fad5c049432c8972990a9751cef6a90c) |
 <!--pkgs-->
 
 </details>
