@@ -74,7 +74,11 @@ rg --multiline '(?s)(.*)<!--pkgs-->(.*)<!--pkgs-->(.*)' "README.md" \
   --replace "\$1${replace}\$3" \
     > README2.md; mv README2.md README.md
 
-# build all and push to cachix
+# build all
+nix-build --no-out-link --keep-going build.nix
+nix-build --no-out-link --keep-going build.nixpkgs.nix
+
+# push all to cachix
 nix-build --no-out-link --keep-going build.nix | cachix push "${cachixremote}"
 nix-build --no-out-link --keep-going build.nixpkgs.nix | cachix push "${cachixremote}"
 
