@@ -2,20 +2,20 @@
 , wayland, libGL, wayland-protocols, libinput, libxkbcommon, pixman
 , xcbutilwm, libX11, libcap, xcbutilimage, xcbutilerrors, mesa_noglu
 , libpng, ffmpeg_4
+, python3Packages # TODO: Temporary
 }:
 
 let
-  metadata = import ./metadata.nix;
   pname = "wlroots";
-  version = metadata.rev;
+  version = "36ba56140ae325ae398229a689f20ded126608bc";
+  sha256 = "0wrc67g1vp3hk340hz1xn1xcy4rhmpd3dqb9ykxg69mpicrz3mvg";
 in stdenv.mkDerivation rec {
   name = "${pname}-${version}";
-
   src = fetchFromGitHub {
     owner = "swaywm";
     repo = "wlroots";
-    rev = metadata.rev;
-    sha256 = metadata.sha256;
+    rev = version;
+    sha256 = sha256;
   };
 
   # $out for the library, $bin for rootston, and $examples for the example

@@ -1,11 +1,12 @@
 self: pkgs:
 let
-waylandPkgs = {
+waylandPkgs = rec {
   # patched deps
   fmt              = pkgs.callPackage ./pkgs/fmt {};
 
   # wlroots-related
   wlroots          = pkgs.callPackage ./pkgs/wlroots {};
+  wlroots-old      = pkgs.callPackage ./pkgs-temp/wlroots {};
   sway-beta        = pkgs.callPackage ./pkgs/sway-beta {};
   grim             = pkgs.callPackage ./pkgs/grim {};
   slurp            = pkgs.callPackage ./pkgs/slurp {};
@@ -15,7 +16,7 @@ waylandPkgs = {
   oguri            = pkgs.callPackage ./pkgs/oguri {};
   waybar           = pkgs.callPackage ./pkgs/waybar {};
   wf-config        = pkgs.callPackage ./pkgs/wf-config {};
-  wayfire          = pkgs.callPackage ./pkgs/wayfire {};
+  wayfire          = pkgs.callPackage ./pkgs/wayfire { wlroots = wlroots-old; };
   redshift-wayland = pkgs.callPackage ./pkgs/redshift-wayland {
     inherit (pkgs.python3Packages) python pygobject3 pyxdg wrapPython;
     geoclue = pkgs.geoclue2;
