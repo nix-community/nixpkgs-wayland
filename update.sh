@@ -75,10 +75,14 @@ rg --multiline '(?s)(.*)<!--pkgs-->(.*)<!--pkgs-->(.*)' "README.md" \
     > README2.md; mv README2.md README.md
 
 # build all
-nix-build --no-out-link --keep-going build.nix
-nix-build --no-out-link --keep-going build.nixpkgs.nix
+nix-build --no-out-link --keep-going build.nixos-unstable.nix || true
+nix-build --no-out-link --keep-going build.nixpkgs-unstable.nix || true
 
 # push all to cachix
-nix-build --no-out-link --keep-going build.nix | cachix push "${cachixremote}"
-nix-build --no-out-link --keep-going build.nixpkgs.nix | cachix push "${cachixremote}"
+nix-build --no-out-link --keep-going build.nixos-unstable.nix   | cachix push "${cachixremote}" || true
+nix-build --no-out-link --keep-going build.nixpkgs-unstable.nix | cachix push "${cachixremote}" || true
+
+# these should be noops if all went well
+nix-build --no-out-link build.nixos-unstable.nix   | cachix push "${cachixremote}"
+nix-build --no-out-link build.nixpkgs-unstable.nix | cachix push "${cachixremote}"
 
