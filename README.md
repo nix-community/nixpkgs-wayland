@@ -16,13 +16,13 @@ Packages from this overlay are regularly updated and built against `nixos-unstab
 | Attribute Name | Last Upstream Commit Time |
 | -------------- | ------------------------- |
 | nixpkgs/nixos-unstable | [2019-01-03 11:01](https://github.com/nixos/nixpkgs-channels/commits/eebd1a9263716a04689a37b6537e50801d376b5e) |
-| nixpkgs/nixpkgs-unstable | [2019-01-04 02:37](https://github.com/nixos/nixpkgs-channels/commits/b27b443e145863b5b7f502d8beccb6767572f3c3) |
+| nixpkgs/nixpkgs-unstable | [2019-01-05 18:46](https://github.com/nixos/nixpkgs-channels/commits/7d864c6bd6391baa516118051ec5fb7e9836280e) |
 | pkgs/fmt | [2019-01-04 09:18](https://github.com/fmtlib/fmt/commits/f5cc77cea0e7563c45210a722adbaf9d6db6146b) |
-| pkgs/wlroots | [2019-01-04 07:02](https://github.com/swaywm/wlroots/commits/aebd74243f8f23a3a6a0f82531977b569629ebe2) |
-| pkgs/sway-beta | [2019-01-05 12:21](https://github.com/swaywm/sway/commits/bb5b168b6fd8f304b575746abf3a36c066bb6c01) |
+| pkgs/wlroots | [2019-01-06 05:39](https://github.com/swaywm/wlroots/commits/e1eceddecff801c7bd7b113704b74df4c6a63ca6) |
+| pkgs/sway-beta | [2019-01-06 04:59](https://github.com/swaywm/sway/commits/688f4137a573d87f591c86edafdaf7c0f4d0aee4) |
 | pkgs/slurp | [2018-11-21 23:50](https://github.com/emersion/slurp/commits/95d8ec7e6b706961ffba3705033a9f57636aa65c) |
 | pkgs/grim | [2018-12-20 05:19](https://github.com/emersion/grim/commits/4731977e9b0a55269f299225202006f86c8f1814) |
-| pkgs/mako | [2019-01-05 05:16](https://github.com/emersion/mako/commits/1c70b312eb76c1d937d336e907f16cdeb4696c14) |
+| pkgs/mako | [2019-01-06 06:30](https://github.com/emersion/mako/commits/3211130215bc91db6d284f4ccffefd81ddd0f7e2) |
 | pkgs/kanshi | [2018-11-23 09:56](https://github.com/emersion/kanshi/commits/216a27f84c35fa649827db5a81baae3110b64d89) |
 | pkgs/wlstream | [2018-07-15 14:10](https://github.com/atomnuker/wlstream/commits/182076a94562b128c3a97ecc53cc68905ea86838) |
 | pkgs/oguri | [2018-12-27 09:16](https://github.com/vilhalmer/oguri/commits/bc82b841e0d9667b266378818b9e026308756f75) |
