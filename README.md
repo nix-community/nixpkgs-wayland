@@ -15,19 +15,19 @@ Packages from this overlay are regularly updated and built against `nixos-unstab
 <!--pkgs-->
 | Attribute Name | Last Upstream Commit Time |
 | -------------- | ------------------------- |
-| nixpkgs/nixos-unstable | [2018-12-29 17:29](https://github.com/nixos/nixpkgs-channels/commits/201d739b0ffbebceb444864d1856babcd1a666a8) |
-| nixpkgs/nixpkgs-unstable | [2019-01-02 20:26](https://github.com/nixos/nixpkgs-channels/commits/b0f40b7851309ed20524f0b05bd4b1dda13d4ea4) |
-| pkgs/fmt | [2019-01-02 16:05](https://github.com/fmtlib/fmt/commits/39623a7400026a7ec492aa813f11f3a3b9f4479c) |
-| pkgs/wlroots | [2019-01-03 14:14](https://github.com/swaywm/wlroots/commits/bcf48931db14f24fcd35a6999969864ca2539d32) |
-| pkgs/sway-beta | [2019-01-03 09:52](https://github.com/swaywm/sway/commits/ee5013463467fb8eb6e08b0ebdf384ad2c1783a0) |
+| nixpkgs/nixos-unstable | [2019-01-03 11:01](https://github.com/nixos/nixpkgs-channels/commits/eebd1a9263716a04689a37b6537e50801d376b5e) |
+| nixpkgs/nixpkgs-unstable | [2019-01-04 02:37](https://github.com/nixos/nixpkgs-channels/commits/b27b443e145863b5b7f502d8beccb6767572f3c3) |
+| pkgs/fmt | [2019-01-04 09:18](https://github.com/fmtlib/fmt/commits/f5cc77cea0e7563c45210a722adbaf9d6db6146b) |
+| pkgs/wlroots | [2019-01-04 07:02](https://github.com/swaywm/wlroots/commits/aebd74243f8f23a3a6a0f82531977b569629ebe2) |
+| pkgs/sway-beta | [2019-01-05 12:21](https://github.com/swaywm/sway/commits/bb5b168b6fd8f304b575746abf3a36c066bb6c01) |
 | pkgs/slurp | [2018-11-21 23:50](https://github.com/emersion/slurp/commits/95d8ec7e6b706961ffba3705033a9f57636aa65c) |
 | pkgs/grim | [2018-12-20 05:19](https://github.com/emersion/grim/commits/4731977e9b0a55269f299225202006f86c8f1814) |
-| pkgs/mako | [2018-11-24 14:32](https://github.com/emersion/mako/commits/a0e798a582bd7bcaacca249778f11124e6610ae9) |
+| pkgs/mako | [2019-01-05 05:16](https://github.com/emersion/mako/commits/1c70b312eb76c1d937d336e907f16cdeb4696c14) |
 | pkgs/kanshi | [2018-11-23 09:56](https://github.com/emersion/kanshi/commits/216a27f84c35fa649827db5a81baae3110b64d89) |
 | pkgs/wlstream | [2018-07-15 14:10](https://github.com/atomnuker/wlstream/commits/182076a94562b128c3a97ecc53cc68905ea86838) |
 | pkgs/oguri | [2018-12-27 09:16](https://github.com/vilhalmer/oguri/commits/bc82b841e0d9667b266378818b9e026308756f75) |
 | pkgs/waybar | [2018-12-28 15:06](https://github.com/Alexays/waybar/commits/afa1cc82875489092b6e53eb4a2e26528d6bd659) |
-| pkgs/wayfire | [2019-01-03 13:38](https://github.com/WayfireWM/wayfire/commits/8bfc21f90ad93377ca59ccb3aa5e053025dd4660) |
+| pkgs/wayfire | [2019-01-04 13:23](https://github.com/WayfireWM/wayfire/commits/fb769f9e2961ca0bd3248aa93f9aff45d84e5bef) |
 | pkgs/wf-config | [2018-12-17 00:04](https://github.com/WayfireWM/wf-config/commits/6d3426e216ac62ffa035035f9c1bea074e184018) |
 | pkgs/redshift-wayland | [2018-11-07 12:03](https://github.com/minus7/redshift/commits/420d0d534c9f03abc4d634a7d3d7629caf29b4b6) |
 | pkgs/bspwc | [2018-12-29 15:21](https://github.com/Bl4ckb0ne/bspwc/commits/e72ff641bd30d3db153d879cea1cffd149931546) |
