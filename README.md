@@ -18,8 +18,8 @@ Packages from this overlay are regularly updated and built against `nixos-unstab
 | nixpkgs/nixos-unstable | [2019-01-03 11:01](https://github.com/nixos/nixpkgs-channels/commits/eebd1a9263716a04689a37b6537e50801d376b5e) |
 | nixpkgs/nixpkgs-unstable | [2019-01-05 18:46](https://github.com/nixos/nixpkgs-channels/commits/7d864c6bd6391baa516118051ec5fb7e9836280e) |
 | pkgs/fmt | [2019-01-04 09:18](https://github.com/fmtlib/fmt/commits/f5cc77cea0e7563c45210a722adbaf9d6db6146b) |
-| pkgs/wlroots | [2019-01-06 05:39](https://github.com/swaywm/wlroots/commits/e1eceddecff801c7bd7b113704b74df4c6a63ca6) |
-| pkgs/sway-beta | [2019-01-06 04:59](https://github.com/swaywm/sway/commits/688f4137a573d87f591c86edafdaf7c0f4d0aee4) |
+| pkgs/wlroots | [2019-01-07 12:24](https://github.com/swaywm/wlroots/commits/fe187fc887d5b62d47e81b25cfa1a67b0fa4cc16) |
+| pkgs/sway-beta | [2019-01-08 01:05](https://github.com/swaywm/sway/commits/140bc2dd5b81205df58bf06e695788e689fae397) |
 | pkgs/slurp | [2018-11-21 23:50](https://github.com/emersion/slurp/commits/95d8ec7e6b706961ffba3705033a9f57636aa65c) |
 | pkgs/grim | [2018-12-20 05:19](https://github.com/emersion/grim/commits/4731977e9b0a55269f299225202006f86c8f1814) |
 | pkgs/mako | [2019-01-06 06:30](https://github.com/emersion/mako/commits/3211130215bc91db6d284f4ccffefd81ddd0f7e2) |
@@ -32,8 +32,8 @@ Packages from this overlay are regularly updated and built against `nixos-unstab
 | pkgs/redshift-wayland | [2018-11-07 12:03](https://github.com/minus7/redshift/commits/420d0d534c9f03abc4d634a7d3d7629caf29b4b6) |
 | pkgs/bspwc | [2018-12-29 15:21](https://github.com/Bl4ckb0ne/bspwc/commits/e72ff641bd30d3db153d879cea1cffd149931546) |
 | pkgs/waybox | [2018-11-27 06:44](https://github.com/wizbright/waybox/commits/482d0a92f5530a5cbab8b0b913b653d4503015c4) |
-| pkgs/wl-clipboard | [2018-12-30 01:54](https://github.com/bugaevc/wl-clipboard/commits/41279f75afe1af21703111c633fd3efdf1f75744) |
-| pkgs/wmfocus | [2018-12-13 15:02](https://github.com/svenstaro/wmfocus/commits/d828eb712debbec1ae3d67d7a571e6e6a1c004dd) |
+| pkgs/wl-clipboard | [2018-12-30 01:56](https://github.com/bugaevc/wl-clipboard/commits/1d99c3d5720a012d5a034535f703f6b290408ebf) |
+| pkgs/wmfocus | [2019-01-08 03:15](https://github.com/svenstaro/wmfocus/commits/7cdbd7f6dabe2932828886ffad05a90df3555e3b) |
 | pkgs/i3status-rust | [2018-12-24 09:01](https://github.com/greshake/i3status-rust/commits/31a595ee2b7ca84c3205560d96ec7bcf8ce02d0b) |
 <!--pkgs-->
 
