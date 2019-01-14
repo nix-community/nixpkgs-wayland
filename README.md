@@ -18,7 +18,7 @@ Packages from this overlay are regularly updated and built against `nixos-unstab
 | nixpkgs/nixos-unstable | [2019-01-13 01:38](https://github.com/nixos/nixpkgs-channels/commits/626233eee6ea309733d2d98625750cca904799a5) |
 | nixpkgs/nixpkgs-unstable | [2019-01-05 18:46](https://github.com/nixos/nixpkgs-channels/commits/7d864c6bd6391baa516118051ec5fb7e9836280e) |
 | pkgs/wlroots | [2019-01-13 12:45](https://github.com/swaywm/wlroots/commits/10a2c4edec5e4f0877ff4afc83178c3f08b4f063) |
-| pkgs/sway-beta | [2019-01-13 17:42](https://github.com/swaywm/sway/commits/4879d40695047a4c493bd8871d810c543978a869) |
+| pkgs/sway-beta | [2019-01-13 18:36](https://github.com/swaywm/sway/commits/784178ed374e0cf94541a352b2407708c89c6d7c) |
 | pkgs/swayidle | [2019-01-12 17:50](https://github.com/swaywm/swayidle/commits/1fe7145c186c285ee8036e364342195d53ac296b) |
 | pkgs/slurp | [2019-01-09 15:24](https://github.com/emersion/slurp/commits/d9f3d741dc3de8c24198f41befc297e43054a523) |
 | pkgs/grim | [2019-01-11 14:45](https://github.com/emersion/grim/commits/b22b8a5ac3984c9b7d4ae5ba7ca112d3fd98b7a1) |
