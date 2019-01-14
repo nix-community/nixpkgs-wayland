@@ -41,6 +41,7 @@ update "pkgs/fmt"              "fmtlib"     "fmt"              "master"
 
 update "pkgs/wlroots"          "swaywm"     "wlroots"          "master"
 update "pkgs/sway-beta"        "swaywm"     "sway"             "master"
+update "pkgs/swayidle"         "swaywm"     "swayidle"         "master"
 update "pkgs/slurp"            "emersion"   "slurp"            "master"
 update "pkgs/grim"             "emersion"   "grim"             "master"
 update "pkgs/mako"             "emersion"   "mako"             "master"
