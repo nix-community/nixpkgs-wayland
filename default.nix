@@ -1,9 +1,6 @@
 self: pkgs:
 let
 waylandPkgs = rec {
-  # patched deps
-  fmt              = pkgs.callPackage ./pkgs/fmt {};
-
   # wlroots-related
   wlroots          = pkgs.callPackage ./pkgs/wlroots {};
   wlroots-old      = pkgs.callPackage ./pkgs-temp/wlroots {};
