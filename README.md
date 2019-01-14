@@ -17,7 +17,6 @@ Packages from this overlay are regularly updated and built against `nixos-unstab
 | -------------- | ------------------------- |
 | nixpkgs/nixos-unstable | [2019-01-13 01:38](https://github.com/nixos/nixpkgs-channels/commits/626233eee6ea309733d2d98625750cca904799a5) |
 | nixpkgs/nixpkgs-unstable | [2019-01-05 18:46](https://github.com/nixos/nixpkgs-channels/commits/7d864c6bd6391baa516118051ec5fb7e9836280e) |
-| pkgs/fmt | [2019-01-13 10:08](https://github.com/fmtlib/fmt/commits/b0cde860ae3fee787c582af53858ed03684e845f) |
 | pkgs/wlroots | [2019-01-13 12:45](https://github.com/swaywm/wlroots/commits/10a2c4edec5e4f0877ff4afc83178c3f08b4f063) |
 | pkgs/sway-beta | [2019-01-13 17:42](https://github.com/swaywm/sway/commits/4879d40695047a4c493bd8871d810c543978a869) |
 | pkgs/swayidle | [2019-01-12 17:50](https://github.com/swaywm/swayidle/commits/1fe7145c186c285ee8036e364342195d53ac296b) |

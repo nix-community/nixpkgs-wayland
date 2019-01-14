@@ -37,8 +37,6 @@ function update() {
 update "nixpkgs/nixos-unstable" "nixos" "nixpkgs-channels" "nixos-unstable"
 update "nixpkgs/nixpkgs-unstable" "nixos" "nixpkgs-channels" "nixpkgs-unstable"
 
-update "pkgs/fmt"              "fmtlib"     "fmt"              "master"
-
 update "pkgs/wlroots"          "swaywm"     "wlroots"          "master"
 update "pkgs/sway-beta"        "swaywm"     "sway"             "master"
 update "pkgs/swayidle"         "swaywm"     "swayidle"         "master"
