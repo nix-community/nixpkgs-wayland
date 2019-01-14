@@ -62,7 +62,9 @@ in
     nixpkgs.overlays = [ waylandOverlay ];
     programs.sway-beta.enable = true;
     programs.sway-beta.extraPackages = with pkgs; [
-      waybar # polybar-alike
+      swayidle # used for idle/screensaver/lock management
+
+      waybar        # polybar-alike
       i3status-rust # simpler bar written in Rust
 
       grim     # screen image capture
