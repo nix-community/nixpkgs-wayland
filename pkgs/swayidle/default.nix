@@ -1,9 +1,7 @@
 { stdenv, fetchFromGitHub
 , meson, ninja
 , pkgconfig, scdoc
-, wayland, libevdev, libxkbcommon, pcre, json_c, dbus
-, pango, cairo, libinput, libcap, pam, gdk_pixbuf
-, wlroots, wayland-protocols
+, wayland, wayland-protocols
 , buildDocs ? true
 }:
 
