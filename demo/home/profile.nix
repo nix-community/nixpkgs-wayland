@@ -14,6 +14,7 @@
     mako # notification manager
     redshift-wayland # ???
     slurp # dimension-grabbing CLI, to use with grim
+    swayidle # lock screen manager
     wlstream # screen recording CLI
   ]);
 
