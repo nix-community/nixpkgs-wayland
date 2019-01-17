@@ -46,7 +46,7 @@ exec swayidle \
     before-sleep 'swaylock -c 000000'
 
 # Start the notification center
-exec mako
+exec mako --default-timeout 50000
 
 # Start one shell
 exec $term
