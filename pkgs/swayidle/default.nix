@@ -2,6 +2,7 @@
 , meson, ninja
 , pkgconfig, scdoc
 , wayland, wayland-protocols
+, systemd
 , buildDocs ? true
 }:
 
@@ -25,6 +26,7 @@ stdenv.mkDerivation rec {
   ] ++ stdenv.lib.optional buildDocs scdoc;
 
   buildInputs = [
+    systemd
     wayland wayland-protocols
   ];
 
