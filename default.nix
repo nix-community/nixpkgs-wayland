@@ -6,6 +6,7 @@ waylandPkgs = rec {
   wlroots-old      = pkgs.callPackage ./pkgs-temp/wlroots {};
   sway-beta        = pkgs.callPackage ./pkgs/sway-beta {};
   swayidle         = pkgs.callPackage ./pkgs/swayidle {};
+  swaylock         = pkgs.callPackage ./pkgs/swaylock {};
   grim             = pkgs.callPackage ./pkgs/grim {};
   slurp            = pkgs.callPackage ./pkgs/slurp {};
   mako             = pkgs.callPackage ./pkgs/mako {};
