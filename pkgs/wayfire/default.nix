@@ -6,8 +6,8 @@
 , pixman, libxkbcommon, libdrm
 , wlroots, wf-config
 , libjpeg, libpng
+, libGL
 , buildDocs ? true
-#, egl, glesv2
 }:
 
 let
@@ -34,6 +34,7 @@ stdenv.mkDerivation rec {
     pixman libxkbcommon libdrm
     wlroots wf-config
     libjpeg libpng
+    libGL
   ];
 
   enableParallelBuilding = true;
