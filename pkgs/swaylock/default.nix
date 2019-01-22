@@ -1,9 +1,8 @@
 { stdenv, fetchFromGitHub
 , meson, ninja
 , pkgconfig, scdoc
-, wayland, libevdev, libxkbcommon, pcre, json_c, dbus
-, pango, cairo, libinput, libcap, gdk_pixbuf
-, wlroots, wayland-protocols
+, wayland, wayland-protocols
+, libxkbcommon, cairo, pango, gdk_pixbuf, pam
 , buildDocs ? true
 }:
 
@@ -12,12 +11,12 @@ let
 in
 stdenv.mkDerivation rec {
   name = "${pname}-${version}";
-  pname = "sway";
+  pname = "swaylock";
   version = metadata.rev;
 
   src = fetchFromGitHub {
     owner = "swaywm";
-    repo = "sway";
+    repo = "swaylock";
     rev = version;
     sha256 = metadata.sha256;
   };
@@ -27,23 +26,16 @@ stdenv.mkDerivation rec {
   ] ++ stdenv.lib.optional buildDocs scdoc;
 
   buildInputs = [
-    wayland libevdev libxkbcommon pcre json_c dbus
-    pango cairo libinput libcap gdk_pixbuf
-    wlroots wayland-protocols
+    wayland wayland-protocols
+    libxkbcommon cairo pango gdk_pixbuf pam
   ];
+
+  mesonFlags = "-Dswaylock-version=${version}";
 
   enableParallelBuilding = true;
 
-  mesonFlags = [
-    "-Dsway-version=${version}"
-    "-Dxwayland=enabled"
-    "-Dtray=enabled"
-    "-Dgdk-pixbuf=enabled"
-    "-Dman-pages=enabled"
-  ];
-
   meta = with stdenv.lib; {
-    description = "i3-compatible window manager for Wayland";
+    description = "Screen locker for Wayland";
     homepage    = https://swaywm.org;
     license     = licenses.mit;
     platforms   = platforms.linux;
