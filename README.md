@@ -16,8 +16,8 @@ Packages from this overlay are regularly updated and built against `nixos-unstab
 | Attribute Name | Last Upstream Commit Time |
 | -------------- | ------------------------- |
 | nixpkgs/nixos-unstable | [2019-01-20 09:32](https://github.com/nixos/nixpkgs-channels/commits/bc41317e24317b0f506287f2d5bab00140b9b50e) |
-| nixpkgs/nixpkgs-unstable | [2019-01-21 21:50](https://github.com/nixos/nixpkgs-channels/commits/a5de41088031e6d3d4f799ef3964317a74e72169) |
-| pkgs/wlroots | [2019-01-22 11:13](https://github.com/swaywm/wlroots/commits/365a75139c382b3627ee96eade827038b1a2bc1a) |
+| nixpkgs/nixpkgs-unstable | [2019-01-22 15:52](https://github.com/nixos/nixpkgs-channels/commits/1b3affcbaa8e31af0bfe1be280f91ac3e384d96f) |
+| pkgs/wlroots | [2019-01-22 13:58](https://github.com/swaywm/wlroots/commits/c41d01306de59235256d96902cced49a8eef15e9) |
 | pkgs/sway-beta | [2019-01-22 11:10](https://github.com/swaywm/sway/commits/9e6c6ce332a1d2b9e0387298e99bba824e0103a1) |
 | pkgs/swayidle | [2019-01-19 08:30](https://github.com/swaywm/swayidle/commits/72d15f8139705c1251aef7a7f7c64b8e527df206) |
 | pkgs/swaylock | [2019-01-22 06:11](https://github.com/swaywm/swaylock/commits/f0353900aed11f72f2f100cca1fcb60d34fc1c06) |
