@@ -36,6 +36,7 @@ stdenv.mkDerivation rec {
 
   mesonFlags = [
     "-Dsway-version=${version}"
+    "-Ddefault-wallpaper=false"
     "-Dxwayland=enabled"
     "-Dtray=enabled"
     "-Dgdk-pixbuf=enabled"

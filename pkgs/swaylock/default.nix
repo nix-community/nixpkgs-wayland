@@ -30,7 +30,12 @@ stdenv.mkDerivation rec {
     libxkbcommon cairo pango gdk_pixbuf pam
   ];
 
-  mesonFlags = "-Dswaylock-version=${version}";
+  mesonFlags = [
+    "-Dswaylock-version=${version}"
+    "-Dpam=enabled"
+    "-Dgdk-pixbuf=enabled"
+    "-Dman-pages=enabled"
+  ];
 
   enableParallelBuilding = true;
 
