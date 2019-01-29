@@ -1,12 +1,10 @@
 self: pkgs:
 let
 waylandPkgs = rec {
-  # temp
-  wlroots-old      = pkgs.callPackage ./pkgs-temp/wlroots {};
-  scdoc-new        = pkgs.callPackage ./pkgs-temp/scdoc {};
   # wlroots-related
   wlroots          = pkgs.callPackage ./pkgs/wlroots {};
-  sway-beta        = pkgs.callPackage ./pkgs/sway-beta { scdoc = scdoc-new; };
+  wlroots-old      = pkgs.callPackage ./pkgs-temp/wlroots {};
+  sway-beta        = pkgs.callPackage ./pkgs/sway-beta {};
   swayidle         = pkgs.callPackage ./pkgs/swayidle {};
   swaylock         = pkgs.callPackage ./pkgs/swaylock {};
   grim             = pkgs.callPackage ./pkgs/grim {};
