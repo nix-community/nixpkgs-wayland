@@ -30,6 +30,12 @@ stdenv.mkDerivation rec {
     wayland wayland-protocols
   ];
 
+  mesonFlags = [
+    "-Dman-pages=enabled"
+    "-Dlogind=enabled"
+    "-Dlogind-provider=systemd"
+  ];
+
   enableParallelBuilding = true;
 
   meta = with stdenv.lib; {
