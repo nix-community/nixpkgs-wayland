@@ -4,4 +4,3 @@ let
   };
 in
   pkgs.waylandPkgs
-
