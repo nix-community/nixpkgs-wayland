@@ -17,8 +17,8 @@ Packages from this overlay are regularly updated and built against `nixos-unstab
 | -------------- | ------------------------- |
 | nixpkgs/nixos-unstable | [2019-01-20 09:32](https://github.com/nixos/nixpkgs-channels/commits/bc41317e24317b0f506287f2d5bab00140b9b50e) |
 | nixpkgs/nixpkgs-unstable | [2019-01-24 07:01](https://github.com/nixos/nixpkgs-channels/commits/11cf7d6e1ffd5fbc09a51b76d668ad0858a772ed) |
-| pkgs/wlroots | [2019-01-29 12:12](https://github.com/swaywm/wlroots/commits/77c25c152629e8bd3e8287d862728c72d03ac1dd) |
-| pkgs/sway-beta | [2019-01-29 10:38](https://github.com/swaywm/sway/commits/4f4424f66caa527869acf79a5e64d31a6212378f) |
+| pkgs/wlroots | [2019-01-30 06:36](https://github.com/swaywm/wlroots/commits/41af8d845933f2bc6b158d0cac5a0c5688cce7d0) |
+| pkgs/sway-beta | [2019-01-30 11:09](https://github.com/swaywm/sway/commits/0c975af1fb701e9a9f0018da0c2f9fdf32234029) |
 | pkgs/swayidle | [2019-01-27 05:22](https://github.com/swaywm/swayidle/commits/d18c7cbb5deb0f0d6a9758d0fc820bcdf9bf9cda) |
 | pkgs/swaylock | [2019-01-29 11:48](https://github.com/swaywm/swaylock/commits/effdea523158c8e30f7654a87402df155a2229ad) |
 | pkgs/slurp | [2019-01-09 15:24](https://github.com/emersion/slurp/commits/d9f3d741dc3de8c24198f41befc297e43054a523) |
@@ -33,7 +33,7 @@ Packages from this overlay are regularly updated and built against `nixos-unstab
 | pkgs/redshift-wayland | [2018-11-07 12:03](https://github.com/minus7/redshift/commits/420d0d534c9f03abc4d634a7d3d7629caf29b4b6) |
 | pkgs/bspwc | [2018-12-29 15:21](https://github.com/Bl4ckb0ne/bspwc/commits/e72ff641bd30d3db153d879cea1cffd149931546) |
 | pkgs/waybox | [2018-11-27 06:44](https://github.com/wizbright/waybox/commits/482d0a92f5530a5cbab8b0b913b653d4503015c4) |
-| pkgs/wl-clipboard | [2019-01-29 06:42](https://github.com/bugaevc/wl-clipboard/commits/60654b06da413fb244704fd3352a5447ed3921e3) |
+| pkgs/wl-clipboard | [2019-01-30 06:34](https://github.com/bugaevc/wl-clipboard/commits/7f3646611335e42b2b93c053792c9f6659c87cde) |
 | pkgs/wmfocus | [2019-01-28 19:22](https://github.com/svenstaro/wmfocus/commits/6ef7956933bff1e61f2d10d679ae91e962bc09d1) |
 | pkgs/i3status-rust | [2018-12-24 09:01](https://github.com/greshake/i3status-rust/commits/31a595ee2b7ca84c3205560d96ec7bcf8ce02d0b) |
 <!--pkgs-->
