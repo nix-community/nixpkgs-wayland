@@ -18,7 +18,7 @@ Packages from this overlay are regularly updated and built against `nixos-unstab
 | nixpkgs/nixos-unstable | [2019-01-20 09:32](https://github.com/nixos/nixpkgs-channels/commits/bc41317e24317b0f506287f2d5bab00140b9b50e) |
 | nixpkgs/nixpkgs-unstable | [2019-01-24 07:01](https://github.com/nixos/nixpkgs-channels/commits/11cf7d6e1ffd5fbc09a51b76d668ad0858a772ed) |
 | pkgs/wlroots | [2019-01-30 06:36](https://github.com/swaywm/wlroots/commits/41af8d845933f2bc6b158d0cac5a0c5688cce7d0) |
-| pkgs/sway-beta | [2019-01-30 11:09](https://github.com/swaywm/sway/commits/0c975af1fb701e9a9f0018da0c2f9fdf32234029) |
+| pkgs/sway-beta | [2019-01-30 13:55](https://github.com/swaywm/sway/commits/aee9942145119444e5592846ac7e1a0d89e8a3e0) |
 | pkgs/swayidle | [2019-01-27 05:22](https://github.com/swaywm/swayidle/commits/d18c7cbb5deb0f0d6a9758d0fc820bcdf9bf9cda) |
 | pkgs/swaylock | [2019-01-29 11:48](https://github.com/swaywm/swaylock/commits/effdea523158c8e30f7654a87402df155a2229ad) |
 | pkgs/slurp | [2019-01-09 15:24](https://github.com/emersion/slurp/commits/d9f3d741dc3de8c24198f41befc297e43054a523) |
