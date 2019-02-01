@@ -35,7 +35,7 @@ Packages from this overlay are regularly updated and built against `nixos-unstab
 | pkgs/waybox | [2018-11-27 06:44](https://github.com/wizbright/waybox/commits/482d0a92f5530a5cbab8b0b913b653d4503015c4) |
 | pkgs/wl-clipboard | [2019-01-30 06:34](https://github.com/bugaevc/wl-clipboard/commits/7f3646611335e42b2b93c053792c9f6659c87cde) |
 | pkgs/wmfocus | [2019-01-28 19:22](https://github.com/svenstaro/wmfocus/commits/6ef7956933bff1e61f2d10d679ae91e962bc09d1) |
-| pkgs/i3status-rust | [2018-12-24 09:01](https://github.com/greshake/i3status-rust/commits/31a595ee2b7ca84c3205560d96ec7bcf8ce02d0b) |
+| pkgs/i3status-rust | [2019-01-31 16:19](https://github.com/greshake/i3status-rust/commits/90e9448d4861dea676865423b347075bb32acc42) |
 <!--pkgs-->
 
 </details>
