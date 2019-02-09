@@ -34,7 +34,6 @@ Packages from this overlay are regularly updated and built against `nixos-unstab
 | pkgs/bspwc | [2018-12-29 15:21](https://github.com/Bl4ckb0ne/bspwc/commits/e72ff641bd30d3db153d879cea1cffd149931546) |
 | pkgs/waybox | [2018-11-27 06:44](https://github.com/wizbright/waybox/commits/482d0a92f5530a5cbab8b0b913b653d4503015c4) |
 | pkgs/wl-clipboard | [2019-01-30 06:34](https://github.com/bugaevc/wl-clipboard/commits/7f3646611335e42b2b93c053792c9f6659c87cde) |
-| pkgs/wmfocus | [2019-02-07 00:09](https://github.com/svenstaro/wmfocus/commits/c8a5cfcb91a5e283cadb044f317de39c08bca115) |
 | pkgs/i3status-rust | [2019-02-02 06:04](https://github.com/greshake/i3status-rust/commits/550b60039a688d33df1439b7a003499fdd2ee90c) |
 <!--pkgs-->
 
@@ -74,7 +73,6 @@ in
       mako     # notification daemon
       wlstream # screen recorder
       oguri    # animated background utility
-      wmfocus  # fast window picker utility
       kanshi   # dynamic display configuration helper
       redshift-wayland # patched to work with wayland gamma protocol
     ];

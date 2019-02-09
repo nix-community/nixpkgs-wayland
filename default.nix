@@ -27,7 +27,6 @@ waylandPkgs = rec {
   wl-clipboard     = pkgs.callPackage ./pkgs/wl-clipboard {};
 
   # i3-related
-  wmfocus          = pkgs.callPackage ./pkgs/wmfocus {};
   i3status-rust    = pkgs.callPackage ./pkgs/i3status-rust {};
 };
 in
