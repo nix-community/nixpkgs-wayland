@@ -56,7 +56,6 @@ update "pkgs/waybox"           "wizbright"  "waybox"           "master"
 update "pkgs/wl-clipboard"     "bugaevc"    "wl-clipboard"     "master"
 
 # i3-related
-update "pkgs/wmfocus"          "svenstaro"  "wmfocus"          "master"
 update "pkgs/i3status-rust"    "greshake"   "i3status-rust"    "master"
 
 # update README.md
