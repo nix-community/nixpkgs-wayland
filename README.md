@@ -21,7 +21,7 @@ Packages from this overlay are regularly updated and built against `nixos-unstab
 | pkgs/sway-beta | [2019-02-11 01:13](https://github.com/swaywm/sway/commits/fb4f29289fd8d1f94975e64fded6657222ed5390) |
 | pkgs/swayidle | [2019-02-05 05:37](https://github.com/swaywm/swayidle/commits/85a680178d1b310788272edd8fb6bf86304cf721) |
 | pkgs/swaylock | [2019-02-12 03:24](https://github.com/swaywm/swaylock/commits/ec78bb121f3bdf580ee97261e29f327cf57c0abb) |
-| pkgs/slurp | [2019-02-12 12:19](https://github.com/emersion/slurp/commits/f3bfd7b51f757f1e4f51175e18da09e80a0a6968) |
+| pkgs/slurp | [2019-02-12 12:24](https://github.com/emersion/slurp/commits/0d1186f03d7db8ee8ae870087920bb538aaa522c) |
 | pkgs/grim | [2019-02-05 07:32](https://github.com/emersion/grim/commits/c00f545e0f514ed192337657be4854bbb5a7caef) |
 | pkgs/mako | [2019-01-20 23:01](https://github.com/emersion/mako/commits/b30c786bdf8b90807e45ec0f52b292ee147ae1ff) |
 | pkgs/kanshi | [2019-02-02 15:21](https://github.com/emersion/kanshi/commits/970267e400c21a6bb51a1c80a0aadfd1e6660a7b) |
