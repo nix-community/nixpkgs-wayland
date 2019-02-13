@@ -30,7 +30,7 @@ stdenv.mkDerivation rec {
   ];
   mesonFlags = [
     "-Dauto_features=enabled"
-    "-Dout=$out"
+    "-Dout=${out}"
   ];
 
   enableParallelBuilding = true;
