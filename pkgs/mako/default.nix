@@ -1,6 +1,6 @@
-{ stdenv, fetchFromGitHub
+{stdenv, fetchFromGitHub
 , meson, ninja, pkgconfig
-, cairo, pango, systemd
+, gtk3, cairo, pango, systemd
 , wayland, wayland-protocols
 , scdoc, buildDocs ? true
 }:
@@ -20,7 +20,7 @@ stdenv.mkDerivation rec {
   };
 
   nativeBuildInputs = [ pkgconfig meson ninja ] ++ stdenv.lib.optional buildDocs [ scdoc ];
-  buildInputs = [ cairo pango systemd wayland wayland-protocols ];
+  buildInputs = [ gtk3 cairo pango systemd wayland wayland-protocols ];
   mesonFlags = [ "-Dauto_features=enabled" ];
 
   enableParallelBuilding = true;
