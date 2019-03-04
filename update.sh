@@ -38,7 +38,7 @@ update "nixpkgs/nixos-unstable" "nixos" "nixpkgs-channels" "nixos-unstable"
 update "nixpkgs/nixpkgs-unstable" "nixos" "nixpkgs-channels" "nixpkgs-unstable"
 
 update "pkgs/wlroots"          "swaywm"     "wlroots"          "master"
-update "pkgs/sway-beta"        "swaywm"     "sway"             "master"
+update "pkgs/sway"             "swaywm"     "sway"             "master"
 update "pkgs/swayidle"         "swaywm"     "swayidle"         "master"
 update "pkgs/swaylock"         "swaywm"     "swaylock"         "master"
 update "pkgs/slurp"            "emersion"   "slurp"            "master"

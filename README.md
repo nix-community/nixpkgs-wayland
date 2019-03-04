@@ -15,10 +15,10 @@ Packages from this overlay are regularly updated and built against `nixos-unstab
 <!--pkgs-->
 | Attribute Name | Last Upstream Commit Time |
 | -------------- | ------------------------- |
-| nixpkgs/nixos-unstable | [2019-02-26 03:26](https://github.com/nixos/nixpkgs-channels/commits/1233c8d9e9bc463899ed6a8cf0232e6bf36475ee) |
-| nixpkgs/nixpkgs-unstable | [2019-02-28 19:22](https://github.com/nixos/nixpkgs-channels/commits/6e5caa3f8ac48750233ef82a94825be238940825) |
-| pkgs/wlroots | [2019-03-01 00:20](https://github.com/swaywm/wlroots/commits/5445d8aad0112dab3ed798c39bf6b22f2a4eebd1) |
-| pkgs/sway-beta | [2019-03-01 07:25](https://github.com/swaywm/sway/commits/f98410c090c995d491ba538850b792c763407583) |
+| nixpkgs/nixos-unstable | [2019-03-01 20:19](https://github.com/nixos/nixpkgs-channels/commits/26d8a8c0eb2a88d55694249b099cdd2c89b2b06d) |
+| nixpkgs/nixpkgs-unstable | [2019-03-02 17:23](https://github.com/nixos/nixpkgs-channels/commits/a3b6b49eac91baa25a01ef10b74a7aeb89a963a1) |
+| pkgs/wlroots | [2019-03-03 13:13](https://github.com/swaywm/wlroots/commits/c9b9e4852518edfb5c8c5cacaae18515b881bb9b) |
+| pkgs/sway | [2019-03-03 09:47](https://github.com/swaywm/sway/commits/a053823f39c0ea72f3d3763e7c1e0f18ab9c4d61) |
 | pkgs/swayidle | [2019-02-16 08:43](https://github.com/swaywm/swayidle/commits/3e392e31c0684854a9a145cda1bd9a44c99ef24d) |
 | pkgs/swaylock | [2019-02-12 14:27](https://github.com/swaywm/swaylock/commits/6b3be42264b9eaa8524ea4f0d93fbd1d82495d90) |
 | pkgs/slurp | [2019-02-23 10:47](https://github.com/emersion/slurp/commits/0b5df0343d4e44802a0711089b0f7f0e014021d0) |
@@ -27,8 +27,8 @@ Packages from this overlay are regularly updated and built against `nixos-unstab
 | pkgs/kanshi | [2019-02-02 15:21](https://github.com/emersion/kanshi/commits/970267e400c21a6bb51a1c80a0aadfd1e6660a7b) |
 | pkgs/wlstream | [2018-07-15 14:10](https://github.com/atomnuker/wlstream/commits/182076a94562b128c3a97ecc53cc68905ea86838) |
 | pkgs/oguri | [2019-02-19 06:19](https://github.com/vilhalmer/oguri/commits/59a51758f4b14f60113aad6ae4ebb92d80060ce5) |
-| pkgs/waybar | [2019-03-01 08:12](https://github.com/Alexays/waybar/commits/f47492c3716f93c23c67d0015a42a184097b2a4e) |
-| pkgs/wayfire | [2019-02-28 08:12](https://github.com/WayfireWM/wayfire/commits/38c071e547b2774967224654ee8459fc9d10d461) |
+| pkgs/waybar | [2019-03-03 09:04](https://github.com/Alexays/waybar/commits/7e4fed821882606e8ac32c0740f9dcd4b5e075cf) |
+| pkgs/wayfire | [2019-03-03 12:32](https://github.com/WayfireWM/wayfire/commits/a00ed6d11056c32a8f078bcfa14fdf1125064b35) |
 | pkgs/wf-config | [2019-02-13 07:49](https://github.com/WayfireWM/wf-config/commits/52a7963f8a77bfa98b657c76304d7ad515b69878) |
 | pkgs/redshift-wayland | [2018-11-07 12:03](https://github.com/minus7/redshift/commits/420d0d534c9f03abc4d634a7d3d7629caf29b4b6) |
 | pkgs/bspwc | [2018-12-29 15:21](https://github.com/Bl4ckb0ne/bspwc/commits/e72ff641bd30d3db153d879cea1cffd149931546) |
@@ -50,7 +50,7 @@ You can also use this [with Nix on Ubuntu. Please see the full walkthrough](docs
 This usage just utilizes [`overlay` functionality from `nixpkgs`]().
 
 Note that when using the overlay, the module will automatically reference the correct
-`sway-beta` package since the newer package is overlayed ontop of `pkgs`.
+`sway` package since the newer package is overlayed ontop of `pkgs`.
 
 ```nix
 { config, lib, pkgs, ... }:
