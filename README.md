@@ -17,7 +17,7 @@ Packages from this overlay are regularly updated and built against `nixos-unstab
 | -------------- | ------------------------- |
 | nixpkgs/nixos-unstable | [2019-03-03 14:12](https://github.com/nixos/nixpkgs-channels/commits/34aa254f9ebf5899636a9927ceefbc9df80230f4) |
 | nixpkgs/nixpkgs-unstable | [2019-03-05 00:10](https://github.com/nixos/nixpkgs-channels/commits/9b3e5a3aab728e7cea2da12b6db300136604be3a) |
-| pkgs/wlroots | [2019-03-04 20:27](https://github.com/swaywm/wlroots/commits/30d3426164b56e7340c33ae65baa66530b8e31a8) |
+| pkgs/wlroots | [2019-03-05 18:53](https://github.com/swaywm/wlroots/commits/a3c31bb875b10cda6e795588ef111d8e17fb83a7) |
 | pkgs/sway | [2019-03-04 12:16](https://github.com/swaywm/sway/commits/a6711740bcd311e1ee551c83a5dfc46d9344d17e) |
 | pkgs/swayidle | [2019-02-16 08:43](https://github.com/swaywm/swayidle/commits/3e392e31c0684854a9a145cda1bd9a44c99ef24d) |
 | pkgs/swaylock | [2019-02-12 14:27](https://github.com/swaywm/swaylock/commits/6b3be42264b9eaa8524ea4f0d93fbd1d82495d90) |
@@ -28,7 +28,7 @@ Packages from this overlay are regularly updated and built against `nixos-unstab
 | pkgs/wlstream | [2018-07-15 14:10](https://github.com/atomnuker/wlstream/commits/182076a94562b128c3a97ecc53cc68905ea86838) |
 | pkgs/oguri | [2019-02-19 06:19](https://github.com/vilhalmer/oguri/commits/59a51758f4b14f60113aad6ae4ebb92d80060ce5) |
 | pkgs/waybar | [2019-03-05 01:16](https://github.com/Alexays/waybar/commits/ab0dcbfb2e405e0380796ced6bdf52a91244dd3c) |
-| pkgs/wayfire | [2019-03-03 12:32](https://github.com/WayfireWM/wayfire/commits/a00ed6d11056c32a8f078bcfa14fdf1125064b35) |
+| pkgs/wayfire | [2019-03-05 15:00](https://github.com/WayfireWM/wayfire/commits/af1379e9ab67f408bd7c309ee79bad05700ef530) |
 | pkgs/wf-config | [2019-02-13 07:49](https://github.com/WayfireWM/wf-config/commits/52a7963f8a77bfa98b657c76304d7ad515b69878) |
 | pkgs/redshift-wayland | [2018-11-07 12:03](https://github.com/minus7/redshift/commits/420d0d534c9f03abc4d634a7d3d7629caf29b4b6) |
 | pkgs/bspwc | [2018-12-29 15:21](https://github.com/Bl4ckb0ne/bspwc/commits/e72ff641bd30d3db153d879cea1cffd149931546) |
