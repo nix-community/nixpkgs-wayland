@@ -3,11 +3,11 @@ let
 waylandPkgs = rec {
   # temp
   sway-beta = sway;
-  scdoc-193 = pkgs.callPackages ./pkgs-temp/scdoc {};
 
   # wlroots-related
+  scdoc            = pkgs.callPackage ./pkgs/scdoc {};
   wlroots          = pkgs.callPackage ./pkgs/wlroots {};
-  sway             = pkgs.callPackage ./pkgs/sway { scdoc = scdoc-193; };
+  sway             = pkgs.callPackage ./pkgs/sway {};
   swayidle         = pkgs.callPackage ./pkgs/swayidle {};
   swaylock         = pkgs.callPackage ./pkgs/swaylock {};
   grim             = pkgs.callPackage ./pkgs/grim {};
