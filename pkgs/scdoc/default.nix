@@ -1,12 +1,15 @@
 { stdenv, fetchurl }:
 
+let
+  metadata = import ./metadata.nix;
+in
 stdenv.mkDerivation rec {
   name = "scdoc-${version}";
-  version = "1.9.3";
+  version = metadata.rev;
 
   src = fetchurl {
-    url = "https://git.sr.ht/~sircmpwn/scdoc/archive/${version}.tar.gz";
-    sha256 = "1av933421a7g2c984l77gh1fwrhyqblglxr3px5qbng2sh7i33f6";
+    url = "https://git.sr.ht/~sircmpwn/scdoc/archive/${metadata.rev}.tar.gz";
+    sha256 = metadata.sha256;
   };
 
   postPatch = ''
