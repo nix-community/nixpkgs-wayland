@@ -18,6 +18,7 @@ Packages from this overlay are regularly updated and built against `nixos-unstab
 | nixpkgs/nixos-unstable | [2019-03-06 13:31](https://github.com/nixos/nixpkgs-channels/commits/5d3fd3674a66c5b1ada63e2eace140519849c967) |
 | nixpkgs/nixpkgs-unstable | [2019-03-05 12:34](https://github.com/nixos/nixpkgs-channels/commits/b36dc66bfea6b0a733cf13bed85d80462d39c736) |
 | pkgs/wlroots | [2019-03-12 14:16](https://github.com/swaywm/wlroots/commits/408eca7dfa12eda0f1b0ec6050e99ee2e6a8f2b4) |
+| pkgs/xdg-desktop-portal-wlr | [2019-02-12 12:09](https://github.com/emersion/xdg-desktop-portal-wlr/commits/74ee43cf37e716d0119f441be96e2b3fc9838797) |
 | pkgs/sway | [2019-03-14 04:04](https://github.com/swaywm/sway/commits/d64e8ba9469f4fa0ff693a22c88c1afa687c4c6c) |
 | pkgs/swayidle | [2019-02-16 16:43](https://github.com/swaywm/swayidle/commits/3e392e31c0684854a9a145cda1bd9a44c99ef24d) |
 | pkgs/swaylock | [2019-02-12 22:27](https://github.com/swaywm/swaylock/commits/6b3be42264b9eaa8524ea4f0d93fbd1d82495d90) |
@@ -75,6 +76,8 @@ in
       oguri    # animated background utility
       kanshi   # dynamic display configuration helper
       redshift-wayland # patched to work with wayland gamma protocol
+
+      xdg-desktop-portal-wlr # xdg-desktop-portal backend for wlroots
     ];
     environment.systemPackages = with pkgs; [
       # other compositors/window-managers
