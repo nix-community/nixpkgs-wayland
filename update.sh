@@ -27,7 +27,7 @@ function update() {
   fi
 
   commitdate="$(nix eval -f "./${attr}/metadata.nix" revdate --raw)"
-  d="$(date '+%Y-%m-%d %H:%M' --date="${commitdate}")"
+  d="$(date -u '+%Y-%m-%d %H:%M' --date="${commitdate}")"
   txt="| ${attr} | [${d}](https://github.com/${owner}/${repo}/commits/${rev}) |"
   pkgentries=("${pkgentries[@]}" "${txt}")
 }
@@ -38,6 +38,7 @@ update "nixpkgs/nixos-unstable" "nixos" "nixpkgs-channels" "nixos-unstable"
 update "nixpkgs/nixpkgs-unstable" "nixos" "nixpkgs-channels" "nixpkgs-unstable"
 
 update "pkgs/wlroots"          "swaywm"     "wlroots"          "master"
+update "pkgs/xdg-desktop-portal-wlr"   "emersion"   "xdg-desktop-portal-wlr" "master"
 update "pkgs/sway"             "swaywm"     "sway"             "master"
 update "pkgs/swayidle"         "swaywm"     "swayidle"         "master"
 update "pkgs/swaylock"         "swaywm"     "swaylock"         "master"

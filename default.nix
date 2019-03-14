@@ -7,6 +7,7 @@ waylandPkgs = rec {
   # wlroots-related
   scdoc            = pkgs.callPackage ./pkgs/scdoc {};
   wlroots          = pkgs.callPackage ./pkgs/wlroots {};
+  xdg-desktop-portal-wlr = pkgs.callPackage ./pkgs/xdg-desktop-portal-wlr {};
   sway             = pkgs.callPackage ./pkgs/sway {};
   swayidle         = pkgs.callPackage ./pkgs/swayidle {};
   swaylock         = pkgs.callPackage ./pkgs/swaylock {};
