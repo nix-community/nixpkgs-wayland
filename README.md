@@ -16,10 +16,10 @@ Packages from this overlay are regularly updated and built against `nixos-unstab
 | Attribute Name | Last Upstream Commit Time |
 | -------------- | ------------------------- |
 | nixpkgs/nixos-unstable | [2019-03-16 12:48](https://github.com/nixos/nixpkgs-channels/commits/da1a2b1eeafa66b4419b4f275396d8a731eccb61) |
-| nixpkgs/nixpkgs-unstable | [2019-03-16 18:31](https://github.com/nixos/nixpkgs-channels/commits/106db715f9d7b2c2a87e2142ebefa77d7231214f) |
+| nixpkgs/nixpkgs-unstable | [2019-03-17 03:10](https://github.com/nixos/nixpkgs-channels/commits/0125544e2a0552590c87dca1583768b49ba911c0) |
 | pkgs/wlroots | [2019-03-15 16:38](https://github.com/swaywm/wlroots/commits/6b7f5e4010103bffaf4666b77f7a4369295588d8) |
 | pkgs/xdg-desktop-portal-wlr | [2019-02-12 12:09](https://github.com/emersion/xdg-desktop-portal-wlr/commits/74ee43cf37e716d0119f441be96e2b3fc9838797) |
-| pkgs/sway | [2019-03-16 16:41](https://github.com/swaywm/sway/commits/73605dac2ae18e2ca84a74da895c4098a1bee6f8) |
+| pkgs/sway | [2019-03-17 16:05](https://github.com/swaywm/sway/commits/0327c999d7f69de6356b3b30c19b131d029f6e95) |
 | pkgs/swayidle | [2019-02-16 16:43](https://github.com/swaywm/swayidle/commits/3e392e31c0684854a9a145cda1bd9a44c99ef24d) |
 | pkgs/swaylock | [2019-02-12 22:27](https://github.com/swaywm/swaylock/commits/6b3be42264b9eaa8524ea4f0d93fbd1d82495d90) |
 | pkgs/slurp | [2019-03-16 19:52](https://github.com/emersion/slurp/commits/92dc1ea1cf79541d157e98af3fb6aa4df501fef4) |
@@ -29,7 +29,7 @@ Packages from this overlay are regularly updated and built against `nixos-unstab
 | pkgs/wlstream | [2018-07-15 21:10](https://github.com/atomnuker/wlstream/commits/182076a94562b128c3a97ecc53cc68905ea86838) |
 | pkgs/oguri | [2019-02-19 14:19](https://github.com/vilhalmer/oguri/commits/59a51758f4b14f60113aad6ae4ebb92d80060ce5) |
 | pkgs/waybar | [2019-03-15 08:43](https://github.com/Alexays/waybar/commits/3257968a2844ac5d1d00769c0af45398aeebdb58) |
-| pkgs/wayfire | [2019-03-12 20:16](https://github.com/WayfireWM/wayfire/commits/ce81c6625b5b4d8a4ff3718bda94b6d13993c189) |
+| pkgs/wayfire | [2019-03-17 07:49](https://github.com/WayfireWM/wayfire/commits/09b28398068c4f65d7ef1313c0633e24cf302ce2) |
 | pkgs/wf-config | [2019-02-13 15:49](https://github.com/WayfireWM/wf-config/commits/52a7963f8a77bfa98b657c76304d7ad515b69878) |
 | pkgs/redshift-wayland | [2018-11-07 20:03](https://github.com/minus7/redshift/commits/420d0d534c9f03abc4d634a7d3d7629caf29b4b6) |
 | pkgs/bspwc | [2018-12-29 23:21](https://github.com/Bl4ckb0ne/bspwc/commits/e72ff641bd30d3db153d879cea1cffd149931546) |
