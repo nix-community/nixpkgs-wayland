@@ -62,8 +62,8 @@ let
 in
   {
     nixpkgs.overlays = [ waylandOverlay ];
-    programs.sway-beta.enable = true;
-    programs.sway-beta.extraPackages = with pkgs; [
+    programs.sway.enable = true;
+    programs.sway.extraPackages = with pkgs; [
       swayidle # used for controlling idle timeouts and triggers (screen locking, etc)
       swaylock # used for locking Wayland sessions
 
