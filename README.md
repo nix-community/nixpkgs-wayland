@@ -36,6 +36,7 @@ Packages from this overlay are regularly updated and built against `nixos-unstab
 | pkgs/waybox | [2018-11-27 14:44](https://github.com/wizbright/waybox/commits/482d0a92f5530a5cbab8b0b913b653d4503015c4) |
 | pkgs/wl-clipboard | [2019-02-12 15:59](https://github.com/bugaevc/wl-clipboard/commits/a60fba0fad8399071bd36dbd2fb8fe0ef4cf6f11) |
 | pkgs/wf-recorder | [2019-03-15 07:54](https://github.com/ammen99/wf-recorder/commits/bfc56c9aaa47105d0fe16207a8318b559e749f4a) |
+| pkgs/gebaar-libinput | [2019-03-06 18:01](https://github.com/Coffee2CodeNL/gebaar-libinput/commits/41c7c05718c5c2322fd1a50f026571b7c230ed2a) |
 | pkgs/i3status-rust | [2019-03-14 02:18](https://github.com/greshake/i3status-rust/commits/a4485ad9e75b46e2dcadb9eca1042a5b655d24fc) |
 <!--pkgs-->
 

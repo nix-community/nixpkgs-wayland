@@ -57,6 +57,8 @@ update "pkgs/waybox"           "wizbright"  "waybox"           "master"
 update "pkgs/wl-clipboard"     "bugaevc"    "wl-clipboard"     "master"
 update "pkgs/wf-recorder"      "ammen99"    "wf-recorder"      "master"
 
+update "pkgs/gebaar-libinput"  "Coffee2CodeNL" "gebaar-libinput" "master"
+
 # i3-related
 update "pkgs/i3status-rust"    "greshake"   "i3status-rust"    "master"
 
