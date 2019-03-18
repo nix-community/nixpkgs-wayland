@@ -27,6 +27,7 @@ waylandPkgs = rec {
   bspwc            = pkgs.callPackage ./pkgs/bspwc {};
   waybox           = pkgs.callPackage ./pkgs/waybox {};
   wl-clipboard     = pkgs.callPackage ./pkgs/wl-clipboard {};
+  wf-recorder      = pkgs.callPackage ./pkgs/wf-recorder {};
 
   # i3-related
   i3status-rust    = pkgs.callPackage ./pkgs/i3status-rust {};
