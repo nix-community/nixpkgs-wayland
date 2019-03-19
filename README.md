@@ -15,8 +15,8 @@ Packages from this overlay are regularly updated and built against `nixos-unstab
 <!--pkgs-->
 | Attribute Name | Last Upstream Commit Time |
 | -------------- | ------------------------- |
-| nixpkgs/nixos-unstable | [2019-03-16 12:48](https://github.com/nixos/nixpkgs-channels/commits/da1a2b1eeafa66b4419b4f275396d8a731eccb61) |
-| nixpkgs/nixpkgs-unstable | [2019-03-17 03:10](https://github.com/nixos/nixpkgs-channels/commits/0125544e2a0552590c87dca1583768b49ba911c0) |
+| nixpkgs/nixos-unstable | [2019-03-18 15:48](https://github.com/nixos/nixpkgs-channels/commits/1222e289b5014d17884a8b1c99f220c5e3df0b14) |
+| nixpkgs/nixpkgs-unstable | [2019-03-19 10:57](https://github.com/nixos/nixpkgs-channels/commits/03050e9749e1548f1648aae5c062c954eaad546e) |
 | pkgs/wlroots | [2019-03-15 16:38](https://github.com/swaywm/wlroots/commits/6b7f5e4010103bffaf4666b77f7a4369295588d8) |
 | pkgs/xdg-desktop-portal-wlr | [2019-02-12 12:09](https://github.com/emersion/xdg-desktop-portal-wlr/commits/74ee43cf37e716d0119f441be96e2b3fc9838797) |
 | pkgs/sway | [2019-03-18 15:29](https://github.com/swaywm/sway/commits/e9a476244df7a8886fc6fc6785251198ed76e601) |
@@ -35,7 +35,7 @@ Packages from this overlay are regularly updated and built against `nixos-unstab
 | pkgs/bspwc | [2018-12-29 23:21](https://github.com/Bl4ckb0ne/bspwc/commits/e72ff641bd30d3db153d879cea1cffd149931546) |
 | pkgs/waybox | [2018-11-27 14:44](https://github.com/wizbright/waybox/commits/482d0a92f5530a5cbab8b0b913b653d4503015c4) |
 | pkgs/wl-clipboard | [2019-02-12 15:59](https://github.com/bugaevc/wl-clipboard/commits/a60fba0fad8399071bd36dbd2fb8fe0ef4cf6f11) |
-| pkgs/wf-recorder | [2019-03-15 07:54](https://github.com/ammen99/wf-recorder/commits/bfc56c9aaa47105d0fe16207a8318b559e749f4a) |
+| pkgs/wf-recorder | [2019-03-19 07:36](https://github.com/ammen99/wf-recorder/commits/869ae36a4f52de47b2495dc7fe4926c88c537b52) |
 | pkgs/gebaar-libinput | [2019-03-06 18:01](https://github.com/Coffee2CodeNL/gebaar-libinput/commits/41c7c05718c5c2322fd1a50f026571b7c230ed2a) |
 | pkgs/i3status-rust | [2019-03-14 02:18](https://github.com/greshake/i3status-rust/commits/a4485ad9e75b46e2dcadb9eca1042a5b655d24fc) |
 <!--pkgs-->
