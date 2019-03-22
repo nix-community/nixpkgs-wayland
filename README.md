@@ -15,20 +15,20 @@ Packages from this overlay are regularly updated and built against `nixos-unstab
 <!--pkgs-->
 | Attribute Name | Last Upstream Commit Time |
 | -------------- | ------------------------- |
-| nixpkgs/nixos-unstable | [2019-03-18 15:48](https://github.com/nixos/nixpkgs-channels/commits/1222e289b5014d17884a8b1c99f220c5e3df0b14) |
+| nixpkgs/nixos-unstable | [2019-03-19 18:11](https://github.com/nixos/nixpkgs-channels/commits/373488e6f4c3dc3bb51cabcb959e4a70eb5d7b2c) |
 | nixpkgs/nixpkgs-unstable | [2019-03-19 10:57](https://github.com/nixos/nixpkgs-channels/commits/03050e9749e1548f1648aae5c062c954eaad546e) |
-| pkgs/wlroots | [2019-03-15 16:38](https://github.com/swaywm/wlroots/commits/6b7f5e4010103bffaf4666b77f7a4369295588d8) |
+| pkgs/wlroots | [2019-03-21 20:12](https://github.com/swaywm/wlroots/commits/cd60f40bbb973c8e68bad547190640aa16f0d5b9) |
 | pkgs/xdg-desktop-portal-wlr | [2019-02-12 12:09](https://github.com/emersion/xdg-desktop-portal-wlr/commits/74ee43cf37e716d0119f441be96e2b3fc9838797) |
-| pkgs/sway | [2019-03-18 15:29](https://github.com/swaywm/sway/commits/e9a476244df7a8886fc6fc6785251198ed76e601) |
+| pkgs/sway | [2019-03-20 14:55](https://github.com/swaywm/sway/commits/cdcc2a5bb52a34865eee2ec3d09a38b047c08ffd) |
 | pkgs/swayidle | [2019-02-16 16:43](https://github.com/swaywm/swayidle/commits/3e392e31c0684854a9a145cda1bd9a44c99ef24d) |
-| pkgs/swaylock | [2019-02-12 22:27](https://github.com/swaywm/swaylock/commits/6b3be42264b9eaa8524ea4f0d93fbd1d82495d90) |
+| pkgs/swaylock | [2019-03-20 21:07](https://github.com/swaywm/swaylock/commits/7d5a73b0a99ca9b4c73a34faceda8bef2576fe23) |
 | pkgs/slurp | [2019-03-16 19:52](https://github.com/emersion/slurp/commits/92dc1ea1cf79541d157e98af3fb6aa4df501fef4) |
 | pkgs/grim | [2019-02-20 13:18](https://github.com/emersion/grim/commits/6994df611f55a4089209fdd5ad8d9301e4fb0167) |
-| pkgs/mako | [2019-03-08 08:53](https://github.com/emersion/mako/commits/9cf8a0335c811ccf4a6ea72be4c30aa646804365) |
+| pkgs/mako | [2019-03-20 17:01](https://github.com/emersion/mako/commits/741c63ad50705dce5545d4424c000da2f61c8ee0) |
 | pkgs/kanshi | [2019-02-02 23:21](https://github.com/emersion/kanshi/commits/970267e400c21a6bb51a1c80a0aadfd1e6660a7b) |
 | pkgs/wlstream | [2018-07-15 21:10](https://github.com/atomnuker/wlstream/commits/182076a94562b128c3a97ecc53cc68905ea86838) |
 | pkgs/oguri | [2019-02-19 14:19](https://github.com/vilhalmer/oguri/commits/59a51758f4b14f60113aad6ae4ebb92d80060ce5) |
-| pkgs/waybar | [2019-03-18 18:53](https://github.com/Alexays/waybar/commits/418767c405cb7640c90bda4e0bd503be0fd140a5) |
+| pkgs/waybar | [2019-03-20 09:51](https://github.com/Alexays/waybar/commits/f700319d7f99d9ea8c7de309c0c46cf966755f3a) |
 | pkgs/wayfire | [2019-03-17 07:49](https://github.com/WayfireWM/wayfire/commits/09b28398068c4f65d7ef1313c0633e24cf302ce2) |
 | pkgs/wf-config | [2019-02-13 15:49](https://github.com/WayfireWM/wf-config/commits/52a7963f8a77bfa98b657c76304d7ad515b69878) |
 | pkgs/redshift-wayland | [2018-11-07 20:03](https://github.com/minus7/redshift/commits/420d0d534c9f03abc4d634a7d3d7629caf29b4b6) |
@@ -37,7 +37,7 @@ Packages from this overlay are regularly updated and built against `nixos-unstab
 | pkgs/wl-clipboard | [2019-02-12 15:59](https://github.com/bugaevc/wl-clipboard/commits/a60fba0fad8399071bd36dbd2fb8fe0ef4cf6f11) |
 | pkgs/wf-recorder | [2019-03-19 07:36](https://github.com/ammen99/wf-recorder/commits/869ae36a4f52de47b2495dc7fe4926c88c537b52) |
 | pkgs/gebaar-libinput | [2019-03-06 18:01](https://github.com/Coffee2CodeNL/gebaar-libinput/commits/41c7c05718c5c2322fd1a50f026571b7c230ed2a) |
-| pkgs/i3status-rust | [2019-03-14 02:18](https://github.com/greshake/i3status-rust/commits/a4485ad9e75b46e2dcadb9eca1042a5b655d24fc) |
+| pkgs/i3status-rust | [2019-03-21 12:58](https://github.com/greshake/i3status-rust/commits/18300e6b9259053b80c37aef56c958fe5f50062b) |
 <!--pkgs-->
 
 </details>
