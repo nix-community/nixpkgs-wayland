@@ -15,28 +15,28 @@ Packages from this overlay are regularly updated and built against `nixos-unstab
 <!--pkgs-->
 | Attribute Name | Last Upstream Commit Time |
 | -------------- | ------------------------- |
-| nixpkgs/nixos-unstable | [2019-03-19 18:11](https://github.com/nixos/nixpkgs-channels/commits/373488e6f4c3dc3bb51cabcb959e4a70eb5d7b2c) |
-| nixpkgs/nixpkgs-unstable | [2019-03-19 10:57](https://github.com/nixos/nixpkgs-channels/commits/03050e9749e1548f1648aae5c062c954eaad546e) |
-| pkgs/wlroots | [2019-03-22 15:14](https://github.com/swaywm/wlroots/commits/4281c8c5667508708a929b92ebc33ab810f3f055) |
+| nixpkgs/nixos-unstable | [2019-03-22 09:15](https://github.com/nixos/nixpkgs-channels/commits/07b42ccf2de451342982b550657636d891c4ba35) |
+| nixpkgs/nixpkgs-unstable | [2019-03-23 10:23](https://github.com/nixos/nixpkgs-channels/commits/796a8764ab85746f916e2cc8f6a9a5fc6d4d03ac) |
+| pkgs/wlroots | [2019-03-27 17:31](https://github.com/swaywm/wlroots/commits/08454adadaa5db9f136531eddbe290a933a335bf) |
 | pkgs/xdg-desktop-portal-wlr | [2019-02-12 12:09](https://github.com/emersion/xdg-desktop-portal-wlr/commits/74ee43cf37e716d0119f441be96e2b3fc9838797) |
-| pkgs/sway | [2019-03-20 14:55](https://github.com/swaywm/sway/commits/cdcc2a5bb52a34865eee2ec3d09a38b047c08ffd) |
+| pkgs/sway | [2019-03-27 16:07](https://github.com/swaywm/sway/commits/bfdee1319ffc8a720d0536a752a19ba23615a1e2) |
 | pkgs/swayidle | [2019-02-16 16:43](https://github.com/swaywm/swayidle/commits/3e392e31c0684854a9a145cda1bd9a44c99ef24d) |
 | pkgs/swaylock | [2019-03-20 21:07](https://github.com/swaywm/swaylock/commits/7d5a73b0a99ca9b4c73a34faceda8bef2576fe23) |
 | pkgs/slurp | [2019-03-16 19:52](https://github.com/emersion/slurp/commits/92dc1ea1cf79541d157e98af3fb6aa4df501fef4) |
 | pkgs/grim | [2019-02-20 13:18](https://github.com/emersion/grim/commits/6994df611f55a4089209fdd5ad8d9301e4fb0167) |
-| pkgs/mako | [2019-03-20 17:01](https://github.com/emersion/mako/commits/741c63ad50705dce5545d4424c000da2f61c8ee0) |
+| pkgs/mako | [2019-03-25 18:10](https://github.com/emersion/mako/commits/87170d5a3499225906a594f47557ea30e34662dd) |
 | pkgs/kanshi | [2019-02-02 23:21](https://github.com/emersion/kanshi/commits/970267e400c21a6bb51a1c80a0aadfd1e6660a7b) |
 | pkgs/wlstream | [2018-07-15 21:10](https://github.com/atomnuker/wlstream/commits/182076a94562b128c3a97ecc53cc68905ea86838) |
 | pkgs/oguri | [2019-02-19 14:19](https://github.com/vilhalmer/oguri/commits/59a51758f4b14f60113aad6ae4ebb92d80060ce5) |
-| pkgs/waybar | [2019-03-22 11:25](https://github.com/Alexays/waybar/commits/47142a61ae3e5a19703870c3959013de3fef344a) |
-| pkgs/wayfire | [2019-03-22 11:30](https://github.com/WayfireWM/wayfire/commits/6616a0d2fdc24dd275f6ea5183229dc6a9865073) |
-| pkgs/wf-config | [2019-02-13 15:49](https://github.com/WayfireWM/wf-config/commits/52a7963f8a77bfa98b657c76304d7ad515b69878) |
+| pkgs/waybar | [2019-03-27 07:15](https://github.com/Alexays/waybar/commits/b17984f75e80f708afe7b45c444f3732adfc2aab) |
+| pkgs/wayfire | [2019-03-26 14:22](https://github.com/WayfireWM/wayfire/commits/784c3210500f5b7fad76ac710bf4bb3070e09833) |
+| pkgs/wf-config | [2019-03-24 21:20](https://github.com/WayfireWM/wf-config/commits/a0504d822160c5fc69d3af9cf853e2cc2e5ce3e4) |
 | pkgs/redshift-wayland | [2018-11-07 20:03](https://github.com/minus7/redshift/commits/420d0d534c9f03abc4d634a7d3d7629caf29b4b6) |
 | pkgs/bspwc | [2018-12-29 23:21](https://github.com/Bl4ckb0ne/bspwc/commits/e72ff641bd30d3db153d879cea1cffd149931546) |
 | pkgs/waybox | [2018-11-27 14:44](https://github.com/wizbright/waybox/commits/482d0a92f5530a5cbab8b0b913b653d4503015c4) |
 | pkgs/wl-clipboard | [2019-02-12 15:59](https://github.com/bugaevc/wl-clipboard/commits/a60fba0fad8399071bd36dbd2fb8fe0ef4cf6f11) |
-| pkgs/wf-recorder | [2019-03-19 07:36](https://github.com/ammen99/wf-recorder/commits/869ae36a4f52de47b2495dc7fe4926c88c537b52) |
-| pkgs/gebaar-libinput | [2019-03-06 18:01](https://github.com/Coffee2CodeNL/gebaar-libinput/commits/41c7c05718c5c2322fd1a50f026571b7c230ed2a) |
+| pkgs/wf-recorder | [2019-03-26 14:56](https://github.com/ammen99/wf-recorder/commits/e6073f5d9c85b5db53b6fc319569daf4e1f1f62c) |
+| pkgs/gebaar-libinput | [2019-03-27 09:41](https://github.com/Coffee2CodeNL/gebaar-libinput/commits/6e7341cc4e53929618eda0c9b21a77943e2b9ce8) |
 | pkgs/i3status-rust | [2019-03-21 12:58](https://github.com/greshake/i3status-rust/commits/18300e6b9259053b80c37aef56c958fe5f50062b) |
 <!--pkgs-->
 
