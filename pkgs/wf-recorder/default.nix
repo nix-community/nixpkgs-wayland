@@ -1,4 +1,5 @@
-{ stdenv, fetchFromGitHub, meson, ninja, pkgconfig, wayland, wayland-protocols, ffmpeg, x264 }:
+{ stdenv, fetchFromGitHub, meson, ninja, pkgconfig, wayland, wayland-protocols, ffmpeg, x264
+, libpulseaudio }:
 
 let
   metadata = import ./metadata.nix;
@@ -14,7 +15,7 @@ stdenv.mkDerivation rec {
   };
 
   nativeBuildInputs = [ meson ninja pkgconfig ];
-  buildInputs = [ wayland wayland-protocols ffmpeg x264 ];
+  buildInputs = [ wayland wayland-protocols ffmpeg x264 libpulseaudio ];
 
   meta = with stdenv.lib; {
     description = "Utility program for screen recording of wlroots-based compositors";
