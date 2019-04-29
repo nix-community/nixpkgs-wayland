@@ -5,6 +5,7 @@
 , fmt, jsoncpp, libdbusmenu-gtk3
 , glib
 , git
+, mpd_clientlib
 }:
 
 let
@@ -27,6 +28,7 @@ stdenv.mkDerivation rec {
     libpulseaudio libinput libnl gtkmm3
     git fmt jsoncpp libdbusmenu-gtk3
     glib
+    mpd_clientlib
   ];
   mesonFlags = [
     "-Dauto_features=enabled"

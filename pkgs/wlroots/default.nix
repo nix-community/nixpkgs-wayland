@@ -1,6 +1,7 @@
 { stdenv, fetchFromGitHub, fetchpatch, meson, ninja, pkgconfig
 , wayland, libGL, wayland-protocols, libinput, libxkbcommon, pixman
 , xcbutilwm, libX11, libcap, xcbutilimage, xcbutilerrors, mesa_noglu
+, freerdp
 , libpng, ffmpeg_4
 }:
 
@@ -28,11 +29,13 @@ in stdenv.mkDerivation rec {
     wayland libGL wayland-protocols libinput libxkbcommon pixman
     xcbutilwm libX11 libcap xcbutilimage xcbutilerrors mesa_noglu
     libpng ffmpeg_4
+    freerdp
   ];
 
   mesonFlags = [
     "-Dlibcap=enabled" "-Dlogind=enabled" "-Dxwayland=enabled" "-Dx11-backend=enabled"
     "-Dxcb-icccm=enabled" "-Dxcb-xkb=enabled" "-Dxcb-errors=enabled"
+    "-Dfreerdp=enabled"
   ];
 
   postInstall = ''

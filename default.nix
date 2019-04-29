@@ -24,8 +24,8 @@ waylandPkgs = rec {
     inherit (pkgs.python3Packages) python pygobject3 pyxdg wrapPython;
     geoclue = pkgs.geoclue2;
   };
-  bspwc            = pkgs.callPackage ./pkgs/bspwc {};
-  waybox           = pkgs.callPackage ./pkgs/waybox {};
+  bspwc            = pkgs.callPackage ./pkgs/bspwc { wlroots = pkgs.wlroots; };
+  waybox           = pkgs.callPackage ./pkgs/waybox { wlroots = pkgs.wlroots; };
   wl-clipboard     = pkgs.callPackage ./pkgs/wl-clipboard {};
   wf-recorder      = pkgs.callPackage ./pkgs/wf-recorder {};
 
