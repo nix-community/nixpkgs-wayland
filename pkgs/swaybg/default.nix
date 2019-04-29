@@ -23,8 +23,8 @@ stdenv.mkDerivation rec {
 
   buildInputs = [ cairo wayland wayland-protocols ] ++ stdenv.lib.optional nonPngSupport gdk_pixbuf;
 
-  mesonFlags = stdenv.lib.optional nonPngSupport [ "-Dgdk-pixbuf=enabled" ]
-    ++ stdenv.lib.optional buildDocs [ "-Dman-pages=enabled" ];
+  mesonFlags = stdenv.lib.optional nonPngSupport "-Dgdk-pixbuf=enabled"
+    ++ stdenv.lib.optional buildDocs "-Dman-pages=enabled";
 
   enableParallelBuilding = true;
 
