@@ -52,7 +52,7 @@ stdenv.mkDerivation rec {
   ] ++ stdenv.lib.optional  withRandr        libxcb
     ++ stdenv.lib.optional  withGeoclue      geoclue
     ++ stdenv.lib.optional  withDrm          libdrm
-    ++ stdenv.lib.optional  withWayland      [ wayland wayland-protocols wlroots ]
+    ++ stdenv.lib.optionals withWayland      [ wayland wayland-protocols wlroots ]
     ;
 
   pythonPath = [ pygobject3 pyxdg ];

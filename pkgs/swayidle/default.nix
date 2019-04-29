@@ -31,10 +31,9 @@ stdenv.mkDerivation rec {
   ];
 
   mesonFlags = [
-    "-Dman-pages=enabled"
     "-Dlogind=enabled"
     "-Dlogind-provider=systemd"
-  ];
+  ] ++ stdenv.lib.optional buildDocs "-Dman-pages=enabled";
 
   enableParallelBuilding = true;
 

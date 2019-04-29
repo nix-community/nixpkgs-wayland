@@ -34,8 +34,7 @@ stdenv.mkDerivation rec {
     "-Dswaylock-version=${version}"
     "-Dpam=enabled"
     "-Dgdk-pixbuf=enabled"
-    "-Dman-pages=enabled"
-  ];
+  ] ++ stdenv.lib.optional buildDocs "-Dman-pages=enabled";
 
   enableParallelBuilding = true;
 
