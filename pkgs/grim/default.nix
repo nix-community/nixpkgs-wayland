@@ -18,9 +18,10 @@ stdenv.mkDerivation rec {
     sha256 = metadata.sha256;
   };
 
-  nativeBuildInputs = [ pkgconfig meson ninja ] ++ stdenv.lib.optional buildDocs [ scdoc ];
+  nativeBuildInputs = [ pkgconfig meson ninja ] ++ stdenv.lib.optional buildDocs scdoc;
   buildInputs = [ cairo libjpeg wayland wayland-protocols ];
-  mesonFlags = [ "-Dauto_features=enabled" ];
+  mesonFlags = [ "-Djpeg=enabled" ]
+    ++ stdenv.lib.optional buildDocs "-Dman-pages=enabled";
 
   enableParallelBuilding = true;
 
