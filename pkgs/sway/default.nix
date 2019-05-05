@@ -5,6 +5,7 @@
 , libglvnd
 , pango, cairo, libinput, libcap, pam, gdk_pixbuf
 , wlroots, wayland-protocols
+, libGLU_combined
 }:
 
 let
@@ -13,7 +14,7 @@ in
 stdenv.mkDerivation rec {
   name = "${pname}-${version}";
   pname = "sway";
-  version = "1.0";
+  version = metadata.rev;
 
   src = fetchFromGitHub {
     owner = "swaywm";
@@ -24,7 +25,12 @@ stdenv.mkDerivation rec {
 
   patches = [
     ./sway-config-no-nix-store-references.patch
+    ./load-configuration-from-etc.patch
   ];
+
+  postPatch = ''
+    sed -iE "0,/version: '.*',/ s//version: '${version}',/" meson.build
+  '';
 
   nativeBuildInputs = [ pkgconfig meson ninja scdoc ];
 

@@ -37,27 +37,25 @@ function update() {
 update "nixpkgs/nixos-unstable" "nixos" "nixpkgs-channels" "nixos-unstable"
 update "nixpkgs/nixpkgs-unstable" "nixos" "nixpkgs-channels" "nixpkgs-unstable"
 
+update "pkgs/xdg-desktop-portal-wlr" "emersion" "xdg-desktop-portal-wlr" "master"
 update "pkgs/wlroots"          "swaywm"     "wlroots"          "master"
-update "pkgs/xdg-desktop-portal-wlr"   "emersion"   "xdg-desktop-portal-wlr" "master"
 update "pkgs/sway"             "swaywm"     "sway"             "master"
 update "pkgs/swaybg"           "swaywm"     "swaybg"           "master"
 update "pkgs/swayidle"         "swaywm"     "swayidle"         "master"
+update "pkgs/swaybg"           "swaywm"     "swaybg"           "master"
 update "pkgs/swaylock"         "swaywm"     "swaylock"         "master"
 update "pkgs/slurp"            "emersion"   "slurp"            "master"
 update "pkgs/grim"             "emersion"   "grim"             "master"
 update "pkgs/mako"             "emersion"   "mako"             "master"
 update "pkgs/kanshi"           "emersion"   "kanshi"           "master"
-update "pkgs/wlstream"         "atomnuker"  "wlstream"         "master"
 update "pkgs/oguri"            "vilhalmer"  "oguri"            "master"
 update "pkgs/waybar"           "Alexays"    "waybar"           "master"
 update "pkgs/wayfire"          "WayfireWM"  "wayfire"          "master"
 update "pkgs/wf-config"        "WayfireWM"  "wf-config"        "master"
 update "pkgs/redshift-wayland" "minus7"     "redshift"         "wayland"
-update "pkgs/bspwc"            "Bl4ckb0ne"  "bspwc"            "master"
 update "pkgs/waybox"           "wizbright"  "waybox"           "master"
 update "pkgs/wl-clipboard"     "bugaevc"    "wl-clipboard"     "master"
 update "pkgs/wf-recorder"      "ammen99"    "wf-recorder"      "master"
-
 update "pkgs/gebaar-libinput"  "Coffee2CodeNL" "gebaar-libinput" "master"
 
 # i3-related
@@ -80,3 +78,8 @@ rg --multiline '(?s)(.*)<!--pkgs-->(.*)<!--pkgs-->(.*)' "README.md" \
 
 # build and push
 nix-build --no-out-link build.nix -A all | cachix push "${cachixremote}"
+
+echo "!!!"
+echo "UPDATE MANUAL PKGS"
+echo "!!!"
+
