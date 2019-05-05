@@ -9,6 +9,7 @@ waylandPkgs = rec {
   wlroots          = pkgs.callPackage ./pkgs/wlroots {};
   xdg-desktop-portal-wlr = pkgs.callPackage ./pkgs/xdg-desktop-portal-wlr {};
   sway             = pkgs.callPackage ./pkgs/sway {};
+  swaybg           = pkgs.callPackage ./pkgs/swaybg {};
   swayidle         = pkgs.callPackage ./pkgs/swayidle {};
   swaylock         = pkgs.callPackage ./pkgs/swaylock {};
   grim             = pkgs.callPackage ./pkgs/grim {};
@@ -36,4 +37,3 @@ waylandPkgs = rec {
 };
 in
   waylandPkgs // { inherit waylandPkgs; }
-

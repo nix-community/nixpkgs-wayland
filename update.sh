@@ -40,6 +40,7 @@ update "nixpkgs/nixpkgs-unstable" "nixos" "nixpkgs-channels" "nixpkgs-unstable"
 update "pkgs/wlroots"          "swaywm"     "wlroots"          "master"
 update "pkgs/xdg-desktop-portal-wlr"   "emersion"   "xdg-desktop-portal-wlr" "master"
 update "pkgs/sway"             "swaywm"     "sway"             "master"
+update "pkgs/swaybg"           "swaywm"     "swaybg"           "master"
 update "pkgs/swayidle"         "swaywm"     "swayidle"         "master"
 update "pkgs/swaylock"         "swaywm"     "swaylock"         "master"
 update "pkgs/slurp"            "emersion"   "slurp"            "master"
@@ -79,4 +80,3 @@ rg --multiline '(?s)(.*)<!--pkgs-->(.*)<!--pkgs-->(.*)' "README.md" \
 
 # build and push
 nix-build --no-out-link build.nix -A all | cachix push "${cachixremote}"
-
