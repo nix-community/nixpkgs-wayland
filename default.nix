@@ -3,6 +3,7 @@ let
 waylandPkgs = rec {
   # temp
   sway-beta = sway;
+  spdlog = (pkgs.callPackage ./pkgs-temp/spdlog {}).spdlog_1;
 
   # wlroots-related
   scdoc            = pkgs.callPackage ./pkgs/scdoc {};
@@ -16,24 +17,25 @@ waylandPkgs = rec {
   slurp            = pkgs.callPackage ./pkgs/slurp {};
   mako             = pkgs.callPackage ./pkgs/mako {};
   kanshi           = pkgs.callPackage ./pkgs/kanshi {};
-  wlstream         = pkgs.callPackage ./pkgs/wlstream {};
   oguri            = pkgs.callPackage ./pkgs/oguri {};
   waybar           = pkgs.callPackage ./pkgs/waybar {};
   wf-config        = pkgs.callPackage ./pkgs/wf-config {};
-  wayfire          = pkgs.callPackage ./pkgs/wayfire { wlroots = pkgs.wlroots; };
+  wayfire          = pkgs.callPackage ./pkgs/wayfire {};
   redshift-wayland = pkgs.callPackage ./pkgs/redshift-wayland {
     inherit (pkgs.python3Packages) python pygobject3 pyxdg wrapPython;
     geoclue = pkgs.geoclue2;
   };
-  bspwc            = pkgs.callPackage ./pkgs/bspwc { wlroots = pkgs.wlroots; };
   waybox           = pkgs.callPackage ./pkgs/waybox { wlroots = pkgs.wlroots; };
   wl-clipboard     = pkgs.callPackage ./pkgs/wl-clipboard {};
   wf-recorder      = pkgs.callPackage ./pkgs/wf-recorder {};
-
   gebaar-libinput  = pkgs.callPackage ./pkgs/gebaar-libinput {};
-
-  # i3-related
   i3status-rust    = pkgs.callPackage ./pkgs/i3status-rust {};
+
+  bspwc    = pkgs.callPackage ./pkgs/bspwc { wlroots = pkgs.wlroots; };
+  wltrunk  = pkgs.callPackage ./pkgs/wltrunk { wlroots = pkgs.wlroots; };
+  glpaper  = pkgs.callPackage ./pkgs/glpaper {};
+
+  wlrobs   = pkgs.callPackage ./pkgs/wlrobs {};
 };
 in
   waylandPkgs // { inherit waylandPkgs; }

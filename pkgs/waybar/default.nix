@@ -5,6 +5,7 @@
 , fmt, jsoncpp, libdbusmenu-gtk3
 , glib
 , git
+, spdlog
 , mpd_clientlib
 }:
 
@@ -28,6 +29,7 @@ stdenv.mkDerivation rec {
     libpulseaudio libinput libnl gtkmm3
     git fmt jsoncpp libdbusmenu-gtk3
     glib
+    spdlog
     mpd_clientlib
   ];
   mesonFlags = [

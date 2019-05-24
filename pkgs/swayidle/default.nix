@@ -21,6 +21,10 @@ stdenv.mkDerivation rec {
     sha256 = metadata.sha256;
   };
 
+  postPatch = ''
+    sed -iE "0,/version: '.*',/ s//version: '${version}',/" meson.build
+  '';
+
   nativeBuildInputs = [
     pkgconfig meson ninja
   ] ++ stdenv.lib.optional buildDocs scdoc;

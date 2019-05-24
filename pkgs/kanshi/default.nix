@@ -25,7 +25,7 @@ rustPlatform.buildRustPackage {
   };
 
   cargoSha256Version = 2;
-  cargoSha256 = "0lf1zfmq9ypxk86ma0n4nczbklmjs631wdzfx4wd3cvhghyr8nkq";
+  cargoSha256 = "0pvkrdjrg9y38vsrqkrvsknzp78sknpmq14rskvij450a9mpihii";
 
   meta = with stdenv.lib; {
     description = "Dynamic display configuration";
