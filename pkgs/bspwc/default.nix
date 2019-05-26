@@ -31,7 +31,7 @@ stdenv.mkDerivation rec {
   meta = with stdenv.lib; {
     description = "Wayland compositor based on BSPWM";
     homepage    = "https://github.com/Bl4ckb0ne/bspwc";
-    license     = licenses.mit;
+    license     = licenses.gpl2;
     platforms   = platforms.linux;
     maintainers = with maintainers; [ colemickens ];
   };

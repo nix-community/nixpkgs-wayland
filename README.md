@@ -26,8 +26,8 @@ Packages from this overlay are regularly updated and built against `nixos-unstab
 | pkgs/grim | [2019-02-20 13:18](https://github.com/emersion/grim/commits/6994df611f55a4089209fdd5ad8d9301e4fb0167) |
 | pkgs/mako | [2019-05-24 15:52](https://github.com/emersion/mako/commits/ca8e763f06756136c534b1bbd2e5b536be6b1995) |
 | pkgs/kanshi | [2019-02-02 23:21](https://github.com/emersion/kanshi/commits/970267e400c21a6bb51a1c80a0aadfd1e6660a7b) |
-| pkgs/oguri | [2019-05-25 03:32](https://github.com/vilhalmer/oguri/commits/bfe16b3abd63934268678a89b81cb2e534965a33) |
-| pkgs/waybar | [2019-05-26 21:16](https://github.com/Alexays/waybar/commits/6e73c6db616ef1edbd12d910428f69f22eabc77b) |
+| pkgs/oguri | [2019-05-26 22:46](https://github.com/vilhalmer/oguri/commits/f766b6d1f908e4b07765295892843cd8ceb7497a) |
+| pkgs/waybar | [2019-05-26 22:08](https://github.com/Alexays/waybar/commits/6e69af89678a441c1145edc7210b545b1ea03ede) |
 | pkgs/wayfire | [2019-05-22 12:55](https://github.com/WayfireWM/wayfire/commits/188dfd489ccb5e7889e998fded4070dafe922dda) |
 | pkgs/wf-config | [2019-05-10 12:27](https://github.com/WayfireWM/wf-config/commits/dd6f49522c7f6f4a303d9318cddf67ff38829b0a) |
 | pkgs/redshift-wayland | [2019-04-17 23:13](https://github.com/minus7/redshift/commits/eecbfedac48f827e96ad5e151de8f41f6cd3af66) |
