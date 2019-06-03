@@ -2,8 +2,7 @@ self: pkgs:
 let
 waylandPkgs = rec {
   # temp
-  sway-beta = sway;
-  spdlog = (pkgs.callPackage ./pkgs-temp/spdlog {}).spdlog_1;
+  wlroots_060     = pkgs.callPackage ./pkgs-temp/wlroots-0.6.0 {};
 
   # wlroots-related
   scdoc            = pkgs.callPackage ./pkgs/scdoc {};
@@ -20,7 +19,7 @@ waylandPkgs = rec {
   oguri            = pkgs.callPackage ./pkgs/oguri {};
   waybar           = pkgs.callPackage ./pkgs/waybar {};
   wf-config        = pkgs.callPackage ./pkgs/wf-config {};
-  wayfire          = pkgs.callPackage ./pkgs/wayfire {};
+  wayfire          = pkgs.callPackage ./pkgs/wayfire { wlroots = wlroots_060; };
   redshift-wayland = pkgs.callPackage ./pkgs/redshift-wayland {
     inherit (pkgs.python3Packages) python pygobject3 pyxdg wrapPython;
     geoclue = pkgs.geoclue2;
@@ -36,6 +35,15 @@ waylandPkgs = rec {
   glpaper  = pkgs.callPackage ./pkgs/glpaper {};
 
   wlrobs   = pkgs.callPackage ./pkgs/wlrobs {};
+
+  alacritty = pkgs.callPackage ./pkgs/alacritty {
+    inherit (pkgs.xorg) libXcursor libXxf86vm libXi libxcb;
+    inherit (pkgs.darwin) cf-private;
+    inherit (pkgs.darwin.apple_sdk.frameworks) AppKit CoreFoundation CoreGraphics CoreServices CoreText Foundation OpenGL;
+  };
 };
 in
   waylandPkgs // { inherit waylandPkgs; }
+# TODO: I think adding a waylandPkgs *against* a channel would let
+#me combine build.nix in here, and make it easier for others ot use it as
+#a straight pkg list instead of just the current 'waylandPkgs' overlay

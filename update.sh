@@ -61,6 +61,8 @@ update "pkgs/gebaar-libinput"  "Coffee2CodeNL" "gebaar-libinput" "master"
 # i3-related
 update "pkgs/i3status-rust"    "greshake"   "i3status-rust"    "master"
 
+update "pkgs/alacritty"        "jwilm"      "alacritty" "master"
+
 # update README.md
 set +x
 replace="$(printf "<!--pkgs-->")"

@@ -1,21 +1,17 @@
-{
-  stdenv, fetchFromGitHub, rustPlatform
-, libudev, pkgconfig
+{ stdenv, fetchFromGitHub
+, meson, pkgconfig
+, ninja, scdoc, libudev
+, wayland, wayland-protocols
+, buildDocs ? true
 }:
 
 let
   metadata = import ./metadata.nix;
+in
+stdenv.mkDerivation rec {
+  name = "${pname}-${version}";
   pname = "kanshi";
   version = metadata.rev;
-in
-rustPlatform.buildRustPackage {
-  inherit pname version;
-  name = "${pname}-${version}";
-
-  nativeBuildInputs = [ pkgconfig ];
-  buildInputs = [ libudev ];
-
-  cargoBuildFlags = [];
 
   src = fetchFromGitHub {
     owner = "emersion";
@@ -24,14 +20,22 @@ rustPlatform.buildRustPackage {
     sha256 = metadata.sha256;
   };
 
-  cargoSha256Version = 2;
-  cargoSha256 = "0pvkrdjrg9y38vsrqkrvsknzp78sknpmq14rskvij450a9mpihii";
+  nativeBuildInputs = [ pkgconfig meson ninja ];
+
+  buildInputs = [
+    wayland wayland-protocols
+  ];
+
+  enableParallelBuilding = true;
+
+  mesonFlags = []
+    ++ stdenv.lib.optional (!buildDocs) "-Dman-pages=disabled";
 
   meta = with stdenv.lib; {
     description = "Dynamic display configuration";
     homepage = "https://github.com/emersion/kanshi";
     maintainers = with maintainers; [ colemickens ];
     platforms = platforms.linux;
-    #license = licenses.unknown; # TODO: ???
+    #license = TODO;
   };
 }
