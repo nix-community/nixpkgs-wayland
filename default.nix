@@ -35,6 +35,7 @@ waylandPkgs = rec {
   glpaper  = pkgs.callPackage ./pkgs/glpaper {};
 
   wlrobs   = pkgs.callPackage ./pkgs/wlrobs {};
+  wtype   = pkgs.callPackage ./pkgs/wtype {};
 
   alacritty = pkgs.callPackage ./pkgs/alacritty {
     inherit (pkgs.xorg) libXcursor libXxf86vm libXi libxcb;

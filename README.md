@@ -36,7 +36,8 @@ Packages from this overlay are regularly updated and built against `nixos-unstab
 | pkgs/wf-recorder | [2019-05-22 13:40](https://github.com/ammen99/wf-recorder/commits/43fb1c25a80ac1e498b4e4db9c28ebd3def5804a) |
 | pkgs/gebaar-libinput | [2019-04-05 13:27](https://github.com/Coffee2CodeNL/gebaar-libinput/commits/c18c8bd73e79aaf1211bd88bf9cff808273cf6d6) |
 | pkgs/i3status-rust | [2019-05-29 16:40](https://github.com/greshake/i3status-rust/commits/96e932d98da673fd8ff2dfb92b86db5a3ef71a27) |
-| pkgs/alacritty | [2019-06-03 15:18](https://github.com/jwilm/alacritty/commits/3156517c70db3c127688ffec43a9bdd59d06dfab) |
+| pkgs/alacritty | [2019-06-03 20:01](https://github.com/jwilm/alacritty/commits/3931fb6fbce728c33b4ae2d1e604f181a7246fe0) |
+| pkgs/wtype | [2019-05-30 23:01](https://github.com/atx/wtype/commits/157ae8fb7bc4235d1dd87dde479eecfc2a17665f) |
 <!--pkgs-->
 
 </details>
@@ -94,6 +95,7 @@ in
 
       wayfire   # wayfire WM
       wf-config # wayfire config manager
+      wtype     # xdotool, but for wayland
     ];
   }
 ```

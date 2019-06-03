@@ -63,6 +63,8 @@ update "pkgs/i3status-rust"    "greshake"   "i3status-rust"    "master"
 
 update "pkgs/alacritty"        "jwilm"      "alacritty" "master"
 
+update "pkgs/wtype"  "atx"  "wtype"  "master"
+
 # update README.md
 set +x
 replace="$(printf "<!--pkgs-->")"
