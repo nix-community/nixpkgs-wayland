@@ -38,6 +38,7 @@ Packages from this overlay are regularly updated and built against `nixos-unstab
 | pkgs/i3status-rust | [2019-05-29 16:40](https://github.com/greshake/i3status-rust/commits/96e932d98da673fd8ff2dfb92b86db5a3ef71a27) |
 | pkgs/alacritty | [2019-06-03 20:01](https://github.com/jwilm/alacritty/commits/3931fb6fbce728c33b4ae2d1e604f181a7246fe0) |
 | pkgs/wtype | [2019-05-30 23:01](https://github.com/atx/wtype/commits/157ae8fb7bc4235d1dd87dde479eecfc2a17665f) |
+| pkgs/cage | [2019-06-03 17:55](https://github.com/Hjdskes/cage/commits/1ecba7e67cfb8655d12b0b250b92eff71886bd4f) |
 <!--pkgs-->
 
 </details>
@@ -83,6 +84,7 @@ in
       wl-clipboard # clipboard CLI utilities
       wf-recorder # wayland screenrecorder
       gebaar-libinput # libinput utility
+      wtype     # xdotool, but for wayland
 
       # TODO: more steps required to use this?
       xdg-desktop-portal-wlr # xdg-desktop-portal backend for wlroots
@@ -93,9 +95,10 @@ in
       waybox   # An openbox clone on Wayland
       bspwc    # Wayland compositor based on BSPWM
 
+      cage # A Wayland kiosk (runs a single app fullscreen)
+
       wayfire   # wayfire WM
       wf-config # wayfire config manager
-      wtype     # xdotool, but for wayland
     ];
   }
 ```

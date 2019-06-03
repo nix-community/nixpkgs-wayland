@@ -1,0 +1,36 @@
+{ stdenv, fetchFromGitHub
+, pkgconfig, meson, ninja
+, wayland, wayland-protocols
+, wlroots, pixman, libxkbcommon, libudev, libGL, libX11
+}:
+
+let
+  metadata = import ./metadata.nix;
+in
+stdenv.mkDerivation rec {
+  name = "cage-${version}";
+  version = metadata.rev;
+
+  src = fetchFromGitHub {
+    owner = "Hjdskes";
+    repo = "cage";
+    rev = metadata.rev;
+    sha256 = metadata.sha256;
+  };
+
+  nativeBuildInputs = [ pkgconfig meson ninja ];
+  buildInputs = [
+    wayland wayland-protocols
+    wlroots pixman libxkbcommon libudev libGL libX11
+  ];
+
+  enableParallelBuilding = true;
+
+  meta = with stdenv.lib; {
+    description = "A Wayland kiosk";
+    homepage    = "https://github.com/Hjdskes/cage";
+    license     = licenses.mit;
+    platforms   = platforms.linux;
+    maintainers = with maintainers; [ colemickens ];
+  };
+}

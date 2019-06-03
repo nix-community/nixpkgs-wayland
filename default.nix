@@ -34,8 +34,9 @@ waylandPkgs = rec {
   wltrunk  = pkgs.callPackage ./pkgs/wltrunk { wlroots = pkgs.wlroots; };
   glpaper  = pkgs.callPackage ./pkgs/glpaper {};
 
-  wlrobs   = pkgs.callPackage ./pkgs/wlrobs {};
+  wlrobs  = pkgs.callPackage ./pkgs/wlrobs {};
   wtype   = pkgs.callPackage ./pkgs/wtype {};
+  cage    = pkgs.callPackage ./pkgs/cage {};
 
   alacritty = pkgs.callPackage ./pkgs/alacritty {
     inherit (pkgs.xorg) libXcursor libXxf86vm libXi libxcb;
