@@ -17,7 +17,7 @@ Packages from this overlay are regularly updated and built against `nixos-unstab
 | nixpkgs/nixpkgs-unstable | [2019-05-29 03:19](https://github.com/nixos/nixpkgs-channels/commits/61f0936d1cd73760312712615233cd80195a9b47) |
 | pkgs/xdg-desktop-portal-wlr | [2019-02-12 12:09](https://github.com/emersion/xdg-desktop-portal-wlr/commits/74ee43cf37e716d0119f441be96e2b3fc9838797) |
 | pkgs/wlroots | [2019-06-02 13:30](https://github.com/swaywm/wlroots/commits/3dec88e4555ee5fd95ffd69133623816cb0c25c4) |
-| pkgs/sway | [2019-06-03 12:50](https://github.com/swaywm/sway/commits/6b6eb147ec2e79866f30a8f339c91f9bf5ca8c8c) |
+| pkgs/sway | [2019-06-04 05:47](https://github.com/swaywm/sway/commits/799f5a2cd5ffa83d73816489aa8683564bc226f7) |
 | pkgs/swaybg | [2019-05-04 12:08](https://github.com/swaywm/swaybg/commits/25c6eaf15e64655385f01cbb98bffe28a862fe13) |
 | pkgs/swayidle | [2019-05-23 13:10](https://github.com/swaywm/swayidle/commits/5e7bd5bd21010cb5723acdf449edb341e9880ae2) |
 | pkgs/swaybg | [2019-05-04 12:08](https://github.com/swaywm/swaybg/commits/25c6eaf15e64655385f01cbb98bffe28a862fe13) |
