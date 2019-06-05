@@ -1,9 +1,7 @@
 { stdenv, fetchgit
-, meson, ninja, pkgconfig
-, wlroots, wayland, wayland-protocols
-, pixman, libxkbcommon
-, libudev, mesa_noglu, libX11
-, python3, libffi
+, meson, ninja, pkgconfig, python3
+, wayland, wayland-protocols
+, libffi, mesa_noglu
 }:
 
 let
