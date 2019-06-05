@@ -4,7 +4,9 @@
 
 Automated, pre-built packages for Wayland (sway/wlroots) tools for NixOS.
 
-Packages from this overlay are regularly updated and built against `nixos-unstable` and `nixpkgs-unstable`.
+Packages from this overlay are regularly updated and built against `nixos-unstable` and `nixpkgs-unstable`. They are published to the binary cache on Cachix. Usage instructions are available on the Cachix page: [`nixpkgs-wayland` on cachix](https://nixpkgs-wayland.cachix.org).
+
+
 
 ## Packages
 
@@ -66,6 +68,7 @@ in
     nixpkgs.overlays = [ waylandOverlay ];
     programs.sway.enable = true;
     programs.sway.extraPackages = with pkgs; [
+      xwayland
       swaybg   # required by sway for controlling desktop wallpaper
       swayidle # used for controlling idle timeouts and triggers (screen locking, etc)
       swaylock # used for locking Wayland sessions
@@ -73,32 +76,29 @@ in
       waybar        # polybar-alike
       i3status-rust # simpler bar written in Rust
 
-      grim     # screen image capture
-      slurp    # screen are selection tool
-      mako     # notification daemon
-      oguri    # animated background utility
-      glpaper  # animated background utility
-      kanshi   # dynamic display configuration helper
-
+      gebaar-libinput  # libinput gestures utility
+      glpaper          # GL shaders as wallpaper
+      grim             # screen image capture
+      kanshi           # dynamic display configuration helper
+      mako             # notification daemon
+      oguri            # animated background utility
       redshift-wayland # patched to work with wayland gamma protocol
-      wl-clipboard # clipboard CLI utilities
-      wf-recorder # wayland screenrecorder
-      gebaar-libinput # libinput utility
-      wtype     # xdotool, but for wayland
-      waypipe   # network transparency for Wayland
+      slurp            # screen area selection tool
+      waypipe          # network transparency for Wayland
+      wf-recorder      # wayland screenrecorder
+      wl-clipboard     # clipboard CLI utilities
+      wtype            # xdotool, but for wayland
 
       # TODO: more steps required to use this?
       xdg-desktop-portal-wlr # xdg-desktop-portal backend for wlroots
     ];
     environment.systemPackages = with pkgs; [
       # other compositors/window-managers
-      wayfire  # 3D wayland compositor
       waybox   # An openbox clone on Wayland
       bspwc    # Wayland compositor based on BSPWM
+      cage     # A Wayland kiosk (runs a single app fullscreen)
 
-      cage # A Wayland kiosk (runs a single app fullscreen)
-
-      wayfire   # wayfire WM
+      wayfire   # 3D wayland compositor
       wf-config # wayfire config manager
     ];
   }
@@ -132,10 +132,3 @@ ln -s ~/.nix-profile/share/obs/obs-plugins ~/.config/obs-studio/plugins
   * calls `nix-build build.nix` to build all packages against `nixos-unstable`
   * calls `nix-build build.nixpkgs.nix` to build all packages against `nixpkgs-unstable`
   * pushes to [nixpkgs-wayland on cachix](https://nixpkgs-wayland.cachix.org)
-
-## Binary Cache
-
-Packages are built as described in the section above and are published to cachix.
-
-See usage instructions at [`nixpkgs-wayland` on cachix](https://nixpkgs-wayland.cachix.org).
-
