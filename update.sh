@@ -7,6 +7,13 @@ cachixremote="nixpkgs-wayland"
 # keep track of what we build and only upload at the end
 pkgentries=()
 
+# keep track of manuals to output at the end
+manuals=()
+
+function manual() {
+  manuals=("${manuals[@]}" "${1}")
+}
+
 function update() {
   attr="${1}"
   owner="${2}"
@@ -37,34 +44,35 @@ function update() {
 update "nixpkgs/nixos-unstable" "nixos" "nixpkgs-channels" "nixos-unstable"
 update "nixpkgs/nixpkgs-unstable" "nixos" "nixpkgs-channels" "nixpkgs-unstable"
 
-update "pkgs/xdg-desktop-portal-wlr" "emersion" "xdg-desktop-portal-wlr" "master"
-update "pkgs/wlroots"          "swaywm"     "wlroots"          "master"
+update "pkgs/alacritty"        "jwilm"      "alacritty" "master"
+manual "pkgs/bspwc"
+update "pkgs/cage"             "Hjdskes" "cage" "master"
+update "pkgs/gebaar-libinput"  "Coffee2CodeNL" "gebaar-libinput" "master"
+manual "pkgs/glpaper"
+update "pkgs/grim"             "emersion"   "grim"             "master"
+update "pkgs/i3status-rust"    "greshake"   "i3status-rust"    "master"
+update "pkgs/kanshi"           "emersion"   "kanshi"           "master"
+update "pkgs/mako"             "emersion"   "mako"             "master"
+update "pkgs/oguri"            "vilhalmer"  "oguri"            "master"
+update "pkgs/redshift-wayland" "minus7"     "redshift"         "wayland"
+update "pkgs/slurp"            "emersion"   "slurp"            "master"
 update "pkgs/sway"             "swaywm"     "sway"             "master"
 update "pkgs/swaybg"           "swaywm"     "swaybg"           "master"
 update "pkgs/swayidle"         "swaywm"     "swayidle"         "master"
-update "pkgs/swaybg"           "swaywm"     "swaybg"           "master"
 update "pkgs/swaylock"         "swaywm"     "swaylock"         "master"
-update "pkgs/slurp"            "emersion"   "slurp"            "master"
-update "pkgs/grim"             "emersion"   "grim"             "master"
-update "pkgs/mako"             "emersion"   "mako"             "master"
-update "pkgs/kanshi"           "emersion"   "kanshi"           "master"
-update "pkgs/oguri"            "vilhalmer"  "oguri"            "master"
 update "pkgs/waybar"           "Alexays"    "waybar"           "master"
-update "pkgs/wayfire"          "WayfireWM"  "wayfire"          "master"
-update "pkgs/wf-config"        "WayfireWM"  "wf-config"        "master"
-update "pkgs/redshift-wayland" "minus7"     "redshift"         "wayland"
 update "pkgs/waybox"           "wizbright"  "waybox"           "master"
-update "pkgs/wl-clipboard"     "bugaevc"    "wl-clipboard"     "master"
+update "pkgs/wayfire"          "WayfireWM"  "wayfire"          "master"
+manual "pkgs/waypipe"
+update "pkgs/wf-config"        "WayfireWM"  "wf-config"        "master"
 update "pkgs/wf-recorder"      "ammen99"    "wf-recorder"      "master"
-update "pkgs/gebaar-libinput"  "Coffee2CodeNL" "gebaar-libinput" "master"
-
-# i3-related
-update "pkgs/i3status-rust"    "greshake"   "i3status-rust"    "master"
-
-update "pkgs/alacritty"        "jwilm"      "alacritty" "master"
-
-update "pkgs/wtype"  "atx"  "wtype"  "master"
-update "pkgs/cage" "Hjdskes" "cage" "master"
+update "pkgs/wl-clipboard"     "bugaevc"    "wl-clipboard"     "master"
+manual "pkgs/waypipe"
+manual "pkgs/wlrobs"
+update "pkgs/wlroots"          "swaywm"     "wlroots"          "master"
+manual "pkgs/wltrunk"
+update "pkgs/wtype"            "atx"  "wtype"  "master"
+update "pkgs/xdg-desktop-portal-wlr" "emersion" "xdg-desktop-portal-wlr" "master"
 
 # update README.md
 set +x
@@ -84,7 +92,7 @@ rg --multiline '(?s)(.*)<!--pkgs-->(.*)<!--pkgs-->(.*)' "README.md" \
 # build and push
 nix-build --no-out-link build.nix -A all | cachix push "${cachixremote}"
 
-echo "!!!"
-echo "UPDATE MANUAL PKGS"
-echo "!!!"
+for m in "${manual[@]}"; do
+  echo "UPDATE MANUALLY: ${m}"
+done
 
