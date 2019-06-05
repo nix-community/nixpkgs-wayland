@@ -85,6 +85,7 @@ in
       wf-recorder # wayland screenrecorder
       gebaar-libinput # libinput utility
       wtype     # xdotool, but for wayland
+      waypipe   # network transparency for Wayland
 
       # TODO: more steps required to use this?
       xdg-desktop-portal-wlr # xdg-desktop-portal backend for wlroots

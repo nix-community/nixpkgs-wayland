@@ -33,6 +33,7 @@ waylandPkgs = rec {
   bspwc    = pkgs.callPackage ./pkgs/bspwc { wlroots = pkgs.wlroots; };
   wltrunk  = pkgs.callPackage ./pkgs/wltrunk { wlroots = pkgs.wlroots; };
   glpaper  = pkgs.callPackage ./pkgs/glpaper {};
+  waypipe  = pkgs.callPackage ./pkgs/waypipe {};
 
   wlrobs  = pkgs.callPackage ./pkgs/wlrobs {};
   wtype   = pkgs.callPackage ./pkgs/wtype {};
