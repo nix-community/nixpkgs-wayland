@@ -2,6 +2,7 @@ self: pkgs:
 let
 waylandPkgs = rec {
   # temp
+  wlroots_050     = pkgs.callPackage ./pkgs-temp/wlroots-0.5.0 {};
   wlroots_060     = pkgs.callPackage ./pkgs-temp/wlroots-0.6.0 {};
 
   # wlroots-related
@@ -23,14 +24,14 @@ waylandPkgs = rec {
     inherit (pkgs.python3Packages) python pygobject3 pyxdg wrapPython;
     geoclue = pkgs.geoclue2;
   };
-  waybox           = pkgs.callPackage ./pkgs/waybox { wlroots = pkgs.wlroots; };
+  waybox           = pkgs.callPackage ./pkgs/waybox { wlroots = wlroots_050; };
   wl-clipboard     = pkgs.callPackage ./pkgs/wl-clipboard {};
   wf-recorder      = pkgs.callPackage ./pkgs/wf-recorder {};
   gebaar-libinput  = pkgs.callPackage ./pkgs/gebaar-libinput {};
   i3status-rust    = pkgs.callPackage ./pkgs/i3status-rust {};
 
-  bspwc    = pkgs.callPackage ./pkgs/bspwc { wlroots = pkgs.wlroots; };
-  wltrunk  = pkgs.callPackage ./pkgs/wltrunk { wlroots = pkgs.wlroots; };
+  bspwc    = pkgs.callPackage ./pkgs/bspwc { wlroots = wlroots_050; };
+  wltrunk  = pkgs.callPackage ./pkgs/wltrunk { wlroots = wlroots_050; };
   glpaper  = pkgs.callPackage ./pkgs/glpaper {};
   waypipe  = pkgs.callPackage ./pkgs/waypipe {};
 
