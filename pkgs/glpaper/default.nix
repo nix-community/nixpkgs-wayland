@@ -41,7 +41,6 @@ stdenv.mkDerivation rec {
   meta = with stdenv.lib; {
     description = "GLPaper is a wallpaper program for wlroots based wayland compositors such as sway that allows you to render glsl shaders as your wallpaper";
     homepage    = "https://bitbucket.org/Scoopta/glpaper";
-    license     = licenses.none;
     platforms   = platforms.linux;
     maintainers = with maintainers; [ colemickens ];
   };

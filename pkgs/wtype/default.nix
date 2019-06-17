@@ -1,7 +1,7 @@
 { stdenv, fetchFromGitHub
 , pkgconfig, cmake, extra-cmake-modules
 , wayland, wayland-protocols
-
+, libxkbcommon
 }:
 
 let
@@ -21,6 +21,7 @@ stdenv.mkDerivation rec {
   nativeBuildInputs = [ pkgconfig cmake extra-cmake-modules ];
   buildInputs = [
     wayland wayland-protocols
+    libxkbcommon
   ];
 
   enableParallelBuilding = true;
