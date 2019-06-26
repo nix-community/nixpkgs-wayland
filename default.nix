@@ -19,12 +19,13 @@ waylandPkgs = rec {
   oguri            = pkgs.callPackage ./pkgs/oguri {};
   waybar           = pkgs.callPackage ./pkgs/waybar {};
   wf-config        = pkgs.callPackage ./pkgs/wf-config {};
-  wayfire          = pkgs.callPackage ./pkgs/wayfire { wlroots = wlroots_060; };
+  wayfire          = pkgs.callPackage ./pkgs/wayfire {};
+  #wayfire          = pkgs.callPackage ./pkgs/wayfire { wlroots = wlroots_060; };
   redshift-wayland = pkgs.callPackage ./pkgs/redshift-wayland {
     inherit (pkgs.python3Packages) python pygobject3 pyxdg wrapPython;
     geoclue = pkgs.geoclue2;
   };
-  waybox           = pkgs.callPackage ./pkgs/waybox { wlroots = wlroots_050; };
+  waybox           = pkgs.callPackage ./pkgs/waybox {};
   wl-clipboard     = pkgs.callPackage ./pkgs/wl-clipboard {};
   wf-recorder      = pkgs.callPackage ./pkgs/wf-recorder {};
   gebaar-libinput  = pkgs.callPackage ./pkgs/gebaar-libinput {};
