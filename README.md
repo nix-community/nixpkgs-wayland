@@ -15,9 +15,9 @@ Packages from this overlay are regularly updated and built against `nixos-unstab
 <!--pkgs-->
 | Attribute Name | Last Upstream Commit Time |
 | -------------- | ------------------------- |
-| nixpkgs/nixos-unstable | [2019-06-23 22:43](https://github.com/nixos/nixpkgs-channels/commits/20b993ef2c9e818a636582ade9597f71a485209d) |
-| nixpkgs/nixpkgs-unstable | [2019-06-28 10:34](https://github.com/nixos/nixpkgs-channels/commits/74e217e6af5ea11a72a129dc4fd11e86f46b8a91) |
-| pkgs/alacritty | [2019-06-28 20:19](https://github.com/jwilm/alacritty/commits/af30f3735a5e402509cb14b994576d0ea4799557) |
+| nixpkgs/nixos-unstable | [2019-07-01 06:34](https://github.com/nixos/nixpkgs-channels/commits/460136f8a3aad45738172dd428879cc98d49d3b0) |
+| nixpkgs/nixpkgs-unstable | [2019-07-01 15:54](https://github.com/nixos/nixpkgs-channels/commits/eea33299ff73cb3428bf043b6df37e504a238712) |
+| pkgs/alacritty | [2019-06-30 16:04](https://github.com/jwilm/alacritty/commits/707f4293667d4d8564ab0afc13128463c2ee7fd5) |
 | pkgs/cage | [2019-06-03 17:55](https://github.com/Hjdskes/cage/commits/1ecba7e67cfb8655d12b0b250b92eff71886bd4f) |
 | pkgs/gebaar-libinput | [2019-04-05 13:27](https://github.com/Coffee2CodeNL/gebaar-libinput/commits/c18c8bd73e79aaf1211bd88bf9cff808273cf6d6) |
 | pkgs/grim | [2019-06-10 19:00](https://github.com/emersion/grim/commits/fb7261fbffac34bfce3387cb42e32d679d2b4e7b) |
@@ -37,8 +37,8 @@ Packages from this overlay are regularly updated and built against `nixos-unstab
 | pkgs/wf-config | [2019-06-18 19:10](https://github.com/WayfireWM/wf-config/commits/f9c97d07cf9e669a346c83a3c1fce3e2d843bd51) |
 | pkgs/wf-recorder | [2019-06-24 15:08](https://github.com/ammen99/wf-recorder/commits/d40508331a6bdc5e2d20fa3804cbf40fc028390a) |
 | pkgs/wl-clipboard | [2019-04-15 15:53](https://github.com/bugaevc/wl-clipboard/commits/c010972e6b0d2eb3002c49a6a1b5620ff5f7c910) |
-| pkgs/wlroots | [2019-06-27 18:49](https://github.com/swaywm/wlroots/commits/fb739b829305a60f99abb6b847b45aeb9c6cbf77) |
-| pkgs/wtype | [2019-06-10 11:53](https://github.com/atx/wtype/commits/3c89855eff888c3590b35b162a80d113cc3f7b61) |
+| pkgs/wlroots | [2019-06-30 19:01](https://github.com/swaywm/wlroots/commits/c2fb8a84a28c4bdfb5fa1f81ab19127e3e5b8a29) |
+| pkgs/wtype | [2019-07-01 15:33](https://github.com/atx/wtype/commits/9752f420ffb1dd8b9cbc692d9f90cbe2cca343d9) |
 | pkgs/xdg-desktop-portal-wlr | [2019-02-12 12:09](https://github.com/emersion/xdg-desktop-portal-wlr/commits/74ee43cf37e716d0119f441be96e2b3fc9838797) |
 <!--pkgs-->
 
