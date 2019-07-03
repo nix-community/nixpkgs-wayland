@@ -15,8 +15,8 @@ Packages from this overlay are regularly updated and built against `nixos-unstab
 <!--pkgs-->
 | Attribute Name | Last Upstream Commit Time |
 | -------------- | ------------------------- |
-| nixpkgs/nixos-unstable | [2019-07-01 06:34](https://github.com/nixos/nixpkgs-channels/commits/460136f8a3aad45738172dd428879cc98d49d3b0) |
-| nixpkgs/nixpkgs-unstable | [2019-07-01 15:54](https://github.com/nixos/nixpkgs-channels/commits/eea33299ff73cb3428bf043b6df37e504a238712) |
+| nixpkgs/nixos-unstable | [2019-07-01 22:30](https://github.com/nixos/nixpkgs-channels/commits/73392e79aa62e406683d6a732eb4f4101f4732be) |
+| nixpkgs/nixpkgs-unstable | [2019-07-02 12:38](https://github.com/nixos/nixpkgs-channels/commits/d98a165de78027202b8b12521bae472a6a47741d) |
 | pkgs/alacritty | [2019-06-30 16:04](https://github.com/jwilm/alacritty/commits/707f4293667d4d8564ab0afc13128463c2ee7fd5) |
 | pkgs/cage | [2019-06-03 17:55](https://github.com/Hjdskes/cage/commits/1ecba7e67cfb8655d12b0b250b92eff71886bd4f) |
 | pkgs/gebaar-libinput | [2019-04-05 13:27](https://github.com/Coffee2CodeNL/gebaar-libinput/commits/c18c8bd73e79aaf1211bd88bf9cff808273cf6d6) |
