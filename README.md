@@ -15,23 +15,23 @@ Packages from this overlay are regularly updated and built against `nixos-unstab
 <!--pkgs-->
 | Attribute Name | Last Upstream Commit Time |
 | -------------- | ------------------------- |
-| nixpkgs/nixos-unstable | [2019-07-01 22:30](https://github.com/nixos/nixpkgs-channels/commits/73392e79aa62e406683d6a732eb4f4101f4732be) |
-| nixpkgs/nixpkgs-unstable | [2019-07-04 00:42](https://github.com/nixos/nixpkgs-channels/commits/c0a32366cbe6a5467ebf5ecd98de6e21c9867ee7) |
-| pkgs/alacritty | [2019-06-30 16:04](https://github.com/jwilm/alacritty/commits/707f4293667d4d8564ab0afc13128463c2ee7fd5) |
-| pkgs/cage | [2019-06-03 17:55](https://github.com/Hjdskes/cage/commits/1ecba7e67cfb8655d12b0b250b92eff71886bd4f) |
+| nixpkgs/nixos-unstable | [2019-07-07 12:49](https://github.com/nixos/nixpkgs-channels/commits/beff2f8d75ef2c65017fb25e251337c6bb2e950d) |
+| nixpkgs/nixpkgs-unstable | [2019-07-06 07:41](https://github.com/nixos/nixpkgs-channels/commits/d567c486ca5ac5f0c83bb0264c325204a479a5bb) |
+| pkgs/alacritty | [2019-07-08 18:13](https://github.com/jwilm/alacritty/commits/84aca672964e29b5b4503b7da7bc34fc395f08ab) |
+| pkgs/cage | [2019-07-09 12:25](https://github.com/Hjdskes/cage/commits/016ef340d20febd15ae6d4fec2b6e9fba1422cee) |
 | pkgs/gebaar-libinput | [2019-04-05 13:27](https://github.com/Coffee2CodeNL/gebaar-libinput/commits/c18c8bd73e79aaf1211bd88bf9cff808273cf6d6) |
 | pkgs/grim | [2019-06-10 19:00](https://github.com/emersion/grim/commits/fb7261fbffac34bfce3387cb42e32d679d2b4e7b) |
-| pkgs/i3status-rust | [2019-06-28 16:01](https://github.com/greshake/i3status-rust/commits/a1d29ba6008a9b4bd9ed803df8ac5083e293e3db) |
+| pkgs/i3status-rust | [2019-07-08 14:52](https://github.com/greshake/i3status-rust/commits/51368bbb94c05b25129ce61a1d239013bd1a9e9f) |
 | pkgs/kanshi | [2019-06-07 20:15](https://github.com/emersion/kanshi/commits/76e9f4151f6d0880d32dbc57123e00eace1b0734) |
-| pkgs/mako | [2019-07-04 14:25](https://github.com/emersion/mako/commits/2113c225d440b43354c55da10e8e2ac4cde4aa2a) |
+| pkgs/mako | [2019-07-09 19:04](https://github.com/emersion/mako/commits/188243bc9ed0d3bca8e9309d5387ee7d12b375f3) |
 | pkgs/oguri | [2019-05-26 22:46](https://github.com/vilhalmer/oguri/commits/f766b6d1f908e4b07765295892843cd8ceb7497a) |
 | pkgs/redshift-wayland | [2019-04-17 23:13](https://github.com/minus7/redshift/commits/eecbfedac48f827e96ad5e151de8f41f6cd3af66) |
 | pkgs/slurp | [2019-07-03 20:50](https://github.com/emersion/slurp/commits/6a9ac01100ecca05d221bea096bb088b376579c1) |
-| pkgs/sway | [2019-06-28 07:34](https://github.com/swaywm/sway/commits/f5d1c27226a74a234664af9b35ab226a67386e8e) |
+| pkgs/sway | [2019-07-09 15:50](https://github.com/swaywm/sway/commits/32265d913653c81e54e8e17d4511aab9d4dfc73a) |
 | pkgs/swaybg | [2019-05-04 12:08](https://github.com/swaywm/swaybg/commits/25c6eaf15e64655385f01cbb98bffe28a862fe13) |
-| pkgs/swayidle | [2019-05-23 13:10](https://github.com/swaywm/swayidle/commits/5e7bd5bd21010cb5723acdf449edb341e9880ae2) |
+| pkgs/swayidle | [2019-07-05 16:48](https://github.com/swaywm/swayidle/commits/2fd50bbda02c233ead15a6f58e195e1381e57ef8) |
 | pkgs/swaylock | [2019-06-28 14:27](https://github.com/swaywm/swaylock/commits/b1a7defa0087db7b984f568c79634316bb6bf1eb) |
-| pkgs/waybar | [2019-07-04 12:20](https://github.com/Alexays/waybar/commits/67ad0e69ce2210a6bd2363314600ead779b31c6a) |
+| pkgs/waybar | [2019-07-09 07:46](https://github.com/Alexays/waybar/commits/ccd1586c655c2aebf8877fcfee369f901952aae8) |
 | pkgs/waybox | [2019-06-19 22:09](https://github.com/wizbright/waybox/commits/bed7b707f24613dae334de6e7bd8f4e3313fa249) |
 | pkgs/wayfire | [2019-06-27 14:59](https://github.com/WayfireWM/wayfire/commits/ef4a5b325127e0b6861f320ae18085c77e57a0bc) |
 | pkgs/wf-config | [2019-06-18 19:10](https://github.com/WayfireWM/wf-config/commits/f9c97d07cf9e669a346c83a3c1fce3e2d843bd51) |
