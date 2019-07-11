@@ -17,7 +17,7 @@ Packages from this overlay are regularly updated and built against `nixos-unstab
 | -------------- | ------------------------- |
 | nixpkgs/nixos-unstable | [2019-07-07 12:49](https://github.com/nixos/nixpkgs-channels/commits/beff2f8d75ef2c65017fb25e251337c6bb2e950d) |
 | nixpkgs/nixpkgs-unstable | [2019-07-06 07:41](https://github.com/nixos/nixpkgs-channels/commits/d567c486ca5ac5f0c83bb0264c325204a479a5bb) |
-| pkgs/alacritty | [2019-07-08 18:13](https://github.com/jwilm/alacritty/commits/84aca672964e29b5b4503b7da7bc34fc395f08ab) |
+| pkgs/alacritty | [2019-07-10 21:24](https://github.com/jwilm/alacritty/commits/9a159a77604e0354f1176b02ff700bc11da19c86) |
 | pkgs/cage | [2019-07-09 12:25](https://github.com/Hjdskes/cage/commits/016ef340d20febd15ae6d4fec2b6e9fba1422cee) |
 | pkgs/gebaar-libinput | [2019-04-05 13:27](https://github.com/Coffee2CodeNL/gebaar-libinput/commits/c18c8bd73e79aaf1211bd88bf9cff808273cf6d6) |
 | pkgs/grim | [2019-06-10 19:00](https://github.com/emersion/grim/commits/fb7261fbffac34bfce3387cb42e32d679d2b4e7b) |
@@ -27,9 +27,9 @@ Packages from this overlay are regularly updated and built against `nixos-unstab
 | pkgs/oguri | [2019-05-26 22:46](https://github.com/vilhalmer/oguri/commits/f766b6d1f908e4b07765295892843cd8ceb7497a) |
 | pkgs/redshift-wayland | [2019-04-17 23:13](https://github.com/minus7/redshift/commits/eecbfedac48f827e96ad5e151de8f41f6cd3af66) |
 | pkgs/slurp | [2019-07-03 20:50](https://github.com/emersion/slurp/commits/6a9ac01100ecca05d221bea096bb088b376579c1) |
-| pkgs/sway | [2019-07-09 15:50](https://github.com/swaywm/sway/commits/32265d913653c81e54e8e17d4511aab9d4dfc73a) |
+| pkgs/sway | [2019-07-10 19:29](https://github.com/swaywm/sway/commits/5ffcea4c28103ecac3d4970412e8b44dbccfcb22) |
 | pkgs/swaybg | [2019-05-04 12:08](https://github.com/swaywm/swaybg/commits/25c6eaf15e64655385f01cbb98bffe28a862fe13) |
-| pkgs/swayidle | [2019-07-05 16:48](https://github.com/swaywm/swayidle/commits/2fd50bbda02c233ead15a6f58e195e1381e57ef8) |
+| pkgs/swayidle | [2019-07-11 05:29](https://github.com/swaywm/swayidle/commits/a7a71bfa8261df6671b1a701e4dac3f106bb46ea) |
 | pkgs/swaylock | [2019-06-28 14:27](https://github.com/swaywm/swaylock/commits/b1a7defa0087db7b984f568c79634316bb6bf1eb) |
 | pkgs/waybar | [2019-07-09 07:46](https://github.com/Alexays/waybar/commits/ccd1586c655c2aebf8877fcfee369f901952aae8) |
 | pkgs/waybox | [2019-06-19 22:09](https://github.com/wizbright/waybox/commits/bed7b707f24613dae334de6e7bd8f4e3313fa249) |
