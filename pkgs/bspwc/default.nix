@@ -1,5 +1,5 @@
 { stdenv, fetchgit
-, meson, ninja, pkgconfig
+, meson, ninja, pkgconfig, scdoc
 , wlroots, wayland, wayland-protocols
 , pixman, libxkbcommon
 , libudev, mesa_noglu, libX11 # not mentioned in meson.build...
@@ -19,7 +19,7 @@ stdenv.mkDerivation rec {
     sha256 = metadata.sha256;
   };
 
-  nativeBuildInputs = [ pkgconfig meson ninja ];
+  nativeBuildInputs = [ pkgconfig meson ninja scdoc ];
   buildInputs = [
     wlroots wayland wayland-protocols wlroots wltrunk
     pixman libxkbcommon libudev mesa_noglu libX11
@@ -29,8 +29,8 @@ stdenv.mkDerivation rec {
   enableParallelBuilding = true;
 
   meta = with stdenv.lib; {
-    description = "Wayland compositor based on BSPWM";
-    homepage    = "https://github.com/Bl4ckb0ne/bspwc";
+    description = "Binary space partitioning wayland compositor";
+    homepage    = "https://git.sr.ht/~bl4ckb0ne/bspwc";
     license     = licenses.gpl2;
     platforms   = platforms.linux;
     maintainers = with maintainers; [ colemickens ];

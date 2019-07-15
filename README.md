@@ -1,46 +1,64 @@
 # nixpkgs-wayland
 
+- [nixpkgs-wayland](#nixpkgs-wayland)
+  - [Overview](#overview)
+  - [Packages](#packages)
+  - [Usage](#usage)
+    - [Usage (nixos-unstable)](#usage-nixos-unstable)
+    - [Usage (wlrobs)](#usage-wlrobs)
+    - [Quick Tips: `sway`](#quick-tips-sway)
+  - [Development Guide](#development-guide)
+      - [Building](#building)
+      - [Updating all packages](#updating-all-packages)
+
 ## Overview
 
 Automated, pre-built packages for Wayland (sway/wlroots) tools for NixOS.
 
 Packages from this overlay are regularly updated and built against `nixos-unstable` and `nixpkgs-unstable`. They are published to the binary cache on Cachix. Usage instructions are available on the Cachix page: [`nixpkgs-wayland` on cachix](https://nixpkgs-wayland.cachix.org).
 
-
+These packages were mostly recently built against:
+<!--nixpkgs-->
+| Channel | Last Channel Commit Time |
+| ------- | ------------------------ |
+| nixos-unstable | 2019-10-23 18:19:15 +0000 |
+| nixpkgs-unstable | 2019-10-20 18:51:24 -0700 |
+<!--nixpkgs-->
 
 ## Packages
 
-<details><summary><em><b>Full list of Packages</b></em></summary>
-
 <!--pkgs-->
-| Attribute Name | Last Upstream Commit Time |
-| -------------- | ------------------------- |
-| nixpkgs/nixos-unstable | [2019-10-23 18:19](https://github.com/nixos/nixpkgs-channels/commits/4cd2cb43fb3a87f48c1e10bb65aee99d8f24cb9d) |
-| nixpkgs/nixpkgs-unstable | [2019-10-21 01:51](https://github.com/nixos/nixpkgs-channels/commits/91d5b3f07d27622ff620ff31fa5edce15a5822fa) |
-| pkgs/cage | [2019-08-27 16:14](https://github.com/Hjdskes/cage/commits/0fb513fb85eb5846eb598b91a0fc79dc16b5da36) |
-| pkgs/gebaar-libinput | [2019-04-05 13:27](https://github.com/Coffee2CodeNL/gebaar-libinput/commits/c18c8bd73e79aaf1211bd88bf9cff808273cf6d6) |
-| pkgs/grim | [2019-07-20 16:11](https://github.com/emersion/grim/commits/a9af6088d5e6eb31c4c12a659b4641e9398e33e9) |
-| pkgs/i3status-rust | [2019-10-27 18:43](https://github.com/greshake/i3status-rust/commits/733b5bef31f89cec092197961a1ef89a26fe1ee8) |
-| pkgs/kanshi | [2019-09-20 09:59](https://github.com/emersion/kanshi/commits/5a30abdf0b3b39ea21298bea91f28924373e4f0b) |
-| pkgs/mako | [2019-10-25 15:44](https://github.com/emersion/mako/commits/bf6d462fb1c128ec7062e2901e76f4259bc5b1f6) |
-| pkgs/oguri | [2019-09-03 02:54](https://github.com/vilhalmer/oguri/commits/5372ee49bb22b0370100be8589f3692da58602e3) |
-| pkgs/redshift-wayland | [2019-08-24 15:20](https://github.com/minus7/redshift/commits/7da875d34854a6a34612d5ce4bd8718c32bec804) |
-| pkgs/slurp | [2019-08-01 17:25](https://github.com/emersion/slurp/commits/cdab5c9a42b27bb7e0e7894bbd2675637a06ad7e) |
-| pkgs/sway | [2019-10-27 15:07](https://github.com/swaywm/sway/commits/1a253ca7ab123619bcf02e1503fd9a47d2c433e9) |
-| pkgs/swaybg | [2019-08-08 23:03](https://github.com/swaywm/swaybg/commits/a8f109af90353369e7e2e689efe8ce06eb9c60ac) |
-| pkgs/swayidle | [2019-08-27 15:18](https://github.com/swaywm/swayidle/commits/844dfde8538c1f55aaf254c18649d419bdff7a92) |
-| pkgs/swaylock | [2019-09-12 20:33](https://github.com/swaywm/swaylock/commits/426e1ce93d1344414bd3fa0eb7cd50d7ca9ec075) |
-| pkgs/waybar | [2019-10-23 14:03](https://github.com/Alexays/waybar/commits/67f6dad7171d8313679e47a8c569ad1434ef5d97) |
-| pkgs/waybox | [2019-06-19 22:09](https://github.com/wizbright/waybox/commits/bed7b707f24613dae334de6e7bd8f4e3313fa249) |
-| pkgs/wayfire | [2019-10-14 20:34](https://github.com/WayfireWM/wayfire/commits/13fe9735ac2c0b278eb55df3ec96e4844266305b) |
-| pkgs/wf-config | [2019-10-07 21:06](https://github.com/WayfireWM/wf-config/commits/c32580e04d0ebc93dbd439f77a2158b96cdc8dce) |
-| pkgs/wf-recorder | [2019-10-22 10:16](https://github.com/ammen99/wf-recorder/commits/7cb37c47e30b477f97bebb027748f8f7ab92478f) |
-| pkgs/wl-clipboard | [2019-10-03 12:16](https://github.com/bugaevc/wl-clipboard/commits/f3a45f69f7d14e7f7050bca4cbf6fea6697d1455) |
-| pkgs/wdisplays | [2019-10-26 20:56](https://github.com/cyclopsian/wdisplays/commits/22669edadb8ff3478bdb51ddc140ef6e61e3d9ef) |
-| pkgs/wldash | [2019-10-05 20:43](https://github.com/kennylevinsen/wldash/commits/9233128b7c90537cb2157139a7ed1a3d0fbdfd8e) |
-| pkgs/wlroots | [2019-10-27 18:01](https://github.com/swaywm/wlroots/commits/b81bb2ef3040e5cf3dcffbddcb5389775c879d85) |
-| pkgs/wtype | [2019-07-01 15:33](https://github.com/atx/wtype/commits/9752f420ffb1dd8b9cbc692d9f90cbe2cca343d9) |
-| pkgs/xdg-desktop-portal-wlr | [2019-07-24 16:38](https://github.com/emersion/xdg-desktop-portal-wlr/commits/13076d0c10613e9ae73e61dd82b24ae9a6529667) |
+| Package | Last Update | Description |
+| ------- | ----------- | ----------- |
+| [bspwc](https://git.sr.ht/~bl4ckb0ne/bspwc) | 2019-10-14 14:41:16 -0400 | Binary space partitioning wayland compositor |
+| [cage](https://www.hjdskes.nl/projects/cage/) | 2019-08-27 18:14:57 +0200 | A Wayland kiosk |
+| [gebaar-libinput](https://github.com/Coffee2CodeNL/gebaar-libinput) | 2019-04-05 15:27:03 +0200 | Gebaar, A Super Simple WM Independent Touchpad Gesture Daemon for libinput |
+| [glpaper](https://bitbucket.org/Scoopta/glpaper) | 2019-03-08 16:52 -0800 | GLPaper is a wallpaper program for wlroots based wayland compositors such as sway that allows you to render glsl shaders as your wallpaper |
+| [grim](https://github.com/emersion/grim) | 2019-07-20 19:11:00 +0300 | Select a region in a Wayland compositor |
+| [i3status-rust](https://github.com/greshake/i3status-rust) | 2019-10-27 14:43:06 -0400 | Very resource-friendly and feature-rich replacement for i3status |
+| [kanshi](https://github.com/emersion/kanshi) | 2019-09-20 12:59:04 +0300 | Dynamic display configuration |
+| [mako](https://wayland.emersion.fr/mako) | 2019-10-25 17:44:01 +0200 | A lightweight Wayland notification daemon |
+| [oguri](https://github.com/vilhalmer/oguri) | 2019-09-02 22:54:45 -0400 | A very nice animated wallpaper tool for Wayland compositors |
+| [redshift-wayland](http://jonls.dk/redshift) | 2019-08-24 17:20:17 +0200 | Screen color temperature manager |
+| [slurp](https://github.com/emersion/slurp) | 2019-08-01 20:25:04 +0300 | Select a region in a Wayland compositor |
+| [sway](https://swaywm.org) | 2019-10-27 11:07:48 -0400 | i3-compatible tiling Wayland compositor |
+| [swaybg](https://github.com/swaywm/swaybg) | 2019-08-09 08:03:44 +0900 | Wallpaper tool for Wayland compositors |
+| [swayidle](https://swaywm.org) | 2019-08-27 18:18:38 +0300 | Sway's idle management daemon |
+| [swaylock](https://swaywm.org) | 2019-09-12 16:33:24 -0400 | Screen locker for Wayland |
+| [waybar](https://github.com/Alexays/Waybar) | 2019-10-23 15:03:32 +0100 | Highly customizable Wayland Polybar like bar for Sway and Wlroots based compositors. |
+| [waybox](https://github.com/wizbright/waybox) | 2019-06-19 17:09:41 -0500 | An openbox clone on Wayland (WIP) |
+| [wayfire](https://wayfire.org/) | 2019-10-14 22:34:31 +0200 | 3D wayland compositor |
+| [waypipe](https://gitlab.freedesktop.org/mstoeckl/waypipe/) | 2019-10-20 21:41:18 -0400 | Network transparency with Wayland |
+| [wdisplays](https://github.com/cyclopsian/wdisplays) | 2019-10-26 16:56:01 -0400 | GUI display configurator for wlroots compositors |
+| [wf-config](https://github.com/WayfireWM/wf-config) | 2019-10-08 00:06:02 +0300 | A library for managing configuration files, written for wayfire |
+| [wf-recorder](https://github.com/ammen99/wf-recorder) | 2019-10-22 12:16:00 +0200 | Utility program for screen recording of wlroots-based compositors |
+| [wl-clipboard](https://github.com/bugaevc/wl-clipboard) | 2019-10-03 15:16:09 +0300 | Select a region in a Wayland compositor |
+| [wldash](https://wldash.org) | 2019-10-05 22:43:09 +0200 | Wayland launcher/dashboard |
+| [wlrobs](https://sr.ht/~scoopta/wlrobs) | 2019-03-16 15:06 -0700 | wlrobs is an obs-studio plugin that allows you to screen capture on wlroots based wayland compositors |
+| [wlroots](https://github.com/swaywm/wlroots) | 2019-10-27 19:01:16 +0100 | A modular Wayland compositor library |
+| [wltrunk](https://git.sr.ht/~bl4ckb0ne/wltrunk) | 2019-10-03 16:14:27 -0400 | High-level Wayland compositor library based on wlroots |
+| [wtype](https://github.com/atx/wtype) | 2019-07-01 17:33:04 +0200 | xdotool type for wayland |
+| [xdg-desktop-portal-wlr](https://github.com/emersion/xdg-desktop-portal-wlr) | 2019-07-24 19:38:20 +0300 | xdg-desktop-portal backend for wlroots |
 <!--pkgs-->
 
 </details>
@@ -119,6 +137,8 @@ mkdir -p ~/.config/obs-studio
 ln -s ~/.nix-profile/share/obs/obs-plugins ~/.config/obs-studio/plugins
 ```
 
+NOTE: OBS-Studio is pretty rough around the edges in Wayland, regardless of if XWayland is used. `wf-recorder` might be easier to use.
+
 ### Quick Tips: `sway`
 
 * Usage of display managers with `sway` is not supported upstream, you should run it from a TTY.
@@ -138,14 +158,10 @@ to be requested by users on those channels (who are up-to-date on the channel).
 
 #### Updating all packages
 
-(Note, this currently only supports the repos hosted on GitHub. I need to switch to something else that
-more intelligently caches the checkouts and pulls and checks for updates, rather than hitting an API that
-won't work for SourceHut/Gitlab. However, the script should tell you at the end which repos (might) need 
-manual updates.)
-
 * `./update.sh`:
   * updates `pkgs/<pkg>/metadata.nix` with the latest commit+hash for each package
   * updates `nixpkgs/<channel>/metadata.nix` per the upstream channel
-  * calls `nix-build build.nix -A nixosUnstable` to build all packages against `nixos-unstable`
-  * calls `nix-build build.nix -A nixpkgsUnstable` to build all packages against `nixpkgs-unstable`
+  * calls `nix-build build.nix -A all` to build all packages against both channels
   * pushes to [nixpkgs-wayland on cachix](https://nixpkgs-wayland.cachix.org)
+
+Note: in some cases, you may need to manually update `cargoSha256` as well.

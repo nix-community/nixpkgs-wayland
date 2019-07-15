@@ -1,4 +1,7 @@
 {
-  rev = "b3d0da3eb6d1e25b48289e70e88934e5f9758984";
-  sha256 = "05yb7h2awjvz8vjzb05r060hyp1s3770df9px8b444qwpcn9nw6x";
+  repo_git = "https://git.sr.ht/~bl4ckb0ne/bspwc";
+  branch = "master";
+  rev = "5edc0d19758574ffacaeb4b18eeca4956c2b675e";
+  sha256 = "0py3dy0ykgw5my7bn510m06ffpwx0kca7052ncg23s5l9vnwdzvd";
+  revdate = "2019-10-14 14:41:16 -0400";
 }

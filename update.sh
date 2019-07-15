@@ -1,103 +1,128 @@
 #!/usr/bin/env bash
+
 set -euo pipefail
 set -x
 
-cachixremote="nixpkgs-wayland"
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+cd "${DIR}"
 
-# keep track of what we build and only upload at the end
-pkgentries=()
-
-# keep track of manuals to output at the end
-manuals=()
-
-function manual() {
-  manuals=("${manuals[@]}" "${1}")
-}
+# keep track of what we build for the README
+pkgentries=(); nixpkgentries=();
 
 function update() {
-  attr="${1}"
-  owner="${2}"
-  repo="${3}"
-  ref="${4}"
+  typ="${1}"
+  pkg="${2}"
 
-  rev=""
-  url="https://api.github.com/repos/${owner}/${repo}/commits?sha=${ref}"
-  rev="$(git ls-remote "https://github.com/${owner}/${repo}" "${ref}" | cut -d '	' -f1)"
-  [[ -f "./${attr}/metadata.nix" ]] && oldrev="$(nix eval -f "./${attr}/metadata.nix" rev --raw)"
-  if [[ "${oldrev:-}" != "${rev}" ]]; then
-    revdata="$(curl -L --fail "https://api.github.com/repos/${owner}/${repo}/commits/${rev}")"
-    revdate="$(echo "${revdata}" | jq -r ".commit.committer.date")"
-    sha256="$(nix-prefetch-url --unpack "https://github.com/${owner}/${repo}/archive/${rev}.tar.gz" 2>/dev/null)"
-    printf '{\n  rev = "%s";\n  sha256 = "%s";\n  revdate = "%s";\n}\n' \
-      "${rev}" "${sha256}" "${revdate}" > "./${attr}/metadata.nix"
-    echo "${attr}" was updated to "${rev}" "${revdate}"
+  metadata="${pkg}/metadata.nix"
+  pkgname="$(basename "${pkg}")"
+
+  branch="$(nix eval --raw -f "${metadata}" branch)"
+  rev="$(nix eval --raw -f "${metadata}" rev)"
+  date="$(nix eval --raw -f "${metadata}" revdate)"
+  sha256="$(nix eval --raw -f "${metadata}" sha256)"
+
+  # Determine RepoTyp (git/hg)
+  if   nix eval --raw -f "${metadata}" repo_git; then repotyp="git";
+  elif nix eval --raw -f "${metadata}" repo_hg;  then repotyp="hg";
+  else echo "unknown repo_typ" && exit -1;
   fi
 
-  commitdate="$(nix eval -f "./${attr}/metadata.nix" revdate --raw)"
-  d="$(date -u '+%Y-%m-%d %H:%M' --date="${commitdate}")"
-  txt="| ${attr} | [${d}](https://github.com/${owner}/${repo}/commits/${rev}) |"
-  pkgentries=("${pkgentries[@]}" "${txt}")
+  # Update Rev
+  if [[ "${repotyp}" == "git" ]]; then
+    repo="$(nix eval --raw -f "${metadata}" repo_git)"
+    newrev="$(git ls-remote "${repo}" "${branch}" | awk '{ print $1}')"
+  elif [[ "${repotyp}" == "hg" ]]; then
+    repo="$(nix eval --raw -f "${metadata}" repo_hg)"
+    newrev="$(hg identify "${repo}" -r "${branch}")"
+  fi
+  
+  if [[ "${rev}" != "${newrev}" ]]; then
+    # Update RevDate
+    d="$(mktemp -d)"
+    if [[ "${repotyp}" == "git" ]]; then
+      git clone -b "${branch}" --single-branch "${repo}" --depth=1 "${d}"
+      newdate="$(cd "${d}"; git log --format=%ci --max-count=1)"
+    elif [[ "${repotyp}" == "hg" ]]; then
+      hg clone "${repo}#${branch}" "${d}"
+      newdate="$(cd "${d}"; hg log -r1 --template '{date|isodate}')"
+    fi
+    rm -rf "${d}"
+
+    # Update Sha256
+    # TODO: nix-prefetch without NIX_PATH?
+    if [[ "${typ}" == "pkgs" ]]; then
+      newsha256="$(NIX_PATH=nixpkgs=https://github.com/nixos/nixpkgs-channels/archive/nixos-unstable.tar.gz
+        nix-prefetch \
+          -E "(import ./build.nix).nixosUnstable.${pkgname}" \
+          --rev "${newrev}" \
+          --output raw)"
+    elif [[ "${typ}" == "nixpkgs" ]]; then
+      # TODO: why can't nix-prefetch handle this???
+      url="$(nix eval --raw -f "${metadata}" url)"
+      newsha256="$(NIX_PATH=nixpkgs=https://github.com/nixos/nixpkgs-channels/archive/nixos-unstable.tar.gz
+        nix-prefetch-url --unpack "${url}")"
+    fi
+
+    # TODO: do this with nix instead of sed?
+    sed -i "s/${rev}/${newrev}/" "${metadata}"
+    sed -i "s/${date}/${newdate}/" "${metadata}"
+    sed -i "s/${sha256}/${newsha256}/" "${metadata}"
+  fi
+
+  # Add a line for the README
+  if [[ "${typ}" == "pkgs" ]]; then
+    desc="$(nix eval --raw "(import ./build.nix).nixosUnstable.${pkgname}.meta.description")"
+    home="$(nix eval --raw "(import ./build.nix).nixosUnstable.${pkgname}.meta.homepage")"
+    pkgentries=("${pkgentries[@]}" "| [${pkgname}](${home}) | ${date} | ${desc} |");
+  elif [[ "${typ}" == "nixpkgs" ]]; then
+    nixpkgentries=("${nixpkgentries[@]}" "| ${pkgname} | ${date} |");
+  fi
 }
 
 
-# update <attr_name> <repo_owner> <repo_name> <repo_rev>
-update "nixpkgs/nixos-unstable" "nixos" "nixpkgs-channels" "nixos-unstable"
-update "nixpkgs/nixpkgs-unstable" "nixos" "nixpkgs-channels" "nixpkgs-unstable"
+#
+# update nixpkgs
+for d in nixpkgs/*; do
+  update "nixpkgs" "${d}"
+done
 
-manual "pkgs/bspwc"
-update "pkgs/cage"             "Hjdskes" "cage" "master"
-update "pkgs/gebaar-libinput"  "Coffee2CodeNL" "gebaar-libinput" "master"
-manual "pkgs/glpaper"
-update "pkgs/grim"             "emersion"   "grim"             "master"
-update "pkgs/i3status-rust"    "greshake"   "i3status-rust"    "master"
-update "pkgs/kanshi"           "emersion"   "kanshi"           "master"
-update "pkgs/mako"             "emersion"   "mako"             "master"
-update "pkgs/oguri"            "vilhalmer"  "oguri"            "master"
-update "pkgs/redshift-wayland" "minus7"     "redshift"         "wayland"
-update "pkgs/slurp"            "emersion"   "slurp"            "master"
-update "pkgs/sway"             "swaywm"     "sway"             "master"
-update "pkgs/swaybg"           "swaywm"     "swaybg"           "master"
-update "pkgs/swayidle"         "swaywm"     "swayidle"         "master"
-update "pkgs/swaylock"         "swaywm"     "swaylock"         "master"
-update "pkgs/waybar"           "Alexays"    "waybar"           "master"
-update "pkgs/waybox"           "wizbright"  "waybox"           "master"
-update "pkgs/wayfire"          "WayfireWM"  "wayfire"          "master"
-manual "pkgs/waypipe"
-update "pkgs/wf-config"        "WayfireWM"  "wf-config"        "master"
-update "pkgs/wf-recorder"      "ammen99"    "wf-recorder"      "master"
-update "pkgs/wl-clipboard"     "bugaevc"    "wl-clipboard"     "master"
-manual "pkgs/waypipe"
-update "pkgs/wdisplays"        "cyclopsian" "wdisplays"        "master"
-update "pkgs/wldash"           "kennylevinsen" "wldash"        "master"
-manual "pkgs/wlrobs"
-update "pkgs/wlroots"          "swaywm"     "wlroots"          "master"
-manual "pkgs/wltrunk"
-update "pkgs/wtype"            "atx"  "wtype"  "master"
-update "pkgs/xdg-desktop-portal-wlr" "emersion" "xdg-desktop-portal-wlr" "master"
+#
+# update pkgs
+for p in pkgs/*; do
+  update "pkgs" "${p}"
+done
 
+#
 # update README.md
+# (TODO: replace this with something in nix that outputs a text file summary
+#  of the overlay that could be merged into the readme)
 set +x
 replace="$(printf "<!--pkgs-->")"
-replace="$(printf "%s\n| Attribute Name | Last Upstream Commit Time |" "${replace}")"
-replace="$(printf "%s\n| -------------- | ------------------------- |" "${replace}")"
+replace="$(printf "%s\n| Package | Last Update | Description |" "${replace}")"
+replace="$(printf "%s\n| ------- | ----------- | ----------- |" "${replace}")"
 for p in "${pkgentries[@]}"; do
   replace="$(printf "%s\n%s\n" "${replace}" "${p}")"
 done
 replace="$(printf "%s\n<!--pkgs-->" "${replace}")"
-set -x
 
 rg --multiline '(?s)(.*)<!--pkgs-->(.*)<!--pkgs-->(.*)' "README.md" \
   --replace "\$1${replace}\$3" \
     > README2.md; mv README2.md README.md
 
-# build and push
-nix-build \
-  --no-out-link \
-    --option "extra-binary-caches" "https://cache.nixos.org https://colemickens.cachix.org https://nixpkgs-wayland.cachix.org" \
-  --option "trusted-public-keys" "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= colemickens.cachix.org-1:oIGbn9aolUT2qKqC78scPcDL6nz7Npgotu644V4aGl4= nixpkgs-wayland.cachix.org-1:3lwxaILxMRkVhehr5StQprHdEo4IrE8sRho9R9HOLYA=" \
-  build.nix -A all | cachix push "${cachixremote}"
-
-for m in "${manual[@]}"; do
-  echo "UPDATE MANUALLY: ${m}"
+replace="$(printf "<!--nixpkgs-->")"
+replace="$(printf "%s\n| Channel | Last Channel Commit Time |" "${replace}")"
+replace="$(printf "%s\n| ------- | ------------------------ |" "${replace}")"
+for p in "${nixpkgentries[@]}"; do
+  replace="$(printf "%s\n%s\n" "${replace}" "${p}")"
 done
+replace="$(printf "%s\n<!--nixpkgs-->" "${replace}")"
+set -x
 
+rg --multiline '(?s)(.*)<!--nixpkgs-->(.*)<!--nixpkgs-->(.*)' "README.md" \
+  --replace "\$1${replace}\$3" \
+    > README2.md; mv README2.md README.md
+
+#
+# build and push
+nix-build --no-out-link build.nix -A all \
+  | cachix push "nixpkgs-wayland"
