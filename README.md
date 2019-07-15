@@ -144,6 +144,6 @@ manual updates.)
 * `./update.sh`:
   * updates `pkgs/<pkg>/metadata.nix` with the latest commit+hash for each package
   * updates `nixpkgs/<channel>/metadata.nix` per the upstream channel
-  * calls `nix-build build.nix` to build all packages against `nixos-unstable`
-  * calls `nix-build build.nixpkgs.nix` to build all packages against `nixpkgs-unstable`
+  * calls `nix-build build.nix -A nixosUnstable` to build all packages against `nixos-unstable`
+  * calls `nix-build build.nix -A nixpkgsUnstable` to build all packages against `nixpkgs-unstable`
   * pushes to [nixpkgs-wayland on cachix](https://nixpkgs-wayland.cachix.org)
