@@ -1,6 +1,6 @@
 { stdenv, fetchFromGitHub
 , meson, ninja, pkgconfig
-, cairo, gtk3, wayland, wayland-protocols
+, cairo, gdk_pixbuf, wayland, wayland-protocols
 }:
 
 let
@@ -18,7 +18,7 @@ stdenv.mkDerivation rec {
   };
 
   nativeBuildInputs = [ pkgconfig meson ninja ];
-  buildInputs = [ cairo gtk3 wayland wayland-protocols ];
+  buildInputs = [ cairo gdk_pixbuf wayland wayland-protocols ];
   mesonFlags = [ "-Dauto_features=enabled" ];
 
   enableParallelBuilding = true;
