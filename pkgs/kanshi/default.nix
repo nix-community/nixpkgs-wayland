@@ -1,8 +1,7 @@
 { stdenv, fetchFromGitHub
-, meson, pkgconfig
-, ninja, scdoc, libudev
-, wayland, wayland-protocols
-, buildDocs ? true
+, meson, ninja, pkgconfig
+, libudev, wayland, wayland-protocols
+, scdoc, buildDocs ? true
 }:
 
 let
@@ -20,7 +19,7 @@ stdenv.mkDerivation rec {
     sha256 = metadata.sha256;
   };
 
-  nativeBuildInputs = [ pkgconfig meson ninja ];
+  nativeBuildInputs = [ pkgconfig meson ninja scdoc ];
 
   buildInputs = [
     wayland wayland-protocols

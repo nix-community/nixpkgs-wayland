@@ -44,7 +44,6 @@ function update() {
 update "nixpkgs/nixos-unstable" "nixos" "nixpkgs-channels" "nixos-unstable"
 update "nixpkgs/nixpkgs-unstable" "nixos" "nixpkgs-channels" "nixpkgs-unstable"
 
-update "pkgs/alacritty"        "jwilm"      "alacritty" "master"
 manual "pkgs/bspwc"
 update "pkgs/cage"             "Hjdskes" "cage" "master"
 update "pkgs/gebaar-libinput"  "Coffee2CodeNL" "gebaar-libinput" "master"

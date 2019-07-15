@@ -1,5 +1,5 @@
 {
-  rev = "f766b6d1f908e4b07765295892843cd8ceb7497a";
-  sha256 = "1idm50qmc8jx55hd4izwqa9shrmpc6h401nmlij49qdlc5kfwwwz";
-  revdate = "2019-05-26T22:46:10Z";
+  rev = "5582689d76ae2e6295f8b8f51b4faafe469b85b4";
+  sha256 = "0ycksh2q8r9sv1lpfrqv7liik7bdplckfwlw9yljijcdni59c0jy";
+  revdate = "2019-07-14T16:47:49Z";
 }

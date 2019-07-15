@@ -1,5 +1,9 @@
-{ stdenv, fetchFromGitHub, meson, ninja, pkgconfig, wayland, wayland-protocols, ffmpeg, x264
-, libpulseaudio }:
+{ stdenv, fetchFromGitHub
+, meson, ninja, pkgconfig
+, wayland, wayland-protocols
+, ffmpeg, x264, libpulseaudio
+, scdoc
+}:
 
 let
   metadata = import ./metadata.nix;
@@ -14,7 +18,7 @@ stdenv.mkDerivation rec {
     inherit (metadata) rev sha256;
   };
 
-  nativeBuildInputs = [ meson ninja pkgconfig ];
+  nativeBuildInputs = [ meson ninja pkgconfig scdoc ];
   buildInputs = [ wayland wayland-protocols ffmpeg x264 libpulseaudio ];
 
   meta = with stdenv.lib; {
