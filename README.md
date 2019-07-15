@@ -122,7 +122,24 @@ ln -s ~/.nix-profile/share/obs/obs-plugins ~/.config/obs-studio/plugins
 * Usage of display managers with `sway` is not supported upstream, you should run it from a TTY.
 * You will likely want a default config file to place at `$HOME/.config/sway/config`. You can use the upstream default as a starting point: https://github.com/swaywm/sway/blob/master/config.in
 
-## Updates
+## Development Guide
+
+#### Building
+
+1. Install `nix`.
+2. Run `nix-build build.nix -A nixosUnstable` to build the packages against current `nixos-unstable`.
+3. Run `nix-build build.nix -A nixpkgsUnstable` to build them against `nixpkgs-unstable`.
+
+Do note that those channels are actually pinned in this repo. The update script will also update those
+refs. Making sure the channels are up-to-date means that you will be building the packages that are going
+to be requested by users on those channels (who are up-to-date on the channel).
+
+#### Updating all packages
+
+(Note, this currently only supports the repos hosted on GitHub. I need to switch to something else that
+more intelligently caches the checkouts and pulls and checks for updates, rather than hitting an API that
+won't work for SourceHut/Gitlab. However, the script should tell you at the end which repos (might) need 
+manual updates.)
 
 * `./update.sh`:
   * updates `pkgs/<pkg>/metadata.nix` with the latest commit+hash for each package
