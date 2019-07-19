@@ -15,14 +15,14 @@ Packages from this overlay are regularly updated and built against `nixos-unstab
 <!--pkgs-->
 | Attribute Name | Last Upstream Commit Time |
 | -------------- | ------------------------- |
-| nixpkgs/nixos-unstable | [2019-07-11 16:29](https://github.com/nixos/nixpkgs-channels/commits/1036dc664169b32613ec11b58cc1740c7511a340) |
-| nixpkgs/nixpkgs-unstable | [2019-07-16 12:32](https://github.com/nixos/nixpkgs-channels/commits/00ef72610c82dd0ea69f2bc3f70445483acca0d0) |
+| nixpkgs/nixos-unstable | [2019-07-12 20:31](https://github.com/nixos/nixpkgs-channels/commits/362be9608c3e0dc5216e9d1d5f5c1a5643b7f7b1) |
+| nixpkgs/nixpkgs-unstable | [2019-07-19 17:40](https://github.com/nixos/nixpkgs-channels/commits/6c0ed987eeda0e5ea0891878988d652f4b7b3ef0) |
 | pkgs/cage | [2019-07-09 12:25](https://github.com/Hjdskes/cage/commits/016ef340d20febd15ae6d4fec2b6e9fba1422cee) |
 | pkgs/gebaar-libinput | [2019-04-05 13:27](https://github.com/Coffee2CodeNL/gebaar-libinput/commits/c18c8bd73e79aaf1211bd88bf9cff808273cf6d6) |
 | pkgs/grim | [2019-06-10 19:00](https://github.com/emersion/grim/commits/fb7261fbffac34bfce3387cb42e32d679d2b4e7b) |
 | pkgs/i3status-rust | [2019-07-17 16:27](https://github.com/greshake/i3status-rust/commits/442298f329e007ca723779d3e248b8fbec151ec5) |
 | pkgs/kanshi | [2019-06-07 20:15](https://github.com/emersion/kanshi/commits/76e9f4151f6d0880d32dbc57123e00eace1b0734) |
-| pkgs/mako | [2019-07-13 07:54](https://github.com/emersion/mako/commits/ef15e8d4c0abc6396809bc18fa106a8c19afc312) |
+| pkgs/mako | [2019-07-19 10:57](https://github.com/emersion/mako/commits/e8e4c4d5ab96414b4b05a5f7138187998f53ebf9) |
 | pkgs/oguri | [2019-07-17 01:13](https://github.com/vilhalmer/oguri/commits/968c3f74f23d6c51bc0ab43918d440d5cfe09991) |
 | pkgs/redshift-wayland | [2019-04-17 23:13](https://github.com/minus7/redshift/commits/eecbfedac48f827e96ad5e151de8f41f6cd3af66) |
 | pkgs/slurp | [2019-07-03 20:50](https://github.com/emersion/slurp/commits/6a9ac01100ecca05d221bea096bb088b376579c1) |
@@ -32,7 +32,7 @@ Packages from this overlay are regularly updated and built against `nixos-unstab
 | pkgs/swaylock | [2019-06-28 14:27](https://github.com/swaywm/swaylock/commits/b1a7defa0087db7b984f568c79634316bb6bf1eb) |
 | pkgs/waybar | [2019-07-15 11:38](https://github.com/Alexays/waybar/commits/7a2dee73770131ab9cf0d049972d8956807950b3) |
 | pkgs/waybox | [2019-06-19 22:09](https://github.com/wizbright/waybox/commits/bed7b707f24613dae334de6e7bd8f4e3313fa249) |
-| pkgs/wayfire | [2019-07-13 07:10](https://github.com/WayfireWM/wayfire/commits/765d626d178bf22d6e7708c8a8b41c092098da18) |
+| pkgs/wayfire | [2019-07-18 09:13](https://github.com/WayfireWM/wayfire/commits/225a2623911af45d94a8c7f0b1278d67dec165b8) |
 | pkgs/wf-config | [2019-06-18 19:10](https://github.com/WayfireWM/wf-config/commits/f9c97d07cf9e669a346c83a3c1fce3e2d843bd51) |
 | pkgs/wf-recorder | [2019-06-24 15:08](https://github.com/ammen99/wf-recorder/commits/d40508331a6bdc5e2d20fa3804cbf40fc028390a) |
 | pkgs/wl-clipboard | [2019-04-15 15:53](https://github.com/bugaevc/wl-clipboard/commits/c010972e6b0d2eb3002c49a6a1b5620ff5f7c910) |
