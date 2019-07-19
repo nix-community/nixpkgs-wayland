@@ -2,6 +2,8 @@
 , meson, ninja, pkgconfig, python3
 , wayland, wayland-protocols
 , libffi, mesa_noglu
+, lz4, zstd, ffmpeg_4, libva
+, scdoc
 }:
 
 let
@@ -17,10 +19,11 @@ stdenv.mkDerivation rec {
     sha256 = metadata.sha256;
   };
 
-  nativeBuildInputs = [ pkgconfig meson ninja python3 ];
+  nativeBuildInputs = [ pkgconfig meson ninja python3 scdoc ];
   buildInputs = [
     wayland wayland-protocols
     libffi mesa_noglu
+    lz4 zstd ffmpeg_4 libva
   ];
   mesonFlags = [ "-Dauto_features=enabled" ];
   NIX_CFLAGS_COMPILE = "-Wno-error=unused-result";
