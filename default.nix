@@ -15,7 +15,7 @@ waylandPkgs = rec {
   oguri            = pkgs.callPackage ./pkgs/oguri {};
   waybar           = pkgs.callPackage ./pkgs/waybar {};
   wf-config        = pkgs.callPackage ./pkgs/wf-config {};
-  wayfire          = pkgs.callPackage ./pkgs/wayfire {};
+  wayfire          = pkgs.callPackage ./pkgs/wayfire { wlroots = pkgs.wlroots; };
   redshift-wayland = pkgs.callPackage ./pkgs/redshift-wayland {
     inherit (pkgs.python3Packages) python pygobject3 pyxdg wrapPython;
     geoclue = pkgs.geoclue2;
