@@ -89,7 +89,11 @@ rg --multiline '(?s)(.*)<!--pkgs-->(.*)<!--pkgs-->(.*)' "README.md" \
     > README2.md; mv README2.md README.md
 
 # build and push
-nix-build --no-out-link build.nix -A all | cachix push "${cachixremote}"
+nix-build \
+  --no-out-link \
+    --option "extra-binary-caches" "https://cache.nixos.org https://colemickens.cachix.org https://nixpkgs-wayland.cachix.org" \
+  --option "trusted-public-keys" "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= colemickens.cachix.org-1:oIGbn9aolUT2qKqC78scPcDL6nz7Npgotu644V4aGl4= nixpkgs-wayland.cachix.org-1:3lwxaILxMRkVhehr5StQprHdEo4IrE8sRho9R9HOLYA=" \
+  build.nix -A all | cachix push "${cachixremote}"
 
 for m in "${manual[@]}"; do
   echo "UPDATE MANUALLY: ${m}"
