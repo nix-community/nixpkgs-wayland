@@ -16,7 +16,7 @@ Packages from this overlay are regularly updated and built against `nixos-unstab
 | Attribute Name | Last Upstream Commit Time |
 | -------------- | ------------------------- |
 | nixpkgs/nixos-unstable | [2019-07-23 13:17](https://github.com/nixos/nixpkgs-channels/commits/c4fec1c6314c0c9c7af59bb465a17d1950ec7464) |
-| nixpkgs/nixpkgs-unstable | [2019-07-24 06:25](https://github.com/nixos/nixpkgs-channels/commits/32c1c5cbe0dfef8b3d7ccc575fa3cb2193a020c6) |
+| nixpkgs/nixpkgs-unstable | [2019-07-24 13:43](https://github.com/nixos/nixpkgs-channels/commits/b9412f4fdb58858717e2a9755763c37f2bd63e65) |
 | pkgs/cage | [2019-07-09 12:25](https://github.com/Hjdskes/cage/commits/016ef340d20febd15ae6d4fec2b6e9fba1422cee) |
 | pkgs/gebaar-libinput | [2019-04-05 13:27](https://github.com/Coffee2CodeNL/gebaar-libinput/commits/c18c8bd73e79aaf1211bd88bf9cff808273cf6d6) |
 | pkgs/grim | [2019-07-20 16:11](https://github.com/emersion/grim/commits/a9af6088d5e6eb31c4c12a659b4641e9398e33e9) |
@@ -38,7 +38,7 @@ Packages from this overlay are regularly updated and built against `nixos-unstab
 | pkgs/wl-clipboard | [2019-04-15 15:53](https://github.com/bugaevc/wl-clipboard/commits/c010972e6b0d2eb3002c49a6a1b5620ff5f7c910) |
 | pkgs/wlroots | [2019-07-21 16:33](https://github.com/swaywm/wlroots/commits/76ef089f52b20a2def3dd1f8a8564af165050dcb) |
 | pkgs/wtype | [2019-07-01 15:33](https://github.com/atx/wtype/commits/9752f420ffb1dd8b9cbc692d9f90cbe2cca343d9) |
-| pkgs/xdg-desktop-portal-wlr | [2019-07-24 15:28](https://github.com/emersion/xdg-desktop-portal-wlr/commits/df2ee009e10b146f58fd517b9a7ebab45e0f1c1b) |
+| pkgs/xdg-desktop-portal-wlr | [2019-07-24 16:38](https://github.com/emersion/xdg-desktop-portal-wlr/commits/13076d0c10613e9ae73e61dd82b24ae9a6529667) |
 <!--pkgs-->
 
 </details>
