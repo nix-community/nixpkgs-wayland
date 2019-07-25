@@ -15,14 +15,14 @@ Packages from this overlay are regularly updated and built against `nixos-unstab
 <!--pkgs-->
 | Attribute Name | Last Upstream Commit Time |
 | -------------- | ------------------------- |
-| nixpkgs/nixos-unstable | [2019-07-23 13:17](https://github.com/nixos/nixpkgs-channels/commits/c4fec1c6314c0c9c7af59bb465a17d1950ec7464) |
-| nixpkgs/nixpkgs-unstable | [2019-07-24 13:43](https://github.com/nixos/nixpkgs-channels/commits/b9412f4fdb58858717e2a9755763c37f2bd63e65) |
+| nixpkgs/nixos-unstable | [2019-07-24 23:57](https://github.com/nixos/nixpkgs-channels/commits/b5f5c97f7d67a99b67731a8cfd3926f163c11857) |
+| nixpkgs/nixpkgs-unstable | [2019-07-25 10:04](https://github.com/nixos/nixpkgs-channels/commits/88d9f776091896cfe57dc6fbdf246e7d27d5f105) |
 | pkgs/cage | [2019-07-09 12:25](https://github.com/Hjdskes/cage/commits/016ef340d20febd15ae6d4fec2b6e9fba1422cee) |
 | pkgs/gebaar-libinput | [2019-04-05 13:27](https://github.com/Coffee2CodeNL/gebaar-libinput/commits/c18c8bd73e79aaf1211bd88bf9cff808273cf6d6) |
 | pkgs/grim | [2019-07-20 16:11](https://github.com/emersion/grim/commits/a9af6088d5e6eb31c4c12a659b4641e9398e33e9) |
 | pkgs/i3status-rust | [2019-07-17 16:27](https://github.com/greshake/i3status-rust/commits/442298f329e007ca723779d3e248b8fbec151ec5) |
 | pkgs/kanshi | [2019-06-07 20:15](https://github.com/emersion/kanshi/commits/76e9f4151f6d0880d32dbc57123e00eace1b0734) |
-| pkgs/mako | [2019-07-19 10:57](https://github.com/emersion/mako/commits/e8e4c4d5ab96414b4b05a5f7138187998f53ebf9) |
+| pkgs/mako | [2019-07-25 05:31](https://github.com/emersion/mako/commits/7bbaf6352a1725f51c69afe9c4d276bbb293031c) |
 | pkgs/oguri | [2019-07-21 20:30](https://github.com/vilhalmer/oguri/commits/0cc903cacba33aae537ceec6554a5677a9400640) |
 | pkgs/redshift-wayland | [2019-04-17 23:13](https://github.com/minus7/redshift/commits/eecbfedac48f827e96ad5e151de8f41f6cd3af66) |
 | pkgs/slurp | [2019-07-03 20:50](https://github.com/emersion/slurp/commits/6a9ac01100ecca05d221bea096bb088b376579c1) |
