@@ -20,13 +20,13 @@ Packages from this overlay are regularly updated and built against `nixos-unstab
 | pkgs/cage | [2019-07-09 12:25](https://github.com/Hjdskes/cage/commits/016ef340d20febd15ae6d4fec2b6e9fba1422cee) |
 | pkgs/gebaar-libinput | [2019-04-05 13:27](https://github.com/Coffee2CodeNL/gebaar-libinput/commits/c18c8bd73e79aaf1211bd88bf9cff808273cf6d6) |
 | pkgs/grim | [2019-07-20 16:11](https://github.com/emersion/grim/commits/a9af6088d5e6eb31c4c12a659b4641e9398e33e9) |
-| pkgs/i3status-rust | [2019-07-17 16:27](https://github.com/greshake/i3status-rust/commits/442298f329e007ca723779d3e248b8fbec151ec5) |
+| pkgs/i3status-rust | [2019-07-26 17:18](https://github.com/greshake/i3status-rust/commits/e407d0366313472e29e7436551b002ea0083206b) |
 | pkgs/kanshi | [2019-06-07 20:15](https://github.com/emersion/kanshi/commits/76e9f4151f6d0880d32dbc57123e00eace1b0734) |
 | pkgs/mako | [2019-07-25 05:31](https://github.com/emersion/mako/commits/7bbaf6352a1725f51c69afe9c4d276bbb293031c) |
 | pkgs/oguri | [2019-07-21 20:30](https://github.com/vilhalmer/oguri/commits/0cc903cacba33aae537ceec6554a5677a9400640) |
 | pkgs/redshift-wayland | [2019-04-17 23:13](https://github.com/minus7/redshift/commits/eecbfedac48f827e96ad5e151de8f41f6cd3af66) |
 | pkgs/slurp | [2019-07-03 20:50](https://github.com/emersion/slurp/commits/6a9ac01100ecca05d221bea096bb088b376579c1) |
-| pkgs/sway | [2019-07-23 17:45](https://github.com/swaywm/sway/commits/1a16262903dce09a60f94698afa96c1b2c91c264) |
+| pkgs/sway | [2019-07-26 15:13](https://github.com/swaywm/sway/commits/17c9a0e84f066f6ad1e7d93be0edf8e7bf3a59b7) |
 | pkgs/swaybg | [2019-05-04 12:08](https://github.com/swaywm/swaybg/commits/25c6eaf15e64655385f01cbb98bffe28a862fe13) |
 | pkgs/swayidle | [2019-07-11 14:18](https://github.com/swaywm/swayidle/commits/426338a39e5bc228e3b585a615a6b6f06e8f2d17) |
 | pkgs/swaylock | [2019-07-20 07:06](https://github.com/swaywm/swaylock/commits/080e8356b7c4a442985b7c7fcaddcbe2a950a3c0) |
