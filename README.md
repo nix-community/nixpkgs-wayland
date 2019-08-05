@@ -15,8 +15,8 @@ Packages from this overlay are regularly updated and built against `nixos-unstab
 <!--pkgs-->
 | Attribute Name | Last Upstream Commit Time |
 | -------------- | ------------------------- |
-| nixpkgs/nixos-unstable | [2019-07-24 23:57](https://github.com/nixos/nixpkgs-channels/commits/b5f5c97f7d67a99b67731a8cfd3926f163c11857) |
-| nixpkgs/nixpkgs-unstable | [2019-07-25 10:04](https://github.com/nixos/nixpkgs-channels/commits/88d9f776091896cfe57dc6fbdf246e7d27d5f105) |
+| nixpkgs/nixos-unstable | [2019-08-04 16:15](https://github.com/nixos/nixpkgs-channels/commits/57d65085125df25b980e63bd51fa5cb39ed3857d) |
+| nixpkgs/nixpkgs-unstable | [2019-08-02 07:31](https://github.com/nixos/nixpkgs-channels/commits/002b853782e939c50da3fa7d424b08346f39eb6f) |
 | pkgs/cage | [2019-07-09 12:25](https://github.com/Hjdskes/cage/commits/016ef340d20febd15ae6d4fec2b6e9fba1422cee) |
 | pkgs/gebaar-libinput | [2019-04-05 13:27](https://github.com/Coffee2CodeNL/gebaar-libinput/commits/c18c8bd73e79aaf1211bd88bf9cff808273cf6d6) |
 | pkgs/grim | [2019-07-20 16:11](https://github.com/emersion/grim/commits/a9af6088d5e6eb31c4c12a659b4641e9398e33e9) |
@@ -25,18 +25,18 @@ Packages from this overlay are regularly updated and built against `nixos-unstab
 | pkgs/mako | [2019-07-25 05:31](https://github.com/emersion/mako/commits/7bbaf6352a1725f51c69afe9c4d276bbb293031c) |
 | pkgs/oguri | [2019-07-21 20:30](https://github.com/vilhalmer/oguri/commits/0cc903cacba33aae537ceec6554a5677a9400640) |
 | pkgs/redshift-wayland | [2019-04-17 23:13](https://github.com/minus7/redshift/commits/eecbfedac48f827e96ad5e151de8f41f6cd3af66) |
-| pkgs/slurp | [2019-07-03 20:50](https://github.com/emersion/slurp/commits/6a9ac01100ecca05d221bea096bb088b376579c1) |
-| pkgs/sway | [2019-07-28 13:19](https://github.com/swaywm/sway/commits/fc955716d499f9f5add878c89e4d311736f077d0) |
+| pkgs/slurp | [2019-08-01 17:25](https://github.com/emersion/slurp/commits/cdab5c9a42b27bb7e0e7894bbd2675637a06ad7e) |
+| pkgs/sway | [2019-08-03 13:46](https://github.com/swaywm/sway/commits/90d8a4df32747161c7218c006bb96e8214d8f7f2) |
 | pkgs/swaybg | [2019-05-04 12:08](https://github.com/swaywm/swaybg/commits/25c6eaf15e64655385f01cbb98bffe28a862fe13) |
 | pkgs/swayidle | [2019-07-11 14:18](https://github.com/swaywm/swayidle/commits/426338a39e5bc228e3b585a615a6b6f06e8f2d17) |
-| pkgs/swaylock | [2019-07-20 07:06](https://github.com/swaywm/swaylock/commits/080e8356b7c4a442985b7c7fcaddcbe2a950a3c0) |
-| pkgs/waybar | [2019-07-15 11:38](https://github.com/Alexays/waybar/commits/7a2dee73770131ab9cf0d049972d8956807950b3) |
+| pkgs/swaylock | [2019-08-04 06:15](https://github.com/swaywm/swaylock/commits/666ae950bc9c58b2676724e0d614f9018100fcca) |
+| pkgs/waybar | [2019-07-31 10:13](https://github.com/Alexays/waybar/commits/43beefb00d41d72f2d8ab549343e0415c08ac8b5) |
 | pkgs/waybox | [2019-06-19 22:09](https://github.com/wizbright/waybox/commits/bed7b707f24613dae334de6e7bd8f4e3313fa249) |
-| pkgs/wayfire | [2019-07-28 07:05](https://github.com/WayfireWM/wayfire/commits/47fb5e68a292bf49f3927e4b460df77305ba1fca) |
+| pkgs/wayfire | [2019-08-03 14:43](https://github.com/WayfireWM/wayfire/commits/7f76400a469eecbe2bfff269e66bebe4d847c09c) |
 | pkgs/wf-config | [2019-06-18 19:10](https://github.com/WayfireWM/wf-config/commits/f9c97d07cf9e669a346c83a3c1fce3e2d843bd51) |
 | pkgs/wf-recorder | [2019-06-24 15:08](https://github.com/ammen99/wf-recorder/commits/d40508331a6bdc5e2d20fa3804cbf40fc028390a) |
 | pkgs/wl-clipboard | [2019-04-15 15:53](https://github.com/bugaevc/wl-clipboard/commits/c010972e6b0d2eb3002c49a6a1b5620ff5f7c910) |
-| pkgs/wlroots | [2019-07-27 19:49](https://github.com/swaywm/wlroots/commits/ca45f4490ccce64bf7aa0985951319646b55d258) |
+| pkgs/wlroots | [2019-08-03 13:44](https://github.com/swaywm/wlroots/commits/4d36cc86eb8d056f963b3b783d6e3f9bf36e96b6) |
 | pkgs/wtype | [2019-07-01 15:33](https://github.com/atx/wtype/commits/9752f420ffb1dd8b9cbc692d9f90cbe2cca343d9) |
 | pkgs/xdg-desktop-portal-wlr | [2019-07-24 16:38](https://github.com/emersion/xdg-desktop-portal-wlr/commits/13076d0c10613e9ae73e61dd82b24ae9a6529667) |
 <!--pkgs-->
