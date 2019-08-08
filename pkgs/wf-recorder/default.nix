@@ -2,7 +2,7 @@
 , meson, ninja, pkgconfig
 , wayland, wayland-protocols
 , ffmpeg, x264, libpulseaudio
-, scdoc
+, scdoc, opencl-headers, ocl-icd
 }:
 
 let
@@ -19,7 +19,7 @@ stdenv.mkDerivation rec {
   };
 
   nativeBuildInputs = [ meson ninja pkgconfig scdoc ];
-  buildInputs = [ wayland wayland-protocols ffmpeg x264 libpulseaudio ];
+  buildInputs = [ wayland wayland-protocols ffmpeg x264 libpulseaudio opencl-headers ocl-icd ];
 
   meta = with stdenv.lib; {
     description = "Utility program for screen recording of wlroots-based compositors";
