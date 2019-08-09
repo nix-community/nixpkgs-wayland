@@ -21,7 +21,7 @@ in stdenv.mkDerivation rec {
 
   # $out for the library, $bin for rootston, and $examples for the example
   # programs (in examples) AND rootston
-  outputs = [ "out" "bin" "examples" ];
+  outputs = [ "out" "examples" ];
 
   nativeBuildInputs = [ meson ninja pkgconfig ];
 
@@ -39,22 +39,11 @@ in stdenv.mkDerivation rec {
   ];
 
   postInstall = ''
-    # Install rootston (the reference compositor) to $bin and $examples
-    for output in "$bin" "$examples"; do
-      mkdir -p $output/bin
-      cp rootston/rootston $output/bin/
-      mkdir $output/lib
-      cp libwlroots* $output/lib/
-      patchelf \
-        --set-rpath "$output/lib:${stdenv.lib.makeLibraryPath buildInputs}" \
-        $output/bin/rootston
-      mkdir $output/etc
-      cp ../rootston/rootston.ini.example $output/etc/rootston.ini
-    done
     # Install ALL example programs to $examples:
     # screencopy dmabuf-capture input-inhibitor layer-shell idle-inhibit idle
     # screenshot output-layout multi-pointer rotation tablet touch pointer
     # simple
+    mkdir -p $examples/bin
     cd ./examples
     for binary in $(find . -executable -type f -printf '%P\n' | grep -vE '\.so'); do
        patchelf \
