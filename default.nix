@@ -24,6 +24,7 @@ waylandPkgs = rec {
   wl-clipboard     = pkgs.callPackage ./pkgs/wl-clipboard {};
   wf-recorder      = pkgs.callPackage ./pkgs/wf-recorder {};
   wldash           = pkgs.callPackage ./pkgs/wldash {};
+  dot-desktop      = pkgs.callPackage ./pkgs/dot-desktop {};
   gebaar-libinput  = pkgs.callPackage ./pkgs/gebaar-libinput {};
   i3status-rust    = pkgs.callPackage ./pkgs/i3status-rust {};
 

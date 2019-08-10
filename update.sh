@@ -46,6 +46,7 @@ update "nixpkgs/nixpkgs-unstable" "nixos" "nixpkgs-channels" "nixpkgs-unstable"
 
 manual "pkgs/bspwc"
 update "pkgs/cage"             "Hjdskes" "cage" "master"
+update "pkgs/dot-desktop"      "kennylevinsen" "dot-desktop"   "master"
 update "pkgs/gebaar-libinput"  "Coffee2CodeNL" "gebaar-libinput" "master"
 manual "pkgs/glpaper"
 update "pkgs/grim"             "emersion"   "grim"             "master"
@@ -99,4 +100,3 @@ nix-build \
 for m in "${manual[@]}"; do
   echo "UPDATE MANUALLY: ${m}"
 done
-
