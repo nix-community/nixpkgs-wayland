@@ -26,7 +26,7 @@ Packages from this overlay are regularly updated and built against `nixos-unstab
 | pkgs/oguri | [2019-08-10 16:09](https://github.com/vilhalmer/oguri/commits/2f260f8bb30a16e033394c5f9da8ebda461954de) |
 | pkgs/redshift-wayland | [2019-04-17 23:13](https://github.com/minus7/redshift/commits/eecbfedac48f827e96ad5e151de8f41f6cd3af66) |
 | pkgs/slurp | [2019-08-01 17:25](https://github.com/emersion/slurp/commits/cdab5c9a42b27bb7e0e7894bbd2675637a06ad7e) |
-| pkgs/sway | [2019-08-13 02:31](https://github.com/swaywm/sway/commits/9bac7e6558b8a8cffcc566a7006f6c9789085db6) |
+| pkgs/sway | [2019-08-14 04:19](https://github.com/swaywm/sway/commits/f36240208c57124a88cdee18fb81fa3fc69e0f0a) |
 | pkgs/swaybg | [2019-08-08 23:03](https://github.com/swaywm/swaybg/commits/a8f109af90353369e7e2e689efe8ce06eb9c60ac) |
 | pkgs/swayidle | [2019-08-07 23:53](https://github.com/swaywm/swayidle/commits/91c0c4a943342ddc7fbed0777a654ac2b83185ca) |
 | pkgs/swaylock | [2019-08-04 06:15](https://github.com/swaywm/swaylock/commits/666ae950bc9c58b2676724e0d614f9018100fcca) |
