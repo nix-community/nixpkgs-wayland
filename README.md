@@ -36,6 +36,7 @@ Packages from this overlay are regularly updated and built against `nixos-unstab
 | pkgs/wf-config | [2019-06-18 19:10](https://github.com/WayfireWM/wf-config/commits/f9c97d07cf9e669a346c83a3c1fce3e2d843bd51) |
 | pkgs/wf-recorder | [2019-08-05 20:58](https://github.com/ammen99/wf-recorder/commits/20ab054b11d20c6d0da63917998af00c2f96d7c3) |
 | pkgs/wl-clipboard | [2019-04-15 15:53](https://github.com/bugaevc/wl-clipboard/commits/c010972e6b0d2eb3002c49a6a1b5620ff5f7c910) |
+| pkgs/wdisplays | [2019-08-15 11:39](https://github.com/cyclopsian/wdisplays/commits/ff536e196d5cfb7cd9a5ae8f3d49e719123b7f85) |
 | pkgs/wldash | [2019-08-11 23:48](https://github.com/kennylevinsen/wldash/commits/2f9534f75fffd58d1d0f5a580218e9f4ad589c5f) |
 | pkgs/wlroots | [2019-08-15 15:46](https://github.com/swaywm/wlroots/commits/4f4d3cf2a25f7af022e51b861ef04f7c4a94b768) |
 | pkgs/wtype | [2019-07-01 15:33](https://github.com/atx/wtype/commits/9752f420ffb1dd8b9cbc692d9f90cbe2cca343d9) |
