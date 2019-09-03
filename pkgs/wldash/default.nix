@@ -15,14 +15,14 @@ rustPlatform.buildRustPackage rec {
     sha256 = metadata.sha256;
   };
 
-  cargoSha256 = "1k793yw5fm6flvw37972l04y8qnhc1r2c22g308ld8wx6z3s1q9x";
+  cargoSha256 = "1bya0brc31fyf37crjprv5vyf989dfllxby9i13wlfvz82s6q0ik";
 
   nativeBuildInputs = [ pkgconfig ];
 
   buildInputs = [ dbus libpulseaudio ];
 
   dontPatchELF = true;
-  
+
   postInstall = ''
     patchelf --set-rpath ${libraryPath}:$(patchelf --print-rpath $out/bin/wldash) $out/bin/wldash
   '';
