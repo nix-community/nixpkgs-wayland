@@ -15,30 +15,30 @@ Packages from this overlay are regularly updated and built against `nixos-unstab
 <!--pkgs-->
 | Attribute Name | Last Upstream Commit Time |
 | -------------- | ------------------------- |
-| nixpkgs/nixos-unstable | [2019-08-26 00:29](https://github.com/nixos/nixpkgs-channels/commits/3f4144c30a6351dd79b177328ec4dea03e2ce45f) |
-| nixpkgs/nixpkgs-unstable | [2019-08-23 15:05](https://github.com/nixos/nixpkgs-channels/commits/54f385241e6649128ba963c10314942d73245479) |
+| nixpkgs/nixos-unstable | [2019-09-01 07:22](https://github.com/nixos/nixpkgs-channels/commits/7d5375ebf4cd417465327d7ab453687fd19663c9) |
+| nixpkgs/nixpkgs-unstable | [2019-08-31 13:55](https://github.com/nixos/nixpkgs-channels/commits/c4adeddb5f8e945517068968d06ea838b7c24bd3) |
 | pkgs/cage | [2019-08-27 16:14](https://github.com/Hjdskes/cage/commits/0fb513fb85eb5846eb598b91a0fc79dc16b5da36) |
 | pkgs/gebaar-libinput | [2019-04-05 13:27](https://github.com/Coffee2CodeNL/gebaar-libinput/commits/c18c8bd73e79aaf1211bd88bf9cff808273cf6d6) |
 | pkgs/grim | [2019-07-20 16:11](https://github.com/emersion/grim/commits/a9af6088d5e6eb31c4c12a659b4641e9398e33e9) |
 | pkgs/i3status-rust | [2019-08-22 06:00](https://github.com/greshake/i3status-rust/commits/72f4aa0e1fec3fdc4ac266937c3590dc1283485c) |
 | pkgs/kanshi | [2019-08-27 06:07](https://github.com/emersion/kanshi/commits/e4da814a600ca5e661ed4f0f014977d3d6716e4d) |
 | pkgs/mako | [2019-07-25 05:31](https://github.com/emersion/mako/commits/7bbaf6352a1725f51c69afe9c4d276bbb293031c) |
-| pkgs/oguri | [2019-08-10 16:09](https://github.com/vilhalmer/oguri/commits/2f260f8bb30a16e033394c5f9da8ebda461954de) |
+| pkgs/oguri | [2019-09-03 02:54](https://github.com/vilhalmer/oguri/commits/5372ee49bb22b0370100be8589f3692da58602e3) |
 | pkgs/redshift-wayland | [2019-08-24 15:20](https://github.com/minus7/redshift/commits/7da875d34854a6a34612d5ce4bd8718c32bec804) |
 | pkgs/slurp | [2019-08-01 17:25](https://github.com/emersion/slurp/commits/cdab5c9a42b27bb7e0e7894bbd2675637a06ad7e) |
-| pkgs/sway | [2019-08-27 04:45](https://github.com/swaywm/sway/commits/1a8b9fda8a81d71ec9de65fd4c3f1df40e03f971) |
+| pkgs/sway | [2019-09-02 14:06](https://github.com/swaywm/sway/commits/b46c53957f0cf0c342737d0872e5b885a11793e2) |
 | pkgs/swaybg | [2019-08-08 23:03](https://github.com/swaywm/swaybg/commits/a8f109af90353369e7e2e689efe8ce06eb9c60ac) |
 | pkgs/swayidle | [2019-08-27 15:18](https://github.com/swaywm/swayidle/commits/844dfde8538c1f55aaf254c18649d419bdff7a92) |
 | pkgs/swaylock | [2019-08-15 15:47](https://github.com/swaywm/swaylock/commits/ba31e2eaee6a08514a449916491f9a446e745770) |
-| pkgs/waybar | [2019-08-19 08:00](https://github.com/Alexays/waybar/commits/9d0842db484a9adf734bea3254f4ed400bc7113e) |
+| pkgs/waybar | [2019-09-03 11:06](https://github.com/Alexays/waybar/commits/060b614eb3d3f1b0e217c193c466c2fe2ad3b5d6) |
 | pkgs/waybox | [2019-06-19 22:09](https://github.com/wizbright/waybox/commits/bed7b707f24613dae334de6e7bd8f4e3313fa249) |
-| pkgs/wayfire | [2019-08-26 20:07](https://github.com/WayfireWM/wayfire/commits/d41ef2d2fd62efa4e153d675ca3cf021531a2cd2) |
+| pkgs/wayfire | [2019-09-03 14:13](https://github.com/WayfireWM/wayfire/commits/2e55ad26cf5d472494472f3327983853d1bbfb5c) |
 | pkgs/wf-config | [2019-06-18 19:10](https://github.com/WayfireWM/wf-config/commits/f9c97d07cf9e669a346c83a3c1fce3e2d843bd51) |
 | pkgs/wf-recorder | [2019-08-05 20:58](https://github.com/ammen99/wf-recorder/commits/20ab054b11d20c6d0da63917998af00c2f96d7c3) |
 | pkgs/wl-clipboard | [2019-04-15 15:53](https://github.com/bugaevc/wl-clipboard/commits/c010972e6b0d2eb3002c49a6a1b5620ff5f7c910) |
 | pkgs/wdisplays | [2019-08-27 15:21](https://github.com/cyclopsian/wdisplays/commits/b4a2f3be9603719a9b7091acc7f9fb465d940459) |
-| pkgs/wldash | [2019-08-28 16:06](https://github.com/kennylevinsen/wldash/commits/46a1c9e701c51463604edf36538b51c5600ceb66) |
-| pkgs/wlroots | [2019-08-27 03:32](https://github.com/swaywm/wlroots/commits/a20bb38763877410a80a0c02ddfbfaa906c288fd) |
+| pkgs/wldash | [2019-09-03 15:33](https://github.com/kennylevinsen/wldash/commits/4053bb8973fade95ff2f85b240f27f76a18f4560) |
+| pkgs/wlroots | [2019-08-31 20:00](https://github.com/swaywm/wlroots/commits/734c64a6cc005f2c20df48af8079538a8c4cbd39) |
 | pkgs/wtype | [2019-07-01 15:33](https://github.com/atx/wtype/commits/9752f420ffb1dd8b9cbc692d9f90cbe2cca343d9) |
 | pkgs/xdg-desktop-portal-wlr | [2019-07-24 16:38](https://github.com/emersion/xdg-desktop-portal-wlr/commits/13076d0c10613e9ae73e61dd82b24ae9a6529667) |
 <!--pkgs-->

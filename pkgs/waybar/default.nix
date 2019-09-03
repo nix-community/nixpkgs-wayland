@@ -1,5 +1,5 @@
 { stdenv, fetchFromGitHub
-, meson, ninja, pkgconfig
+, meson, ninja, pkgconfig, scdoc
 , wayland, wayland-protocols, sway, wlroots
 , libpulseaudio, libinput, libnl, gtkmm3
 , fmt, jsoncpp, libdbusmenu-gtk3
@@ -23,7 +23,7 @@ stdenv.mkDerivation rec {
     sha256 = metadata.sha256;
   };
 
-  nativeBuildInputs = [ meson ninja pkgconfig ];
+  nativeBuildInputs = [ meson ninja pkgconfig scdoc ];
   buildInputs = [
     wayland wayland-protocols sway wlroots
     libpulseaudio libinput libnl gtkmm3
