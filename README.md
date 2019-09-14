@@ -32,13 +32,13 @@ Packages from this overlay are regularly updated and built against `nixos-unstab
 | pkgs/swaylock | [2019-09-12 20:33](https://github.com/swaywm/swaylock/commits/426e1ce93d1344414bd3fa0eb7cd50d7ca9ec075) |
 | pkgs/waybar | [2019-09-12 15:40](https://github.com/Alexays/waybar/commits/db74a46d7b9a52a85c65b6eae49ea1f546c11192) |
 | pkgs/waybox | [2019-06-19 22:09](https://github.com/wizbright/waybox/commits/bed7b707f24613dae334de6e7bd8f4e3313fa249) |
-| pkgs/wayfire | [2019-09-12 19:55](https://github.com/WayfireWM/wayfire/commits/2cae3a18995fe2cf264a66b1c0c1a49d27a95842) |
+| pkgs/wayfire | [2019-09-13 20:27](https://github.com/WayfireWM/wayfire/commits/0f84ac9b2b50e77b448b1dd4735a1f6682d4edb8) |
 | pkgs/wf-config | [2019-09-04 07:39](https://github.com/WayfireWM/wf-config/commits/e8d57d19183e0d358671e3aa7335cc2d3722321d) |
 | pkgs/wf-recorder | [2019-08-05 20:58](https://github.com/ammen99/wf-recorder/commits/20ab054b11d20c6d0da63917998af00c2f96d7c3) |
 | pkgs/wl-clipboard | [2019-04-15 15:53](https://github.com/bugaevc/wl-clipboard/commits/c010972e6b0d2eb3002c49a6a1b5620ff5f7c910) |
 | pkgs/wdisplays | [2019-09-09 15:10](https://github.com/cyclopsian/wdisplays/commits/03de59d30733a4228208ab4ce7613ced0e02c9b9) |
 | pkgs/wldash | [2019-09-10 12:26](https://github.com/kennylevinsen/wldash/commits/b94e80c3464aabac61d594ff4b0273ffacd94127) |
-| pkgs/wlroots | [2019-09-05 07:25](https://github.com/swaywm/wlroots/commits/bf90474b74064503be0957ae713db833ddec5529) |
+| pkgs/wlroots | [2019-09-14 13:19](https://github.com/swaywm/wlroots/commits/a14d65086480652520d20622cbc92df2319158f0) |
 | pkgs/wtype | [2019-07-01 15:33](https://github.com/atx/wtype/commits/9752f420ffb1dd8b9cbc692d9f90cbe2cca343d9) |
 | pkgs/xdg-desktop-portal-wlr | [2019-07-24 16:38](https://github.com/emersion/xdg-desktop-portal-wlr/commits/13076d0c10613e9ae73e61dd82b24ae9a6529667) |
 <!--pkgs-->
