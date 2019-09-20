@@ -1,4 +1,4 @@
-{ lib, rustPlatform, fetchFromGitHub, pkgconfig, dbus, libpulseaudio, libxkbcommon, wayland }:
+{ lib, rustPlatform, fetchFromGitHub, pkgconfig, dbus, libpulseaudio, alsaLib, libxkbcommon, wayland }:
 
 let
   metadata = import ./metadata.nix;
@@ -15,11 +15,11 @@ rustPlatform.buildRustPackage rec {
     sha256 = metadata.sha256;
   };
 
-  cargoSha256 = "0acjkfv1bg4g58qa1ka9lbz1fgvz57bfw55l0yx277vk0qx7qm1v";
+  cargoSha256 = "0pcxv9c7zjzf9m4cx6lsfbn5mb3i5sc4f4c1s6mdpffqld080j19";
 
   nativeBuildInputs = [ pkgconfig ];
 
-  buildInputs = [ dbus libpulseaudio ];
+  buildInputs = [ dbus libpulseaudio alsaLib ];
 
   dontPatchELF = true;
   

@@ -26,19 +26,19 @@ Packages from this overlay are regularly updated and built against `nixos-unstab
 | pkgs/oguri | [2019-09-03 02:54](https://github.com/vilhalmer/oguri/commits/5372ee49bb22b0370100be8589f3692da58602e3) |
 | pkgs/redshift-wayland | [2019-08-24 15:20](https://github.com/minus7/redshift/commits/7da875d34854a6a34612d5ce4bd8718c32bec804) |
 | pkgs/slurp | [2019-08-01 17:25](https://github.com/emersion/slurp/commits/cdab5c9a42b27bb7e0e7894bbd2675637a06ad7e) |
-| pkgs/sway | [2019-09-12 11:56](https://github.com/swaywm/sway/commits/a085e6495c79d36c0cb578f3f7f667a73d83bfd8) |
+| pkgs/sway | [2019-09-19 16:47](https://github.com/swaywm/sway/commits/fba248ed5ee3888b961e3272f7e29b9d9ecdb335) |
 | pkgs/swaybg | [2019-08-08 23:03](https://github.com/swaywm/swaybg/commits/a8f109af90353369e7e2e689efe8ce06eb9c60ac) |
 | pkgs/swayidle | [2019-08-27 15:18](https://github.com/swaywm/swayidle/commits/844dfde8538c1f55aaf254c18649d419bdff7a92) |
 | pkgs/swaylock | [2019-09-12 20:33](https://github.com/swaywm/swaylock/commits/426e1ce93d1344414bd3fa0eb7cd50d7ca9ec075) |
-| pkgs/waybar | [2019-09-12 15:40](https://github.com/Alexays/waybar/commits/db74a46d7b9a52a85c65b6eae49ea1f546c11192) |
+| pkgs/waybar | [2019-09-19 21:07](https://github.com/Alexays/waybar/commits/bae83ee4e31a4daeb9ecfd069153003c8612e026) |
 | pkgs/waybox | [2019-06-19 22:09](https://github.com/wizbright/waybox/commits/bed7b707f24613dae334de6e7bd8f4e3313fa249) |
-| pkgs/wayfire | [2019-09-13 20:27](https://github.com/WayfireWM/wayfire/commits/0f84ac9b2b50e77b448b1dd4735a1f6682d4edb8) |
+| pkgs/wayfire | [2019-09-18 21:30](https://github.com/WayfireWM/wayfire/commits/5b91b876ce0a7ff3e62bf72870d741c02002db90) |
 | pkgs/wf-config | [2019-09-04 07:39](https://github.com/WayfireWM/wf-config/commits/e8d57d19183e0d358671e3aa7335cc2d3722321d) |
-| pkgs/wf-recorder | [2019-08-05 20:58](https://github.com/ammen99/wf-recorder/commits/20ab054b11d20c6d0da63917998af00c2f96d7c3) |
-| pkgs/wl-clipboard | [2019-09-16 07:18](https://github.com/bugaevc/wl-clipboard/commits/ce879500d71fa4ccdf5c29c42f6b286325ca28ae) |
+| pkgs/wf-recorder | [2019-09-17 19:16](https://github.com/ammen99/wf-recorder/commits/d6ea419b3caad8ec89c66eef504dc043fec26d2a) |
+| pkgs/wl-clipboard | [2019-09-17 20:48](https://github.com/bugaevc/wl-clipboard/commits/a60a0a468cddeb2de8cb83264e1874ab3f46fbd5) |
 | pkgs/wdisplays | [2019-09-09 15:10](https://github.com/cyclopsian/wdisplays/commits/03de59d30733a4228208ab4ce7613ced0e02c9b9) |
-| pkgs/wldash | [2019-09-10 12:26](https://github.com/kennylevinsen/wldash/commits/b94e80c3464aabac61d594ff4b0273ffacd94127) |
-| pkgs/wlroots | [2019-09-15 07:06](https://github.com/swaywm/wlroots/commits/06644575da9060a917849d177c418ed39e432467) |
+| pkgs/wldash | [2019-09-18 09:19](https://github.com/kennylevinsen/wldash/commits/1ae11bab29ca82f415d7d0ad5abf6727b431c11c) |
+| pkgs/wlroots | [2019-09-19 16:44](https://github.com/swaywm/wlroots/commits/020a33e057bd2c5b6250149b0e955d6874ecb1b7) |
 | pkgs/wtype | [2019-07-01 15:33](https://github.com/atx/wtype/commits/9752f420ffb1dd8b9cbc692d9f90cbe2cca343d9) |
 | pkgs/xdg-desktop-portal-wlr | [2019-07-24 16:38](https://github.com/emersion/xdg-desktop-portal-wlr/commits/13076d0c10613e9ae73e61dd82b24ae9a6529667) |
 <!--pkgs-->
