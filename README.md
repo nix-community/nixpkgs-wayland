@@ -15,18 +15,18 @@ Packages from this overlay are regularly updated and built against `nixos-unstab
 <!--pkgs-->
 | Attribute Name | Last Upstream Commit Time |
 | -------------- | ------------------------- |
-| nixpkgs/nixos-unstable | [2019-09-09 01:18](https://github.com/nixos/nixpkgs-channels/commits/e19054ab3cd5b7cc9a01d0efc71c8fe310541065) |
+| nixpkgs/nixos-unstable | [2019-09-20 20:58](https://github.com/nixos/nixpkgs-channels/commits/d484f2b7fc0834a068e8ace851faa449a03963f5) |
 | nixpkgs/nixpkgs-unstable | [2019-09-15 21:40](https://github.com/nixos/nixpkgs-channels/commits/c4196cca9acd1c51f62baf10fcbe34373e330bb3) |
 | pkgs/cage | [2019-08-27 16:14](https://github.com/Hjdskes/cage/commits/0fb513fb85eb5846eb598b91a0fc79dc16b5da36) |
 | pkgs/gebaar-libinput | [2019-04-05 13:27](https://github.com/Coffee2CodeNL/gebaar-libinput/commits/c18c8bd73e79aaf1211bd88bf9cff808273cf6d6) |
 | pkgs/grim | [2019-07-20 16:11](https://github.com/emersion/grim/commits/a9af6088d5e6eb31c4c12a659b4641e9398e33e9) |
 | pkgs/i3status-rust | [2019-09-09 14:01](https://github.com/greshake/i3status-rust/commits/f90bc9874d060a24276c2808275f4068d30ba47b) |
-| pkgs/kanshi | [2019-09-06 17:20](https://github.com/emersion/kanshi/commits/823cdb0f6f6bfc4a119af76ef2be8a8d2b01dff3) |
+| pkgs/kanshi | [2019-09-20 09:59](https://github.com/emersion/kanshi/commits/5a30abdf0b3b39ea21298bea91f28924373e4f0b) |
 | pkgs/mako | [2019-09-09 22:16](https://github.com/emersion/mako/commits/0b3b66e6e4c04ff44a164c366931d1e6beaca9e4) |
 | pkgs/oguri | [2019-09-03 02:54](https://github.com/vilhalmer/oguri/commits/5372ee49bb22b0370100be8589f3692da58602e3) |
 | pkgs/redshift-wayland | [2019-08-24 15:20](https://github.com/minus7/redshift/commits/7da875d34854a6a34612d5ce4bd8718c32bec804) |
 | pkgs/slurp | [2019-08-01 17:25](https://github.com/emersion/slurp/commits/cdab5c9a42b27bb7e0e7894bbd2675637a06ad7e) |
-| pkgs/sway | [2019-09-19 16:47](https://github.com/swaywm/sway/commits/fba248ed5ee3888b961e3272f7e29b9d9ecdb335) |
+| pkgs/sway | [2019-09-20 17:47](https://github.com/swaywm/sway/commits/da0ad4c39ed91c0d485b3d519ad1631ea6a46ba2) |
 | pkgs/swaybg | [2019-08-08 23:03](https://github.com/swaywm/swaybg/commits/a8f109af90353369e7e2e689efe8ce06eb9c60ac) |
 | pkgs/swayidle | [2019-08-27 15:18](https://github.com/swaywm/swayidle/commits/844dfde8538c1f55aaf254c18649d419bdff7a92) |
 | pkgs/swaylock | [2019-09-12 20:33](https://github.com/swaywm/swaylock/commits/426e1ce93d1344414bd3fa0eb7cd50d7ca9ec075) |
