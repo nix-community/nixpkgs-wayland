@@ -51,6 +51,7 @@ in
   # Add the required groups for the user to get access
   users.extraUsers."${user}" = {
     extraGroups = [
+      # allow sudo
       "wheel"
       "input"
       "tty"
@@ -59,8 +60,6 @@ in
       # allow sway's setuid executable
       "sway"
       "networkmanager"
-      # allow sudo
-      "wheel"
     ];
   };
 
