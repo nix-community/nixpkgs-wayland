@@ -3,6 +3,7 @@ let
 waylandPkgs = rec {
   # wlroots-related
   wlroots          = pkgs.callPackage ./pkgs/wlroots {};
+  wlroots-wf       = pkgs.callPackage ./pkgs-temp/wlroots {};
   xdg-desktop-portal-wlr = pkgs.callPackage ./pkgs/xdg-desktop-portal-wlr {};
   sway             = pkgs.callPackage ./pkgs/sway {};
   swaybg           = pkgs.callPackage ./pkgs/swaybg {};
@@ -15,7 +16,7 @@ waylandPkgs = rec {
   oguri            = pkgs.callPackage ./pkgs/oguri {};
   waybar           = pkgs.callPackage ./pkgs/waybar {};
   wf-config        = pkgs.callPackage ./pkgs/wf-config {};
-  wayfire          = pkgs.callPackage ./pkgs/wayfire {};
+  wayfire          = pkgs.callPackage ./pkgs/wayfire { wlroots = wlroots-wf; };
   redshift-wayland = pkgs.callPackage ./pkgs/redshift-wayland {
     inherit (pkgs.python3Packages) python pygobject3 pyxdg wrapPython;
     geoclue = pkgs.geoclue2;
