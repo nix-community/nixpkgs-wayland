@@ -20,13 +20,13 @@ Packages from this overlay are regularly updated and built against `nixos-unstab
 | pkgs/cage | [2019-08-27 16:14](https://github.com/Hjdskes/cage/commits/0fb513fb85eb5846eb598b91a0fc79dc16b5da36) |
 | pkgs/gebaar-libinput | [2019-04-05 13:27](https://github.com/Coffee2CodeNL/gebaar-libinput/commits/c18c8bd73e79aaf1211bd88bf9cff808273cf6d6) |
 | pkgs/grim | [2019-07-20 16:11](https://github.com/emersion/grim/commits/a9af6088d5e6eb31c4c12a659b4641e9398e33e9) |
-| pkgs/i3status-rust | [2019-10-26 12:52](https://github.com/greshake/i3status-rust/commits/de33c437759e4f127ccc02ba2b8d520e23af9afe) |
+| pkgs/i3status-rust | [2019-10-27 18:43](https://github.com/greshake/i3status-rust/commits/733b5bef31f89cec092197961a1ef89a26fe1ee8) |
 | pkgs/kanshi | [2019-09-20 09:59](https://github.com/emersion/kanshi/commits/5a30abdf0b3b39ea21298bea91f28924373e4f0b) |
 | pkgs/mako | [2019-10-25 15:44](https://github.com/emersion/mako/commits/bf6d462fb1c128ec7062e2901e76f4259bc5b1f6) |
 | pkgs/oguri | [2019-09-03 02:54](https://github.com/vilhalmer/oguri/commits/5372ee49bb22b0370100be8589f3692da58602e3) |
 | pkgs/redshift-wayland | [2019-08-24 15:20](https://github.com/minus7/redshift/commits/7da875d34854a6a34612d5ce4bd8718c32bec804) |
 | pkgs/slurp | [2019-08-01 17:25](https://github.com/emersion/slurp/commits/cdab5c9a42b27bb7e0e7894bbd2675637a06ad7e) |
-| pkgs/sway | [2019-10-23 15:21](https://github.com/swaywm/sway/commits/43bd8dc437866ce1e6ba8e276af511a9ddebe71d) |
+| pkgs/sway | [2019-10-27 15:07](https://github.com/swaywm/sway/commits/1a253ca7ab123619bcf02e1503fd9a47d2c433e9) |
 | pkgs/swaybg | [2019-08-08 23:03](https://github.com/swaywm/swaybg/commits/a8f109af90353369e7e2e689efe8ce06eb9c60ac) |
 | pkgs/swayidle | [2019-08-27 15:18](https://github.com/swaywm/swayidle/commits/844dfde8538c1f55aaf254c18649d419bdff7a92) |
 | pkgs/swaylock | [2019-09-12 20:33](https://github.com/swaywm/swaylock/commits/426e1ce93d1344414bd3fa0eb7cd50d7ca9ec075) |
@@ -38,7 +38,7 @@ Packages from this overlay are regularly updated and built against `nixos-unstab
 | pkgs/wl-clipboard | [2019-10-03 12:16](https://github.com/bugaevc/wl-clipboard/commits/f3a45f69f7d14e7f7050bca4cbf6fea6697d1455) |
 | pkgs/wdisplays | [2019-10-26 20:56](https://github.com/cyclopsian/wdisplays/commits/22669edadb8ff3478bdb51ddc140ef6e61e3d9ef) |
 | pkgs/wldash | [2019-10-05 20:43](https://github.com/kennylevinsen/wldash/commits/9233128b7c90537cb2157139a7ed1a3d0fbdfd8e) |
-| pkgs/wlroots | [2019-10-23 09:36](https://github.com/swaywm/wlroots/commits/e97c2c3639119831ced4f6b9f704b096c2075973) |
+| pkgs/wlroots | [2019-10-27 18:01](https://github.com/swaywm/wlroots/commits/b81bb2ef3040e5cf3dcffbddcb5389775c879d85) |
 | pkgs/wtype | [2019-07-01 15:33](https://github.com/atx/wtype/commits/9752f420ffb1dd8b9cbc692d9f90cbe2cca343d9) |
 | pkgs/xdg-desktop-portal-wlr | [2019-07-24 16:38](https://github.com/emersion/xdg-desktop-portal-wlr/commits/13076d0c10613e9ae73e61dd82b24ae9a6529667) |
 <!--pkgs-->
