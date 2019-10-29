@@ -3,6 +3,7 @@ let
 waylandPkgs = rec {
   # wlroots-related
   cage             = pkgs.callPackage ./pkgs/cage {};
+  drm_info         = pkgs.callPackage ./pkgs/drm_info {};
   gebaar-libinput  = pkgs.callPackage ./pkgs/gebaar-libinput {};
   glpaper          = pkgs.callPackage ./pkgs/glpaper {};
   grim             = pkgs.callPackage ./pkgs/grim {};
