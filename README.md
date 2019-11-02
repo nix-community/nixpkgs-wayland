@@ -21,8 +21,8 @@ These packages were mostly recently built against:
 <!--nixpkgs-->
 | Channel | Last Channel Commit Time |
 | ------- | ------------------------ |
-| nixos-unstable | 2019-10-23 18:19:15 +0000 |
-| nixpkgs-unstable | 2019-10-20 18:51:24 -0700 |
+| nixos-unstable | 2019-10-31 16:03:13 +0100 |
+| nixpkgs-unstable | 2019-10-31 20:42:06 -0500 |
 <!--nixpkgs-->
 
 ## Packages
@@ -32,17 +32,17 @@ These packages were mostly recently built against:
 | ------- | ----------- | ----------- |
 | [bspwc](https://git.sr.ht/~bl4ckb0ne/bspwc) | 2019-10-14 14:41:16 -0400 | Binary space partitioning wayland compositor |
 | [cage](https://www.hjdskes.nl/projects/cage/) | 2019-08-27 18:14:57 +0200 | A Wayland kiosk |
-| [drm_info](https://github.com/ascent12/drm_info) | 2019-10-27 11:07:48 -0400 | Small utility to dump info about DRM devices. |
+| [drm_info](https://github.com/ascent12/drm_info) | 2019-08-24 01:22:40 +1200 | Small utility to dump info about DRM devices. |
 | [gebaar-libinput](https://github.com/Coffee2CodeNL/gebaar-libinput) | 2019-04-05 15:27:03 +0200 | Gebaar, A Super Simple WM Independent Touchpad Gesture Daemon for libinput |
 | [glpaper](https://bitbucket.org/Scoopta/glpaper) | 2019-03-08 16:52 -0800 | GLPaper is a wallpaper program for wlroots based wayland compositors such as sway that allows you to render glsl shaders as your wallpaper |
 | [grim](https://github.com/emersion/grim) | 2019-07-20 19:11:00 +0300 | Select a region in a Wayland compositor |
-| [i3status-rust](https://github.com/greshake/i3status-rust) | 2019-10-27 14:43:06 -0400 | Very resource-friendly and feature-rich replacement for i3status |
+| [i3status-rust](https://github.com/greshake/i3status-rust) | 2019-10-31 13:13:13 -0400 | Very resource-friendly and feature-rich replacement for i3status |
 | [kanshi](https://github.com/emersion/kanshi) | 2019-09-20 12:59:04 +0300 | Dynamic display configuration |
 | [mako](https://wayland.emersion.fr/mako) | 2019-10-25 17:44:01 +0200 | A lightweight Wayland notification daemon |
 | [oguri](https://github.com/vilhalmer/oguri) | 2019-09-02 22:54:45 -0400 | A very nice animated wallpaper tool for Wayland compositors |
 | [redshift-wayland](http://jonls.dk/redshift) | 2019-08-24 17:20:17 +0200 | Screen color temperature manager |
 | [slurp](https://github.com/emersion/slurp) | 2019-08-01 20:25:04 +0300 | Select a region in a Wayland compositor |
-| [sway](https://swaywm.org) | 2019-10-27 11:07:48 -0400 | i3-compatible tiling Wayland compositor |
+| [sway](https://swaywm.org) | 2019-11-01 12:41:08 -0400 | i3-compatible tiling Wayland compositor |
 | [swaybg](https://github.com/swaywm/swaybg) | 2019-08-09 08:03:44 +0900 | Wallpaper tool for Wayland compositors |
 | [swayidle](https://swaywm.org) | 2019-08-27 18:18:38 +0300 | Sway's idle management daemon |
 | [swaylock](https://swaywm.org) | 2019-09-12 16:33:24 -0400 | Screen locker for Wayland |

@@ -40,7 +40,7 @@ function update() {
     # Update RevDate
     d="$(mktemp -d)"
     if [[ "${repotyp}" == "git" ]]; then
-      git clone -b "${branch}" --single-branch "${repo}" --depth=1 "${d}"
+      git clone -b "${branch}" --single-branch --depth=1 "${repo}" "${d}"
       newdate="$(cd "${d}"; git log --format=%ci --max-count=1)"
     elif [[ "${repotyp}" == "hg" ]]; then
       hg clone "${repo}#${branch}" "${d}"
