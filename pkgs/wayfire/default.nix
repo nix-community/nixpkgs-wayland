@@ -41,7 +41,7 @@ stdenv.mkDerivation rec {
 
   meta = with stdenv.lib; {
     description = "3D wayland compositor";
-    homepage    = https://github.com/WayfireWM/wayfire;
+    homepage    = "https://wayfire.org/";
     license     = licenses.mit;
     platforms   = platforms.linux;
     maintainers = with maintainers; [ colemickens ];

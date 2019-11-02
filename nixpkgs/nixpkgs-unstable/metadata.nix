@@ -1,5 +1,8 @@
 {
-  rev = "91d5b3f07d27622ff620ff31fa5edce15a5822fa";
-  sha256 = "09vlhjbkjivv9aiklhwq9wpzn954pcyp3fhrwslm28ip4iar9b55";
-  revdate = "2019-10-21T01:51:24Z";
+  repo_git = "https://github.com/nixos/nixpkgs-channels";
+  branch = "nixpkgs-unstable";
+  url = "https://github.com/nixos/nixpkgs-channels/archive/nixpkgs-unstable.tar.gz";
+  rev = "d901b961a950ecf6731659dcebabab74d1fe7f8d";
+  sha256 = "1xmjkhjivx0rw5xi1z24h02qz286a7bfswf13xqn7mk85r7h4mg3";
+  revdate = "2019-10-31 20:42:06 -0500";
 }

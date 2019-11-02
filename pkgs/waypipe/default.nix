@@ -32,8 +32,8 @@ stdenv.mkDerivation rec {
 
   meta = with stdenv.lib; {
     description = "Network transparency with Wayland";
-    homepage    = "https://mstoeckl.com/notes/gsoc/blog.html";
-    # license = ?
+    homepage    = "https://gitlab.freedesktop.org/mstoeckl/waypipe/";
+    license = licenses.mit; # expat?? TODO
     platforms   = platforms.linux;
     maintainers = with maintainers; [ colemickens ];
   };

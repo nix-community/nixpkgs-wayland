@@ -27,8 +27,8 @@ stdenv.mkDerivation rec {
   enableParallelBuilding = true;
 
   meta = with stdenv.lib; {
-    description = "High-level Wayland compositor library based on wlroots";
-    homepage    = "https://git.sr.ht/~bl4ckb0ne/wltrunk";
+    description = "xdotool type for wayland";
+    homepage    = "https://github.com/atx/wtype";
     license     = licenses.mit;
     platforms   = platforms.linux;
     maintainers = with maintainers; [ colemickens ];

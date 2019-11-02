@@ -1,4 +1,7 @@
 {
-  rev = "2e5f6c69c78e7da5e860714f79708d555f60691f";
-  sha256 = "0pal98h8pvd1dqyrj6ykdb46lp5m0lz5bwdz9mw3v59wzrxs0wfy";
+  repo_hg = "https://hg.sr.ht/~scoopta/glpaper/";
+  branch = "default";
+  rev = "96933cfd2185";
+  sha256 = "07zqf4v8i3czxl8m0h7vsaqik7xn6lcv16k3pds0f8w98xx2r3bp";
+  revdate = "2019-03-08 16:52 -0800";
 }

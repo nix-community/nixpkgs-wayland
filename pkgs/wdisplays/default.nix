@@ -29,7 +29,7 @@ stdenv.mkDerivation rec {
   meta = with stdenv.lib; {
     description = "GUI display configurator for wlroots compositors";
     homepage    = "https://github.com/cyclopsian/wdisplays";
-    #license     = licenses.mit; # TODO 
+    license     = licenses.mit;
     platforms   = platforms.linux;
     maintainers = with maintainers; [ colemickens ];
   };
