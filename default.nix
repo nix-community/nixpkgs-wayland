@@ -27,6 +27,7 @@ waylandPkgs = rec {
   wldash           = pkgs.callPackage ./pkgs/wldash {};
   wlroots          = pkgs.callPackage ./pkgs/wlroots {};
   wlr-randr        = pkgs.callPackage ./pkgs/wlr-randr {};
+  wofi             = pkgs.callPackage ./pkgs/wofi {};
   wtype            = pkgs.callPackage ./pkgs/wtype {};
   xdg-desktop-portal-wlr = pkgs.callPackage ./pkgs/xdg-desktop-portal-wlr {};
 
