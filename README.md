@@ -54,6 +54,7 @@ These packages were mostly recently built against:
 | [wdisplays](https://github.com/cyclopsian/wdisplays) | 2019-10-26 16:56:01 -0400 | GUI display configurator for wlroots compositors |
 | [wf-config](https://github.com/WayfireWM/wf-config) | 2019-10-08 00:06:02 +0300 | A library for managing configuration files, written for wayfire |
 | [wf-recorder](https://github.com/ammen99/wf-recorder) | 2019-10-22 12:16:00 +0200 | Utility program for screen recording of wlroots-based compositors |
+| [wlay](https://github.com/atx/wlay) | 2019-07-04 19:03:15 +0200 | Graphical output management for Wayland |
 | [wl-clipboard](https://github.com/bugaevc/wl-clipboard) | 2019-10-03 15:16:09 +0300 | Select a region in a Wayland compositor |
 | [wldash](https://wldash.org) | 2019-10-05 22:43:09 +0200 | Wayland launcher/dashboard |
 | [wlrobs](https://sr.ht/~scoopta/wlrobs) | 2019-03-16 15:06 -0700 | wlrobs is an obs-studio plugin that allows you to screen capture on wlroots based wayland compositors |
