@@ -19,6 +19,7 @@ waylandPkgs = rec {
   waybox           = pkgs.callPackage ./pkgs/waybox {};
   waypipe          = pkgs.callPackage ./pkgs/waypipe {};
   wdisplays        = pkgs.callPackage ./pkgs/wdisplays {};
+  wev              = pkgs.callPackage ./pkgs/wev {};
   wf-recorder      = pkgs.callPackage ./pkgs/wf-recorder {};
   wlay             = pkgs.callPackage ./pkgs/wlay {};
   wlrobs           = pkgs.callPackage ./pkgs/wlrobs {};

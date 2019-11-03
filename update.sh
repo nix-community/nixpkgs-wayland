@@ -88,9 +88,13 @@ done
 
 #
 # update pkgs
-for p in pkgs/*; do
-  update "pkgs" "${p}"
-done
+if [[ "${1:-}" != "" ]]; then
+  update "pkgs" "pkgs/${1}"
+else
+  for p in pkgs/*; do
+    update "pkgs" "${p}"
+  done
+fi
 
 #
 # update README.md
