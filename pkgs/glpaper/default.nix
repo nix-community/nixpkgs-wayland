@@ -14,7 +14,7 @@ stdenv.mkDerivation rec {
   version = metadata.rev;
 
   src = fetchhg {
-    url = "https://bitbucket.org/Scoopta/glpaper";
+    url = "https://hg.sr.ht/~scoopta/glpaper";
     rev = version;
     sha256 = metadata.sha256;
   };
