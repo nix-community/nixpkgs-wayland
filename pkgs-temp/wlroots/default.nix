@@ -15,6 +15,13 @@ stdenv.mkDerivation rec {
     sha256 = "1dx5ghfcvl4d3mjnhm36x9zgsamlv9llq884560p4a65ygydlx02";
   };
 
+  postPatch = ''
+    substituteInPlace "backend/rdp/peer.c" \
+      --replace \
+        "nsc_context_set_pixel_format(context->nsc_context, PIXEL_FORMAT_BGRA32);" \
+        "return nsc_context_set_parameters(context->nsc_context, NSC_COLOR_FORMAT, PIXEL_FORMAT_BGRA32);"
+  '';
+
   # $out for the library and $examples for the example programs (in examples):
   outputs = [ "out" "examples" ];
 

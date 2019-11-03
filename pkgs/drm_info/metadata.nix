@@ -1,7 +1,7 @@
 {
   repo_git = "https://github.com/ascent12/drm_info";
   branch = "master";
-  rev = "f90c3205f6e5ae353583c751b4e381a04971b6bc";
-  sha256 = "128b3v7zqjx86f4p73dsfbay4mdr0vldpvvc7gai2zns0lqdnj0g";
-  revdate = "2019-08-24 01:22:40 +1200";
+  rev = "a2aee4ab10ecfdd6d059aa2f5f42316fcda6c3eb";
+  sha256 = "0zpvz9vdqh64nlacph2m4drqscy2k01ijinrfr2hbr6n6scws7g6";
+  revdate = "2019-11-03 00:15:05 +0000";
 }

@@ -26,11 +26,15 @@ waylandPkgs = rec {
   wf-recorder      = pkgs.callPackage ./pkgs/wf-recorder {};
   wtype            = pkgs.callPackage ./pkgs/wtype {};
   xdg-desktop-portal-wlr = pkgs.callPackage ./pkgs/xdg-desktop-portal-wlr {};
-  
+
   # misc
   redshift-wayland = pkgs.callPackage ./pkgs/redshift-wayland {
     inherit (pkgs.python3Packages) python pygobject3 pyxdg wrapPython;
     geoclue = pkgs.geoclue2;
+  };
+  freerdp = pkgs.callPackage ./pkgs/freerdp {
+    inherit (pkgs) libpulseaudio;
+    inherit (pkgs.gst_all_1) gstreamer gst-plugins-base gst-plugins-good;
   };
   
   # i3 related
