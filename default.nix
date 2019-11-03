@@ -19,13 +19,13 @@ waylandPkgs = rec {
   waybox           = pkgs.callPackage ./pkgs/waybox {};
   waypipe          = pkgs.callPackage ./pkgs/waypipe {};
   wdisplays        = pkgs.callPackage ./pkgs/wdisplays {};
+  wf-recorder      = pkgs.callPackage ./pkgs/wf-recorder {};
   wlay             = pkgs.callPackage ./pkgs/wlay {};
   wlrobs           = pkgs.callPackage ./pkgs/wlrobs {};
   wl-clipboard     = pkgs.callPackage ./pkgs/wl-clipboard {};
   wldash           = pkgs.callPackage ./pkgs/wldash {};
   wlroots          = pkgs.callPackage ./pkgs/wlroots {};
   wlr-randr        = pkgs.callPackage ./pkgs/wlr-randr {};
-  wf-recorder      = pkgs.callPackage ./pkgs/wf-recorder {};
   wtype            = pkgs.callPackage ./pkgs/wtype {};
   xdg-desktop-portal-wlr = pkgs.callPackage ./pkgs/xdg-desktop-portal-wlr {};
 
