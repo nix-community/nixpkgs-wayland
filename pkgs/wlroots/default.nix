@@ -19,6 +19,10 @@ in stdenv.mkDerivation rec {
     sha256 = metadata.sha256;
   };
 
+  patches = [
+    ./0001-renderer-use-GL_NEAREST-with-integer-scale-factor.patch
+  ];
+
   postPatch = ''
     substituteInPlace "backend/rdp/peer.c" \
       --replace \

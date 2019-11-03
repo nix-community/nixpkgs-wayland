@@ -1,0 +1,149 @@
+From 170ea4a7d0d6340ce21964300cc647631fb8b6e0 Mon Sep 17 00:00:00 2001
+From: Cole Mickens <cole.mickens@gmail.com>
+Date: Sun, 3 Nov 2019 00:26:00 -0700
+Subject: [PATCH] renderer: use GL_NEAREST with integer scale factor
+
+---
+ include/render/gles2.h            |  1 +
+ include/wlr/render/interface.h    |  2 ++
+ include/wlr/render/wlr_renderer.h |  4 ++++
+ render/gles2/renderer.c           | 25 +++++++++++++++++++++++--
+ render/wlr_renderer.c             |  9 +++++++++
+ types/wlr_output.c                |  3 +++
+ 6 files changed, 42 insertions(+), 2 deletions(-)
+
+diff --git a/include/render/gles2.h b/include/render/gles2.h
+index 15653cac..86a629bf 100644
+--- a/include/render/gles2.h
++++ b/include/render/gles2.h
+@@ -58,6 +58,7 @@ struct wlr_gles2_renderer {
+ 	} shaders;
+ 
+ 	uint32_t viewport_width, viewport_height;
++	float scale;
+ };
+ 
+ enum wlr_gles2_texture_type {
+diff --git a/include/wlr/render/interface.h b/include/wlr/render/interface.h
+index 21c1e044..47d645b1 100644
+--- a/include/wlr/render/interface.h
++++ b/include/wlr/render/interface.h
+@@ -35,6 +35,8 @@ struct wlr_renderer_impl {
+ 		uint32_t height);
+ 	void (*end)(struct wlr_renderer *renderer);
+ 	void (*clear)(struct wlr_renderer *renderer, const float color[static 4]);
++	float (*get_scale)(struct wlr_renderer *renderer);
++	void (*set_scale)(struct wlr_renderer *renderer, const float scale);
+ 	void (*scissor)(struct wlr_renderer *renderer, struct wlr_box *box);
+ 	bool (*render_texture_with_matrix)(struct wlr_renderer *renderer,
+ 		struct wlr_texture *texture, const float matrix[static 9],
+diff --git a/include/wlr/render/wlr_renderer.h b/include/wlr/render/wlr_renderer.h
+index 33f96b68..fb9cf77b 100644
+--- a/include/wlr/render/wlr_renderer.h
++++ b/include/wlr/render/wlr_renderer.h
+@@ -36,6 +36,10 @@ struct wlr_renderer *wlr_renderer_autocreate(struct wlr_egl *egl, EGLenum platfo
+ void wlr_renderer_begin(struct wlr_renderer *r, int width, int height);
+ void wlr_renderer_end(struct wlr_renderer *r);
+ void wlr_renderer_clear(struct wlr_renderer *r, const float color[static 4]);
++
++float wlr_renderer_get_scale(struct wlr_renderer *r);
++void wlr_renderer_set_scale(struct wlr_renderer *r, const float scale);
++
+ /**
+  * Defines a scissor box. Only pixels that lie within the scissor box can be
+  * modified by drawing functions. Providing a NULL `box` disables the scissor
+diff --git a/render/gles2/renderer.c b/render/gles2/renderer.c
+index d339b0ac..7408884a 100644
+--- a/render/gles2/renderer.c
++++ b/render/gles2/renderer.c
+@@ -12,7 +12,7 @@
+ #include <wlr/types/wlr_matrix.h>
+ #include <wlr/util/log.h>
+ #include "glapi.h"
+-#include "render/gles2.h"
++#include "render/gles2.h" 
+ 
+ static const struct wlr_renderer_impl renderer_impl;
+ 
+@@ -65,6 +65,19 @@ static void gles2_clear(struct wlr_renderer *wlr_renderer,
+ 	POP_GLES2_DEBUG;
+ }
+ 
++static float gles2_get_scale(struct wlr_renderer *wlr_renderer) {
++	struct wlr_gles2_renderer *renderer =
++		gles2_get_renderer_in_context(wlr_renderer);
++	return renderer->scale;
++}
++
++static void gles2_set_scale(struct wlr_renderer *wlr_renderer,
++	const float scale) {
++	struct wlr_gles2_renderer *renderer =
++		gles2_get_renderer_in_context(wlr_renderer);
++	renderer->scale = scale;
++}
++
+ static void gles2_scissor(struct wlr_renderer *wlr_renderer,
+ 		struct wlr_box *box) {
+ 	struct wlr_gles2_renderer *renderer =
+@@ -156,8 +169,14 @@ static bool gles2_render_texture_with_matrix(struct wlr_renderer *wlr_renderer,
+ 	glActiveTexture(GL_TEXTURE0);
+ 	glBindTexture(target, tex_id);
+ 
++
+ 	glTexParameteri(target, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+-	glTexParameteri(target, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
++
++	// use nearest neighbor scaling if scale is whole integer value
++	float renderer_scale = wlr_renderer_get_scale(wlr_renderer);
++	bool scale_is_int = (ceilf(renderer_scale) == renderer_scale);
++	int scale_mode = scale_is_int ? GL_NEAREST : GL_LINEAR;
++	glTexParameteri(target, GL_TEXTURE_MAG_FILTER, scale_mode);
+ 
+ 	glUseProgram(shader->program);
+ 
+@@ -387,6 +406,8 @@ static const struct wlr_renderer_impl renderer_impl = {
+ 	.begin = gles2_begin,
+ 	.end = gles2_end,
+ 	.clear = gles2_clear,
++	.get_scale = gles2_get_scale,
++	.set_scale = gles2_set_scale,
+ 	.scissor = gles2_scissor,
+ 	.render_texture_with_matrix = gles2_render_texture_with_matrix,
+ 	.render_quad_with_matrix = gles2_render_quad_with_matrix,
+diff --git a/render/wlr_renderer.c b/render/wlr_renderer.c
+index 802cbdbd..b965c977 100644
+--- a/render/wlr_renderer.c
++++ b/render/wlr_renderer.c
+@@ -52,6 +52,15 @@ void wlr_renderer_clear(struct wlr_renderer *r, const float color[static 4]) {
+ 	r->impl->clear(r, color);
+ }
+ 
++float wlr_renderer_get_scale(struct wlr_renderer *r) {
++	r->impl->get_scale(r);
++}
++
++void wlr_renderer_set_scale(struct wlr_renderer *r, const float scale) {
++	r->impl->set_scale(r, scale);
++}
++
++
+ void wlr_renderer_scissor(struct wlr_renderer *r, struct wlr_box *box) {
+ 	r->impl->scissor(r, box);
+ }
+diff --git a/types/wlr_output.c b/types/wlr_output.c
+index 6555296c..03b2fb85 100644
+--- a/types/wlr_output.c
++++ b/types/wlr_output.c
+@@ -425,6 +425,9 @@ bool wlr_output_attach_render(struct wlr_output *output, int *buffer_age) {
+ 		return false;
+ 	}
+ 
++	struct wlr_renderer *r = wlr_backend_get_renderer(output->backend);
++	wlr_renderer_set_scale(r, output->scale);
++
+ 	output_state_clear_buffer(&output->pending);
+ 	output->pending.committed |= WLR_OUTPUT_STATE_BUFFER;
+ 	output->pending.buffer_type = WLR_OUTPUT_STATE_BUFFER_RENDER;
+-- 
+2.16.2
+
