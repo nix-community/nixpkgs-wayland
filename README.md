@@ -15,6 +15,8 @@
 
 Automated, pre-built packages for Wayland (sway/wlroots) tools for NixOS.
 
+Note that hese packages can also be used on Ubuntu, to some extent. See [the Ubuntu demo](docs/sway-on-ubuntu) for more information.
+
 Packages from this overlay are regularly updated and built against `nixos-unstable` and `nixpkgs-unstable`. They are published to the binary cache on Cachix. Usage instructions are available on the Cachix page: [`nixpkgs-wayland` on cachix](https://nixpkgs-wayland.cachix.org).
 
 These packages were mostly recently built against:
