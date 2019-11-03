@@ -59,6 +59,7 @@ These packages were mostly recently built against:
 | [wldash](https://wldash.org) | 2019-10-05 22:43:09 +0200 | Wayland launcher/dashboard |
 | [wlrobs](https://sr.ht/~scoopta/wlrobs) | 2019-03-16 15:06 -0700 | wlrobs is an obs-studio plugin that allows you to screen capture on wlroots based wayland compositors |
 | [wlroots](https://github.com/swaywm/wlroots) | 2019-11-03 00:17:23 +0000 | A modular Wayland compositor library |
+| [wlr-randr](https://github.com/ammen99/wf-recorder) | 2019-10-22 12:16:00 +0200 | Utility program for screen recording of wlroots-based compositors |
 | [wltrunk](https://git.sr.ht/~bl4ckb0ne/wltrunk) | 2019-10-03 16:14:27 -0400 | High-level Wayland compositor library based on wlroots |
 | [wtype](https://github.com/atx/wtype) | 2019-07-01 17:33:04 +0200 | xdotool type for wayland |
 | [xdg-desktop-portal-wlr](https://github.com/emersion/xdg-desktop-portal-wlr) | 2019-07-24 19:38:20 +0300 | xdg-desktop-portal backend for wlroots |
