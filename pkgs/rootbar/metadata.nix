@@ -1,7 +1,7 @@
 {
   repo_hg = "https://hg.sr.ht/~scoopta/rootbar";
   branch = "default";
-  rev = "f1d70a440d7e";
-  sha256 = "1lm2qykgvi5vj9bs399hdicnvv4zz2c09p999xacs98ca6w6xvrc";
+  rev = "37dd97f8fcf3";
+  sha256 = "1z6a5p8finsyr85ykg0qxvz8kzx2r1n6p5pccx61hk2i4258m1my";
   revdate = "2019-03-18 10:47 -0700";
 }

@@ -1,7 +1,7 @@
 {
   repo_git = "https://github.com/swaywm/sway";
   branch = "master";
-  rev = "3975ca28c2e870eb3f40bbd43a90354743f7ccf1";
-  sha256 = "01lhclh5l6shd0624m5dm3j1irbwwq3ziin5ki5kzzgraqbfqamp";
-  revdate = "2019-11-04 21:16:27 -0500";
+  rev = "f576bcdb8cb3ed1506ad03503815ad159c1c0479";
+  sha256 = "08rn61prp9v88i088bdcgzsjwd3cx4h8gvsysfy2pd7y14qad5q2";
+  revdate = "2019-11-05 14:00:23 -0500";
 }
