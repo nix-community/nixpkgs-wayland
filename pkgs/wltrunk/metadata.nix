@@ -1,7 +1,7 @@
 {
   repo_git = "https://git.sr.ht/~bl4ckb0ne/wltrunk";
   branch = "master";
-  rev = "fef15c8baae43779c0c8a07ce803e331bc6b8ed6";
-  sha256 = "1am17gxzvl0fcwjphqr32nrlqnvcphc009x4yimmphdk3n74nsvn";
-  revdate = "2019-10-03 16:14:27 -0400";
+  rev = "af40ca52bd0023130b680f407eabf8424f23d058";
+  sha256 = "0kpjp5s17w0lyk3rqzhgdpi6s2fhi526n67li2k0al22vw7sj33d";
+  revdate = "2019-11-10 16:09:56 -0500";
 }
