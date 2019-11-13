@@ -85,7 +85,7 @@ function update_readme_entries() {
   date="$(nix eval --raw -f "${metadata}" revdate)"
   sha256="$(nix eval --raw -f "${metadata}" sha256)"
   skip="$(nix eval -f "${metadata}" skip || true)"
-  if [[ "${skip}" == "" ]]; then
+  if [[ "${skip}" == "true" ]]; then
     date="${date} (pinned)"
   fi
   if [[ "${typ}" == "pkgs" ]]; then
