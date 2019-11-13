@@ -20,6 +20,11 @@ function update() {
   rev="$(nix eval --raw -f "${metadata}" rev)"
   date="$(nix eval --raw -f "${metadata}" revdate)"
   sha256="$(nix eval --raw -f "${metadata}" sha256)"
+  skip="$(nix eval -f "${metadata}" skip || true)"
+
+  if [[ "${skip}" == "true" ]]; then
+    return 0
+  fi
 
   # Determine RepoTyp (git/hg)
   if   nix eval --raw -f "${metadata}" repo_git; then repotyp="git";
@@ -68,8 +73,21 @@ function update() {
     sed -i "s/${date}/${newdate}/" "${metadata}"
     sed -i "s/${sha256}/${newsha256}/" "${metadata}"
   fi
+}
 
-  # Add a line for the README
+function update_readme_entries() {
+  typ="${1}"
+  pkg="${2}"
+  metadata="${pkg}/metadata.nix"
+  pkgname="$(basename "${pkg}")"
+  branch="$(nix eval --raw -f "${metadata}" branch)"
+  rev="$(nix eval --raw -f "${metadata}" rev)"
+  date="$(nix eval --raw -f "${metadata}" revdate)"
+  sha256="$(nix eval --raw -f "${metadata}" sha256)"
+  skip="$(nix eval -f "${metadata}" skip || true)"
+  if [[ "${skip}" == "" ]]; then
+    date="${date} (pinned)"
+  fi
   if [[ "${typ}" == "pkgs" ]]; then
     desc="$(nix eval --raw "(import ./build.nix).nixosUnstable.${pkgname}.meta.description")"
     home="$(nix eval --raw "(import ./build.nix).nixosUnstable.${pkgname}.meta.homepage")"
@@ -78,16 +96,38 @@ function update() {
     nixpkgentries=("${nixpkgentries[@]}" "| ${pkgname} | ${date} |");
   fi
 }
+function update_readme() {
+  replace="$(printf "<!--pkgs-->")"
+  replace="$(printf "%s\n| Package | Last Update | Description |" "${replace}")"
+  replace="$(printf "%s\n| ------- | ----------- | ----------- |" "${replace}")"
+  for p in "${pkgentries[@]}"; do
+    replace="$(printf "%s\n%s\n" "${replace}" "${p}")"
+  done
+  replace="$(printf "%s\n<!--pkgs-->" "${replace}")"
 
+  rg --multiline '(?s)(.*)<!--pkgs-->(.*)<!--pkgs-->(.*)' "README.md" \
+    --replace "\$1${replace}\$3" \
+      > README2.md; mv README2.md README.md
 
-#
-# update nixpkgs
-for d in nixpkgs/*; do
-  update "nixpkgs" "${d}"
+  replace="$(printf "<!--nixpkgs-->")"
+  replace="$(printf "%s\n| Channel | Last Channel Commit Time |" "${replace}")"
+  replace="$(printf "%s\n| ------- | ------------------------ |" "${replace}")"
+  for p in "${nixpkgentries[@]}"; do
+    replace="$(printf "%s\n%s\n" "${replace}" "${p}")"
+  done
+  replace="$(printf "%s\n<!--nixpkgs-->" "${replace}")"
+  set -x
+
+  rg --multiline '(?s)(.*)<!--nixpkgs-->(.*)<!--nixpkgs-->(.*)' "README.md" \
+    --replace "\$1${replace}\$3" \
+      > README2.md; mv README2.md README.md
+}
+
+for p in nixpkgs/*; do
+  update "nixpkgs" "${p}"
+  update_readme_entries "nixpkgs" "${p}"
 done
 
-#
-# update pkgs
 if [[ "${1:-}" != "" ]]; then
   update "pkgs" "pkgs/${1}"
 else
@@ -96,37 +136,10 @@ else
   done
 fi
 
-#
-# update README.md
-# (TODO: replace this with something in nix that outputs a text file summary
-#  of the overlay that could be merged into the readme)
-set +x
-replace="$(printf "<!--pkgs-->")"
-replace="$(printf "%s\n| Package | Last Update | Description |" "${replace}")"
-replace="$(printf "%s\n| ------- | ----------- | ----------- |" "${replace}")"
-for p in "${pkgentries[@]}"; do
-  replace="$(printf "%s\n%s\n" "${replace}" "${p}")"
+for p in pkgs/*; do
+  update_readme_entries "pkgs" "${p}"
 done
-replace="$(printf "%s\n<!--pkgs-->" "${replace}")"
+update_readme
 
-rg --multiline '(?s)(.*)<!--pkgs-->(.*)<!--pkgs-->(.*)' "README.md" \
-  --replace "\$1${replace}\$3" \
-    > README2.md; mv README2.md README.md
-
-replace="$(printf "<!--nixpkgs-->")"
-replace="$(printf "%s\n| Channel | Last Channel Commit Time |" "${replace}")"
-replace="$(printf "%s\n| ------- | ------------------------ |" "${replace}")"
-for p in "${nixpkgentries[@]}"; do
-  replace="$(printf "%s\n%s\n" "${replace}" "${p}")"
-done
-replace="$(printf "%s\n<!--nixpkgs-->" "${replace}")"
-set -x
-
-rg --multiline '(?s)(.*)<!--nixpkgs-->(.*)<!--nixpkgs-->(.*)' "README.md" \
-  --replace "\$1${replace}\$3" \
-    > README2.md; mv README2.md README.md
-
-#
-# build and push
 nix-build --no-out-link build.nix -A all \
   | cachix push "nixpkgs-wayland"
