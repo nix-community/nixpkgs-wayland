@@ -4,7 +4,6 @@ set -euo pipefail
 set -x
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
-cd "${DIR}"
 
 # keep track of what we build for the README
 pkgentries=(); nixpkgentries=();
@@ -122,6 +121,8 @@ function update_readme() {
     --replace "\$1${replace}\$3" \
       > README2.md; mv README2.md README.md
 }
+
+# check and make sure git is all clean and g2g
 
 for p in nixpkgs/*; do
   update "nixpkgs" "${p}"

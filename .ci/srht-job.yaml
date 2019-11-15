@@ -1,0 +1,12 @@
+image: nixos/unstable
+sources:
+  - git@github.com:colemickens/nixpkgs-wayland
+secrets:
+  - df3e056f-2931-4a93-86db-e40c2fa6098d # cachix.dhall
+  - bd070f2a-01d1-4b7b-9795-036deb06912c # id_ed25519
+tasks:
+  - update: |
+      cd nixpkgs-wayland
+      nix-shell --pure --command "./.ci/prep.sh"
+      nix-shell --pure --command "./update.sh"
+      nix-shell --pure --command "./.ci/push.sh"
