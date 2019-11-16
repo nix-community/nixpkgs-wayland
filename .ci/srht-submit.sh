@@ -13,7 +13,7 @@ DATA="$(mktemp)"
 MANIFEST="$(jq -aRs . <'./srht-job.yaml')"
 echo "{ \"manifest\": ${MANIFEST} }" > "${DATA}"
 
-curl --verbose \
+curl \
   -H "Authorization:token ${TOKEN}" \
   -H "Content-Type: application/json" \
   -d "@${DATA}" \

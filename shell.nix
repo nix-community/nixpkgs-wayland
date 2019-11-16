@@ -1,4 +1,4 @@
-with (import (builtins.fetchTarball { url = "https://github.com/colemickens/nixpkgs/archive/cmpkgs.tar.gz"; }) {});
+with (import (builtins.fetchTarball { url = "https://github.com/nixos/nixpkgs/archive/nixos-unstable.tar.gz"; }) {});
 stdenv.mkDerivation {
   name = "nixpkgs-wayland-devenv";
 
@@ -18,8 +18,4 @@ stdenv.mkDerivation {
   buildInputs = [
     openssl
   ];
-  
-  #GIT_SSL_CAINFO = "/etc/ssl/certs/ca-certificates.crt";
-  #SSL_CERT_FILE = "/etc/ssl/certs/ca-certificates.crt";
-  #NIX_SSL_CERT_FILE = "/etc/ssl/certs/ca-certificates.crt";
 }
