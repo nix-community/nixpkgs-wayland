@@ -32,6 +32,25 @@ waylandPkgs = rec {
   wtype            = pkgs.callPackage ./pkgs/wtype {};
   xdg-desktop-portal-wlr = pkgs.callPackage ./pkgs/xdg-desktop-portal-wlr {};
 
+  # patch wlroots stable with the RDP-HEAD patch
+  wlroots-stable = pkgs.wlroots.overrideAttrs (old: {
+    postPatch = ''
+      substituteInPlace "backend/rdp/peer.c" \
+       --replace \
+         "nsc_context_set_pixel_format(context->nsc_context, PIXEL_FORMAT_BGRA32);" \
+         "return nsc_context_set_parameters(context->nsc_context, NSC_COLOR_FORMAT, PIXEL_FORMAT_BGRA32);"
+    '';
+  });
+  
+  # wxrc
+  wxrc = pkgs.callPackage ./pkgs/wxrc {
+    openxr-loader = pkgs.callPackage ./pkgs-temp/openxr-loader-wxrc {};
+  };
+  
+  # temporary, will upstream to nixpkgs
+  # temporary-temporarily disabled to test my nixpkgs change in local nixpkgs
+  cglm = pkgs.callPackage ./pkgs-temp/cglm {};
+
   # misc
   redshift-wayland = pkgs.callPackage ./pkgs/redshift-wayland {
     inherit (pkgs.python3Packages) python pygobject3 pyxdg wrapPython;
@@ -47,12 +66,13 @@ waylandPkgs = rec {
   
   # wayfire stuff
   wf-config        = pkgs.callPackage ./pkgs/wf-config {};
-  wayfire          = pkgs.callPackage ./pkgs/wayfire { wlroots = wlroots-wf; };
-  wlroots-wf       = pkgs.callPackage ./pkgs-temp/wlroots {};
+  wayfire          = pkgs.callPackage ./pkgs/wayfire {
+    wlroots = pkgs.callPackage ./pkgs-temp/wlroots-wf {};
+  };
 
   # bspwc/wltrunk stuff
-  bspwc    = pkgs.callPackage ./pkgs/bspwc { wlroots = pkgs.wlroots; };
-  wltrunk  = pkgs.callPackage ./pkgs/wltrunk { wlroots = pkgs.wlroots; };  
+  bspwc    = pkgs.callPackage ./pkgs/bspwc { wlroots = wlroots-stable; };
+  wltrunk  = pkgs.callPackage ./pkgs/wltrunk { wlroots = wlroots-stable; };  
 };
 in
   waylandPkgs // { inherit waylandPkgs; }

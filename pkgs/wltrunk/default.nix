@@ -7,14 +7,6 @@
 
 let
   metadata = import ./metadata.nix;
-  wlroots_ = wlroots.overrideAttrs (old: {
-    postPatch = ''
-      substituteInPlace "backend/rdp/peer.c" \
-       --replace \
-         "nsc_context_set_pixel_format(context->nsc_context, PIXEL_FORMAT_BGRA32);" \
-         "return nsc_context_set_parameters(context->nsc_context, NSC_COLOR_FORMAT, PIXEL_FORMAT_BGRA32);"
-    '';
-  });
 in
 stdenv.mkDerivation rec {
   name = "wltrunk-${version}";
@@ -28,7 +20,7 @@ stdenv.mkDerivation rec {
 
   nativeBuildInputs = [ pkgconfig meson ninja ];
   buildInputs = [
-    wlroots_ wayland wayland-protocols
+    wlroots wayland wayland-protocols
     pixman libxkbcommon libudev mesa_noglu libX11
   ];
   mesonFlags = [ "-Dauto_features=enabled" ];
