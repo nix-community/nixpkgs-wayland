@@ -9,6 +9,7 @@ stdenv.mkDerivation {
     curl
     mercurial
     nix
+    nix-prefetch
     openssh
     gitAndTools.gitFull
     gitAndTools.hub
