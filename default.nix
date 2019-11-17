@@ -47,8 +47,7 @@ waylandPkgs = rec {
   
   # wayfire stuff
   wf-config        = pkgs.callPackage ./pkgs/wf-config {};
-  wayfire          = pkgs.callPackage ./pkgs/wayfire { wlroots = wlroots-wf; };
-  wlroots-wf       = pkgs.callPackage ./pkgs-temp/wlroots {};
+  wayfire          = pkgs.callPackage ./pkgs/wayfire { wlroots = wlroots; };
 
   # bspwc/wltrunk stuff
   bspwc    = pkgs.callPackage ./pkgs/bspwc { wlroots = pkgs.wlroots; };
