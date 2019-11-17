@@ -7,6 +7,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 # keep track of what we build for the README
 pkgentries=(); nixpkgentries=();
+cache="nixpkgs-wayland";
 
 function update() {
   typ="${1}"
@@ -121,5 +122,9 @@ done
 
 update_readme
 
+cachix push -w "${cache}" &
+CACHIX_PID="$!"
+trap "kill ${CACHIX_PID}" EXIT
+
 nix-build --no-out-link build.nix -A all \
-  | cachix push "nixpkgs-wayland"
+  | cachix push "${cache}"
