@@ -53,7 +53,7 @@ function update() {
       # Update Sha256
       # TODO: nix-prefetch without NIX_PATH?
       if [[ "${typ}" == "pkgs" ]]; then
-        newsha256="$(NIX_PATH=nixpkgs=https://github.com/nixos/nixpkgs/archive/nixos-unstable.tar.gz
+        newsha256="$(NIX_PATH=nixpkgs=https://github.com/nixos/nixpkgs/archive/nixos-unstable.tar.gz \
           nix-prefetch \
             -E "(import ./build.nix).nixosUnstable.${pkgname}" \
             --rev "${newrev}" \
@@ -61,7 +61,7 @@ function update() {
       elif [[ "${typ}" == "nixpkgs" ]]; then
         # TODO: why can't nix-prefetch handle this???
         url="$(nix eval --raw -f "${metadata}" url)"
-        newsha256="$(NIX_PATH=nixpkgs=https://github.com/nixos/nixpkgs/archive/nixos-unstable.tar.gz
+        newsha256="$(NIX_PATH=nixpkgs=https://github.com/nixos/nixpkgs/archive/nixos-unstable.tar.gz \
           nix-prefetch-url --unpack "${url}")"
       fi
 
