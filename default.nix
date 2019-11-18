@@ -19,6 +19,7 @@ waylandPkgs = rec {
   waybar           = pkgs.callPackage ./pkgs/waybar {};
   waybox           = pkgs.callPackage ./pkgs/waybox {};
   waypipe          = pkgs.callPackage ./pkgs/waypipe {};
+  wayvnc           = pkgs.callPackage ./pkgs/wayvnc {};
   wdisplays        = pkgs.callPackage ./pkgs/wdisplays {};
   wev              = pkgs.callPackage ./pkgs/wev {};
   wf-recorder      = pkgs.callPackage ./pkgs/wf-recorder {};
@@ -41,6 +42,7 @@ waylandPkgs = rec {
     inherit (pkgs) libpulseaudio;
     inherit (pkgs.gst_all_1) gstreamer gst-plugins-base gst-plugins-good;
   };
+  neatvnc = pkgs.callPackage ./pkgs/neatvnc {};
   
   # i3 related
   i3status-rust    = pkgs.callPackage ./pkgs/i3status-rust {};
