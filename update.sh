@@ -10,6 +10,8 @@ pkgentries=(); nixpkgentries=();
 cache="nixpkgs-wayland";
 build_attr="${1:-"all"}"
 
+up=0 # updated_performed # up=$(( $up + 1 ))
+
 function update() {
   typ="${1}"
   pkg="${2}"
@@ -41,6 +43,8 @@ function update() {
     fi
     
     if [[ "${rev}" != "${newrev}" ]]; then
+      up=$(( $up + 1 ))
+
       # Update RevDate
       d="$(mktemp -d)"
       if [[ "${repotyp}" == "git" ]]; then
@@ -126,6 +130,16 @@ update_readme
 cachix push -w "${cache}" &
 CACHIX_PID="$!"
 trap "kill ${CACHIX_PID}" EXIT
+
+if [[ $up -lt 1 ]]; then
+  # if we didn't update any revs, there's nothing to do
+  # don't bother building (and if on CI, dling everything for no reason)
+
+  # TODO: maybe on CI we can invoke nix in a way to do a no-op if subsitutions exist
+  # TODO: file a bug for this, see if there was any irc convo after asking on 2019-11-18@00:40:33
+  echo "nothing to build, so exitting"
+  exit 0
+fi
 
 nix-build build.nix \
   --no-out-link --keep-going \
