@@ -23,8 +23,8 @@ These packages were mostly recently built against:
 <!--nixpkgs-->
 | Channel | Last Channel Commit Time |
 | ------- | ------------------------ |
-| nixos-unstable | 2019-11-15 22:50:52 +0000 |
-| nixpkgs-unstable | 2019-11-18 10:18:04 +0100 |
+| nixos-unstable | 2019-11-18 07:00:34 -0500 |
+| nixpkgs-unstable | 2019-11-18 11:57:01 -0500 |
 <!--nixpkgs-->
 
 ## Packages
@@ -42,7 +42,7 @@ These packages were mostly recently built against:
 | [i3status-rust](https://github.com/greshake/i3status-rust) | 2019-11-10 17:21:12 -0500 | Very resource-friendly and feature-rich replacement for i3status |
 | [kanshi](https://github.com/emersion/kanshi) | 2019-09-20 12:59:04 +0300 | Dynamic display configuration |
 | [mako](https://wayland.emersion.fr/mako) | 2019-10-25 17:44:01 +0200 | A lightweight Wayland notification daemon |
-| [oguri](https://github.com/vilhalmer/oguri) | 2019-11-14 20:50:15 -0500 | A very nice animated wallpaper tool for Wayland compositors |
+| [oguri](https://github.com/vilhalmer/oguri) | 2019-11-18 15:01:40 -0500 | A very nice animated wallpaper tool for Wayland compositors |
 | [redshift-wayland](http://jonls.dk/redshift) | 2019-08-24 17:20:17 +0200 | Screen color temperature manager |
 | [rootbar](https://hg.sr.ht/~scoopta/rootbar) | 2019-03-18 10:47 -0700 | Root Bar is a bar for wlroots based wayland compositors such as sway and was designed to address the lack of good bars for wayland |
 | [slurp](https://github.com/emersion/slurp) | 2019-08-01 20:25:04 +0300 | Select a region in a Wayland compositor |
@@ -52,7 +52,7 @@ These packages were mostly recently built against:
 | [swaylock](https://swaywm.org) | 2019-09-12 16:33:24 -0400 | Screen locker for Wayland |
 | [waybar](https://github.com/Alexays/Waybar) | 2019-11-11 13:39:57 +0000 | Highly customizable Wayland Polybar like bar for Sway and Wlroots based compositors. |
 | [waybox](https://github.com/wizbright/waybox) | 2019-06-19 17:09:41 -0500 | An openbox clone on Wayland (WIP) |
-| [wayfire](https://wayfire.org/) | 2019-11-17 21:55:03 +0100 | 3D wayland compositor |
+| [wayfire](https://wayfire.org/) | 2019-11-18 18:03:46 +0100 | 3D wayland compositor |
 | [waypipe](https://gitlab.freedesktop.org/mstoeckl/waypipe/) | 2019-10-20 21:41:18 -0400 | Network transparency with Wayland |
 | [wdisplays](https://github.com/cyclopsian/wdisplays) | 2019-10-26 16:56:01 -0400 | GUI display configurator for wlroots compositors |
 | [wev](https://swaywm.org) | 2019-08-11 17:24:26 +0900 | Sway's idle management daemon |
