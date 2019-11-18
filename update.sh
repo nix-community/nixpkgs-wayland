@@ -8,6 +8,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 # keep track of what we build for the README
 pkgentries=(); nixpkgentries=();
 cache="nixpkgs-wayland";
+build_attr="${1:-"all"}"
 
 function update() {
   typ="${1}"
@@ -126,5 +127,7 @@ cachix push -w "${cache}" &
 CACHIX_PID="$!"
 trap "kill ${CACHIX_PID}" EXIT
 
-nix-build --no-out-link build.nix -A all \
+nix-build build.nix \
+  --no-out-link --keep-going \
+  --attr "${build_attr}" \
   | cachix push "${cache}"
