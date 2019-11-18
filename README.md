@@ -42,7 +42,7 @@ These packages were mostly recently built against:
 | [i3status-rust](https://github.com/greshake/i3status-rust) | 2019-11-10 17:21:12 -0500 | Very resource-friendly and feature-rich replacement for i3status |
 | [kanshi](https://github.com/emersion/kanshi) | 2019-09-20 12:59:04 +0300 | Dynamic display configuration |
 | [mako](https://wayland.emersion.fr/mako) | 2019-10-25 17:44:01 +0200 | A lightweight Wayland notification daemon |
-| [oguri](https://github.com/vilhalmer/oguri) | 2019-11-18 15:01:40 -0500 | A very nice animated wallpaper tool for Wayland compositors |
+| [oguri](https://github.com/vilhalmer/oguri) | 2019-11-18 15:47:39 -0500 | A very nice animated wallpaper tool for Wayland compositors |
 | [redshift-wayland](http://jonls.dk/redshift) | 2019-08-24 17:20:17 +0200 | Screen color temperature manager |
 | [rootbar](https://hg.sr.ht/~scoopta/rootbar) | 2019-03-18 10:47 -0700 | Root Bar is a bar for wlroots based wayland compositors such as sway and was designed to address the lack of good bars for wayland |
 | [slurp](https://github.com/emersion/slurp) | 2019-08-01 20:25:04 +0300 | Select a region in a Wayland compositor |
