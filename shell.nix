@@ -7,12 +7,11 @@ stdenv.mkDerivation {
     cacert
     cachix
     curl
+    git
     mercurial
     nix
     nix-prefetch
     openssh
-    gitAndTools.gitFull
-    gitAndTools.hub
     ripgrep
   ];
 
