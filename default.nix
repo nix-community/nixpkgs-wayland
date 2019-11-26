@@ -2,7 +2,7 @@ self: pkgs:
 let
 waylandPkgs = rec {
   # wlroots-related
-  cage             = pkgs.callPackage ./pkgs/cage {};
+  cage             = pkgs.callPackage ./pkgs/cage { wlroots = wlroots-tmp; };
   drm_info         = pkgs.callPackage ./pkgs/drm_info {};
   gebaar-libinput  = pkgs.callPackage ./pkgs/gebaar-libinput {};
   glpaper          = pkgs.callPackage ./pkgs/glpaper {};
@@ -17,7 +17,7 @@ waylandPkgs = rec {
   swayidle         = pkgs.callPackage ./pkgs/swayidle {};
   swaylock         = pkgs.callPackage ./pkgs/swaylock {};
   waybar           = pkgs.callPackage ./pkgs/waybar {};
-  waybox           = pkgs.callPackage ./pkgs/waybox {};
+  waybox           = pkgs.callPackage ./pkgs/waybox { wlroots = wlroots-tmp; };
   waypipe          = pkgs.callPackage ./pkgs/waypipe {};
   wayvnc           = pkgs.callPackage ./pkgs/wayvnc {};
   wdisplays        = pkgs.callPackage ./pkgs/wdisplays {};
@@ -33,6 +33,8 @@ waylandPkgs = rec {
   wtype            = pkgs.callPackage ./pkgs/wtype {};
   xdg-desktop-portal-wlr = pkgs.callPackage ./pkgs/xdg-desktop-portal-wlr {};
 
+  wlroots-tmp = pkgs.callPackage ./pkgs-temp/wlroots {};
+
   # misc
   redshift-wayland = pkgs.callPackage ./pkgs/redshift-wayland {
     inherit (pkgs.python3Packages) python pygobject3 pyxdg wrapPython;
@@ -43,13 +45,13 @@ waylandPkgs = rec {
     inherit (pkgs.gst_all_1) gstreamer gst-plugins-base gst-plugins-good;
   };
   neatvnc = pkgs.callPackage ./pkgs/neatvnc {};
-  
+
   # i3 related
   i3status-rust    = pkgs.callPackage ./pkgs/i3status-rust {};
-  
+
   # wayfire stuff
   wf-config        = pkgs.callPackage ./pkgs/wf-config {};
-  wayfire          = pkgs.callPackage ./pkgs/wayfire { wlroots = wlroots; };
+  wayfire          = pkgs.callPackage ./pkgs/wayfire {};
 
   # bspwc/wltrunk stuff
   bspwc    = pkgs.callPackage ./pkgs/bspwc { wlroots = pkgs.wlroots; };
