@@ -3,7 +3,7 @@
 , wlroots, wayland, wayland-protocols
 , pixman, libxkbcommon
 , libudev, mesa_noglu, libX11 # not mentioned in meson.build...
-, wltrunk
+, wltrunk, libGL
 }:
 
 let
@@ -30,7 +30,7 @@ stdenv.mkDerivation rec {
   nativeBuildInputs = [ pkgconfig meson ninja scdoc ];
   buildInputs = [
     wayland wayland-protocols wlroots_ wltrunk
-    pixman libxkbcommon libudev mesa_noglu libX11
+    pixman libxkbcommon libudev mesa_noglu libX11 libGL
   ];
   mesonFlags = [ "-Dauto_features=enabled" ];
 

@@ -3,6 +3,7 @@
 , wlroots, wayland, wayland-protocols
 , pixman, libxkbcommon
 , libudev, mesa_noglu, libX11 # not mentioned in meson.build...
+, libGL
 }:
 
 let
@@ -23,6 +24,7 @@ stdenv.mkDerivation rec {
   buildInputs = [
     wlroots wayland wayland-protocols wlroots
     pixman libxkbcommon libudev mesa_noglu libX11
+    libGL
   ];
   mesonFlags = [ "-Dauto_features=enabled" ];
 

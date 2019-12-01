@@ -3,6 +3,7 @@
 , wlroots, wayland, wayland-protocols
 , pixman, libxkbcommon
 , libudev, mesa_noglu, libX11
+, libGL
 }:
 
 let
@@ -30,6 +31,7 @@ stdenv.mkDerivation rec {
   buildInputs = [
     wlroots_ wayland wayland-protocols
     pixman libxkbcommon libudev mesa_noglu libX11
+    libGL
   ];
   mesonFlags = [ "-Dauto_features=enabled" ];
 
