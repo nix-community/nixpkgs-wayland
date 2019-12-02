@@ -3,7 +3,7 @@
 , wlroots, wayland, wayland-protocols
 , pixman, libxkbcommon
 , libudev, mesa_noglu, libX11
-, libGLU_combined, libglvnd
+, libGL, libglvnd
 }:
 
 let
@@ -23,7 +23,7 @@ stdenv.mkDerivation rec {
   buildInputs = [
     wlroots wayland wayland-protocols wlroots
     pixman libxkbcommon libudev mesa_noglu libX11
-    libGLU_combined libglvnd
+    libGL libglvnd
   ];
 
   buildPhase = ''

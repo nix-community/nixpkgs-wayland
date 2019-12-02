@@ -2,10 +2,9 @@
 , meson, ninja
 , pkgconfig, scdoc
 , wayland, libxkbcommon, pcre, json_c, dbus, libevdev
-, libglvnd
+, libglvnd, libGL
 , pango, cairo, libinput, libcap, pam, gdk_pixbuf
 , wlroots, wayland-protocols
-, libGLU_combined
 }:
 
 let
@@ -37,7 +36,7 @@ stdenv.mkDerivation rec {
   buildInputs = [
     wayland libxkbcommon pcre json_c dbus libevdev
     pango cairo libinput libcap pam gdk_pixbuf
-    libglvnd
+    libglvnd libGL
     wlroots wayland-protocols
   ];
 
