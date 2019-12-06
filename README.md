@@ -40,7 +40,7 @@ These packages were mostly recently built against:
 | [glpaper](https://bitbucket.org/Scoopta/glpaper) | 2019-03-08 16:52 -0800 | GLPaper is a wallpaper program for wlroots based wayland compositors such as sway that allows you to render glsl shaders as your wallpaper |
 | [grim](https://github.com/emersion/grim) | 2019-07-20 19:11:00 +0300 | Select a region in a Wayland compositor |
 | [i3status-rust](https://github.com/greshake/i3status-rust) | 2019-12-02 12:29:46 -0500 | Very resource-friendly and feature-rich replacement for i3status |
-| [kanshi](https://github.com/emersion/kanshi) | 2019-11-29 19:09:58 +0100 | Dynamic display configuration |
+| [kanshi](https://github.com/emersion/kanshi) | 2019-12-06 10:50:10 +0100 | Dynamic display configuration |
 | [mako](https://wayland.emersion.fr/mako) | 2019-11-29 19:40:30 +0100 | A lightweight Wayland notification daemon |
 | [neatvnc](https://github.com/any1/neatvnc) | 2019-10-20 22:13:51 +0000 | liberally licensed VNC server library that's intended to be fast and neat |
 | [oguri](https://github.com/vilhalmer/oguri) | 2019-11-30 18:19:22 -0500 | A very nice animated wallpaper tool for Wayland compositors |
