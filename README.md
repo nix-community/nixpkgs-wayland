@@ -44,7 +44,7 @@ These packages were mostly recently built against:
 | [kanshi](https://github.com/emersion/kanshi) | 2019-12-09 11:15:03 +0100 | Dynamic display configuration |
 | [mako](https://wayland.emersion.fr/mako) | 2019-11-29 19:40:30 +0100 | A lightweight Wayland notification daemon |
 | [neatvnc](https://github.com/any1/neatvnc) | 2019-10-20 22:13:51 +0000 | liberally licensed VNC server library that's intended to be fast and neat |
-| [oguri](https://github.com/vilhalmer/oguri) | 2019-11-30 18:19:22 -0500 | A very nice animated wallpaper tool for Wayland compositors |
+| [oguri](https://github.com/vilhalmer/oguri) | 2019-12-09 16:26:38 -0500 | A very nice animated wallpaper tool for Wayland compositors |
 | [redshift-wayland](http://jonls.dk/redshift) | 2019-08-24 17:20:17 +0200 | Screen color temperature manager |
 | [rootbar](https://hg.sr.ht/~scoopta/rootbar) | 2019-03-18 10:47 -0700 | Root Bar is a bar for wlroots based wayland compositors such as sway and was designed to address the lack of good bars for wayland |
 | [slurp](https://github.com/emersion/slurp) | 2019-08-01 20:25:04 +0300 | Select a region in a Wayland compositor |
