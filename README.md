@@ -35,13 +35,13 @@ These packages were mostly recently built against:
 | [bspwc](https://git.sr.ht/~bl4ckb0ne/bspwc) | 2019-10-14 14:41:16 -0400 (pinned) | Binary space partitioning wayland compositor |
 | [cage](https://www.hjdskes.nl/projects/cage/) | 2019-08-27 18:14:57 +0200 | A Wayland kiosk |
 | [drm_info](https://github.com/ascent12/drm_info) | 2019-11-03 00:15:05 +0000 | Small utility to dump info about DRM devices. |
-| [freerdp](http://www.freerdp.com/) | 2019-12-06 07:53:37 +0100 | A Remote Desktop Protocol Client |
+| [freerdp](http://www.freerdp.com/) | 2019-12-09 11:43:02 +0100 | A Remote Desktop Protocol Client |
 | [gebaar-libinput](https://github.com/Coffee2CodeNL/gebaar-libinput) | 2019-04-05 15:27:03 +0200 | Gebaar, A Super Simple WM Independent Touchpad Gesture Daemon for libinput |
 | [glpaper](https://bitbucket.org/Scoopta/glpaper) | 2019-03-08 16:52 -0800 | GLPaper is a wallpaper program for wlroots based wayland compositors such as sway that allows you to render glsl shaders as your wallpaper |
 | [grim](https://github.com/emersion/grim) | 2019-07-20 19:11:00 +0300 | Select a region in a Wayland compositor |
 | [i3status-rust](https://github.com/greshake/i3status-rust) | 2019-12-08 17:58:58 -0500 | Very resource-friendly and feature-rich replacement for i3status |
 | [imv](https://github.com/eXeC64/imv) | 2019-11-23 14:19:17 +0000 | A command line image viewer for tiling window managers |
-| [kanshi](https://github.com/emersion/kanshi) | 2019-12-06 10:50:10 +0100 | Dynamic display configuration |
+| [kanshi](https://github.com/emersion/kanshi) | 2019-12-09 11:15:03 +0100 | Dynamic display configuration |
 | [mako](https://wayland.emersion.fr/mako) | 2019-11-29 19:40:30 +0100 | A lightweight Wayland notification daemon |
 | [neatvnc](https://github.com/any1/neatvnc) | 2019-10-20 22:13:51 +0000 | liberally licensed VNC server library that's intended to be fast and neat |
 | [oguri](https://github.com/vilhalmer/oguri) | 2019-11-30 18:19:22 -0500 | A very nice animated wallpaper tool for Wayland compositors |
