@@ -54,7 +54,7 @@ These packages were mostly recently built against:
 | [swaylock](https://swaywm.org) | 2019-11-27 19:53:07 -0500 | Screen locker for Wayland |
 | [waybar](https://github.com/Alexays/Waybar) | 2019-12-09 12:39:40 +0000 | Highly customizable Wayland Polybar like bar for Sway and Wlroots based compositors. |
 | [waybox](https://github.com/wizbright/waybox) | 2019-06-19 17:09:41 -0500 | An openbox clone on Wayland (WIP) |
-| [wayfire](https://wayfire.org/) | 2019-12-02 14:19:16 +0100 | 3D wayland compositor |
+| [wayfire](https://wayfire.org/) | 2019-12-10 12:25:30 +0100 | 3D wayland compositor |
 | [waypipe](https://gitlab.freedesktop.org/mstoeckl/waypipe/) | 2019-11-28 12:03:29 -0500 | Network transparency with Wayland |
 | [wayvnc](https://github.com/any1/wayvnc) | 2019-10-22 19:28:04 +0000 |  |
 | [wdisplays](https://github.com/cyclopsian/wdisplays) | 2019-10-26 16:56:01 -0400 | GUI display configurator for wlroots compositors |
