@@ -1,5 +1,8 @@
 # nixpkgs-wayland
 
+(related: [nixpkgs-chromium](https://github.com/colemickens/nixpkgs-chromium)
+and [nixpkgs-graphics](https://github.com/colemickens/nixpkgs-graphics))
+
 - [nixpkgs-wayland](#nixpkgs-wayland)
   - [Overview](#overview)
   - [Packages](#packages)
