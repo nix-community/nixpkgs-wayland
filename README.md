@@ -41,7 +41,7 @@ These packages were mostly recently built against:
 | [freerdp](http://www.freerdp.com/) | 2019-12-12 11:10:44 +0100 | A Remote Desktop Protocol Client |
 | [gebaar-libinput](https://github.com/Coffee2CodeNL/gebaar-libinput) | 2019-04-05 15:27:03 +0200 | Gebaar, A Super Simple WM Independent Touchpad Gesture Daemon for libinput |
 | [glpaper](https://bitbucket.org/Scoopta/glpaper) | 2019-03-08 16:52 -0800 | GLPaper is a wallpaper program for wlroots based wayland compositors such as sway that allows you to render glsl shaders as your wallpaper |
-| [grim](https://github.com/emersion/grim) | 2019-12-10 13:59:43 +0100 | Select a region in a Wayland compositor |
+| [grim](https://github.com/emersion/grim) | 2019-12-13 16:35:13 +0100 | Select a region in a Wayland compositor |
 | [i3status-rust](https://github.com/greshake/i3status-rust) | 2019-12-12 14:15:40 -0500 | Very resource-friendly and feature-rich replacement for i3status |
 | [imv](https://github.com/eXeC64/imv) | 2019-11-23 14:19:17 +0000 | A command line image viewer for tiling window managers |
 | [kanshi](https://github.com/emersion/kanshi) | 2019-12-09 11:15:03 +0100 | Dynamic display configuration |
