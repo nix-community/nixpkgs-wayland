@@ -26,7 +26,7 @@ These packages were mostly recently built against:
 <!--nixpkgs-->
 | Channel | Last Channel Commit Time |
 | ------- | ------------------------ |
-| nixos-unstable | 2019-12-05 01:28:43 +0100 |
+| nixos-unstable | 2019-12-16 14:07:13 +0000 |
 | nixpkgs-unstable | 2019-12-05 09:39:52 +0100 |
 <!--nixpkgs-->
 
@@ -38,7 +38,7 @@ These packages were mostly recently built against:
 | [bspwc](https://git.sr.ht/~bl4ckb0ne/bspwc) | 2019-10-14 14:41:16 -0400 (pinned) | Binary space partitioning wayland compositor |
 | [cage](https://www.hjdskes.nl/projects/cage/) | 2019-08-27 18:14:57 +0200 | A Wayland kiosk |
 | [drm_info](https://github.com/ascent12/drm_info) | 2019-11-03 00:15:05 +0000 | Small utility to dump info about DRM devices. |
-| [freerdp](http://www.freerdp.com/) | 2019-12-16 12:14:59 +0100 | A Remote Desktop Protocol Client |
+| [freerdp](http://www.freerdp.com/) | 2019-12-17 09:46:00 +0100 | A Remote Desktop Protocol Client |
 | [gebaar-libinput](https://github.com/Coffee2CodeNL/gebaar-libinput) | 2019-04-05 15:27:03 +0200 | Gebaar, A Super Simple WM Independent Touchpad Gesture Daemon for libinput |
 | [glpaper](https://bitbucket.org/Scoopta/glpaper) | 2019-03-08 16:52 -0800 | GLPaper is a wallpaper program for wlroots based wayland compositors such as sway that allows you to render glsl shaders as your wallpaper |
 | [grim](https://github.com/emersion/grim) | 2019-12-13 16:35:13 +0100 | Select a region in a Wayland compositor |
@@ -51,11 +51,11 @@ These packages were mostly recently built against:
 | [redshift-wayland](http://jonls.dk/redshift) | 2019-08-24 17:20:17 +0200 | Screen color temperature manager |
 | [rootbar](https://hg.sr.ht/~scoopta/rootbar) | 2019-03-18 10:47 -0700 | Root Bar is a bar for wlroots based wayland compositors such as sway and was designed to address the lack of good bars for wayland |
 | [slurp](https://github.com/emersion/slurp) | 2019-08-01 20:25:04 +0300 | Select a region in a Wayland compositor |
-| [sway](https://swaywm.org) | 2019-12-14 09:31:42 -0500 | i3-compatible tiling Wayland compositor |
+| [sway](https://swaywm.org) | 2019-12-16 14:35:58 -0500 | i3-compatible tiling Wayland compositor |
 | [swaybg](https://github.com/swaywm/swaybg) | 2019-08-09 08:03:44 +0900 | Wallpaper tool for Wayland compositors |
 | [swayidle](https://swaywm.org) | 2019-11-10 13:56:03 -0500 | Sway's idle management daemon |
 | [swaylock](https://swaywm.org) | 2019-11-27 19:53:07 -0500 | Screen locker for Wayland |
-| [waybar](https://github.com/Alexays/Waybar) | 2019-12-09 12:39:40 +0000 | Highly customizable Wayland Polybar like bar for Sway and Wlroots based compositors. |
+| [waybar](https://github.com/Alexays/Waybar) | 2019-12-17 11:58:42 +0100 | Highly customizable Wayland Polybar like bar for Sway and Wlroots based compositors. |
 | [waybox](https://github.com/wizbright/waybox) | 2019-06-19 17:09:41 -0500 | An openbox clone on Wayland (WIP) |
 | [wayfire](https://wayfire.org/) | 2019-12-16 09:07:12 +0100 | 3D wayland compositor |
 | [waypipe](https://gitlab.freedesktop.org/mstoeckl/waypipe/) | 2019-11-28 12:03:29 -0500 | Network transparency with Wayland |
