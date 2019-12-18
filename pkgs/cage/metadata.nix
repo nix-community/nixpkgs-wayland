@@ -1,7 +1,7 @@
 {
   repo_git = "https://github.com/Hjdskes/cage";
   branch = "master";
-  rev = "0fb513fb85eb5846eb598b91a0fc79dc16b5da36";
-  sha256 = "1xi5lwx82c33nw2ml93f2fhfwaiy0qvl251lr4yzzvqggai3igyh";
-  revdate = "2019-08-27 18:14:57 +0200";
+  rev = "531cdc84b7d9c1be8a47b0c0cd3e48534e76ab77";
+  sha256 = "1pp3x176laavzzvcd0qcnsip56fz7gayc1hng7m94cagxdc52gjy";
+  revdate = "2019-12-18 21:51:05 +0100";
 }
