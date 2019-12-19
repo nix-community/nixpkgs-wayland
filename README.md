@@ -27,7 +27,7 @@ These packages were mostly recently built against:
 | Channel | Last Channel Commit Time |
 | ------- | ------------------------ |
 | nixos-unstable | 2019-12-18 15:33:54 +0100 |
-| nixpkgs-unstable | 2019-12-18 15:33:54 +0100 |
+| nixpkgs-unstable | 2019-12-18 18:24:44 +0100 |
 <!--nixpkgs-->
 
 ## Packages
