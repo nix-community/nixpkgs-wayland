@@ -1,5 +1,5 @@
 { stdenv, fetchhg
-, pkgconfig
+, meson, ninja, pkgconfig
 , wayland, wayland-protocols
 , gtk3
 }:
@@ -19,7 +19,7 @@ stdenv.mkDerivation rec {
   };
 
   nativeBuildInputs = [
-    pkgconfig
+    meson ninja pkgconfig
   ];
 
   buildInputs = [
@@ -27,14 +27,14 @@ stdenv.mkDerivation rec {
     gtk3
   ];
 
-  preConfigure = ''
-    cd Release
-  '';
+#  preConfigure = ''
+#    cd Release
+#  '';
 
-  installPhase = ''
-    mkdir -p "$out/bin"
-    mv wofi $out/bin/
-  '';
+#  installPhase = ''
+#    mkdir -p "$out/bin"
+#    mv wofi $out/bin/
+#  '';
 
   enableParallelBuilding = true;
 
