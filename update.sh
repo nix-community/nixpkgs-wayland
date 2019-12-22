@@ -141,7 +141,9 @@ trap "kill ${CACHIX_PID}" EXIT
 #  exit 0
 #fi
 
-nix-build build.nix \
+./nixbuild.sh
   --no-out-link --keep-going \
   --attr "${build_attr}" \
   | cachix push "${cache}"
+exit 0
+
