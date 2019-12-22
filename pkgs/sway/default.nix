@@ -1,19 +1,15 @@
-{ stdenv, fetchFromGitHub, fetchpatch
+{ stdenv, fetchFromGitHub, makeWrapper
 , meson, ninja
 , pkgconfig, scdoc
 , wayland, libxkbcommon, pcre, json_c, dbus, libevdev
-, libglvnd, libGL
-, pango, cairo, libinput, libcap, pam, gdk_pixbuf
+, pango, cairo, libinput, libcap, pam, gdk-pixbuf
 , wlroots, wayland-protocols
 }:
 
-let
-  metadata = import ./metadata.nix;
-in
+let metadata = import ./metadata.nix; in
 stdenv.mkDerivation rec {
-  name = "${pname}-${version}";
-  pname = "sway";
-  version = metadata.rev;
+  pname = "sway-unwrapped";
+  version = "${metadata.rev}";
 
   src = fetchFromGitHub {
     owner = "swaywm";
@@ -27,16 +23,13 @@ stdenv.mkDerivation rec {
     ./load-configuration-from-etc.patch
   ];
 
-  postPatch = ''
-    sed -iE "0,/version: '.*',/ s//version: '${version}',/" meson.build
-  '';
-
-  nativeBuildInputs = [ pkgconfig meson ninja scdoc ];
+  nativeBuildInputs = [
+    pkgconfig meson ninja scdoc
+  ];
 
   buildInputs = [
     wayland libxkbcommon pcre json_c dbus libevdev
-    pango cairo libinput libcap pam gdk_pixbuf
-    libglvnd libGL
+    pango cairo libinput libcap pam gdk-pixbuf
     wlroots wayland-protocols
   ];
 
@@ -49,10 +42,9 @@ stdenv.mkDerivation rec {
 
   meta = with stdenv.lib; {
     description = "i3-compatible tiling Wayland compositor";
-    homepage    = "https://swaywm.org";
+    homepage    = https://swaywm.org;
     license     = licenses.mit;
     platforms   = platforms.linux;
     maintainers = with maintainers; [ primeos synthetica ];
   };
 }
-
