@@ -9,7 +9,11 @@ SECRET_ATTR="pat"
 
 # less user-specific
 BUILD_HOST="https://builds.sr.ht"
-TOKEN="$(gopass show "${SECRET_NAME}" | grep "${SECRET_ATTR}" | cut -d' ' -f2)"
+if which gopass ; then
+  TOKEN="$(gopass show "${SECRET_NAME}" | grep "${SECRET_ATTR}" | cut -d' ' -f2)"
+else
+  TOKEN="$(cat "/home/cole/.srht-token")"
+fi
 
 DATA="$(mktemp)"
 MANIFEST="$(jq -aRs . <"${DIR}/srht-job.yaml")"
