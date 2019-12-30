@@ -7,6 +7,7 @@
 , git
 , spdlog
 , mpd_clientlib
+, gtk-layer-shell
 }:
 
 let
@@ -31,6 +32,7 @@ stdenv.mkDerivation rec {
     glib
     spdlog
     mpd_clientlib
+    gtk-layer-shell
   ];
   mesonFlags = [
     "-Dauto_features=enabled"

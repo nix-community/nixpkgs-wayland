@@ -18,6 +18,10 @@ stdenv.mkDerivation rec {
     sha256 = metadata.sha256;
   };
 
+  postPatch = ''
+    sed -i "s/run_command('hg', 'identify').stdout().strip()/\'${version}\'/g" ./meson.build
+  '';
+
   nativeBuildInputs = [
     meson ninja pkgconfig
   ];
