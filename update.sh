@@ -8,7 +8,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 # keep track of what we build for the README
 pkgentries=(); nixpkgentries=();
 cache="nixpkgs-wayland";
-build_attr="${1:-"all"}"
+build_attr="${1:-"waylandPkgs"}"
 
 up=0 # updated_performed # up=$(( $up + 1 ))
 
@@ -23,6 +23,7 @@ function update() {
   rev="$(nix eval --raw -f "${metadata}" rev)"
   date="$(nix eval --raw -f "${metadata}" revdate)"
   sha256="$(nix eval --raw -f "${metadata}" sha256)"
+  upattr="$(nix eval --raw -f "${metadata}" upattr || echo "${pkgname}")"
   skip="$(nix eval -f "${metadata}" skip || true)"
 
   newdate="${date}"
@@ -61,7 +62,7 @@ function update() {
       if [[ "${typ}" == "pkgs" ]]; then
         newsha256="$(NIX_PATH=nixpkgs=https://github.com/nixos/nixpkgs/archive/nixos-unstable.tar.gz \
           nix-prefetch \
-            -E "(import ./build.nix).nixosUnstable.${pkgname}" \
+            -E "(import ./build.nix).${upattr}" \
             --rev "${newrev}" \
             --output raw)"
       elif [[ "${typ}" == "nixpkgs" ]]; then
@@ -82,8 +83,8 @@ function update() {
     newdate="${newdate} (pinned)"
   fi
   if [[ "${typ}" == "pkgs" ]]; then
-    desc="$(nix eval --raw "(import ./build.nix).nixosUnstable.${pkgname}.meta.description")"
-    home="$(nix eval --raw "(import ./build.nix).nixosUnstable.${pkgname}.meta.homepage")"
+    desc="$(nix eval --raw "(import ./build.nix).${pkgname}.meta.description")"
+    home="$(nix eval --raw "(import ./build.nix).${pkgname}.meta.homepage")"
     pkgentries=("${pkgentries[@]}" "| [${pkgname}](${home}) | ${newdate} | ${desc} |");
   elif [[ "${typ}" == "nixpkgs" ]]; then
     nixpkgentries=("${nixpkgentries[@]}" "| ${pkgname} | ${newdate} |");
@@ -131,19 +132,7 @@ cachix push -w "${cache}" &
 CACHIX_PID="$!"
 trap "kill ${CACHIX_PID}" EXIT
 
-#if [[ $up -lt 1 ]]; then
-  # if we didn't update any revs, there's nothing to do
-  # don't bother building (and if on CI, dling everything for no reason)
-
-  # TODO: maybe on CI we can invoke nix in a way to do a no-op if subsitutions exist
-  # TODO: file a bug for this, see if there was any irc convo after asking on 2019-11-18@00:40:33
-#  echo "nothing to build, so exitting"
-#  exit 0
-#fi
-
 ./nixbuild.sh build.nix \
   --no-out-link --keep-going \
-  --attr "${build_attr}" \
   | cachix push "${cache}"
-exit 0
 

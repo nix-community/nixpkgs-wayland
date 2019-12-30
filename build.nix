@@ -1,10 +1,5 @@
 let
-  nixosUnstable = (import (import ./nixpkgs/nixos-unstable) { overlays = [ (import ./default.nix) ]; }).waylandPkgs;
+  pkgs = import (import ./nixpkgs/nixos-unstable) { overlays = [ (import ./default.nix) ]; };
 in
-  {
-    all = [
-      nixosUnstable
-    ];
-    inherit nixosUnstable;
-  }
+  pkgs.waylandPkgs
 
