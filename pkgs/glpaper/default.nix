@@ -1,5 +1,5 @@
 { stdenv, fetchhg
-, pkgconfig
+, meson, ninja, pkgconfig
 , wlroots, wayland, wayland-protocols
 , pixman, libxkbcommon
 , libudev, mesa_noglu, libX11
@@ -19,22 +19,12 @@ stdenv.mkDerivation rec {
     sha256 = metadata.sha256;
   };
 
-  nativeBuildInputs = [ pkgconfig ];
+  nativeBuildInputs = [ meson ninja pkgconfig ];
   buildInputs = [
     wlroots wayland wayland-protocols wlroots
     pixman libxkbcommon libudev mesa_noglu libX11
     libGL libglvnd
   ];
-
-  buildPhase = ''
-    cd Release
-    make
-  '';
-
-  installPhase = ''
-    mkdir -p $out/bin
-    cp glpaper $out/bin/glpaper
-  '';
 
   enableParallelBuilding = true;
 

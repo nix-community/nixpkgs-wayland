@@ -1,5 +1,5 @@
 { stdenv, fetchhg
-, pkgconfig
+, meson, ninja, pkgconfig
 , wayland, wayland-protocols
 , gtk3, json_c, libpulseaudio
 }:
@@ -19,22 +19,13 @@ stdenv.mkDerivation rec {
   };
 
   nativeBuildInputs = [
-    pkgconfig
+    meson ninja pkgconfig
   ];
 
   buildInputs = [
     wayland wayland-protocols
     gtk3 json_c libpulseaudio
   ];
-
-  preConfigure = ''
-    cd Release
-  '';
-
-  installPhase = ''
-    mkdir -p "$out/bin"
-    mv rootbar $out/bin/
-  '';
 
   enableParallelBuilding = true;
 
