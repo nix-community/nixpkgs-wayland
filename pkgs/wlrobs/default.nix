@@ -5,7 +5,10 @@
 # mkdir -p ~/.config/obs-studio/plugins
 # ln -s ~/.nix-profile/share/obs/obs-plugins/wlrobs ~/.config/obs-studio/plugins/
 
-{ stdenv, fetchhg, obs-studio, cmake, wlroots, wayland
+{ stdenv, fetchhg
+, meson, ninja, pkg-config
+, obs-studio, wlroots, wayland
+, libX11
 }:
 
 let
@@ -19,12 +22,9 @@ stdenv.mkDerivation rec {
     rev = metadata.rev;
     sha256 = metadata.sha256;
   };
-  nativeBuildInputs = [];
-  buildInputs = [ obs-studio wayland wlroots ];
-  buildPhase = ''
-    cd Release
-    make
-  '';
+  nativeBuildInputs = [ meson ninja pkg-config ];
+  buildInputs = [ obs-studio wayland wlroots libX11 ];
+
   installPhase = ''
     mkdir -p $out/share/obs/obs-plugins/wlrobs/bin/64bit
     cp libwlrobs.so $out/share/obs/obs-plugins/wlrobs/bin/64bit
