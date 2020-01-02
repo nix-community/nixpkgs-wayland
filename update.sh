@@ -128,6 +128,13 @@ done
 
 update_readme
 
+if [[ ! -z "${CI_BUILD:-""}" ]]; then
+  if ! expr $(git status --porcelain 2>/dev/null| egrep "^(M| M)" | wc -l); then
+    echo "This is a CI build with no changes. Refusing to build again."
+    exit 0
+  fi
+fi
+
 cachix push -w "${cache}" &
 CACHIX_PID="$!"
 trap "kill ${CACHIX_PID}" EXIT
