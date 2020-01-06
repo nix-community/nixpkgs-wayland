@@ -1,6 +1,6 @@
 { stdenv, fetchFromGitHub
 , pkgconfig, meson, ninja
-, libevdev, wlroots
+, libevdev, wlroots, glm, libxml2
 , buildDocs ? true
 }:
 
@@ -20,7 +20,7 @@ stdenv.mkDerivation rec {
   };
 
   nativeBuildInputs = [ pkgconfig meson ninja ];
-  buildInputs = [ libevdev wlroots ];
+  buildInputs = [ libevdev wlroots glm libxml2 ];
 
   enableParallelBuilding = true;
 
