@@ -36,7 +36,7 @@ These packages were mostly recently built against:
 | Package | Last Update | Description |
 | ------- | ----------- | ----------- |
 | [bspwc](https://git.sr.ht/~bl4ckb0ne/bspwc) | 2019-10-14 14:41:16 -0400 (pinned) | Binary space partitioning wayland compositor |
-| [cage](https://www.hjdskes.nl/projects/cage/) | 2020-01-05 13:42:17 +0100 | A Wayland kiosk |
+| [cage](https://www.hjdskes.nl/projects/cage/) | 2020-01-06 11:49:57 +0100 | A Wayland kiosk |
 | [drm_info](https://github.com/ascent12/drm_info) | 2019-12-20 10:56:15 +0100 | Small utility to dump info about DRM devices. |
 | [freerdp](http://www.freerdp.com/) | 2020-01-06 09:23:45 +0100 | A Remote Desktop Protocol Client |
 | [gebaar-libinput](https://github.com/Coffee2CodeNL/gebaar-libinput) | 2019-04-05 15:27:03 +0200 | Gebaar, A Super Simple WM Independent Touchpad Gesture Daemon for libinput |
@@ -56,7 +56,7 @@ These packages were mostly recently built against:
 | [swaybg](https://github.com/swaywm/swaybg) | 2019-08-09 08:03:44 +0900 | Wallpaper tool for Wayland compositors |
 | [swayidle](https://swaywm.org) | 2019-11-10 13:56:03 -0500 | Sway's idle management daemon |
 | [swaylock](https://swaywm.org) | 2019-11-27 19:53:07 -0500 | Screen locker for Wayland |
-| [waybar](https://github.com/Alexays/Waybar) | 2020-01-06 09:21:26 +0100 | Highly customizable Wayland Polybar like bar for Sway and Wlroots based compositors. |
+| [waybar](https://github.com/Alexays/Waybar) | 2020-01-06 11:47:23 +0100 | Highly customizable Wayland Polybar like bar for Sway and Wlroots based compositors. |
 | [waybox](https://github.com/wizbright/waybox) | 2019-06-19 17:09:41 -0500 | An openbox clone on Wayland (WIP) |
 | [wayfire](https://wayfire.org/) | 2020-01-04 10:30:08 +0200 | 3D wayland compositor |
 | [waypipe](https://gitlab.freedesktop.org/mstoeckl/waypipe/) | 2019-11-28 12:03:29 -0500 | Network transparency with Wayland |
