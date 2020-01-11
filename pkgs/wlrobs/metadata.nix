@@ -1,7 +1,7 @@
 {
   repo_hg = "https://hg.sr.ht/~scoopta/wlrobs";
   branch = "default";
-  rev = "28e6a458110c";
-  sha256 = "05gjaplf22jysa1xc6rrw4vsa0cv8l3wrmhapaq5mq6vdvdc7lb7";
+  rev = "94fa8e3d57e0";
+  sha256 = "01ks2afn6qgamq5mq9zdx7dm2k1j08nink95bagp4iy855bayk5f";
   revdate = "2019-03-16 15:06 -0700";
 }
