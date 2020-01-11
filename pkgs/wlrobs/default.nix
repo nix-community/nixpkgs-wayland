@@ -8,7 +8,7 @@
 { stdenv, fetchhg
 , meson, ninja, pkg-config
 , obs-studio, wlroots, wayland
-, libX11
+, libX11, libGL, libdrm
 }:
 
 let
@@ -23,7 +23,7 @@ stdenv.mkDerivation rec {
     sha256 = metadata.sha256;
   };
   nativeBuildInputs = [ meson ninja pkg-config ];
-  buildInputs = [ obs-studio wayland wlroots libX11 ];
+  buildInputs = [ obs-studio wayland wlroots libX11 libGL libdrm ];
 
   installPhase = ''
     mkdir -p $out/share/obs/obs-plugins/wlrobs/bin/64bit

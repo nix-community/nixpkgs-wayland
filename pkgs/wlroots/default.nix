@@ -19,13 +19,6 @@ in stdenv.mkDerivation rec {
     sha256 = metadata.sha256;
   };
 
-  postPatch = ''
-    substituteInPlace "backend/rdp/peer.c" \
-      --replace \
-        "nsc_context_set_pixel_format(context->nsc_context, PIXEL_FORMAT_BGRA32);" \
-        "return nsc_context_set_parameters(context->nsc_context, NSC_COLOR_FORMAT, PIXEL_FORMAT_BGRA32);"
-  '';
-
   # $out for the library, $bin for rootston, and $examples for the example
   # programs (in examples) AND rootston
   outputs = [ "out" "examples" ];
