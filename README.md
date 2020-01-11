@@ -36,7 +36,7 @@ These packages were mostly recently built against:
 | Package | Last Update | Description |
 | ------- | ----------- | ----------- |
 | [bspwc](https://git.sr.ht/~bl4ckb0ne/bspwc) | 2019-10-14 14:41:16 -0400 (pinned) | Binary space partitioning wayland compositor |
-| [cage](https://www.hjdskes.nl/projects/cage/) | 2020-01-10 19:33:30 +0100 | A Wayland kiosk |
+| [cage](https://www.hjdskes.nl/projects/cage/) | 2020-01-11 17:11:16 +0100 | A Wayland kiosk |
 | [drm_info](https://github.com/ascent12/drm_info) | 2019-12-20 10:56:15 +0100 | Small utility to dump info about DRM devices. |
 | [freerdp](http://www.freerdp.com/) | 2020-01-10 12:00:24 +0100 | A Remote Desktop Protocol Client |
 | [gebaar-libinput](https://github.com/Coffee2CodeNL/gebaar-libinput) | 2019-04-05 15:27:03 +0200 | Gebaar, A Super Simple WM Independent Touchpad Gesture Daemon for libinput |
