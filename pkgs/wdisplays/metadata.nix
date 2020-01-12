@@ -1,7 +1,7 @@
 {
   repo_git = "https://github.com/cyclopsian/wdisplays";
   branch = "master";
-  rev = "22669edadb8ff3478bdb51ddc140ef6e61e3d9ef";
-  sha256 = "127k5i98km6mh8yw4vf8n44b29kc3n0169xpkdh7yr0rhv6n9cdl";
-  revdate = "2019-10-26 16:56:01 -0400";
+  rev = "ba331cab535318888a562f5a2731d2523b310dac";
+  sha256 = "0fk3l78hirxdi74iqmq6mxi9daqnxdkbb5a2wfshmr11ic9xixpm";
+  revdate = "2020-01-12 06:23:14 +0000";
 }
