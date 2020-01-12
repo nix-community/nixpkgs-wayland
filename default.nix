@@ -14,7 +14,6 @@ waylandPkgs = rec {
   rootbar          = pkgs.callPackage ./pkgs/rootbar {};
   slurp            = pkgs.callPackage ./pkgs/slurp {};
   sway-unwrapped   = pkgs.callPackage ./pkgs/sway {};
-  sway             = pkgs.callPackage ./pkgs/sway/wrapper.nix {};
   swaybg           = pkgs.callPackage ./pkgs/swaybg {};
   swayidle         = pkgs.callPackage ./pkgs/swayidle {};
   swaylock         = pkgs.callPackage ./pkgs/swaylock {};

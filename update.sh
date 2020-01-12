@@ -83,8 +83,8 @@ function update() {
     newdate="${newdate} (pinned)"
   fi
   if [[ "${typ}" == "pkgs" ]]; then
-    desc="$(nix eval --raw "(import ./build.nix).${pkgname}.meta.description")"
-    home="$(nix eval --raw "(import ./build.nix).${pkgname}.meta.homepage")"
+    desc="$(nix eval --raw "(import ./build.nix).${upattr}.meta.description")"
+    home="$(nix eval --raw "(import ./build.nix).${upattr}.meta.homepage")"
     pkgentries=("${pkgentries[@]}" "| [${pkgname}](${home}) | ${newdate} | ${desc} |");
   elif [[ "${typ}" == "nixpkgs" ]]; then
     nixpkgentries=("${nixpkgentries[@]}" "| ${pkgname} | ${newdate} |");
