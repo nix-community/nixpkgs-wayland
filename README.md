@@ -27,7 +27,7 @@ These packages were mostly recently built against:
 | Channel | Last Channel Commit Time |
 | ------- | ------------------------ |
 | nixos-unstable | 2020-01-12 00:04:23 +0000 |
-| nixpkgs-unstable | 2020-01-03 03:43:17 -0500 |
+| nixpkgs-unstable | 2020-01-13 10:41:46 -0800 |
 <!--nixpkgs-->
 
 ## Packages
@@ -37,22 +37,22 @@ These packages were mostly recently built against:
 | ------- | ----------- | ----------- |
 | [bspwc](https://git.sr.ht/~bl4ckb0ne/bspwc) | 2019-10-14 14:41:16 -0400 (pinned) | Binary space partitioning wayland compositor |
 | [cage](https://www.hjdskes.nl/projects/cage/) | 2020-01-11 17:11:16 +0100 | A Wayland kiosk |
-| [drm_info](https://github.com/ascent12/drm_info) | 2019-12-20 10:56:15 +0100 | Small utility to dump info about DRM devices. |
-| [freerdp](http://www.freerdp.com/) | 2020-01-10 12:00:24 +0100 | A Remote Desktop Protocol Client |
+| [drm_info](https://github.com/ascent12/drm_info) | 2020-01-13 13:57:53 +1000 | Small utility to dump info about DRM devices. |
+| [freerdp](http://www.freerdp.com/) | 2020-01-13 15:41:59 +0100 | A Remote Desktop Protocol Client |
 | [gebaar-libinput](https://github.com/Coffee2CodeNL/gebaar-libinput) | 2019-04-05 15:27:03 +0200 | Gebaar, A Super Simple WM Independent Touchpad Gesture Daemon for libinput |
 | [glpaper](https://bitbucket.org/Scoopta/glpaper) | 2019-03-08 16:52 -0800 | GLPaper is a wallpaper program for wlroots based wayland compositors such as sway that allows you to render glsl shaders as your wallpaper |
 | [grim](https://github.com/emersion/grim) | 2019-12-13 16:35:13 +0100 | Select a region in a Wayland compositor |
 | [gtk-layer-shell](https://github.com/wmww/gtk-layer-shell) | 2020-01-03 14:52:01 -0500 | A library to create panels and other desktop components for Wayland using the Layer Shell protocol |
 | [i3status-rust](https://github.com/greshake/i3status-rust) | 2020-01-09 22:23:22 -0500 | Very resource-friendly and feature-rich replacement for i3status |
 | [imv](https://github.com/eXeC64/imv) | 2019-12-21 22:54:26 +0000 | A command line image viewer for tiling window managers |
-| [kanshi](https://github.com/emersion/kanshi) | 2020-01-11 10:11:53 +0100 | Dynamic display configuration |
+| [kanshi](https://github.com/emersion/kanshi) | 2020-01-13 22:41:20 +0100 | Dynamic display configuration |
 | [mako](https://wayland.emersion.fr/mako) | 2020-01-12 12:16:05 +0100 | A lightweight Wayland notification daemon |
-| [neatvnc](https://github.com/any1/neatvnc) | 2020-01-11 13:20:37 +0000 | liberally licensed VNC server library that's intended to be fast and neat |
+| [neatvnc](https://github.com/any1/neatvnc) | 2020-01-13 10:39:32 +0000 | liberally licensed VNC server library that's intended to be fast and neat |
 | [oguri](https://github.com/vilhalmer/oguri) | 2019-12-09 16:26:38 -0500 | A very nice animated wallpaper tool for Wayland compositors |
 | [redshift-wayland](http://jonls.dk/redshift) | 2019-08-24 17:20:17 +0200 | Screen color temperature manager |
 | [rootbar](https://hg.sr.ht/~scoopta/rootbar) | 2019-03-18 10:47 -0700 | Root Bar is a bar for wlroots based wayland compositors such as sway and was designed to address the lack of good bars for wayland |
 | [slurp](https://github.com/emersion/slurp) | 2019-08-01 20:25:04 +0300 | Select a region in a Wayland compositor |
-| [sway](https://swaywm.org) | 2020-01-10 07:03:24 -0700 | i3-compatible tiling Wayland compositor |
+| [sway](https://swaywm.org) | 2020-01-13 12:36:14 -0700 | i3-compatible tiling Wayland compositor |
 | [swaybg](https://github.com/swaywm/swaybg) | 2019-08-09 08:03:44 +0900 | Wallpaper tool for Wayland compositors |
 | [swayidle](https://swaywm.org) | 2019-11-10 13:56:03 -0500 | Sway's idle management daemon |
 | [swaylock](https://swaywm.org) | 2020-01-06 13:18:25 -0700 | Screen locker for Wayland |
@@ -70,7 +70,7 @@ These packages were mostly recently built against:
 | [wldash](https://wldash.org) | 2020-01-08 11:49:19 +0100 | Wayland launcher/dashboard |
 | [wlr-randr](https://github.com/emersion/wlr-randr) | 2019-03-22 16:38:05 +0200 | An xrandr clone for wlroots compositors |
 | [wlrobs](https://sr.ht/~scoopta/wlrobs) | 2019-03-16 15:06 -0700 | wlrobs is an obs-studio plugin that allows you to screen capture on wlroots based wayland compositors |
-| [wlroots](https://github.com/swaywm/wlroots) | 2020-01-12 10:10:09 -0700 | A modular Wayland compositor library |
+| [wlroots](https://github.com/swaywm/wlroots) | 2020-01-13 07:52:30 -0700 | A modular Wayland compositor library |
 | [wltrunk](https://git.sr.ht/~bl4ckb0ne/wltrunk) | 2019-11-10 16:09:56 -0500 (pinned) | High-level Wayland compositor library based on wlroots |
 | [wofi](https://hg.sr.ht/~scoopta/wofi) | 2019-08-17 18:34 -0700 | Wofi is a launcher/menu program for wlroots based wayland compositors such as sway |
 | [wtype](https://github.com/atx/wtype) | 2019-07-01 17:33:04 +0200 | xdotool type for wayland |
