@@ -1,6 +1,7 @@
 { stdenv, fetchFromGitHub
 , libdrm, json_c
 , meson, ninja, pkgconfig
+, libpciaccess
 }:
 
 let
@@ -18,7 +19,9 @@ stdenv.mkDerivation rec {
   };
 
   nativeBuildInputs = [ meson ninja pkgconfig ];
-  buildInputs = [ libdrm json_c ];
+  buildInputs = [ libdrm json_c libpciaccess ];
+
+  mesonFlags = [ "-Dlibpci=disabled" ];
 
   meta = with stdenv.lib; {
     description = "Small utility to dump info about DRM devices.";
