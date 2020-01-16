@@ -56,7 +56,7 @@ These packages were mostly recently built against:
 | [swaybg](https://github.com/swaywm/swaybg) | 2019-08-09 08:03:44 +0900 | Wallpaper tool for Wayland compositors |
 | [swayidle](https://swaywm.org) | 2019-11-10 13:56:03 -0500 | Sway's idle management daemon |
 | [swaylock](https://swaywm.org) | 2020-01-06 13:18:25 -0700 | Screen locker for Wayland |
-| [waybar](https://github.com/Alexays/Waybar) | 2020-01-15 10:05:34 +0000 | Highly customizable Wayland Polybar like bar for Sway and Wlroots based compositors. |
+| [waybar](https://github.com/Alexays/Waybar) | 2020-01-16 10:34:20 +0000 | Highly customizable Wayland Polybar like bar for Sway and Wlroots based compositors. |
 | [waybox](https://github.com/wizbright/waybox) | 2019-06-19 17:09:41 -0500 | An openbox clone on Wayland (WIP) |
 | [wayfire](https://wayfire.org/) | 2020-01-04 10:30:08 +0200 | 3D wayland compositor |
 | [waypipe](https://gitlab.freedesktop.org/mstoeckl/waypipe/) | 2019-11-28 12:03:29 -0500 | Network transparency with Wayland |
@@ -64,7 +64,7 @@ These packages were mostly recently built against:
 | [wdisplays](https://github.com/cyclopsian/wdisplays) | 2020-01-12 06:23:14 +0000 | GUI display configurator for wlroots compositors |
 | [wev](https://swaywm.org) | 2019-12-12 12:10:08 -0500 | Sway's idle management daemon |
 | [wf-config](https://github.com/WayfireWM/wf-config) | 2020-01-04 10:00:43 +0200 | A library for managing configuration files, written for wayfire |
-| [wf-recorder](https://github.com/ammen99/wf-recorder) | 2019-12-01 22:36:39 +0100 | Utility program for screen recording of wlroots-based compositors |
+| [wf-recorder](https://github.com/ammen99/wf-recorder) | 2020-01-16 11:31:43 +0100 | Utility program for screen recording of wlroots-based compositors |
 | [wl-clipboard](https://github.com/bugaevc/wl-clipboard) | 2019-10-03 15:16:09 +0300 | Select a region in a Wayland compositor |
 | [wlay](https://github.com/atx/wlay) | 2019-07-04 19:03:15 +0200 | Graphical output management for Wayland |
 | [wldash](https://wldash.org) | 2020-01-08 11:49:19 +0100 | Wayland launcher/dashboard |
