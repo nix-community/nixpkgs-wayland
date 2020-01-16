@@ -64,7 +64,7 @@ These packages were mostly recently built against:
 | [wdisplays](https://github.com/cyclopsian/wdisplays) | 2020-01-12 06:23:14 +0000 | GUI display configurator for wlroots compositors |
 | [wev](https://swaywm.org) | 2019-12-12 12:10:08 -0500 | Sway's idle management daemon |
 | [wf-config](https://github.com/WayfireWM/wf-config) | 2020-01-04 10:00:43 +0200 | A library for managing configuration files, written for wayfire |
-| [wf-recorder](https://github.com/ammen99/wf-recorder) | 2020-01-16 11:31:43 +0100 | Utility program for screen recording of wlroots-based compositors |
+| [wf-recorder](https://github.com/ammen99/wf-recorder) | 2020-01-16 13:22:25 +0100 | Utility program for screen recording of wlroots-based compositors |
 | [wl-clipboard](https://github.com/bugaevc/wl-clipboard) | 2019-10-03 15:16:09 +0300 | Select a region in a Wayland compositor |
 | [wlay](https://github.com/atx/wlay) | 2019-07-04 19:03:15 +0200 | Graphical output management for Wayland |
 | [wldash](https://wldash.org) | 2020-01-08 11:49:19 +0100 | Wayland launcher/dashboard |
