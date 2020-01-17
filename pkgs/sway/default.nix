@@ -23,6 +23,10 @@ stdenv.mkDerivation rec {
     ./load-configuration-from-etc.patch
   ];
 
+  postPatch = ''
+    # replace the version
+  '';
+
   nativeBuildInputs = [
     pkgconfig meson ninja scdoc
   ];
