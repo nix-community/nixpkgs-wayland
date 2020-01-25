@@ -8,6 +8,8 @@
 , spdlog
 , mpd_clientlib
 , gtk-layer-shell
+, coreutils
+, date
 }:
 
 let
@@ -33,6 +35,8 @@ stdenv.mkDerivation rec {
     spdlog
     mpd_clientlib
     gtk-layer-shell
+    coreutils
+    date
   ];
   mesonFlags = [
     "-Dauto_features=enabled"

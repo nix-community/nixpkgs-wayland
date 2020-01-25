@@ -37,6 +37,8 @@ waylandPkgs = rec {
   gtk-layer-shell = pkgs.callPackage ./pkgs/gtk-layer-shell {};
 
   wlroots-tmp = pkgs.callPackage ./pkgs-temp/wlroots {};
+  wlroots-0-9-x = pkgs.callPackage ./pkgs-temp/wlroots-0-9-x {};
+  date = pkgs.callPackage ./pkgs-temp/date {};
 
   # misc
   redshift-wayland = pkgs.callPackage ./pkgs/redshift-wayland {
@@ -54,11 +56,11 @@ waylandPkgs = rec {
 
   # wayfire stuff
   wf-config        = pkgs.callPackage ./pkgs/wf-config {};
-  wayfire          = pkgs.callPackage ./pkgs/wayfire {};
+  wayfire          = pkgs.callPackage ./pkgs/wayfire { wlroots = wlroots-0-9-x; };
 
   # bspwc/wltrunk stuff
-  bspwc    = pkgs.callPackage ./pkgs/bspwc { wlroots = pkgs.wlroots; };
-  wltrunk  = pkgs.callPackage ./pkgs/wltrunk { wlroots = pkgs.wlroots; };  
+  bspwc    = pkgs.callPackage ./pkgs/bspwc { wlroots = wlroots-tmp; };
+  wltrunk  = pkgs.callPackage ./pkgs/wltrunk { wlroots = wlroots-tmp; };
 };
 in
   waylandPkgs // { inherit waylandPkgs; }
