@@ -26,7 +26,7 @@ stdenv.mkDerivation rec {
   enableParallelBuilding = true;
 
   meta = with stdenv.lib; {
-    description = "Select a region in a Wayland compositor";
+    description = "Grab images from a Wayland compositor";
     homepage    = https://github.com/emersion/grim;
     license     = licenses.mit;
     platforms   = platforms.linux;
