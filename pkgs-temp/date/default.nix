@@ -1,27 +1,27 @@
-{ stdenv, fetchFromGitHub, cmake, ninja, curl
-}:
+{ stdenv, fetchFromGitHub, fetchpatch
+, cmake, ninja, curl }:
 
 stdenv.mkDerivation rec {
   pname = "date";
   version = "unstable-2019-01-16";
 
-  #src = /home/cole/code/date;
   src = fetchFromGitHub {
     owner = "HowardHinnant";
     repo = "date";
-    rev = "c8d311f6f1b9ede6f66d510012da8002ef07a895";
-    sha256 = "0gllvm374ljw9r833myi7pw9ym746jgqzqn8acv3pjd8f3js127z";
+    rev = "9a0ee2542848ab8625984fc8cdbfb9b5414c0082";
+    sha256 = "0yxsn0hj22n61bjywysxqgfv7hj5xvsl6isma95fl8xrimpny083";
   };
+
+  patches = [
+    (fetchpatch {
+      url = "https://github.com/HowardHinnant/date/pull/538.patch";
+      sha256 = "1i8f87ra43izlgcbyqsbb585qk4m573fdzibcqvkr1h98z7ncdas";
+    })
+  ];
 
   nativeBuildInputs = [ cmake ninja ];
 
   buildInputs = [ curl ];
-
-  postPatch = ''
-    cp ${./date.pc.in} ./date.pc.in
-    sed -i '32iconfigure_file(date.pc.in ''${CMAKE_INSTALL_LIBDIR}/pkgconfig/date.pc @ONLY)' \
-      ./CMakeLists.txt
-  '';
 
   cmakeFlags = [
     "-DBUILD_TZ_LIB=true"
@@ -29,10 +29,10 @@ stdenv.mkDerivation rec {
   ];
 
   meta = with stdenv.lib; {
-    homepage = "FIXME";
-    description = "FIXME";
-    #license = licenses.zlib;
-    #platforms = platforms.all;
+    homepage = "https://github.com/HowardHinnant/date";
+    description = "A date and time library based on the C++11/14/17 <chrono> header";
+    license = licenses.mit;
     platforms = platforms.linux;
   };
 }
+

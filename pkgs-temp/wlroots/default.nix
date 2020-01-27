@@ -1,7 +1,7 @@
 { stdenv, fetchFromGitHub, meson, ninja, pkgconfig
 , wayland, libGL, wayland-protocols, libinput, libxkbcommon, pixman
 , xcbutilwm, libX11, libcap, xcbutilimage, xcbutilerrors, mesa
-, libpng, ffmpeg_4, freerdp
+, libpng, ffmpeg_4
 }:
 
 stdenv.mkDerivation rec {
@@ -15,13 +15,6 @@ stdenv.mkDerivation rec {
     sha256 = "1bdsm560g2kfbihhhxmdp3ci129w2kqvn8v73hfgk451fa1hq4ja";
   };
 
-  postPatch = ''
-    substituteInPlace "backend/rdp/peer.c" \
-      --replace \
-        "nsc_context_set_pixel_format(context->nsc_context, PIXEL_FORMAT_BGRA32);" \
-        "return nsc_context_set_parameters(context->nsc_context, NSC_COLOR_FORMAT, PIXEL_FORMAT_BGRA32);"
-  '';
-
   # $out for the library and $examples for the example programs (in examples):
   outputs = [ "out" "examples" ];
 
@@ -30,12 +23,13 @@ stdenv.mkDerivation rec {
   buildInputs = [
     wayland libGL wayland-protocols libinput libxkbcommon pixman
     xcbutilwm libX11 libcap xcbutilimage xcbutilerrors mesa
-    libpng ffmpeg_4 freerdp
+    libpng ffmpeg_4
   ];
 
   mesonFlags = [
     "-Dlibcap=enabled" "-Dlogind=enabled" "-Dxwayland=enabled" "-Dx11-backend=enabled"
     "-Dxcb-icccm=enabled" "-Dxcb-errors=enabled"
+    "-Dfreerdp=disabled"
   ];
 
   postInstall = ''

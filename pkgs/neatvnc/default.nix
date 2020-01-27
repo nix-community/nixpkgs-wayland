@@ -4,6 +4,7 @@
 , libxkbcommon, libvncserver
 , libpthreadstubs, libdrm
 , pixman, libuv, libglvnd
+, gnutls
 }:
 
 let
@@ -26,6 +27,7 @@ stdenv.mkDerivation rec {
     libxkbcommon libvncserver
     libpthreadstubs libdrm
     pixman libuv libglvnd
+    gnutls
   ];
 
   enableParallelBuilding = true;

@@ -26,8 +26,8 @@ These packages were mostly recently built against:
 <!--nixpkgs-->
 | Channel | Last Channel Commit Time |
 | ------- | ------------------------ |
-| nixos-unstable | 2020-01-24 08:05:53 +0100 |
-| nixpkgs-unstable | 2020-01-24 11:31:18 -0500 |
+| nixos-unstable | 2020-01-26 11:14:28 +0300 |
+| nixpkgs-unstable | 2020-01-27 14:01:17 +0800 |
 <!--nixpkgs-->
 
 ## Packages
@@ -36,9 +36,9 @@ These packages were mostly recently built against:
 | Package | Last Update | Description |
 | ------- | ----------- | ----------- |
 | [bspwc](https://git.sr.ht/~bl4ckb0ne/bspwc) | 2019-10-14 14:41:16 -0400 (pinned) | Binary space partitioning wayland compositor |
-| [cage](https://www.hjdskes.nl/projects/cage/) | 2020-01-18 11:57:16 +0100 | A Wayland kiosk |
+| [cage](https://www.hjdskes.nl/projects/cage/) | 2020-01-26 18:18:49 +0100 | A Wayland kiosk |
 | [drm_info](https://github.com/ascent12/drm_info) | 2020-01-13 13:57:53 +1000 | Small utility to dump info about DRM devices. |
-| [freerdp](http://www.freerdp.com/) | 2020-01-23 15:39:28 +0100 | A Remote Desktop Protocol Client |
+| [freerdp](http://www.freerdp.com/) | 2020-01-27 07:57:45 +0100 | A Remote Desktop Protocol Client |
 | [gebaar-libinput](https://github.com/Coffee2CodeNL/gebaar-libinput) | 2019-04-05 15:27:03 +0200 | Gebaar, A Super Simple WM Independent Touchpad Gesture Daemon for libinput |
 | [glpaper](https://bitbucket.org/Scoopta/glpaper) | 2019-03-08 16:52 -0800 | GLPaper is a wallpaper program for wlroots based wayland compositors such as sway that allows you to render glsl shaders as your wallpaper |
 | [grim](https://github.com/emersion/grim) | 2020-01-16 12:33:31 +0100 | Grab images from a Wayland compositor |
@@ -47,7 +47,7 @@ These packages were mostly recently built against:
 | [imv](https://github.com/eXeC64/imv) | 2019-12-21 22:54:26 +0000 | A command line image viewer for tiling window managers |
 | [kanshi](https://github.com/emersion/kanshi) | 2020-01-13 22:41:20 +0100 | Dynamic display configuration |
 | [mako](https://wayland.emersion.fr/mako) | 2020-01-23 18:37:33 +0100 | A lightweight Wayland notification daemon |
-| [neatvnc](https://github.com/any1/neatvnc) | 2020-01-24 23:16:08 +0000 | liberally licensed VNC server library that's intended to be fast and neat |
+| [neatvnc](https://github.com/any1/neatvnc) | 2020-01-27 00:17:09 +0000 | liberally licensed VNC server library that's intended to be fast and neat |
 | [oguri](https://github.com/vilhalmer/oguri) | 2019-12-09 16:26:38 -0500 | A very nice animated wallpaper tool for Wayland compositors |
 | [redshift-wayland](http://jonls.dk/redshift) | 2019-08-24 17:20:17 +0200 | Screen color temperature manager |
 | [rootbar](https://hg.sr.ht/~scoopta/rootbar) | 2019-03-18 10:47 -0700 | Root Bar is a bar for wlroots based wayland compositors such as sway and was designed to address the lack of good bars for wayland |
@@ -58,9 +58,9 @@ These packages were mostly recently built against:
 | [swaylock](https://swaywm.org) | 2020-01-23 07:30:27 -0700 | Screen locker for Wayland |
 | [waybar](https://github.com/Alexays/Waybar) | 2020-01-23 14:03:40 +0000 | Highly customizable Wayland Polybar like bar for Sway and Wlroots based compositors. |
 | [waybox](https://github.com/wizbright/waybox) | 2019-06-19 17:09:41 -0500 | An openbox clone on Wayland (WIP) |
-| [wayfire](https://wayfire.org/) | 2020-01-24 19:21:06 +0100 | 3D wayland compositor |
+| [wayfire](https://wayfire.org/) | 2020-01-26 09:28:24 +0100 | 3D wayland compositor |
 | [waypipe](https://gitlab.freedesktop.org/mstoeckl/waypipe/) | 2019-11-28 12:03:29 -0500 | Network transparency with Wayland |
-| [wayvnc](https://github.com/any1/wayvnc) | 2020-01-25 13:19:08 +0000 |  |
+| [wayvnc](https://github.com/any1/wayvnc) | 2020-01-26 11:58:24 +0000 |  |
 | [wdisplays](https://github.com/cyclopsian/wdisplays) | 2020-01-12 06:23:14 +0000 | GUI display configurator for wlroots compositors |
 | [wev](https://swaywm.org) | 2019-12-12 12:10:08 -0500 | Sway's idle management daemon |
 | [wf-config](https://github.com/WayfireWM/wf-config) | 2020-01-04 10:00:43 +0200 | A library for managing configuration files, written for wayfire |

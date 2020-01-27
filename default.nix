@@ -38,16 +38,12 @@ waylandPkgs = rec {
 
   wlroots-tmp = pkgs.callPackage ./pkgs-temp/wlroots {};
   wlroots-0-9-x = pkgs.callPackage ./pkgs-temp/wlroots-0-9-x {};
-  date = pkgs.callPackage ./pkgs-temp/date {};
+  date = pkgs.callPackage ./pkgs-temp/date {}; # used by waybar, but temp, upstream to nixpkgs
 
   # misc
   redshift-wayland = pkgs.callPackage ./pkgs/redshift-wayland {
     inherit (pkgs.python3Packages) python pygobject3 pyxdg wrapPython;
     geoclue = pkgs.geoclue2;
-  };
-  freerdp = pkgs.callPackage ./pkgs/freerdp {
-    inherit (pkgs) libpulseaudio;
-    inherit (pkgs.gst_all_1) gstreamer gst-plugins-base gst-plugins-good;
   };
   neatvnc = pkgs.callPackage ./pkgs/neatvnc {};
 
