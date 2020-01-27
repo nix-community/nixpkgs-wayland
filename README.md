@@ -26,8 +26,8 @@ These packages were mostly recently built against:
 <!--nixpkgs-->
 | Channel | Last Channel Commit Time |
 | ------- | ------------------------ |
-| nixos-unstable | 2020-01-26 11:14:28 +0300 |
-| nixpkgs-unstable | 2020-01-27 14:01:17 +0800 |
+| nixos-unstable | 2020-01-27 10:15:28 +0100 |
+| nixpkgs-unstable | 2020-01-27 10:44:49 +0000 |
 <!--nixpkgs-->
 
 ## Packages
@@ -51,13 +51,13 @@ These packages were mostly recently built against:
 | [redshift-wayland](http://jonls.dk/redshift) | 2019-08-24 17:20:17 +0200 | Screen color temperature manager |
 | [rootbar](https://hg.sr.ht/~scoopta/rootbar) | 2019-03-18 10:47 -0700 | Root Bar is a bar for wlroots based wayland compositors such as sway and was designed to address the lack of good bars for wayland |
 | [slurp](https://github.com/emersion/slurp) | 2019-08-01 20:25:04 +0300 | Select a region in a Wayland compositor |
-| [sway](https://swaywm.org) | 2020-01-24 10:37:21 +0100 | i3-compatible tiling Wayland compositor |
+| [sway](https://swaywm.org) | 2020-01-27 11:31:41 -0700 | i3-compatible tiling Wayland compositor |
 | [swaybg](https://github.com/swaywm/swaybg) | 2019-08-09 08:03:44 +0900 | Wallpaper tool for Wayland compositors |
 | [swayidle](https://swaywm.org) | 2020-01-23 07:30:21 -0700 | Sway's idle management daemon |
 | [swaylock](https://swaywm.org) | 2020-01-23 07:30:27 -0700 | Screen locker for Wayland |
 | [waybar](https://github.com/Alexays/Waybar) | 2020-01-23 14:03:40 +0000 | Highly customizable Wayland Polybar like bar for Sway and Wlroots based compositors. |
 | [waybox](https://github.com/wizbright/waybox) | 2019-06-19 17:09:41 -0500 | An openbox clone on Wayland (WIP) |
-| [wayfire](https://wayfire.org/) | 2020-01-26 09:28:24 +0100 | 3D wayland compositor |
+| [wayfire](https://wayfire.org/) | 2020-01-27 19:33:32 +0100 | 3D wayland compositor |
 | [waypipe](https://gitlab.freedesktop.org/mstoeckl/waypipe/) | 2019-11-28 12:03:29 -0500 | Network transparency with Wayland |
 | [wayvnc](https://github.com/any1/wayvnc) | 2020-01-26 11:58:24 +0000 |  |
 | [wdisplays](https://github.com/cyclopsian/wdisplays) | 2020-01-12 06:23:14 +0000 | GUI display configurator for wlroots compositors |
