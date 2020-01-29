@@ -18,23 +18,23 @@ stdenv.mkDerivation rec {
     sha256 = metadata.sha256;
   };
 
-  installFlags = [
-    "PREFIX=$(out)"
-  ];
-
   nativeBuildInputs = [ pkgconfig scdoc ];
   buildInputs = [
     wayland wayland-protocols
     libxkbcommon
   ];
 
+  installFlags = [
+    "PREFIX=$(out)"
+  ];
+
   enableParallelBuilding = true;
 
   meta = with stdenv.lib; {
-    description = "Sway's idle management daemon";
-    homepage    = https://swaywm.org;
-    license     = licenses.mit;
+    description = "A tool for debugging events on a Wayland window, analagous to the X11 tool xev.";
+    homepage    = "https://git.sr.ht/~sircmpwn/wev";
+    #license     = licenses.unknown;
     platforms   = platforms.linux;
-    maintainers = with maintainers; [ primeos synthetica ]; # Trying to keep it up-to-date.
+    maintainers = with maintainers; [ primeos synthetica ];
   };
 }
