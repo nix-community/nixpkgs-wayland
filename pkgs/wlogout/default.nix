@@ -24,6 +24,22 @@ stdenv.mkDerivation rec {
     libxkbcommon gtk3
   ];
 
+  patchPhase = ''
+    substituteInPlace style.css --replace \
+      "/usr/share/wlogout" \
+      "$out/share/${pname}"
+
+    # Fix path in `access(/etc/wlogout/$config_file$)`
+    substituteInPlace main.c --replace \
+      "/etc/wlogout" \
+      "$out/etc/${pname}"
+  '';
+
+  mesonFlags = [
+    "--datadir=${placeholder "out"}/share"
+    "--sysconfdir=${placeholder "out"}/etc"
+  ];
+
   enableParallelBuilding = true;
 
   meta = with stdenv.lib; {
