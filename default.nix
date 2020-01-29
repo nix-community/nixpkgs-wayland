@@ -9,6 +9,7 @@ waylandPkgs = rec {
   grim             = pkgs.callPackage ./pkgs/grim {};
   kanshi           = pkgs.callPackage ./pkgs/kanshi {};
   imv              = pkgs.callPackage ./pkgs/imv {};
+  lavalauncher     = pkgs.callPackage ./pkgs/lavalauncher {};
   mako             = pkgs.callPackage ./pkgs/mako {};
   oguri            = pkgs.callPackage ./pkgs/oguri {};
   rootbar          = pkgs.callPackage ./pkgs/rootbar {};
