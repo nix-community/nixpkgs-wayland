@@ -1,0 +1,36 @@
+{ stdenv, fetchgit
+, pkgconfig, meson, ninja, scdoc
+, wayland, wayland-protocols
+, libxkbcommon, gtk3
+}:
+
+let
+  metadata = import ./metadata.nix;
+in
+stdenv.mkDerivation rec {
+  name = "${pname}-${version}";
+  pname = "wlogout";
+  version = metadata.rev;
+
+  src = fetchgit {
+    url = metadata.repo_git;
+    rev = metadata.rev;
+    sha256 = metadata.sha256;
+  };
+
+  nativeBuildInputs = [ pkgconfig meson ninja scdoc ];
+  buildInputs = [
+    wayland wayland-protocols
+    libxkbcommon gtk3
+  ];
+
+  enableParallelBuilding = true;
+
+  meta = with stdenv.lib; {
+    description = "A wayland based logout menu";
+    homepage    = "https://github.com/ArtsyMacaw/wlogout";
+    license     = licenses.mit;
+    platforms   = platforms.linux;
+    maintainers = with maintainers; [];
+  };
+}
