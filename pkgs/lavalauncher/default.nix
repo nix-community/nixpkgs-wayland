@@ -1,5 +1,5 @@
 { stdenv, fetchgit
-, pkgconfig, scdoc
+, pkgconfig, meson, ninja, scdoc
 , wayland, wayland-protocols
 , libxkbcommon, cairo
 }:
@@ -18,7 +18,7 @@ stdenv.mkDerivation rec {
     sha256 = metadata.sha256;
   };
 
-  nativeBuildInputs = [ pkgconfig scdoc ];
+  nativeBuildInputs = [ pkgconfig meson ninja scdoc ];
   buildInputs = [
     wayland wayland-protocols
     libxkbcommon cairo
