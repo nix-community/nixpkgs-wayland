@@ -1,7 +1,7 @@
 {
   repo_git = "https://git.sr.ht/~leon_plickat/lavalauncher";
   branch = "master";
-  rev = "462a0e2be29480221a0eadc05d134e87693a3322";
-  sha256 = "1ngk6v2vclqnazsxjvaz2kcvy6vy6732mpkr54kicvvfalxm009a";
-  revdate = "2020-02-02 18:00:55 +0100";
+  rev = "cb15b804b2615f9584f0b97aa0f7ab5f90bb16fe";
+  sha256 = "0lank9lr7v66aiy9qd11ygc1wwrzh3a3draspa04hnhzvw2aaygx";
+  revdate = "2020-02-04 12:17:35 +0100";
 }
