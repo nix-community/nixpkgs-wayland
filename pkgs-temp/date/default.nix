@@ -15,7 +15,7 @@ stdenv.mkDerivation rec {
   patches = [
     (fetchpatch {
       url = "https://github.com/HowardHinnant/date/pull/538.patch";
-      sha256 = "1i8f87ra43izlgcbyqsbb585qk4m573fdzibcqvkr1h98z7ncdas";
+      sha256 = "0k06a73jsdhpl293q2s51hr0ziyczfz3j7b13w36x2wppm6n71z5";
     })
   ];
 
