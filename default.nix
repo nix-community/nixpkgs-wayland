@@ -48,6 +48,7 @@ waylandPkgs = rec {
     geoclue = pkgs.geoclue2;
   };
   neatvnc = pkgs.callPackage ./pkgs/neatvnc {};
+  obs-studio = pkgs.libsForQt5.callPackage ./pkgs/obs-studio { ffmpeg = pkgs.ffmpeg_4; };
 
   # i3 related
   i3status-rust    = pkgs.callPackage ./pkgs/i3status-rust {};
