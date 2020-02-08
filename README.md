@@ -38,14 +38,14 @@ These packages were mostly recently built against:
 | Package | Last Update | Description |
 | ------- | ----------- | ----------- |
 | [bspwc](https://git.sr.ht/~bl4ckb0ne/bspwc) | 2019-10-14 14:41:16 -0400 (pinned) | Binary space partitioning wayland compositor |
-| [cage](https://www.hjdskes.nl/projects/cage/) | 2020-02-03 21:23:39 +0100 | A Wayland kiosk |
+| [cage](https://www.hjdskes.nl/projects/cage/) | 2020-02-07 19:04:16 +0100 | A Wayland kiosk |
 | [drm_info](https://github.com/ascent12/drm_info) | 2020-01-31 14:28:12 +0100 | Small utility to dump info about DRM devices. |
 | [gebaar-libinput](https://github.com/Coffee2CodeNL/gebaar-libinput) | 2019-04-05 15:27:03 +0200 | Gebaar, A Super Simple WM Independent Touchpad Gesture Daemon for libinput |
 | [glpaper](https://bitbucket.org/Scoopta/glpaper) | 2019-03-08 16:52 -0800 | GLPaper is a wallpaper program for wlroots based wayland compositors such as sway that allows you to render glsl shaders as your wallpaper |
 | [grim](https://github.com/emersion/grim) | 2020-01-16 12:33:31 +0100 | Grab images from a Wayland compositor |
 | [gtk-layer-shell](https://github.com/wmww/gtk-layer-shell) | 2020-01-03 14:52:01 -0500 | A library to create panels and other desktop components for Wayland using the Layer Shell protocol |
 | [i3status-rust](https://github.com/greshake/i3status-rust) | 2020-02-06 15:24:26 -0500 | Very resource-friendly and feature-rich replacement for i3status |
-| [imv](https://github.com/eXeC64/imv) | 2019-12-21 22:54:26 +0000 | A command line image viewer for tiling window managers |
+| [imv](https://github.com/eXeC64/imv) | 2020-02-08 00:29:25 +0000 | A command line image viewer for tiling window managers |
 | [kanshi](https://github.com/emersion/kanshi) | 2020-01-13 22:41:20 +0100 | Dynamic display configuration |
 | [lavalauncher](https://git.sr.ht/~leon_plickat/lavalauncher) | 2020-02-07 07:39:02 +0100 | A simple launcher for Wayland. |
 | [mako](https://wayland.emersion.fr/mako) | 2020-01-27 10:59:20 +0100 | A lightweight Wayland notification daemon |
@@ -61,7 +61,7 @@ These packages were mostly recently built against:
 | [swaylock](https://swaywm.org) | 2020-01-23 07:30:27 -0700 | Screen locker for Wayland |
 | [waybar](https://github.com/Alexays/Waybar) | 2020-02-06 21:27:01 +0000 | Highly customizable Wayland Polybar like bar for Sway and Wlroots based compositors. |
 | [waybox](https://github.com/wizbright/waybox) | 2019-06-19 17:09:41 -0500 | An openbox clone on Wayland (WIP) |
-| [wayfire](https://wayfire.org/) | 2020-02-03 12:09:17 +0100 | 3D wayland compositor |
+| [wayfire](https://wayfire.org/) | 2020-02-07 23:29:05 +0100 | 3D wayland compositor |
 | [waypipe](https://gitlab.freedesktop.org/mstoeckl/waypipe/) | 2019-11-28 12:03:29 -0500 | Network transparency with Wayland |
 | [wayvnc](https://github.com/any1/wayvnc) | 2020-01-29 21:20:14 +0000 |  |
 | [wdisplays](https://github.com/cyclopsian/wdisplays) | 2020-01-12 06:23:14 +0000 | GUI display configurator for wlroots compositors |
