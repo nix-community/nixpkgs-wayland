@@ -49,7 +49,7 @@ These packages were mostly recently built against:
 | [kanshi](https://github.com/emersion/kanshi) | 2020-01-13 22:41:20 +0100 | Dynamic display configuration |
 | [lavalauncher](https://git.sr.ht/~leon_plickat/lavalauncher) | 2020-02-07 07:39:02 +0100 | A simple launcher for Wayland. |
 | [mako](https://wayland.emersion.fr/mako) | 2020-01-27 10:59:20 +0100 | A lightweight Wayland notification daemon |
-| [neatvnc](https://github.com/any1/neatvnc) | 2020-01-29 19:59:14 +0000 | liberally licensed VNC server library that's intended to be fast and neat |
+| [neatvnc](https://github.com/any1/neatvnc) | 2020-02-09 11:53:47 +0000 | liberally licensed VNC server library that's intended to be fast and neat |
 | [obs-studio](https://obsproject.com) | 2020-02-06 15:34:32 -0500 | Free and open source software for video recording and live streaming |
 | [oguri](https://github.com/vilhalmer/oguri) | 2020-02-08 12:31:04 -0500 | A very nice animated wallpaper tool for Wayland compositors |
 | [redshift-wayland](http://jonls.dk/redshift) | 2019-08-24 17:20:17 +0200 | Screen color temperature manager |
