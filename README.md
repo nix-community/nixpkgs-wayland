@@ -44,7 +44,7 @@ These packages were mostly recently built against:
 | [glpaper](https://bitbucket.org/Scoopta/glpaper) | 2019-03-08 16:52 -0800 | GLPaper is a wallpaper program for wlroots based wayland compositors such as sway that allows you to render glsl shaders as your wallpaper |
 | [grim](https://github.com/emersion/grim) | 2020-02-10 01:05:43 +0100 | Grab images from a Wayland compositor |
 | [gtk-layer-shell](https://github.com/wmww/gtk-layer-shell) | 2020-01-03 14:52:01 -0500 | A library to create panels and other desktop components for Wayland using the Layer Shell protocol |
-| [i3status-rust](https://github.com/greshake/i3status-rust) | 2020-02-09 21:01:35 -0500 | Very resource-friendly and feature-rich replacement for i3status |
+| [i3status-rust](https://github.com/greshake/i3status-rust) | 2020-02-10 12:14:22 -0500 | Very resource-friendly and feature-rich replacement for i3status |
 | [imv](https://github.com/eXeC64/imv) | 2019-12-21 22:54:26 +0000 (pinned) | A command line image viewer for tiling window managers |
 | [kanshi](https://github.com/emersion/kanshi) | 2020-01-13 22:41:20 +0100 | Dynamic display configuration |
 | [lavalauncher](https://git.sr.ht/~leon_plickat/lavalauncher) | 2020-02-07 07:39:02 +0100 | A simple launcher for Wayland. |
@@ -55,7 +55,7 @@ These packages were mostly recently built against:
 | [redshift-wayland](http://jonls.dk/redshift) | 2019-08-24 17:20:17 +0200 | Screen color temperature manager |
 | [rootbar](https://hg.sr.ht/~scoopta/rootbar) | 2019-03-18 10:47 -0700 | Root Bar is a bar for wlroots based wayland compositors such as sway and was designed to address the lack of good bars for wayland |
 | [slurp](https://github.com/emersion/slurp) | 2019-08-01 20:25:04 +0300 | Select a region in a Wayland compositor |
-| [sway](https://swaywm.org) | 2020-02-10 13:29:07 +0100 | i3-compatible tiling Wayland compositor |
+| [sway](https://swaywm.org) | 2020-02-10 18:58:09 +0100 | i3-compatible tiling Wayland compositor |
 | [swaybg](https://github.com/swaywm/swaybg) | 2019-08-09 08:03:44 +0900 | Wallpaper tool for Wayland compositors |
 | [swayidle](https://swaywm.org) | 2020-02-02 17:37:08 +0100 | Sway's idle management daemon |
 | [swaylock](https://swaywm.org) | 2020-01-23 07:30:27 -0700 | Screen locker for Wayland |
