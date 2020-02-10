@@ -1,10 +1,10 @@
 { lib, fetchFromGitHub
-, pythonPackages
-#, pygobject3
+, python3Packages
+, gtk3
 }:
 
 let metadata = import ./metadata.nix; in
-pythonPackages.buildPythonApplication rec {
+python3Packages.buildPythonApplication rec {
   pname = "sgtk-emnu";
   version = metadata.rev;
   src = fetchFromGitHub {
@@ -13,7 +13,8 @@ pythonPackages.buildPythonApplication rec {
     inherit (metadata) rev sha256;
   };
 
-  buildInputs = with pythonPackages; [ setuptools ];
+  buildInputs = with python3Packages; [ setuptools gtk3 ];
+  pythonPath = with python3Packages; [ pygobject3 pycairo gtk3  ];
 
   meta = with lib; {
     description = "GTK launcher for sway, i3 and some floating window managers";

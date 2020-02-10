@@ -1,7 +1,7 @@
 {
-  repo_git = "https://github.com/minus7/redshift";
-  branch = "wayland";
-  rev = "7da875d34854a6a34612d5ce4bd8718c32bec804";
-  sha256 = "0nbkcw3avmzjg1jr1g9yfpm80kzisy55idl09b6wvzv2sz27n957";
-  revdate = "2019-08-24 17:20:17 +0200";
+  repo_git = "https://github.com/nwg-piotr/sgtk-menu";
+  branch = "master";
+  rev = "3685182e5ccc5ffc958faa53f2833a49943b667d";
+  sha256 = "1mwwz6vc84c4kk18k7jnw63flv08q7jgybahh4hbszkdvb1dnmg4";
+  revdate = "2020-02-09 14:53:00 +0100";
 }
