@@ -38,6 +38,7 @@ waylandPkgs = rec {
 
   gtk-layer-shell = pkgs.callPackage ./pkgs/gtk-layer-shell {};
   clipman = pkgs.callPackage ./pkgs/clipman {};
+  sgtk-menu = pkgs.callPackage ./pkgs/sgtk-menu {};
 
   wlroots-tmp = pkgs.callPackage ./pkgs-temp/wlroots {};
   wlroots-0-9-x = pkgs.callPackage ./pkgs-temp/wlroots-0-9-x {};
