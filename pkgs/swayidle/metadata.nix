@@ -1,7 +1,7 @@
 {
   repo_git = "https://github.com/swaywm/swayidle";
   branch = "master";
-  rev = "d423eed84f5a62c6d82a7013a37810045fd35314";
-  sha256 = "126iwi8l021ds275l8mpi34zhnvz0a5l5v8h2wbapia510d9mbp5";
-  revdate = "2020-02-02 17:37:08 +0100";
+  rev = "7ead378c37abdba8c2d60f05d7477c871d5aa2d2";
+  sha256 = "11rdj8dp4djv6x8k9mc56wl336m8g5v8hpadjjilvkfy900443yp";
+  revdate = "2020-02-10 20:38:23 +0100";
 }
