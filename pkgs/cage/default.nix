@@ -23,6 +23,7 @@ stdenv.mkDerivation rec {
     wayland wayland-protocols
     wlroots pixman libxkbcommon libudev libGL libX11
   ];
+  mesonFlags = [ "-Dxwayland=true" ];
 
   enableParallelBuilding = true;
 
