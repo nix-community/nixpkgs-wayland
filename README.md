@@ -63,7 +63,7 @@ These packages were mostly recently built against:
 | [waybox](https://github.com/wizbright/waybox) | 2019-06-19 17:09:41 -0500 | An openbox clone on Wayland (WIP) |
 | [wayfire](https://wayfire.org/) | 2020-02-07 23:29:05 +0100 | 3D wayland compositor |
 | [waypipe](https://gitlab.freedesktop.org/mstoeckl/waypipe/) | 2019-11-28 12:03:29 -0500 | Network transparency with Wayland |
-| [wayvnc](https://github.com/any1/wayvnc) | 2020-01-29 21:20:14 +0000 |  |
+| [wayvnc](https://github.com/any1/wayvnc) | 2020-02-11 21:55:05 +0000 |  |
 | [wdisplays](https://github.com/cyclopsian/wdisplays) | 2020-01-12 06:23:14 +0000 | GUI display configurator for wlroots compositors |
 | [wev](https://git.sr.ht/~sircmpwn/wev) | 2020-02-06 12:48:08 -0500 | A tool for debugging events on a Wayland window, analagous to the X11 tool xev. |
 | [wf-config](https://github.com/WayfireWM/wf-config) | 2020-01-04 10:00:43 +0200 | A library for managing configuration files, written for wayfire |
