@@ -1,7 +1,7 @@
 {
   repo_git = "https://github.com/ArtsyMacaw/wlogout";
   branch = "master";
-  rev = "7d7fc8b6d1781a05d00356bca7ea305378acce47";
-  sha256 = "02b8k7836cl852fp673g5gi7g6gs4ackn2fyh79cd5i56j78ghjg";
-  revdate = "2020-01-22 15:52:48 -0600";
+  rev = "c3ce126243eaf11d44f39d2683b9a9f70b6cb845";
+  sha256 = "1llc6wh0d0k4424xiwqzj3vnllriq9pykmk079syiv657gs5klrk";
+  revdate = "2020-02-12 19:40:30 -0600";
 }
