@@ -19,6 +19,7 @@ stdenv.mkDerivation rec {
 
   nativeBuildInputs = [ pkgconfig meson ninja ];
   buildInputs = [ wayland wayland-protocols ];
+  mesonFlags = [ "-Dfishcompletiondir=no"];
 
   enableParallelBuilding = true;
 
