@@ -19,7 +19,7 @@ waylandPkgs = rec {
   swayidle         = pkgs.callPackage ./pkgs/swayidle {};
   swaylock         = pkgs.callPackage ./pkgs/swaylock {};
   waybar           = pkgs.callPackage ./pkgs/waybar {};
-  waybox           = pkgs.callPackage ./pkgs/waybox { wlroots = wlroots-tmp; };
+  waybox           = pkgs.callPackage ./pkgs/waybox { wlroots = wlroots-0-9-x; };
   waypipe          = pkgs.callPackage ./pkgs/waypipe {};
   wayvnc           = pkgs.callPackage ./pkgs/wayvnc {};
   wdisplays        = pkgs.callPackage ./pkgs/wdisplays {};
