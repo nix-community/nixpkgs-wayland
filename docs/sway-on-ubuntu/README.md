@@ -1,5 +1,10 @@
 # Sway on non-NixOS Distributions
 
+Note, we no longer build this overlay against `nixpkgs-unstable`.
+This means that if you follow this guide, you will wind up building
+`wlroots`, `sway`, etc from source. It doesn't take a long time,
+but it won't be pre-cached like the guide/video imply.
+
 ## Walkthrough - NixGL + Sway on Ubuntu
 
 This guide will walk you through running `sway` on Ubuntu 18.10 via `nix` and `nixpkgs`.
