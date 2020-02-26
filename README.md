@@ -59,12 +59,12 @@ These packages were mostly recently built against:
 | [redshift-wayland](http://jonls.dk/redshift) | 2019-08-24 17:20:17 +0200 | Screen color temperature manager |
 | [rootbar](https://hg.sr.ht/~scoopta/rootbar) | 2019-03-18 10:47 -0700 | Root Bar is a bar for wlroots based wayland compositors such as sway and was designed to address the lack of good bars for wayland |
 | [slurp](https://github.com/emersion/slurp) | 2020-02-11 11:59:41 +0100 | Select a region in a Wayland compositor |
-| [sway](https://swaywm.org) | 2020-02-25 08:35:43 +0100 | i3-compatible tiling Wayland compositor |
+| [sway](https://swaywm.org) | 2020-02-26 16:26:13 +0100 | i3-compatible tiling Wayland compositor |
 | [swaybg](https://github.com/swaywm/swaybg) | 2019-08-09 08:03:44 +0900 | Wallpaper tool for Wayland compositors |
 | [swayidle](https://swaywm.org) | 2020-02-10 20:38:23 +0100 | Sway's idle management daemon |
 | [swaylock](https://swaywm.org) | 2020-01-23 07:30:27 -0700 | Screen locker for Wayland |
 | [waybar](https://github.com/Alexays/Waybar) | 2020-02-24 10:53:26 +0000 | Highly customizable Wayland Polybar like bar for Sway and Wlroots based compositors. |
-| [waybox](https://github.com/wizbright/waybox) | 2020-02-14 11:06:20 -0600 | An openbox clone on Wayland (WIP) |
+| [waybox](https://github.com/wizbright/waybox) | 2020-02-26 09:31:27 -0600 | An openbox clone on Wayland (WIP) |
 | [wayfire](https://wayfire.org/) | 2020-02-22 21:44:18 +0100 | 3D wayland compositor |
 | [waypipe](https://gitlab.freedesktop.org/mstoeckl/waypipe/) | 2020-02-10 11:10:09 -0500 | Network transparency with Wayland |
 | [wayvnc](https://github.com/any1/wayvnc) | 2020-02-21 23:28:36 +0000 |  |

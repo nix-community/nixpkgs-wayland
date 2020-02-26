@@ -1,7 +1,7 @@
 {
   repo_git = "https://github.com/wizbright/waybox";
   branch = "master";
-  rev = "a2ae1f5232e6e7e282f47873977c2bd6343e6904";
-  sha256 = "0jxvjrpf408l4r0y7ss6rxai8cln45fhnp3923xql595z7y7bxa9";
-  revdate = "2020-02-14 11:06:20 -0600";
+  rev = "6bfe78234381b5520fcb071889cee857cbfc391f";
+  sha256 = "05iawwh23m2ac4njgzwyna44s4vzjkl4lg0d2sqkfgqwgaw9h2k7";
+  revdate = "2020-02-26 09:31:27 -0600";
 }
