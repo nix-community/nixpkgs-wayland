@@ -1,28 +1,33 @@
 # nixpkgs-wayland
 
-(related: [nixpkgs-chromium](https://github.com/colemickens/nixpkgs-chromium)
-and [nixpkgs-graphics](https://github.com/colemickens/nixpkgs-graphics))
+(related: [nixpkgs-chromium](https://github.com/colemickens/nixpkgs-chromium) - Chromium with native Wayland support.)
 
 - [nixpkgs-wayland](#nixpkgs-wayland)
   - [Overview](#overview)
-  - [Packages](#packages)
   - [Usage](#usage)
-    - [Usage (nixos-unstable)](#usage-nixos-unstable)
-    - [Usage (wlrobs)](#usage-wlrobs)
-    - [Quick Tips: `sway`](#quick-tips-sway)
+  - [Status](#status)
+  - [Packages](#packages)
+  - [Tips](#tips)
+      - [`sway`](#sway)
+      - [`obs-studio` + `wlrobs`](#obs-studio--wlrobs)
   - [Development Guide](#development-guide)
-      - [Building](#building)
-      - [Updating all packages](#updating-all-packages)
 
 ## Overview
 
 Automated, pre-built packages for Wayland (sway/wlroots) tools for NixOS.
 
-There is [a changelog available](./CHANGELOG.md).
+There is [a limited, best-effort changelog available](./CHANGELOG.md).
 
-These packages can be used by Nix users on other distros as well. For an example, see [the Ubuntu demo](docs/sway-on-ubuntu) for more information.
+## Usage
 
-Packages from this overlay are regularly updated and built against `nixos-unstable`. They are published to the binary cache on Cachix. Usage instructions are available on the Cachix page: [`nixpkgs-wayland` on cachix](https://nixpkgs-wayland.cachix.org).
+The [NixOS Wiki page on Overlays](https://nixos.wiki/wiki/Overlays)
+shows how to activate the overlay.
+
+The [Cachix landing page for `nixpkgs-wayland`](https://nixpkgs-wayland.cachix.org) shows how to utilize the binary cache. Packages from this overlay are regularly built against `nixos-unstable` and pushed to this cache.
+
+This overlay can also be used with Nix on Ubuntu. [There is a full walkthrough booting Sway built from this overlay](docs/sway-on-ubuntu/).
+
+## Status
 
 These packages were mostly recently built against:
 <!--nixpkgs-->
@@ -84,105 +89,34 @@ These packages were mostly recently built against:
 
 </details>
 
-## Usage
+## Tips
 
-Continue reading for usage instructions on NixOS (only the `nixos-unstable` channel is supported!).
+#### `sway`
 
-You can also use this [with Nix on Ubuntu. Please see the full walkthrough](docs/sway-on-ubuntu/).
-
-### Usage (nixos-unstable)
-
-This usage just utilizes [`overlay` functionality from `nixpkgs`]().
-
-Note that when using the overlay, the module will automatically reference the correct
-`sway` package since the newer package is overlayed ontop of `pkgs`.
-
-```nix
-{ config, lib, pkgs, ... }:
-let
-  url = "https://github.com/colemickens/nixpkgs-wayland/archive/master.tar.gz";
-  waylandOverlay = (import (builtins.fetchTarball url));
-in
-  {
-    nixpkgs.overlays = [ waylandOverlay ];
-    programs.sway.enable = true;
-    programs.sway.extraPackages = with pkgs; [
-      xwayland
-      swaybg   # required by sway for controlling desktop wallpaper
-      swayidle # used for controlling idle timeouts and triggers (screen locking, etc)
-      swaylock # used for locking Wayland sessions
-
-      waybar        # polybar-alike
-      i3status-rust # simpler bar written in Rust
-
-      gebaar-libinput  # libinput gestures utility
-      glpaper          # GL shaders as wallpaper
-      grim             # screen image capture
-      kanshi           # dynamic display configuration helper
-      mako             # notification daemon
-      oguri            # animated background utility
-      redshift-wayland # patched to work with wayland gamma protocol
-      slurp            # screen area selection tool
-      waypipe          # network transparency for Wayland
-      wf-recorder      # wayland screenrecorder
-      wl-clipboard     # clipboard CLI utilities
-      wtype            # xdotool, but for wayland
-
-      # TODO: more steps required to use this?
-      xdg-desktop-portal-wlr # xdg-desktop-portal backend for wlroots
-    ];
-    environment.systemPackages = with pkgs; [
-      # other compositors/window-managers
-      waybox   # An openbox clone on Wayland
-      bspwc    # Wayland compositor based on BSPWM
-      cage     # A Wayland kiosk (runs a single app fullscreen)
-
-      wayfire   # 3D wayland compositor
-      wf-config # wayfire config manager
-    ];
-  }
-```
-
-### Usage (wlrobs)
-
-OBS Studio Plugins don't really fit into any NixOS infrastructure, so we'll
-follow the instructions provided by.
-
-Note, these instructions can probably be simplified to just consume a latest snapshot of this repo, rather than cloning the repo at a point in time:
-
-```bash
-mkdir -p ~/.config/nixpkgs/overlays
-git clone https://github.com/colemickens/nixpkgs-wayland ~/.config/nixpkgs/overlays/nixpkgs-wayland
-nix-env -iA wlrobs
-mkdir -p ~/.config/obs-studio
-ln -s ~/.nix-profile/share/obs/obs-plugins ~/.config/obs-studio/plugins
-```
-
-NOTE: OBS-Studio is pretty rough around the edges in Wayland, regardless of if XWayland is used. `wf-recorder` might be easier to use.
-
-### Quick Tips: `sway`
-
-* Usage of display managers with `sway` is not supported upstream, you should run it from a TTY.
 * You will likely want a default config file to place at `$HOME/.config/sway/config`. You can use the upstream default as a starting point: https://github.com/swaywm/sway/blob/master/config.in
+
+#### `obs-studio` + `wlrobs`
+
+* `obs-wlrobs` is packaged in nixpkgs and integrated with its `obs-studio`
+infrastructure.
+* This overlay provides a (likely newer) version of `obs-wlrobs`.
+* This overlay also provides a patched version of `obs-studio` that works
+  natively on Wayland.
+* To utilize OBS-Studio with Wayland, simply install `obs-studio` and `obs-wlrobs`
+via your preferred method, along with activating this overlay.
+* *(Also, `wf-recorder` can screen record and stream to various RTMP services.
+Depending on your use-case, it's a lighter alternative to OBS-Studio.)*
+
 
 ## Development Guide
 
-#### Building
-
-1. Install `nix`.
-2. Run `nix-build build.nix -A nixosUnstable` to build the packages against current `nixos-unstable`.
-3. Run `nix-build build.nix -A nixpkgsUnstable` to build them against `nixpkgs-unstable`.
-
-Do note that those channels are actually pinned in this repo. The update script will also update those
-refs. Making sure the channels are up-to-date means that you will be building the packages that are going
-to be requested by users on those channels (who are up-to-date on the channel).
-
-#### Updating all packages
-
+* Use `nix-shell`.
+* `./nixbuild.sh` is a wrapper I use to make sure my binary cache(s) are used,
+  even if this repo is cloned on a random builder VM/machine/etc.
 * `./update.sh`:
   * updates `pkgs/<pkg>/metadata.nix` with the latest commit+hash for each package
   * updates `nixpkgs/<channel>/metadata.nix` per the upstream channel
   * calls `nix-build build.nix -A all` to build all packages against both channels
   * pushes to [nixpkgs-wayland on cachix](https://nixpkgs-wayland.cachix.org)
 
-Note: in some cases, you may need to manually update `cargoSha256` as well.
+Note: in some cases, you may need to manually update `cargoSha256` or `modSha256` in `pkgs/<pkg>/metadata.nix` as well.
