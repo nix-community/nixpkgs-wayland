@@ -61,7 +61,7 @@ These packages were mostly recently built against:
 | [slurp](https://github.com/emersion/slurp) | 2020-02-28 17:21:55 +0100 | Select a region in a Wayland compositor |
 | [sway](https://swaywm.org) | 2020-02-29 19:59:42 +0100 | i3-compatible tiling Wayland compositor |
 | [swaybg](https://github.com/swaywm/swaybg) | 2019-08-09 08:03:44 +0900 | Wallpaper tool for Wayland compositors |
-| [swayidle](https://swaywm.org) | 2020-02-10 20:38:23 +0100 | Sway's idle management daemon |
+| [swayidle](https://swaywm.org) | 2020-03-02 12:13:31 +0100 | Sway's idle management daemon |
 | [swaylock](https://swaywm.org) | 2020-01-23 07:30:27 -0700 | Screen locker for Wayland |
 | [waybar](https://github.com/Alexays/Waybar) | 2020-02-24 10:53:26 +0000 | Highly customizable Wayland Polybar like bar for Sway and Wlroots based compositors. |
 | [waybox](https://github.com/wizbright/waybox) | 2020-02-26 09:31:27 -0600 | An openbox clone on Wayland (WIP) |
