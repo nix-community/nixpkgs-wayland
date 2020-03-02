@@ -4,6 +4,7 @@
 , wayland, libxkbcommon, pcre, json_c, dbus, libevdev
 , pango, cairo, libinput, libcap, pam, gdk-pixbuf
 , wlroots, wayland-protocols
+, fetchpatch
 }:
 
 let metadata = import ./metadata.nix; in
@@ -21,6 +22,10 @@ stdenv.mkDerivation rec {
   patches = [
     ./sway-config-no-nix-store-references.patch
     ./load-configuration-from-etc.patch
+    (fetchpatch {
+      url = "https://github.com/swaywm/sway/pull/5090.patch";
+      sha256 = "11zsjzsg2lnbq9nzr7q9bm1x98rcijbc9dbknd7zbpwbrg8hdw23";
+    })
   ];
 
   postPatch = ''

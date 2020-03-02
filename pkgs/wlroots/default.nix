@@ -19,6 +19,13 @@ in stdenv.mkDerivation rec {
     sha256 = metadata.sha256;
   };
 
+  patches = [
+    (fetchpatch {
+      url = "https://github.com/swaywm/wlroots/pull/2064.patch";
+      sha256 = "0jvfxyx1nbvzljhdxbjcn4739lda61mfzpznvk9i5hw1pclbck4w";
+    })
+  ];
+
   # $out for the library, $bin for rootston, and $examples for the example
   # programs (in examples) AND rootston
   outputs = [ "out" "examples" ];
