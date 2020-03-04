@@ -51,7 +51,7 @@ These packages were mostly recently built against:
 | [imv](https://github.com/eXeC64/imv) | 2019-12-21 22:54:26 +0000 (pinned) | A command line image viewer for tiling window managers |
 | [kanshi](https://github.com/emersion/kanshi) | 2020-02-22 21:24:07 +0100 | Dynamic display configuration |
 | [lavalauncher](https://git.sr.ht/~leon_plickat/lavalauncher) | 2020-02-22 19:06:57 +0100 | A simple launcher for Wayland. |
-| [mako](https://wayland.emersion.fr/mako) | 2020-02-15 00:56:32 +0100 | A lightweight Wayland notification daemon |
+| [mako](https://wayland.emersion.fr/mako) | 2020-03-04 10:09:00 +0100 | A lightweight Wayland notification daemon |
 | [neatvnc](https://github.com/any1/neatvnc) | 2020-02-21 23:04:19 +0000 | liberally licensed VNC server library that's intended to be fast and neat |
 | [obs-studio](https://obsproject.com) | 2020-02-06 15:34:32 -0500 | Free and open source software for video recording and live streaming |
 | [obs-wlrobs](https://sr.ht/~scoopta/wlrobs) | 2019-03-16 15:06 -0700 | wlrobs is an obs-studio plugin that allows you to screen capture on wlroots based wayland compositors |
@@ -78,7 +78,7 @@ These packages were mostly recently built against:
 | [wldash](https://wldash.org) | 2020-02-29 00:11:49 +0100 | Wayland launcher/dashboard |
 | [wlogout](https://github.com/ArtsyMacaw/wlogout) | 2020-02-12 19:40:30 -0600 | A wayland based logout menu |
 | [wlr-randr](https://github.com/emersion/wlr-randr) | 2019-03-22 16:38:05 +0200 | An xrandr clone for wlroots compositors |
-| [wlroots](https://github.com/swaywm/wlroots) | 2020-03-04 09:57:10 +0100 | A modular Wayland compositor library |
+| [wlroots](https://github.com/swaywm/wlroots) | 2020-03-04 10:02:31 +0100 | A modular Wayland compositor library |
 | [wltrunk](https://git.sr.ht/~bl4ckb0ne/wltrunk) | 2019-11-10 16:09:56 -0500 (pinned) | High-level Wayland compositor library based on wlroots |
 | [wofi](https://hg.sr.ht/~scoopta/wofi) | 2019-08-17 18:34 -0700 | Wofi is a launcher/menu program for wlroots based wayland compositors such as sway |
 | [wtype](https://github.com/atx/wtype) | 2019-07-01 17:33:04 +0200 | xdotool type for wayland |
