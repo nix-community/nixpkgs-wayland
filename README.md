@@ -59,7 +59,7 @@ These packages were mostly recently built against:
 | [redshift-wayland](http://jonls.dk/redshift) | 2019-08-24 17:20:17 +0200 | Screen color temperature manager |
 | [rootbar](https://hg.sr.ht/~scoopta/rootbar) | 2019-03-18 10:47 -0700 | Root Bar is a bar for wlroots based wayland compositors such as sway and was designed to address the lack of good bars for wayland |
 | [slurp](https://github.com/emersion/slurp) | 2020-02-28 17:21:55 +0100 | Select a region in a Wayland compositor |
-| [sway](https://swaywm.org) | 2020-03-04 03:09:43 +0100 | i3-compatible tiling Wayland compositor |
+| [sway](https://swaywm.org) | 2020-03-06 23:57:43 +0100 | i3-compatible tiling Wayland compositor |
 | [swaybg](https://github.com/swaywm/swaybg) | 2019-08-09 08:03:44 +0900 | Wallpaper tool for Wayland compositors |
 | [swayidle](https://swaywm.org) | 2020-03-04 09:22:11 +0100 | Sway's idle management daemon |
 | [swaylock](https://swaywm.org) | 2020-03-06 15:21:24 +0100 | Screen locker for Wayland |
@@ -78,7 +78,7 @@ These packages were mostly recently built against:
 | [wldash](https://wldash.org) | 2020-02-29 00:11:49 +0100 | Wayland launcher/dashboard |
 | [wlogout](https://github.com/ArtsyMacaw/wlogout) | 2020-02-12 19:40:30 -0600 | A wayland based logout menu |
 | [wlr-randr](https://github.com/emersion/wlr-randr) | 2019-03-22 16:38:05 +0200 | An xrandr clone for wlroots compositors |
-| [wlroots](https://github.com/swaywm/wlroots) | 2020-03-04 10:02:31 +0100 | A modular Wayland compositor library |
+| [wlroots](https://github.com/swaywm/wlroots) | 2020-03-06 21:35:00 +0100 | A modular Wayland compositor library |
 | [wltrunk](https://git.sr.ht/~bl4ckb0ne/wltrunk) | 2019-11-10 16:09:56 -0500 (pinned) | High-level Wayland compositor library based on wlroots |
 | [wofi](https://hg.sr.ht/~scoopta/wofi) | 2019-08-17 18:34 -0700 | Wofi is a launcher/menu program for wlroots based wayland compositors such as sway |
 | [wtype](https://github.com/atx/wtype) | 2019-07-01 17:33:04 +0200 | xdotool type for wayland |
