@@ -59,7 +59,7 @@ These packages were mostly recently built against:
 | [redshift-wayland](http://jonls.dk/redshift) | 2019-08-24 17:20:17 +0200 | Screen color temperature manager |
 | [rootbar](https://hg.sr.ht/~scoopta/rootbar) | 2019-03-18 10:47 -0700 | Root Bar is a bar for wlroots based wayland compositors such as sway and was designed to address the lack of good bars for wayland |
 | [slurp](https://github.com/emersion/slurp) | 2020-02-28 17:21:55 +0100 | Select a region in a Wayland compositor |
-| [sway](https://swaywm.org) | 2020-03-12 18:02:09 +0100 | i3-compatible tiling Wayland compositor |
+| [sway](https://swaywm.org) | 2020-03-12 19:43:45 -0400 | i3-compatible tiling Wayland compositor |
 | [swaybg](https://github.com/swaywm/swaybg) | 2019-08-09 08:03:44 +0900 | Wallpaper tool for Wayland compositors |
 | [swayidle](https://swaywm.org) | 2020-03-04 09:22:11 +0100 | Sway's idle management daemon |
 | [swaylock](https://swaywm.org) | 2020-03-06 15:21:24 +0100 | Screen locker for Wayland |
