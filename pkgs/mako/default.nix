@@ -21,8 +21,10 @@ stdenv.mkDerivation rec {
 
   nativeBuildInputs = [ pkgconfig meson ninja ] ++ stdenv.lib.optional buildDocs scdoc;
   buildInputs = [ gtk3 cairo pango systemd wayland wayland-protocols ];
-  mesonFlags = [ "-Dauto_features=enabled" ]
-    ++ stdenv.lib.optional (!buildDocs) "-Dman-pages=disabled";
+  mesonFlags = [
+    "-Dauto_features=enabled"
+    "-Dsystemd=disabled"
+  ] ++ stdenv.lib.optional (!buildDocs) "-Dman-pages=disabled";
 
   enableParallelBuilding = true;
 
