@@ -51,6 +51,10 @@ waylandPkgs = rec {
   };
   neatvnc = pkgs.callPackage ./pkgs/neatvnc {};
   obs-studio = pkgs.libsForQt5.callPackage ./pkgs/obs-studio { ffmpeg = pkgs.ffmpeg_4; };
+  wlfreerdp = pkgs.callPackage ./pkgs/wlfreerdp {
+    inherit (pkgs) libpulseaudio;
+    inherit (pkgs.gst_all_1) gstreamer gst-plugins-base gst-plugins-good;
+  };
 
   # i3 related
   i3status-rust    = pkgs.callPackage ./pkgs/i3status-rust {};
