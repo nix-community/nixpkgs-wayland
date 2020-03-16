@@ -50,7 +50,7 @@ These packages were mostly recently built against:
 | [i3status-rust](https://github.com/greshake/i3status-rust) | 2020-03-11 16:26:58 -0400 | Very resource-friendly and feature-rich replacement for i3status |
 | [imv](https://github.com/eXeC64/imv) | 2019-12-21 22:54:26 +0000 (pinned) | A command line image viewer for tiling window managers |
 | [kanshi](https://github.com/emersion/kanshi) | 2020-02-22 21:24:07 +0100 | Dynamic display configuration |
-| [lavalauncher](https://git.sr.ht/~leon_plickat/lavalauncher) | 2020-03-16 13:04:47 +0000 | A simple launcher for Wayland. |
+| [lavalauncher](https://git.sr.ht/~leon_plickat/lavalauncher) | 2020-03-16 15:27:46 +0000 | A simple launcher for Wayland. |
 | [mako](https://wayland.emersion.fr/mako) | 2020-03-14 09:50:54 +0100 | A lightweight Wayland notification daemon |
 | [neatvnc](https://github.com/any1/neatvnc) | 2020-02-21 23:04:19 +0000 | liberally licensed VNC server library that's intended to be fast and neat |
 | [obs-studio](https://obsproject.com) | 2020-02-06 15:34:32 -0500 | Free and open source software for video recording and live streaming |
