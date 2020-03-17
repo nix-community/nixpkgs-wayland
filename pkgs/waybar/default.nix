@@ -4,12 +4,11 @@
 , libpulseaudio, libinput, libnl, gtkmm3
 , fmt, jsoncpp, libdbusmenu-gtk3
 , glib
-, git
 , spdlog
 , mpd_clientlib
 , gtk-layer-shell
 , coreutils
-, date
+, howard-hinnant-date
 }:
 
 let
@@ -26,17 +25,22 @@ stdenv.mkDerivation rec {
     sha256 = metadata.sha256;
   };
 
+  postPatch = ''
+      date="$(date -d '${metadata.revdate}' +'%b %d %Y')"
+      sed -i "s/\([ \t]\)version: '\(.*\)',/\1version: '\2-${stdenv.lib.substring 0 8 metadata.rev} ($date, branch \\\'${metadata.branch}\\\')',/" meson.build
+  '';
+
   nativeBuildInputs = [ meson ninja pkgconfig scdoc ];
   buildInputs = [
     wayland wayland-protocols sway wlroots
     libpulseaudio libinput libnl gtkmm3
-    git fmt jsoncpp libdbusmenu-gtk3
+    fmt jsoncpp libdbusmenu-gtk3
     glib
     spdlog
     mpd_clientlib
     gtk-layer-shell
     coreutils
-    date
+    howard-hinnant-date
   ];
   mesonFlags = [
     "-Dauto_features=enabled"
