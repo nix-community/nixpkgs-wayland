@@ -1,4 +1,4 @@
-{ stdenv, lib, fetchFromGitHub, makeWrapper
+{ stdenv, fetchFromGitHub, makeWrapper
 , meson, ninja
 , pkgconfig, scdoc
 , wayland, libxkbcommon, pcre, json_c, dbus, libevdev
@@ -26,7 +26,7 @@ stdenv.mkDerivation rec {
   postPatch = ''
     # replace the version
     date="$(date -d '${metadata.revdate}' +'%b %d %Y')"
-    sed -i "s/\([ \t]\)version: '\(.*\)',/\1version: '\2-${lib.substring 0 8 metadata.rev} ($date, branch \\\'${metadata.branch}\\\')',/" meson.build
+    sed -i "s/\([ \t]\)version: '\(.*\)',/\1version: '\2-${stdenv.lib.substring 0 8 metadata.rev} ($date, branch \\\'${metadata.branch}\\\')',/" meson.build
   '';
 
   nativeBuildInputs = [

@@ -42,7 +42,6 @@ waylandPkgs = rec {
 
   wlroots-tmp = pkgs.callPackage ./pkgs-temp/wlroots {};
   wlroots-0-9-x = pkgs.callPackage ./pkgs-temp/wlroots-0-9-x {};
-  date = pkgs.callPackage ./pkgs-temp/date {}; # used by waybar, but temp, upstream to nixpkgs
 
   # misc
   redshift-wayland = pkgs.callPackage ./pkgs/redshift-wayland {
