@@ -2,7 +2,7 @@
   repo_git = "https://github.com/nixos/nixpkgs";
   branch = "nixos-unstable";
   url = "https://github.com/nixos/nixpkgs/archive/nixos-unstable.tar.gz";
-  rev = "0729b8c55e0dfaf302af4c57546871d47a652048";
-  sha256 = "0warcibx94rn6rvm92rg8v91jf5ddy1j0dwlznwav3y99fcx8sjk";
-  revdate = "2020-03-13 22:05:33 +0100";
+  rev = "a2e06fc3423c4be53181b15c28dfbe0bcf67dd73";
+  sha256 = "0bjx4iq6nyhj47q5zkqsbfgng445xwprrslj1xrv56142jn8n5r9";
+  revdate = "2020-03-16 10:55:38 +0100";
 }
