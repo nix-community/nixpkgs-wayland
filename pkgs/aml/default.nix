@@ -5,19 +5,18 @@
 , libpthreadstubs, libdrm
 , pixman, libuv, libglvnd
 , gnutls
-, aml
 }:
 
 let
   metadata = import ./metadata.nix;
 in
 stdenv.mkDerivation rec {
-  name = "neatvnc-${version}";
+  name = "aml-${version}";
   version = metadata.rev;
 
   src = fetchFromGitHub {
     owner = "any1";
-    repo = "neatvnc";
+    repo = "aml";
     rev = metadata.rev;
     sha256 = metadata.sha256;
   };
@@ -29,7 +28,6 @@ stdenv.mkDerivation rec {
     libpthreadstubs libdrm
     pixman libuv libglvnd
     gnutls
-    aml
   ];
 
   enableParallelBuilding = true;

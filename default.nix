@@ -48,6 +48,7 @@ waylandPkgs = rec {
     inherit (pkgs.python3Packages) python pygobject3 pyxdg wrapPython;
     geoclue = pkgs.geoclue2;
   };
+  aml = pkgs.callPackage ./pkgs/aml {};
   neatvnc = pkgs.callPackage ./pkgs/neatvnc {};
   obs-studio = pkgs.libsForQt5.callPackage ./pkgs/obs-studio { ffmpeg = pkgs.ffmpeg_4; };
   wlfreerdp = pkgs.callPackage ./pkgs/wlfreerdp {

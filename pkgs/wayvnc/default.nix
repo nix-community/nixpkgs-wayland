@@ -5,6 +5,7 @@
 , libpthreadstubs
 , pixman, libuv, libglvnd
 , neatvnc, libX11, libdrm
+, aml
 }:
 
 let
@@ -28,6 +29,7 @@ stdenv.mkDerivation rec {
     libpthreadstubs
     pixman libuv libglvnd
     neatvnc libX11 libdrm
+    aml
   ];
 
   enableParallelBuilding = true;
