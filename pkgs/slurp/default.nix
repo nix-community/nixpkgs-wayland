@@ -2,6 +2,7 @@
 , meson, ninja, pkgconfig
 , cairo, wayland, wayland-protocols
 , scdoc, buildDocs ? true
+, libxkbcommon
 }:
 
 let
@@ -21,6 +22,7 @@ stdenv.mkDerivation rec {
   nativeBuildInputs = [ pkgconfig meson ninja ] ++ stdenv.lib.optional buildDocs scdoc;
   buildInputs = [
     cairo wayland wayland-protocols
+    libxkbcommon
   ];
   mesonFlags = [
     "-Dauto_features=enabled"
