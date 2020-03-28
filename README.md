@@ -31,7 +31,7 @@ These packages were mostly recently built against:
 <!--nixpkgs-->
 | Channel | Last Channel Commit Time |
 | ------- | ------------------------ |
-| nixos-unstable | 2020-03-19 15:32:34 +0100 |
+| nixos-unstable | 2020-03-26 20:57:21 -0400 |
 <!--nixpkgs-->
 
 ## Packages
@@ -52,7 +52,7 @@ These packages were mostly recently built against:
 | [imv](https://github.com/eXeC64/imv) | 2019-12-21 22:54:26 +0000 (pinned) | A command line image viewer for tiling window managers |
 | [kanshi](https://github.com/emersion/kanshi) | 2020-02-22 21:24:07 +0100 | Dynamic display configuration |
 | [lavalauncher](https://git.sr.ht/~leon_plickat/lavalauncher) | 2020-03-19 00:00:41 +0000 | A simple launcher for Wayland. |
-| [mako](https://wayland.emersion.fr/mako) | 2020-03-23 19:11:19 +0100 | A lightweight Wayland notification daemon |
+| [mako](https://wayland.emersion.fr/mako) | 2020-03-27 21:31:31 +0100 | A lightweight Wayland notification daemon |
 | [neatvnc](https://github.com/any1/neatvnc) | 2020-03-24 19:15:27 +0000 | liberally licensed VNC server library that's intended to be fast and neat |
 | [obs-studio](https://obsproject.com) | 2020-02-06 15:34:32 -0500 | Free and open source software for video recording and live streaming |
 | [obs-wlrobs](https://sr.ht/~scoopta/wlrobs) | 2019-03-16 15:06 -0700 | wlrobs is an obs-studio plugin that allows you to screen capture on wlroots based wayland compositors |
@@ -60,13 +60,13 @@ These packages were mostly recently built against:
 | [redshift-wayland](http://jonls.dk/redshift) | 2019-08-24 17:20:17 +0200 | Screen color temperature manager |
 | [rootbar](https://hg.sr.ht/~scoopta/rootbar) | 2019-03-18 10:47 -0700 | Root Bar is a bar for wlroots based wayland compositors such as sway and was designed to address the lack of good bars for wayland |
 | [slurp](https://github.com/emersion/slurp) | 2020-03-25 16:56:48 +0100 | Select a region in a Wayland compositor |
-| [sway](https://swaywm.org) | 2020-03-24 16:07:12 +0100 | i3-compatible tiling Wayland compositor |
+| [sway](https://swaywm.org) | 2020-03-27 21:32:26 +0100 | i3-compatible tiling Wayland compositor |
 | [swaybg](https://github.com/swaywm/swaybg) | 2019-08-09 08:03:44 +0900 | Wallpaper tool for Wayland compositors |
 | [swayidle](https://swaywm.org) | 2020-03-04 09:22:11 +0100 | Sway's idle management daemon |
 | [swaylock](https://swaywm.org) | 2020-03-06 15:21:24 +0100 | Screen locker for Wayland |
-| [waybar](https://github.com/Alexays/Waybar) | 2020-03-25 22:53:09 +0100 | Highly customizable Wayland Polybar like bar for Sway and Wlroots based compositors. |
+| [waybar](https://github.com/Alexays/Waybar) | 2020-03-26 09:18:47 +0100 | Highly customizable Wayland Polybar like bar for Sway and Wlroots based compositors. |
 | [waybox](https://github.com/wizbright/waybox) | 2020-03-11 08:32:50 -0400 | An openbox clone on Wayland (WIP) |
-| [wayfire](https://wayfire.org/) | 2020-03-25 15:19:38 +0100 | 3D wayland compositor |
+| [wayfire](https://wayfire.org/) | 2020-03-26 21:08:06 +0100 | 3D wayland compositor |
 | [waypipe](https://gitlab.freedesktop.org/mstoeckl/waypipe/) | 2020-03-17 18:18:22 -0400 | Network transparency with Wayland |
 | [wayvnc](https://github.com/any1/wayvnc) | 2020-03-22 20:29:13 +0000 |  |
 | [wdisplays](https://github.com/cyclopsian/wdisplays) | 2020-03-14 21:50:10 -0400 | GUI display configurator for wlroots compositors |
@@ -77,7 +77,7 @@ These packages were mostly recently built against:
 | [wl-gammactl](https://github.com/mischw/wl-gammactl) | 2020-02-16 14:53:36 +0200 | Small GTK GUI application to set contrast, brightness and gamma for wayland compositors which support the wlr-gamma-control protocol extension. |
 | [wlay](https://github.com/atx/wlay) | 2019-07-04 19:03:15 +0200 | Graphical output management for Wayland |
 | [wldash](https://wldash.org) | 2020-02-29 00:11:49 +0100 | Wayland launcher/dashboard |
-| [wlfreerdp](http://www.freerdp.com/) | 2020-03-24 12:34:35 +0100 | A Remote Desktop Protocol Client |
+| [wlfreerdp](http://www.freerdp.com/) | 2020-03-27 14:16:18 +0100 | A Remote Desktop Protocol Client |
 | [wlogout](https://github.com/ArtsyMacaw/wlogout) | 2020-03-14 00:34:47 -0500 | A wayland based logout menu |
 | [wlr-randr](https://github.com/emersion/wlr-randr) | 2019-03-22 16:38:05 +0200 | An xrandr clone for wlroots compositors |
 | [wlroots](https://github.com/swaywm/wlroots) | 2020-03-25 20:36:12 +0100 | A modular Wayland compositor library |
