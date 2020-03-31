@@ -62,11 +62,11 @@ These packages were mostly recently built against:
 | [slurp](https://github.com/emersion/slurp) | 2020-03-30 16:54:32 +0200 | Select a region in a Wayland compositor |
 | [sway](https://swaywm.org) | 2020-03-30 17:45:05 +0200 | i3-compatible tiling Wayland compositor |
 | [swaybg](https://github.com/swaywm/swaybg) | 2019-08-09 08:03:44 +0900 | Wallpaper tool for Wayland compositors |
-| [swayidle](https://swaywm.org) | 2020-03-04 09:22:11 +0100 | Sway's idle management daemon |
+| [swayidle](https://swaywm.org) | 2020-03-31 15:53:59 +0200 | Sway's idle management daemon |
 | [swaylock](https://swaywm.org) | 2020-03-29 21:00:33 +0200 | Screen locker for Wayland |
 | [waybar](https://github.com/Alexays/Waybar) | 2020-03-30 10:36:24 +0200 | Highly customizable Wayland Polybar like bar for Sway and Wlroots based compositors. |
 | [waybox](https://github.com/wizbright/waybox) | 2020-03-11 08:32:50 -0400 | An openbox clone on Wayland (WIP) |
-| [wayfire](https://wayfire.org/) | 2020-03-28 11:30:09 +0100 | 3D wayland compositor |
+| [wayfire](https://wayfire.org/) | 2020-03-31 15:22:16 +0200 | 3D wayland compositor |
 | [waypipe](https://gitlab.freedesktop.org/mstoeckl/waypipe/) | 2020-03-29 17:47:35 -0400 | Network transparency with Wayland |
 | [wayvnc](https://github.com/any1/wayvnc) | 2020-03-29 13:09:28 +0000 |  |
 | [wdisplays](https://github.com/cyclopsian/wdisplays) | 2020-03-14 21:50:10 -0400 | GUI display configurator for wlroots compositors |
