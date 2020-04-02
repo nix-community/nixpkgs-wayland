@@ -50,8 +50,8 @@ These packages were mostly recently built against:
 | [gtk-layer-shell](https://github.com/wmww/gtk-layer-shell) | 2020-01-03 14:52:01 -0500 | A library to create panels and other desktop components for Wayland using the Layer Shell protocol |
 | [i3status-rust](https://github.com/greshake/i3status-rust) | 2020-03-11 16:26:58 -0400 | Very resource-friendly and feature-rich replacement for i3status |
 | [imv](https://github.com/eXeC64/imv) | 2019-12-21 22:54:26 +0000 (pinned) | A command line image viewer for tiling window managers |
-| [kanshi](https://github.com/emersion/kanshi) | 2020-04-02 11:05:06 +0200 | Dynamic display configuration |
-| [lavalauncher](https://git.sr.ht/~leon_plickat/lavalauncher) | 2020-04-02 03:39:13 +0200 | A simple launcher for Wayland. |
+| [kanshi](https://github.com/emersion/kanshi) | 2020-04-02 23:22:55 +0200 | Dynamic display configuration |
+| [lavalauncher](https://git.sr.ht/~leon_plickat/lavalauncher) | 2020-04-02 17:59:14 +0200 | A simple launcher for Wayland. |
 | [mako](https://wayland.emersion.fr/mako) | 2020-03-30 19:33:21 +0200 | A lightweight Wayland notification daemon |
 | [neatvnc](https://github.com/any1/neatvnc) | 2020-04-01 22:53:22 +0000 | liberally licensed VNC server library that's intended to be fast and neat |
 | [obs-studio](https://obsproject.com) | 2020-02-06 15:34:32 -0500 | Free and open source software for video recording and live streaming |
@@ -60,15 +60,15 @@ These packages were mostly recently built against:
 | [redshift-wayland](http://jonls.dk/redshift) | 2019-08-24 17:20:17 +0200 | Screen color temperature manager |
 | [rootbar](https://hg.sr.ht/~scoopta/rootbar) | 2019-03-18 10:47 -0700 | Root Bar is a bar for wlroots based wayland compositors such as sway and was designed to address the lack of good bars for wayland |
 | [slurp](https://github.com/emersion/slurp) | 2020-03-30 16:54:32 +0200 | Select a region in a Wayland compositor |
-| [sway](https://swaywm.org) | 2020-03-30 17:45:05 +0200 | i3-compatible tiling Wayland compositor |
+| [sway](https://swaywm.org) | 2020-04-02 23:27:57 +0200 | i3-compatible tiling Wayland compositor |
 | [swaybg](https://github.com/swaywm/swaybg) | 2019-08-09 08:03:44 +0900 | Wallpaper tool for Wayland compositors |
 | [swayidle](https://swaywm.org) | 2020-03-31 17:14:30 +0200 | Sway's idle management daemon |
 | [swaylock](https://swaywm.org) | 2020-03-29 21:00:33 +0200 | Screen locker for Wayland |
 | [waybar](https://github.com/Alexays/Waybar) | 2020-03-30 10:36:24 +0200 | Highly customizable Wayland Polybar like bar for Sway and Wlroots based compositors. |
 | [waybox](https://github.com/wizbright/waybox) | 2020-03-11 08:32:50 -0400 | An openbox clone on Wayland (WIP) |
-| [wayfire](https://wayfire.org/) | 2020-04-02 12:25:34 +0200 | 3D wayland compositor |
+| [wayfire](https://wayfire.org/) | 2020-04-02 23:33:16 +0200 | 3D wayland compositor |
 | [waypipe](https://gitlab.freedesktop.org/mstoeckl/waypipe/) | 2020-03-29 17:47:35 -0400 | Network transparency with Wayland |
-| [wayvnc](https://github.com/any1/wayvnc) | 2020-04-02 00:55:18 +0000 |  |
+| [wayvnc](https://github.com/any1/wayvnc) | 2020-04-02 20:49:12 +0000 |  |
 | [wdisplays](https://github.com/cyclopsian/wdisplays) | 2020-03-14 21:50:10 -0400 | GUI display configurator for wlroots compositors |
 | [wev](https://git.sr.ht/~sircmpwn/wev) | 2020-02-06 12:48:08 -0500 | A tool for debugging events on a Wayland window, analagous to the X11 tool xev. |
 | [wf-config](https://github.com/WayfireWM/wf-config) | 2020-03-22 13:34:13 +0100 | A library for managing configuration files, written for wayfire |
@@ -80,7 +80,7 @@ These packages were mostly recently built against:
 | [wlfreerdp](http://www.freerdp.com/) | 2020-04-02 08:41:47 +0200 | A Remote Desktop Protocol Client |
 | [wlogout](https://github.com/ArtsyMacaw/wlogout) | 2020-03-14 00:34:47 -0500 | A wayland based logout menu |
 | [wlr-randr](https://github.com/emersion/wlr-randr) | 2019-03-22 16:38:05 +0200 | An xrandr clone for wlroots compositors |
-| [wlroots](https://github.com/swaywm/wlroots) | 2020-03-29 20:57:28 +0200 | A modular Wayland compositor library |
+| [wlroots](https://github.com/swaywm/wlroots) | 2020-04-02 15:03:43 +0200 | A modular Wayland compositor library |
 | [wltrunk](https://git.sr.ht/~bl4ckb0ne/wltrunk) | 2019-11-10 16:09:56 -0500 (pinned) | High-level Wayland compositor library based on wlroots |
 | [wofi](https://hg.sr.ht/~scoopta/wofi) | 2019-08-17 18:34 -0700 | Wofi is a launcher/menu program for wlroots based wayland compositors such as sway |
 | [wtype](https://github.com/atx/wtype) | 2019-07-01 17:33:04 +0200 | xdotool type for wayland |
