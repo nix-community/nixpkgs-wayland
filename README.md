@@ -50,7 +50,7 @@ These packages were mostly recently built against:
 | [gtk-layer-shell](https://github.com/wmww/gtk-layer-shell) | 2020-01-03 14:52:01 -0500 | A library to create panels and other desktop components for Wayland using the Layer Shell protocol |
 | [i3status-rust](https://github.com/greshake/i3status-rust) | 2020-03-11 16:26:58 -0400 | Very resource-friendly and feature-rich replacement for i3status |
 | [imv](https://github.com/eXeC64/imv) | 2019-12-21 22:54:26 +0000 (pinned) | A command line image viewer for tiling window managers |
-| [kanshi](https://github.com/emersion/kanshi) | 2020-03-30 15:45:31 +0200 | Dynamic display configuration |
+| [kanshi](https://github.com/emersion/kanshi) | 2020-04-02 11:05:06 +0200 | Dynamic display configuration |
 | [lavalauncher](https://git.sr.ht/~leon_plickat/lavalauncher) | 2020-04-02 03:39:13 +0200 | A simple launcher for Wayland. |
 | [mako](https://wayland.emersion.fr/mako) | 2020-03-30 19:33:21 +0200 | A lightweight Wayland notification daemon |
 | [neatvnc](https://github.com/any1/neatvnc) | 2020-04-01 22:53:22 +0000 | liberally licensed VNC server library that's intended to be fast and neat |
