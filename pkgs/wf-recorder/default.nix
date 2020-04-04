@@ -13,7 +13,7 @@ stdenv.mkDerivation rec {
   version = metadata.rev;
 
   src = fetchFromGitHub {
-    owner = "ammen99";
+    owner = "any1";
     repo = pname;
     inherit (metadata) rev sha256;
   };
