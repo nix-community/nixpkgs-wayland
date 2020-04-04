@@ -5,7 +5,7 @@
 , libpthreadstubs, libdrm
 , pixman, libuv, libglvnd
 , gnutls
-, aml
+, aml, libjpeg_turbo
 }:
 
 let
@@ -29,7 +29,7 @@ stdenv.mkDerivation rec {
     libpthreadstubs libdrm
     pixman libuv libglvnd
     gnutls
-    aml
+    aml libjpeg_turbo
   ];
 
   enableParallelBuilding = true;
