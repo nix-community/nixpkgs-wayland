@@ -1,7 +1,7 @@
 {
-  repo_git = "https://github.com/cyclopsian/obs-studio";
-  branch = "wayland";
-  rev = "6de8acd932e26f4bf5655969d7f832c1560f3633";
-  sha256 = "0yg3zzpvh9i449qp19ca43ickw4m8jlakf8n6a10ascagwmzas6v";
-  revdate = "2020-02-06 15:34:32 -0500";
+  repo_git = "https://github.com/GeorgesStavracas/obs-studio";
+  branch = "feaneron/egl-wayland";
+  rev = "ddaed2cf0e5af7f05f17a588a8409d8f42fb6668";
+  sha256 = "0r83iwfn02pzqhngn4gqqdnb5ng61lia56sn8lcx6l99whhw44mi";
+  revdate = "2020-03-12 22:05:42 -0300";
 }

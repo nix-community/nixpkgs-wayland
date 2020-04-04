@@ -36,16 +36,17 @@
 }:
 
 let
+  metadata = import ./metadata.nix;
   inherit (stdenv.lib) optional optionals;
 in mkDerivation rec {
   pname = "obs-studio";
   version = "unstable-wayland-latest";
 
   src = fetchFromGitHub {
-    owner = "cyclopsian";
+    owner = "GeorgesStavracas";
     repo = "obs-studio";
-    rev = "wayland";
-    sha256 = "0yg3zzpvh9i449qp19ca43ickw4m8jlakf8n6a10ascagwmzas6v";
+    rev = metadata.rev;
+    sha256 = metadata.sha256;
   };
 
 #  patches = (fetchpatch { url = "https://github.com/obsproject/obs-studio/pull/2097.patch"; sha256 = "18sws0v39vg10fyp3i267wv9n0rimjkx7byk48v7r97vgck1k63h"; });
