@@ -53,7 +53,7 @@ These packages were mostly recently built against:
 | [kanshi](https://github.com/emersion/kanshi) | 2020-04-02 23:22:55 +0200 | Dynamic display configuration |
 | [lavalauncher](https://git.sr.ht/~leon_plickat/lavalauncher) | 2020-04-04 20:33:50 +0200 | A simple launcher for Wayland. |
 | [mako](https://wayland.emersion.fr/mako) | 2020-03-30 19:33:21 +0200 | A lightweight Wayland notification daemon |
-| [neatvnc](https://github.com/any1/neatvnc) | 2020-04-04 22:26:00 +0000 | liberally licensed VNC server library that's intended to be fast and neat |
+| [neatvnc](https://github.com/any1/neatvnc) | 2020-04-06 00:01:32 +0000 | liberally licensed VNC server library that's intended to be fast and neat |
 | [obs-studio](https://obsproject.com) | 2020-03-12 22:05:42 -0300 | Free and open source software for video recording and live streaming |
 | [obs-wlrobs](https://sr.ht/~scoopta/wlrobs) | 2019-03-16 15:06 -0700 | wlrobs is an obs-studio plugin that allows you to screen capture on wlroots based wayland compositors |
 | [oguri](https://github.com/vilhalmer/oguri) | 2020-02-23 17:54:07 -0500 | A very nice animated wallpaper tool for Wayland compositors |
