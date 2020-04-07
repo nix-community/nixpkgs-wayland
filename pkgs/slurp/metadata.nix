@@ -1,7 +1,7 @@
 {
   repo_git = "https://github.com/emersion/slurp";
   branch = "master";
-  rev = "9b239ee460f04c26b5eebb4526bf1c3f08de3d2c";
-  sha256 = "02rs1cykzn92frg67xyp5qph9wankcfn6arbsbw9lcaw0j3ycvj7";
-  revdate = "2020-03-30 16:54:32 +0200";
+  rev = "8d2117ca905c178947aabde5acc5e721f09a8073";
+  sha256 = "1mrxfhsa5ab335xc03vikxxd7p8w8sqamfpm8wvwdlz12805fzdx";
+  revdate = "2020-04-07 13:07:29 +0200";
 }
