@@ -1,7 +1,7 @@
 {
   repo_git = "https://github.com/any1/aml";
   branch = "master";
-  rev = "b9a971a6b53d5978e2c6c39d7444954519e8b285";
-  sha256 = "1jnzya0avppg6cs84wg0rr7bga4w75xdl2i83zlb59wx7pv44ydj";
-  revdate = "2020-03-23 19:58:12 +0000";
+  rev = "55524e642c67cd384ccba6669f279bf3dc7aa712";
+  sha256 = "0lxnx1wj7192y4b8l1j4sahrxp54b1gnxdhrpxwm2g8gd0yqzy9b";
+  revdate = "2020-04-07 23:35:15 +0000";
 }
