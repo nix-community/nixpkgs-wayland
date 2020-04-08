@@ -12,6 +12,8 @@ build_attr="${1:-"waylandPkgs"}"
 
 up=0 # updated_performed # up=$(( $up + 1 ))
 
+export NIX_PATH="nixpkgs=https://github.com/nixos/nixpkgs/archive/nixos-unstable.tar.gz"
+
 function update() {
   typ="${1}"
   pkg="${2}"
@@ -19,30 +21,31 @@ function update() {
   metadata="${pkg}/metadata.nix"
   pkgname="$(basename "${pkg}")"
 
-  branch="$(nix eval --raw -f "${metadata}" branch)"
-  rev="$(nix eval --raw -f "${metadata}" rev)"
-  date="$(nix eval --raw -f "${metadata}" revdate)"
-  sha256="$(nix eval --raw -f "${metadata}" sha256)"
-  upattr="$(nix eval --raw -f "${metadata}" upattr || echo "${pkgname}")"
-  skip="$(nix eval -f "${metadata}" skip || true)"
+  branch="$(nix-instantiate "${metadata}" --eval --json -A branch | jq -r .)"
+  rev="$(nix-instantiate "${metadata}" --eval --json -A rev | jq -r .)"
+  date="$(nix-instantiate "${metadata}" --eval --json -A revdate | jq -r .)"
+  sha256="$(nix-instantiate "${metadata}" --eval --json -A sha256 | jq -r .)"
+  upattr="$(nix-instantiate "${metadata}" --eval --json -A upattr || echo "\"${pkgname}\"" | jq -r .)"
+  url="$(nix-instantiate "${metadata}" --eval --json -A url || echo "\"\"" | jq -r .)"
+  skip="$(nix-instantiate "${metadata}" --eval --json -A skip || echo "false" | jq -r .)"
 
   newdate="${date}"
   if [[ "${skip}" != "true" ]]; then
     # Determine RepoTyp (git/hg)
-    if   nix eval --raw -f "${metadata}" repo_git; then repotyp="git";
-    elif nix eval --raw -f "${metadata}" repo_hg;  then repotyp="hg";
+    if   nix-instantiate "${metadata}" --eval --json -A repo_git; then repotyp="git";
+    elif nix-instantiate "${metadata}" --eval --json -A repo_hg; then repotyp="hg";
     else echo "unknown repo_typ" && exit -1;
     fi
 
     # Update Rev
     if [[ "${repotyp}" == "git" ]]; then
-      repo="$(nix eval --raw -f "${metadata}" repo_git)"
+      repo="$(nix-instantiate "${metadata}" --eval --json -A repo_git | jq -r .)"
       newrev="$(git ls-remote "${repo}" "${branch}" | awk '{ print $1}')"
     elif [[ "${repotyp}" == "hg" ]]; then
-      repo="$(nix eval --raw -f "${metadata}" repo_hg)"
+      repo="$(nix-instantiate "${metadata}" --eval --json -A repo_hg | jq -r .)"
       newrev="$(hg identify "${repo}" -r "${branch}")"
     fi
-    
+
     if [[ "${rev}" != "${newrev}" ]]; then
       up=$(( $up + 1 ))
 
@@ -58,18 +61,12 @@ function update() {
       rm -rf "${d}"
 
       # Update Sha256
-      # TODO: nix-prefetch without NIX_PATH?
       if [[ "${typ}" == "pkgs" ]]; then
-        newsha256="$(NIX_PATH=nixpkgs=https://github.com/nixos/nixpkgs/archive/nixos-unstable.tar.gz \
-          nix-prefetch \
+        newsha256="$(nix-prefetch --output raw \
             -E "(import ./build.nix).${upattr}" \
-            --rev "${newrev}" \
-            --output raw)"
+            --rev "${newrev}")"
       elif [[ "${typ}" == "nixpkgs" ]]; then
-        # TODO: why can't nix-prefetch handle this???
-        url="$(nix eval --raw -f "${metadata}" url)"
-        newsha256="$(NIX_PATH=nixpkgs=https://github.com/nixos/nixpkgs/archive/nixos-unstable.tar.gz \
-          nix-prefetch-url --unpack "${url}")"
+        newsha256="$(nix-prefetch-url --unpack "${url}")"
       fi
 
       # TODO: do this with nix instead of sed?
@@ -83,6 +80,7 @@ function update() {
     newdate="${newdate} (pinned)"
   fi
   if [[ "${typ}" == "pkgs" ]]; then
+    # TODO: Remove usage of Nix CLI v2
     desc="$(nix eval --raw "(import ./build.nix).${upattr}.meta.description")"
     home="$(nix eval --raw "(import ./build.nix).${upattr}.meta.homepage")"
     pkgentries=("${pkgentries[@]}" "| [${pkgname}](${home}) | ${newdate} | ${desc} |");
