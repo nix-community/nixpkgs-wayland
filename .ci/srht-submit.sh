@@ -17,7 +17,7 @@ fi
 
 DATA="$(mktemp)"
 MANIFEST="$(jq -aRs . <"${DIR}/srht-job.yaml")"
-echo "{ \"manifest\": ${MANIFEST} }" > "${DATA}"
+echo "{ \"tags\": [ \"nixpkgs-wayland\" ], \"manifest\": ${MANIFEST} }" > "${DATA}"
 
 curl \
   -H "Authorization:token ${TOKEN}" \
