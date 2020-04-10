@@ -10,6 +10,7 @@ pkgs. stdenv.mkDerivation {
     cacert
     curl
     git
+    jq
     mercurial
     nix
     nix-prefetch
