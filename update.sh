@@ -25,9 +25,9 @@ function update() {
   rev="$(nix-instantiate "${metadata}" --eval --json -A rev | jq -r .)"
   date="$(nix-instantiate "${metadata}" --eval --json -A revdate | jq -r .)"
   sha256="$(nix-instantiate "${metadata}" --eval --json -A sha256 | jq -r .)"
-  upattr="$(nix-instantiate "${metadata}" --eval --json -A upattr || echo "\"${pkgname}\"" | jq -r .)"
-  url="$(nix-instantiate "${metadata}" --eval --json -A url || echo "\"\"" | jq -r .)"
-  skip="$(nix-instantiate "${metadata}" --eval --json -A skip || echo "false" | jq -r .)"
+  upattr="$(nix-instantiate "${metadata}" --eval --json -A upattr | jq -r . || echo "\"${pkgname}\"" | jq -r .)"
+  url="$(nix-instantiate "${metadata}" --eval --json -A url | jq -r . || echo "\"\"" | jq -r .)"
+  skip="$(nix-instantiate "${metadata}" --eval --json -A skip | jq -r . || echo "false" | jq -r .)"
 
   newdate="${date}"
   if [[ "${skip}" != "true" ]]; then
