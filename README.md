@@ -56,7 +56,7 @@ These packages were mostly recently built against:
 | [lavalauncher](https://git.sr.ht/~leon_plickat/lavalauncher) | 2020-04-12 01:22:08 +0200 | A simple launcher for Wayland. |
 | [mako](https://wayland.emersion.fr/mako) | 2020-04-10 10:25:39 +0200 | A lightweight Wayland notification daemon |
 | [neatvnc](https://github.com/any1/neatvnc) | 2020-04-10 12:40:57 +0000 | liberally licensed VNC server library that's intended to be fast and neat |
-| [obs-studio](https://obsproject.com) | 2020-04-09 00:11:26 -0300 | Free and open source software for video recording and live streaming |
+| [obs-studio](https://obsproject.com) | 2020-04-12 00:22:34 -0300 | Free and open source software for video recording and live streaming |
 | [obs-wlrobs](https://sr.ht/~scoopta/wlrobs) | 2019-03-16 15:06 -0700 | wlrobs is an obs-studio plugin that allows you to screen capture on wlroots based wayland compositors |
 | [oguri](https://github.com/vilhalmer/oguri) | 2020-02-23 17:54:07 -0500 | A very nice animated wallpaper tool for Wayland compositors |
 | [redshift-wayland](http://jonls.dk/redshift) | 2019-08-24 17:20:17 +0200 | Screen color temperature manager |
