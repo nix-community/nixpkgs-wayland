@@ -3,7 +3,7 @@
   #branch = "master";
   repo_git = "https://github.com/any1/wf-recorder";
   branch = "screencopy-damage";
-  rev = "5c277aa7d2c218eb1330f777957175c555b2c985";
-  sha256 = "1ys75qhvkjzk269s6iphiwwhhczap66icmyh3j6wnynx4vdgp3rq";
-  revdate = "2020-04-04 18:51:42 +0000";
+  rev = "be6c1a310cdc0a23cb51c7e3a386e774848d5a89";
+  sha256 = "0hnvdn991irbchwp7f9dyg1sksvc2li7134rqk546fapri2v9qsm";
+  revdate = "2020-04-12 12:58:02 +0000";
 }
