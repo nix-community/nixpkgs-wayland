@@ -53,7 +53,7 @@ These packages were mostly recently built against:
 | [i3status-rust](https://github.com/greshake/i3status-rust) | 2020-03-11 16:26:58 -0400 | Very resource-friendly and feature-rich replacement for i3status |
 | [imv](https://github.com/eXeC64/imv) | 2019-12-21 22:54:26 +0000 (pinned) | A command line image viewer for tiling window managers |
 | [kanshi](https://github.com/emersion/kanshi) | 2020-04-02 23:22:55 +0200 | Dynamic display configuration |
-| [lavalauncher](https://git.sr.ht/~leon_plickat/lavalauncher) | 2020-04-15 12:06:14 +0200 | A simple launcher for Wayland. |
+| [lavalauncher](https://git.sr.ht/~leon_plickat/lavalauncher) | 2020-04-15 13:52:18 +0200 | A simple launcher for Wayland. |
 | [mako](https://wayland.emersion.fr/mako) | 2020-04-10 10:25:39 +0200 | A lightweight Wayland notification daemon |
 | [neatvnc](https://github.com/any1/neatvnc) | 2020-04-12 18:16:19 +0000 | liberally licensed VNC server library that's intended to be fast and neat |
 | [obs-studio](https://obsproject.com) | 2020-04-12 00:22:34 -0300 | Free and open source software for video recording and live streaming |
@@ -62,7 +62,7 @@ These packages were mostly recently built against:
 | [redshift-wayland](http://jonls.dk/redshift) | 2019-08-24 17:20:17 +0200 | Screen color temperature manager |
 | [rootbar](https://hg.sr.ht/~scoopta/rootbar) | 2019-03-18 10:47 -0700 | Root Bar is a bar for wlroots based wayland compositors such as sway and was designed to address the lack of good bars for wayland |
 | [slurp](https://github.com/emersion/slurp) | 2020-04-07 13:07:29 +0200 | Select a region in a Wayland compositor |
-| [sway](https://swaywm.org) | 2020-04-14 19:41:30 -0400 | i3-compatible tiling Wayland compositor |
+| [sway](https://swaywm.org) | 2020-04-15 13:40:38 +0200 | i3-compatible tiling Wayland compositor |
 | [swaybg](https://github.com/swaywm/swaybg) | 2019-08-09 08:03:44 +0900 | Wallpaper tool for Wayland compositors |
 | [swayidle](https://swaywm.org) | 2020-03-31 17:14:30 +0200 | Sway's idle management daemon |
 | [swaylock](https://swaywm.org) | 2020-03-29 21:00:33 +0200 | Screen locker for Wayland |
@@ -79,7 +79,7 @@ These packages were mostly recently built against:
 | [wl-gammactl](https://github.com/mischw/wl-gammactl) | 2020-02-16 14:53:36 +0200 | Small GTK GUI application to set contrast, brightness and gamma for wayland compositors which support the wlr-gamma-control protocol extension. |
 | [wlay](https://github.com/atx/wlay) | 2019-07-04 19:03:15 +0200 | Graphical output management for Wayland |
 | [wldash](https://wldash.org) | 2020-03-28 02:22:50 +0100 | Wayland launcher/dashboard |
-| [wlfreerdp](http://www.freerdp.com/) | 2020-04-15 11:51:37 +0200 | A Remote Desktop Protocol Client |
+| [wlfreerdp](http://www.freerdp.com/) | 2020-04-15 13:25:52 +0200 | A Remote Desktop Protocol Client |
 | [wlogout](https://github.com/ArtsyMacaw/wlogout) | 2020-03-14 00:34:47 -0500 | A wayland based logout menu |
 | [wlr-randr](https://github.com/emersion/wlr-randr) | 2020-04-08 10:59:57 +0200 | An xrandr clone for wlroots compositors |
 | [wlroots](https://github.com/swaywm/wlroots) | 2020-04-15 12:40:20 +0200 | A modular Wayland compositor library |
