@@ -36,7 +36,7 @@ waylandPkgs = rec {
   wlr-randr        = pkgs.callPackage ./pkgs/wlr-randr {};
   wofi             = pkgs.callPackage ./pkgs/wofi {};
   wtype            = pkgs.callPackage ./pkgs/wtype {};
-  #xdg-desktop-portal-wlr = pkgs.callPackage ./pkgs/xdg-desktop-portal-wlr {};
+  xdg-desktop-portal-wlr = pkgs.callPackage ./pkgs/xdg-desktop-portal-wlr {};
 
   gtk-layer-shell = pkgs.callPackage ./pkgs/gtk-layer-shell {};
   clipman = pkgs.callPackage ./pkgs/clipman {};
