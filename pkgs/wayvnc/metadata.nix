@@ -1,7 +1,7 @@
 {
   repo_git = "https://github.com/any1/wayvnc";
   branch = "master";
-  rev = "6becbacbe5780898b998263a924bec015f9d8a2b";
-  sha256 = "18kw9ra8a34cb966gvl88x6c3kzva5rmzqzv44n7l69cvb1zn0xj";
-  revdate = "2020-04-12 21:46:48 +0000";
+  rev = "52b2d2cad9aca84bedb8833fd9c964ad1483592b";
+  sha256 = "034m2qxgvjknkhh5s0zs4r789x4y46irjf9axbj6sxi6z0qydmh0";
+  revdate = "2020-04-17 23:30:33 +0000";
 }
