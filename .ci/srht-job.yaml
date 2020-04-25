@@ -12,7 +12,7 @@ tasks:
       nix-shell --pure --command "./.ci/prep.sh"
   - update: |
       cd nixpkgs-wayland
-      nix-shell --pure --command "./update.sh"
+      nix-shell --pure --command "CI_BUILD=sr.ht ./update.sh"
   - push: |
       cd nixpkgs-wayland
       nix-shell --pure --command "./.ci/push.sh"

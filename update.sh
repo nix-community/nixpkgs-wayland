@@ -126,7 +126,7 @@ done
 
 if [[ "${CI_BUILD:-}" == "sr.ht" ]]; then
   echo "updated packages: ${up}" &>/dev/stderr
-  if $(( ${up} <= 0 )); then
+  if (( ${up} <= 0 )); then
     echo "refusing to proceed, no packages were updated." &>/dev/stderr
     # This prevents an unnecessary re-download of Nix deps when there's no new work to do.
     # This isn't 100% great since I guess somehow we could wind up missing a package
