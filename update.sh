@@ -124,7 +124,7 @@ for p in pkgs/*; do
   update "pkgs" "${p}"
 done
 
-if [[ "${CI_BUILD}" == "sr.ht" ]]; then
+if [[ "${CI_BUILD:-}" == "sr.ht" ]]; then
   echo "updated packages: ${up}" &>/dev/stderr
   if $(( ${up} <= 0 )); then
     echo "refusing to proceed, no packages were updated." &>/dev/stderr
@@ -138,12 +138,12 @@ fi
 
 update_readme
 
-if [[ ! -z "${CI_BUILD:-""}" ]]; then
-  if ! expr $(git status --porcelain 2>/dev/null| egrep "^(M| M)" | wc -l); then
-    echo "This is a CI build with no changes. Refusing to build again."
-    exit 0
-  fi
-fi
+#if [[ ! -z "${CI_BUILD:-""}" ]]; then
+#  if ! expr $(git status --porcelain 2>/dev/null| egrep "^(M| M)" | wc -l); then
+#    echo "This is a CI build with no changes. Refusing to build again."
+#    exit 0
+#  fi
+#fi
 
 cachix push -w "${cache}" &
 CACHIX_PID="$!"

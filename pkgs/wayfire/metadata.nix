@@ -1,7 +1,7 @@
 {
   repo_git = "https://github.com/WayfireWM/wayfire";
   branch = "master";
-  rev = "ea44238c44d3e6f68be22b022a6630d6039a4516";
-  sha256 = "01bpnkhv0jcxlq12qbdgapwfjpzffv9wc0h7ivp0k2h941rb1zd6";
-  revdate = "2020-04-18 23:45:52 +0200";
+  rev = "0f08134adf6090d1596ad483bfd2e471390f56cb";
+  sha256 = "0wbs4rc7v7c7bsnpw86hz5ipzlsslydzg3rzfmgj7j8w3v9nas5v";
+  revdate = "2020-04-21 22:41:15 +0200";
 }
