@@ -82,7 +82,7 @@ These packages were mostly recently built against:
 | [wlfreerdp](http://www.freerdp.com/) | 2020-04-26 19:57:50 +0200 | A Remote Desktop Protocol Client |
 | [wlogout](https://github.com/ArtsyMacaw/wlogout) | 2020-03-14 00:34:47 -0500 | A wayland based logout menu |
 | [wlr-randr](https://github.com/emersion/wlr-randr) | 2020-04-08 10:59:57 +0200 | An xrandr clone for wlroots compositors |
-| [wlroots](https://github.com/swaywm/wlroots) | 2020-04-27 10:20:44 +0200 | A modular Wayland compositor library |
+| [wlroots](https://github.com/swaywm/wlroots) | 2020-04-27 15:40:03 +0200 | A modular Wayland compositor library |
 | [wltrunk](https://git.sr.ht/~bl4ckb0ne/wltrunk) | 2019-11-10 16:09:56 -0500 (pinned) | High-level Wayland compositor library based on wlroots |
 | [wofi](https://hg.sr.ht/~scoopta/wofi) | 2019-08-17 18:34 -0700 | Wofi is a launcher/menu program for wlroots based wayland compositors such as sway |
 | [wtype](https://github.com/atx/wtype) | 2019-07-01 17:33:04 +0200 | xdotool type for wayland |
