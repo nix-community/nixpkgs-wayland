@@ -80,9 +80,8 @@ function update() {
     newdate="${newdate} (pinned)"
   fi
   if [[ "${typ}" == "pkgs" ]]; then
-    # TODO: Remove usage of Nix CLI v2
-    desc="$(nix eval --raw "(import ./build.nix).${upattr}.meta.description")"
-    home="$(nix eval --raw "(import ./build.nix).${upattr}.meta.homepage")"
+    desc="$(nix-instantiate --eval -E "(import ./build.nix).${upattr}.meta.description" | jq -r .)"
+    home="$(nix-instantiate --eval -E "(import ./build.nix).${upattr}.meta.homepage" | jq -r .)"
     pkgentries=("${pkgentries[@]}" "| [${pkgname}](${home}) | ${newdate} | ${desc} |");
   elif [[ "${typ}" == "nixpkgs" ]]; then
     nixpkgentries=("${nixpkgentries[@]}" "| ${pkgname} | ${newdate} |");
