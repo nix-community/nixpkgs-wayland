@@ -1,8 +1,8 @@
 {
   repo_git = "https://github.com/greshake/i3status-rust";
   branch = "master";
-  rev = "d1b0ff32995006461b1326c2ac5ed791847b3a47";
-  sha256 = "03k4jqp15zfbi8a78gqn6kghyzfdr217ccci3g39gnxpakw63adp";
-  cargoSha256 = "1ihcnhdg4fdkml7116gqvdnj9m0y0qrjnvv1ij26bdfd3qqpzk0a";
-  revdate = "2020-04-26 12:49:18 +0900";
+  rev = "ff605177224b531cbe278fe8c088a8a66de8b40b";
+  sha256 = "0v6ghd6vrac6idqjqpy61vw13fkhpqkrv5i0w2z7kigz59c85p8p";
+  cargoSha256 = "0s9pfc8kaa0ayk3kwsra7g7xvjzxmpx51k6p2c6cfrsya5hrab9p";
+  revdate = "2020-04-28 06:20:40 +0900";
 }
