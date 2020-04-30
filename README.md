@@ -64,7 +64,7 @@ These packages were mostly recently built against:
 | [slurp](https://github.com/emersion/slurp) | 2020-04-15 15:50:29 +0200 | Select a region in a Wayland compositor |
 | [sway](https://swaywm.org) | 2020-04-29 12:43:34 +0200 | i3-compatible tiling Wayland compositor |
 | [swaybg](https://github.com/swaywm/swaybg) | 2019-08-09 08:03:44 +0900 | Wallpaper tool for Wayland compositors |
-| [swayidle](https://swaywm.org) | 2020-03-31 17:14:30 +0200 | Sway's idle management daemon |
+| [swayidle](https://swaywm.org) | 2020-04-30 12:15:57 +0200 | Sway's idle management daemon |
 | [swaylock](https://swaywm.org) | 2020-03-29 21:00:33 +0200 | Screen locker for Wayland |
 | [waybar](https://github.com/Alexays/Waybar) | 2020-04-27 08:47:22 +0200 | Highly customizable Wayland Polybar like bar for Sway and Wlroots based compositors. |
 | [waybox](https://github.com/wizbright/waybox) | 2020-03-11 08:32:50 -0400 | An openbox clone on Wayland (WIP) |
@@ -82,7 +82,7 @@ These packages were mostly recently built against:
 | [wlfreerdp](http://www.freerdp.com/) | 2020-04-29 22:31:02 +0200 | A Remote Desktop Protocol Client |
 | [wlogout](https://github.com/ArtsyMacaw/wlogout) | 2020-03-14 00:34:47 -0500 | A wayland based logout menu |
 | [wlr-randr](https://github.com/emersion/wlr-randr) | 2020-04-08 10:59:57 +0200 | An xrandr clone for wlroots compositors |
-| [wlroots](https://github.com/swaywm/wlroots) | 2020-04-29 10:39:09 +0200 | A modular Wayland compositor library |
+| [wlroots](https://github.com/swaywm/wlroots) | 2020-04-30 12:08:42 +0200 | A modular Wayland compositor library |
 | [wltrunk](https://git.sr.ht/~bl4ckb0ne/wltrunk) | 2019-11-10 16:09:56 -0500 (pinned) | High-level Wayland compositor library based on wlroots |
 | [wofi](https://hg.sr.ht/~scoopta/wofi) | 2019-08-17 18:34 -0700 | Wofi is a launcher/menu program for wlroots based wayland compositors such as sway |
 | [wtype](https://github.com/atx/wtype) | 2019-07-01 17:33:04 +0200 | xdotool type for wayland |
