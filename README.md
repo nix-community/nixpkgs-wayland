@@ -67,7 +67,7 @@ These packages were mostly recently built against:
 | [swayidle](https://swaywm.org) | 2020-04-30 12:15:57 +0200 | Sway's idle management daemon |
 | [swaylock](https://swaywm.org) | 2020-03-29 21:00:33 +0200 | Screen locker for Wayland |
 | [waybar](https://github.com/Alexays/Waybar) | 2020-04-27 08:47:22 +0200 | Highly customizable Wayland Polybar like bar for Sway and Wlroots based compositors. |
-| [waybox](https://github.com/wizbright/waybox) | 2020-03-11 08:32:50 -0400 | An openbox clone on Wayland (WIP) |
+| [waybox](https://github.com/wizbright/waybox) | 2020-04-30 22:02:14 -0500 | An openbox clone on Wayland (WIP) |
 | [wayfire](https://wayfire.org/) | 2020-04-29 17:08:42 +0200 | 3D wayland compositor |
 | [waypipe](https://gitlab.freedesktop.org/mstoeckl/waypipe/) | 2020-03-29 17:47:35 -0400 | Network transparency with Wayland |
 | [wayvnc](https://github.com/any1/wayvnc) | 2020-04-26 14:15:57 +0000 |  |
