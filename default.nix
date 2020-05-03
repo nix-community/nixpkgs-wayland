@@ -68,6 +68,11 @@ waylandPkgs = rec {
 
   # pipewire related
   xdg-desktop-portal = pkgs.callPackage ./pkgs-temp/xdg-desktop-portal {};
+  google-chrome-with-pipewire = pkgs.callPackage ./pkgs/google-chrome-with-pipewire {
+    inherit (pkgs) google-chrome;
+    pipewire = pkgs.pipewire_0_2;
+  };
+  google-chrome = google-chrome-with-pipewire;
 };
 in
   waylandPkgs // { inherit waylandPkgs; }
