@@ -65,6 +65,9 @@ waylandPkgs = rec {
   # bspwc/wltrunk stuff
   bspwc    = pkgs.callPackage ./pkgs/bspwc { wlroots = wlroots-tmp; };
   wltrunk  = pkgs.callPackage ./pkgs/wltrunk { wlroots = wlroots-tmp; };
+
+  # pipewire related
+  xdg-desktop-portal = pkgs.callPackage ./pkgs-temp/xdg-desktop-portal {};
 };
 in
   waylandPkgs // { inherit waylandPkgs; }
