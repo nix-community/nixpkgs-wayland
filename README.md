@@ -50,7 +50,7 @@ These packages were mostly recently built against:
 | [glpaper](https://bitbucket.org/Scoopta/glpaper) | 2019-03-08 16:52 -0800 | GLPaper is a wallpaper program for wlroots based wayland compositors such as sway that allows you to render glsl shaders as your wallpaper |
 | [grim](https://github.com/emersion/grim) | 2020-05-10 16:41:19 +0200 | Grab images from a Wayland compositor |
 | [gtk-layer-shell](https://github.com/wmww/gtk-layer-shell) | 2020-01-03 14:52:01 -0500 | A library to create panels and other desktop components for Wayland using the Layer Shell protocol |
-| [i3status-rust](https://github.com/greshake/i3status-rust) | 2020-05-11 07:20:33 +0900 | Very resource-friendly and feature-rich replacement for i3status |
+| [i3status-rust](https://github.com/greshake/i3status-rust) | 2020-05-11 10:39:27 +0900 | Very resource-friendly and feature-rich replacement for i3status |
 | [imv](https://github.com/eXeC64/imv) | 2019-12-21 22:54:26 +0000 (pinned) | A command line image viewer for tiling window managers |
 | [kanshi](https://github.com/emersion/kanshi) | 2020-04-02 23:22:55 +0200 | Dynamic display configuration |
 | [lavalauncher](https://git.sr.ht/~leon_plickat/lavalauncher) | 2020-05-10 11:25:51 +0200 | A simple launcher for Wayland. |
