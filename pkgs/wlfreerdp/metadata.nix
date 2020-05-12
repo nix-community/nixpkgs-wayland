@@ -1,7 +1,7 @@
 {
   repo_git = "https://github.com/FreeRDP/FreeRDP";
   branch = "master";
-  rev = "46c4b7bdc2e63fdc8a7fef1c836fe26daaa45004";
-  sha256 = "0kafjdcbxczp9hhjikgl5d2r11cmd1ch9yfm6chf4l3zl8g3pwnj";
-  revdate = "2020-05-11 22:38:24 +0200";
+  rev = "c882a0c1b6076e36436825b6d31fa7d956f3f9a7";
+  sha256 = "0ph39l1ynw5nvpmg1by0wm42i9vl24ibj2b61n4h4svm5mka8bfh";
+  revdate = "2020-05-12 11:55:54 +0200";
 }
