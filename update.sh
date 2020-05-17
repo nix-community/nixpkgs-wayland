@@ -27,6 +27,7 @@ function update() {
   sha256="$(nix-instantiate "${metadata}" --eval --json -A sha256 | jq -r .)"
   upattr="$(nix-instantiate "${metadata}" --eval --json -A upattr | jq -r . || echo "\"${pkgname}\"" | jq -r .)"
   url="$(nix-instantiate "${metadata}" --eval --json -A url | jq -r . || echo "\"\"" | jq -r .)"
+  cargoSha256="$(nix-instantiate "${metadata}" --eval --json -A cargoSha256 | jq -r . || echo "\"invalid_cargoSha256\"" | jq -r .)"
   skip="$(nix-instantiate "${metadata}" --eval --json -A skip | jq -r . || echo "false" | jq -r .)"
 
   newdate="${date}"
@@ -69,16 +70,14 @@ function update() {
         newsha256="$(nix-prefetch-url --unpack "${url}")"
       fi
 
-      if [[ "${vendorSha256:-""}" != "" ]]; then
- # nix-prefetch --file 'fetchTarball "channel:nixos-unstable"' '{ sha256 }: pet.go-modules.overrideAttrs (_: { modSha256 = sha256; })'
- newvendorSha256="$()"
-      fi
-
       # TODO: do this with nix instead of sed?
       sed -i "s/${rev}/${newrev}/" "${metadata}"
       sed -i "s/${date}/${newdate}/" "${metadata}"
       sed -i "s/${sha256}/${newsha256}/" "${metadata}"
-      #sed -i "s/${vendorSha256}/${newvendorSha256}/" "${metadata}"
+
+      # CargoSha256 has to happen AFTER the other rev/sha256 bump
+      newcargoSha256="$(nix-prefetch '{ sha256 }: i3status-rust.cargoDeps.overrideAttrs (_: { cargoSha256 = sha256; })')"
+      sed -i "s/${cargoSha256}/${newcargoSha256}/" "${metadata}"
     fi
   fi
 
@@ -121,13 +120,15 @@ function update_readme() {
       > README2.md; mv README2.md README.md
 }
 
-for p in nixpkgs/*; do
-  update "nixpkgs" "${p}"
-done
+# for p in nixpkgs/*; do
+#   update "nixpkgs" "${p}"
+# done
 
-for p in pkgs/*; do
-  update "pkgs" "${p}"
-done
+# for p in pkgs/*; do
+#   update "pkgs" "${p}"
+# done
+
+update "pkgs" "pkgs/i3status-rust"
 
 if [[ "${CI_BUILD:-}" == "sr.ht" ]]; then
   echo "updated packages: ${up}" &>/dev/stderr
