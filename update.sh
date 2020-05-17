@@ -69,10 +69,16 @@ function update() {
         newsha256="$(nix-prefetch-url --unpack "${url}")"
       fi
 
+      if [[ "${vendorSha256:-""}" != "" ]]; then
+ # nix-prefetch --file 'fetchTarball "channel:nixos-unstable"' '{ sha256 }: pet.go-modules.overrideAttrs (_: { modSha256 = sha256; })'
+ newvendorSha256="$()"
+      fi
+
       # TODO: do this with nix instead of sed?
       sed -i "s/${rev}/${newrev}/" "${metadata}"
       sed -i "s/${date}/${newdate}/" "${metadata}"
       sed -i "s/${sha256}/${newsha256}/" "${metadata}"
+      #sed -i "s/${vendorSha256}/${newvendorSha256}/" "${metadata}"
     fi
   fi
 

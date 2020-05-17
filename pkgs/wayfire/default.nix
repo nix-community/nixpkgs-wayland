@@ -23,6 +23,7 @@ stdenv.mkDerivation rec {
     repo = "wayfire";
     rev = version;
     sha256 = metadata.sha256;
+    fetchSubmodules = true;
   };
 
   nativeBuildInputs = [ pkgconfig meson ninja ];
