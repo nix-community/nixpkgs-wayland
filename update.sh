@@ -76,7 +76,7 @@ function update() {
       sed -i "s/${sha256}/${newsha256}/" "${metadata}"
 
       # CargoSha256 has to happen AFTER the other rev/sha256 bump
-      newcargoSha256="$(nix-prefetch '{ sha256 }: i3status-rust.cargoDeps.overrideAttrs (_: { cargoSha256 = sha256; })')"
+      newcargoSha256="$(nix-prefetch "{ sha256 }: ${pkgname}.cargoDeps.overrideAttrs (_: { cargoSha256 = sha256; })")"
       sed -i "s/${cargoSha256}/${newcargoSha256}/" "${metadata}"
     fi
   fi
@@ -120,15 +120,13 @@ function update_readme() {
       > README2.md; mv README2.md README.md
 }
 
-# for p in nixpkgs/*; do
-#   update "nixpkgs" "${p}"
-# done
+for p in nixpkgs/*; do
+  update "nixpkgs" "${p}"
+done
 
-# for p in pkgs/*; do
-#   update "pkgs" "${p}"
-# done
-
-update "pkgs" "pkgs/i3status-rust"
+for p in pkgs/*; do
+ update "pkgs" "${p}"
+done
 
 if [[ "${CI_BUILD:-}" == "sr.ht" ]]; then
   echo "updated packages: ${up}" &>/dev/stderr
