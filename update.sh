@@ -15,26 +15,30 @@ up=0 # updated_performed # up=$(( $up + 1 ))
 export NIX_PATH="nixpkgs=https://github.com/nixos/nixpkgs/archive/nixos-unstable.tar.gz"
 
 function update() {
+  set +x
   typ="${1}"
   pkg="${2}"
+  
+  echo "============================================================================"
+  echo "${pkg}: checking"
 
   metadata="${pkg}/metadata.nix"
   pkgname="$(basename "${pkg}")"
 
-  branch="$(nix-instantiate "${metadata}" --eval --json -A branch | jq -r .)"
-  rev="$(nix-instantiate "${metadata}" --eval --json -A rev | jq -r .)"
-  date="$(nix-instantiate "${metadata}" --eval --json -A revdate | jq -r .)"
-  sha256="$(nix-instantiate "${metadata}" --eval --json -A sha256 | jq -r .)"
-  upattr="$(nix-instantiate "${metadata}" --eval --json -A upattr | jq -r . || echo "\"${pkgname}\"" | jq -r .)"
-  url="$(nix-instantiate "${metadata}" --eval --json -A url | jq -r . || echo "\"\"" | jq -r .)"
-  cargoSha256="$(nix-instantiate "${metadata}" --eval --json -A cargoSha256 | jq -r . || echo "\"invalid_cargoSha256\"" | jq -r .)"
-  skip="$(nix-instantiate "${metadata}" --eval --json -A skip | jq -r . || echo "false" | jq -r .)"
+  branch="$(nix-instantiate "${metadata}" --eval --json -A branch 2>/dev/null | jq -r .)"
+  rev="$(nix-instantiate "${metadata}" --eval --json -A rev  2>/dev/null | jq -r .)"
+  date="$(nix-instantiate "${metadata}" --eval --json -A revdate  2>/dev/null | jq -r .)"
+  sha256="$(nix-instantiate "${metadata}" --eval --json -A sha256  2>/dev/null | jq -r .)"
+  upattr="$(nix-instantiate "${metadata}" --eval --json -A upattr  2>/dev/null | jq -r . || echo "${pkgname}")"
+  url="$(nix-instantiate "${metadata}" --eval --json -A url  2>/dev/null | jq -r . || echo "")"
+  cargoSha256="$(nix-instantiate "${metadata}" --eval --json -A cargoSha256  2>/dev/null | jq -r . || echo "invalid_cargoSha256")"
+  skip="$(nix-instantiate "${metadata}" --eval --json -A skip  2>/dev/null | jq -r . || echo "false")"
 
   newdate="${date}"
   if [[ "${skip}" != "true" ]]; then
     # Determine RepoTyp (git/hg)
-    if   nix-instantiate "${metadata}" --eval --json -A repo_git; then repotyp="git";
-    elif nix-instantiate "${metadata}" --eval --json -A repo_hg; then repotyp="hg";
+    if   nix-instantiate "${metadata}" --eval --json -A repo_git &>/dev/null; then repotyp="git";
+    elif nix-instantiate "${metadata}" --eval --json -A repo_hg &>/dev/null; then repotyp="hg";
     else echo "unknown repo_typ" && exit -1;
     fi
 
@@ -49,6 +53,10 @@ function update() {
 
     if [[ "${rev}" != "${newrev}" ]]; then
       up=$(( $up + 1 ))
+
+      echo "${pkg}: ${rev} => ${newrev}"
+
+      set -x
 
       # Update RevDate
       d="$(mktemp -d)"
@@ -78,6 +86,8 @@ function update() {
       # CargoSha256 has to happen AFTER the other rev/sha256 bump
       newcargoSha256="$(nix-prefetch "{ sha256 }: ${pkgname}.cargoDeps.overrideAttrs (_: { cargoSha256 = sha256; })")"
       sed -i "s/${cargoSha256}/${newcargoSha256}/" "${metadata}"
+
+      set +x
     fi
   fi
 
@@ -94,6 +104,8 @@ function update() {
 }
 
 function update_readme() {
+  set +x
+
   replace="$(printf "<!--pkgs-->")"
   replace="$(printf "%s\n| Package | Last Update | Description |" "${replace}")"
   replace="$(printf "%s\n| ------- | ----------- | ----------- |" "${replace}")"
@@ -128,26 +140,18 @@ for p in pkgs/*; do
  update "pkgs" "${p}"
 done
 
+set -x
 if [[ "${CI_BUILD:-}" == "sr.ht" ]]; then
   echo "updated packages: ${up}" &>/dev/stderr
   if (( ${up} <= 0 )); then
     echo "refusing to proceed, no packages were updated." &>/dev/stderr
-    # This prevents an unnecessary re-download of Nix deps when there's no new work to do.
-    # This isn't 100% great since I guess somehow we could wind up missing a package
-    # upload and never try again, but that's very unlikely and would be resolved quickly
-    # anyway.
     exit 0
   fi
 fi
 
 update_readme
 
-#if [[ ! -z "${CI_BUILD:-""}" ]]; then
-#  if ! expr $(git status --porcelain 2>/dev/null| egrep "^(M| M)" | wc -l); then
-#    echo "This is a CI build with no changes. Refusing to build again."
-#    exit 0
-#  fi
-#fi
+set -x
 
 cachix push -w "${cache}" &
 CACHIX_PID="$!"
