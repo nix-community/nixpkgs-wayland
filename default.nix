@@ -1,9 +1,7 @@
 self: pkgs:
 let
 waylandPkgs = rec {
-  meson-054  = pkgs.callPackage ./pkgs-temp/meson {};
   # wlroots-related
-  #cage             = pkgs.callPackage ./pkgs/cage { wlroots =  wlroots-0-9-x; };
   cage             = pkgs.callPackage ./pkgs/cage { wlroots = pkgs.wlroots; };
   drm_info         = pkgs.callPackage ./pkgs/drm_info {};
   gebaar-libinput  = pkgs.callPackage ./pkgs/gebaar-libinput {};
@@ -33,7 +31,7 @@ waylandPkgs = rec {
   wl-gammactl      = pkgs.callPackage ./pkgs/wl-gammactl {};
   wldash           = pkgs.callPackage ./pkgs/wldash {};
   wlogout          = pkgs.callPackage ./pkgs/wlogout {};
-  wlroots          = pkgs.callPackage ./pkgs/wlroots { meson = meson-054; };
+  wlroots          = pkgs.callPackage ./pkgs/wlroots {};
   wlr-randr        = pkgs.callPackage ./pkgs/wlr-randr {};
   wofi             = pkgs.callPackage ./pkgs/wofi {};
   wtype            = pkgs.callPackage ./pkgs/wtype {};
