@@ -14,7 +14,7 @@ stdenv.mkDerivation rec {
   version = metadata.rev;
 
   src = fetchgit {
-    url = "https://gitlab.freedesktop.org/mstoeckl/waypipe";
+    url = "https://gitlab.freedesktop.org/mstoeckl/waypipe.git";
     rev = version;
     sha256 = metadata.sha256;
   };

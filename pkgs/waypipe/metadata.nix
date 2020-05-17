@@ -1,5 +1,5 @@
 {
-  repo_git = "https://gitlab.freedesktop.org/mstoeckl/waypipe";
+  repo_git = "https://gitlab.freedesktop.org/mstoeckl/waypipe.git";
   branch = "master";
   rev = "7dd2daf8140361de2bd355e29254b1b1b40ab2aa";
   sha256 = "1xw69c4gwv59r9jddgpk3jhjnskwka0hf6dz0x56abyi6p8lm849";

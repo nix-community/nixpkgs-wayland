@@ -61,11 +61,11 @@ function update() {
       # Update RevDate
       d="$(mktemp -d)"
       if [[ "${repotyp}" == "git" ]]; then
-        git clone -b "${branch}" --single-branch --depth=1 "${repo}" "${d}"
+        git clone -b "${branch}" --single-branch --depth=1 "${repo}" "${d}" &>/dev/null
         newdate="$(cd "${d}"; git log --format=%ci --max-count=1)"
       elif [[ "${repotyp}" == "hg" ]]; then
         hg clone "${repo}#${branch}" "${d}"
-        newdate="$(cd "${d}"; hg log -r1 --template '{date|isodate}')"
+        newdate="$(cd "${d}"; hg log -r1 --template '{date|isodate}')" &>/dev/null
       fi
       rm -rf "${d}"
 
