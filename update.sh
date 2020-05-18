@@ -12,13 +12,13 @@ build_attr="${1:-"waylandPkgs"}"
 
 up=0 # updated_performed # up=$(( $up + 1 ))
 
-export NIX_PATH="nixpkgs=https://github.com/nixos/nixpkgs/archive/nixos-unstable.tar.gz"
+unset NIX_PATH
 
 function update() {
   set +x
   typ="${1}"
   pkg="${2}"
-  
+
   echo "============================================================================"
   echo "${pkg}: checking"
 
@@ -71,11 +71,13 @@ function update() {
 
       # Update Sha256
       if [[ "${typ}" == "pkgs" ]]; then
-        newsha256="$(nix-prefetch --output raw \
+        # WIP
+        newsha256="$(NIX_PATH="${tmpnixpath}" nix-prefetch --output raw \
             -E "(import ./build.nix).${upattr}" \
             --rev "${newrev}")"
       elif [[ "${typ}" == "nixpkgs" ]]; then
-        newsha256="$(nix-prefetch-url --unpack "${url}")"
+        # WIP
+        newsha256="$(NIX_PATH="${tmpnixpath}" nix-prefetch-url --unpack "${url}")"
       fi
 
       # TODO: do this with nix instead of sed?
@@ -84,7 +86,8 @@ function update() {
       sed -i "s/${sha256}/${newsha256}/" "${metadata}"
 
       # CargoSha256 has to happen AFTER the other rev/sha256 bump
-      newcargoSha256="$(nix-prefetch "{ sha256 }: ${pkgname}.cargoDeps.overrideAttrs (_: { cargoSha256 = sha256; })")"
+        # WIP
+      newcargoSha256="$(NIX_PATH="${tmpnixpath}" nix-prefetch "{ sha256 }: ${pkgname}.cargoDeps.overrideAttrs (_: { cargoSha256 = sha256; })")"
       sed -i "s/${cargoSha256}/${newcargoSha256}/" "${metadata}"
 
       set +x
@@ -135,6 +138,8 @@ function update_readme() {
 for p in nixpkgs/*; do
   update "nixpkgs" "${p}"
 done
+
+tmpnixpath="nixpkgs=$(nix-instantiate --eval --json ./nixpkgs/nixos-unstable/default.nix | jq -r .)"
 
 for p in pkgs/*; do
  update "pkgs" "${p}"
