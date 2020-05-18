@@ -53,7 +53,7 @@ These packages were mostly recently built against:
 | [kanshi](https://github.com/emersion/kanshi) | 2020-04-02 23:22:55 +0200 | Dynamic display configuration |
 | [lavalauncher](https://git.sr.ht/~leon_plickat/lavalauncher) | 2020-05-16 14:13:13 +0200 | A simple launcher for Wayland. |
 | [mako](https://wayland.emersion.fr/mako) | 2020-05-13 13:11:02 +0200 | A lightweight Wayland notification daemon |
-| [neatvnc](https://github.com/any1/neatvnc) | 2020-04-12 18:16:19 +0000 | liberally licensed VNC server library that's intended to be fast and neat |
+| [neatvnc](https://github.com/any1/neatvnc) | 2020-05-18 20:11:32 +0000 | liberally licensed VNC server library that's intended to be fast and neat |
 | [obs-studio](https://obsproject.com) | 2020-04-12 00:22:34 -0300 | Free and open source software for video recording and live streaming |
 | [obs-wlrobs](https://sr.ht/~scoopta/wlrobs) | 2019-03-16 15:06 -0700 | wlrobs is an obs-studio plugin that allows you to screen capture on wlroots based wayland compositors |
 | [oguri](https://github.com/vilhalmer/oguri) | 2020-02-23 17:54:07 -0500 | A very nice animated wallpaper tool for Wayland compositors |
@@ -66,7 +66,7 @@ These packages were mostly recently built against:
 | [swaylock](https://swaywm.org) | 2020-03-29 21:00:33 +0200 | Screen locker for Wayland |
 | [waybar](https://github.com/Alexays/Waybar) | 2020-05-16 09:29:37 +0200 | Highly customizable Wayland Polybar like bar for Sway and Wlroots based compositors. |
 | [waybox](https://github.com/wizbright/waybox) | 2020-04-30 22:02:14 -0500 | An openbox clone on Wayland (WIP) |
-| [wayfire](https://wayfire.org/) | 2020-05-18 12:42:39 +0200 | 3D wayland compositor |
+| [wayfire](https://wayfire.org/) | 2020-05-18 22:31:12 +0200 | 3D wayland compositor |
 | [waypipe](https://gitlab.freedesktop.org/mstoeckl/waypipe/) | 2020-03-29 17:47:35 -0400 | Network transparency with Wayland |
 | [wayvnc](https://github.com/any1/wayvnc) | 2020-05-10 12:21:10 +0000 |  |
 | [wdisplays](https://github.com/cyclopsian/wdisplays) | 2020-05-09 15:42:15 -0400 | GUI display configurator for wlroots compositors |
