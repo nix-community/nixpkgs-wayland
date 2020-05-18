@@ -87,7 +87,9 @@ function update() {
 
       # CargoSha256 has to happen AFTER the other rev/sha256 bump
         # WIP
-      newcargoSha256="$(NIX_PATH="${tmpnixpath}" nix-prefetch "{ sha256 }: ${pkgname}.cargoDeps.overrideAttrs (_: { cargoSha256 = sha256; })")"
+      newcargoSha256="$(NIX_PATH="${tmpnixpath}" \
+        nix-prefetch \
+          "{ sha256 }: let p=(import ./build.nix).${upattr}; in p.cargoDeps.overrideAttrs (_: { cargoSha256 = sha256; })")"
       sed -i "s/${cargoSha256}/${newcargoSha256}/" "${metadata}"
 
       set +x
@@ -142,7 +144,7 @@ done
 tmpnixpath="nixpkgs=$(nix-instantiate --eval --json ./nixpkgs/nixos-unstable/default.nix | jq -r .)"
 
 for p in pkgs/*; do
- update "pkgs" "${p}"
+  update "pkgs" "${p}"
 done
 
 set -x
