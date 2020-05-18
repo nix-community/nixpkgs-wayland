@@ -30,8 +30,8 @@ function update() {
   date="$(nix-instantiate "${metadata}" --eval --json -A revdate  2>/dev/null | jq -r .)"
   sha256="$(nix-instantiate "${metadata}" --eval --json -A sha256  2>/dev/null | jq -r .)"
   upattr="$(nix-instantiate "${metadata}" --eval --json -A upattr  2>/dev/null | jq -r . || echo "${pkgname}")"
-  url="$(nix-instantiate "${metadata}" --eval --json -A url  2>/dev/null | jq -r . || echo "")"
-  cargoSha256="$(nix-instantiate "${metadata}" --eval --json -A cargoSha256  2>/dev/null | jq -r . || echo "invalid_cargoSha256")"
+  url="$(nix-instantiate "${metadata}" --eval --json -A url  2>/dev/null | jq -r . || echo "missing_url")"
+  cargoSha256="$(nix-instantiate "${metadata}" --eval --json -A cargoSha256  2>/dev/null | jq -r . || echo "missing_cargoSha256")"
   skip="$(nix-instantiate "${metadata}" --eval --json -A skip  2>/dev/null | jq -r . || echo "false")"
 
   newdate="${date}"
@@ -71,12 +71,10 @@ function update() {
 
       # Update Sha256
       if [[ "${typ}" == "pkgs" ]]; then
-        # WIP
         newsha256="$(NIX_PATH="${tmpnixpath}" nix-prefetch --output raw \
             -E "(import ./build.nix).${upattr}" \
             --rev "${newrev}")"
       elif [[ "${typ}" == "nixpkgs" ]]; then
-        # WIP
         newsha256="$(NIX_PATH="${tmpnixpath}" nix-prefetch-url --unpack "${url}")"
       fi
 
@@ -86,11 +84,12 @@ function update() {
       sed -i "s/${sha256}/${newsha256}/" "${metadata}"
 
       # CargoSha256 has to happen AFTER the other rev/sha256 bump
-        # WIP
-      newcargoSha256="$(NIX_PATH="${tmpnixpath}" \
-        nix-prefetch \
-          "{ sha256 }: let p=(import ./build.nix).${upattr}; in p.cargoDeps.overrideAttrs (_: { cargoSha256 = sha256; })")"
-      sed -i "s/${cargoSha256}/${newcargoSha256}/" "${metadata}"
+      if [[ "${cargoSha256}" != "missing_cargoSha256" ]]; then
+        newcargoSha256="$(NIX_PATH="${tmpnixpath}" \
+          nix-prefetch \
+            "{ sha256 }: let p=(import ./build.nix).${upattr}; in p.cargoDeps.overrideAttrs (_: { cargoSha256 = sha256; })")"
+        sed -i "s/${cargoSha256}/${newcargoSha256}/" "${metadata}"
+      fi
 
       set +x
     fi
