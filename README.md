@@ -66,7 +66,7 @@ These packages were mostly recently built against:
 | [swaylock](https://swaywm.org) | 2020-03-29 21:00:33 +0200 | Screen locker for Wayland |
 | [waybar](https://github.com/Alexays/Waybar) | 2020-05-16 09:29:37 +0200 | Highly customizable Wayland Polybar like bar for Sway and Wlroots based compositors. |
 | [waybox](https://github.com/wizbright/waybox) | 2020-04-30 22:02:14 -0500 | An openbox clone on Wayland (WIP) |
-| [wayfire](https://wayfire.org/) | 2020-05-14 14:19:40 +0200 | 3D wayland compositor |
+| [wayfire](https://wayfire.org/) | 2020-05-18 12:42:39 +0200 | 3D wayland compositor |
 | [waypipe](https://gitlab.freedesktop.org/mstoeckl/waypipe/) | 2020-03-29 17:47:35 -0400 | Network transparency with Wayland |
 | [wayvnc](https://github.com/any1/wayvnc) | 2020-05-10 12:21:10 +0000 |  |
 | [wdisplays](https://github.com/cyclopsian/wdisplays) | 2020-05-09 15:42:15 -0400 | GUI display configurator for wlroots compositors |
@@ -77,7 +77,7 @@ These packages were mostly recently built against:
 | [wl-gammactl](https://github.com/mischw/wl-gammactl) | 2020-02-16 14:53:36 +0200 | Small GTK GUI application to set contrast, brightness and gamma for wayland compositors which support the wlr-gamma-control protocol extension. |
 | [wlay](https://github.com/atx/wlay) | 2019-07-04 19:03:15 +0200 | Graphical output management for Wayland |
 | [wldash](https://wldash.org) | 2020-05-16 01:19:09 +0200 | Wayland launcher/dashboard |
-| [wlfreerdp](http://www.freerdp.com/) | 2020-05-15 10:01:07 +0200 | A Remote Desktop Protocol Client |
+| [wlfreerdp](http://www.freerdp.com/) | 2020-05-18 13:31:43 +0300 | A Remote Desktop Protocol Client |
 | [wlogout](https://github.com/ArtsyMacaw/wlogout) | 2020-03-14 00:34:47 -0500 | A wayland based logout menu |
 | [wlr-randr](https://github.com/emersion/wlr-randr) | 2020-04-08 10:59:57 +0200 | An xrandr clone for wlroots compositors |
 | [wlroots](https://github.com/swaywm/wlroots) | 2020-05-14 23:55:43 +0000 | A modular Wayland compositor library |
