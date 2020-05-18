@@ -16,8 +16,6 @@
 
 Automated, pre-built packages for Wayland (sway/wlroots) tools for NixOS.
 
-There is [a limited, best-effort changelog available](./CHANGELOG.md).
-
 (related: [nixpkgs-chromium](https://github.com/colemickens/nixpkgs-chromium) - Chromium with native Wayland support)
 
 ## Usage
