@@ -4,9 +4,9 @@
 , cairo, glm
 , libevdev, freetype, libinput
 , pixman, libxkbcommon, libdrm
-, wlroots, wf-config
 , libjpeg, libpng
-, libGL
+, libGL, mesa
+, libcap, xcbutilerrors, xcbutilwm, libxml2
 , buildDocs ? true
 }:
 
@@ -33,9 +33,14 @@ stdenv.mkDerivation rec {
     cairo glm
     libevdev freetype libinput
     pixman libxkbcommon libdrm
-    wlroots wf-config
     libjpeg libpng
-    libGL
+    libGL mesa
+    libcap xcbutilerrors xcbutilwm libxml2
+  ];
+  mesonFlags = [
+    "-Duse_system_wlroots=disabled"
+    "-Duse_system_wfconfig=disabled"
+    "-Dwlroots:logind-provider=systemd"
   ];
 
   enableParallelBuilding = true;

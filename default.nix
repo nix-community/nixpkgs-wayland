@@ -60,7 +60,6 @@ waylandPkgs = rec {
   i3status-rust    = pkgs.callPackage ./pkgs/i3status-rust {};
 
   # wayfire stuff
-  wf-config        = pkgs.callPackage ./pkgs/wf-config {};
   wayfire          = pkgs.callPackage ./pkgs/wayfire {};
 
   # bspwc/wltrunk stuff
