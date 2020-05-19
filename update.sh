@@ -75,7 +75,7 @@ function update() {
             -E "(import ./build.nix).${upattr}" \
             --rev "${newrev}")"
       elif [[ "${typ}" == "nixpkgs" ]]; then
-        newsha256="$(NIX_PATH="${tmpnixpath}" nix-prefetch-url --unpack "${url}")"
+        newsha256="$(NIX_PATH="${tmpnixpath}" nix-prefetch-url --unpack "${url}" 2>/dev/null)"
       fi
 
       # TODO: do this with nix instead of sed?
@@ -129,7 +129,6 @@ function update_readme() {
     replace="$(printf "%s\n%s\n" "${replace}" "${p}")"
   done
   replace="$(printf "%s\n<!--nixpkgs-->" "${replace}")"
-  set -x
 
   rg --multiline '(?s)(.*)<!--nixpkgs-->(.*)<!--nixpkgs-->(.*)' "README.md" \
     --replace "\$1${replace}\$3" \
@@ -148,14 +147,17 @@ for p in pkgs/*; do
   update "pkgs" "${p}"
 done
 
-set -x
+echo "============================================================================"
+
 if [[ "${CI_BUILD:-}" == "sr.ht" ]]; then
-  echo "updated packages: ${up}" &>/dev/stderr
+  echo "summary: updated packages: ${up}" &>/dev/stderr
   if (( ${up} <= 0 )); then
-    echo "refusing to proceed, no packages were updated." &>/dev/stderr
+    echo "summary: refusing to proceed, no packages were updated." &>/dev/stderr
     exit 0
   fi
 fi
+
+echo "============================================================================"
 
 update_readme
 
