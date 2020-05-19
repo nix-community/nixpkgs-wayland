@@ -136,6 +136,8 @@ function update_readme() {
       > README2.md; mv README2.md README.md
 }
 
+tmpnixpath="nixpkgs=$(nix-instantiate --eval --json ./nixpkgs/nixos-unstable/default.nix | jq -r .)"
+
 for p in nixpkgs/*; do
   update "nixpkgs" "${p}"
 done
