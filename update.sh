@@ -6,7 +6,7 @@ set -x
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 # keep track of what we build for the README
-pkgentries=(); nixpkgentries=();
+pkgentries=(); nixpkgentries=(); commitmsg="auto-updates:";
 cache="nixpkgs-wayland";
 build_attr="${1:-"waylandPkgs"}"
 
@@ -53,6 +53,7 @@ function update() {
 
     if [[ "${rev}" != "${newrev}" ]]; then
       up=$(( $up + 1 ))
+      commitmsg="${commitmsg} ${pkgname},"
 
       echo "${pkg}: ${rev} => ${newrev}"
 
@@ -150,7 +151,9 @@ done
 echo "============================================================================"
 
 if [[ "${CI_BUILD:-}" == "sr.ht" ]]; then
+  echo -e "${commitmsg::-1}" > .ci/commit-message
   echo "summary: updated packages: ${up}" &>/dev/stderr
+  echo "summary: commit msg: ${commitmsg::-1}" &>/dev/stderr
   if (( ${up} <= 0 )); then
     echo "summary: refusing to proceed, no packages were updated." &>/dev/stderr
     exit 0
