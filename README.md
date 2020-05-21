@@ -97,7 +97,7 @@ These packages were mostly recently built (and cached) against:
 | [wltrunk](https://git.sr.ht/~bl4ckb0ne/wltrunk) | 2020-03-11 13:38:35Z (pinned) | High-level Wayland compositor library based on wlroots |
 | [wofi](https://hg.sr.ht/~scoopta/wofi) | 2020-05-18 20:16:57 | Wofi is a launcher/menu program for wlroots based wayland compositors such as sway |
 | [wtype](https://github.com/atx/wtype) | 2019-07-01 15:33:04Z | xdotool type for wayland |
-| [xdg-desktop-portal-wlr](https://github.com/emersion/xdg-desktop-portal-wlr) | 2020-05-05 14:18:37Z | xdg-desktop-portal backend for wlroots |
+| [xdg-desktop-portal-wlr](https://github.com/emersion/xdg-desktop-portal-wlr) | 2020-05-21 14:44:47Z | xdg-desktop-portal backend for wlroots |
 <!--pkgs-->
 
 </details>
