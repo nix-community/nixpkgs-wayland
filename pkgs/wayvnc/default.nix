@@ -35,9 +35,9 @@ stdenv.mkDerivation rec {
   enableParallelBuilding = true;
 
   meta = with stdenv.lib; {
-    description = "";
+    description = "A VNC server for wlroots based Wayland compositors";
     homepage    = "https://github.com/any1/wayvnc";
-    license     = licenses.mit;
+    license     = licenses.isc;
     platforms   = platforms.linux;
     maintainers = with maintainers; [ colemickens ];
   };
