@@ -6,7 +6,6 @@
   - [Overview](#overview)
   - [Usage](#usage)
       - [Example Usage](#example-usage)
-  - [Status](#status)
   - [Packages](#packages)
   - [Tips](#tips)
       - [`sway`](#sway)
@@ -42,16 +41,14 @@ in
   }
 ```
 
-## Status
+## Packages
 
-These packages were mostly recently built against:
+These packages were mostly recently built (and cached) against:
 <!--nixpkgs-->
 | Channel        | Last Channel Commit Time  |
 | -------------- | ------------------------- |
 | nixos-unstable | 2020-05-19 01:31:20 +0200 |
 <!--nixpkgs-->
-
-## Packages
 
 <!--pkgs-->
 | Package                                                                      | Last Update                        | Description                                                                                                                                     |
@@ -111,18 +108,16 @@ These packages were mostly recently built against:
 
 * You will likely want a default config file to place at `$HOME/.config/sway/config`. You can use the upstream default as a starting point: https://github.com/swaywm/sway/blob/master/config.in
 
+* I recommend using [`home-manager`](https://github.com/rycee/home-manager/). It has options for enabling and
+  configuring Sway.
+
+* I've recently learned that simply running `sway` at a TTY can be considered insecure. If Sway crashes, the TTY
+  is left in an unlocked state. Running Sway with a DM or as `exec sway` can help mitigate this concern.
+
 #### `obs-studio` + `wlrobs`
 
-* `obs-wlrobs` is packaged in nixpkgs and integrated with its `obs-studio`
-infrastructure.
-* This overlay provides a (likely newer) version of `obs-wlrobs`.
-* This overlay also provides a patched version of `obs-studio` that works
-  natively on Wayland.
-* To utilize OBS-Studio with Wayland, simply install `obs-studio` and `obs-wlrobs`
-via your preferred method, along with activating this overlay.
-* *(Also, `wf-recorder` can screen record and stream to various RTMP services.
-Depending on your use-case, it's a lighter alternative to OBS-Studio.)*
-
+* I recommend using [`home-manager`](https://github.com/rycee/home-manager/). It has options for enabling and
+  configuring OBS and `obs-wlrobs`. Enabling this overlay and those options is sufficient.
 
 ## Development Guide
 
