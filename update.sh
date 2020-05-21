@@ -25,6 +25,9 @@ function update() {
   metadata="${pkg}/metadata.nix"
   pkgname="$(basename "${pkg}")"
 
+  # TODO: nix2json, update in parallel
+  # TODO: aka, not in bash
+
   branch="$(nix-instantiate "${metadata}" --eval --json -A branch 2>/dev/null | jq -r .)"
   rev="$(nix-instantiate "${metadata}" --eval --json -A rev  2>/dev/null | jq -r .)"
   date="$(nix-instantiate "${metadata}" --eval --json -A revdate  2>/dev/null | jq -r .)"
@@ -63,10 +66,10 @@ function update() {
       d="$(mktemp -d)"
       if [[ "${repotyp}" == "git" ]]; then
         git clone -b "${branch}" --single-branch --depth=1 "${repo}" "${d}" &>/dev/null
-        newdate="$(cd "${d}"; git log --format=%ci --max-count=1)"
+        newdate="$(cd "${d}"; TZ=UTC git show --quiet --date='format-local:%Y-%m-%d %H:%M:%SZ' --format="%cd")"
       elif [[ "${repotyp}" == "hg" ]]; then
         hg clone "${repo}#${branch}" "${d}"
-        newdate="$(cd "${d}"; hg log -r1 --template '{date|isodate}')" &>/dev/null
+        newdate="$(cd "${d}"; TZ=UTC hg log -l1 --template "{date(date, '%Y-%m-%d %H:%M:%S')}\n")" &>/dev/null
       fi
       rm -rf "${d}"
 
@@ -81,7 +84,7 @@ function update() {
 
       # TODO: do this with nix instead of sed?
       sed -i "s/${rev}/${newrev}/" "${metadata}"
-      sed -i "s/${date}/${newdate}/" "${metadata}"
+      sed -i "s|${date}|${newdate}|" "${metadata}"
       sed -i "s/${sha256}/${newsha256}/" "${metadata}"
 
       # CargoSha256 has to happen AFTER the other rev/sha256 bump
@@ -112,8 +115,8 @@ function update_readme() {
   set +x
 
   replace="$(printf "<!--pkgs-->")"
-  replace="$(printf "%s\n| Package | Last Update | Description |" "${replace}")"
-  replace="$(printf "%s\n| ------- | ----------- | ----------- |" "${replace}")"
+  replace="$(printf "%s\n| Package | Last Updated (UTC) | Description |" "${replace}")"
+  replace="$(printf "%s\n| ------- | ------------------ | ----------- |" "${replace}")"
   for p in "${pkgentries[@]}"; do
     replace="$(printf "%s\n%s\n" "${replace}" "${p}")"
   done
