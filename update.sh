@@ -35,6 +35,7 @@ function update() {
   upattr="$(nix-instantiate "${metadata}" --eval --json -A upattr  2>/dev/null | jq -r . || echo "${pkgname}")"
   url="$(nix-instantiate "${metadata}" --eval --json -A url  2>/dev/null | jq -r . || echo "missing_url")"
   cargoSha256="$(nix-instantiate "${metadata}" --eval --json -A cargoSha256  2>/dev/null | jq -r . || echo "missing_cargoSha256")"
+  vendorSha256="$(nix-instantiate "${metadata}" --eval --json -A vendorSha256  2>/dev/null | jq -r . || echo "missing_vendorSha256")"
   skip="$(nix-instantiate "${metadata}" --eval --json -A skip  2>/dev/null | jq -r . || echo "false")"
 
   newdate="${date}"
@@ -93,6 +94,14 @@ function update() {
           nix-prefetch \
             "{ sha256 }: let p=(import ./build.nix).${upattr}; in p.cargoDeps.overrideAttrs (_: { cargoSha256 = sha256; })")"
         sed -i "s/${cargoSha256}/${newcargoSha256}/" "${metadata}"
+      fi
+
+      # VendorSha256 has to happen AFTER the other rev/sha256 bump
+      if [[ "${vendorSha256}" != "missing_vendorSha256" ]]; then
+        newvendorSha256="$(NIX_PATH="${tmpnixpath}" \
+          nix-prefetch \
+            "{ sha256 }: let p=(import ./build.nix).${upattr}; in p.go-modules.overrideAttrs (_: { vendorSha256 = sha256; })")"
+        sed -i "s/${vendorSha256}/${newvendorSha256}/" "${metadata}"
       fi
 
       set +x
