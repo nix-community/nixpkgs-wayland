@@ -56,7 +56,7 @@ These packages were mostly recently built (and cached) against:
 | [aml](https://github.com/any1/neatvnc) | 2020-05-21 22:04:05Z | liberally licensed VNC server library that's intended to be fast and neat |
 | [bspwc](https://git.sr.ht/~bl4ckb0ne/bspwc) | 2020-01-18 03:54:38Z (pinned) | Binary space partitioning wayland compositor |
 | [cage](https://www.hjdskes.nl/projects/cage/) | 2020-04-17 19:58:26Z | A Wayland kiosk |
-| [clipman](https://github.com/yory8/clipman) | 2020-05-16 13:54:36Z | A basic clipboard manager for Wayland, with support for persisting copy buffers after an application exits |
+| [clipman](https://github.com/yory8/clipman) | 2020-05-22 07:05:18Z | A basic clipboard manager for Wayland, with support for persisting copy buffers after an application exits |
 | [drm_info](https://github.com/ascent12/drm_info) | 2020-01-31 13:28:12Z | Small utility to dump info about DRM devices. |
 | [gebaar-libinput](https://github.com/Coffee2CodeNL/gebaar-libinput) | 2019-04-05 13:27:03Z | Gebaar, A Super Simple WM Independent Touchpad Gesture Daemon for libinput |
 | [glpaper](https://bitbucket.org/Scoopta/glpaper) | 2020-03-29 19:46:07 | GLPaper is a wallpaper program for wlroots based wayland compositors such as sway that allows you to render glsl shaders as your wallpaper |
@@ -82,7 +82,7 @@ These packages were mostly recently built (and cached) against:
 | [waybox](https://github.com/wizbright/waybox) | 2020-05-01 03:02:14Z | An openbox clone on Wayland (WIP) |
 | [wayfire](https://wayfire.org/) | 2020-05-20 22:15:45Z | 3D wayland compositor |
 | [waypipe](https://gitlab.freedesktop.org/mstoeckl/waypipe/) | 2020-03-29 21:47:35Z | Network transparency with Wayland |
-| [wayvnc](https://github.com/any1/wayvnc) | 2020-05-10 12:21:10Z |  |
+| [wayvnc](https://github.com/any1/wayvnc) | 2020-05-10 12:21:10Z | A VNC server for wlroots based Wayland compositors |
 | [wdisplays](https://github.com/cyclopsian/wdisplays) | 2020-05-09 19:42:15Z | GUI display configurator for wlroots compositors |
 | [wev](https://git.sr.ht/~sircmpwn/wev) | 2020-02-06 17:48:08Z | A tool for debugging events on a Wayland window, analagous to the X11 tool xev. |
 | [wf-recorder](https://github.com/ammen99/wf-recorder) | 2020-04-26 08:56:37Z | Utility program for screen recording of wlroots-based compositors |
