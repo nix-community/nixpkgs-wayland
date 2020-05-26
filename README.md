@@ -82,7 +82,7 @@ These packages were mostly recently built (and cached) against:
 | [waybox](https://github.com/wizbright/waybox) | 2020-05-01 03:02:14Z | An openbox clone on Wayland (WIP) |
 | [wayfire](https://wayfire.org/) | 2020-05-25 19:06:15Z | 3D wayland compositor |
 | [waypipe](https://gitlab.freedesktop.org/mstoeckl/waypipe/) | 2020-03-29 21:47:35Z | Network transparency with Wayland |
-| [wayvnc](https://github.com/any1/wayvnc) | 2020-05-18 20:38:48Z | A VNC server for wlroots based Wayland compositors |
+| [wayvnc](https://github.com/any1/wayvnc) | 2020-05-26 22:19:48Z | A VNC server for wlroots based Wayland compositors |
 | [wdisplays](https://github.com/cyclopsian/wdisplays) | 2020-05-09 19:42:15Z | GUI display configurator for wlroots compositors |
 | [wev](https://git.sr.ht/~sircmpwn/wev) | 2020-02-06 17:48:08Z | A tool for debugging events on a Wayland window, analagous to the X11 tool xev. |
 | [wf-recorder](https://github.com/ammen99/wf-recorder) | 2020-05-25 07:07:51Z | Utility program for screen recording of wlroots-based compositors |
