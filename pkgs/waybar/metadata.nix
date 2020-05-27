@@ -1,7 +1,7 @@
 {
   repo_git = "https://github.com/Alexays/Waybar";
   branch = "master";
-  rev = "3b16946c25cf3088b29336720b7afa0551e7598f";
-  sha256 = "10awxjxzhpz6c0czfjxkxnhsv0y4g928am42mn22zlc8s4w2qyy5";
-  revdate = "2020-05-25 07:21:04Z";
+  rev = "6e7f22ac3ada6e27facee84fcbe2b3973eadbe1d";
+  sha256 = "1vvlbg9p6f4mqc0cy325y3ffycx04csyrxvwhiqgppah5lp6k1hl";
+  revdate = "2020-05-27 07:10:38Z";
 }
