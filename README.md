@@ -70,7 +70,7 @@ These packages were mostly recently built (and cached) against:
 | [neatvnc](https://github.com/any1/neatvnc) | 2020-05-22 20:54:53Z | liberally licensed VNC server library that's intended to be fast and neat |
 | [obs-studio](https://obsproject.com) | 2020-04-12 03:22:34Z | Free and open source software for video recording and live streaming |
 | [obs-wlrobs](https://sr.ht/~scoopta/wlrobs) | 2020-05-03 00:52:41 | wlrobs is an obs-studio plugin that allows you to screen capture on wlroots based wayland compositors |
-| [oguri](https://github.com/vilhalmer/oguri) | 2020-02-23 22:54:07Z | A very nice animated wallpaper tool for Wayland compositors |
+| [oguri](https://github.com/vilhalmer/oguri) | 2020-05-26 23:47:06Z | A very nice animated wallpaper tool for Wayland compositors |
 | [redshift-wayland](http://jonls.dk/redshift) | 2019-08-24 15:20:17Z | Screen color temperature manager |
 | [rootbar](https://hg.sr.ht/~scoopta/rootbar) | 2020-04-07 01:06:53 | Root Bar is a bar for wlroots based wayland compositors such as sway and was designed to address the lack of good bars for wayland |
 | [slurp](https://github.com/emersion/slurp) | 2020-04-15 13:50:29Z | Select a region in a Wayland compositor |
