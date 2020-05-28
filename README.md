@@ -65,9 +65,9 @@ These packages were mostly recently built (and cached) against:
 | [i3status-rust](https://github.com/greshake/i3status-rust) | 2020-05-24 09:41:14Z | Very resource-friendly and feature-rich replacement for i3status |
 | [imv](https://github.com/eXeC64/imv) | 2020-02-08 00:29:25Z (pinned) | A command line image viewer for tiling window managers |
 | [kanshi](https://github.com/emersion/kanshi) | 2020-04-02 21:22:55Z | Dynamic display configuration |
-| [lavalauncher](https://git.sr.ht/~leon_plickat/lavalauncher) | 2020-05-21 13:00:11Z | A simple launcher for Wayland. |
+| [lavalauncher](https://git.sr.ht/~leon_plickat/lavalauncher) | 2020-05-27 21:55:39Z | A simple launcher for Wayland. |
 | [mako](https://wayland.emersion.fr/mako) | 2020-05-13 11:11:02Z | A lightweight Wayland notification daemon |
-| [neatvnc](https://github.com/any1/neatvnc) | 2020-05-22 20:54:53Z | liberally licensed VNC server library that's intended to be fast and neat |
+| [neatvnc](https://github.com/any1/neatvnc) | 2020-05-27 21:59:34Z | liberally licensed VNC server library that's intended to be fast and neat |
 | [obs-studio](https://obsproject.com) | 2020-04-12 03:22:34Z | Free and open source software for video recording and live streaming |
 | [obs-wlrobs](https://sr.ht/~scoopta/wlrobs) | 2020-05-03 00:52:41 | wlrobs is an obs-studio plugin that allows you to screen capture on wlroots based wayland compositors |
 | [oguri](https://github.com/vilhalmer/oguri) | 2020-05-27 14:14:43Z | A very nice animated wallpaper tool for Wayland compositors |
@@ -80,12 +80,12 @@ These packages were mostly recently built (and cached) against:
 | [swaylock](https://swaywm.org) | 2020-03-29 19:00:33Z | Screen locker for Wayland |
 | [waybar](https://github.com/Alexays/Waybar) | 2020-05-27 07:10:38Z | Highly customizable Wayland Polybar like bar for Sway and Wlroots based compositors. |
 | [waybox](https://github.com/wizbright/waybox) | 2020-05-01 03:02:14Z | An openbox clone on Wayland (WIP) |
-| [wayfire](https://wayfire.org/) | 2020-05-27 11:10:56Z | 3D wayland compositor |
+| [wayfire](https://wayfire.org/) | 2020-05-27 22:23:21Z | 3D wayland compositor |
 | [waypipe](https://gitlab.freedesktop.org/mstoeckl/waypipe/) | 2020-03-29 21:47:35Z | Network transparency with Wayland |
 | [wayvnc](https://github.com/any1/wayvnc) | 2020-05-26 22:19:48Z | A VNC server for wlroots based Wayland compositors |
 | [wdisplays](https://github.com/cyclopsian/wdisplays) | 2020-05-09 19:42:15Z | GUI display configurator for wlroots compositors |
 | [wev](https://git.sr.ht/~sircmpwn/wev) | 2020-02-06 17:48:08Z | A tool for debugging events on a Wayland window, analagous to the X11 tool xev. |
-| [wf-recorder](https://github.com/ammen99/wf-recorder) | 2020-05-25 07:07:51Z | Utility program for screen recording of wlroots-based compositors |
+| [wf-recorder](https://github.com/ammen99/wf-recorder) | 2020-05-27 22:22:55Z | Utility program for screen recording of wlroots-based compositors |
 | [wl-clipboard](https://github.com/bugaevc/wl-clipboard) | 2020-02-13 16:44:26Z | Select a region in a Wayland compositor |
 | [wl-gammactl](https://github.com/mischw/wl-gammactl) | 2020-02-16 12:53:36Z | Small GTK GUI application to set contrast, brightness and gamma for wayland compositors which support the wlr-gamma-control protocol extension. |
 | [wlay](https://github.com/atx/wlay) | 2019-07-04 17:03:15Z | Graphical output management for Wayland |
