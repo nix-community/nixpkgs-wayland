@@ -65,7 +65,7 @@ These packages were mostly recently built (and cached) against:
 | [i3status-rust](https://github.com/greshake/i3status-rust) | 2020-05-30 01:19:46Z | Very resource-friendly and feature-rich replacement for i3status |
 | [imv](https://github.com/eXeC64/imv) | 2020-02-08 00:29:25Z (pinned) | A command line image viewer for tiling window managers |
 | [kanshi](https://github.com/emersion/kanshi) | 2020-04-02 21:22:55Z | Dynamic display configuration |
-| [lavalauncher](https://git.sr.ht/~leon_plickat/lavalauncher) | 2020-05-30 05:41:36Z | A simple launcher for Wayland. |
+| [lavalauncher](https://git.sr.ht/~leon_plickat/lavalauncher) | 2020-05-30 09:54:32Z | A simple launcher for Wayland. |
 | [mako](https://wayland.emersion.fr/mako) | 2020-05-13 11:11:02Z | A lightweight Wayland notification daemon |
 | [neatvnc](https://github.com/any1/neatvnc) | 2020-05-29 20:18:05Z | liberally licensed VNC server library that's intended to be fast and neat |
 | [obs-studio](https://obsproject.com) | 2020-04-12 03:22:34Z | Free and open source software for video recording and live streaming |
@@ -78,7 +78,7 @@ These packages were mostly recently built (and cached) against:
 | [swaybg](https://github.com/swaywm/swaybg) | 2019-08-08 23:03:44Z | Wallpaper tool for Wayland compositors |
 | [swayidle](https://swaywm.org) | 2020-04-30 10:15:57Z | Sway's idle management daemon |
 | [swaylock](https://swaywm.org) | 2020-03-29 19:00:33Z | Screen locker for Wayland |
-| [waybar](https://github.com/Alexays/Waybar) | 2020-05-27 07:10:38Z | Highly customizable Wayland Polybar like bar for Sway and Wlroots based compositors. |
+| [waybar](https://github.com/Alexays/Waybar) | 2020-05-30 09:59:22Z | Highly customizable Wayland Polybar like bar for Sway and Wlroots based compositors. |
 | [waybox](https://github.com/wizbright/waybox) | 2020-05-01 03:02:14Z | An openbox clone on Wayland (WIP) |
 | [wayfire](https://wayfire.org/) | 2020-05-27 22:23:21Z | 3D wayland compositor |
 | [waypipe](https://gitlab.freedesktop.org/mstoeckl/waypipe/) | 2020-03-29 21:47:35Z | Network transparency with Wayland |
