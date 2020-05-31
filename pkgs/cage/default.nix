@@ -1,5 +1,5 @@
 { stdenv, fetchFromGitHub
-, pkgconfig, meson, ninja
+, pkgconfig, meson, ninja, scdoc
 , wayland, wayland-protocols
 , wlroots, pixman, libxkbcommon, libudev, libGL, libX11
 }:
@@ -20,6 +20,7 @@ stdenv.mkDerivation rec {
 
   nativeBuildInputs = [ pkgconfig meson ninja ];
   buildInputs = [
+    scdoc
     wayland wayland-protocols
     wlroots pixman libxkbcommon libudev libGL libX11
   ];

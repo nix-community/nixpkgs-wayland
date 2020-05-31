@@ -55,7 +55,7 @@ These packages were mostly recently built (and cached) against:
 | ------- | ------------------ | ----------- |
 | [aml](https://github.com/any1/neatvnc) | 2020-05-21 22:04:05Z | liberally licensed VNC server library that's intended to be fast and neat |
 | [bspwc](https://git.sr.ht/~bl4ckb0ne/bspwc) | 2020-01-18 03:54:38Z (pinned) | Binary space partitioning wayland compositor |
-| [cage](https://www.hjdskes.nl/projects/cage/) | 2020-04-17 19:58:26Z | A Wayland kiosk |
+| [cage](https://www.hjdskes.nl/projects/cage/) | 2020-05-31 13:14:18Z | A Wayland kiosk |
 | [clipman](https://github.com/yory8/clipman) | 2020-05-22 07:05:18Z | A basic clipboard manager for Wayland, with support for persisting copy buffers after an application exits |
 | [drm_info](https://github.com/ascent12/drm_info) | 2020-01-31 13:28:12Z | Small utility to dump info about DRM devices. |
 | [gebaar-libinput](https://github.com/Coffee2CodeNL/gebaar-libinput) | 2019-04-05 13:27:03Z | Gebaar, A Super Simple WM Independent Touchpad Gesture Daemon for libinput |
@@ -86,14 +86,14 @@ These packages were mostly recently built (and cached) against:
 | [wdisplays](https://github.com/cyclopsian/wdisplays) | 2020-05-09 19:42:15Z | GUI display configurator for wlroots compositors |
 | [wev](https://git.sr.ht/~sircmpwn/wev) | 2020-02-06 17:48:08Z | A tool for debugging events on a Wayland window, analagous to the X11 tool xev. |
 | [wf-recorder](https://github.com/ammen99/wf-recorder) | 2020-05-27 22:22:55Z | Utility program for screen recording of wlroots-based compositors |
-| [wl-clipboard](https://github.com/bugaevc/wl-clipboard) | 2020-02-13 16:44:26Z | Select a region in a Wayland compositor |
-| [wl-gammactl](https://github.com/mischw/wl-gammactl) | 2020-02-16 12:53:36Z | Small GTK GUI application to set contrast, brightness and gamma for wayland compositors which support the wlr-gamma-control protocol extension. |
 | [wlay](https://github.com/atx/wlay) | 2019-07-04 17:03:15Z | Graphical output management for Wayland |
+| [wl-clipboard](https://github.com/bugaevc/wl-clipboard) | 2020-02-13 16:44:26Z | Select a region in a Wayland compositor |
 | [wldash](https://wldash.org) | 2020-05-15 23:19:09Z | Wayland launcher/dashboard |
 | [wlfreerdp](http://www.freerdp.com/) | 2020-05-29 08:48:23Z | A Remote Desktop Protocol Client |
+| [wl-gammactl](https://github.com/mischw/wl-gammactl) | 2020-02-16 12:53:36Z | Small GTK GUI application to set contrast, brightness and gamma for wayland compositors which support the wlr-gamma-control protocol extension. |
 | [wlogout](https://github.com/ArtsyMacaw/wlogout) | 2020-03-14 05:34:47Z | A wayland based logout menu |
-| [wlr-randr](https://github.com/emersion/wlr-randr) | 2020-04-08 08:59:57Z | An xrandr clone for wlroots compositors |
 | [wlroots](https://github.com/swaywm/wlroots) | 2020-05-29 06:43:32Z | A modular Wayland compositor library |
+| [wlr-randr](https://github.com/emersion/wlr-randr) | 2020-04-08 08:59:57Z | An xrandr clone for wlroots compositors |
 | [wltrunk](https://git.sr.ht/~bl4ckb0ne/wltrunk) | 2020-03-11 13:38:35Z (pinned) | High-level Wayland compositor library based on wlroots |
 | [wofi](https://hg.sr.ht/~scoopta/wofi) | 2020-05-21 15:18:26 | Wofi is a launcher/menu program for wlroots based wayland compositors such as sway |
 | [wtype](https://github.com/atx/wtype) | 2020-05-23 01:06:06Z | xdotool type for wayland |
