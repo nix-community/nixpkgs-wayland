@@ -80,7 +80,7 @@ These packages were mostly recently built (and cached) against:
 | [swaylock](https://swaywm.org) | 2020-03-29 19:00:33Z | Screen locker for Wayland |
 | [waybar](https://github.com/Alexays/Waybar) | 2020-05-30 10:07:38Z | Highly customizable Wayland Polybar like bar for Sway and Wlroots based compositors. |
 | [waybox](https://github.com/wizbright/waybox) | 2020-05-01 03:02:14Z | An openbox clone on Wayland (WIP) |
-| [wayfire](https://wayfire.org/) | 2020-05-31 21:14:40Z | 3D wayland compositor |
+| [wayfire](https://wayfire.org/) | 2020-06-01 11:01:14Z | 3D wayland compositor |
 | [waypipe](https://gitlab.freedesktop.org/mstoeckl/waypipe/) | 2020-03-29 21:47:35Z | Network transparency with Wayland |
 | [wayvnc](https://github.com/any1/wayvnc) | 2020-05-26 22:19:48Z | A VNC server for wlroots based Wayland compositors |
 | [wdisplays](https://github.com/cyclopsian/wdisplays) | 2020-05-09 19:42:15Z | GUI display configurator for wlroots compositors |
@@ -93,7 +93,7 @@ These packages were mostly recently built (and cached) against:
 | [wlfreerdp](http://www.freerdp.com/) | 2020-05-29 08:48:23Z | A Remote Desktop Protocol Client |
 | [wlogout](https://github.com/ArtsyMacaw/wlogout) | 2020-03-14 05:34:47Z | A wayland based logout menu |
 | [wlr-randr](https://github.com/emersion/wlr-randr) | 2020-04-08 08:59:57Z | An xrandr clone for wlroots compositors |
-| [wlroots](https://github.com/swaywm/wlroots) | 2020-05-31 21:28:18Z | A modular Wayland compositor library |
+| [wlroots](https://github.com/swaywm/wlroots) | 2020-06-01 10:50:26Z | A modular Wayland compositor library |
 | [wltrunk](https://git.sr.ht/~bl4ckb0ne/wltrunk) | 2020-03-11 13:38:35Z (pinned) | High-level Wayland compositor library based on wlroots |
 | [wofi](https://hg.sr.ht/~scoopta/wofi) | 2020-05-21 15:18:26 | Wofi is a launcher/menu program for wlroots based wayland compositors such as sway |
 | [wtype](https://github.com/atx/wtype) | 2020-05-23 01:06:06Z | xdotool type for wayland |
