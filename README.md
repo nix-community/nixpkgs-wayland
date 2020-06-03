@@ -66,7 +66,7 @@ These packages were mostly recently built (and cached) against:
 | [imv](https://github.com/eXeC64/imv) | 2020-02-08 00:29:25Z (pinned) | A command line image viewer for tiling window managers |
 | [kanshi](https://github.com/emersion/kanshi) | 2020-04-02 21:22:55Z | Dynamic display configuration |
 | [lavalauncher](https://git.sr.ht/~leon_plickat/lavalauncher) | 2020-06-01 09:53:52Z | A simple launcher for Wayland. |
-| [mako](https://wayland.emersion.fr/mako) | 2020-05-13 11:11:02Z | A lightweight Wayland notification daemon |
+| [mako](https://wayland.emersion.fr/mako) | 2020-06-03 13:53:59Z | A lightweight Wayland notification daemon |
 | [neatvnc](https://github.com/any1/neatvnc) | 2020-05-31 22:56:27Z | liberally licensed VNC server library that's intended to be fast and neat |
 | [obs-studio](https://obsproject.com) | 2020-04-12 03:22:34Z | Free and open source software for video recording and live streaming |
 | [obs-wlrobs](https://sr.ht/~scoopta/wlrobs) | 2020-05-03 00:52:41 | wlrobs is an obs-studio plugin that allows you to screen capture on wlroots based wayland compositors |
