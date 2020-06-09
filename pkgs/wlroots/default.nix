@@ -45,9 +45,6 @@ in stdenv.mkDerivation rec {
     mkdir -p $examples/bin
     cd ./examples
     for binary in $(find . -executable -type f -printf '%P\n' | grep -vE '\.so'); do
-       patchelf \
-         --set-rpath "$examples/lib:${stdenv.lib.makeLibraryPath buildInputs}" \
-         "$binary"
       cp "$binary" "$examples/bin/wlroots-$binary"
     done
   '';
