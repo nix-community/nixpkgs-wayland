@@ -120,12 +120,14 @@ These packages were mostly recently built (and cached) against:
 ## Development Guide
 
 * Use `nix-shell`.
-* `./nixbuild.sh` is a wrapper I use to make sure my binary cache(s) are used,
-  even if this repo is cloned on a random builder VM/machine/etc.
 * `./update.sh`:
-  * updates `pkgs/<pkg>/metadata.nix` with the latest commit+hash for each package
   * updates `nixpkgs/<channel>/metadata.nix` per the upstream channel
-  * calls `nix-build build.nix` to build all packages against both channels
+  * updates `pkgs/<pkg>/metadata.nix` with the latest commit+hash for each package
+  * calls `nix-build-uncached build.nix` to build uncached packages (see: [nix-build-uncached](https://github.com/Mic92/nix-build-uncached))
   * pushes to ["nixpkgs-wayland" on cachix](https://nixpkgs-wayland.cachix.org)
 
 Note: in some cases, you may need to manually update `cargoSha256` or `vendorSha256` in `pkgs/<pkg>/metadata.nix` as well.
+
+If for some reason the overlay isn't progressing and you want to help, just clone the repo, run `nix-shell --command ./update.sh`
+and start fixing issues in the package definitions. Sometimes you might need to edit `default.nix` to change the version
+ of `wlroots` a certain package uses.

@@ -1,4 +1,4 @@
-let 
+let
   pkgs = import (import ./nixpkgs/nixos-unstable/default.nix) {};
 in
 pkgs. stdenv.mkDerivation {
@@ -13,6 +13,7 @@ pkgs. stdenv.mkDerivation {
     jq
     mercurial
     nix
+    nix-build-uncached
     nix-prefetch
     openssh
     ripgrep
