@@ -1,5 +1,5 @@
 { stdenv, fetchFromGitHub
-, pkgconfig, cmake, extra-cmake-modules
+, pkgconfig, meson, ninja
 , wayland, wayland-protocols
 , libxkbcommon
 }:
@@ -18,7 +18,7 @@ stdenv.mkDerivation rec {
     sha256 = metadata.sha256;
   };
 
-  nativeBuildInputs = [ pkgconfig cmake extra-cmake-modules ];
+  nativeBuildInputs = [ pkgconfig meson ninja ];
   buildInputs = [
     wayland wayland-protocols
     libxkbcommon
