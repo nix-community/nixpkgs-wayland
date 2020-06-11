@@ -6,7 +6,8 @@ set -x
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 # keep track of what we build for the README
-pkgentries=(); nixpkgentries=(); commitmsg="auto-updates:";
+defaultcommitmsg="auto-updates:"
+pkgentries=(); nixpkgentries=(); commitmsg="${defaultcommitmsg}";
 cache="nixpkgs-wayland";
 build_attr="${1:-"waylandPkgs"}"
 
@@ -148,6 +149,8 @@ function update_readme() {
       > README2.md; mv README2.md README.md
 }
 
+rm -f .ci/commit-message
+
 tmpnixpath="nixpkgs=$(nix-instantiate --eval --json ./nixpkgs/nixos-unstable/default.nix | jq -r .)"
 
 for p in nixpkgs/*; do
@@ -161,6 +164,9 @@ for p in pkgs/*; do
 done
 
 update_readme
+if [[ "${commitmsg}" != "${defaultcommitmsg}" ]]; then
+  echo -e "${commitmsg::-1}" > .ci/commit-message
+fi
 
 set -x
 
