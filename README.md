@@ -78,7 +78,7 @@ These packages were mostly recently built (and cached) against:
 | [swaybg](https://github.com/swaywm/swaybg) | 2019-08-08 23:03:44Z | Wallpaper tool for Wayland compositors |
 | [swayidle](https://swaywm.org) | 2020-04-30 10:15:57Z | Sway's idle management daemon |
 | [swaylock](https://swaywm.org) | 2020-03-29 19:00:33Z | Screen locker for Wayland |
-| [waybar](https://github.com/Alexays/Waybar) | 2020-06-11 08:31:26Z | Highly customizable Wayland Polybar like bar for Sway and Wlroots based compositors. |
+| [waybar](https://github.com/Alexays/Waybar) | 2020-06-14 10:21:37Z | Highly customizable Wayland Polybar like bar for Sway and Wlroots based compositors. |
 | [waybox](https://github.com/wizbright/waybox) | 2020-05-01 03:02:14Z | An openbox clone on Wayland (WIP) |
 | [wayfire](https://wayfire.org/) | 2020-06-13 21:23:09Z | 3D wayland compositor |
 | [waypipe](https://gitlab.freedesktop.org/mstoeckl/waypipe/) | 2020-03-29 21:47:35Z | Network transparency with Wayland |
@@ -95,7 +95,7 @@ These packages were mostly recently built (and cached) against:
 | [wlr-randr](https://github.com/emersion/wlr-randr) | 2020-04-08 08:59:57Z | An xrandr clone for wlroots compositors |
 | [wlroots](https://github.com/swaywm/wlroots) | 2020-06-13 13:39:49Z | A modular Wayland compositor library |
 | [wltrunk](https://git.sr.ht/~bl4ckb0ne/wltrunk) | 2020-03-11 13:38:35Z (pinned) | High-level Wayland compositor library based on wlroots |
-| [wofi](https://hg.sr.ht/~scoopta/wofi) | 2020-06-14 01:24:37 | Wofi is a launcher/menu program for wlroots based wayland compositors such as sway |
+| [wofi](https://hg.sr.ht/~scoopta/wofi) | 2020-06-14 03:10:31 | Wofi is a launcher/menu program for wlroots based wayland compositors such as sway |
 | [wtype](https://github.com/atx/wtype) | 2020-06-09 16:49:18Z | xdotool type for wayland |
 | [xdg-desktop-portal-wlr](https://github.com/emersion/xdg-desktop-portal-wlr) | 2020-05-27 14:49:15Z | xdg-desktop-portal backend for wlroots |
 <!--pkgs-->
