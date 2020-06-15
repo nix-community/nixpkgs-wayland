@@ -1,4 +1,8 @@
-{ lib, rustPlatform, fetchFromGitHub, pkgconfig, dbus, libpulseaudio, alsaLib, libxkbcommon, wayland }:
+{ lib, rustPlatform, fetchFromGitHub
+, pkgconfig
+, dbus, libpulseaudio, alsaLib, libxkbcommon
+, wayland, fontconfig
+}:
 
 let
   metadata = import ./metadata.nix;
@@ -19,7 +23,7 @@ rustPlatform.buildRustPackage rec {
 
   nativeBuildInputs = [ pkgconfig ];
 
-  buildInputs = [ dbus libpulseaudio alsaLib ];
+  buildInputs = [ dbus libpulseaudio alsaLib fontconfig ];
 
   dontPatchELF = true;
   
