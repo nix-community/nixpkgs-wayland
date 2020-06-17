@@ -1,4 +1,4 @@
-{ stdenv, rustPlatform, fetchFromGitHub, pkgconfig, dbus, libpulseaudio }:
+{ stdenv, rustPlatform, rust, fetchFromGitHub, pkgconfig, dbus, libpulseaudio }:
 
 let
   metadata = import ./metadata.nix;
@@ -19,6 +19,11 @@ rustPlatform.buildRustPackage rec {
   nativeBuildInputs = [ pkgconfig ];
 
   buildInputs = [ dbus libpulseaudio ];
+
+  preCheck = ''
+    substituteInPlace tests/run_binary.rs \
+      --replace 'target/release' "target/${rust.toRustTarget stdenv.buildPlatform}/release"
+  '';
 
   meta = with stdenv.lib; {
     description = "Very resource-friendly and feature-rich replacement for i3status";
