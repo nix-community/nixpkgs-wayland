@@ -47,7 +47,7 @@ These packages were mostly recently built (and cached) against:
 <!--nixpkgs-->
 | Channel | Last Channel Commit Time |
 | ------- | ------------------------ |
-| nixos-unstable | 2020-06-15 06:54:08Z |
+| nixos-unstable | 2020-06-18 07:06:33Z |
 <!--nixpkgs-->
 
 <!--pkgs-->
@@ -66,7 +66,7 @@ These packages were mostly recently built (and cached) against:
 | [imv](https://github.com/eXeC64/imv) | 2020-02-08 00:29:25Z (pinned) | A command line image viewer for tiling window managers |
 | [kanshi](https://github.com/emersion/kanshi) | 2020-04-02 21:22:55Z | Dynamic display configuration |
 | [lavalauncher](https://git.sr.ht/~leon_plickat/lavalauncher) | 2020-06-09 21:38:03Z | A simple launcher for Wayland. |
-| [mako](https://wayland.emersion.fr/mako) | 2020-06-03 13:53:59Z | A lightweight Wayland notification daemon |
+| [mako](https://wayland.emersion.fr/mako) | 2020-06-18 22:06:49Z | A lightweight Wayland notification daemon |
 | [neatvnc](https://github.com/any1/neatvnc) | 2020-05-31 22:56:27Z | liberally licensed VNC server library that's intended to be fast and neat |
 | [obs-studio](https://obsproject.com) | 2020-04-12 03:22:34Z | Free and open source software for video recording and live streaming |
 | [obs-wlrobs](https://sr.ht/~scoopta/wlrobs) | 2020-06-08 16:09:45 | wlrobs is an obs-studio plugin that allows you to screen capture on wlroots based wayland compositors |
@@ -74,7 +74,7 @@ These packages were mostly recently built (and cached) against:
 | [redshift-wayland](http://jonls.dk/redshift) | 2019-08-24 15:20:17Z | Screen color temperature manager |
 | [rootbar](https://hg.sr.ht/~scoopta/rootbar) | 2020-04-07 01:06:53 | Root Bar is a bar for wlroots based wayland compositors such as sway and was designed to address the lack of good bars for wayland |
 | [slurp](https://github.com/emersion/slurp) | 2020-04-15 13:50:29Z | Select a region in a Wayland compositor |
-| [sway](https://swaywm.org) | 2020-06-17 20:33:10Z | i3-compatible tiling Wayland compositor |
+| [sway](https://swaywm.org) | 2020-06-18 20:35:01Z | i3-compatible tiling Wayland compositor |
 | [swaybg](https://github.com/swaywm/swaybg) | 2019-08-08 23:03:44Z | Wallpaper tool for Wayland compositors |
 | [swayidle](https://swaywm.org) | 2020-04-30 10:15:57Z | Sway's idle management daemon |
 | [swaylock](https://swaywm.org) | 2020-03-29 19:00:33Z | Screen locker for Wayland |
@@ -85,7 +85,7 @@ These packages were mostly recently built (and cached) against:
 | [wayvnc](https://github.com/any1/wayvnc) | 2020-06-12 23:15:22Z | A VNC server for wlroots based Wayland compositors |
 | [wdisplays](https://github.com/cyclopsian/wdisplays) | 2020-05-09 19:42:15Z | GUI display configurator for wlroots compositors |
 | [wev](https://git.sr.ht/~sircmpwn/wev) | 2020-02-06 17:48:08Z | A tool for debugging events on a Wayland window, analagous to the X11 tool xev. |
-| [wf-recorder](https://github.com/ammen99/wf-recorder) | 2020-05-27 22:22:55Z | Utility program for screen recording of wlroots-based compositors |
+| [wf-recorder](https://github.com/ammen99/wf-recorder) | 2020-06-18 18:43:02Z | Utility program for screen recording of wlroots-based compositors |
 | [wlay](https://github.com/atx/wlay) | 2019-07-04 17:03:15Z | Graphical output management for Wayland |
 | [wl-clipboard](https://github.com/bugaevc/wl-clipboard) | 2020-02-13 16:44:26Z | Select a region in a Wayland compositor |
 | [wldash](https://wldash.org) | 2020-06-14 15:10:15Z | Wayland launcher/dashboard |
