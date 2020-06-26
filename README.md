@@ -55,7 +55,7 @@ These packages were mostly recently built (and cached) against:
 | ------- | ------------------ | ----------- |
 | [aml](https://github.com/any1/neatvnc) | 2020-05-21 22:04:05Z | liberally licensed VNC server library that's intended to be fast and neat |
 | [bspwc](https://git.sr.ht/~bl4ckb0ne/bspwc) | 2020-01-18 03:54:38Z (pinned) | Binary space partitioning wayland compositor |
-| [cage](https://www.hjdskes.nl/projects/cage/) | 2020-05-31 13:14:18Z | A Wayland kiosk |
+| [cage](https://www.hjdskes.nl/projects/cage/) | 2020-06-26 18:56:11Z | A Wayland kiosk |
 | [clipman](https://github.com/yory8/clipman) | 2020-05-22 07:05:18Z | A basic clipboard manager for Wayland, with support for persisting copy buffers after an application exits |
 | [drm_info](https://github.com/ascent12/drm_info) | 2020-06-12 00:34:13Z | Small utility to dump info about DRM devices. |
 | [gebaar-libinput](https://github.com/Coffee2CodeNL/gebaar-libinput) | 2019-04-05 13:27:03Z | Gebaar, A Super Simple WM Independent Touchpad Gesture Daemon for libinput |
