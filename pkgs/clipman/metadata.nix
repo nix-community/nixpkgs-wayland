@@ -1,8 +1,8 @@
 {
   repo_git = "https://github.com/yory8/clipman";
   branch = "master";
-  rev = "c5de70df5f208dc0cf43c4cf5e12ba18814acd26";
-  sha256 = "107sln26n87gqmzhmn1wr75zpdza0mkpmabihld9gyka94www1hj";
+  rev = "77706941a34331848f713be356933dc4c269b2fe";
+  sha256 = "133ja4kl0sgf86fa4lr8yblp1jf7mn83dp2816cr0jrjh6lwlv3i";
   vendorSha256 = "18jw4z0lcrh00yjr3qdkgvlrpfwqbsm0ncz7fp1h72pzkh41byv7";
-  revdate = "2020-05-22 07:05:18Z";
+  revdate = "2020-06-29 21:10:10Z";
 }
