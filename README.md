@@ -81,7 +81,7 @@ These packages were mostly recently built (and cached) against:
 | [waybar](https://github.com/Alexays/Waybar) | 2020-07-03 11:50:33Z | Highly customizable Wayland Polybar like bar for Sway and Wlroots based compositors. |
 | [waybox](https://github.com/wizbright/waybox) | 2020-05-01 03:02:14Z | An openbox clone on Wayland (WIP) |
 | [wayfire](https://wayfire.org/) | 2020-07-04 16:28:36Z | 3D wayland compositor |
-| [waypipe](https://gitlab.freedesktop.org/mstoeckl/waypipe/) | 2020-07-04 17:32:17Z | Network transparency with Wayland |
+| [waypipe](https://gitlab.freedesktop.org/mstoeckl/waypipe/) | 2020-07-06 00:16:52Z | Network transparency with Wayland |
 | [wayvnc](https://github.com/any1/wayvnc) | 2020-06-12 23:15:22Z | A VNC server for wlroots based Wayland compositors |
 | [wdisplays](https://github.com/cyclopsian/wdisplays) | 2020-05-09 19:42:15Z | GUI display configurator for wlroots compositors |
 | [wev](https://git.sr.ht/~sircmpwn/wev) | 2020-02-06 17:48:08Z | A tool for debugging events on a Wayland window, analagous to the X11 tool xev. |
