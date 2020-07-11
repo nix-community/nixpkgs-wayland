@@ -1,21 +1,4 @@
-let
-  pkgs = import (import ./nixpkgs/nixos-unstable/default.nix) {};
-in
-pkgs. stdenv.mkDerivation {
-  name = "nixpkgs-wayland-devenv";
-
-  nativeBuildInputs = with pkgs; [
-    bash
-    cacert
-    cachix
-    curl
-    git
-    jq
-    mercurial
-    nix
-    nix-build-uncached
-    nix-prefetch
-    openssh
-    ripgrep
-  ];
+(import (fetchTarball https://github.com/edolstra/flake-compat/archive/master.tar.gz) {
+  src = builtins.fetchGit ./.;
 }
+).shellNix
