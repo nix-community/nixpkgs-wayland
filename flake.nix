@@ -1,6 +1,6 @@
 
 {
-  # TODO: rename git repot to 'flake-wayland-apps'
+  # TODO: rename git repo to 'flake-wayland-apps'
   description = "wayland-apps";
 
   inputs = {
@@ -34,21 +34,16 @@
           nixpkgs_.mkShell {
             nativeBuildInputs = with nixpkgs_; [
               master_.nixFlakes
-              bash
-              cacert
-              cachix
-              curl
-              git
-              jq
-              mercurial
-              nix
+              bash cacert cachix
+              curl git jq mercurial
               nix-build-uncached
-              nix-prefetch
-              openssh
-              ripgrep
+              nix-prefetch openssh ripgrep
             ];
           }
       );
+
+      overlay = final: prev:
+        import ./default.nix final prev;
 
       packages = forAllSystems (system:
         (pkgsFor inputs.nixpkgs system true).

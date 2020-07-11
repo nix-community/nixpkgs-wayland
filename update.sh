@@ -15,6 +15,14 @@ up=0 # updated_performed # up=$(( $up + 1 ))
 
 unset NIX_PATH
 
+git status
+git add -A .
+git status
+if ! git diff-index --cached --quiet HEAD; then
+  echo "You have local changes. boo." &> /dev/stderr
+  exit -1
+fi
+
 function update() {
   set +x
   typ="${1}"
@@ -178,6 +186,19 @@ nix-build \
   --option "narinfo-cache-negative-ttl" "0" \
   --keep-going build.nix | cachix push "${cache}"
 
+git status
+git add -A .
+git status
+git diff-index --cached --quiet HEAD || git commit -m "$(cat .ci/commit-message)"
+git push origin HEAD
+
 echo "**************************"
 echo "************************** FLAKES"
 ./update-flakes.sh
+
+
+git status
+git add -A .
+git status
+git diff-index --cached --quiet HEAD || git commit -m "flake.lock: update"
+git push origin HEAD
