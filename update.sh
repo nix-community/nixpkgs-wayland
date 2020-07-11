@@ -177,3 +177,7 @@ nix-build \
   --option "build-cores" "0" \
   --option "narinfo-cache-negative-ttl" "0" \
   --keep-going build.nix | cachix push "${cache}"
+
+echo "**************************"
+echo "************************** FLAKES"
+./update-flakes.sh
