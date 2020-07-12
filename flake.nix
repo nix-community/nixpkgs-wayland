@@ -5,7 +5,6 @@
 
   inputs = {
     nixpkgs = { url = "github:nixos/nixpkgs/nixos-unstable"; };
-    master = { url = "github:nixos/nixpkgs/master"; }; # (for nixFlakes)
   };
 
   outputs = inputs:
@@ -29,11 +28,10 @@
       devShell = forAllSystems (system:
         let
           nixpkgs_ = (pkgsFor inputs.nixpkgs system false);
-          master_ = (pkgsFor inputs.master system false);
         in
           nixpkgs_.mkShell {
             nativeBuildInputs = with nixpkgs_; [
-              master_.nixFlakes
+              nixFlakes
               bash cacert cachix
               curl git jq mercurial
               nix-build-uncached
