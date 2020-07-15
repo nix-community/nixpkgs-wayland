@@ -16,6 +16,8 @@
 
 Automated, pre-built packages for Wayland (sway/wlroots) tools for NixOS.
 
+There is also now flake support: `.#packages` contain a package list, `.#overlay` is the full set as an overlay.
+
 (related: [nixpkgs-chromium](https://github.com/colemickens/nixpkgs-chromium) - Chromium with native Wayland support)
 
 ## Usage
