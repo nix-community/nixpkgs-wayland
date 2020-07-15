@@ -41,6 +41,20 @@ in
   }
 ```
 
+You could write that to a file `./wayland.nix` next to your `configuration.nix` and then use it like so:
+```nix
+{ config, lib, pkgs, ... }:
+  {
+    # ...
+    imports = [
+      # ...
+      ./wayland.nix
+    ];
+  }
+```
+
+Or you can integrate those few lines into your own configuration.
+
 ## Packages
 
 These packages were mostly recently built (and cached) against:
