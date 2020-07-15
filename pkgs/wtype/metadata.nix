@@ -1,7 +1,7 @@
 {
   repo_git = "https://github.com/atx/wtype";
   branch = "master";
-  rev = "ca19f1ccfd02498012ad14e7861a92ac31237b30";
-  sha256 = "1g7s21a5kbzacvvbckm9llxc6p4qmqm1d9hj3sg20dadcb3w522r";
-  revdate = "2020-06-09 16:49:18Z";
+  rev = "172ecb73cd4842bcb06f6aa8604573316607523f";
+  sha256 = "0ab2fm7sgi0181hv5sca5jz174kwjrz70mp5s4hx24nwf35i6hwk";
+  revdate = "2020-07-15 19:59:08Z";
 }
