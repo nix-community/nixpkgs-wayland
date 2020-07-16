@@ -58,5 +58,9 @@
             paths = attrValues nixpkgs_.waylandPkgs;
           }
       );
+
+      hydraJobs = {
+        packages = inputs.self.packages.x86_64-linux;
+      };
     };
 }
