@@ -13,6 +13,9 @@ tasks:
   - update: |
       cd nixpkgs-wayland
       nix-shell --pure --command "CI_BUILD=sr.ht ./update.sh"
+  - update-flakes: |
+      cd nixpkgs-wayland
+      nix-shell --pure --command "CI_BUILD=sr.ht ./update-flakes.sh"
   - push: |
       cd nixpkgs-wayland
       nix-shell --pure --command "./.ci/push.sh"

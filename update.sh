@@ -20,7 +20,7 @@ git add -A .
 git status
 if ! git diff-index --cached --quiet HEAD; then
   echo "You have local changes. boo." &> /dev/stderr
-  exit -1
+  exit 1
 fi
 
 function update() {
@@ -52,7 +52,7 @@ function update() {
     # Determine RepoTyp (git/hg)
     if   nix-instantiate "${metadata}" --eval --json -A repo_git &>/dev/null; then repotyp="git";
     elif nix-instantiate "${metadata}" --eval --json -A repo_hg &>/dev/null; then repotyp="hg";
-    else echo "unknown repo_typ" && exit -1;
+    else echo "unknown repo_typ" && exit 1;
     fi
 
     # Update Rev
@@ -172,9 +172,6 @@ for p in pkgs/*; do
 done
 
 update_readme
-if [[ "${commitmsg}" != "${defaultcommitmsg}" ]]; then
-  echo -e "${commitmsg::-1}" > .ci/commit-message
-fi
 
 set -x
 
@@ -184,7 +181,13 @@ nix-build \
   --option "trusted-public-keys" "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= nixpkgs-wayland.cachix.org-1:3lwxaILxMRkVhehr5StQprHdEo4IrE8sRho9R9HOLYA=" \
   --option "build-cores" "0" \
   --option "narinfo-cache-negative-ttl" "0" \
-  --keep-going build.nix | cachix push "${cache}"
+  --keep-going --no-out-link build.nix | cachix push "${cache}"
+
+if [[ "${commitmsg}" == "${defaultcommitmsg}" ]]; then
+  # there's *nothing* to do, so just exit
+  git restore -- . # this is a workaround. sometimes no-ops modify the readme
+  exit 0
+fi
 
 git status
 git add -A .
@@ -192,13 +195,3 @@ git status
 git diff-index --cached --quiet HEAD || git commit -m "$(cat .ci/commit-message)"
 git push origin HEAD
 
-echo "**************************"
-echo "************************** FLAKES"
-./update-flakes.sh
-
-
-git status
-git add -A .
-git status
-git diff-index --cached --quiet HEAD || git commit -m "flake.lock: update"
-git push origin HEAD
