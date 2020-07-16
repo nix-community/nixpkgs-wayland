@@ -4,6 +4,7 @@ waylandPkgs = rec {
   # wlroots-related
   cage             = pkgs.callPackage ./pkgs/cage { wlroots = pkgs.wlroots; };
   drm_info         = pkgs.callPackage ./pkgs/drm_info {};
+  emacs-pgtk       = pkgs.callPackage ./pkgs/emacs {};
   gebaar-libinput  = pkgs.callPackage ./pkgs/gebaar-libinput {};
   glpaper          = pkgs.callPackage ./pkgs/glpaper {};
   grim             = pkgs.callPackage ./pkgs/grim {};
