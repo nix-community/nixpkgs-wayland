@@ -2,7 +2,7 @@ self: pkgs:
 let
 waylandPkgs = rec {
   # wlroots-related
-  cage             = pkgs.callPackage ./pkgs/cage { wlroots = pkgs.wlroots; };
+  cage             = pkgs.callPackage ./pkgs/cage {};
   drm_info         = pkgs.callPackage ./pkgs/drm_info {};
   emacs-pgtk       = pkgs.callPackage ./pkgs/emacs {};
   gebaar-libinput  = pkgs.callPackage ./pkgs/gebaar-libinput {};

@@ -1,4 +1,4 @@
-{ stdenv, fetchFromGitHub
+{ stdenv, fetchFromGitHub, fetchpatch
 , pkgconfig, meson, ninja, scdoc
 , wayland, wayland-protocols
 , wlroots, pixman, libxkbcommon, libudev, libGL, libX11
@@ -17,6 +17,10 @@ stdenv.mkDerivation rec {
     rev = metadata.rev;
     sha256 = metadata.sha256;
   };
+
+  patches = [
+    (fetchpatch{url="https://github.com/Hjdskes/cage/pull/158.patch"; sha256="1piqg5r4b6zbr5xrgbj5ligza1jgbqh524vpb3f4yg7js8v8v8sm";})
+  ];
 
   nativeBuildInputs = [ pkgconfig meson ninja ];
   buildInputs = [
