@@ -192,6 +192,6 @@ fi
 git status
 git add -A .
 git status
-git diff-index --cached --quiet HEAD || git commit -m "$(cat .ci/commit-message)"
+git diff-index --cached --quiet HEAD || git commit -m "${commitmsg}"
 git push origin HEAD
 
