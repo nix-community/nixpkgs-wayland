@@ -112,7 +112,7 @@ These packages were mostly recently built (and cached) against:
 | [wlr-randr](https://github.com/emersion/wlr-randr) | 2020-04-08 08:59:57Z | An xrandr clone for wlroots compositors |
 | [wlroots](https://github.com/swaywm/wlroots) | 2020-07-15 22:27:23Z | A modular Wayland compositor library |
 | [wltrunk](https://git.sr.ht/~bl4ckb0ne/wltrunk) | 2020-03-11 13:38:35Z (pinned) | High-level Wayland compositor library based on wlroots |
-| [wofi](https://hg.sr.ht/~scoopta/wofi) | 2020-07-18 02:00:09 | Wofi is a launcher/menu program for wlroots based wayland compositors such as sway |
+| [wofi](https://hg.sr.ht/~scoopta/wofi) | 2020-07-18 13:32:05 | Wofi is a launcher/menu program for wlroots based wayland compositors such as sway |
 | [wtype](https://github.com/atx/wtype) | 2020-07-15 19:59:08Z | xdotool type for wayland |
 | [xdg-desktop-portal-wlr](https://github.com/emersion/xdg-desktop-portal-wlr) | 2020-05-27 14:49:15Z | xdg-desktop-portal backend for wlroots |
 <!--pkgs-->
