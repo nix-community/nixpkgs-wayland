@@ -63,7 +63,7 @@ These packages were mostly recently built (and cached) against:
 <!--nixpkgs-->
 | Channel | Last Channel Commit Time |
 | ------- | ------------------------ |
-| nixos-unstable | 2020-07-11 08:45:00Z |
+| nixos-unstable | 2020-07-18 16:07:45Z |
 <!--nixpkgs-->
 
 <!--pkgs-->
