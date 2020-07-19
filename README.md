@@ -97,12 +97,12 @@ These packages were mostly recently built (and cached) against:
 | [swaylock](https://swaywm.org) | 2020-07-13 13:49:10Z | Screen locker for Wayland |
 | [waybar](https://github.com/Alexays/Waybar) | 2020-07-18 08:23:04Z | Highly customizable Wayland Polybar like bar for Sway and Wlroots based compositors. |
 | [waybox](https://github.com/wizbright/waybox) | 2020-05-01 03:02:14Z | An openbox clone on Wayland (WIP) |
-| [wayfire](https://wayfire.org/) | 2020-07-16 17:39:13Z | 3D wayland compositor |
+| [wayfire](https://wayfire.org/) | 2020-07-19 12:41:56Z | 3D wayland compositor |
 | [waypipe](https://gitlab.freedesktop.org/mstoeckl/waypipe/) | 2020-07-06 00:16:52Z | Network transparency with Wayland |
 | [wayvnc](https://github.com/any1/wayvnc) | 2020-07-18 09:23:42Z | A VNC server for wlroots based Wayland compositors |
 | [wdisplays](https://github.com/cyclopsian/wdisplays) | 2020-05-09 19:42:15Z | GUI display configurator for wlroots compositors |
 | [wev](https://git.sr.ht/~sircmpwn/wev) | 2020-07-07 15:20:53Z | A tool for debugging events on a Wayland window, analagous to the X11 tool xev. |
-| [wf-recorder](https://github.com/ammen99/wf-recorder) | 2020-06-30 07:45:24Z | Utility program for screen recording of wlroots-based compositors |
+| [wf-recorder](https://github.com/ammen99/wf-recorder) | 2020-07-19 12:45:44Z | Utility program for screen recording of wlroots-based compositors |
 | [wl-clipboard](https://github.com/bugaevc/wl-clipboard) | 2020-02-13 16:44:26Z | Select a region in a Wayland compositor |
 | [wl-gammactl](https://github.com/mischw/wl-gammactl) | 2020-02-16 12:53:36Z | Small GTK GUI application to set contrast, brightness and gamma for wayland compositors which support the wlr-gamma-control protocol extension. |
 | [wlay](https://github.com/atx/wlay) | 2019-07-04 17:03:15Z | Graphical output management for Wayland |
