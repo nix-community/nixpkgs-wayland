@@ -107,7 +107,7 @@ These packages were mostly recently built (and cached) against:
 | [wl-gammactl](https://github.com/mischw/wl-gammactl) | 2020-02-16 12:53:36Z | Small GTK GUI application to set contrast, brightness and gamma for wayland compositors which support the wlr-gamma-control protocol extension. |
 | [wlay](https://github.com/atx/wlay) | 2019-07-04 17:03:15Z | Graphical output management for Wayland |
 | [wldash](https://wldash.org) | 2020-07-22 10:42:48Z | Wayland launcher/dashboard |
-| [wlfreerdp](http://www.freerdp.com/) | 2020-07-23 10:16:15Z | A Remote Desktop Protocol Client |
+| [wlfreerdp](http://www.freerdp.com/) | 2020-07-24 07:16:46Z | A Remote Desktop Protocol Client |
 | [wlogout](https://github.com/ArtsyMacaw/wlogout) | 2020-03-14 05:34:47Z | A wayland based logout menu |
 | [wlr-randr](https://github.com/emersion/wlr-randr) | 2020-07-21 13:57:29Z | An xrandr clone for wlroots compositors |
 | [wlroots](https://github.com/swaywm/wlroots) | 2020-07-22 19:49:24Z | A modular Wayland compositor library |
