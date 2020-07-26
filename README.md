@@ -69,7 +69,7 @@ These packages were mostly recently built (and cached) against:
 <!--pkgs-->
 | Package | Last Updated (UTC) | Description |
 | ------- | ------------------ | ----------- |
-| [aml](https://github.com/any1/neatvnc) | 2020-07-22 21:15:30Z | liberally licensed VNC server library that's intended to be fast and neat |
+| [aml](https://github.com/any1/neatvnc) | 2020-07-26 11:17:06Z | liberally licensed VNC server library that's intended to be fast and neat |
 | [bspwc](https://git.sr.ht/~bl4ckb0ne/bspwc) | 2020-01-18 03:54:38Z (pinned) | Binary space partitioning wayland compositor |
 | [cage](https://www.hjdskes.nl/projects/cage/) | 2020-07-16 14:25:19Z | A Wayland kiosk |
 | [clipman](https://github.com/yory8/clipman) | 2020-06-29 21:10:10Z | A basic clipboard manager for Wayland, with support for persisting copy buffers after an application exits |
