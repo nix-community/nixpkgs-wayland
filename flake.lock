@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "cachixpkgs": {
+      "locked": {
+        "lastModified": 1595357489,
+        "narHash": "sha256-hogc9RVcShK+r9h9rnRlHdBS/Ptaxa+SE8kcVyMLKjM=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "9ea61f7bc4454734ffbff73c9b6173420fe3147b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-20.03",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1595770343,
@@ -18,6 +34,7 @@
     },
     "root": {
       "inputs": {
+        "cachixpkgs": "cachixpkgs",
         "nixpkgs": "nixpkgs"
       }
     }

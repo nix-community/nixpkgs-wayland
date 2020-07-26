@@ -36,6 +36,6 @@ rustPlatform.buildRustPackage rec {
     homepage = "https://wldash.org";
     licence = licenses.gpl3;
     maintainers = with maintainers; [ alexarice ];
-    platforms = platforms.linux;
+    platforms = [ "x86_64-linux" "i686-linux" ];
   };
 }
