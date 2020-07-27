@@ -1,7 +1,7 @@
 {
   repo_git = "https://github.com/emersion/wlr-randr";
   branch = "master";
-  rev = "f5fba6143ade26fdef15048cc5ccab13b8e9dafc";
-  sha256 = "0wwmcn6dfknwqs92q6zq7lrz646b4swkqizwmsrs8j71i7pzc61q";
-  revdate = "2020-07-21 13:57:29Z";
+  rev = "988a802f5b4050dd3db1138a0cf3464789131dfb";
+  sha256 = "10c8zzp78s5bw34vvjhilipa28bsdx3jbyhnxgp8f8kawh3cvgsc";
+  revdate = "2020-07-27 14:33:25Z";
 }
