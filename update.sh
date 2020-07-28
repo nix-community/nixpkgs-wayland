@@ -183,6 +183,8 @@ nix-build \
   --option "narinfo-cache-negative-ttl" "0" \
   --keep-going --no-out-link build.nix | cachix push "${cache}"
 
+if [[ "$(hostname)" == "xeep" ]]; then exit 0; fi
+
 if [[ "${commitmsg}" == "${defaultcommitmsg}" ]]; then
   # there's *nothing* to do, so just exit
   git restore -- . # this is a workaround. sometimes no-ops modify the readme

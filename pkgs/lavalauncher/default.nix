@@ -1,7 +1,7 @@
 { stdenv, fetchgit
 , pkgconfig, meson, ninja, scdoc
 , wayland, wayland-protocols
-, libxkbcommon, cairo
+, libxkbcommon, cairo, librsvg
 }:
 
 let
@@ -21,7 +21,7 @@ stdenv.mkDerivation rec {
   nativeBuildInputs = [ pkgconfig meson ninja scdoc ];
   buildInputs = [
     wayland wayland-protocols
-    libxkbcommon cairo
+    libxkbcommon cairo librsvg
   ];
 
   installFlags = [
