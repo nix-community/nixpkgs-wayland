@@ -88,7 +88,7 @@ These packages were mostly recently built (and cached) against:
 | [gebaar-libinput](https://github.com/Coffee2CodeNL/gebaar-libinput) | 2019-04-05 13:27:03Z | Gebaar, A Super Simple WM Independent Touchpad Gesture Daemon for libinput |
 | [glpaper](https://bitbucket.org/Scoopta/glpaper) | 2020-03-29 19:46:07 | GLPaper is a wallpaper program for wlroots based wayland compositors such as sway that allows you to render glsl shaders as your wallpaper |
 | [grim](https://github.com/emersion/grim) | 2020-07-21 18:11:14Z | Grab images from a Wayland compositor |
-| [gtk-layer-shell](https://github.com/wmww/gtk-layer-shell) | 2020-07-28 16:52:05Z | A library to create panels and other desktop components for Wayland using the Layer Shell protocol |
+| [gtk-layer-shell](https://github.com/wmww/gtk-layer-shell) | 2020-07-28 20:55:32Z | A library to create panels and other desktop components for Wayland using the Layer Shell protocol |
 | [i3status-rust](https://github.com/greshake/i3status-rust) | 2020-07-15 00:13:44Z | Very resource-friendly and feature-rich replacement for i3status |
 | [imv](https://github.com/eXeC64/imv) | 2020-02-08 00:29:25Z (pinned) | A command line image viewer for tiling window managers |
 | [kanshi](https://github.com/emersion/kanshi) | 2020-07-20 20:54:23Z | Dynamic display configuration |
@@ -113,14 +113,14 @@ These packages were mostly recently built (and cached) against:
 | [wdisplays](https://github.com/cyclopsian/wdisplays) | 2020-05-09 19:42:15Z | GUI display configurator for wlroots compositors |
 | [wev](https://git.sr.ht/~sircmpwn/wev) | 2020-07-07 15:20:53Z | A tool for debugging events on a Wayland window, analagous to the X11 tool xev. |
 | [wf-recorder](https://github.com/ammen99/wf-recorder) | 2020-07-19 12:45:44Z | Utility program for screen recording of wlroots-based compositors |
-| [wlay](https://github.com/atx/wlay) | 2019-07-04 17:03:15Z | Graphical output management for Wayland |
 | [wl-clipboard](https://github.com/bugaevc/wl-clipboard) | 2020-02-13 16:44:26Z | Select a region in a Wayland compositor |
+| [wl-gammactl](https://github.com/mischw/wl-gammactl) | 2020-02-16 12:53:36Z | Small GTK GUI application to set contrast, brightness and gamma for wayland compositors which support the wlr-gamma-control protocol extension. |
+| [wlay](https://github.com/atx/wlay) | 2019-07-04 17:03:15Z | Graphical output management for Wayland |
 | [wldash](https://wldash.org) | 2020-07-22 10:42:48Z | Wayland launcher/dashboard |
 | [wlfreerdp](http://www.freerdp.com/) | 2020-07-27 09:36:24Z | A Remote Desktop Protocol Client |
-| [wl-gammactl](https://github.com/mischw/wl-gammactl) | 2020-02-16 12:53:36Z | Small GTK GUI application to set contrast, brightness and gamma for wayland compositors which support the wlr-gamma-control protocol extension. |
 | [wlogout](https://github.com/ArtsyMacaw/wlogout) | 2020-03-14 05:34:47Z | A wayland based logout menu |
-| [wlroots](https://github.com/swaywm/wlroots) | 2020-07-28 12:59:07Z | A modular Wayland compositor library |
 | [wlr-randr](https://github.com/emersion/wlr-randr) | 2020-07-27 14:33:25Z | An xrandr clone for wlroots compositors |
+| [wlroots](https://github.com/swaywm/wlroots) | 2020-07-28 12:59:07Z | A modular Wayland compositor library |
 | [wltrunk](https://git.sr.ht/~bl4ckb0ne/wltrunk) | 2020-03-11 13:38:35Z (pinned) | High-level Wayland compositor library based on wlroots |
 | [wofi](https://hg.sr.ht/~scoopta/wofi) | 2020-07-28 00:27:25 | Wofi is a launcher/menu program for wlroots based wayland compositors such as sway |
 | [wtype](https://github.com/atx/wtype) | 2020-07-15 19:59:08Z | xdotool type for wayland |
