@@ -84,7 +84,7 @@ These packages were mostly recently built (and cached) against:
 | [cage](https://www.hjdskes.nl/projects/cage/) | 2020-08-02 15:43:05Z | A Wayland kiosk |
 | [clipman](https://github.com/yory8/clipman) | 2020-06-29 21:10:10Z | A basic clipboard manager for Wayland, with support for persisting copy buffers after an application exits |
 | [drm_info](https://github.com/ascent12/drm_info) | 2020-07-04 07:46:47Z | Small utility to dump info about DRM devices. |
-| [emacs](https://www.gnu.org/software/emacs/) | 2020-07-20 16:56:44Z | The extensible, customizable GNU text editor |
+| [emacs](https://www.gnu.org/software/emacs/) | 2020-08-03 18:16:20Z | The extensible, customizable GNU text editor |
 | [gebaar-libinput](https://github.com/Coffee2CodeNL/gebaar-libinput) | 2019-04-05 13:27:03Z | Gebaar, A Super Simple WM Independent Touchpad Gesture Daemon for libinput |
 | [glpaper](https://bitbucket.org/Scoopta/glpaper) | 2020-03-29 19:46:07 | GLPaper is a wallpaper program for wlroots based wayland compositors such as sway that allows you to render glsl shaders as your wallpaper |
 | [grim](https://github.com/emersion/grim) | 2020-07-21 18:11:14Z | Grab images from a Wayland compositor |
