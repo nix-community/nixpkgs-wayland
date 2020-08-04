@@ -84,7 +84,7 @@ These packages were mostly recently built (and cached) against:
 | [cage](https://www.hjdskes.nl/projects/cage/) | 2020-08-02 15:43:05Z | A Wayland kiosk |
 | [clipman](https://github.com/yory8/clipman) | 2020-06-29 21:10:10Z | A basic clipboard manager for Wayland, with support for persisting copy buffers after an application exits |
 | [drm_info](https://github.com/ascent12/drm_info) | 2020-07-04 07:46:47Z | Small utility to dump info about DRM devices. |
-| [emacs](https://www.gnu.org/software/emacs/) | 2020-08-03 18:16:20Z | The extensible, customizable GNU text editor |
+| [emacs](https://www.gnu.org/software/emacs/) | 2020-08-04 15:29:49Z | The extensible, customizable GNU text editor |
 | [gebaar-libinput](https://github.com/Coffee2CodeNL/gebaar-libinput) | 2019-04-05 13:27:03Z | Gebaar, A Super Simple WM Independent Touchpad Gesture Daemon for libinput |
 | [glpaper](https://bitbucket.org/Scoopta/glpaper) | 2020-03-29 19:46:07 | GLPaper is a wallpaper program for wlroots based wayland compositors such as sway that allows you to render glsl shaders as your wallpaper |
 | [grim](https://github.com/emersion/grim) | 2020-07-21 18:11:14Z | Grab images from a Wayland compositor |
@@ -107,7 +107,7 @@ These packages were mostly recently built (and cached) against:
 | [swaylock](https://swaywm.org) | 2020-07-13 13:49:10Z | Screen locker for Wayland |
 | [waybar](https://github.com/Alexays/Waybar) | 2020-08-02 09:21:13Z | Highly customizable Wayland Polybar like bar for Sway and Wlroots based compositors. |
 | [waybox](https://github.com/wizbright/waybox) | 2020-05-01 03:02:14Z | An openbox clone on Wayland (WIP) |
-| [wayfire](https://wayfire.org/) | 2020-08-03 05:39:51Z | 3D wayland compositor |
+| [wayfire](https://wayfire.org/) | 2020-08-04 15:15:37Z | 3D wayland compositor |
 | [waypipe](https://gitlab.freedesktop.org/mstoeckl/waypipe/) | 2020-07-06 00:16:52Z | Network transparency with Wayland |
 | [wayvnc](https://github.com/any1/wayvnc) | 2020-07-31 18:23:25Z | A VNC server for wlroots based Wayland compositors |
 | [wdisplays](https://github.com/cyclopsian/wdisplays) | 2020-05-09 19:42:15Z | GUI display configurator for wlroots compositors |
