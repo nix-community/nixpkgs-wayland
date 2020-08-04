@@ -92,7 +92,7 @@ These packages were mostly recently built (and cached) against:
 | [i3status-rust](https://github.com/greshake/i3status-rust) | 2020-08-04 08:01:02Z | Very resource-friendly and feature-rich replacement for i3status |
 | [imv](https://github.com/eXeC64/imv) | 2020-02-08 00:29:25Z (pinned) | A command line image viewer for tiling window managers |
 | [kanshi](https://github.com/emersion/kanshi) | 2020-07-20 20:54:23Z | Dynamic display configuration |
-| [lavalauncher](https://git.sr.ht/~leon_plickat/lavalauncher) | 2020-08-04 16:15:58Z | A simple launcher for Wayland. |
+| [lavalauncher](https://git.sr.ht/~leon_plickat/lavalauncher) | 2020-08-04 20:43:00Z | A simple launcher for Wayland. |
 | [mako](https://wayland.emersion.fr/mako) | 2020-08-03 16:08:05Z | A lightweight Wayland notification daemon |
 | [neatvnc](https://github.com/any1/neatvnc) | 2020-07-26 13:52:00Z | liberally licensed VNC server library that's intended to be fast and neat |
 | [obs-studio](https://obsproject.com) | 2020-04-12 03:22:34Z | Free and open source software for video recording and live streaming |
@@ -107,7 +107,7 @@ These packages were mostly recently built (and cached) against:
 | [swaylock](https://swaywm.org) | 2020-07-13 13:49:10Z | Screen locker for Wayland |
 | [waybar](https://github.com/Alexays/Waybar) | 2020-08-02 09:21:13Z | Highly customizable Wayland Polybar like bar for Sway and Wlroots based compositors. |
 | [waybox](https://github.com/wizbright/waybox) | 2020-05-01 03:02:14Z | An openbox clone on Wayland (WIP) |
-| [wayfire](https://wayfire.org/) | 2020-08-04 15:15:37Z | 3D wayland compositor |
+| [wayfire](https://wayfire.org/) | 2020-08-04 18:56:17Z | 3D wayland compositor |
 | [waypipe](https://gitlab.freedesktop.org/mstoeckl/waypipe/) | 2020-07-06 00:16:52Z | Network transparency with Wayland |
 | [wayvnc](https://github.com/any1/wayvnc) | 2020-07-31 18:23:25Z | A VNC server for wlroots based Wayland compositors |
 | [wdisplays](https://github.com/cyclopsian/wdisplays) | 2020-05-09 19:42:15Z | GUI display configurator for wlroots compositors |
