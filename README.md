@@ -92,7 +92,7 @@ These packages were mostly recently built (and cached) against:
 | [i3status-rust](https://github.com/greshake/i3status-rust) | 2020-08-04 08:01:02Z | Very resource-friendly and feature-rich replacement for i3status |
 | [imv](https://github.com/eXeC64/imv) | 2020-02-08 00:29:25Z (pinned) | A command line image viewer for tiling window managers |
 | [kanshi](https://github.com/emersion/kanshi) | 2020-08-05 14:50:47Z | Dynamic display configuration |
-| [lavalauncher](https://git.sr.ht/~leon_plickat/lavalauncher) | 2020-08-04 20:43:00Z | A simple launcher for Wayland. |
+| [lavalauncher](https://git.sr.ht/~leon_plickat/lavalauncher) | 2020-08-05 18:38:47Z | A simple launcher for Wayland. |
 | [mako](https://wayland.emersion.fr/mako) | 2020-08-03 16:08:05Z | A lightweight Wayland notification daemon |
 | [neatvnc](https://github.com/any1/neatvnc) | 2020-07-26 13:52:00Z | liberally licensed VNC server library that's intended to be fast and neat |
 | [obs-studio](https://obsproject.com) | 2020-04-12 03:22:34Z | Free and open source software for video recording and live streaming |
