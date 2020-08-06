@@ -16,13 +16,13 @@
       genAttrs = names: f: builtins.listToAttrs (map (n: nameValuePair n (f n)) names);
       forAllSystems = genAttrs [ "x86_64-linux" "aarch64-linux" ];
 
-      overlay = import ./default.nix;
-      
       pkgsFor = pkgs: system: includeOverlay:
         import pkgs {
           inherit system;
           config.allowUnfree = true;
-          overlays = if includeOverlay then [ overlay ] else [];
+          overlays = if includeOverlay then [
+            (import ./default.nix)            
+          ] else [];
         };
     in
     rec {
@@ -35,7 +35,7 @@
             nativeBuildInputs = with nixpkgs_; [
               cachixpkgs_.cachix
               nixFlakes
-              bash cacert 
+              bash cacert
               curl git jq mercurial
               nix-build-uncached
               nix-prefetch openssh ripgrep
@@ -44,19 +44,19 @@
       );
 
       overlay = final: prev:
-        import ./default.nix final prev;
+        (import ./default.nix final prev);
 
       # flakes-util candidate:
       # make it even more auto to determine sys from the attr name
       # I think it just needs a genAttrs actually
       packages = let
-        pkgs = sys: 
+        pkgs = sys:
           let
             nixpkgs_ = (pkgsFor inputs.nixpkgs sys true);
             packagePlatforms = pkg: pkg.meta.hydraPlatforms or pkg.meta.platforms or [ "x86_64-linux" ];
             pred = n: v: builtins.elem sys (packagePlatforms v);
           in
-            nixpkgs_.lib.filterAttrs pred nixpkgs_.waylandPkgs; 
+            nixpkgs_.lib.filterAttrs pred nixpkgs_.waylandPkgs;
       in {
           x86_64-linux = pkgs "x86_64-linux";
           aarch64-linux = pkgs "aarch64-linux";

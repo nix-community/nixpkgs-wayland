@@ -173,27 +173,27 @@ done
 
 update_readme
 
-set -x
-
-#nix-build-uncached -build-flags "\
-nix-build \
+drv="$(nix-instantiate build.nix)"
+nix-build-uncached \
   --option "extra-binary-caches" "https://cache.nixos.org https://nixpkgs-wayland.cachix.org" \
   --option "trusted-public-keys" "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= nixpkgs-wayland.cachix.org-1:3lwxaILxMRkVhehr5StQprHdEo4IrE8sRho9R9HOLYA=" \
   --option "build-cores" "0" \
   --option "narinfo-cache-negative-ttl" "0" \
-  --keep-going --no-out-link build.nix | cachix push "${cache}"
+  --keep-going --no-out-link ${drv} | cachix push "${cache}"
 
-if [[ "$(hostname)" == "xeep" ]]; then exit 0; fi
+if [[ "${JOB_ID:-""}" != "" ]]; then
+  if [[ "${commitmsg}" == "${defaultcommitmsg}" ]]; then
+    # there's *nothing* to do, so just exit
+    git restore -- . # this is a workaround. sometimes no-ops modify the readme
+    exit 0
+  fi
 
-if [[ "${commitmsg}" == "${defaultcommitmsg}" ]]; then
-  # there's *nothing* to do, so just exit
-  git restore -- . # this is a workaround. sometimes no-ops modify the readme
-  exit 0
+  git status
+  git add -A .
+  git status
+  git diff-index --cached --quiet HEAD || git commit -m "${commitmsg}"
+
+  echo "we're building on sr.ht, pushing..."
+  git push origin HEAD
 fi
-
-git status
-git add -A .
-git status
-git diff-index --cached --quiet HEAD || git commit -m "${commitmsg}"
-git push origin HEAD
 
