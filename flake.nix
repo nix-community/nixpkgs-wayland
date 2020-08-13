@@ -5,7 +5,8 @@
 
   inputs = {
     master = { url = "github:nixos/nixpkgs/master"; };
-    nixpkgs = { url = "github:nixos/nixpkgs/nixos-unstable"; };
+    #nixpkgs = { url = "github:nixos/nixpkgs/nixos-unstable"; };
+    nixpkgs = { url = "github:colemickens/nixpkgs/cmpkgs"; }; # TODO: revert soon
     cachixpkgs = { url = "github:nixos/nixpkgs/nixos-20.03"; };
     flake-utils = { url = "github:numtide/flake-utils"; }; # TODO: adopt this
   };
@@ -36,13 +37,14 @@
         in
           nixpkgs_.mkShell {
             nativeBuildInputs = with nixpkgs_; [
-              cachixpkgs_.cachix
-              nixFlakes
               bash cacert
               curl git jq mercurial
               openssh ripgrep
+
+              cachixpkgs_.cachix
+              master_.nixFlakes
               master_.nix-build-uncached
-              master_.nix-prefetch
+              nixpkgs_.nix-prefetch
             ];
           }
       );
@@ -85,4 +87,3 @@
       };
     };
 }
-

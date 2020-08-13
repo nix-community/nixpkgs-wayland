@@ -12,7 +12,7 @@ tasks:
       nix-shell --pure --command "./.ci/prep.sh"
   - update: |
       cd nixpkgs-wayland
-      nix-shell --pure --command "CI_BUILD=sr.ht ./update.sh"
-  - update-flakes: |
-      cd nixpkgs-wayland
-      nix-shell --pure --command "CI_BUILD=sr.ht ./update-flakes.sh"
+      nix-shell --pure --command "JOB_ID=$JOB_ID ./update.sh"
+  # - update-flakes: |
+  #     cd nixpkgs-wayland
+  #     nix-shell --pure --command "JOB_ID=$JOB_ID ./update-flakes.sh"

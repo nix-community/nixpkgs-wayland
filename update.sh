@@ -1,27 +1,18 @@
 #!/usr/bin/env bash
-
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 set -euo pipefail
 set -x
 
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
-
-# keep track of what we build for the README
-defaultcommitmsg="auto-updates:"
-pkgentries=(); nixpkgentries=(); commitmsg="${defaultcommitmsg}";
-cache="nixpkgs-wayland";
-build_attr="${1:-"waylandPkgs"}"
-
-up=0 # updated_performed # up=$(( $up + 1 ))
-
 unset NIX_PATH
 
-git status
-git add -A .
-git status
-if ! git diff-index --cached --quiet HEAD; then
-  echo "You have local changes. boo." &> /dev/stderr
-  exit 1
-fi
+# build up commit msg
+defaultcommitmsg="auto-updates:"
+commitmsg="${defaultcommitmsg}";
+
+# keep track of what we build for the README
+pkgentries=(); nixpkgentries=();
+cache="nixpkgs-wayland";
+build_attr="${1:-"waylandPkgs"}"
 
 function update() {
   set +x
@@ -65,7 +56,6 @@ function update() {
     fi
 
     if [[ "${rev}" != "${newrev}" ]]; then
-      up=$(( $up + 1 ))
       commitmsg="${commitmsg} ${pkgname},"
 
       echo "${pkg}: ${rev} => ${newrev}"
@@ -85,7 +75,8 @@ function update() {
 
       # Update Sha256
       if [[ "${typ}" == "pkgs" ]]; then
-        newsha256="$(NIX_PATH="${tmpnixpath}" nix-prefetch --output raw \
+        newsha256="$(NIX_PATH="nixpkgs=https://github.com/nixos/nixpkgs/archive/nixos-unstable.tar.gz" \
+          nix-prefetch --output raw \
             -E "(import ./build.nix).${upattr}" \
             --rev "${newrev}")"
       elif [[ "${typ}" == "nixpkgs" ]]; then
@@ -99,7 +90,7 @@ function update() {
 
       # CargoSha256 has to happen AFTER the other rev/sha256 bump
       if [[ "${cargoSha256}" != "missing_cargoSha256" ]]; then
-        newcargoSha256="$(NIX_PATH="${tmpnixpath}" \
+        newcargoSha256="$(NIX_PATH="nixpkgs=https://github.com/nixos/nixpkgs/archive/nixos-unstable.tar.gz" \
           nix-prefetch \
             "{ sha256 }: let p=(import ./build.nix).${upattr}; in p.cargoDeps.overrideAttrs (_: { cargoSha256 = sha256; })")"
         sed -i "s|${cargoSha256}|${newcargoSha256}|" "${metadata}"
@@ -107,7 +98,7 @@ function update() {
 
       # VendorSha256 has to happen AFTER the other rev/sha256 bump
       if [[ "${vendorSha256}" != "missing_vendorSha256" ]]; then
-        newvendorSha256="$(NIX_PATH="${tmpnixpath}" \
+        newvendorSha256="$(NIX_PATH="nixpkgs=https://github.com/nixos/nixpkgs/archive/nixos-unstable.tar.gz" \
           nix-prefetch \
             "{ sha256 }: let p=(import ./build.nix).${upattr}; in p.go-modules.overrideAttrs (_: { vendorSha256 = sha256; })")"
         sed -i "s|${vendorSha256}|${newvendorSha256}|" "${metadata}"
@@ -157,37 +148,44 @@ function update_readme() {
       > README2.md; mv README2.md README.md
 }
 
-rm -f .ci/commit-message
+# update flake inputs
+nix --experimental-features 'nix-command flakes' \
+  flake update \
+    --update-input master \
+    --update-input nixpkgs \
+    --update-input cachixpkgs \
+    --update-input flake-utils
 
-tmpnixpath="nixpkgs=$(nix-instantiate --eval --json ./nixpkgs/nixos-unstable/default.nix | jq -r .)"
-
-for p in nixpkgs/*; do
-  update "nixpkgs" "${p}"
-done
-
-tmpnixpath="nixpkgs=$(nix-instantiate --eval --json ./nixpkgs/nixos-unstable/default.nix | jq -r .)"
-
-for p in pkgs/*; do
-  update "pkgs" "${p}"
+# update our package sources/sha256s
+for p in `ls -v pkgs`; do
+  if [[ "${p}" == "aml" ]]; then
+    update "pkgs" "pkgs/${p}"
+  fi
 done
 
 update_readme
 
-drv="$(nix-instantiate build.nix)"
+set -x
+
+out="$(mktemp -d)"
 nix-build-uncached \
   --option "extra-binary-caches" "https://cache.nixos.org https://nixpkgs-wayland.cachix.org" \
   --option "trusted-public-keys" "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= nixpkgs-wayland.cachix.org-1:3lwxaILxMRkVhehr5StQprHdEo4IrE8sRho9R9HOLYA=" \
   --option "build-cores" "0" \
   --option "narinfo-cache-negative-ttl" "0" \
-  --keep-going --no-out-link ${drv} | cachix push "${cache}"
+  --out-link "${out}/result" packages.nix
+
+results=(); shopt -s nullglob
+
+ls "${out}"
+
+for f in ${out}/result*; do
+  results=("${results[@]}" "${f}")
+done
+
+echo "${results[@]}" | cachix push "${cache}"
 
 if [[ "${JOB_ID:-""}" != "" ]]; then
-  if [[ "${commitmsg}" == "${defaultcommitmsg}" ]]; then
-    # there's *nothing* to do, so just exit
-    git restore -- . # this is a workaround. sometimes no-ops modify the readme
-    exit 0
-  fi
-
   git status
   git add -A .
   git status
