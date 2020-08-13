@@ -95,14 +95,14 @@ function update() {
       # TODO: do this with nix instead of sed?
       sed -i "s/${rev}/${newrev}/" "${metadata}"
       sed -i "s|${date}|${newdate}|" "${metadata}"
-      sed -i "s/${sha256}/${newsha256}/" "${metadata}"
+      sed -i "s|${sha256}|${newsha256}|" "${metadata}"
 
       # CargoSha256 has to happen AFTER the other rev/sha256 bump
       if [[ "${cargoSha256}" != "missing_cargoSha256" ]]; then
         newcargoSha256="$(NIX_PATH="${tmpnixpath}" \
           nix-prefetch \
             "{ sha256 }: let p=(import ./build.nix).${upattr}; in p.cargoDeps.overrideAttrs (_: { cargoSha256 = sha256; })")"
-        sed -i "s/${cargoSha256}/${newcargoSha256}/" "${metadata}"
+        sed -i "s|${cargoSha256}|${newcargoSha256}|" "${metadata}"
       fi
 
       # VendorSha256 has to happen AFTER the other rev/sha256 bump
@@ -110,7 +110,7 @@ function update() {
         newvendorSha256="$(NIX_PATH="${tmpnixpath}" \
           nix-prefetch \
             "{ sha256 }: let p=(import ./build.nix).${upattr}; in p.go-modules.overrideAttrs (_: { vendorSha256 = sha256; })")"
-        sed -i "s/${vendorSha256}/${newvendorSha256}/" "${metadata}"
+        sed -i "s|${vendorSha256}|${newvendorSha256}|" "${metadata}"
       fi
 
       set +x

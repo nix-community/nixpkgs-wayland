@@ -4,8 +4,10 @@
   description = "wayland-apps";
 
   inputs = {
+    master = { url = "github:nixos/nixpkgs/master"; };
     nixpkgs = { url = "github:nixos/nixpkgs/nixos-unstable"; };
     cachixpkgs = { url = "github:nixos/nixpkgs/nixos-20.03"; };
+    flake-utils = { url = "github:numtide/flake-utils"; }; # TODO: adopt this
   };
 
   outputs = inputs:
@@ -28,6 +30,7 @@
     rec {
       devShell = forAllSystems (system:
         let
+          master_ = (pkgsFor inputs.master system false);
           nixpkgs_ = (pkgsFor inputs.nixpkgs system false);
           cachixpkgs_ = (pkgsFor inputs.cachixpkgs system false);
         in
@@ -37,8 +40,9 @@
               nixFlakes
               bash cacert
               curl git jq mercurial
-              nix-build-uncached
-              nix-prefetch openssh ripgrep
+              openssh ripgrep
+              master_.nix-build-uncached
+              master_.nix-prefetch
             ];
           }
       );

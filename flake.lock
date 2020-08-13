@@ -2,11 +2,11 @@
   "nodes": {
     "cachixpkgs": {
       "locked": {
-        "lastModified": 1595357489,
-        "narHash": "sha256-hogc9RVcShK+r9h9rnRlHdBS/Ptaxa+SE8kcVyMLKjM=",
+        "lastModified": 1597243902,
+        "narHash": "sha256-wYGEPOmBDpEmGtgA2n/AuOhAE00ti2WbxCYuaoFy0MU=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "9ea61f7bc4454734ffbff73c9b6173420fe3147b",
+        "rev": "2a403c9476638a33b1cab4851e55df13491eece3",
         "type": "github"
       },
       "original": {
@@ -16,13 +16,44 @@
         "type": "github"
       }
     },
-    "nixpkgs": {
+    "flake-utils": {
       "locked": {
-        "lastModified": 1596615455,
-        "narHash": "sha256-qOp3QRL7dUbN+Kus7tReThC5ZuIqG9fy7/nkqlO78n8=",
+        "lastModified": 1597053966,
+        "narHash": "sha256-f9lbPS/GJ1His8fsDqM6gfa8kSqREU4eKiMCS5hrKg4=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "ec20f52e2ff61e9c36c2b894b62fc1b4bd04c71b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "master": {
+      "locked": {
+        "lastModified": 1597301641,
+        "narHash": "sha256-DAVv3GU41avLNjZz3YPk/BSWZKOJijbkpmTRKL9etdU=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "8e2b14aceb1d40c7e8b84c03a7c78955359872bb",
+        "rev": "28224516e5cfce2782fc8bbc700ca814d4648cb7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "master",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1597057899,
+        "narHash": "sha256-U144beTNlMdersGcr49IGU2YP1HjeS3pT3+FbOXN7r8=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "32b46dd897ab2143a609988a04d87452f0bbef59",
         "type": "github"
       },
       "original": {
@@ -35,6 +66,8 @@
     "root": {
       "inputs": {
         "cachixpkgs": "cachixpkgs",
+        "flake-utils": "flake-utils",
+        "master": "master",
         "nixpkgs": "nixpkgs"
       }
     }
