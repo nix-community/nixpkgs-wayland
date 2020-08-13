@@ -1,7 +1,7 @@
 {
   repo_git = "https://github.com/wmww/gtk-layer-shell";
   branch = "master";
-  rev = "4c70ede476a872af53b2c694a5608c858de35a6e";
-  sha256 = "1lc1rxdz4djs9n9qxsjzp798dddb0l50090p5n8zi7dbqx2ik40m";
-  revdate = "2020-07-30 13:01:47Z";
+  rev = "f7a9cc8f0ac0c39a594011faf683bdba875bd73a";
+  sha256 = "sha256-i9bwyM5LKJkeOgTSCF0OLZaNCIqQ0AYNwAX/crfAyCc=";
+  revdate = "2020-08-12 19:57:39Z";
 }

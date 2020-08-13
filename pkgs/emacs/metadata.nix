@@ -2,7 +2,7 @@
   repo_git = "https://github.com/masm11/emacs";
   upattr = "emacs-pgtk";
   branch = "pgtk";
-  rev = "832eb43b788f4bf3293fbf1af7ce079e622c8d2d";
-  sha256 = "1607xq9s9kncl3iyw3k5dccgkrs2bd0cc6i9igljxzmrksp7qkzn";
-  revdate = "2020-08-06 15:59:40Z";
+  rev = "8d7b6f6785b84af4733430c8ec35e7be8dc8986f";
+  sha256 = "sha256-sT85zUHDJucD1a2OjYCfFAiK1ktT2fQiQKstYfRpJSU=";
+  revdate = "2020-08-13 06:00:43Z";
 }
