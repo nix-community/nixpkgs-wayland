@@ -92,12 +92,12 @@ These packages were mostly recently built (and cached) against:
 | [cage](https://www.hjdskes.nl/projects/cage/) | 2020-08-02 15:43:05Z | A Wayland kiosk |
 | [clipman](https://github.com/yory8/clipman) | 2020-06-29 21:10:10Z | A basic clipboard manager for Wayland, with support for persisting copy buffers after an application exits |
 | [drm_info](https://github.com/ascent12/drm_info) | 2020-07-04 07:46:47Z | Small utility to dump info about DRM devices. |
-| [emacs](https://www.gnu.org/software/emacs/) | 2020-08-13 06:00:43Z | The extensible, customizable GNU text editor |
+| [emacs](https://www.gnu.org/software/emacs/) | 2020-08-14 17:17:14Z | The extensible, customizable GNU text editor |
 | [gebaar-libinput](https://github.com/Coffee2CodeNL/gebaar-libinput) | 2019-04-05 13:27:03Z | Gebaar, A Super Simple WM Independent Touchpad Gesture Daemon for libinput |
 | [glpaper](https://bitbucket.org/Scoopta/glpaper) | 2020-03-29 19:46:07 | GLPaper is a wallpaper program for wlroots based wayland compositors such as sway that allows you to render glsl shaders as your wallpaper |
 | [grim](https://github.com/emersion/grim) | 2020-07-21 18:11:14Z | Grab images from a Wayland compositor |
 | [gtk-layer-shell](https://github.com/wmww/gtk-layer-shell) | 2020-08-12 19:57:39Z | A library to create panels and other desktop components for Wayland using the Layer Shell protocol |
-| [i3status-rust](https://github.com/greshake/i3status-rust) | 2020-08-11 20:55:12Z | Very resource-friendly and feature-rich replacement for i3status |
+| [i3status-rust](https://github.com/greshake/i3status-rust) | 2020-08-14 16:00:22Z | Very resource-friendly and feature-rich replacement for i3status |
 | [imv](https://github.com/eXeC64/imv) | 2020-02-08 00:29:25Z (pinned) | A command line image viewer for tiling window managers |
 | [kanshi](https://github.com/emersion/kanshi) | 2020-08-05 14:50:47Z | Dynamic display configuration |
 | [lavalauncher](https://git.sr.ht/~leon_plickat/lavalauncher) | 2020-08-13 02:40:26Z | A simple launcher for Wayland. |
@@ -113,7 +113,7 @@ These packages were mostly recently built (and cached) against:
 | [swaybg](https://github.com/swaywm/swaybg) | 2019-08-08 23:03:44Z | Wallpaper tool for Wayland compositors |
 | [swayidle](https://swaywm.org) | 2020-04-30 10:15:57Z | Sway's idle management daemon |
 | [swaylock](https://swaywm.org) | 2020-07-13 13:49:10Z | Screen locker for Wayland |
-| [waybar](https://github.com/Alexays/Waybar) | 2020-08-12 18:45:04Z | Highly customizable Wayland Polybar like bar for Sway and Wlroots based compositors. |
+| [waybar](https://github.com/Alexays/Waybar) | 2020-08-14 20:12:48Z | Highly customizable Wayland Polybar like bar for Sway and Wlroots based compositors. |
 | [waybox](https://github.com/wizbright/waybox) | 2020-05-01 03:02:14Z | An openbox clone on Wayland (WIP) |
 | [wayfire](https://wayfire.org/) | 2020-08-12 11:58:46Z | 3D wayland compositor |
 | [waypipe](https://gitlab.freedesktop.org/mstoeckl/waypipe/) | 2020-07-06 00:16:52Z | Network transparency with Wayland |
@@ -127,7 +127,7 @@ These packages were mostly recently built (and cached) against:
 | [wlfreerdp](http://www.freerdp.com/) | 2020-08-11 12:34:07Z | A Remote Desktop Protocol Client |
 | [wl-gammactl](https://github.com/mischw/wl-gammactl) | 2020-02-16 12:53:36Z | Small GTK GUI application to set contrast, brightness and gamma for wayland compositors which support the wlr-gamma-control protocol extension. |
 | [wlogout](https://github.com/ArtsyMacaw/wlogout) | 2020-03-14 05:34:47Z | A wayland based logout menu |
-| [wlroots](https://github.com/swaywm/wlroots) | 2020-08-09 19:13:06Z | A modular Wayland compositor library |
+| [wlroots](https://github.com/swaywm/wlroots) | 2020-08-14 15:57:31Z | A modular Wayland compositor library |
 | [wlr-randr](https://github.com/emersion/wlr-randr) | 2020-07-27 14:33:25Z | An xrandr clone for wlroots compositors |
 | [wltrunk](https://git.sr.ht/~bl4ckb0ne/wltrunk) | 2020-03-11 13:38:35Z (pinned) | High-level Wayland compositor library based on wlroots |
 | [wofi](https://hg.sr.ht/~scoopta/wofi) | 2020-08-11 19:07:49 | Wofi is a launcher/menu program for wlroots based wayland compositors such as sway |
