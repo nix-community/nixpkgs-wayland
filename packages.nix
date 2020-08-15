@@ -6,5 +6,4 @@ let
     src = builtins.fetchGit ./.;
   }).defaultNix;
 in
-  builtins.attrValues
-    flake.packages."${builtins.currentSystem}"
+  flake.packages."${builtins.currentSystem}"

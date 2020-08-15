@@ -77,7 +77,7 @@ function update() {
       if [[ "${typ}" == "pkgs" ]]; then
         newsha256="$(NIX_PATH="nixpkgs=https://github.com/nixos/nixpkgs/archive/nixos-unstable.tar.gz" \
           nix-prefetch --output raw \
-            -E "(import ./build.nix).${upattr}" \
+            -E "(import ./packages.nix).${upattr}" \
             --rev "${newrev}")"
       elif [[ "${typ}" == "nixpkgs" ]]; then
         newsha256="$(NIX_PATH="${tmpnixpath}" nix-prefetch-url --unpack "${url}" 2>/dev/null)"
@@ -92,7 +92,7 @@ function update() {
       if [[ "${cargoSha256}" != "missing_cargoSha256" ]]; then
         newcargoSha256="$(NIX_PATH="nixpkgs=https://github.com/nixos/nixpkgs/archive/nixos-unstable.tar.gz" \
           nix-prefetch \
-            "{ sha256 }: let p=(import ./build.nix).${upattr}; in p.cargoDeps.overrideAttrs (_: { cargoSha256 = sha256; })")"
+            "{ sha256 }: let p=(import ./packages.nix).${upattr}; in p.cargoDeps.overrideAttrs (_: { cargoSha256 = sha256; })")"
         sed -i "s|${cargoSha256}|${newcargoSha256}|" "${metadata}"
       fi
 
@@ -100,7 +100,7 @@ function update() {
       if [[ "${vendorSha256}" != "missing_vendorSha256" ]]; then
         newvendorSha256="$(NIX_PATH="nixpkgs=https://github.com/nixos/nixpkgs/archive/nixos-unstable.tar.gz" \
           nix-prefetch \
-            "{ sha256 }: let p=(import ./build.nix).${upattr}; in p.go-modules.overrideAttrs (_: { vendorSha256 = sha256; })")"
+            "{ sha256 }: let p=(import ./packages.nix).${upattr}; in p.go-modules.overrideAttrs (_: { vendorSha256 = sha256; })")"
         sed -i "s|${vendorSha256}|${newvendorSha256}|" "${metadata}"
       fi
 
@@ -112,8 +112,8 @@ function update() {
     newdate="${newdate} (pinned)"
   fi
   if [[ "${typ}" == "pkgs" ]]; then
-    desc="$(nix-instantiate --eval -E "(import ./build.nix).${upattr}.meta.description" | jq -r .)"
-    home="$(nix-instantiate --eval -E "(import ./build.nix).${upattr}.meta.homepage" | jq -r .)"
+    desc="$(nix-instantiate --eval -E "(import ./packages.nix).${upattr}.meta.description" | jq -r .)"
+    home="$(nix-instantiate --eval -E "(import ./packages.nix).${upattr}.meta.homepage" | jq -r .)"
     pkgentries=("${pkgentries[@]}" "| [${pkgname}](${home}) | ${newdate} | ${desc} |");
   elif [[ "${typ}" == "nixpkgs" ]]; then
     nixpkgentries=("${nixpkgentries[@]}" "| ${pkgname} | ${newdate} |");
@@ -157,10 +157,8 @@ nix --experimental-features 'nix-command flakes' \
     --update-input flake-utils
 
 # update our package sources/sha256s
-for p in `ls -v pkgs`; do
-  if [[ "${p}" == "aml" ]]; then
-    update "pkgs" "pkgs/${p}"
-  fi
+for p in `ls -d -- pkgs/*/`; do
+  update "pkgs" "${p}"
 done
 
 update_readme
