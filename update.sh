@@ -166,22 +166,19 @@ update_readme
 set -x
 
 out="$(mktemp -d)"
-nix-build-uncached \
+nix-build-uncached --out-link "${out}/result" \
   --option "extra-binary-caches" "https://cache.nixos.org https://nixpkgs-wayland.cachix.org" \
   --option "trusted-public-keys" "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= nixpkgs-wayland.cachix.org-1:3lwxaILxMRkVhehr5StQprHdEo4IrE8sRho9R9HOLYA=" \
   --option "build-cores" "0" \
   --option "narinfo-cache-negative-ttl" "0" \
-  --out-link "${out}/result" packages.nix
+  packages.nix
 
-results=(); shopt -s nullglob
-
-ls "${out}"
-
-for f in ${out}/result*; do
-  results=("${results[@]}" "${f}")
-done
-
-echo "${results[@]}" | cachix push "${cache}"
+if find ${out} | grep result; then
+  nix --experimental-features 'nix-command flakes' \
+    path-info --json -r ${out}/result* > ${out}/path-info.json
+  jq -r 'map(select(.ca == null and .signatures == null)) | map(.path) | .[]' < "${out}/path-info.json" > "${out}/paths"
+  cachix push nixpkgs-wayland < "${out}/paths"
+fi
 
 if [[ "${JOB_ID:-""}" != "" ]]; then
   git status
@@ -192,4 +189,3 @@ if [[ "${JOB_ID:-""}" != "" ]]; then
   echo "we're building on sr.ht, pushing..."
   git push origin HEAD
 fi
-
