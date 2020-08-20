@@ -30,7 +30,6 @@ function update() {
 
   branch="$(nix-instantiate "${metadata}" --eval --json -A branch 2>/dev/null | jq -r .)"
   rev="$(nix-instantiate "${metadata}" --eval --json -A rev  2>/dev/null | jq -r .)"
-  date="$(nix-instantiate "${metadata}" --eval --json -A revdate  2>/dev/null | jq -r .)"
   sha256="$(nix-instantiate "${metadata}" --eval --json -A sha256  2>/dev/null | jq -r .)"
   upattr="$(nix-instantiate "${metadata}" --eval --json -A upattr  2>/dev/null | jq -r . || echo "${pkgname}")"
   url="$(nix-instantiate "${metadata}" --eval --json -A url  2>/dev/null | jq -r . || echo "missing_url")"
@@ -38,7 +37,6 @@ function update() {
   vendorSha256="$(nix-instantiate "${metadata}" --eval --json -A vendorSha256  2>/dev/null | jq -r . || echo "missing_vendorSha256")"
   skip="$(nix-instantiate "${metadata}" --eval --json -A skip  2>/dev/null | jq -r . || echo "false")"
 
-  newdate="${date}"
   if [[ "${skip}" != "true" ]]; then
     # Determine RepoTyp (git/hg)
     if   nix-instantiate "${metadata}" --eval --json -A repo_git &>/dev/null; then repotyp="git";
@@ -62,17 +60,6 @@ function update() {
 
       set -x
 
-      # Update RevDate
-      d="$(mktemp -d)"
-      if [[ "${repotyp}" == "git" ]]; then
-        git clone -b "${branch}" --single-branch --depth=1 "${repo}" "${d}" &>/dev/null
-        newdate="$(cd "${d}"; TZ=UTC git show --quiet --date='format-local:%Y-%m-%d %H:%M:%SZ' --format="%cd")"
-      elif [[ "${repotyp}" == "hg" ]]; then
-        hg clone "${repo}#${branch}" "${d}"
-        newdate="$(cd "${d}"; TZ=UTC hg log -l1 --template "{date(date, '%Y-%m-%d %H:%M:%S')}\n")" &>/dev/null
-      fi
-      rm -rf "${d}"
-
       # Update Sha256
       if [[ "${typ}" == "pkgs" ]]; then
         newsha256="$(NIX_PATH="nixpkgs=https://github.com/nixos/nixpkgs/archive/nixos-unstable.tar.gz" \
@@ -85,7 +72,6 @@ function update() {
 
       # TODO: do this with nix instead of sed?
       sed -i "s/${rev}/${newrev}/" "${metadata}"
-      sed -i "s|${date}|${newdate}|" "${metadata}"
       sed -i "s|${sha256}|${newsha256}|" "${metadata}"
 
       # CargoSha256 has to happen AFTER the other rev/sha256 bump
@@ -108,15 +94,12 @@ function update() {
     fi
   fi
 
-  if [[ "${skip}" == "true" ]]; then
-    newdate="${newdate} (pinned)"
-  fi
   if [[ "${typ}" == "pkgs" ]]; then
     desc="$(nix-instantiate --eval -E "(import ./packages.nix).${upattr}.meta.description" | jq -r .)"
     home="$(nix-instantiate --eval -E "(import ./packages.nix).${upattr}.meta.homepage" | jq -r .)"
-    pkgentries=("${pkgentries[@]}" "| [${pkgname}](${home}) | ${newdate} | ${desc} |");
+    pkgentries=("${pkgentries[@]}" "| [${pkgname}](${home}) | ${desc} |");
   elif [[ "${typ}" == "nixpkgs" ]]; then
-    nixpkgentries=("${nixpkgentries[@]}" "| ${pkgname} | ${newdate} |");
+    nixpkgentries=("${nixpkgentries[@]}" "| ${pkgname} |");
   fi
 }
 
@@ -124,26 +107,14 @@ function update_readme() {
   set +x
 
   replace="$(printf "<!--pkgs-->")"
-  replace="$(printf "%s\n| Package | Last Updated (UTC) | Description |" "${replace}")"
-  replace="$(printf "%s\n| ------- | ------------------ | ----------- |" "${replace}")"
+  replace="$(printf "%s\n| Package | Description |" "${replace}")"
+  replace="$(printf "%s\n| ------- | ----------- |" "${replace}")"
   for p in "${pkgentries[@]}"; do
     replace="$(printf "%s\n%s\n" "${replace}" "${p}")"
   done
   replace="$(printf "%s\n<!--pkgs-->" "${replace}")"
 
   rg --multiline '(?s)(.*)<!--pkgs-->(.*)<!--pkgs-->(.*)' "README.md" \
-    --replace "\$1${replace}\$3" \
-      > README2.md; mv README2.md README.md
-
-  replace="$(printf "<!--nixpkgs-->")"
-  replace="$(printf "%s\n| Channel | Last Channel Commit Time |" "${replace}")"
-  replace="$(printf "%s\n| ------- | ------------------------ |" "${replace}")"
-  for p in "${nixpkgentries[@]}"; do
-    replace="$(printf "%s\n%s\n" "${replace}" "${p}")"
-  done
-  replace="$(printf "%s\n<!--nixpkgs-->" "${replace}")"
-
-  rg --multiline '(?s)(.*)<!--nixpkgs-->(.*)<!--nixpkgs-->(.*)' "README.md" \
     --replace "\$1${replace}\$3" \
       > README2.md; mv README2.md README.md
 }
@@ -166,18 +137,18 @@ update_readme
 set -x
 
 out="$(mktemp -d)"
-nix-build-uncached --out-link "${out}/result" \
-  --option "extra-binary-caches" "https://cache.nixos.org https://nixpkgs-wayland.cachix.org" \
-  --option "trusted-public-keys" "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= nixpkgs-wayland.cachix.org-1:3lwxaILxMRkVhehr5StQprHdEo4IrE8sRho9R9HOLYA=" \
-  --option "build-cores" "0" \
-  --option "narinfo-cache-negative-ttl" "0" \
+nix-build-uncached -build-flags "--out-link '${out}/result' \
+  --option 'extra-binary-caches' 'https://cache.nixos.org https://nixpkgs-wayland.cachix.org' \
+  --option 'trusted-public-keys' 'cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= nixpkgs-wayland.cachix.org-1:3lwxaILxMRkVhehr5StQprHdEo4IrE8sRho9R9HOLYA=' \
+  --option 'build-cores' '0' \
+  --option 'narinfo-cache-negative-ttl' '0'" \
   packages.nix
 
 if find ${out} | grep result; then
   nix --experimental-features 'nix-command flakes' \
     path-info --json -r ${out}/result* > ${out}/path-info.json
   jq -r 'map(select(.ca == null and .signatures == null)) | map(.path) | .[]' < "${out}/path-info.json" > "${out}/paths"
-  cachix push nixpkgs-wayland < "${out}/paths"
+  cachix push "${cache}" < "${out}/paths"
 fi
 
 if [[ "${JOB_ID:-""}" != "" ]]; then

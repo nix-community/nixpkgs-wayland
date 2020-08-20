@@ -1,75 +1,92 @@
 
 {
-  # TODO: rename git repo to 'flake-wayland-apps'
-  description = "wayland-apps";
+  description = "nixpkgs-wayland";
 
   inputs = {
-    master = { url = "github:nixos/nixpkgs/master"; };
-    #nixpkgs = { url = "github:nixos/nixpkgs/nixos-unstable"; };
-    nixpkgs = { url = "github:colemickens/nixpkgs/cmpkgs"; }; # TODO: revert soon
-    cachixpkgs = { url = "github:nixos/nixpkgs/nixos-20.03"; };
-    flake-utils = { url = "github:numtide/flake-utils"; }; # TODO: adopt this
+    #master = { url = "github:colemickens/nixpkgs/master"; };
+    nixpkgs = { url = "github:colemickens/nixpkgs/cmpkgs"; }; # TODO: revert soon (nix-prefetch)
+    cachix = { url = "github:nixos/nixpkgs/nixos-20.03"; };
   };
 
   outputs = inputs:
     let
-      metadata = builtins.fromJSON (builtins.readFile ./latest.json);
-
       nameValuePair = name: value: { inherit name value; };
       genAttrs = names: f: builtins.listToAttrs (map (n: nameValuePair n (f n)) names);
       forAllSystems = genAttrs [ "x86_64-linux" "aarch64-linux" ];
-
       pkgsFor = pkgs: system: includeOverlay:
         import pkgs {
           inherit system;
           config.allowUnfree = true;
-          overlays = if includeOverlay then [
-            (import ./default.nix)            
-          ] else [];
+          overlays = if includeOverlay then [ inputs.self.overlay ] else [];
         };
     in
     rec {
-      devShell = forAllSystems (system:
+      overlay = final: prev:
         let
-          master_ = (pkgsFor inputs.master system false);
-          nixpkgs_ = (pkgsFor inputs.nixpkgs system false);
-          cachixpkgs_ = (pkgsFor inputs.cachixpkgs system false);
+          waylandPkgs = rec {
+            # wlroots-related
+            cage             = prev.callPackage ./pkgs/cage {};
+            drm_info         = prev.callPackage ./pkgs/drm_info {};
+            emacs-pgtk       = prev.callPackage ./pkgs/emacs {};
+            gebaar-libinput  = prev.callPackage ./pkgs/gebaar-libinput {};
+            glpaper          = prev.callPackage ./pkgs/glpaper {};
+            grim             = prev.callPackage ./pkgs/grim {};
+            kanshi           = prev.callPackage ./pkgs/kanshi {};
+            imv              = prev.callPackage ./pkgs/imv {};
+            lavalauncher     = prev.callPackage ./pkgs/lavalauncher {};
+            mako             = prev.callPackage ./pkgs/mako {};
+            oguri            = prev.callPackage ./pkgs/oguri {};
+            rootbar          = prev.callPackage ./pkgs/rootbar {};
+            slurp            = prev.callPackage ./pkgs/slurp {};
+            sway-unwrapped   = prev.callPackage ./pkgs/sway {};
+            swaybg           = prev.callPackage ./pkgs/swaybg {};
+            swayidle         = prev.callPackage ./pkgs/swayidle {};
+            swaylock         = prev.callPackage ./pkgs/swaylock {};
+            waybar           = prev.callPackage ./pkgs/waybar {};
+            waybox           = prev.callPackage ./pkgs/waybox { wlroots = wlroots-0-9-x; };
+            waypipe          = prev.callPackage ./pkgs/waypipe {};
+            wayvnc           = prev.callPackage ./pkgs/wayvnc {};
+            wdisplays        = prev.callPackage ./pkgs/wdisplays {};
+            wev              = prev.callPackage ./pkgs/wev {};
+            wf-recorder      = prev.callPackage ./pkgs/wf-recorder {};
+            wlay             = prev.callPackage ./pkgs/wlay {};
+            obs-wlrobs       = prev.callPackage ./pkgs/obs-wlrobs {};
+            wl-clipboard     = prev.callPackage ./pkgs/wl-clipboard {};
+            wl-gammactl      = prev.callPackage ./pkgs/wl-gammactl {};
+            wldash           = prev.callPackage ./pkgs/wldash {};
+            wlogout          = prev.callPackage ./pkgs/wlogout {};
+            wlroots          = prev.callPackage ./pkgs/wlroots {};
+            wlr-randr        = prev.callPackage ./pkgs/wlr-randr {};
+            wofi             = prev.callPackage ./pkgs/wofi {};
+            wtype            = prev.callPackage ./pkgs/wtype {};
+            xdg-desktop-portal-wlr = prev.callPackage ./pkgs/xdg-desktop-portal-wlr {};
+            # temp
+            wlroots-tmp = prev.callPackage ./pkgs-temp/wlroots {};
+            wlroots-0-9-x = prev.callPackage ./pkgs-temp/wlroots-0-9-x {};
+            # misc
+            aml = prev.callPackage ./pkgs/aml {};
+            clipman = prev.callPackage ./pkgs/clipman {};
+            gtk-layer-shell = prev.callPackage ./pkgs/gtk-layer-shell {};
+            i3status-rust    = prev.callPackage ./pkgs/i3status-rust {};
+            neatvnc = prev.callPackage ./pkgs/neatvnc {};
+            obs-studio = prev.libsForQt5.callPackage ./pkgs/obs-studio { ffmpeg = prev.ffmpeg_4; };
+            wlfreerdp = prev.callPackage ./pkgs/wlfreerdp {
+              inherit (prev) libpulseaudio;
+              inherit (prev.gst_all_1) gstreamer gst-plugins-base gst-plugins-good;
+            };
+            # wayfire stuff
+            wayfire          = prev.callPackage ./pkgs/wayfire {};
+            # bspwc/wltrunk stuff
+            bspwc    = prev.callPackage ./pkgs/bspwc { wlroots = wlroots-tmp; };
+            wltrunk  = prev.callPackage ./pkgs/wltrunk { wlroots = wlroots-tmp; };
+          };
         in
-          nixpkgs_.mkShell {
-            nativeBuildInputs = with nixpkgs_; [
-              bash cacert
-              curl git jq mercurial
-              openssh ripgrep
+          waylandPkgs // { inherit waylandPkgs; };
 
-              cachixpkgs_.cachix
-              master_.nixFlakes
-              master_.nix-build-uncached
-              nixpkgs_.nix-prefetch
-            ];
-          }
+      packages = forAllSystems (system:
+        (pkgsFor inputs.nixpkgs system true).waylandPkgs
       );
 
-      overlay = final: prev:
-        (import ./default.nix final prev);
-
-      # flakes-util candidate:
-      # make it even more auto to determine sys from the attr name
-      # I think it just needs a genAttrs actually
-      packages = let
-        pkgs = sys:
-          let
-            nixpkgs_ = (pkgsFor inputs.nixpkgs sys true);
-            packagePlatforms = pkg: pkg.meta.hydraPlatforms or pkg.meta.platforms or [ "x86_64-linux" ];
-            pred = n: v: builtins.elem sys (packagePlatforms v);
-          in
-            nixpkgs_.lib.filterAttrs pred nixpkgs_.waylandPkgs;
-      in {
-          x86_64-linux = pkgs "x86_64-linux";
-          aarch64-linux = pkgs "aarch64-linux";
-        };
-
-      # TODO flake-util: join all `inputs.self.packages`
-      # TODO: recursive dependencies aren't checked
       defaultPackage = forAllSystems (system:
         let
           nixpkgs_ = (pkgsFor inputs.nixpkgs system true);
@@ -82,8 +99,18 @@
           }
       );
 
-      hydraJobs = {
-        packages = inputs.self.packages;
-      };
+      devShell = forAllSystems (system:
+        let
+          nixpkgs_ = (pkgsFor inputs.nixpkgs system false);
+          master_  = (pkgsFor inputs.master system false);
+          cachix_  = (pkgsFor inputs.cachix system false);
+        in
+          nixpkgs_.mkShell {
+            nativeBuildInputs = (with cachix_;  [ cachix ])
+            #++ (with master_;  [ nixFlakes nix-build-uncached nix-prefetch ])
+            ++ (with nixpkgs_; [ nixFlakes nix-build-uncached nix-prefetch ])
+            ++ (with nixpkgs_; [ bash cacert curl git jq mercurial openssh ripgrep ]);
+          }
+      );
     };
 }
