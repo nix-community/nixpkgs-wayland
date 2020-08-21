@@ -74,10 +74,11 @@ Packages from this overlay are regularly built against `nixos-unstable` and push
             # pull specific packages (built against inputs.nixpkgs, usually `nixos-unstable`)
             environment.systemPackages = with pkgs; [
               inputs.nixpkgs-wayland.packages.${system}.waybar
+            ];
           };
         })];
-      }
-    }
+      };
+    };
   }
   ```
 
