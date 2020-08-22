@@ -1,7 +1,7 @@
 {
   repo_git = "https://github.com/vilhalmer/oguri";
   branch = "master";
-  rev = "abf26bf2646d00d91b27cf0336cca38d17057bed";
-  sha256 = "1bkd448d6359cylwjar7xnlpic3bvzc650a7fbdcc11l1jw21gq5";
+  rev = "a5dd24eedc325bf66ab3e13fbf1178e1b5ec702f";
+  sha256 = "0145lkblb8d1bffg3g0phf7gg5f53p9d2gypcs6zlwmn9aiz08dw";
   revdate = "2020-05-27 14:14:43Z";
 }
