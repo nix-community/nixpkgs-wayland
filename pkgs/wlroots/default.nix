@@ -35,6 +35,7 @@ in stdenv.mkDerivation rec {
   mesonFlags = [
     "-Dlibcap=enabled" "-Dlogind-provider=systemd" "-Dxwayland=enabled" "-Dx11-backend=enabled"
     "-Dxcb-icccm=enabled" "-Dxcb-xkb=enabled" "-Dxcb-errors=enabled"
+     "-Dlibseat=disabled"
   ];
 
   postInstall = ''
