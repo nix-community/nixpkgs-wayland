@@ -43,7 +43,7 @@
             swayidle         = prev.callPackage ./pkgs/swayidle {};
             swaylock         = prev.callPackage ./pkgs/swaylock {};
             waybar           = prev.callPackage ./pkgs/waybar {};
-            waybox           = prev.callPackage ./pkgs/waybox { wlroots = wlroots-0-9-x; };
+            #waybox           = prev.callPackage ./pkgs/waybox { wlroots = wlroots-0-9-x; };
             waypipe          = prev.callPackage ./pkgs/waypipe {};
             wayvnc           = prev.callPackage ./pkgs/wayvnc {};
             wdisplays        = prev.callPackage ./pkgs/wdisplays {};
@@ -61,8 +61,8 @@
             wtype            = prev.callPackage ./pkgs/wtype {};
             xdg-desktop-portal-wlr = prev.callPackage ./pkgs/xdg-desktop-portal-wlr {};
             # temp
-            wlroots-tmp = prev.callPackage ./pkgs-temp/wlroots {};
-            wlroots-0-9-x = prev.callPackage ./pkgs-temp/wlroots-0-9-x {};
+            #wlroots-tmp = prev.callPackage ./pkgs-temp/wlroots {};
+            #wlroots-0-9-x = prev.callPackage ./pkgs-temp/wlroots-0-9-x {};
             # misc
             aml = prev.callPackage ./pkgs/aml {};
             clipman = prev.callPackage ./pkgs/clipman {};
@@ -77,8 +77,8 @@
             # wayfire stuff
             wayfire          = prev.callPackage ./pkgs/wayfire {};
             # bspwc/wltrunk stuff
-            bspwc    = prev.callPackage ./pkgs/bspwc { wlroots = wlroots-tmp; };
-            wltrunk  = prev.callPackage ./pkgs/wltrunk { wlroots = wlroots-tmp; };
+            #bspwc    = prev.callPackage ./pkgs/bspwc { wlroots = wlroots-0-9-x; };
+            #wltrunk  = prev.callPackage ./pkgs/wltrunk { wlroots = wlroots-0-9-x; };
           };
         in
           waylandPkgs // { inherit waylandPkgs; };
