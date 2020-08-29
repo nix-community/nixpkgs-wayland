@@ -127,7 +127,6 @@ These packages were mostly recently built (and cached) against:
 | Package | Description |
 | ------- | ----------- |
 | [aml](https://github.com/any1/neatvnc) | liberally licensed VNC server library that's intended to be fast and neat |
-| [bspwc](https://git.sr.ht/~bl4ckb0ne/bspwc) | Binary space partitioning wayland compositor |
 | [cage](https://www.hjdskes.nl/projects/cage/) | A Wayland kiosk |
 | [clipman](https://github.com/yory8/clipman) | A basic clipboard manager for Wayland, with support for persisting copy buffers after an application exits |
 | [drm_info](https://github.com/ascent12/drm_info) | Small utility to dump info about DRM devices. |
@@ -152,22 +151,20 @@ These packages were mostly recently built (and cached) against:
 | [swayidle](https://swaywm.org) | Sway's idle management daemon |
 | [swaylock](https://swaywm.org) | Screen locker for Wayland |
 | [waybar](https://github.com/Alexays/Waybar) | Highly customizable Wayland Polybar like bar for Sway and Wlroots based compositors. |
-| [waybox](https://github.com/wizbright/waybox) | An openbox clone on Wayland (WIP) |
 | [wayfire](https://wayfire.org/) | 3D wayland compositor |
 | [waypipe](https://gitlab.freedesktop.org/mstoeckl/waypipe/) | Network transparency with Wayland |
 | [wayvnc](https://github.com/any1/wayvnc) | A VNC server for wlroots based Wayland compositors |
 | [wdisplays](https://github.com/cyclopsian/wdisplays) | GUI display configurator for wlroots compositors |
 | [wev](https://git.sr.ht/~sircmpwn/wev) | A tool for debugging events on a Wayland window, analagous to the X11 tool xev. |
 | [wf-recorder](https://github.com/ammen99/wf-recorder) | Utility program for screen recording of wlroots-based compositors |
-| [wlay](https://github.com/atx/wlay) | Graphical output management for Wayland |
 | [wl-clipboard](https://github.com/bugaevc/wl-clipboard) | Select a region in a Wayland compositor |
+| [wl-gammactl](https://github.com/mischw/wl-gammactl) | Small GTK GUI application to set contrast, brightness and gamma for wayland compositors which support the wlr-gamma-control protocol extension. |
+| [wlay](https://github.com/atx/wlay) | Graphical output management for Wayland |
 | [wldash](https://wldash.org) | Wayland launcher/dashboard |
 | [wlfreerdp](http://www.freerdp.com/) | A Remote Desktop Protocol Client |
-| [wl-gammactl](https://github.com/mischw/wl-gammactl) | Small GTK GUI application to set contrast, brightness and gamma for wayland compositors which support the wlr-gamma-control protocol extension. |
 | [wlogout](https://github.com/ArtsyMacaw/wlogout) | A wayland based logout menu |
-| [wlroots](https://github.com/swaywm/wlroots) | A modular Wayland compositor library |
 | [wlr-randr](https://github.com/emersion/wlr-randr) | An xrandr clone for wlroots compositors |
-| [wltrunk](https://git.sr.ht/~bl4ckb0ne/wltrunk) | High-level Wayland compositor library based on wlroots |
+| [wlroots](https://github.com/swaywm/wlroots) | A modular Wayland compositor library |
 | [wofi](https://hg.sr.ht/~scoopta/wofi) | Wofi is a launcher/menu program for wlroots based wayland compositors such as sway |
 | [wtype](https://github.com/atx/wtype) | xdotool type for wayland |
 | [xdg-desktop-portal-wlr](https://github.com/emersion/xdg-desktop-portal-wlr) | xdg-desktop-portal backend for wlroots |
