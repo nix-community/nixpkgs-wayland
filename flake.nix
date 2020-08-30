@@ -46,6 +46,7 @@
             #waybox           = prev.callPackage ./pkgs/waybox { wlroots = wlroots-0-9-x; };
             waypipe          = prev.callPackage ./pkgs/waypipe {};
             wayvnc           = prev.callPackage ./pkgs/wayvnc {};
+            wlvncc           = prev.callPackage ./pkgs/wlvncc {};
             wdisplays        = prev.callPackage ./pkgs/wdisplays {};
             wev              = prev.callPackage ./pkgs/wev {};
             wf-recorder      = prev.callPackage ./pkgs/wf-recorder {};
