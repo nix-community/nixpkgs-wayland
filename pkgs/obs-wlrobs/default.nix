@@ -34,7 +34,7 @@ stdenv.mkDerivation rec {
     description = "wlrobs is an obs-studio plugin that allows you to screen capture on wlroots based wayland compositors";
     homepage = "https://sr.ht/~scoopta/wlrobs";
     maintainers = with maintainers; [ colemickens ];
-    platforms = [ "x86_64-linux" "i686-linux" ];
+    platforms = [ "x86_64-linux" "i686-linux" "aarch64-linux" ];
     #platforms = with platforms; linux;
   };
 }

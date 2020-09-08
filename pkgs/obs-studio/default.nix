@@ -100,6 +100,6 @@ in mkDerivation rec {
     homepage = https://obsproject.com;
     maintainers = with maintainers; [ jb55 MP2E ];
     license = licenses.gpl2;
-    platforms = [ "x86_64-linux" "i686-linux" ];
+    platforms = [ "aarch64-linux" "x86_64-linux" "i686-linux" ];
   };
 }
