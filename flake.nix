@@ -3,8 +3,8 @@
   description = "nixpkgs-wayland";
 
   inputs = {
-    #master = { url = "github:colemickens/nixpkgs/master"; };
-    nixpkgs = { url = "github:colemickens/nixpkgs/cmpkgs"; }; # TODO: revert soon (nix-prefetch)
+    nixpkgs = { url = "github:nixos/nixpkgs/nixos-unstable"; };
+    cmpkgs = { url = "github:colemickens/nixpkgs/cmpkgs"; }; # TODO: remove eventually (nix-prefetch)
     cachix = { url = "github:nixos/nixpkgs/nixos-20.03"; };
   };
 
@@ -114,14 +114,16 @@
       devShell = forAllSystems (system:
         let
           nixpkgs_ = (pkgsFor inputs.nixpkgs system false);
-          master_  = (pkgsFor inputs.master system false);
+          cmpkgs_  = (pkgsFor inputs.cmpkgs system false);
           cachix_  = (pkgsFor inputs.cachix system false);
         in
           nixpkgs_.mkShell {
-            nativeBuildInputs = (with cachix_;  [ cachix ])
-            #++ (with master_;  [ nixFlakes nix-build-uncached nix-prefetch ])
-            ++ (with nixpkgs_; [ nixFlakes nix-build-uncached nix-prefetch ])
-            ++ (with nixpkgs_; [ bash cacert curl git jq mercurial openssh ripgrep ]);
+            nativeBuildInputs = []
+              ++ (with cachix_; [ cachix ])
+              ++ (with nixpkgs_; [ nixFlakes nix-build-uncached ])
+              ++ (with nixpkgs_; [ bash cacert curl git jq mercurial openssh ripgrep ])
+              ++ (with cmpkgs_; [ nix-prefetch ])
+            ;
           }
       );
     };
