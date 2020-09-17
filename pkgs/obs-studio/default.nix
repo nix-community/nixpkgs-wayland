@@ -49,7 +49,10 @@ in mkDerivation rec {
     sha256 = metadata.sha256;
   };
 
-#  patches = (fetchpatch { url = "https://github.com/obsproject/obs-studio/pull/2097.patch"; sha256 = "18sws0v39vg10fyp3i267wv9n0rimjkx7byk48v7r97vgck1k63h"; });
+  patches = (fetchpatch {
+    url = "https://github.com/obsproject/obs-studio/pull/3182/commits/51c38080f2bced5a448f556188d0d1dec2551efc.patch";
+    sha256 = lib.fakeSha256;
+  });
 
   nativeBuildInputs = [ cmake pkgconfig ];
 
