@@ -51,7 +51,7 @@ in mkDerivation rec {
 
   patches = (fetchpatch {
     url = "https://github.com/obsproject/obs-studio/pull/3182/commits/51c38080f2bced5a448f556188d0d1dec2551efc.patch";
-    sha256 = lib.fakeSha256;
+    sha256 = "1dvkqfw1l1rpghfi8m5xpk6k5k3k9j5h39md8z00ggzvl743hkqp";
   });
 
   nativeBuildInputs = [ cmake pkgconfig ];
