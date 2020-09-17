@@ -81,7 +81,10 @@
             gtk-layer-shell = prev.callPackage ./pkgs/gtk-layer-shell {};
             i3status-rust    = prev.callPackage ./pkgs/i3status-rust {};
             neatvnc = prev.callPackage ./pkgs/neatvnc {};
-            obs-studio = prev.libsForQt5.callPackage ./pkgs/obs-studio { ffmpeg = prev.ffmpeg_4; };
+            obs-studio = prev.libsForQt5.callPackage ./pkgs/obs-studio {
+              ffmpeg = prev.ffmpeg_4;
+              vlc = prev.vlc;
+            };
             wlfreerdp = prev.callPackage ./pkgs/wlfreerdp {
               inherit (prev) libpulseaudio;
               inherit (prev.gst_all_1) gstreamer gst-plugins-base gst-plugins-good;
