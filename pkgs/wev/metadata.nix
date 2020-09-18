@@ -1,7 +1,7 @@
 {
   repo_git = "https://git.sr.ht/~sircmpwn/wev";
   branch = "master";
-  rev = "0be512fb705831b55020e1eaf86eedba0eae4a75";
-  sha256 = "0dbw4fc7j28mvvd85kj941vpjikdj2wvkw5kpz61h1akg9m0pdg2";
+  rev = "54de46d120396ead4dcbce0b52cf506c200380f5";
+  sha256 = "0v5vlahf3j464vvggfm8s2dnk3hcdx59dnshlbkcn9dh8cv9gy7y";
   revdate = "2020-07-07 15:20:53Z";
 }
