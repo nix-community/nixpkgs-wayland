@@ -49,10 +49,12 @@ in mkDerivation rec {
     sha256 = metadata.sha256;
   };
 
+  /*
   patches = (fetchpatch {
     url = "https://github.com/obsproject/obs-studio/pull/3182/commits/51c38080f2bced5a448f556188d0d1dec2551efc.patch";
     sha256 = "sha256-tpSYcLS5l0h4MmgAE9WayGbW2KBlbLsTDQi9dOf3T/U=";
   });
+  */
 
   nativeBuildInputs = [ cmake pkgconfig ];
 
