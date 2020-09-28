@@ -6,6 +6,7 @@
 , pixman, libuv, libglvnd
 , neatvnc, libX11, libdrm
 , aml, mesa
+, scdoc
 }:
 
 let
@@ -30,6 +31,7 @@ stdenv.mkDerivation rec {
     pixman libuv libglvnd
     neatvnc libX11 libdrm
     aml mesa
+    scdoc
   ];
 
   enableParallelBuilding = true;
