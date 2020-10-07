@@ -9,6 +9,7 @@
 , gtk-layer-shell
 , coreutils
 , howard-hinnant-date
+, sndio
 }:
 
 let
@@ -41,6 +42,7 @@ stdenv.mkDerivation rec {
     gtk-layer-shell
     coreutils
     howard-hinnant-date
+    sndio
   ];
   mesonFlags = [
     "-Dauto_features=enabled"
