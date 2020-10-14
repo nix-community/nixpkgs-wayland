@@ -7,7 +7,8 @@ Automated, pre-built packages for Wayland (sway/wlroots) tools for NixOS.
 - [Usage](#usage)
   - [Binary Cache](#binary-cache)
   - [Flake Usage](#flake-usage)
-  - [Legacy (manual import)](#legacy-manual-import)
+  - [Install for NixOS (non-flakes, manual import)](#install-for-nixos-non-flakes-manual-import)
+  - [Install for non-NixOS users](#install-for-non-nixos-users)
 - [Packages](#packages)
 - [Tips](#tips)
     - [General](#general)
@@ -82,7 +83,7 @@ Packages from this overlay are regularly built against `nixos-unstable` and push
   }
   ```
 
-### Legacy (manual import)
+### Install for NixOS (non-flakes, manual import)
 
 If you are not using Flakes, then consult the [NixOS Wiki page on Overlays](https://nixos.wiki/wiki/Overlays). Also, you can expand this section for a more literal, direct example. If you do pin, use a tool like `niv` to do the pinning so that you don't forget and wind up stuck on an old version.
 
@@ -118,6 +119,48 @@ You could write that to a file `./wayland.nix` next to your `configuration.nix` 
 ```
 
 </details>
+
+### Install for non-NixOS users
+
+Non-NixOS users have many options, but here are two explicitly:
+
+1. Activate flakes mode, then just run them outright like the first example in this README.
+
+2. See the following details block for an example of how to add `nixpkgs-wayland` as a user-level
+   overlay and then install a package with `nix-env`.
+
+<details>
+
+1. There are two ways to activate an overlay for just your user:
+
+   1. Add a new entry in ``~/.config/nixpkgs/overlays.nix`:
+    ```nix
+    let
+      url = "https://github.com/colemickens/nixpkgs-wayland/archive/master.tar.gz";
+    in
+    [
+      (import (builtins.fetchTarball url))
+    ]
+    ```
+
+   2. Add a new file under a dir, `~/.config/nixpkgs/overlays/nixpkgs-wayland.nix`:
+    ```nix
+    let
+      url = "https://github.com/colemickens/nixpkgs-wayland/archive/master.tar.gz";
+    in
+      (import (builtins.fetchTarball url))
+    ```
+
+  Note, this method does not pin `nixpkgs-wayland`. That's left to the reader. (Just use flakes...)
+
+2. Then, `nix-env` will have access to the packages:
+
+```nix
+nix-env -iA neatvnc
+```
+
+</details>
+
 
 ## Packages
 
