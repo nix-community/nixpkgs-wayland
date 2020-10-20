@@ -41,6 +41,7 @@ stdenv.mkDerivation rec {
     "-Duse_system_wlroots=disabled"
     "-Duse_system_wfconfig=disabled"
     "-Dwlroots:logind-provider=systemd"
+    "-Dwlroots:libseat=disabled"
   ];
 
   enableParallelBuilding = true;
