@@ -128,7 +128,7 @@ nix --experimental-features 'nix-command flakes' \
     --update-input flake-utils
 
 # update our package sources/sha256s
-for p in `ls -d -- pkgs/*/`; do
+for p in `ls -v -d -- pkgs/*/`; do
   update "pkgs" "${p}"
 done
 
