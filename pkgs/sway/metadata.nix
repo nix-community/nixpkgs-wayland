@@ -4,5 +4,4 @@
   upattr = "sway-unwrapped";
   rev = "4799cb09606ba8b3cc3969c24637b3c6c9eac485";
   sha256 = "17is7njqkfszj216v9zfr584qnjkj9kb3csjicv7019m3yibyp29";
-  revdate = "2020-08-11 22:37:11Z";
 }

@@ -4,5 +4,4 @@
   rev = "bd9106c5ee698dac15a8862504a2a104c9701a08";
   sha256 = "sha256-v1xcQg0RvEnVXMl2OzdAsrbk6696lT6f7feovWXxr3k=";
   cargoSha256 = "sha256-PMyrfl/6wqVFfwwIFHWub6BwJqQAwaujPy/boja3r5E=";
-  revdate = "2020-07-22 10:42:48Z";
 }

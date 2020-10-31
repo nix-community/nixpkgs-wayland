@@ -25,8 +25,7 @@ stdenv.mkDerivation rec {
 
   postPatch = ''
     # replace the version
-    date="$(date -d '${metadata.revdate}' +'%b %d %Y')"
-    sed -i "s/\([ \t]\)version: '\(.*\)',/\1version: '\2-${stdenv.lib.substring 0 8 metadata.rev} ($date, branch \\\'${metadata.branch}\\\')',/" meson.build
+   sed -i "s/\([ \t]\)version: '\(.*\)',/\1version: '\2-${stdenv.lib.substring 0 8 metadata.rev} (branch \\\'${metadata.branch}\\\')',/" meson.build
   '';
 
   nativeBuildInputs = [
