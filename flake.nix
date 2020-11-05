@@ -5,20 +5,22 @@
   inputs = {
     nixpkgs = { url = "github:nixos/nixpkgs/nixos-unstable"; };
     cmpkgs = { url = "github:colemickens/nixpkgs/cmpkgs"; }; # TODO: remove eventually (nix-prefetch, nix-build-uncached)
-    cachix = { url = "github:nixos/nixpkgs/nixos-20.03"; };
+    cachix = { url = "github:nixos/nixpkgs/nixos-20.09"; };
   };
 
   outputs = inputs:
     let
       nameValuePair = name: value: { inherit name value; };
       genAttrs = names: f: builtins.listToAttrs (map (n: nameValuePair n (f n)) names);
-      forAllSystems = genAttrs [ "x86_64-linux" "aarch64-linux" ];
-      pkgsFor = pkgs: system: includeOverlay:
+      supportedSystems = [ "x86_64-linux" "aarch64-linux" ];
+      forAllSystems = genAttrs supportedSystems;
+      pkgsFor = pkgs: system:
         import pkgs {
           inherit system;
           config.allowUnfree = true;
-          overlays = if includeOverlay then [ inputs.self.overlay ] else [];
+          overlays = [ inputs.self.overlay ];
         };
+      pkgs_ = genAttrs (builtins.attrNames inputs) (inp: genAttrs supportedSystems (sys: pkgsFor inputs."${inp}" sys));
     in
     rec {
       overlay = final: prev:
@@ -54,7 +56,6 @@
             swayidle         = prev.callPackage ./pkgs/swayidle {};
             swaylock         = prev.callPackage ./pkgs/swaylock {};
             waybar           = prev.callPackage ./pkgs/waybar {};
-            #waybox           = prev.callPackage ./pkgs/waybox { wlroots = wlroots-0-9-x; };
             waypipe          = prev.callPackage ./pkgs/waypipe {};
             wayvnc           = prev.callPackage ./pkgs/wayvnc {};
             wlvncc           = prev.callPackage ./pkgs/wlvncc {};
@@ -72,9 +73,6 @@
             wofi             = prev.callPackage ./pkgs/wofi {};
             wtype            = prev.callPackage ./pkgs/wtype {};
             xdg-desktop-portal-wlr = prev.callPackage ./pkgs/xdg-desktop-portal-wlr {};
-            # temp
-            #wlroots-tmp = prev.callPackage ./pkgs-temp/wlroots {};
-            #wlroots-0-9-x = prev.callPackage ./pkgs-temp/wlroots-0-9-x {};
             # misc
             aml = prev.callPackage ./pkgs/aml {};
             clipman = prev.callPackage ./pkgs/clipman {};
@@ -91,43 +89,29 @@
             };
             # wayfire stuff
             wayfire          = prev.callPackage ./pkgs/wayfire {};
-            # bspwc/wltrunk stuff
-            #bspwc    = prev.callPackage ./pkgs/bspwc { wlroots = wlroots-0-9-x; };
-            #wltrunk  = prev.callPackage ./pkgs/wltrunk { wlroots = wlroots-0-9-x; };
           };
         in
           waylandPkgs // { inherit waylandPkgs; };
 
       packages = forAllSystems (system:
-        (pkgsFor inputs.nixpkgs system true).waylandPkgs
+        pkgs_.nixpkgs.${system}.waylandPkgs
       );
 
       defaultPackage = forAllSystems (system:
-        let
-          nixpkgs_ = (pkgsFor inputs.nixpkgs system true);
-          attrValues = inputs.nixpkgs.lib.attrValues;
-          out = packages."${system}";
-        in
-          nixpkgs_.symlinkJoin {
-            name = "nixpkgs-wayland";
-            paths = attrValues out;
-          }
+        pkgs_.nixpkgs.${system}.symlinkJoin {
+          name = "nixpkgs-wayland";
+          paths = inputs.nixpkgs.libattrValues (packages."${system}");
+        }
       );
 
       devShell = forAllSystems (system:
-        let
-          nixpkgs_ = (pkgsFor inputs.nixpkgs system false);
-          cmpkgs_  = (pkgsFor inputs.cmpkgs system false);
-          cachix_  = (pkgsFor inputs.cachix system false);
-        in
-          nixpkgs_.mkShell {
-            nativeBuildInputs = []
-              ++ (with cachix_; [ cachix ])
-              ++ (with nixpkgs_; [ nixFlakes ])
-              ++ (with nixpkgs_; [ bash cacert curl git jq mercurial openssh ripgrep ])
-              ++ (with cmpkgs_; [ nix-prefetch nix-build-uncached ])
-            ;
-          }
+        pkgs_.nixpkgs.${system}.mkShell {
+          nativeBuildInputs = []
+            ++ (with pkgs_.cachix.${system}; [ cachix ])
+            ++ (with pkgs_.nixpkgs.${system}; [ bash cacert curl git jq mercurial openssh ripgrep ])
+            ++ (with pkgs_.cmpkgs.${system}; [ nixUnstable nix-prefetch nix-build-uncached ])
+          ;
+        }
       );
     };
 }
