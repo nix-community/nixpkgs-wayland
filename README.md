@@ -173,7 +173,8 @@ These packages were mostly recently built (and cached) against:
 | [cage](https://www.hjdskes.nl/projects/cage/) | A Wayland kiosk |
 | [clipman](https://github.com/yory8/clipman) | A basic clipboard manager for Wayland, with support for persisting copy buffers after an application exits |
 | [drm_info](https://github.com/ascent12/drm_info) | Small utility to dump info about DRM devices. |
-| [emacs](https://www.gnu.org/software/emacs/) | The extensible, customizable GNU text editor |
+| [emacs-pgtk-nativecomp](https://www.gnu.org/software/emacs/) | The extensible, customizable GNU text editor |
+| [emacs-pgtk](https://www.gnu.org/software/emacs/) | The extensible, customizable GNU text editor |
 | [gebaar-libinput](https://github.com/Coffee2CodeNL/gebaar-libinput) | Gebaar, A Super Simple WM Independent Touchpad Gesture Daemon for libinput |
 | [glpaper](https://bitbucket.org/Scoopta/glpaper) | GLPaper is a wallpaper program for wlroots based wayland compositors such as sway that allows you to render glsl shaders as your wallpaper |
 | [grim](https://github.com/emersion/grim) | Grab images from a Wayland compositor |
