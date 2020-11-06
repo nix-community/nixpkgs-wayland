@@ -79,9 +79,16 @@
             gtk-layer-shell = prev.callPackage ./pkgs/gtk-layer-shell {};
             i3status-rust    = prev.callPackage ./pkgs/i3status-rust {};
             neatvnc = prev.callPackage ./pkgs/neatvnc {};
-            obs-studio = prev.libsForQt5.callPackage ./pkgs/obs-studio {
+            obs-studio = prev.libsForQt5.callPackage ./pkgs/obs-studio/egl-wayland {
               ffmpeg = prev.ffmpeg_4;
               vlc = prev.vlc;
+            };
+            obs-studio-dmabuf = prev.libsForQt5.callPackage ./pkgs/obs-studio/dmabuf {
+              ffmpeg = prev.ffmpeg_4;
+              vlc = prev.vlc;
+            };
+            obs-xdg-portal = prev.callPackage ./pkgs/obs-xdg-portal {
+              obs-studio = obs-studio-dmabuf;
             };
             wlfreerdp = prev.callPackage ./pkgs/wlfreerdp {
               inherit (prev) libpulseaudio;
