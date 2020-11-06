@@ -5,7 +5,7 @@
 , libpthreadstubs
 , pixman, libuv, libglvnd
 , neatvnc, libX11, libdrm
-, aml, mesa
+, aml, mesa, pam
 , scdoc
 }:
 
@@ -30,7 +30,7 @@ stdenv.mkDerivation rec {
     libpthreadstubs
     pixman libuv libglvnd
     neatvnc libX11 libdrm
-    aml mesa
+    aml mesa pam
     scdoc
   ];
 
