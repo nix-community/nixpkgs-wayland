@@ -1,3 +1,5 @@
+{ rev, sha256 }:
+
 { config, stdenv
 , mkDerivation
 , fetchFromGitHub
@@ -36,7 +38,6 @@
 }:
 
 let
-  metadata = import ./metadata.nix;
   inherit (stdenv.lib) optional optionals;
 in mkDerivation rec {
   pname = "obs-studio";
@@ -45,8 +46,7 @@ in mkDerivation rec {
   src = fetchFromGitHub {
     owner = "GeorgesStavracas";
     repo = "obs-studio";
-    rev = metadata.rev;
-    sha256 = metadata.sha256;
+    inherit rev sha256;
   };
 
   /*
