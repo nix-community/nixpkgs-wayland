@@ -1,6 +1,6 @@
 {
   repo_git = "https://github.com/GeorgesStavracas/obs-studio";
   branch = "feaneron/egl-wayland";
-  rev = "7d3c9b0f9a8d867054907de2a1333dcc938a783c";
-  sha256 = "sha256-eUGkvf77c5KtQZfr3x3RfyZhZL9P4vdFOa7gcNhVswk=";
+  rev = "7fe0e9c73c1ee311a24e496828f5df5da7767f1b";
+  sha256 = "sha256-kkVlS65KdKJ20CBULrV9WRkxDGzUl2Y9mxT/97BRVYY=";
 }
