@@ -119,14 +119,6 @@ function update_readme() {
       > README2.md; mv README2.md README.md
 }
 
-# update flake inputs
-nix --experimental-features 'nix-command flakes' \
-  flake update \
-    --update-input master \
-    --update-input nixpkgs \
-    --update-input cachixpkgs \
-    --update-input flake-utils
-
 # update our package sources/sha256s
 for p in `ls -v -d -- pkgs/*/`; do
   update "pkgs" "${p}"

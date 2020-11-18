@@ -100,7 +100,7 @@
       defaultPackage = forAllSystems (system:
         pkgs_.nixpkgs.${system}.symlinkJoin {
           name = "nixpkgs-wayland";
-          paths = inputs.nixpkgs.libattrValues (packages."${system}");
+          paths = inputs.nixpkgs.lib.attrValues (packages."${system}");
         }
       );
 

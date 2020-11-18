@@ -7,6 +7,9 @@ secrets:
 environment:
   CI_BUILD: "sr.ht"
 tasks:
+  - flake-update: |
+      cd nixpkgs-wayland
+      nix-shell -I 'https://github.com/nixos/nixpkgs/archive/nixos-unstable.tar.gz' -p nixUnstable --command "nix --experimental-features 'nix-command flakes' flake update --recreate-lock-file --no-registries"
   - prep: |
       cd nixpkgs-wayland
       nix-shell --pure --command "./.ci/prep.sh"
