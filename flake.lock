@@ -18,11 +18,11 @@
     },
     "cmpkgs": {
       "locked": {
-        "lastModified": 1605837204,
-        "narHash": "sha256-u0t8sYwSmfvSiwXhjEFUPGxHRmadrg3pi0y96081F/k=",
+        "lastModified": 1605916463,
+        "narHash": "sha256-nNeptY9cM7pZBJFVbenyckk2EbjByvgp7OS57ZM7boE=",
         "owner": "colemickens",
         "repo": "nixpkgs",
-        "rev": "89fea9521f576a0717e34dc66ac0251dd7448358",
+        "rev": "e1602aece827fd3070c93b43ac6c232555ab966e",
         "type": "github"
       },
       "original": {
