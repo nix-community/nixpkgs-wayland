@@ -29,7 +29,6 @@
             # wlroots-related
             cage             = prev.callPackage ./pkgs/cage { wlroots = prev.wlroots; };
             drm_info         = prev.callPackage ./pkgs/drm_info {};
-            emacs-pgtk       = prev.callPackage ./pkgs/emacs {};
             gebaar-libinput  = prev.callPackage ./pkgs/gebaar-libinput {};
             glpaper          = prev.callPackage ./pkgs/glpaper {};
             grim             = prev.callPackage ./pkgs/grim {};
