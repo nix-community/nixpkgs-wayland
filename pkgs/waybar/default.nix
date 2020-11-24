@@ -2,7 +2,7 @@
 , meson, ninja, pkgconfig, scdoc
 , wayland, wayland-protocols, sway, wlroots
 , libpulseaudio, libinput, libnl, gtkmm3
-, fmt_6, jsoncpp, libdbusmenu-gtk3
+, fmt, jsoncpp, libdbusmenu-gtk3
 , glib
 , spdlog
 , mpd_clientlib
@@ -34,7 +34,7 @@ stdenv.mkDerivation rec {
   buildInputs = [
     wayland wayland-protocols sway wlroots
     libpulseaudio libinput libnl gtkmm3
-    fmt_6 jsoncpp libdbusmenu-gtk3
+    fmt jsoncpp libdbusmenu-gtk3
     glib
     spdlog
     mpd_clientlib
