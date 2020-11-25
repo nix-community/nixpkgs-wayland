@@ -206,6 +206,7 @@ These packages were mostly recently built (and cached) against:
 | [wlogout](https://github.com/ArtsyMacaw/wlogout) | A wayland based logout menu |
 | [wlroots](https://github.com/swaywm/wlroots) | A modular Wayland compositor library |
 | [wlr-randr](https://github.com/emersion/wlr-randr) | An xrandr clone for wlroots compositors |
+| [wlsunset](https://git.sr.ht/~kennylevinsen/wlsunset) | Day/night gamma adjustments for Wayland |
 | [wlvncc](https://github.com/any1/wlvncc) | A Wayland Native VNC Client |
 | [wl-clipboard](https://github.com/bugaevc/wl-clipboard) | Select a region in a Wayland compositor |
 | [wl-gammactl](https://github.com/mischw/wl-gammactl) | Small GTK GUI application to set contrast, brightness and gamma for wayland compositors which support the wlr-gamma-control protocol extension. |

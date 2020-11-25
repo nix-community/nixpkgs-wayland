@@ -1,4 +1,4 @@
-{ stdenv, fetchFromGitHub
+{ stdenv, fetchgit
 , meson, ninja, pkgconfig
 , cairo, libjpeg, wayland, wayland-protocols
 , scdoc, buildDocs ? true
