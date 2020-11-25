@@ -69,6 +69,7 @@
             wlogout          = prev.callPackage ./pkgs/wlogout {};
             wlroots          = prev.callPackage ./pkgs/wlroots {};
             wlr-randr        = prev.callPackage ./pkgs/wlr-randr {};
+            wlsunset         = prev.callPackage ./pkgs/wlsunset {};
             wofi             = prev.callPackage ./pkgs/wofi {};
             wtype            = prev.callPackage ./pkgs/wtype {};
             xdg-desktop-portal-wlr = prev.callPackage ./pkgs/xdg-desktop-portal-wlr {};
