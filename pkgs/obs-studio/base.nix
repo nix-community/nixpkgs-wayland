@@ -1,4 +1,4 @@
-{ rev, sha256 }:
+{ suffix, rev, sha256 }:
 
 { config, stdenv
 , mkDerivation
@@ -40,7 +40,7 @@
 let
   inherit (stdenv.lib) optional optionals;
 in mkDerivation rec {
-  pname = "obs-studio";
+  pname = "obs-studio-${suffix}";
   version = "unstable-wayland-latest";
 
   src = fetchFromGitHub {

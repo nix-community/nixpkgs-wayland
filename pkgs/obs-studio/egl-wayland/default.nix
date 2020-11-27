@@ -3,4 +3,5 @@ let
 in
 import ../base.nix {
   inherit (metadata) rev sha256;
+  suffix = "egl";
 }
