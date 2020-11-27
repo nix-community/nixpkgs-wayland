@@ -104,12 +104,11 @@
         pkgs_.nixpkgs.${system}.waylandPkgs
       );
 
-      defaultPackage = forAllSystems (system:
-        pkgs_.nixpkgs.${system}.symlinkJoin {
-          name = "nixpkgs-wayland";
-          paths = inputs.nixpkgs.lib.attrValues (packages."${system}");
-        }
-      );
+      unstablePkgs = forAllSystems (system: with pkgs_.nixpkgs.${system};
+          linkFarmFromDrvs "wayland-packages-unstable"
+            (builtins.attrValues waylandPkgs));
+
+      defaultPackage = unstablePkgs;
 
       devShell = forAllSystems (system:
         pkgs_.nixpkgs.${system}.mkShell {
