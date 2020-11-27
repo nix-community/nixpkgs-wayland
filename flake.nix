@@ -4,6 +4,7 @@
 
   inputs = {
     nixpkgs = { url = "github:nixos/nixpkgs/nixos-unstable"; };
+    unstableSmall = { url = "github:nixos/nixpkgs/nixos-unstable-small"; };
     cmpkgs = { url = "github:colemickens/nixpkgs/cmpkgs"; }; # TODO: remove eventually (nix-prefetch, nix-build-uncached)
     cachix = { url = "github:nixos/nixpkgs/nixos-20.09"; };
   };
@@ -103,6 +104,10 @@
       packages = forAllSystems (system:
         pkgs_.nixpkgs.${system}.waylandPkgs
       );
+
+      unstableSmallPkgs = forAllSystems (system: with pkgs_.unstableSmall.${system};
+          linkFarmFromDrvs "wayland-packages-unstable-small"
+            (builtins.attrValues waylandPkgs));
 
       unstablePkgs = forAllSystems (system: with pkgs_.nixpkgs.${system};
           linkFarmFromDrvs "wayland-packages-unstable"
