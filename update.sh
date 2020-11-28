@@ -17,7 +17,6 @@ cache="nixpkgs-wayland";
 build_attr="${1:-"waylandPkgs"}"
 
 function update() {
-  set +x
   typ="${1}"
   pkg="${2}"
 
@@ -26,6 +25,8 @@ function update() {
 
   metadata="${pkg}/metadata.nix"
   pkgname="$(basename "${pkg}")"
+
+  if [[ ! -f "${pkg}/metadata.nix" ]]; then return; fi
 
   # TODO: nix2json, update in parallel
   # TODO: aka, not in bash
