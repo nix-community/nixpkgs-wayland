@@ -2,11 +2,11 @@
   "nodes": {
     "cachix": {
       "locked": {
-        "lastModified": 1606086654,
-        "narHash": "sha256-VFl+3eGIMqNp7cyOMJ6TjM/+UcsLKtodKoYexrlTJMI=",
+        "lastModified": 1606344557,
+        "narHash": "sha256-IVIMVKWNNt6VODiLfINaW6sfrWPw5ZT91GQMgLUl7ZA=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "19db3e5ea2777daa874563b5986288151f502e27",
+        "rev": "ffb3aab257e8851b558cdc6079241a7eb0c7239e",
         "type": "github"
       },
       "original": {
@@ -18,11 +18,11 @@
     },
     "cmpkgs": {
       "locked": {
-        "lastModified": 1606389506,
-        "narHash": "sha256-l1q6vU5811XxLM42XHEpcCPFSx0m3XqPnoMzgpYBzIA=",
+        "lastModified": 1606528931,
+        "narHash": "sha256-999XOxEqIirdAcIHhEF1pWBhStKVKzSJqFFt+nol4R4=",
         "owner": "colemickens",
         "repo": "nixpkgs",
-        "rev": "ad6d66959a8c3901d65b71055b9fe4c395566baf",
+        "rev": "c5febdd83fb7c4e63000523206322128e73da2bf",
         "type": "github"
       },
       "original": {
@@ -52,7 +52,24 @@
       "inputs": {
         "cachix": "cachix",
         "cmpkgs": "cmpkgs",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "unstableSmall": "unstableSmall"
+      }
+    },
+    "unstableSmall": {
+      "locked": {
+        "lastModified": 1606508102,
+        "narHash": "sha256-CNNswtAp/kksFhVetB0FRq8jcTVaRWpYKxqRaLcdppI=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "d26aa3293c928576eb4b5cee310df5b8ba158c4e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable-small",
+        "repo": "nixpkgs",
+        "type": "github"
       }
     }
   },

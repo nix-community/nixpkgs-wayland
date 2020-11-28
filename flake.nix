@@ -80,11 +80,12 @@
             gtk-layer-shell = prev.callPackage ./pkgs/gtk-layer-shell {};
             i3status-rust    = prev.callPackage ./pkgs/i3status-rust {};
             neatvnc = prev.callPackage ./pkgs/neatvnc {};
-            obs-studio = prev.libsForQt5.callPackage ./pkgs/obs-studio/egl-wayland {
+            obs-studio = obs-studio-egl;
+            obs-studio-egl = prev.libsForQt5.callPackage ./pkgs/obs-studio-egl {
               ffmpeg = prev.ffmpeg_4;
               vlc = prev.vlc;
             };
-            obs-studio-dmabuf = prev.libsForQt5.callPackage ./pkgs/obs-studio/dmabuf {
+            obs-studio-dmabuf = prev.libsForQt5.callPackage ./pkgs/obs-studio-dmabuf {
               ffmpeg = prev.ffmpeg_4;
               vlc = prev.vlc;
             };

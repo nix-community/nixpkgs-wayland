@@ -1,7 +1,7 @@
 let
   metadata = import ./metadata.nix;
 in
-import ../base.nix {
+import ../obs-studio/base.nix {
   inherit (metadata) rev sha256;
   suffix = "egl";
 }

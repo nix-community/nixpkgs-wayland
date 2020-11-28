@@ -5,6 +5,8 @@ set -x
 
 unset NIX_PATH
 
+# TODO `NIX_PATH` should be derived from the flake.lock
+
 # build up commit msg
 defaultcommitmsg="auto-updates:"
 commitmsg="${defaultcommitmsg}";
