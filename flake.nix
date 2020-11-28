@@ -3,7 +3,8 @@
   description = "nixpkgs-wayland";
 
   inputs = {
-    nixpkgs = { url = "github:nixos/nixpkgs/nixos-unstable"; };
+    #nixpkgs = { url = "github:nixos/nixpkgs/nixos-unstable"; };
+    nixpkgs.url = "/home/cole/code/nixpkgs/cmpkgs";
     unstableSmall = { url = "github:nixos/nixpkgs/nixos-unstable-small"; };
     cmpkgs = { url = "github:colemickens/nixpkgs/cmpkgs"; }; # TODO: remove eventually (nix-prefetch, nix-build-uncached)
     cachix = { url = "github:nixos/nixpkgs/nixos-20.09"; };
