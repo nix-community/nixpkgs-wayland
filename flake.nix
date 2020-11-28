@@ -3,8 +3,7 @@
   description = "nixpkgs-wayland";
 
   inputs = {
-    #nixpkgs = { url = "github:nixos/nixpkgs/nixos-unstable"; };
-    nixpkgs.url = "/home/cole/code/nixpkgs/cmpkgs";
+    nixpkgs = { url = "github:nixos/nixpkgs/nixos-unstable"; };
     unstableSmall = { url = "github:nixos/nixpkgs/nixos-unstable-small"; };
     cmpkgs = { url = "github:colemickens/nixpkgs/cmpkgs"; }; # TODO: remove eventually (nix-prefetch, nix-build-uncached)
     cachix = { url = "github:nixos/nixpkgs/nixos-20.09"; };
@@ -81,8 +80,7 @@
             gtk-layer-shell = prev.callPackage ./pkgs/gtk-layer-shell {};
             i3status-rust    = prev.callPackage ./pkgs/i3status-rust {};
             neatvnc = prev.callPackage ./pkgs/neatvnc {};
-            obs-studio = obs-studio-egl;
-            obs-studio-egl = prev.libsForQt5.callPackage ./pkgs/obs-studio-egl {
+            obs-studio = prev.libsForQt5.callPackage ./pkgs/obs-studio-egl {
               ffmpeg = prev.ffmpeg_4;
               vlc = prev.vlc;
             };
