@@ -175,7 +175,6 @@ These packages were mostly recently built (and cached) against:
 | [cage](https://www.hjdskes.nl/projects/cage/) | A Wayland kiosk |
 | [clipman](https://github.com/yory8/clipman) | A basic clipboard manager for Wayland, with support for persisting copy buffers after an application exits |
 | [drm_info](https://github.com/ascent12/drm_info) | Small utility to dump info about DRM devices. |
-| [emacs](https://www.gnu.org/software/emacs/) | The extensible, customizable GNU text editor |
 | [gebaar-libinput](https://github.com/Osleg/gebaar-libinput-fork) | Gebaar, A Super Simple WM Independent Touchpad Gesture Daemon for libinput |
 | [glpaper](https://bitbucket.org/Scoopta/glpaper) | GLPaper is a wallpaper program for wlroots based wayland compositors such as sway that allows you to render glsl shaders as your wallpaper |
 | [grim](https://github.com/emersion/grim) | Grab images from a Wayland compositor |
@@ -188,7 +187,7 @@ These packages were mostly recently built (and cached) against:
 | [nwg-launchers](https://github.com/nwg-piotr/nwg-launchers) |  GTK-based launchers: application grid, button bar, dmenu for sway and other window managers  |
 | [obs-studio-dmabuf](https://obsproject.com) | Free and open source software for video recording and live streaming |
 | [obs-studio](https://obsproject.com) | Free and open source software for video recording and live streaming |
-| [obs-xdg-portal](https://gitlab.gnome.org/feaneron/obs-xdg-portal) | OBS Studio plugin using the Desktop portal for Wayland & X11 screencasting. This plugin requires `obs-studio-dmabuf`. |
+| [obs-xdg-portal](https://gitlab.gnome.org/feaneron/obs-xdg-portal) | OBS Studio plugin using the Desktop portal for Wayland & X11 screencasting. |
 | [oguri](https://github.com/vilhalmer/oguri) | A very nice animated wallpaper tool for Wayland compositors |
 | [rootbar](https://hg.sr.ht/~scoopta/rootbar) | Root Bar is a bar for wlroots based wayland compositors such as sway and was designed to address the lack of good bars for wayland |
 | [slurp](https://github.com/emersion/slurp) | Select a region in a Wayland compositor |
