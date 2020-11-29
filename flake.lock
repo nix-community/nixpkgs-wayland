@@ -2,11 +2,11 @@
   "nodes": {
     "cachix": {
       "locked": {
-        "lastModified": 1606507196,
-        "narHash": "sha256-VlC/fA/J/kUNffw0gmNmne1pTm4/vPnHppAv1LUtlDo=",
+        "lastModified": 1606600693,
+        "narHash": "sha256-/s+qBfqRjBT2zbiaVF1mGiZWP35MA2MgFI0fPmTYS9Y=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "e111e9d4c0570486f990f8000d91694075b7cea1",
+        "rev": "2335e7354f8a9c34d4842aa107af14e268a27f07",
         "type": "github"
       },
       "original": {
@@ -16,29 +16,13 @@
         "type": "github"
       }
     },
-    "cmpkgs": {
-      "locked": {
-        "lastModified": 1606601535,
-        "narHash": "sha256-YGdDvCEEj9WWiHjVCplVrtiqwUSmSdhf+/xC2pdo8BE=",
-        "owner": "colemickens",
-        "repo": "nixpkgs",
-        "rev": "96deefcc8ed8cc208c2a99f1e885d895edf850a4",
-        "type": "github"
-      },
-      "original": {
-        "owner": "colemickens",
-        "ref": "cmpkgs",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1606251485,
-        "narHash": "sha256-1WvP97lDV/EvCsF0pnE9UnlAcc5l2m7bxLH6srYmDS8=",
+        "lastModified": 1606603960,
+        "narHash": "sha256-WzH/pVbavwgswJiU72lJoUOwP/6cWKNN9v/+Wku+UJc=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "6f0c00907bbd81b47052eef59f7b284926a77289",
+        "rev": "11b75530a1fff2ef44c2d6dab55c9fdbfb1263fc",
         "type": "github"
       },
       "original": {
@@ -51,18 +35,17 @@
     "root": {
       "inputs": {
         "cachix": "cachix",
-        "cmpkgs": "cmpkgs",
         "nixpkgs": "nixpkgs",
         "unstableSmall": "unstableSmall"
       }
     },
     "unstableSmall": {
       "locked": {
-        "lastModified": 1606595353,
-        "narHash": "sha256-kB4eL+cHQkMJL+zfq5XEJcwtJhBXerEB/+7sKCbcCIg=",
+        "lastModified": 1606638670,
+        "narHash": "sha256-E/xwW87MIeRjlGuqwO5WZ33VKZHq3iWn0PFs3S7jTts=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "0e76c846a83c14ca7d89367dd5b1f973ca3f4f50",
+        "rev": "cb222776486edcb19d04ab942a902f88caf0782a",
         "type": "github"
       },
       "original": {

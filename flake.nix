@@ -5,7 +5,6 @@
   inputs = {
     nixpkgs = { url = "github:nixos/nixpkgs/nixos-unstable"; };
     unstableSmall = { url = "github:nixos/nixpkgs/nixos-unstable-small"; };
-    cmpkgs = { url = "github:colemickens/nixpkgs/cmpkgs"; }; # TODO: remove eventually (nix-prefetch, nix-build-uncached)
     cachix = { url = "github:nixos/nixpkgs/nixos-20.09"; };
   };
 
@@ -119,8 +118,10 @@
         pkgs_.nixpkgs.${system}.mkShell {
           nativeBuildInputs = []
             ++ (with pkgs_.cachix.${system}; [ cachix ])
-            ++ (with pkgs_.nixpkgs.${system}; [ bash cacert curl git jq mercurial openssh ripgrep ])
-            ++ (with pkgs_.cmpkgs.${system}; [ nixUnstable nix-prefetch nix-build-uncached ])
+            ++ (with pkgs_.nixpkgs.${system}; [
+                nixUnstable nix-prefetch nix-build-uncached
+                bash cacert curl git jq mercurial openssh ripgrep
+            ])
           ;
         }
       );
