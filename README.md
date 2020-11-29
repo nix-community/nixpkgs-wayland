@@ -180,14 +180,13 @@ These packages were mostly recently built (and cached) against:
 | [grim](https://github.com/emersion/grim) | Grab images from a Wayland compositor |
 | [gtk-layer-shell](https://github.com/wmww/gtk-layer-shell) | A library to create panels and other desktop components for Wayland using the Layer Shell protocol |
 | [i3status-rust](https://github.com/greshake/i3status-rust) | Very resource-friendly and feature-rich replacement for i3status |
-| [imv](https://github.com/eXeC64/imv) | A command line image viewer for tiling window managers |
 | [kanshi](https://github.com/emersion/kanshi) | Dynamic display configuration |
 | [lavalauncher](https://git.sr.ht/~leon_plickat/lavalauncher) | A simple launcher for Wayland. |
 | [mako](https://wayland.emersion.fr/mako) | A lightweight Wayland notification daemon |
 | [neatvnc](https://github.com/any1/neatvnc) | liberally licensed VNC server library that's intended to be fast and neat |
 | [nwg-launchers](https://github.com/nwg-piotr/nwg-launchers) |  GTK-based launchers: application grid, button bar, dmenu for sway and other window managers  |
+| [obs-studio-dmabuf](https://obsproject.com) | Free and open source software for video recording and live streaming |
 | [obs-studio](https://obsproject.com) | Free and open source software for video recording and live streaming |
-| [obs-wlrobs](https://sr.ht/~scoopta/wlrobs) | wlrobs is an obs-studio plugin that allows you to screen capture on wlroots based wayland compositors |
 | [obs-xdg-portal](https://gitlab.gnome.org/feaneron/obs-xdg-portal) | OBS Studio plugin using the Desktop portal for Wayland & X11 screencasting. |
 | [oguri](https://github.com/vilhalmer/oguri) | A very nice animated wallpaper tool for Wayland compositors |
 | [rootbar](https://hg.sr.ht/~scoopta/rootbar) | Root Bar is a bar for wlroots based wayland compositors such as sway and was designed to address the lack of good bars for wayland |
@@ -196,7 +195,6 @@ These packages were mostly recently built (and cached) against:
 | [swayidle](https://swaywm.org) | Sway's idle management daemon |
 | [swaylock](https://swaywm.org) | Screen locker for Wayland |
 | [sway](https://swaywm.org) | i3-compatible tiling Wayland compositor |
-| [waybar](https://github.com/Alexays/Waybar) | Highly customizable Wayland Polybar like bar for Sway and Wlroots based compositors. |
 | [wayfire](https://wayfire.org/) | 3D wayland compositor |
 | [waypipe](https://gitlab.freedesktop.org/mstoeckl/waypipe/) | Network transparency with Wayland |
 | [wayvnc](https://github.com/any1/wayvnc) | A VNC server for wlroots based Wayland compositors |
