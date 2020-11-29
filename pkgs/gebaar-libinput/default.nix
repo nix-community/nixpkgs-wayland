@@ -12,8 +12,8 @@ gcc8Stdenv.mkDerivation rec {
   version = metadata.rev;
 
   src = fetchFromGitHub {
-    owner = "Coffee2CodeNL";
-    repo = "gebaar-libinput";
+    owner = "Osleg";
+    repo = "gebaar-libinput-fork";
     rev = version;
     sha256 = metadata.sha256;
     fetchSubmodules = true;
@@ -28,7 +28,7 @@ gcc8Stdenv.mkDerivation rec {
 
   meta = with gcc8Stdenv.lib; {
     description = "Gebaar, A Super Simple WM Independent Touchpad Gesture Daemon for libinput";
-    homepage    = "https://github.com/Coffee2CodeNL/gebaar-libinput";
+    homepage    = "https://github.com/Osleg/gebaar-libinput-fork";
     license     = licenses.gpl3;
     platforms   = platforms.linux;
     maintainers = with maintainers; [ colemickens ];
