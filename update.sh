@@ -95,14 +95,14 @@ function update() {
 
       set +x
     fi
-  fi
 
-  if [[ "${typ}" == "pkgs" ]]; then
-    desc="$(nix-instantiate --eval -E "(import ./packages.nix).${upattr}.meta.description" | jq -r .)"
-    home="$(nix-instantiate --eval -E "(import ./packages.nix).${upattr}.meta.homepage" | jq -r .)"
-    pkgentries=("${pkgentries[@]}" "| [${pkgname}](${home}) | ${desc} |");
-  elif [[ "${typ}" == "nixpkgs" ]]; then
-    nixpkgentries=("${nixpkgentries[@]}" "| ${pkgname} |");
+    if [[ "${typ}" == "pkgs" ]]; then
+      desc="$(nix-instantiate --eval -E "(import ./packages.nix).${upattr}.meta.description" | jq -r .)"
+      home="$(nix-instantiate --eval -E "(import ./packages.nix).${upattr}.meta.homepage" | jq -r .)"
+      pkgentries=("${pkgentries[@]}" "| [${pkgname}](${home}) | ${desc} |");
+    elif [[ "${typ}" == "nixpkgs" ]]; then
+      nixpkgentries=("${nixpkgentries[@]}" "| ${pkgname} |");
+    fi
   fi
 }
 
