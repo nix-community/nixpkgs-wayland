@@ -33,6 +33,7 @@ stdenv.mkDerivation {
   meta = with stdenv.lib; {
     description = ''
       OBS Studio plugin using the Desktop portal for Wayland & X11 screencasting.
+      This plugin only works with obs-studio-dmabuf.
     '';
     homepage = "https://gitlab.gnome.org/feaneron/obs-xdg-portal";
     maintainers = with maintainers; [ berbiche ];
