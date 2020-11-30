@@ -2,7 +2,7 @@
 
 [![builds.sr.ht status](https://builds.sr.ht/~colemickens/nixpkgs-wayland.svg)](https://builds.sr.ht/~colemickens/nixpkgs-wayland?)  **- nixos-unstable** (supported)
 
-[![builds.sr.ht status](https://builds.sr.ht/~colemickens/nixpkgs-wayland.svg)](https://builds.sr.ht/~colemickens/nixpkgs-wayland-unstable-small?) **- nixos-unstable-small** (unsupported; used as a canary for `nixos-unstable`)
+[![builds.sr.ht status](https://builds.sr.ht/~colemickens/nixpkgs-wayland-small.svg)](https://builds.sr.ht/~colemickens/nixpkgs-wayland-unstable-small?) **- nixos-unstable-small** (unsupported; used as a canary for `nixos-unstable`)
 
 Automated, pre-built packages for Wayland (sway/wlroots) tools for NixOS.
 
