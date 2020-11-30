@@ -187,7 +187,8 @@ These packages were mostly recently built (and cached) against:
 | [nwg-launchers](https://github.com/nwg-piotr/nwg-launchers) |  GTK-based launchers: application grid, button bar, dmenu for sway and other window managers  |
 | [obs-studio-dmabuf](https://obsproject.com) | Free and open source software for video recording and live streaming |
 | [obs-studio](https://obsproject.com) | Free and open source software for video recording and live streaming |
-| [obs-xdg-portal](https://gitlab.gnome.org/feaneron/obs-xdg-portal) | OBS Studio plugin using the Desktop portal for Wayland & X11 screencasting. |
+| [obs-xdg-portal](https://gitlab.gnome.org/feaneron/obs-xdg-portal) | OBS Studio plugin using the Desktop portal for Wayland & X11 screencasting.
+This plugin only works with obs-studio-dmabuf. |
 | [oguri](https://github.com/vilhalmer/oguri) | A very nice animated wallpaper tool for Wayland compositors |
 | [rootbar](https://hg.sr.ht/~scoopta/rootbar) | Root Bar is a bar for wlroots based wayland compositors such as sway and was designed to address the lack of good bars for wayland |
 | [slurp](https://github.com/emersion/slurp) | Select a region in a Wayland compositor |
