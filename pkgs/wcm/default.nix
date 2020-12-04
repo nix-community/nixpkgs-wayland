@@ -1,6 +1,9 @@
 { stdenv, meson, ninja
 , fetchFromGitHub, wayfire
-, wf-shell
+, wf-shell, pkgconfig
+, libevdev, wayland
+, wayland-protocols
+, libxml2, gtk3, glm
 }:
 
 let
@@ -17,7 +20,7 @@ stdenv.mkDerivation rec {
   };
 
   nativeBuildInputs = [ meson ninja pkgconfig ];
-  buildInputs = [ wayfire wf-shell ];
+  buildInputs = [ wayfire wf-shell libevdev wayland wayland-protocols libxml2 gtk3 glm ];
 
 
   meta = with stdenv.lib; {
