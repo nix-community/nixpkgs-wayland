@@ -58,7 +58,7 @@
             waypipe          = prev.callPackage ./pkgs/waypipe {};
             wayvnc           = prev.callPackage ./pkgs/wayvnc {};
             wlvncc           = prev.callPackage ./pkgs/wlvncc {
-              libvncserver = libvncserver_any1;
+              libvncserver = libvncserver_master;
             };
             wdisplays        = prev.callPackage ./pkgs/wdisplays {};
             wev              = prev.callPackage ./pkgs/wev {};
@@ -99,7 +99,7 @@
             # wayfire stuff
             wayfire          = prev.callPackage ./pkgs/wayfire {};
 
-            libvncserver_any1 = prev.callPackage ./pkgs/libvncserver_any1 {
+            libvncserver_master = prev.callPackage ./pkgs/libvncserver_master {
               libvncserver = prev.libvncserver;
             };
           };
