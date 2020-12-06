@@ -1,6 +1,6 @@
 {
   repo_git = "https://github.com/any1/wlvncc";
   branch = "master";
-  rev = "2414e23dd6e144be521688915038b236c0aef6ff";
-  sha256 = "sha256-JTFcAL5yWsl7+ws2L+jYvMdYbh7fIdipcWKJfG9cz08=";
+  rev = "1ca82ce2e2661040ade2e683c2f330b1935760e0";
+  sha256 = "sha256-FmQNW4DM4XKOJsvRsbDG6HJqDG9vDH0IzPwZcfq2dSk=";
 }

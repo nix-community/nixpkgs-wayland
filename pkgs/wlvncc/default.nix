@@ -22,11 +22,6 @@ stdenv.mkDerivation rec {
     sha256 = metadata.sha256;
   };
 
-  postPatch = ''
-    ls -al
-    sed -i 's/options: libvncserver_opt/required: false, options: libvncserver_opt/' ./meson.build
-    cat meson.build
-  '';
   nativeBuildInputs = [ pkgconfig meson ninja ];
   buildInputs = [
     wayland wayland-protocols
