@@ -2,11 +2,11 @@
   "nodes": {
     "cachix": {
       "locked": {
-        "lastModified": 1607186949,
-        "narHash": "sha256-TzCeE0Fsp4dcBPZ2mEDFwNsdB3mW3gH29+UgLXeQpNY=",
+        "lastModified": 1607309400,
+        "narHash": "sha256-cyIONPSEcylDWmoVIaVeRo+Rlaa2tS7Lb9L50tv/2B0=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "99f8282a65821f148df596ba389606e732eaf99d",
+        "rev": "214e71a78a969d10a4a5c264ba3e6207481c6d54",
         "type": "github"
       },
       "original": {
