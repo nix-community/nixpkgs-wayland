@@ -16,6 +16,16 @@ pkgentries=(); nixpkgentries=();
 cache="nixpkgs-wayland";
 build_attr="${1:-"waylandPkgs"}"
 
+buildargs=(
+  --option 'extra-binary-caches' 'https://cache.nixos.org https://nixpkgs-wayland.cachix.org'
+  --option 'trusted-public-keys' 'cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= nixpkgs-wayland.cachix.org-1:3lwxaILxMRkVhehr5StQprHdEo4IrE8sRho9R9HOLYA='
+  --option 'build-cores' '0'
+  --option 'narinfo-cache-negative-ttl' '0'
+)
+
+# use the same nixpkgs we already have downloaded
+nixpkgs="https://api.github.com/repos/$(jq -r '.nodes.nixpkgs.locked.owner' flake.lock)/$(jq -r '.nodes.nixpkgs.locked.repo' flake.lock)/tarball/$(jq -r '.node.nixpkgs.locked.rev' flake.lock)"
+
 function update() {
   typ="${1}"
   pkg="${2}"
@@ -65,7 +75,7 @@ function update() {
 
       # Update Sha256
       if [[ "${typ}" == "pkgs" ]]; then
-        newsha256="$(NIX_PATH="nixpkgs=https://github.com/nixos/nixpkgs/archive/nixos-unstable.tar.gz" \
+        newsha256="$(NIX_PATH="nixpkgs=${nixpkgs}" \
           nix-prefetch --output raw \
             -E "(import ./packages.nix).${upattr}" \
             --rev "${newrev}")"
@@ -79,7 +89,7 @@ function update() {
 
       # CargoSha256 has to happen AFTER the other rev/sha256 bump
       if [[ "${cargoSha256}" != "missing_cargoSha256" ]]; then
-        newcargoSha256="$(NIX_PATH="nixpkgs=https://github.com/nixos/nixpkgs/archive/nixos-unstable.tar.gz" \
+        newcargoSha256="$(NIX_PATH="nixpkgs=${nixpkgs}" \
           nix-prefetch \
             "{ sha256 }: let p=(import ./packages.nix).${upattr}; in p.cargoDeps.overrideAttrs (_: { cargoSha256 = sha256; })")"
         sed -i "s|${cargoSha256}|${newcargoSha256}|" "${metadata}"
@@ -87,7 +97,7 @@ function update() {
 
       # VendorSha256 has to happen AFTER the other rev/sha256 bump
       if [[ "${vendorSha256}" != "missing_vendorSha256" ]]; then
-        newvendorSha256="$(NIX_PATH="nixpkgs=https://github.com/nixos/nixpkgs/archive/nixos-unstable.tar.gz" \
+        newvendorSha256="$(NIX_PATH="nixpkgs=${nixpkgs}" \
           nix-prefetch \
             "{ sha256 }: let p=(import ./packages.nix).${upattr}; in p.go-modules.overrideAttrs (_: { vendorSha256 = sha256; })")"
         sed -i "s|${vendorSha256}|${newvendorSha256}|" "${metadata}"
@@ -126,21 +136,14 @@ function update_readme() {
 for p in `ls -v -d -- pkgs/*/`; do
   update "pkgs" "${p}"
 done
-
 update_readme
 
-set -x
-
+set -x 
 out="$(mktemp -d)"
-nix-build-uncached -build-flags " \
-  --experimental-features 'nix-command flakes ca-references' \
-  --option 'extra-binary-caches' 'https://cache.nixos.org https://nixpkgs-wayland.cachix.org' \
-  --option 'trusted-public-keys' 'cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= nixpkgs-wayland.cachix.org-1:3lwxaILxMRkVhehr5StQprHdEo4IrE8sRho9R9HOLYA=' \
-  --option 'build-cores' '0' \
-  --option 'narinfo-cache-negative-ttl' '0' \
-  --out-link '${out}/result'" \
-    packages.nix
+# build it!
+nix-build-uncached -build-flags "$(printf '\"%s\" ' "${buildargs[@]}")" --out-link "${out}/result" packages.nix
 
+# cache it!
 if find ${out} | grep result; then
   nix --experimental-features 'nix-command flakes' \
     path-info --json -r ${out}/result* > ${out}/path-info.json
@@ -148,6 +151,7 @@ if find ${out} | grep result; then
   cachix push "${cache}" < "${out}/paths"
 fi
 
+# commit it!
 if [[ "${JOB_ID:-""}" != "" ]]; then
   git status
   git add -A .

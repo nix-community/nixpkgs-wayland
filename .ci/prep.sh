@@ -2,8 +2,6 @@
 set -euo pipefail
 set -x
 
-cachix use nixpkgs-wayland
-
 ssh-keyscan github.com >> ${HOME}/.ssh/known_hosts
 
 git config --global user.name \
@@ -11,3 +9,7 @@ git config --global user.name \
 
 git config --global user.email \
  "cole.mickens+colebot@gmail.com"
+
+# first things first, let's update our flake
+nix --experimental-features 'nix-command flakes' flake update --recreate-lock-file --no-registries
+(git add -A . && git commit -m "auto-update: flake.lock") || true

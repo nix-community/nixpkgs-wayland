@@ -7,15 +7,14 @@ secrets:
 environment:
   CI_BUILD: "sr.ht"
 tasks:
-  - flake-update: |
-      cd nixpkgs-wayland
-      nix-shell -I 'https://github.com/nixos/nixpkgs/archive/nixos-unstable.tar.gz' -p nixUnstable --command "nix --experimental-features 'nix-command flakes' flake update --recreate-lock-file --no-registries"
+  # prep in a non-pure nix-shell, relies on git+openssh+cacert at least
   - prep: |
       cd nixpkgs-wayland
-      nix-shell --pure --command "./.ci/prep.sh"
+      nix-shell -I 'https://github.com/nixos/nixpkgs/archive/nixos-unstable.tar.gz' -p nixUnstable --command "./.ci/prep.sh"
   - update: |
       cd nixpkgs-wayland
       nix-shell --pure --command "JOB_ID=$JOB_ID ./update.sh"
-  # - update-flakes: |
-  #     cd nixpkgs-wayland
-  #     nix-shell --pure --command "JOB_ID=$JOB_ID ./update-flakes.sh"
+triggers:
+  - action: webhook
+    condition: failure
+    url: https://discord.com/api/webhooks/786020673335459881/_iF0A1DjKcoOwrKamznaXdFge-PQw6tWl-ZNphX98SnqYY3D32PsZDFjqTelSLdVY_mj
