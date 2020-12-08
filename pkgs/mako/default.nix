@@ -24,6 +24,7 @@ stdenv.mkDerivation rec {
   mesonFlags = [
     "-Dauto_features=enabled"
     "-Dsystemd=disabled"
+    "-Dsd-bus-provider=libsystemd"
   ] ++ stdenv.lib.optional (!buildDocs) "-Dman-pages=disabled";
 
   enableParallelBuilding = true;
