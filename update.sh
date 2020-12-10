@@ -16,6 +16,7 @@ pkgentries=(); nixpkgentries=();
 cache="nixpkgs-wayland";
 build_attr="${1:-"waylandPkgs"}"
 
+nixargs=(--experimental-features 'nix-command flakes')
 buildargs=(
   --option 'extra-binary-caches' 'https://cache.nixos.org https://nixpkgs-wayland.cachix.org'
   --option 'trusted-public-keys' 'cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= nixpkgs-wayland.cachix.org-1:3lwxaILxMRkVhehr5StQprHdEo4IrE8sRho9R9HOLYA='
@@ -24,7 +25,7 @@ buildargs=(
 )
 
 # use the same nixpkgs we already have downloaded
-nixpkgs="https://api.github.com/repos/$(jq -r '.nodes.nixpkgs.locked.owner' flake.lock)/$(jq -r '.nodes.nixpkgs.locked.repo' flake.lock)/tarball/$(jq -r '.node.nixpkgs.locked.rev' flake.lock)"
+nixpkgs="https://api.github.com/repos/$(jq -r '.nodes.nixpkgs.locked.owner' flake.lock)/$(jq -r '.nodes.nixpkgs.locked.repo' flake.lock)/tarball/$(jq -r '.nodes.nixpkgs.locked.rev' flake.lock)"
 
 function update() {
   typ="${1}"
@@ -141,7 +142,7 @@ update_readme
 set -x 
 out="$(mktemp -d)"
 # build it!
-nix-build-uncached -build-flags "$(printf '\"%s\" ' "${buildargs[@]}")" --out-link "${out}/result" packages.nix
+nix-build-uncached -build-flags "$(printf '\"%s\" ' "${buildargs[@]}" "${nixargs[@]}")" --out-link "${out}/result" packages.nix
 
 # cache it!
 if find ${out} | grep result; then
