@@ -14,7 +14,3 @@ tasks:
   - update: |
       cd nixpkgs-wayland
       nix-shell --pure --command "JOB_ID=$JOB_ID ./update.sh"
-triggers:
-  - action: webhook
-    condition: failure
-    url: https://discord.com/api/webhooks/786020673335459881/_iF0A1DjKcoOwrKamznaXdFge-PQw6tWl-ZNphX98SnqYY3D32PsZDFjqTelSLdVY_mj
