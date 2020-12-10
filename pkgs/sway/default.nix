@@ -42,7 +42,7 @@ stdenv.mkDerivation rec {
 
   mesonFlags = [
     "-Ddefault-wallpaper=false" "-Dxwayland=enabled" "-Dgdk-pixbuf=enabled"
-    "-Dtray=enabled" "-Dman-pages=enabled"
+    "-Dtray=enabled" "-Dman-pages=enabled" "-Dsd-bus-provider=libsystemd"
   ];
 
   meta = with stdenv.lib; {
