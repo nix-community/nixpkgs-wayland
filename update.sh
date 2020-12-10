@@ -142,7 +142,7 @@ update_readme
 set -x 
 out="$(mktemp -d)"
 # build it!
-nix-build-uncached -build-flags "$(printf '\"%s\" ' "${buildargs[@]}" "${nixargs[@]}")" --out-link "${out}/result" packages.nix
+nix-build-uncached -build-flags "$(printf '\"%s\" ' "${buildargs[@]}" "${nixargs[@]}" "--out-link" "${out}/result")" packages.nix
 
 # cache it!
 if find ${out} | grep result; then
