@@ -1,6 +1,6 @@
 {
   repo_git = "https://git.sr.ht/~leon_plickat/lavalauncher";
   branch = "master";
-  rev = "1058077aac0f514eaf53cff0382a2b7056fc9ed1";
-  sha256 = "0qbiqya1267dzh11d4yw6pkbwm1h11zm04b9zcak0mr2pjiiyzpc";
+  rev = "d61c261a3c5c7a400cde916782b70fb94d0d876d";
+  sha256 = "0xd5dl4dmkfzvkddzhfm6mvv9vdwvr7a7sifmjpnd96n2hjml0nk";
 }
