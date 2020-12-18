@@ -1,6 +1,6 @@
 {
   repo_git = "https://gitlab.freedesktop.org/mstoeckl/waypipe.git";
   branch = "master";
-  rev = "756877230021c6ff80f1805a0c9d3de116e6b24c";
-  sha256 = "1j94fl738p5hqjpg1srx0bbshcl67x7q8xp5xp5kgjmhg028b0a9";
+  rev = "a47880a80732c191701aa7e608cefc83bf7ba233";
+  sha256 = "037bj4q4r154sx0nqjf30b083bizlqxqcq7g00ys4h8yv8bixyy6";
 }
