@@ -188,6 +188,7 @@ These packages were mostly recently built (and cached) against:
 | [nwg-launchers](https://github.com/nwg-piotr/nwg-launchers) |  GTK-based launchers: application grid, button bar, dmenu for sway and other window managers  |
 | [obs-studio-dmabuf](https://obsproject.com) | Free and open source software for video recording and live streaming |
 | [obs-studio](https://obsproject.com) | Free and open source software for video recording and live streaming |
+| [obs-wlrobs](https://sr.ht/~scoopta/wlrobs) | wlrobs is an obs-studio plugin that allows you to screen capture on wlroots based wayland compositors |
 | [obs-xdg-portal](https://gitlab.gnome.org/feaneron/obs-xdg-portal) | OBS Studio plugin using the Desktop portal for Wayland & X11 screencasting.
 This plugin only works with obs-studio-dmabuf. |
 | [oguri](https://github.com/vilhalmer/oguri) | A very nice animated wallpaper tool for Wayland compositors |
@@ -213,6 +214,7 @@ This plugin only works with obs-studio-dmabuf. |
 | [wlvncc](https://github.com/any1/wlvncc) | A Wayland Native VNC Client |
 | [wl-clipboard](https://github.com/bugaevc/wl-clipboard) | Select a region in a Wayland compositor |
 | [wl-gammactl](https://github.com/mischw/wl-gammactl) | Small GTK GUI application to set contrast, brightness and gamma for wayland compositors which support the wlr-gamma-control protocol extension. |
+| [wofi](https://hg.sr.ht/~scoopta/wofi) | Wofi is a launcher/menu program for wlroots based wayland compositors such as sway |
 | [wtype](https://github.com/atx/wtype) | xdotool type for wayland |
 | [xdg-desktop-portal-wlr](https://github.com/emersion/xdg-desktop-portal-wlr) | xdg-desktop-portal backend for wlroots |
 <!--pkgs-->
