@@ -213,7 +213,6 @@ This plugin only works with obs-studio-dmabuf. |
 | [wlvncc](https://github.com/any1/wlvncc) | A Wayland Native VNC Client |
 | [wl-clipboard](https://github.com/bugaevc/wl-clipboard) | Select a region in a Wayland compositor |
 | [wl-gammactl](https://github.com/mischw/wl-gammactl) | Small GTK GUI application to set contrast, brightness and gamma for wayland compositors which support the wlr-gamma-control protocol extension. |
-| [wofi](https://hg.sr.ht/~scoopta/wofi) | Wofi is a launcher/menu program for wlroots based wayland compositors such as sway |
 | [wtype](https://github.com/atx/wtype) | xdotool type for wayland |
 | [xdg-desktop-portal-wlr](https://github.com/emersion/xdg-desktop-portal-wlr) | xdg-desktop-portal backend for wlroots |
 <!--pkgs-->
