@@ -78,7 +78,7 @@ function update() {
       if [[ "${typ}" == "pkgs" ]]; then
         newsha256="$(NIX_PATH="nixpkgs=${nixpkgs}" \
           nix-prefetch --output raw \
-            -E "(import ./packages.nix).${upattr}" \
+            -E "{rev, sha256}: (import ./packages.nix).${upattr}.src.overrideAttrs(old:{rev=rev;sha256=sha256;})" \
             --rev "${newrev}")"
       elif [[ "${typ}" == "nixpkgs" ]]; then
         newsha256="$(NIX_PATH="${tmpnixpath}" nix-prefetch-url --unpack "${url}" 2>/dev/null)"
