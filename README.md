@@ -168,9 +168,7 @@ nix-env -iA neatvnc
 
 These packages were mostly recently built (and cached) against:
 
-<!--pkgs-->
-| Package | Description |
-| ------- | ----------- |
+<!--pkgs-->\n| Package | Description |\n| --- | --- |
 | [aml](https://github.com/any1/neatvnc) | liberally licensed VNC server library that's intended to be fast and neat |
 | [cage](https://www.hjdskes.nl/projects/cage/) | A Wayland kiosk |
 | [clipman](https://github.com/yory8/clipman) | A basic clipboard manager for Wayland, with support for persisting copy buffers after an application exits |
@@ -180,6 +178,7 @@ These packages were mostly recently built (and cached) against:
 | [grim](https://github.com/emersion/grim) | Grab images from a Wayland compositor |
 | [gtk-layer-shell](https://github.com/wmww/gtk-layer-shell) | A library to create panels and other desktop components for Wayland using the Layer Shell protocol |
 | [i3status-rust](https://github.com/greshake/i3status-rust) | Very resource-friendly and feature-rich replacement for i3status |
+| [imv](https://github.com/eXeC64/imv) | A command line image viewer for tiling window managers |
 | [kanshi](https://github.com/emersion/kanshi) | Dynamic display configuration |
 | [lavalauncher](https://git.sr.ht/~leon_plickat/lavalauncher) | A simple launcher for Wayland. |
 | [libvncserver_master](https://libvnc.github.io/) | VNC server library |
@@ -198,6 +197,7 @@ This plugin only works with obs-studio-dmabuf. |
 | [swayidle](https://swaywm.org) | Sway's idle management daemon |
 | [swaylock](https://swaywm.org) | Screen locker for Wayland |
 | [sway](https://swaywm.org) | i3-compatible tiling Wayland compositor |
+| [waybar](https://github.com/Alexays/Waybar) | Highly customizable Wayland Polybar like bar for Sway and Wlroots based compositors. |
 | [wayfire](https://wayfire.org/) | 3D wayland compositor |
 | [waypipe](https://gitlab.freedesktop.org/mstoeckl/waypipe/) | Network transparency with Wayland |
 | [wayvnc](https://github.com/any1/wayvnc) | A VNC server for wlroots based Wayland compositors |

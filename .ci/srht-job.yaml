@@ -6,6 +6,7 @@ secrets:
   - bd070f2a-01d1-4b7b-9795-036deb06912c # id_ed25519
 environment:
   CI_BUILD: "sr.ht"
+  FORCE_RECHECK: "true"
 tasks:
   # prep in a non-pure nix-shell, relies on git+openssh+cacert at least
   - prep: |
@@ -13,4 +14,4 @@ tasks:
       nix-shell -I 'https://github.com/nixos/nixpkgs/archive/nixos-unstable.tar.gz' -p nixUnstable --command "./.ci/prep.sh"
   - update: |
       cd nixpkgs-wayland
-      nix-shell --pure --command "JOB_ID=$JOB_ID ./update.sh"
+      nix-shell --pure --keep JOB_ID --keep FORCE_RECHECK --keep CI_BUILD --command "./update.sh"
