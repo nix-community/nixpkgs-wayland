@@ -13,4 +13,4 @@ tasks:
       nix-shell -I 'https://github.com/nixos/nixpkgs/archive/nixos-unstable.tar.gz' -p nixUnstable --command "./.ci/prep.sh"
   - update: |
       cd nixpkgs-wayland
-      nix-shell --pure --command "JOB_ID=$JOB_ID ./update.sh"
+      nix-shell --pure --keep JOB_ID --command "./update.sh"
