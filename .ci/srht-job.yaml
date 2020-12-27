@@ -6,7 +6,7 @@ secrets:
   - bd070f2a-01d1-4b7b-9795-036deb06912c # id_ed25519
 environment:
   CI_BUILD: "sr.ht"
-  FORCE_RECHECK: "true"
+  FORCE_RECHECK: "false"
 tasks:
   # prep in a non-pure nix-shell, relies on git+openssh+cacert at least
   - prep: |

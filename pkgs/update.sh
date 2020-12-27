@@ -127,6 +127,9 @@ done
 
 # collect package names into array, pipe into parallel
 _nproc="$(nproc)"
+# Doing multiple in parallel is unsafe because of how we update the sha256s:
+# If A depends on B and they get updated at the same time, the process for updating A
+# could get B's dependency.
 _nproc="1"
 echo "====> starting internal package update (p=${_nproc})"
 printf '%s\n' "${pkgslist[@]}" | \
