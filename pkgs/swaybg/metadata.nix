@@ -2,5 +2,5 @@
   repo_git = "https://github.com/swaywm/swaybg";
   branch = "master";
   rev = "a8f109af90353369e7e2e689efe8ce06eb9c60ac";
-  sha256 = "0w0vyckh01mzr479jjqdc6dyj84gcc2k8q7x8v4b0d445za4hrar";
+  sha256 = "sha256-WWVI1C+ENLDIRv1gNAVjjyDpm2ENS5kOyb8GACfzG3A=";
 }
