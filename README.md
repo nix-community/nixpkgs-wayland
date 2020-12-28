@@ -6,6 +6,8 @@
 
 Automated, pre-built packages for Wayland (sway/wlroots) tools for NixOS.
 
+Community chat is on Matrix: [#nixpkgs-wayland:matrix.org](https://matrix.to/#/#nixpkgs-wayland:matrix.org). Alternatively `#nixpkgs-wayland` on freenode is plumbed into the Matrix room.
+
 - [Usage](#usage)
   - [Binary Cache](#binary-cache)
   - [Flake Usage](#flake-usage)
