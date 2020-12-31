@@ -38,7 +38,7 @@ function readme_entry() {
 }
 
 function update_readme() {
-  replace="$(printf "%s" "<!--pkgs-->\n| Package | Description |\n| --- | --- |")"
+  replace="$(printf "%s\n%s\n%s" "<!--pkgs-->" "| Package | Description |" "| --- | --- |")"
   for p in "${pkgentries[@]}"; do
     replace="$(printf "%s\n%s\n" "${replace}" "${p}")"
   done
