@@ -170,7 +170,9 @@ nix-env -iA neatvnc
 
 These packages were mostly recently built (and cached) against:
 
-<!--pkgs-->\n| Package | Description |\n| --- | --- |
+<!--pkgs-->
+| Package | Description |
+| --- | --- |
 | [aml](https://github.com/any1/neatvnc) | liberally licensed VNC server library that's intended to be fast and neat |
 | [cage](https://www.hjdskes.nl/projects/cage/) | A Wayland kiosk |
 | [clipman](https://github.com/yory8/clipman) | A basic clipboard manager for Wayland, with support for persisting copy buffers after an application exits |
