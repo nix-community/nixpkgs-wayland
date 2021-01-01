@@ -36,17 +36,7 @@
             imv              = prev.callPackage ./pkgs/imv {};
             lavalauncher     = prev.callPackage ./pkgs/lavalauncher {};
             mako             = prev.callPackage ./pkgs/mako {};
-            nwg-launchers    = prev.callPackage ./pkgs/nwg-launchers {
-              nlohmann_json = prev.nlohmann_json.overrideAttrs(old: {
-                version = "3.9.1";
-                src = prev.fetchFromGitHub {
-                  owner = "nlohmann";
-                  repo = "json";
-                  rev = "v3.9.1";
-                  sha256 = "sha256-THordDPdH2qwk6lFTgeFmkl7iDuA/7YH71PTUe6vJCs=";
-                };
-              });
-            };
+            nwg-launchers    = prev.callPackage ./pkgs/nwg-launchers {};
             oguri            = prev.callPackage ./pkgs/oguri {};
             rootbar          = prev.callPackage ./pkgs/rootbar {};
             slurp            = prev.callPackage ./pkgs/slurp {};
