@@ -1,7 +1,7 @@
 { stdenv, fetchFromGitHub, fetchpatch, meson, ninja, pkgconfig
 , wayland, libGL, wayland-protocols, libinput, libxkbcommon, pixman
 , xcbutilwm, libX11, libcap, xcbutilimage, xcbutilerrors, mesa_noglu
-, libglvnd
+, libglvnd, libuuid
 , libpng, ffmpeg_4
 }:
 
