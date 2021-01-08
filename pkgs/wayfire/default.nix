@@ -7,6 +7,7 @@
 , libjpeg, libpng
 , libGL, mesa
 , libcap, xcbutilerrors, xcbutilwm, libxml2
+, libuuid
 , buildDocs ? true
 }:
 
@@ -36,6 +37,7 @@ stdenv.mkDerivation rec {
     libjpeg libpng
     libGL mesa
     libcap xcbutilerrors xcbutilwm libxml2
+    libuuid
   ];
   mesonFlags = [
     "-Duse_system_wlroots=disabled"
