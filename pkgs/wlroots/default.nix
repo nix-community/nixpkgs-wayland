@@ -3,6 +3,7 @@
 , xcbutilwm, libX11, libcap, xcbutilimage, xcbutilerrors, mesa_noglu
 , libglvnd
 , libpng, ffmpeg_4
+, libuuid
 }:
 
 let
@@ -30,6 +31,7 @@ in stdenv.mkDerivation rec {
     xcbutilwm libX11 libcap xcbutilimage xcbutilerrors mesa_noglu
     libpng ffmpeg_4
     libglvnd
+    libuuid
   ];
 
   mesonFlags = [
