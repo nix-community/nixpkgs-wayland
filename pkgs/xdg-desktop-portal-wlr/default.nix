@@ -20,7 +20,7 @@ stdenv.mkDerivation rec {
 
   nativeBuildInputs = [ pkgconfig meson ninja ];
   buildInputs = [ systemd wayland wayland-protocols pipewire libdrm ];
-  mesonFlags = [ "-Dauto_features=enabled" ];
+  mesonFlags = [ "-Dauto_features=auto" ];
 
   enableParallelBuilding = true;
 
