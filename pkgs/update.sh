@@ -83,7 +83,7 @@ if [[ "${1:-}" == "updateinternal" ]]; then
   newsha256="$(cat "${l}" | grep 'got:' | cut -d':' -f2 | tr -d ' ' || true)"
   if [[ "${newsha256}" == "sha256" ]]; then newsha256="$(cat "${l}" | grep 'got:' | cut -d':' -f3 | tr -d ' ' || true)"; fi
 
-  newsha256="$(nix "${nixargs[@]}" to-sri --type sha256 "${newsha256}")"
+  newsha256="$(nix "${nixargs[@]}" hash to-sri --type sha256 "${newsha256}")"
   sed -i "s|0000000000000000000000000000000000000000000000000000|${newsha256}|" "${metadata}"
 
   # CargoSha256 has to happen AFTER the other rev/sha256 bump
@@ -92,7 +92,7 @@ if [[ "${1:-}" == "updateinternal" ]]; then
     nix "${nixargs[@]}" build "..#${upattr}" &> "${l}" || true
     newcargoSha256="$(cat "${l}" | grep 'got:' | cut -d':' -f2 | tr -d ' ' || true)"
     if [[ "${newcargoSha256}" == "sha256" ]]; then newcargoSha256="$(cat "${l}" | grep 'got:' | cut -d':' -f3 | tr -d ' ' || true)"; fi
-    newcargoSha256="$(nix "${nixargs[@]}" to-sri --type sha256 "${newcargoSha256}")"
+    newcargoSha256="$(nix "${nixargs[@]}" hash to-sri --type sha256 "${newcargoSha256}")"
     sed -i "s|0000000000000000000000000000000000000000000000000000|${newcargoSha256}|" "${metadata}"
   fi
 
@@ -102,7 +102,7 @@ if [[ "${1:-}" == "updateinternal" ]]; then
     nix "${nixargs[@]}" build "..#${upattr}" &> "${l}" || true
     newvendorSha256="$(cat "${l}" | grep 'got:' | cut -d':' -f2 | tr -d ' ' || true)"
     if [[ "${newvendorSha256}" == "sha256" ]]; then newvendorSha256="$(cat "${l}" | grep 'got:' | cut -d':' -f3 | tr -d ' ' || true)"; fi
-    newvendorSha256="$(nix "${nixargs[@]}" to-sri --type sha256 "${newvendorSha256}")"
+    newvendorSha256="$(nix "${nixargs[@]}" hash to-sri --type sha256 "${newvendorSha256}")"
     sed -i "s|0000000000000000000000000000000000000000000000000000|${newvendorSha256}|" "${metadata}"
   fi
 
