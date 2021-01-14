@@ -107,8 +107,6 @@ if [[ "${1:-}" == "updateinternal" ]]; then
   fi
 
   # Commit
-  git diff || true
-  git diff-index --quiet HEAD "${pkg}" || true
   git diff-index --quiet HEAD "${pkg}" || \
     git commit "${pkg}" -m "${cprefix} ${pkgname}: ${rev} => ${newrev}"
   echo "done updating ${pkg} (${rev} => ${newrev})"
@@ -122,8 +120,11 @@ fi
 # updates galore
 pkgslist=()
 for p in `ls -v -d -- ./*/ | sort -V`; do
-  pkgslist=("${pkgslist[@]}" "${p}")
+  #pkgslist=("${pkgslist[@]}" "${p}")
+  "${0}" updateinternal "${p}"
 done
+
+exit 0
 
 # collect package names into array, pipe into parallel
 _nproc="$(nproc)"
