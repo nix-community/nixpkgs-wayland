@@ -14,13 +14,14 @@
       genAttrs = names: f: builtins.listToAttrs (map (n: nameValuePair n (f n)) names);
       supportedSystems = [ "x86_64-linux" "aarch64-linux" ];
       forAllSystems = genAttrs supportedSystems;
-      pkgsFor = pkgs: system:
+      pkgsFor = includeOverlay: pkgs: system:
         import pkgs {
           inherit system;
           config.allowUnfree = true;
-          overlays = [ inputs.self.overlay ];
+          overlays = if includeOverlay then [ inputs.self.overlay ] else [];
         };
-      pkgs_ = genAttrs (builtins.attrNames inputs) (inp: genAttrs supportedSystems (sys: pkgsFor inputs."${inp}" sys));
+      pkgs_ = genAttrs (builtins.attrNames inputs) (inp: genAttrs supportedSystems (sys: pkgsFor true inputs."${inp}" sys));
+      pkgs__ = genAttrs (builtins.attrNames inputs) (inp: genAttrs supportedSystems (sys: pkgsFor false inputs."${inp}" sys));
     in
     rec {
       overlay = final: prev:
@@ -33,7 +34,9 @@
             glpaper          = prev.callPackage ./pkgs/glpaper {};
             grim             = prev.callPackage ./pkgs/grim {};
             kanshi           = prev.callPackage ./pkgs/kanshi {};
-            imv              = prev.callPackage ./pkgs/imv {};
+            imv              = prev.callPackage ./pkgs/imv {
+              imv = prev.imv;
+            };
             lavalauncher     = prev.callPackage ./pkgs/lavalauncher {};
             mako             = prev.callPackage ./pkgs/mako {};
             nwg-launchers    = prev.callPackage ./pkgs/nwg-launchers {};
