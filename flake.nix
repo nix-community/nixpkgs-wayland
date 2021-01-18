@@ -14,13 +14,14 @@
       genAttrs = names: f: builtins.listToAttrs (map (n: nameValuePair n (f n)) names);
       supportedSystems = [ "x86_64-linux" "aarch64-linux" ];
       forAllSystems = genAttrs supportedSystems;
-      pkgsFor = pkgs: system:
+      pkgsFor = includeOverlay: pkgs: system:
         import pkgs {
           inherit system;
           config.allowUnfree = true;
-          overlays = [ inputs.self.overlay ];
+          overlays = if includeOverlay then [ inputs.self.overlay ] else [];
         };
-      pkgs_ = genAttrs (builtins.attrNames inputs) (inp: genAttrs supportedSystems (sys: pkgsFor inputs."${inp}" sys));
+      opkgs_ = genAttrs (builtins.attrNames inputs) (inp: genAttrs supportedSystems (sys: pkgsFor true  inputs."${inp}" sys));
+      npkgs_ = genAttrs (builtins.attrNames inputs) (inp: genAttrs supportedSystems (sys: pkgsFor false inputs."${inp}" sys));
     in
     rec {
       overlay = final: prev:
@@ -33,7 +34,9 @@
             glpaper          = prev.callPackage ./pkgs/glpaper {};
             grim             = prev.callPackage ./pkgs/grim {};
             kanshi           = prev.callPackage ./pkgs/kanshi {};
-            imv              = prev.callPackage ./pkgs/imv {};
+            imv              = prev.callPackage ./pkgs/imv {
+              imv = prev.imv;
+            };
             lavalauncher     = prev.callPackage ./pkgs/lavalauncher {};
             mako             = prev.callPackage ./pkgs/mako {};
             nwg-launchers    = prev.callPackage ./pkgs/nwg-launchers {};
@@ -100,24 +103,24 @@
           waylandPkgs // { inherit waylandPkgs; };
 
       packages = forAllSystems (system:
-        pkgs_.nixpkgs.${system}.waylandPkgs
+        opkgs_.nixpkgs.${system}.waylandPkgs
       );
 
-      unstableSmallPkgs = forAllSystems (system: with pkgs_.unstableSmall.${system};
+      unstableSmallPkgs = forAllSystems (system: with opkgs_.unstableSmall.${system};
           linkFarmFromDrvs "wayland-packages-unstable-small"
             (builtins.attrValues waylandPkgs));
 
-      unstablePkgs = forAllSystems (system: with pkgs_.nixpkgs.${system};
+      unstablePkgs = forAllSystems (system: with opkgs_.nixpkgs.${system};
           linkFarmFromDrvs "wayland-packages-unstable"
             (builtins.attrValues waylandPkgs));
 
       defaultPackage = unstablePkgs;
 
       devShell = forAllSystems (system:
-        pkgs_.nixpkgs.${system}.mkShell {
+        opkgs_.nixpkgs.${system}.mkShell {
           nativeBuildInputs = []
-            ++ (with pkgs_.cachix.${system}; [ cachix ])
-            ++ (with pkgs_.nixpkgs.${system}; [
+            ++ (with opkgs_.cachix.${system}; [ cachix ])
+            ++ (with opkgs_.nixpkgs.${system}; [
                 nixUnstable nix-prefetch nix-build-uncached
                 bash cacert curl git jq mercurial openssh ripgrep parallel
             ])
