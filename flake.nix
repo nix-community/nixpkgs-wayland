@@ -68,6 +68,9 @@
             # misc
             aml = prev.callPackage ./pkgs/aml {};
             clipman = prev.callPackage ./pkgs/clipman {};
+            dunst = prev.callPackage ./pkgs/dunst {
+              dunst = prev.dunst;
+            };
             gtk-layer-shell = prev.callPackage ./pkgs/gtk-layer-shell {};
             i3status-rust    = prev.callPackage ./pkgs/i3status-rust {};
             neatvnc = prev.callPackage ./pkgs/neatvnc {};
