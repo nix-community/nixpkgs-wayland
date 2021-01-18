@@ -1,7 +1,6 @@
 {
   repo_git = "https://github.com/eXeC64/imv";
   branch = "master";
-  rev = "a222f6475b905bdd0f55752e1539ed17bcad0a77";
-  sha256 = "0gk8g178i961nn3bls75a8qpv6wvfvav6hd9lxca1skaikd33zdx";
-  skip = true;
+  rev = "1b85ba53b0a8b44bb4330d7c86cefcf5ff1e0ab1";
+  sha256 = "sha256-tMeP7+bMkbEav+gOQDTxfc9GCdJ7tkdMvp0jHruxeJ4=";
 }
