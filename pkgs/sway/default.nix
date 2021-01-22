@@ -1,9 +1,9 @@
-{ stdenv, fetchFromGitHub, makeWrapper
+{ stdenv, fetchFromGitHub, makeWrapper, substituteAll
 , meson, ninja
 , pkgconfig, scdoc
 , wayland, libxkbcommon, pcre, json_c, dbus, libevdev
 , pango, cairo, libinput, libcap, pam, gdk-pixbuf
-, wlroots, wayland-protocols
+, wlroots, wayland-protocols, swaybg
 }:
 
 let metadata = import ./metadata.nix; in
@@ -21,6 +21,10 @@ stdenv.mkDerivation rec {
   patches = [
     ./sway-config-no-nix-store-references.patch
     ./load-configuration-from-etc.patch
+    (substituteAll {
+      src = ./fix-paths.patch;
+      inherit swaybg;
+    })
   ];
 
   postPatch = ''
