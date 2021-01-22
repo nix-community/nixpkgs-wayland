@@ -14,14 +14,13 @@
       genAttrs = names: f: builtins.listToAttrs (map (n: nameValuePair n (f n)) names);
       supportedSystems = [ "x86_64-linux" "aarch64-linux" ];
       forAllSystems = genAttrs supportedSystems;
-      pkgsFor = includeOverlay: pkgs: system:
+      pkgsFor = pkgs: system: overlays:
         import pkgs {
-          inherit system;
+          inherit system overlays;
           config.allowUnfree = true;
-          overlays = if includeOverlay then [ inputs.self.overlay ] else [];
         };
-      opkgs_ = genAttrs (builtins.attrNames inputs) (inp: genAttrs supportedSystems (sys: pkgsFor true  inputs."${inp}" sys));
-      npkgs_ = genAttrs (builtins.attrNames inputs) (inp: genAttrs supportedSystems (sys: pkgsFor false inputs."${inp}" sys));
+      pkgs_ = genAttrs (builtins.attrNames inputs) (inp: genAttrs supportedSystems (sys: pkgsFor inputs."${inp}" sys []));
+      fullPkgs_ = genAttrs supportedSystems (sys: pkgsFor inputs.nixpkgs sys [ inputs.self.overlay ]);
     in
     rec {
       overlay = final: prev:
@@ -103,24 +102,24 @@
           waylandPkgs // { inherit waylandPkgs; };
 
       packages = forAllSystems (system:
-        opkgs_.nixpkgs.${system}.waylandPkgs
+        fullPkgs_.${system}.waylandPkgs
       );
 
-      unstableSmallPkgs = forAllSystems (system: with opkgs_.unstableSmall.${system};
+      unstableSmallPkgs = forAllSystems (system: with fullPkgs_.unstableSmall.${system};
           linkFarmFromDrvs "wayland-packages-unstable-small"
             (builtins.attrValues waylandPkgs));
 
-      unstablePkgs = forAllSystems (system: with opkgs_.nixpkgs.${system};
+      unstablePkgs = forAllSystems (system: with fullPkgs_.${system};
           linkFarmFromDrvs "wayland-packages-unstable"
             (builtins.attrValues waylandPkgs));
 
       defaultPackage = unstablePkgs;
 
       devShell = forAllSystems (system:
-        opkgs_.nixpkgs.${system}.mkShell {
+        fullPkgs_.${system}.mkShell {
           nativeBuildInputs = []
-            ++ (with opkgs_.cachix.${system}; [ cachix ])
-            ++ (with opkgs_.nixpkgs.${system}; [
+            ++ (with pkgs_.cachix.${system}; [ cachix ])
+            ++ (with fullPkgs_.${system}; [
                 nixUnstable nix-prefetch nix-build-uncached
                 bash cacert curl git jq mercurial openssh ripgrep parallel
             ])
