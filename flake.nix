@@ -1,4 +1,3 @@
-
 {
   description = "nixpkgs-wayland";
 
@@ -23,6 +22,31 @@
       fullPkgs_ = genAttrs (builtins.attrNames inputs) (inp: genAttrs supportedSystems (sys: pkgsFor inputs."${inp}" sys [inputs.self.overlay]));
     in
     rec {
+      devShell = forAllSystems (system:
+        fullPkgs_.nixpkgs.${system}.mkShell {
+          nativeBuildInputs = []
+            ++ (with pkgs_.cachix.${system}; [ cachix ])
+            ++ (with fullPkgs_.nixpkgs.${system}; [
+                nixUnstable nix-prefetch nix-build-uncached
+                bash cacert curl git jq mercurial openssh ripgrep parallel
+            ]); });
+
+      defaultPackage = packagesBundle;
+
+      packages = forAllSystems (system:
+        fullPkgs_.nixpkgs.${system}.waylandPkgs);
+
+      smallPackages = forAllSystems (system:
+        fullPkgs_.unstableSmall.${system}.waylandPkgs);
+
+      packagesBundle = forAllSystems (system: with fullPkgs_.nixpkgs.${system};
+          linkFarmFromDrvs "wayland-packages-unstable"
+            (builtins.attrValues waylandPkgs));
+
+      smallPackagesBundle = forAllSystems (system: with fullPkgs_.unstableSmall.${system};
+          linkFarmFromDrvs "wayland-packages-unstable-small"
+            (builtins.attrValues waylandPkgs));
+
       overlay = final: prev:
         let
           waylandPkgs = rec {
@@ -100,35 +124,5 @@
           };
         in
           waylandPkgs // { inherit waylandPkgs; };
-
-      packages = forAllSystems (system:
-        fullPkgs_.nixpkgs.${system}.waylandPkgs
-      );
-
-      smallPackages = forAllSystems (system:
-        fullPkgs_.unstableSmall.${system}.waylandPkgs
-      );
-
-      unstableSmallPkgs = forAllSystems (system: with fullPkgs_.unstableSmall.${system};
-          linkFarmFromDrvs "wayland-packages-unstable-small"
-            (builtins.attrValues waylandPkgs));
-
-      unstablePkgs = forAllSystems (system: with fullPkgs_.nixpkgs.${system};
-          linkFarmFromDrvs "wayland-packages-unstable"
-            (builtins.attrValues waylandPkgs));
-
-      defaultPackage = unstablePkgs;
-
-      devShell = forAllSystems (system:
-        fullPkgs_.nixpkgs.${system}.mkShell {
-          nativeBuildInputs = []
-            ++ (with pkgs_.cachix.${system}; [ cachix ])
-            ++ (with fullPkgs_.nixpkgs.${system}; [
-                nixUnstable nix-prefetch nix-build-uncached
-                bash cacert curl git jq mercurial openssh ripgrep parallel
-            ])
-          ;
-        }
-      );
     };
 }
