@@ -105,6 +105,10 @@
         fullPkgs_.nixpkgs.${system}.waylandPkgs
       );
 
+      smallPackages = forAllSystems (system:
+        fullPkgs_.unstableSmall.${system}.waylandPkgs
+      );
+
       unstableSmallPkgs = forAllSystems (system: with fullPkgs_.unstableSmall.${system};
           linkFarmFromDrvs "wayland-packages-unstable-small"
             (builtins.attrValues waylandPkgs));
