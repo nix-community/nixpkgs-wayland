@@ -1,6 +1,6 @@
 {
   repo_git = "https://github.com/GeorgesStavracas/obs-studio";
   branch = "feaneron/egl-dmabuf";
-  rev = "efdd59b43953bc066f201dd67cab48cbcf71b92d";
-  sha256 = "sha256-GxNY/rWY9VJ8DCQD2mPAUkmWUshdvp8LzZ0rYWH0ViM=";
+  rev = "e54def819a0d04e895e552356ae32bd3dbcf1b1c";
+  sha256 = "sha256-K5RjQvPBEIzRYMN+1/jLzaneFyMejITfOlU8I9676qU=";
 }
