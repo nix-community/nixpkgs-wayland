@@ -1,6 +1,6 @@
 {
   repo_git = "https://github.com/emersion/kanshi";
   branch = "master";
-  rev = "f88ba3a1dd3aa9099f291c365e628d2ffbf0cac6";
-  sha256 = "sha256-eDQh8WsAbPxOpsM5IkdY7VrC9rnjQQEidQRmoZKa35c=";
+  rev = "dabd7a29174a74b3f21a2b4cc3d9dc63221761bb";
+  sha256 = "sha256-FGEYfl6BSSK9RbGEIoynv1tzkFFn0kafxr5Jux/moP0=";
 }
