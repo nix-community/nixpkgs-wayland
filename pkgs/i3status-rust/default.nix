@@ -1,4 +1,5 @@
-{ stdenv, rustPlatform, rust, fetchFromGitHub, pkgconfig, dbus, libpulseaudio }:
+{ stdenv, rustPlatform, rust, fetchFromGitHub, pkgconfig, dbus, libpulseaudio
+, openssl }:
 
 let
   metadata = import ./metadata.nix;
@@ -18,7 +19,7 @@ rustPlatform.buildRustPackage rec {
 
   nativeBuildInputs = [ pkgconfig ];
 
-  buildInputs = [ dbus libpulseaudio ];
+  buildInputs = [ dbus libpulseaudio openssl ];
 
   preCheck = ''
     substituteInPlace tests/run_binary.rs \
