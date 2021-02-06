@@ -4,6 +4,7 @@
 , libglvnd
 , libpng, ffmpeg_4
 , libuuid
+, xorg # ?
 }:
 
 let
@@ -32,6 +33,7 @@ in stdenv.mkDerivation rec {
     libpng ffmpeg_4
     libglvnd
     libuuid
+    xorg.xcbutilrenderutil
   ];
 
   mesonFlags = [
