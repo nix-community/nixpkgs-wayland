@@ -1,10 +1,11 @@
 # nixpkgs-wayland
 
-[![builds.sr.ht status](https://builds.sr.ht/~colemickens/nixpkgs-wayland.svg)](https://builds.sr.ht/~colemickens/nixpkgs-wayland?)  **- nixos-unstable** (supported)
+[![builds.sr.ht status](https://builds.sr.ht/~colemickens/nixpkgs-wayland.svg)](https://builds.sr.ht/~colemickens/nixpkgs-wayland?)
+<sup>(note: failure indicates auto-updates are stuck and need intervention. **all packages remain buildable on tip of master**)</sup>
 
 <!--[![builds.sr.ht status](https://builds.sr.ht/~colemickens/nixpkgs-wayland-small.svg)](https://builds.sr.ht/~colemickens/nixpkgs-wayland-unstable-small?) **- nixos-unstable-small** (unsupported; used as a canary for `nixos-unstable`)-->
 
-Automated, pre-built packages for Wayland (sway/wlroots) tools for NixOS.
+Automated, pre-built packages for Wayland (sway/wlroots) tools for NixOS (**nixos-unstable** channel).
 
 Community chat is on Matrix: [#nixpkgs-wayland:matrix.org](https://matrix.to/#/#nixpkgs-wayland:matrix.org). Alternatively `#nixpkgs-wayland` on freenode is plumbed into the Matrix room.
 
