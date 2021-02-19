@@ -66,7 +66,9 @@
             oguri            = prev.callPackage ./pkgs/oguri {};
             rootbar          = prev.callPackage ./pkgs/rootbar {};
             slurp            = prev.callPackage ./pkgs/slurp {};
-            sway-unwrapped   = prev.callPackage ./pkgs/sway {};
+            sway-unwrapped   = prev.callPackage ./pkgs/sway {
+              wayland = inputs.unstableSmall.legacyPackages.${prev.system}.wayland;
+            };
             swaybg           = prev.callPackage ./pkgs/swaybg {};
             swayidle         = prev.callPackage ./pkgs/swayidle {};
             swaylock         = prev.callPackage ./pkgs/swaylock {};
@@ -85,7 +87,9 @@
             wl-gammactl      = prev.callPackage ./pkgs/wl-gammactl {};
             wldash           = prev.callPackage ./pkgs/wldash {};
             wlogout          = prev.callPackage ./pkgs/wlogout {};
-            wlroots          = prev.callPackage ./pkgs/wlroots {};
+            wlroots          = prev.callPackage ./pkgs/wlroots {
+              wayland = inputs.unstableSmall.legacyPackages.${prev.system}.wayland;
+            };
             wlr-randr        = prev.callPackage ./pkgs/wlr-randr {};
             wlsunset         = prev.callPackage ./pkgs/wlsunset {};
             wofi             = prev.callPackage ./pkgs/wofi {};
