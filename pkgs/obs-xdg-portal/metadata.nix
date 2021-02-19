@@ -1,6 +1,6 @@
 {
   repo_git = "https://gitlab.gnome.org/feaneron/obs-xdg-portal.git";
   branch = "master";
-  rev = "8dd8fa3a69762daec98dcaedcd4efa57f2e3efb7";
-  sha256 = "sha256-6v8pLj7Xm6x7VlacUElG9BeMQZjuv0jmHjhrLvHdPq8=";
+  rev = "ee5241aed1a201d2dfa1af6be22762144bd61f0b";
+  sha256 = "sha256-ZIG1IyhUO5valwy1T4yGy3jzeAhNjwh6/sfQcJGWHGM=";
 }
