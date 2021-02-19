@@ -104,13 +104,7 @@
               ffmpeg = prev.ffmpeg_4;
               vlc = prev.vlc;
             };
-            obs-studio-dmabuf = prev.libsForQt5.callPackage ./pkgs/obs-studio-dmabuf {
-              ffmpeg = prev.ffmpeg_4;
-              vlc = prev.vlc;
-            };
-            obs-xdg-portal = prev.callPackage ./pkgs/obs-xdg-portal {
-              obs-studio = obs-studio-dmabuf;
-            };
+            obs-xdg-portal = prev.callPackage ./pkgs/obs-xdg-portal {};
             wlfreerdp = prev.callPackage ./pkgs/wlfreerdp {
               inherit (prev) libpulseaudio;
               inherit (prev.gst_all_1) gstreamer gst-plugins-base gst-plugins-good;
