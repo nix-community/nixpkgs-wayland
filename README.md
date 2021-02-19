@@ -191,7 +191,6 @@ These packages were mostly recently built (and cached) against:
 | [mako](https://wayland.emersion.fr/mako) | A lightweight Wayland notification daemon |
 | [neatvnc](https://github.com/any1/neatvnc) | liberally licensed VNC server library that's intended to be fast and neat |
 | [nwg-launchers](https://github.com/nwg-piotr/nwg-launchers) |  GTK-based launchers: application grid, button bar, dmenu for sway and other window managers  |
-| [obs-studio-dmabuf](https://obsproject.com) | Free and open source software for video recording and live streaming |
 | [obs-studio](https://obsproject.com) | Free and open source software for video recording and live streaming |
 | [obs-wlrobs](https://sr.ht/~scoopta/wlrobs) | wlrobs is an obs-studio plugin that allows you to screen capture on wlroots based wayland compositors |
 | [obs-xdg-portal](https://gitlab.gnome.org/feaneron/obs-xdg-portal) | OBS Studio plugin using the Desktop portal for Wayland & X11 screencasting. This plugin only works with obs-studio-dmabuf. |
