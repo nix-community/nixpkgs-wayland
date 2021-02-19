@@ -14,5 +14,8 @@ dunst.overrideAttrs(old: {
     rev = metadata.rev;
     sha256 = metadata.sha256;
   };
+
+  installFlags = [ "SYSCONFDIR=${placeholder "out"}/etc" ];
+
   buildInputs = old.buildInputs ++ [ wayland wayland-protocols ];
 })
