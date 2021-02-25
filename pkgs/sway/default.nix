@@ -2,8 +2,8 @@
 , meson, ninja
 , pkgconfig, scdoc
 , wayland, libxkbcommon, pcre, json_c, dbus, libevdev
-, pango, cairo, libinput, libcap, pam, gdk-pixbuf
-, wlroots, wayland-protocols, swaybg
+, pango, cairo, libinput, libcap, libdrm, pam
+, gdk-pixbuf , wlroots, wayland-protocols, swaybg
 }:
 
 let metadata = import ./metadata.nix; in
@@ -38,8 +38,8 @@ stdenv.mkDerivation rec {
 
   buildInputs = [
     wayland libxkbcommon pcre json_c dbus libevdev
-    pango cairo libinput libcap pam gdk-pixbuf
-    wlroots wayland-protocols
+    pango cairo libinput libcap libdrm pam
+    gdk-pixbuf wlroots wayland-protocols
   ];
 
   enableParallelBuilding = true;
