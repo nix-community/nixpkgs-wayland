@@ -1,7 +1,7 @@
 { stdenv, fetchFromGitHub, makeWrapper, substituteAll
 , meson, ninja
 , pkgconfig, scdoc
-, wayland, libxkbcommon, pcre, json_c, dbus, libevdev
+, wayland, libxkbcommon, pcre, json_c, dbus, libevdev, libdrm
 , pango, cairo, libinput, libcap, pam, gdk-pixbuf
 , wlroots, wayland-protocols, swaybg
 }:
@@ -39,7 +39,7 @@ stdenv.mkDerivation rec {
   buildInputs = [
     wayland libxkbcommon pcre json_c dbus libevdev
     pango cairo libinput libcap pam gdk-pixbuf
-    wlroots wayland-protocols
+    wlroots wayland-protocols libdrm
   ];
 
   enableParallelBuilding = true;
