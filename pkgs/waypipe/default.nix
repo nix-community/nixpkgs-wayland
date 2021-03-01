@@ -3,7 +3,7 @@
 , wayland, wayland-protocols
 , libffi, mesa_noglu
 , lz4, zstd, ffmpeg_4, libva
-, scdoc
+, scdoc, openssh
 }:
 
 let
@@ -18,6 +18,11 @@ stdenv.mkDerivation rec {
     rev = version;
     sha256 = metadata.sha256;
   };
+
+  postPatch = ''
+    substituteInPlace src/waypipe.c \
+      --replace "/usr/bin/ssh" "${openssh}/bin/ssh"
+  '';
 
   nativeBuildInputs = [ pkgconfig meson ninja python3 scdoc ];
   buildInputs = [
