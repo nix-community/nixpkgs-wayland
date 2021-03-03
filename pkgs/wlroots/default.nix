@@ -5,6 +5,7 @@
 , libpng, ffmpeg_4
 , libuuid
 , xorg # ?
+, xwayland
 }:
 
 let
@@ -25,7 +26,7 @@ in stdenv.mkDerivation rec {
   # programs (in examples) AND rootston
   outputs = [ "out" "examples" ];
 
-  nativeBuildInputs = [ meson ninja pkgconfig ];
+  nativeBuildInputs = [ meson ninja pkgconfig xwayland ];
 
   buildInputs = [
     wayland libGL wayland-protocols libinput libxkbcommon pixman
