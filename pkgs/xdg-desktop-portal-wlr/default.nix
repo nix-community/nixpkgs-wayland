@@ -1,7 +1,7 @@
 { stdenv, fetchFromGitHub
 , meson, ninja, pkgconfig
 , systemd, wayland, wayland-protocols
-, pipewire, libdrm
+, pipewire, libdrm, iniparser
 }:
 
 let
@@ -19,8 +19,14 @@ stdenv.mkDerivation rec {
   };
 
   nativeBuildInputs = [ pkgconfig meson ninja ];
-  buildInputs = [ systemd wayland wayland-protocols pipewire libdrm ];
+  buildInputs = [ systemd wayland wayland-protocols pipewire libdrm iniparser];
   mesonFlags = [ "-Dauto_features=auto" ];
+
+  # iniparser is missing a pkg-config...
+  postPatch = ''
+    substituteInPlace meson.build \
+      --replace "cc.find_library('iniparser', dirs: [join_paths(get_option('prefix'),get_option('libdir'))])" "cc.find_library('iniparser', dirs: ['${iniparser}/lib'])"
+  '';
 
   enableParallelBuilding = true;
 
