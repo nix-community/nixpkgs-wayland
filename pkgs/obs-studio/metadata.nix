@@ -1,6 +1,6 @@
 {
   repo_git = "https://github.com/obsproject/obs-studio";
   branch = "master";
-  rev = "eb98505a2cc9382227caafc8519a9172dda5dc3d";
-  sha256 = "sha256-B06dYO8Vo+8n6HYH5vE/y7PR6lB/xH0zY39/PcW0cO0=";
+  rev = "54892b27db61fafa8598a8e2b8424a9843c3d5b6";
+  sha256 = "sha256-sDYgmmOrtR8mzmROqMQVJB2f2g7hpZfjDnH3fg1exXA=";
 }
