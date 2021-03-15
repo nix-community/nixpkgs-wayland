@@ -8,10 +8,12 @@ environment:
   CI_BUILD: "sr.ht"
   FORCE_RECHECK: "false"
 tasks:
-  # prep in a non-pure nix-shell, relies on git+openssh+cacert at least
   - prep: |
+      nix-shell -I 'nixpkgs=https://github.com/nixos/nixpkgs/archive/nixos-unstable.tar.gz' -p git --command "git config --global user.name 'Cole Botkens'"
+      nix-shell -I 'nixpkgs=https://github.com/nixos/nixpkgs/archive/nixos-unstable.tar.gz' -p git --command "git config --global user.email 'cole.mickens+colebot@gmail.com'"
+  - flake-update: |
       cd nixpkgs-wayland
-      nix-shell -I 'https://github.com/nixos/nixpkgs/archive/nixos-unstable.tar.gz' -p nixUnstable --command "./.ci/prep.sh"
+      nix-shell -I 'nixpkgs=https://github.com/nixos/nixpkgs/archive/nixos-unstable.tar.gz' -p nixUnstable --command "nix --experimental-features 'nix-command flakes' flake update --commit-lock-file --no-registries"
   - update: |
       cd nixpkgs-wayland
       nix-shell --pure --keep JOB_ID --keep FORCE_RECHECK --keep CI_BUILD --command "./update.sh"
