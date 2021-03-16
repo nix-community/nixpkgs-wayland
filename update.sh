@@ -69,5 +69,6 @@ fi
 # push it!
 if [[ "${JOB_ID:-""}" != "" ]]; then
   echo "we're building on sr.ht, pushing..."
+  ssh-keyscan github.com >> ${HOME}/.ssh/known_hosts
   git push origin HEAD
 fi
