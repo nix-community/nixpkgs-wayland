@@ -2,6 +2,6 @@
   repo_git = "https://github.com/swaywm/sway";
   branch = "master";
   upattr = "sway-unwrapped";
-  rev = "03daa53a0ef63d2a72acda05e94e5ba5c0b50d33";
-  sha256 = "sha256-0rZhoYHT/V7iisWCTZaBsac5TjURM+mdgB3228frpC8=";
+  rev = "1d62d6bfa09860d7a59640dcb20d5273a55401c4";
+  sha256 = "sha256-meYt0jRC8R+4qNQqFj9Ad3FoKI4S+5QqWSLbFGvfn84=";
 }
