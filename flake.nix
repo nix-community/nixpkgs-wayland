@@ -108,7 +108,6 @@
               ffmpeg = prev.ffmpeg_4;
               vlc = prev.vlc;
             };
-            obs-xdg-portal = prev.callPackage ./pkgs/obs-xdg-portal {};
             wlfreerdp = prev.callPackage ./pkgs/wlfreerdp {
               inherit (prev) libpulseaudio;
               inherit (prev.gst_all_1) gstreamer gst-plugins-base gst-plugins-good;
