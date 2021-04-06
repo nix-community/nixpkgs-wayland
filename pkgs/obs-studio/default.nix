@@ -32,6 +32,7 @@
 , alsaSupport ? stdenv.isLinux
 , alsaLib
 , pulseaudioSupport ? config.pulseaudio or stdenv.isLinux
+, pipewire
 , libpulseaudio
 }:
 
@@ -71,7 +72,8 @@ in mkDerivation rec {
                 ]
                 ++ optionals scriptingSupport [ luajit swig python3 ]
                 ++ optional alsaSupport alsaLib
-                ++ optional pulseaudioSupport libpulseaudio;
+                ++ optional pulseaudioSupport libpulseaudio
+                ++ [ pipewire ];
 
   # obs attempts to dlopen libobs-opengl, it fails unless we make sure
   # DL_OPENGL is an explicit path. Not sure if there's a better way
