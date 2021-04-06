@@ -24,6 +24,6 @@ rustPlatform.buildRustPackage rec {
     description = "Sirula (simple rust launcher) is an app launcher for wayland";
     homepage = "https://github.com/DorianRudolph/sirula";
     license = licenses.gpl3;
-    maintainers = with maintainers; [ jboyens ];
+    #maintainers = with maintainers; [ jboyens ];
   };
 }
