@@ -51,7 +51,7 @@
         let
           waylandPkgs = rec {
             # wlroots-related
-            cage             = prev.callPackage ./pkgs/cage { wlroots = prev.wlroots; };
+            cage             = prev.callPackage ./pkgs/cage {};
             drm_info         = prev.callPackage ./pkgs/drm_info {};
             gebaar-libinput  = prev.callPackage ./pkgs/gebaar-libinput {};
             glpaper          = prev.callPackage ./pkgs/glpaper {};
