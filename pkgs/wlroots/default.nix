@@ -3,6 +3,7 @@
 , xcbutilwm, libX11, libcap, xcbutilimage, xcbutilerrors, mesa_noglu
 , libglvnd
 , libpng, ffmpeg_4
+, libseat
 , libuuid
 , xorg # ?
 , xwayland
@@ -33,14 +34,15 @@ in stdenv.mkDerivation rec {
     xcbutilwm libX11 libcap xcbutilimage xcbutilerrors mesa_noglu
     libpng ffmpeg_4
     libglvnd
+    libseat
     libuuid
     xorg.xcbutilrenderutil
   ];
 
   mesonFlags = [
-    "-Dlibcap=enabled" "-Dlogind-provider=systemd" "-Dxwayland=enabled" "-Dx11-backend=enabled"
+    "-Dlibcap=enabled" "-Dxwayland=enabled" "-Dx11-backend=enabled"
     "-Dxcb-icccm=enabled" "-Dxcb-xkb=enabled" "-Dxcb-errors=enabled"
-    "-Dlibseat=disabled"
+    "-Dlibseat=enabled"
   ];
 
   postInstall = ''
