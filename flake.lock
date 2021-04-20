@@ -35,24 +35,7 @@
     "root": {
       "inputs": {
         "cachix": "cachix",
-        "nixpkgs": "nixpkgs",
-        "unstableSmall": "unstableSmall"
-      }
-    },
-    "unstableSmall": {
-      "locked": {
-        "lastModified": 1618879967,
-        "narHash": "sha256-0QlKsEmmpyuQmJFt5v2IDLnYlbO+yxXXqvaBwT/0NCI=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "e70b485cdbdfce5dac6aa9ebb0cee611945bfeaf",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "nixos-unstable-small",
-        "repo": "nixpkgs",
-        "type": "github"
+        "nixpkgs": "nixpkgs"
       }
     }
   },

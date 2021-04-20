@@ -3,7 +3,6 @@
 
   inputs = {
     nixpkgs = { url = "github:nixos/nixpkgs/nixos-unstable"; };
-    unstableSmall = { url = "github:nixos/nixpkgs/nixos-unstable-small"; };
     cachix = { url = "github:nixos/nixpkgs/nixos-20.09"; };
   };
 
@@ -36,15 +35,8 @@
       packages = forAllSystems (system:
         fullPkgs_.nixpkgs.${system}.waylandPkgs);
 
-      smallPackages = forAllSystems (system:
-        fullPkgs_.unstableSmall.${system}.waylandPkgs);
-
       packagesBundle = forAllSystems (system: with fullPkgs_.nixpkgs.${system};
           linkFarmFromDrvs "wayland-packages-unstable"
-            (builtins.attrValues waylandPkgs));
-
-      smallPackagesBundle = forAllSystems (system: with fullPkgs_.unstableSmall.${system};
-          linkFarmFromDrvs "wayland-packages-unstable-small"
             (builtins.attrValues waylandPkgs));
 
       overlay = final: prev:
@@ -67,9 +59,7 @@
             rootbar          = prev.callPackage ./pkgs/rootbar {};
             sirula           = prev.callPackage ./pkgs/sirula {};
             slurp            = prev.callPackage ./pkgs/slurp {};
-            sway-unwrapped   = prev.callPackage ./pkgs/sway {
-              wayland = inputs.unstableSmall.legacyPackages.${prev.system}.wayland;
-            };
+            sway-unwrapped   = prev.callPackage ./pkgs/sway {};
             swaybg           = prev.callPackage ./pkgs/swaybg {};
             swayidle         = prev.callPackage ./pkgs/swayidle {};
             swaylock         = prev.callPackage ./pkgs/swaylock {};
@@ -88,9 +78,7 @@
             wl-gammactl      = prev.callPackage ./pkgs/wl-gammactl {};
             wldash           = prev.callPackage ./pkgs/wldash {};
             wlogout          = prev.callPackage ./pkgs/wlogout {};
-            wlroots          = prev.callPackage ./pkgs/wlroots {
-              wayland = inputs.unstableSmall.legacyPackages.${prev.system}.wayland;
-            };
+            wlroots          = prev.callPackage ./pkgs/wlroots {};
             wlr-randr        = prev.callPackage ./pkgs/wlr-randr {};
             wlsunset         = prev.callPackage ./pkgs/wlsunset {};
             wofi             = prev.callPackage ./pkgs/wofi {};
