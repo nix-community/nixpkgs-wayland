@@ -1,5 +1,5 @@
 { stdenv, fetchFromGitHub
-, meson, pkgconfig, ninja
+, meson, pkgconfig, ninja, cmake
 , wayland, wayland-protocols
 , cairo, glm
 , libevdev, freetype, libinput
@@ -8,6 +8,7 @@
 , libGL, mesa
 , libcap, xcbutilerrors, xcbutilwm, libxml2
 , libuuid
+, libseat, xorg, xwayland, doctest
 , buildDocs ? true
 }:
 
@@ -27,7 +28,10 @@ stdenv.mkDerivation rec {
     fetchSubmodules = true;
   };
 
-  nativeBuildInputs = [ pkgconfig meson ninja ];
+  nativeBuildInputs = [
+    pkgconfig meson ninja cmake
+    doctest
+  ];
   buildInputs = [
     # egl glesv2
     wayland wayland-protocols
@@ -38,6 +42,10 @@ stdenv.mkDerivation rec {
     libGL mesa
     libcap xcbutilerrors xcbutilwm libxml2
     libuuid
+    libseat
+    xwayland
+    doctest
+    xorg.xcbutilrenderutil
   ];
   mesonFlags = [
     "-Duse_system_wlroots=disabled"
