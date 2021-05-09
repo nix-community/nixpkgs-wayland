@@ -15,6 +15,10 @@ jobs:
         install_url: https://github.com/numtide/nix-flakes-installer/releases/download/nix-2.4pre20210429_d15a196/install
         extra_nix_config: |
           experimental-features = nix-command flakes ca-references
+    - uses: cachix/cachix-action@v10
+      with:
+        name: nixpkgs-wayland
+        signingKey: '${{ secrets.cachix_key_nixpkgs_wayland }}'
     - name: git-setup
       run: |
         git config --global user.name 'Cole Botkens'
