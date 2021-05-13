@@ -1,7 +1,6 @@
 # nixpkgs-wayland
 
-[![builds.sr.ht status](https://builds.sr.ht/~colemickens/nixpkgs-wayland.svg)](https://builds.sr.ht/~colemickens/nixpkgs-wayland?)
-<sup>(note: failure indicates auto-updates are stuck and need intervention. **all packages remain buildable on tip of master**)</sup>
+[![Update](https://github.com/colemickens/nixpkgs-wayland/actions/workflows/update.yaml/badge.svg)](https://github.com/colemickens/nixpkgs-wayland/actions/workflows/update.yaml) <sup>(note: failure indicates auto-updates are stuck and need intervention. **all packages remain buildable on tip of master**)</sup>
 
 <!--[![builds.sr.ht status](https://builds.sr.ht/~colemickens/nixpkgs-wayland-small.svg)](https://builds.sr.ht/~colemickens/nixpkgs-wayland-unstable-small?) **- nixos-unstable-small** (unsupported; used as a canary for `nixos-unstable`)-->
 
