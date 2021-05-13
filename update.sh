@@ -11,7 +11,7 @@ cd "${DIR}"
 unset NIX_PATH
 pkgentries=(); nixpkgentries=();
 cache="nixpkgs-wayland"
-cprefix="auto-update(${JOB_ID:-"manual"}):"
+cprefix="auto-update(${GITHUB_RUN_ID:-"manual"}-${GITHUB_RUN_NUMBER:-""}):"
 
 nixargs=(--experimental-features 'nix-command flakes')
 buildargs=(
@@ -54,17 +54,19 @@ done
 update_readme
 git commit README.md -m "${cprefix} README.md" || true
 
-# build it!
-set -x
-out="$(mktemp -d)"
-nix-build-uncached -build-flags "$(printf '\"%s\" ' "${buildargs[@]}" "${nixargs[@]}" "--out-link" "${out}/result")" packages.nix
+# # build it!
+# set -x
+# out="$(mktemp -d)"
+# nix-build-uncached -build-flags "$(printf '\"%s\" ' "${buildargs[@]}" "${nixargs[@]}" "--out-link" "${out}/result")" packages.nix
 
-# cache it!
-if find ${out} | grep result; then
-  nix "${nixargs[@]}" path-info --json -r ${out}/result* > ${out}/path-info.json
-  jq -r 'map(select(.ca == null and .signatures == null)) | map(.path) | .[]' < "${out}/path-info.json" > "${out}/paths"
-  cachix push "${cache}" < "${out}/paths"
-fi
+# # cache it!
+# if find ${out} | grep result; then
+#   nix "${nixargs[@]}" path-info --json -r ${out}/result* > ${out}/path-info.json
+#   jq -r 'map(select(.ca == null and .signatures == null)) | map(.path) | .[]' < "${out}/path-info.json" > "${out}/paths"
+#   cachix push "${cache}" < "${out}/paths"
+# fi
+
+nix-build packages.nix | cachix push "${cache}"
 
 # push it!
 if [[ "${JOB_ID:-""}" != "" ]]; then
