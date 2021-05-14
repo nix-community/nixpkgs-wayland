@@ -59,7 +59,9 @@
             rootbar          = prev.callPackage ./pkgs/rootbar {};
             sirula           = prev.callPackage ./pkgs/sirula {};
             slurp            = prev.callPackage ./pkgs/slurp {};
-            sway-unwrapped   = prev.callPackage ./pkgs/sway {};
+            sway-unwrapped   = prev.callPackage ./pkgs/sway-unwrapped {
+              sway-unwrapped = prev.sway-unwrapped;
+            };
             swaybg           = prev.callPackage ./pkgs/swaybg {};
             swayidle         = prev.callPackage ./pkgs/swayidle {};
             swaylock         = prev.callPackage ./pkgs/swaylock {};
