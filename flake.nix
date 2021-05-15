@@ -65,7 +65,9 @@
             swaybg           = prev.callPackage ./pkgs/swaybg {};
             swayidle         = prev.callPackage ./pkgs/swayidle {};
             swaylock         = prev.callPackage ./pkgs/swaylock {};
-            waybar           = prev.callPackage ./pkgs/waybar {};
+            waybar           = prev.callPackage ./pkgs/waybar {
+              waybar = prev.waybar;
+            };
             waypipe          = prev.callPackage ./pkgs/waypipe {};
             wayvnc           = prev.callPackage ./pkgs/wayvnc {};
             wlvncc           = prev.callPackage ./pkgs/wlvncc {
