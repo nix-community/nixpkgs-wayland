@@ -199,7 +199,7 @@ These packages were mostly recently built (and cached) against:
 | [swaybg](https://github.com/swaywm/swaybg) | Wallpaper tool for Wayland compositors |
 | [swayidle](https://swaywm.org) | Sway's idle management daemon |
 | [swaylock](https://swaywm.org) | Screen locker for Wayland |
-| [sway](https://swaywm.org) | i3-compatible tiling Wayland compositor |
+| [sway-unwrapped](https://swaywm.org) | An i3-compatible tiling Wayland compositor |
 | [waybar](https://github.com/Alexays/Waybar) | Highly customizable Wayland Polybar like bar for Sway and Wlroots based compositors. |
 | [wayfire](https://wayfire.org/) | 3D wayland compositor |
 | [waypipe](https://gitlab.freedesktop.org/mstoeckl/waypipe/) | Network transparency with Wayland |
