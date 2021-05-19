@@ -1,6 +1,6 @@
 {
   repo_git = "https://github.com/emersion/mako";
   branch = "master";
-  rev = "08887e132185d99856b338f829c66fa0080a1011";
-  sha256 = "sha256-VwlRyZzeblvOvzTxbSnOEzongeq0+SM9sd8m03gKBA8=";
+  rev = "a53c945ef6565f31c4fd774a03235d3384e315a9";
+  sha256 = "sha256-GKFu26oMdNI6cjiuv1GX0181uoqV+Hi9gJBmbiJyi8Q=";
 }
