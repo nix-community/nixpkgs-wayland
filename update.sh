@@ -11,7 +11,7 @@ cd "${DIR}"
 unset NIX_PATH
 pkgentries=(); nixpkgentries=();
 cache="nixpkgs-wayland"
-cprefix="auto-update(${GITHUB_RUN_ID:-"manual"}-${GITHUB_RUN_NUMBER:-""}):"
+cprefix="auto-update(${CI_JOB_ID:-"manual"}):"
 
 nixargs=(--experimental-features 'nix-command flakes')
 buildargs=(
@@ -54,23 +54,19 @@ done
 update_readme
 git commit README.md -m "${cprefix} README.md" || true
 
-# # build it!
-# set -x
-# out="$(mktemp -d)"
-# nix-build-uncached -build-flags "$(printf '\"%s\" ' "${buildargs[@]}" "${nixargs[@]}" "--out-link" "${out}/result")" packages.nix
+## main
 
-# # cache it!
-# if find ${out} | grep result; then
-#   nix "${nixargs[@]}" path-info --json -r ${out}/result* > ${out}/path-info.json
-#   jq -r 'map(select(.ca == null and .signatures == null)) | map(.path) | .[]' < "${out}/path-info.json" > "${out}/paths"
-#   cachix push "${cache}" < "${out}/paths"
-# fi
+# update flake
+nix "${nixargs[@]}" flake update --commit-lock-file
 
-nix-build packages.nix | cachix push "${cache}"
+# build (uncached)
+set -x
+out="$(mktemp -d)"
+nix-build-uncached -build-flags "$(printf '\"%s\" ' "${buildargs[@]}" "${nixargs[@]}" "--out-link" "${out}/result")" packages.nix
 
-# push it!
-if [[ "${JOB_ID:-""}" != "" ]]; then
-  echo "we're building on sr.ht, pushing..."
-  ssh-keyscan github.com >> ${HOME}/.ssh/known_hosts
-  git push origin HEAD
+# push to cachix
+if find ${out} | grep result; then
+  nix "${nixargs[@]}" path-info --json -r ${out}/result* > ${out}/path-info.json
+  jq -r 'map(select(.ca == null and .signatures == null)) | map(.path) | .[]' < "${out}/path-info.json" > "${out}/paths"
+  cachix push "${cache}" < "${out}/paths"
 fi

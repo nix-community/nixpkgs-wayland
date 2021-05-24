@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+nix-shell --pure \
+    --keep GITHUB_ACTION \
+    --keep CACHIX_SIGNING_KEY \
+    --run "$(printf '\"%s\" ' "${@}")"

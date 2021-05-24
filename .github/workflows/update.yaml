@@ -8,29 +8,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-      with:
-        fetch-depth: 0 # flakes doesn't work on shallow clones
-    - uses: cachix/install-nix-action@v12
-      with:
-        #install_url: https://github.com/numtide/nix-flakes-installer/releases/download/nix-2.4pre20210207_fd6eaa1/install
-        install_url: https://github.com/numtide/nix-flakes-installer/releases/download/nix-2.4pre20210429_d15a196/install
-        extra_nix_config: |
-          experimental-features = nix-command flakes ca-references
-    - uses: cachix/cachix-action@v10
-      with:
-        name: nixpkgs-wayland
-        signingKey: '${{ secrets.cachix_key_nixpkgs_wayland }}'
+    - uses: cachix/install-nix-action@v13
+    - name: prepare
+      run: |
+        .github/exec nix-build --version
     - name: git-setup
       run: |
-        git config --global user.name 'Cole Botkens'
-        git config --global user.email 'cole.mickens+colebot@gmail.com'
+        .github/exec git config --global user.name 'Cole Botkens'
+        .github/exec git config --global user.email 'cole.mickens+colebot@gmail.com'
     - name: update
       env:
         CACHIX_SIGNING_KEY: "${{ secrets.cachix_key_nixpkgs_wayland }}"
       run: |
         set -xeuo pipefail
-        nix develop -c nix flake update --commit-lock-file
-        nix develop -c ./update.sh
+        export CI_JOB_ID="${GITHUB_RUN_ID}_${GITHUB_RUN_NUMBER}"
+        .github/exec ./update.sh
     - name: push
       run: |
-        git push origin HEAD
+        .github/exec git push origin HEAD
