@@ -1,4 +1,4 @@
-{ stdenv, fetchFromGitHub
+{ stdenv, lib, fetchFromGitHub
 , meson, ninja, pkgconfig
 , cairo, libjpeg, wayland, wayland-protocols
 , scdoc, buildDocs ? true
@@ -18,14 +18,14 @@ stdenv.mkDerivation rec {
     sha256 = metadata.sha256;
   };
 
-  nativeBuildInputs = [ pkgconfig meson ninja ] ++ stdenv.lib.optional buildDocs scdoc;
+  nativeBuildInputs = [ pkgconfig meson ninja ] ++ lib.optional buildDocs scdoc;
   buildInputs = [ cairo libjpeg wayland wayland-protocols ];
   mesonFlags = [ "-Djpeg=enabled" ]
-    ++ stdenv.lib.optional buildDocs "-Dman-pages=enabled";
+    ++ lib.optional buildDocs "-Dman-pages=enabled";
 
   enableParallelBuilding = true;
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Grab images from a Wayland compositor";
     homepage    = https://github.com/emersion/grim;
     license     = licenses.mit;

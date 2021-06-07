@@ -1,4 +1,4 @@
-{ stdenv, fetchgit
+{ stdenv, lib, fetchgit
 , pkgconfig, scdoc
 , wayland, wayland-protocols
 , libxkbcommon
@@ -30,7 +30,7 @@ stdenv.mkDerivation rec {
 
   enableParallelBuilding = true;
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "A tool for debugging events on a Wayland window, analagous to the X11 tool xev.";
     homepage    = "https://git.sr.ht/~sircmpwn/wev";
     #license     = licenses.unknown;

@@ -1,4 +1,4 @@
-{ stdenv, fetchFromGitHub
+{ stdenv, lib, fetchFromGitHub
 , libdrm, json_c
 , meson, ninja, pkgconfig
 , libpciaccess
@@ -23,7 +23,7 @@ stdenv.mkDerivation rec {
 
   mesonFlags = [ "-Dlibpci=disabled" ];
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Small utility to dump info about DRM devices.";
     homepage = "https://github.com/ascent12/drm_info";
     license = licenses.mit;

@@ -1,4 +1,4 @@
-{ gcc8Stdenv, fetchFromGitHub
+{ gcc8Stdenv, lib, fetchFromGitHub
 , pkgconfig, cmake
 , libinput, zlib
 }:
@@ -26,7 +26,7 @@ gcc8Stdenv.mkDerivation rec {
 
   enableParallelBuilding = true;
 
-  meta = with gcc8Stdenv.lib; {
+  meta = with lib; {
     description = "Gebaar, A Super Simple WM Independent Touchpad Gesture Daemon for libinput";
     homepage    = "https://github.com/Osleg/gebaar-libinput-fork";
     license     = licenses.gpl3;

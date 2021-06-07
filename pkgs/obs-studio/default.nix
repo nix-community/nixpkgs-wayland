@@ -38,7 +38,7 @@
 
 let
   metadata = import ./metadata.nix;
-  inherit (stdenv.lib) optional optionals;
+  inherit (lib) optional optionals;
 in mkDerivation rec {
   pname = "obs-studio";
   version = "unstable-wayland-${lib.substring 0 10 metadata.rev}";
@@ -89,7 +89,7 @@ in mkDerivation rec {
         --prefix "LD_LIBRARY_PATH" : "${xorg.libX11.out}/lib:${vlc}/lib"
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Free and open source software for video recording and live streaming";
     longDescription = ''
       This project is a rewrite of what was formerly known as "Open Broadcaster

@@ -5,7 +5,7 @@
 # mkdir -p ~/.config/obs-studio/plugins
 # ln -s ~/.nix-profile/share/obs/obs-plugins/wlrobs ~/.config/obs-studio/plugins/
 
-{ stdenv, fetchhg
+{ stdenv, lib, fetchhg
 , meson, ninja, pkg-config
 , obs-studio, wlroots, wayland
 , libX11, libGL, libdrm
@@ -30,7 +30,7 @@ stdenv.mkDerivation rec {
     cp libwlrobs.so $out/share/obs/obs-plugins/wlrobs/bin/64bit
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "wlrobs is an obs-studio plugin that allows you to screen capture on wlroots based wayland compositors";
     homepage = "https://sr.ht/~scoopta/wlrobs";
     maintainers = with maintainers; [ colemickens ];

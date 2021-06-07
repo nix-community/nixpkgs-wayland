@@ -5,7 +5,7 @@
 # nix-env -f . -iA obs-wlrobs
 # mkdir -p ~/.config/obs-studio/plugins/wlrobs/bin/64bit
 # ln -s ~/.nix-profile/share/obs/obs-plugins/wlrobs/bin/64bit/libwlrobs.so ~/.config/obs-studio/plugins/wlrobs/bin/64bit
-{ stdenv, fetchhg, wayland, obs-studio
+{ stdenv, lib, fetchhg, wayland, obs-studio
 , meson, ninja, pkgconfig, libX11
 , dmabufSupport ? false, libdrm ? null, libGL ? null}:
 
@@ -32,7 +32,7 @@ stdenv.mkDerivation {
     "-Duse_dmabuf=${if dmabufSupport then "true" else "false"}"
   ];
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "An obs-studio plugin that allows you to screen capture on wlroots based wayland compositors";
     homepage = https://hg.sr.ht/~scoopta/wlrobs;
     maintainers = with maintainers; [ grahamc ];

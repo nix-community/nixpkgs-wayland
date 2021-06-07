@@ -1,4 +1,4 @@
-{ stdenv, fetchhg
+{ stdenv, lib, fetchhg
 , meson, ninja, pkgconfig
 , wayland, wayland-protocols
 , gtk3
@@ -42,7 +42,7 @@ stdenv.mkDerivation rec {
 
   enableParallelBuilding = true;
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Wofi is a launcher/menu program for wlroots based wayland compositors such as sway";
     homepage    = "https://hg.sr.ht/~scoopta/wofi";
     #license     = #TODO;

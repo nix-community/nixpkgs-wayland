@@ -1,4 +1,4 @@
-{ stdenv, fetchFromGitHub
+{ stdenv, lib, fetchFromGitHub
 , meson, ninja
 , pkgconfig, scdoc
 , wayland, wayland-protocols
@@ -27,7 +27,7 @@ stdenv.mkDerivation rec {
 
   nativeBuildInputs = [
     pkgconfig meson ninja
-  ] ++ stdenv.lib.optional buildDocs scdoc;
+  ] ++ lib.optional buildDocs scdoc;
 
   buildInputs = [
     wayland wayland-protocols
@@ -38,11 +38,11 @@ stdenv.mkDerivation rec {
     "-Dswaylock-version=${version}"
     "-Dpam=enabled"
     "-Dgdk-pixbuf=enabled"
-  ] ++ stdenv.lib.optional buildDocs "-Dman-pages=enabled";
+  ] ++ lib.optional buildDocs "-Dman-pages=enabled";
 
   enableParallelBuilding = true;
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Screen locker for Wayland";
     homepage    = https://swaywm.org;
     license     = licenses.mit;

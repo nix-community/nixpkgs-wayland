@@ -1,4 +1,4 @@
-{ stdenv, rustPlatform, rust, fetchFromGitHub, pkgconfig, dbus, libpulseaudio
+{ stdenv, lib, rustPlatform, rust, fetchFromGitHub, pkgconfig, dbus, libpulseaudio
 , openssl }:
 
 let
@@ -26,7 +26,7 @@ rustPlatform.buildRustPackage rec {
       --replace 'target/release' "target/${rust.toRustTarget stdenv.buildPlatform}/release"
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Very resource-friendly and feature-rich replacement for i3status";
     homepage = https://github.com/greshake/i3status-rust;
     license = licenses.gpl3;

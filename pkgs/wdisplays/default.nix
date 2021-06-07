@@ -1,4 +1,4 @@
-{stdenv, fetchFromGitHub, fetchpatch
+{stdenv, lib, fetchFromGitHub, fetchpatch
 , meson, ninja, pkgconfig
 , gtk3, epoxy
 , wayland, wayland-protocols
@@ -19,14 +19,14 @@ stdenv.mkDerivation rec {
     sha256 = metadata.sha256;
   };
 
-  nativeBuildInputs = [ pkgconfig meson ninja ] ++ stdenv.lib.optional buildDocs scdoc;
+  nativeBuildInputs = [ pkgconfig meson ninja ] ++ lib.optional buildDocs scdoc;
   buildInputs = [ gtk3 epoxy wayland wayland-protocols ];
   mesonFlags = [ "-Dauto_features=enabled" ]
-    ++ stdenv.lib.optional (!buildDocs) "-Dman-pages=disabled";
+    ++ lib.optional (!buildDocs) "-Dman-pages=disabled";
 
   enableParallelBuilding = true;
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "GUI display configurator for wlroots compositors";
     homepage    = "https://github.com/cyclopsian/wdisplays";
     license     = licenses.mit;

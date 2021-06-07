@@ -1,4 +1,4 @@
-{ stdenv, fetchFromGitHub
+{ stdenv, lib, fetchFromGitHub
 , meson, ninja, pkgconfig
 , wayland, wayland-protocols
 }:
@@ -21,7 +21,7 @@ stdenv.mkDerivation rec {
     wayland wayland-protocols
   ];
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "An xrandr clone for wlroots compositors";
     homepage = "https://github.com/emersion/wlr-randr";
     license = licenses.mit;

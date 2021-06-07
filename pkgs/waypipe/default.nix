@@ -1,4 +1,4 @@
-{ stdenv, fetchgit
+{ stdenv, lib, fetchgit
 , meson, ninja, pkgconfig, python3
 , wayland, wayland-protocols
 , libffi, mesa_noglu
@@ -35,7 +35,7 @@ stdenv.mkDerivation rec {
 
   enableParallelBuilding = true;
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Network transparency with Wayland";
     homepage    = "https://gitlab.freedesktop.org/mstoeckl/waypipe/";
     license = licenses.mit; # expat?? TODO

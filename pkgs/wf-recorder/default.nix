@@ -1,4 +1,4 @@
-{ stdenv, fetchFromGitHub
+{ stdenv, lib, fetchFromGitHub
 , meson, ninja, pkgconfig
 , wayland, wayland-protocols
 , ffmpeg, x264, libpulseaudio
@@ -21,7 +21,7 @@ stdenv.mkDerivation rec {
   nativeBuildInputs = [ meson ninja pkgconfig scdoc ];
   buildInputs = [ wayland wayland-protocols ffmpeg x264 libpulseaudio opencl-headers ocl-icd ];
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Utility program for screen recording of wlroots-based compositors";
     homepage = https://github.com/ammen99/wf-recorder;
     license = licenses.mit;

@@ -1,4 +1,4 @@
-{ stdenv, fetchFromGitHub
+{ stdenv, lib, fetchFromGitHub
 , meson, ninja, pkgconfig
 , libudev, wayland, wayland-protocols
 , scdoc, buildDocs ? true
@@ -28,9 +28,9 @@ stdenv.mkDerivation rec {
   enableParallelBuilding = true;
 
   mesonFlags = []
-    ++ stdenv.lib.optional (!buildDocs) "-Dman-pages=disabled";
+    ++ lib.optional (!buildDocs) "-Dman-pages=disabled";
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Dynamic display configuration";
     homepage = "https://github.com/emersion/kanshi";
     maintainers = with maintainers; [ colemickens ];

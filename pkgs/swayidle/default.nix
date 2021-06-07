@@ -1,4 +1,4 @@
-{ stdenv, fetchFromGitHub
+{ stdenv, lib, fetchFromGitHub
 , meson, ninja
 , pkgconfig, scdoc
 , wayland, wayland-protocols
@@ -27,7 +27,7 @@ stdenv.mkDerivation rec {
 
   nativeBuildInputs = [
     pkgconfig meson ninja
-  ] ++ stdenv.lib.optional buildDocs scdoc;
+  ] ++ lib.optional buildDocs scdoc;
 
   buildInputs = [
     systemd
@@ -37,11 +37,11 @@ stdenv.mkDerivation rec {
   mesonFlags = [
     "-Dlogind=enabled"
     "-Dlogind-provider=systemd"
-  ] ++ stdenv.lib.optional buildDocs "-Dman-pages=enabled";
+  ] ++ lib.optional buildDocs "-Dman-pages=enabled";
 
   enableParallelBuilding = true;
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Sway's idle management daemon";
     homepage    = https://swaywm.org;
     license     = licenses.mit;

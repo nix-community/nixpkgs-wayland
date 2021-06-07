@@ -1,4 +1,4 @@
-{ stdenv, fetchgit
+{ stdenv, lib, fetchgit
 , meson, ninja, pkgconfig
 , cairo, libjpeg, wayland, wayland-protocols
 , scdoc, buildDocs ? true
@@ -17,12 +17,12 @@ stdenv.mkDerivation rec {
     sha256 = metadata.sha256;
   };
 
-  nativeBuildInputs = [ pkgconfig meson ninja ] ++ stdenv.lib.optional buildDocs scdoc;
+  nativeBuildInputs = [ pkgconfig meson ninja ] ++ lib.optional buildDocs scdoc;
   buildInputs = [ cairo libjpeg wayland wayland-protocols ];
 
   enableParallelBuilding = true;
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Day/night gamma adjustments for Wayland";
     homepage    = "https://git.sr.ht/~kennylevinsen/wlsunset";
     license     = licenses.mit;

@@ -1,4 +1,4 @@
-{ stdenv, fetchFromGitHub
+{ stdenv, lib, fetchFromGitHub
 , pkgconfig, meson, ninja
 , wayland, wayland-protocols
 , libxkbcommon, libvncserver
@@ -34,7 +34,7 @@ stdenv.mkDerivation rec {
 
   enableParallelBuilding = true;
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "liberally licensed VNC server library that's intended to be fast and neat";
     homepage    = "https://github.com/any1/neatvnc";
     license     = licenses.mit;

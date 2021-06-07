@@ -1,4 +1,4 @@
-{stdenv, fetchFromGitHub
+{stdenv, lib, fetchFromGitHub
 , meson, ninja, pkgconfig
 , gtk3, gtkmm3, epoxy, nlohmann_json
 , wayland, wayland-protocols
@@ -30,7 +30,7 @@ stdenv.mkDerivation rec {
 
   enableParallelBuilding = true;
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = " GTK-based launchers: application grid, button bar, dmenu for sway and other window managers ";
     homepage    = "https://github.com/nwg-piotr/nwg-launchers";
     license     = licenses.gpl3;

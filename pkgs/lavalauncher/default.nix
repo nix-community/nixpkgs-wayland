@@ -1,4 +1,4 @@
-{ stdenv, fetchgit
+{ stdenv, lib, fetchgit
 , pkgconfig, meson, ninja, scdoc
 , wayland, wayland-protocols
 , libxkbcommon, cairo, librsvg
@@ -30,7 +30,7 @@ stdenv.mkDerivation rec {
 
   enableParallelBuilding = true;
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "A simple launcher for Wayland.";
     homepage    = "https://git.sr.ht/~leon_plickat/lavalauncher";
     license     = licenses.gpl3;

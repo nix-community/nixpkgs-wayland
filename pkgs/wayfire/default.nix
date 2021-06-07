@@ -1,4 +1,4 @@
-{ stdenv, fetchFromGitHub
+{ stdenv, lib, fetchFromGitHub
 , meson, pkgconfig, ninja, cmake
 , wayland, wayland-protocols
 , cairo, glm
@@ -56,7 +56,7 @@ stdenv.mkDerivation rec {
 
   enableParallelBuilding = true;
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "3D wayland compositor";
     homepage    = "https://wayfire.org/";
     license     = licenses.mit;

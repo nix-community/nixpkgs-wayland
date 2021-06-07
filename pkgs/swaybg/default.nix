@@ -1,4 +1,4 @@
-{ stdenv, fetchFromGitHub
+{ stdenv, lib, fetchFromGitHub
 , meson, ninja, pkgconfig
 , cairo, wayland, wayland-protocols
 , gdk_pixbuf, nonPngSupport ? true
@@ -23,16 +23,16 @@ stdenv.mkDerivation rec {
     sed -iE "0,/version: '.*',/ s//version: '${version}',/" meson.build
   '';
 
-  nativeBuildInputs = [ pkgconfig meson ninja ] ++ stdenv.lib.optional buildDocs scdoc;
+  nativeBuildInputs = [ pkgconfig meson ninja ] ++ lib.optional buildDocs scdoc;
 
-  buildInputs = [ cairo wayland wayland-protocols ] ++ stdenv.lib.optional nonPngSupport gdk_pixbuf;
+  buildInputs = [ cairo wayland wayland-protocols ] ++ lib.optional nonPngSupport gdk_pixbuf;
 
-  mesonFlags = stdenv.lib.optional nonPngSupport "-Dgdk-pixbuf=enabled"
-    ++ stdenv.lib.optional buildDocs "-Dman-pages=enabled";
+  mesonFlags = lib.optional nonPngSupport "-Dgdk-pixbuf=enabled"
+    ++ lib.optional buildDocs "-Dman-pages=enabled";
 
   enableParallelBuilding = true;
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Wallpaper tool for Wayland compositors";
     homepage    = https://github.com/swaywm/swaybg;
     license     = licenses.mit;

@@ -1,4 +1,4 @@
-{ stdenv, fetchFromGitHub
+{ stdenv, lib, fetchFromGitHub
 , cmake, extra-cmake-modules, pkgconfig
 , wayland, wayland-protocols
 , epoxy, libpthreadstubs
@@ -33,7 +33,7 @@ stdenv.mkDerivation rec {
 
   enableParallelBuilding = true;
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Graphical output management for Wayland";
     homepage    = "https://github.com/atx/wlay";
     license     = licenses.mit;

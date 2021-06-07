@@ -1,4 +1,4 @@
-{ stdenv, fetchFromGitHub
+{ stdenv, lib, fetchFromGitHub
 , meson, ninja, pkgconfig
 , wayland, wayland-protocols
 , gtk3, wlroots
@@ -28,7 +28,7 @@ stdenv.mkDerivation rec {
     sed -i 32,46d ./meson.build
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Small GTK GUI application to set contrast, brightness and gamma for wayland compositors which support the wlr-gamma-control protocol extension.";
     homepage = "https://github.com/mischw/wl-gammactl";
     license = licenses.mit;

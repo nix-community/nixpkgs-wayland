@@ -1,4 +1,4 @@
-{ stdenv, fetchhg
+{ stdenv, lib, fetchhg
 , meson, ninja, pkgconfig
 , wlroots, wayland, wayland-protocols
 , pixman, libxkbcommon
@@ -28,7 +28,7 @@ stdenv.mkDerivation rec {
 
   enableParallelBuilding = true;
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "GLPaper is a wallpaper program for wlroots based wayland compositors such as sway that allows you to render glsl shaders as your wallpaper";
     homepage    = "https://bitbucket.org/Scoopta/glpaper";
     platforms   = platforms.linux;

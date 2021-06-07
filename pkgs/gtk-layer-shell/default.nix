@@ -1,4 +1,4 @@
-{ stdenv, fetchFromGitHub
+{ stdenv, lib, fetchFromGitHub
 , meson, ninja, pkgconfig, scdoc
 , wayland, libinput, gtk3, gobject-introspection
 }:
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
 
   enableParallelBuilding = true;
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "A library to create panels and other desktop components for Wayland using the Layer Shell protocol";
     homepage    = "https://github.com/wmww/gtk-layer-shell";
     license     = licenses.mit;

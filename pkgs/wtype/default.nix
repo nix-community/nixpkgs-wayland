@@ -1,4 +1,4 @@
-{ stdenv, fetchFromGitHub
+{ stdenv, lib, fetchFromGitHub
 , pkgconfig, meson, ninja
 , wayland, wayland-protocols
 , libxkbcommon
@@ -26,7 +26,7 @@ stdenv.mkDerivation rec {
 
   enableParallelBuilding = true;
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "xdotool type for wayland";
     homepage    = "https://github.com/atx/wtype";
     license     = licenses.mit;

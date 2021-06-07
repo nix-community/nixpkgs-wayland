@@ -1,4 +1,4 @@
-{ stdenv, fetchFromGitHub, fetchpatch
+{ stdenv, lib, fetchFromGitHub, fetchpatch
 , pkgconfig, meson, ninja, scdoc
 , wayland, wayland-protocols
 , wlroots, pixman, libxkbcommon, libudev, libGL, libX11
@@ -28,7 +28,7 @@ stdenv.mkDerivation rec {
 
   enableParallelBuilding = true;
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "A Wayland kiosk";
     homepage    = "https://www.hjdskes.nl/projects/cage/";
     license     = licenses.mit;

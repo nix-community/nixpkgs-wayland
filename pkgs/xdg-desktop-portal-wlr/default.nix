@@ -1,4 +1,4 @@
-{ stdenv, fetchFromGitHub
+{ stdenv, lib, fetchFromGitHub
 , meson, ninja, pkgconfig
 , systemd, wayland, wayland-protocols
 , pipewire, libdrm
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
 
   enableParallelBuilding = true;
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "xdg-desktop-portal backend for wlroots";
     homepage    = "https://github.com/emersion/xdg-desktop-portal-wlr";
     license     = licenses.mit;

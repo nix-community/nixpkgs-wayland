@@ -1,4 +1,4 @@
-{ stdenv, fetchFromGitHub
+{ stdenv, lib, fetchFromGitHub
 , meson, ninja, pkgconfig
 , wayland, wayland-protocols
 }:
@@ -23,7 +23,7 @@ stdenv.mkDerivation rec {
 
   enableParallelBuilding = true;
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Select a region in a Wayland compositor";
     homepage    = https://github.com/bugaevc/wl-clipboard;
     #license     = licenses.mit; # TODO none listed

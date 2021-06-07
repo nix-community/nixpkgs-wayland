@@ -1,4 +1,4 @@
-{ stdenv, fetchFromGitHub
+{ stdenv, lib, fetchFromGitHub
 , meson, ninja, pkgconfig
 , cairo, gdk_pixbuf, wayland, wayland-protocols
 }:
@@ -23,7 +23,7 @@ stdenv.mkDerivation rec {
 
   enableParallelBuilding = true;
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "A very nice animated wallpaper tool for Wayland compositors";
     homepage    = https://github.com/vilhalmer/oguri;
     license     = licenses.mit;

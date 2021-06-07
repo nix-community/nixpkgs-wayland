@@ -1,4 +1,4 @@
-{ stdenv, fetchFromGitHub, rustPlatform, pkgconfig, glib, cairo, pango, atk
+{ stdenv, lib, fetchFromGitHub, rustPlatform, pkgconfig, glib, cairo, pango, atk
 , gdk-pixbuf, gtk3, gtk-layer-shell }:
 
 let
@@ -20,7 +20,7 @@ rustPlatform.buildRustPackage rec {
   nativeBuildInputs = [ pkgconfig ];
   buildInputs = [ glib cairo pango atk gdk-pixbuf gtk3 gtk-layer-shell ];
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Sirula (simple rust launcher) is an app launcher for wayland";
     homepage = "https://github.com/DorianRudolph/sirula";
     license = licenses.gpl3;

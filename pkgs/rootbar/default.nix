@@ -1,4 +1,4 @@
-{ stdenv, fetchhg
+{ stdenv, lib, fetchhg
 , meson, ninja, pkgconfig
 , wayland, wayland-protocols
 , gtk3, json_c, libpulseaudio
@@ -29,7 +29,7 @@ stdenv.mkDerivation rec {
 
   enableParallelBuilding = true;
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Root Bar is a bar for wlroots based wayland compositors such as sway and was designed to address the lack of good bars for wayland";
     homepage    = "https://hg.sr.ht/~scoopta/rootbar";
     #license     = #TODO;

@@ -1,4 +1,4 @@
-{ stdenv, fetchgit
+{ stdenv, lib, fetchgit
 , pkgconfig, meson, ninja, scdoc
 , wayland, wayland-protocols
 , libxkbcommon, gtk3
@@ -42,7 +42,7 @@ stdenv.mkDerivation rec {
 
   enableParallelBuilding = true;
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "A wayland based logout menu";
     homepage    = "https://github.com/ArtsyMacaw/wlogout";
     license     = licenses.mit;

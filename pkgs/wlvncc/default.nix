@@ -1,4 +1,4 @@
-{ stdenv, fetchFromGitHub
+{ stdenv, lib, fetchFromGitHub
 , pkgconfig, meson, ninja
 , wayland, wayland-protocols
 , libxkbcommon, libvncserver
@@ -34,7 +34,7 @@ stdenv.mkDerivation rec {
 
   enableParallelBuilding = true;
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "A Wayland Native VNC Client";
     homepage    = "https://github.com/any1/wlvncc";
     license     = licenses.isc;

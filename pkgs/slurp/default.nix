@@ -1,4 +1,4 @@
-{ stdenv, fetchFromGitHub
+{ stdenv, lib, fetchFromGitHub
 , meson, ninja, pkgconfig
 , cairo, wayland, wayland-protocols
 , scdoc, buildDocs ? true
@@ -19,18 +19,18 @@ stdenv.mkDerivation rec {
     sha256 = metadata.sha256;
   };
 
-  nativeBuildInputs = [ pkgconfig meson ninja ] ++ stdenv.lib.optional buildDocs scdoc;
+  nativeBuildInputs = [ pkgconfig meson ninja ] ++ lib.optional buildDocs scdoc;
   buildInputs = [
     cairo wayland wayland-protocols
     libxkbcommon
   ];
   mesonFlags = [
     "-Dauto_features=enabled"
-  ] ++ stdenv.lib.optional (!buildDocs) "-Dman-pages=disabled";
+  ] ++ lib.optional (!buildDocs) "-Dman-pages=disabled";
 
   enableParallelBuilding = true;
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Select a region in a Wayland compositor";
     homepage    = https://github.com/emersion/slurp;
     license     = licenses.mit;
