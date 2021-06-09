@@ -1,7 +1,7 @@
 {
   repo_git = "https://github.com/yory8/clipman";
   branch = "master";
-  rev = "818cdeeea85e191f9fff298c84825c0b85e224a1";
-  sha256 = "sha256-jUsrmcfqTP9sskIUdF5xSGEJVczmKgel+ctL0XpI+zQ=";
+  rev = "3433c1bf4588a0c946e5ba593dea4b788b373f63";
+  sha256 = "sha256-vWiMQS4UmbwivTelPclzdQh7xYctrBM49N8TGORkFoI=";
   vendorSha256 = "sha256-Z/sVCJz/igPDdeczC6pemLub6X6z4ZGlBwBmRsEnXKI=";
 }
