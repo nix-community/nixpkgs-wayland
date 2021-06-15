@@ -1,14 +1,12 @@
-{ stdenv, lib, fetchFromGitHub
-, meson, ninja, pkgconfig
-, systemd, wayland, wayland-protocols
-, pipewire, libdrm
-}:
+{ lib, stdenv, fetchFromGitHub, makeWrapper
+, meson, ninja, pkg-config, wayland-protocols
+, pipewire, wayland, systemd, libdrm, iniparser, inih, scdoc, grim, slurp }:
 
 let
   metadata = import ./metadata.nix;
 in
 stdenv.mkDerivation rec {
-  name = "xdg-desktop-portal-wlr-${version}";
+  pname = "xdg-desktop-portal-wlr";
   version = metadata.rev;
 
   src = fetchFromGitHub {
@@ -18,11 +16,16 @@ stdenv.mkDerivation rec {
     sha256 = metadata.sha256;
   };
 
-  nativeBuildInputs = [ pkgconfig meson ninja ];
-  buildInputs = [ systemd wayland wayland-protocols pipewire libdrm ];
-  mesonFlags = [ "-Dauto_features=auto" ];
+  nativeBuildInputs = [ meson ninja pkg-config wayland-protocols makeWrapper ];
+  buildInputs = [ pipewire wayland systemd libdrm iniparser scdoc inih ];
 
-  enableParallelBuilding = true;
+  mesonFlags = [
+    "-Dsd-bus-provider=libsystemd"
+  ];
+
+  postInstall = ''
+    wrapProgram $out/libexec/xdg-desktop-portal-wlr --prefix PATH ":" ${lib.makeBinPath [ grim slurp ]}
+  '';
 
   meta = with lib; {
     description = "xdg-desktop-portal backend for wlroots";
