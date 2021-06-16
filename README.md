@@ -2,10 +2,6 @@
 
 [![Update](https://github.com/colemickens/nixpkgs-wayland/actions/workflows/update.yaml/badge.svg)](https://github.com/colemickens/nixpkgs-wayland/actions/workflows/update.yaml) <sup>(note: failure indicates auto-updates are stuck and need intervention. **all packages remain buildable on tip of master**)</sup>
 
-## status
-
-My nix projects are on indefinite hold until something is done about impure-eval on stable nix, or until some sort of actual leadership emerges around flakes.
-
 ## overview
 
 Automated, pre-built packages for Wayland (sway/wlroots) tools for NixOS (**nixos-unstable** channel).
