@@ -2,5 +2,6 @@
 
 nix-shell --pure \
     --keep GITHUB_ACTION \
+    --keep CI_JOB_ID \
     --keep CACHIX_SIGNING_KEY \
     --run "$(printf '\"%s\" ' "${@}")"
