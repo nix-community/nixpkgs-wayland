@@ -8,6 +8,7 @@ on:
 jobs:
   update:
     runs-on: ubuntu-latest
+    concurrency: update-${{matrix.jobs.branch}}-${{matrix.jobs.target}}
     steps:
     - uses: actions/checkout@v2
     - uses: cachix/install-nix-action@v13

@@ -1,6 +1,7 @@
 # nixpkgs-wayland
 
-[![Update](https://github.com/colemickens/nixpkgs-wayland/actions/workflows/update.yaml/badge.svg)](https://github.com/colemickens/nixpkgs-wayland/actions/workflows/update.yaml) <sup>(note: failure indicates auto-updates are stuck and need intervention. **all packages remain buildable on tip of master**)</sup>
+[![Build](https://github.com/colemickens/nixpkgs-wayland/actions/workflows/build.yaml/badge.svg)](https://github.com/colemickens/nixpkgs-wayland/actions/workflows/build.yaml)
+[![Update](https://github.com/colemickens/nixpkgs-wayland/actions/workflows/update.yaml/badge.svg)](https://github.com/colemickens/nixpkgs-wayland/actions/workflows/update.yaml)
 
 ## overview
 
@@ -8,16 +9,18 @@ Automated, pre-built packages for Wayland (sway/wlroots) tools for NixOS (**nixo
 
 Community chat is on Matrix: [#nixpkgs-wayland:matrix.org](https://matrix.to/#/#nixpkgs-wayland:matrix.org). We are not on Libera.
 
-- [Usage](#usage)
-  - [Binary Cache](#binary-cache)
-  - [Flake Usage](#flake-usage)
-  - [Install for NixOS (non-flakes, manual import)](#install-for-nixos-non-flakes-manual-import)
-  - [Install for non-NixOS users](#install-for-non-nixos-users)
-- [Packages](#packages)
-- [Tips](#tips)
-    - [General](#general)
-    - [`sway`](#sway)
-- [Development Guide](#development-guide)
+- [nixpkgs-wayland](#nixpkgs-wayland)
+  - [overview](#overview)
+  - [Usage](#usage)
+    - [Binary Cache](#binary-cache)
+    - [Flake Usage](#flake-usage)
+    - [Install for NixOS (non-flakes, manual import)](#install-for-nixos-non-flakes-manual-import)
+    - [Install for non-NixOS users](#install-for-non-nixos-users)
+  - [Packages](#packages)
+  - [Tips](#tips)
+      - [General](#general)
+      - [`sway`](#sway)
+  - [Development Guide](#development-guide)
 
 ## Usage
 

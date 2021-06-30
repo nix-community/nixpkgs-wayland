@@ -1,0 +1,34 @@
+name: "Build"
+on:
+  push:
+    branches:
+      master
+  schedule:
+    - cron: '17 * * * *'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    concurrency: build-${{matrix.jobs.branch}}-${{matrix.jobs.target}}
+    steps:
+    - uses: actions/checkout@v2
+    - uses: cachix/install-nix-action@v13
+    - name: prepare
+      run: |
+        .github/exec nix-build --version
+    - name: git-setup
+      run: |
+        .github/exec git config --global user.name 'Cole Botkens'
+        .github/exec git config --global user.email 'cole.mickens+colebot@gmail.com'
+    - name: build
+      run: |
+        set -xeuo pipefail
+        export CI_JOB_ID="${GITHUB_RUN_ID}_${GITHUB_RUN_NUMBER}"
+        # .github/exec \
+        #   nix-build \
+        #     --option 'extra-binary-caches' 'https://cache.nixos.org https://nixpkgs-wayland.cachix.org' \
+        #     --option 'trusted-public-keys' 'cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= nixpkgs-wayland.cachix.org-1:3lwxaILxMRkVhehr5StQprHdEo4IrE8sRho9R9HOLYA=' \
+        #       packages.nix
+        .github/exec \
+          nix-build-uncached \
+            -build-flags "--option 'extra-binary-caches' 'https://cache.nixos.org https://nixpkgs-wayland.cachix.org' --option 'trusted-public-keys' 'cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= nixpkgs-wayland.cachix.org-1:3lwxaILxMRkVhehr5StQprHdEo4IrE8sRho9R9HOLYA='" \
+            packages.nix
