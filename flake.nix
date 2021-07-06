@@ -42,6 +42,9 @@
       overlay = final: prev:
         let
           waylandPkgs = rec {
+            # temporary
+            meson0581 = prev.callPackage ./pkgs-temp/meson061 {};
+
             # wlroots-related
             cage             = prev.callPackage ./pkgs/cage {
               #wlroots = prev.wlroots;
@@ -62,6 +65,7 @@
             sirula           = prev.callPackage ./pkgs/sirula {};
             slurp            = prev.callPackage ./pkgs/slurp {};
             sway-unwrapped   = prev.callPackage ./pkgs/sway-unwrapped {
+              meson = meson0581;
               sway-unwrapped = prev.sway-unwrapped;
             };
             swaybg           = prev.callPackage ./pkgs/swaybg {};
@@ -84,7 +88,9 @@
             wl-gammactl      = prev.callPackage ./pkgs/wl-gammactl {};
             wldash           = prev.callPackage ./pkgs/wldash {};
             wlogout          = prev.callPackage ./pkgs/wlogout {};
-            wlroots          = prev.callPackage ./pkgs/wlroots {};
+            wlroots          = prev.callPackage ./pkgs/wlroots {
+              meson = meson0581;
+            };
             wlr-randr        = prev.callPackage ./pkgs/wlr-randr {};
             wlsunset         = prev.callPackage ./pkgs/wlsunset {};
             wofi             = prev.callPackage ./pkgs/wofi {};
