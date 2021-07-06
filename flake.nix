@@ -114,7 +114,9 @@
               inherit (prev.gst_all_1) gstreamer gst-plugins-base gst-plugins-good;
             };
             # wayfire stuff
-            wayfire          = prev.callPackage ./pkgs/wayfire {};
+            wayfire          = prev.callPackage ./pkgs/wayfire {
+              meson = meson0581;
+            };
 
             libvncserver_master = prev.callPackage ./pkgs/libvncserver_master {
               libvncserver = prev.libvncserver;
