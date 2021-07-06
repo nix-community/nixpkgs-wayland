@@ -1,6 +1,6 @@
 {
   repo_git = "https://github.com/WayfireWM/wayfire";
   branch = "master";
-  rev = "0691b3ffa8d0b5c5567169e4499438aa10e1a500";
-  sha256 = "sha256-dzMFrUFDq1ynvWqB7oqwSEEi2RUYjwhoUyoMWdi1LFI=";
+  rev = "d2a60dd3813acad3af1b67c41ae9c7d43c769258";
+  sha256 = "sha256-lT7lhNN62uzJs5kCUjmjoAkHRXJoV1tVGiUfndxxVcw=";
 }
