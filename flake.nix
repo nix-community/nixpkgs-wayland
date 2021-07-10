@@ -103,7 +103,9 @@
               dunst = prev.dunst;
             };
             gtk-layer-shell = prev.callPackage ./pkgs/gtk-layer-shell {};
-            i3status-rust    = prev.callPackage ./pkgs/i3status-rust {};
+            i3status-rust    = prev.callPackage ./pkgs/i3status-rust {
+              i3status-rust = prev.i3status-rust;
+            };
             neatvnc = prev.callPackage ./pkgs/neatvnc {};
             obs-studio = prev.libsForQt5.callPackage ./pkgs/obs-studio {
               ffmpeg = prev.ffmpeg_4;

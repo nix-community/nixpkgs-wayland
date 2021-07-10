@@ -1,36 +1,15 @@
-{ stdenv, lib, rustPlatform, rust, fetchFromGitHub, pkgconfig, dbus, libpulseaudio
-, openssl }:
+args_@{ lib, fetchFromGitHub, i3status-rust, ...}:
 
 let
   metadata = import ./metadata.nix;
+  ignore = [ "i3status-rust" ];
+  args = lib.filterAttrs (n: v: (!builtins.elem n ignore)) args_;
 in
-rustPlatform.buildRustPackage rec {
-  name = "i3status-rust-${version}";
+(i3status-rust.override args).overrideAttrs(old: {
   version = metadata.rev;
-
   src = fetchFromGitHub {
     owner = "greshake";
     repo = "i3status-rust";
-    rev = metadata.rev;
-    sha256 = metadata.sha256;
+    inherit (metadata) rev sha256;
   };
-
-  cargoSha256 = metadata.cargoSha256;
-
-  nativeBuildInputs = [ pkgconfig ];
-
-  buildInputs = [ dbus libpulseaudio openssl ];
-
-  preCheck = ''
-    substituteInPlace tests/run_binary.rs \
-      --replace 'target/release' "target/${rust.toRustTarget stdenv.buildPlatform}/release"
-  '';
-
-  meta = with lib; {
-    description = "Very resource-friendly and feature-rich replacement for i3status";
-    homepage = https://github.com/greshake/i3status-rust;
-    license = licenses.gpl3;
-    maintainers = [ maintainers.backuitist ];
-    platforms = platforms.linux;
-  };
-}
+})
