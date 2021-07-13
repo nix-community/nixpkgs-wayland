@@ -197,6 +197,7 @@ These packages were mostly recently built (and cached) against:
 | [obs-wlrobs](https://sr.ht/~scoopta/wlrobs) | wlrobs is an obs-studio plugin that allows you to screen capture on wlroots based wayland compositors |
 | [oguri](https://github.com/vilhalmer/oguri) | A very nice animated wallpaper tool for Wayland compositors |
 | [rootbar](https://hg.sr.ht/~scoopta/rootbar) | Root Bar is a bar for wlroots based wayland compositors such as sway and was designed to address the lack of good bars for wayland |
+| [sirula](https://github.com/DorianRudolph/sirula) | Sirula (simple rust launcher) is an app launcher for wayland |
 | [slurp](https://github.com/emersion/slurp) | Select a region in a Wayland compositor |
 | [swaybg](https://github.com/swaywm/swaybg) | Wallpaper tool for Wayland compositors |
 | [swayidle](https://swaywm.org) | Sway's idle management daemon |
