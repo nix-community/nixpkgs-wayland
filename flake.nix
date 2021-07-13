@@ -62,7 +62,7 @@
             nwg-launchers    = prev.callPackage ./pkgs/nwg-launchers {};
             oguri            = prev.callPackage ./pkgs/oguri {};
             rootbar          = prev.callPackage ./pkgs/rootbar {};
-            #sirula           = prev.callPackage ./pkgs/sirula {};
+            sirula           = prev.callPackage ./pkgs/sirula {};
             slurp            = prev.callPackage ./pkgs/slurp {};
             sway-unwrapped   = prev.callPackage ./pkgs/sway-unwrapped {
               meson = meson0581;
