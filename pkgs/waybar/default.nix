@@ -13,9 +13,6 @@ in
     repo = "Waybar";
     inherit (metadata) rev sha256;
   };
-  patches = [
-    ./multibar.patch
-  ];
   prePatch = ''
     sed -i "s|version: '0.9.7'|version: '-git-${metadata.rev}'|g" meson.build
   '';
