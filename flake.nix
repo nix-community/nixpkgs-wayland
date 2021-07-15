@@ -59,7 +59,6 @@
             };
             lavalauncher     = prev.callPackage ./pkgs/lavalauncher {};
             mako             = prev.callPackage ./pkgs/mako {};
-            nwg-launchers    = prev.callPackage ./pkgs/nwg-launchers {};
             oguri            = prev.callPackage ./pkgs/oguri {};
             rootbar          = prev.callPackage ./pkgs/rootbar {};
             sirula           = prev.callPackage ./pkgs/sirula {};
@@ -107,6 +106,12 @@
               i3status-rust = prev.i3status-rust;
             };
             neatvnc = prev.callPackage ./pkgs/neatvnc {};
+
+            nwg-launchers = prev.callPackage ./pkgs/nwg-launchers {};
+            nwg-panel = prev.callPackage ./pkgs/nwg-panel {
+              nwg-panel = prev.nwg-panel;
+            };
+
             obs-studio = prev.libsForQt5.callPackage ./pkgs/obs-studio {
               ffmpeg = prev.ffmpeg_4;
               vlc = prev.vlc;
