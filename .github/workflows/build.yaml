@@ -17,24 +17,27 @@ jobs:
         .github/exec nix-build --version
     - name: git-setup
       run: |
-        .github/exec git config --global user.name 'Cole Botkens'
-        .github/exec git config --global user.email 'cole.mickens+colebot@gmail.com'
+        cat << EOF | .github/exec
+          git config --global user.name 'Cole Botkens'
+          git config --global user.email 'cole.mickens+colebot@gmail.com'
+          git remote update
+        EOF
     - name: build
       run: |
-        set -xeuo pipefail
         export CI_JOB_ID="${GITHUB_RUN_ID}_${GITHUB_RUN_NUMBER}"
-        # .github/exec \
-        #   nix-build \
-        #     --option 'extra-binary-caches' 'https://cache.nixos.org https://nixpkgs-wayland.cachix.org' \
-        #     --option 'trusted-public-keys' 'cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= nixpkgs-wayland.cachix.org-1:3lwxaILxMRkVhehr5StQprHdEo4IrE8sRho9R9HOLYA=' \
-        #       packages.nix
-
-        # .github/exec \
-        #   nix-build-uncached \
-        #     -build-flags "--option 'extra-binary-caches' 'https://cache.nixos.org https://nixpkgs-wayland.cachix.org' --option 'trusted-public-keys' 'cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= nixpkgs-wayland.cachix.org-1:3lwxaILxMRkVhehr5StQprHdEo4IrE8sRho9R9HOLYA='" \
-        #     packages.nix
-
-        .github/exec \
-          nix-build \
-            --option 'extra-binary-caches' 'https://cache.nixos.org https://nixpkgs-wayland.cachix.org' --option 'trusted-public-keys' 'cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= nixpkgs-wayland.cachix.org-1:3lwxaILxMRkVhehr5StQprHdEo4IrE8sRho9R9HOLYA=' \
-            packages.nix
+        cat << EOF | .github/exec
+          set +e
+          .github/exec nix-build-uncached \
+              -build-flags "--option 'extra-binary-caches' 'https://cache.nixos.org https://nixpkgs-wayland.cachix.org' --option 'trusted-public-keys' 'cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= nixpkgs-wayland.cachix.org-1:3lwxaILxMRkVhehr5StQprHdEo4IrE8sRho9R9HOLYA='" \
+              packages.nix
+          if [ $? -eq 0 ]; then
+            echo "already cached: done"
+            exit
+          fi
+          
+          set -e
+          echo "something wasn't cached, building"
+          .github/exec nix-build \
+              --option 'extra-binary-caches' 'https://cache.nixos.org https://nixpkgs-wayland.cachix.org' --option 'trusted-public-keys' 'cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= nixpkgs-wayland.cachix.org-1:3lwxaILxMRkVhehr5StQprHdEo4IrE8sRho9R9HOLYA=' \
+              packages.nix
+        EOF
