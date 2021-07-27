@@ -1,6 +1,6 @@
 {
   repo_git = "https://github.com/bugaevc/wl-clipboard";
   branch = "master";
-  rev = "d2c32f2b4d469f53070e8c4052dea6f412de3916";
-  sha256 = "sha256-U5EV5+l3qYsEqtv4MaDYb68xB+1TwSl6mUNOwo7+dhU=";
+  rev = "297ab2a6fdd34c15c5eb3eb427be8daf753bcfd7";
+  sha256 = "sha256-DRs4Fxc4AL7fC+hKM9/km/OmtQWrrrM/gMMmZn7HXBQ=";
 }
