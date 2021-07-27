@@ -27,7 +27,7 @@ stdenv.mkDerivation rec {
 
   enableParallelBuilding = true;
 
-  mesonFlags = []
+  mesonFlags = [ "-Dauto_features=disabled" ]
     ++ lib.optional (!buildDocs) "-Dman-pages=disabled";
 
   meta = with lib; {
