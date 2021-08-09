@@ -39,12 +39,20 @@
           linkFarmFromDrvs "wayland-packages-unstable"
             (builtins.attrValues waylandPkgs));
 
-      overlay = final: prev:
-        let
-          waylandPkgs = rec {
-            # temporary
-            meson0581 = prev.callPackage ./pkgs-temp/meson061 {};
+      overlay = overlay_ false;
+      overlay-egl = overlay_ true;
 
+      overlay_ = isEgl: final: prev:
+        let
+          meson0581 = prev.callPackage ./pkgs-temp/meson061 {};
+          __wlroots = prev.callPackage ./pkgs/wlroots {
+            meson = meson0581;
+          };
+          __wlroots-eglstreams = prev.callPackage ./pkgs/wlroots-eglstreams {
+            wlroots = __wlroots; # use our wlroots def to start with
+          };
+          _wlroots = if isEgl then __wlroots-eglstreams else __wlroots;
+          waylandPkgs = rec {
             # wlroots-related
             cage             = prev.callPackage ./pkgs/cage {
               #wlroots = prev.wlroots;
@@ -87,12 +95,8 @@
             wl-gammactl      = prev.callPackage ./pkgs/wl-gammactl {};
             wldash           = prev.callPackage ./pkgs/wldash {};
             wlogout          = prev.callPackage ./pkgs/wlogout {};
-            wlroots          = prev.callPackage ./pkgs/wlroots {
-              meson = meson0581;
-            };
-            wlroots-eglstreams = prev.callPackage ./pkgs/wlroots-eglstreams {
-              wlroots = wlroots; # use our wlroots def to start with
-            };
+            wlroots          = _wlroots;
+            wlroots-eglstreams = __wlroots-eglstreams;
             wlr-randr        = prev.callPackage ./pkgs/wlr-randr {};
             wlsunset         = prev.callPackage ./pkgs/wlsunset {};
             wofi             = prev.callPackage ./pkgs/wofi {};
