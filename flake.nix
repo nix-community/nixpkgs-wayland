@@ -90,6 +90,9 @@
             wlroots          = prev.callPackage ./pkgs/wlroots {
               meson = meson0581;
             };
+            wlroots-eglstreams = prev.callPackage ./pkgs/wlroots-eglstreams {
+              wlroots = wlroots; # use our wlroots def to start with
+            };
             wlr-randr        = prev.callPackage ./pkgs/wlr-randr {};
             wlsunset         = prev.callPackage ./pkgs/wlsunset {};
             wofi             = prev.callPackage ./pkgs/wofi {};
