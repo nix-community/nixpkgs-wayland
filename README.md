@@ -3,6 +3,8 @@
 [![Build](https://github.com/nix-community/nixpkgs-wayland/actions/workflows/build.yaml/badge.svg)](https://github.com/nix-community/nixpkgs-wayland/actions/workflows/build.yaml)
 [![Update](https://github.com/nix-community/nixpkgs-wayland/actions/workflows/update.yaml/badge.svg)](https://github.com/nix-community/nixpkgs-wayland/actions/workflows/update.yaml)
 
+[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-908a85?logo=gitpod)](https://gitpod.io/#https://github.com/nix-community/nixpkgs-wayland)
+
 ## overview
 
 Automated, pre-built packages for Wayland (sway/wlroots) tools for NixOS (**nixos-unstable** channel).
@@ -248,7 +250,7 @@ These packages were mostly recently built (and cached) against:
 
 ## Development Guide
 
-- Use `nix-direnv` (or if you can't, `nix develop`, (or if you can't, `nix-shell`)).
+- Use `direnv` + `nix-direnv` (or if you can't, `nix develop`, (or if you can't, `nix-shell`)).
 - `./update.sh`:
   - updates flake inputs
   - updates `pkgs/<pkg>/metadata.nix` with the latest commit+hash for each package
@@ -258,3 +260,12 @@ These packages were mostly recently built (and cached) against:
 If for some reason the overlay isn't progressing and you want to help, just clone the repo, run `nix-shell --command ./update.sh`
 and start fixing issues in the package definitions. Sometimes you might need to edit `default.nix` to change the version
 of `wlroots` a certain package uses.
+
+### GitPod
+
+This project can be opened and contributed to, within minutes, by using GitPod:
+
+[https://gitpod.io#https://github.com/nix-community/nixpkgs-wayland](https://gitpod.io#https://github.com/nix-community/nixpkgs-wayland)
+
+(Note the Nix sandbox is disabled in GitPod. Some users choose not to push artifacts from this environment to production caches.)
+
