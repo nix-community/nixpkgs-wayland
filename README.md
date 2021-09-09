@@ -1,7 +1,7 @@
 # nixpkgs-wayland
 
-[![Build](https://github.com/colemickens/nixpkgs-wayland/actions/workflows/build.yaml/badge.svg)](https://github.com/colemickens/nixpkgs-wayland/actions/workflows/build.yaml)
-[![Update](https://github.com/colemickens/nixpkgs-wayland/actions/workflows/update.yaml/badge.svg)](https://github.com/colemickens/nixpkgs-wayland/actions/workflows/update.yaml)
+[![Build](https://github.com/nix-community/nixpkgs-wayland/actions/workflows/build.yaml/badge.svg)](https://github.com/nix-community/nixpkgs-wayland/actions/workflows/build.yaml)
+[![Update](https://github.com/nix-community/nixpkgs-wayland/actions/workflows/update.yaml/badge.svg)](https://github.com/nix-community/nixpkgs-wayland/actions/workflows/update.yaml)
 
 ## overview
 
