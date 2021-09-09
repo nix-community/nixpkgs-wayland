@@ -1,6 +1,6 @@
 {
   repo_git = "https://github.com/danvd/wlroots-eglstreams";
   branch = "master";
-  rev = "ca7c8a1ec3ae57bcc0d6797d9e6dc440824cb7ce";
-  sha256 = "sha256-9ZZYILYSZJ3O59cMy1zCuzcoId7fgf+K+kt+JNIjmu0=";
+  rev = "cdd498cb19709b26cf2b342f416be4b5e1306907";
+  sha256 = "sha256-RP/K38CoGb0GjO/KQHSIj315T4jbqwgfItaCO/f4MfM=";
 }
