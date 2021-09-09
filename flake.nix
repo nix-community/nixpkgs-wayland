@@ -44,9 +44,14 @@
 
       overlay_ = isEgl: final: prev:
         let
+          _wayland-protocols-master = prev.callPackage ./pkgs/wayland-protocols-master {
+            wayland-protocols = prev.wayland-protocols;
+          };
+
           meson0581 = prev.callPackage ./pkgs-temp/meson061 {};
           __wlroots = prev.callPackage ./pkgs/wlroots {
             meson = meson0581;
+            wayland-protocols = _wayland-protocols-master;
           };
           __wlroots-eglstreams = prev.callPackage ./pkgs/wlroots-eglstreams {
             wlroots = __wlroots; # use our wlroots def to start with
@@ -102,6 +107,9 @@
             wofi             = prev.callPackage ./pkgs/wofi {};
             wtype            = prev.callPackage ./pkgs/wtype {};
             xdg-desktop-portal-wlr = prev.callPackage ./pkgs/xdg-desktop-portal-wlr {};
+            
+            wayland-protocols-master = _wayland-protocols-master;
+
             # misc
             aml = prev.callPackage ./pkgs/aml {};
             clipman = prev.callPackage ./pkgs/clipman {};
