@@ -2,35 +2,29 @@ FROM gitpod/workspace-base
 
 USER root
 
-# Install Nix
+# Prepare for Nix install
 RUN addgroup --system nixbld \
   && adduser gitpod nixbld \
   && for i in $(seq 1 30); do useradd -ms /bin/bash nixbld$i &&  adduser nixbld$i nixbld; done \
   && mkdir -m 0755 /nix && chown gitpod /nix \
-  && mkdir -p /etc/nix && echo 'sandbox = false' > /etc/nix/nix.conf
-  
-# Install Nix
+  && mkdir -p /etc/nix \
+    && echo 'sandbox = false' >> /etc/nix/nix.conf \
+    && echo 'experimental-features = nix-command flakes' >> /etc/nix/nix.conf
+
+# Install Nix (unstable)
 CMD /bin/bash -l
 USER gitpod
 ENV USER gitpod
 WORKDIR /home/gitpod
 
 RUN touch .bash_profile \
- && curl https://nixos.org/releases/nix/nix-2.3.14/install | sh
+  && curl -L "https://github.com/numtide/nix-unstable-installer/releases/download/nix-2.4pre20210823_af94b54/install" | sh
 
 RUN echo '. /home/gitpod/.nix-profile/etc/profile.d/nix.sh' >> /home/gitpod/.bashrc
-RUN mkdir -p /home/gitpod/.config/nixpkgs && echo '{ allowUnfree = true; }' >> /home/gitpod/.config/nixpkgs/config.nix
 
-# Install cachix
 RUN . /home/gitpod/.nix-profile/etc/profile.d/nix.sh \
-  && nix-env -iA cachix -f https://cachix.org/api/v1/install \
-  && cachix use cachix
-
-# Install git
-RUN . /home/gitpod/.nix-profile/etc/profile.d/nix.sh \
-  && nix-env -i git git-lfs
-
-# Install direnv
-RUN . /home/gitpod/.nix-profile/etc/profile.d/nix.sh \
-  && nix-env -i direnv \
-  && direnv hook bash >> /home/gitpod/.bashrc
+  && nix-env -iA nixpkgs.git nixpkgs.git-lfs nixpkgs.direnv \
+  && nix-env -iA --from-expression 'f: with import <nixpkgs> {}; pkgs.nix-direnv.override {enableFlakes=true;}' \
+  && direnv hook bash >> /home/gitpod/.bashrc \
+  && echo "source $HOME/.nix-profile/share/nix-direnv/direnvrc" >> /home/gitpod/.direnvrc \
+  && nix-env -iA cachix -f https://cachix.org/api/v1/install
