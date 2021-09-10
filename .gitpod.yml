@@ -2,13 +2,11 @@ image:
   file: .gitpod.Dockerfile
 tasks:
   - init: |
-      mkdir -p /home/gitpod/.config/nix
-      echo 'sandbox = false' >> /home/gitpod/.config/nix/nix.conf
-      echo 'extra-binary-caches = https://cache.nixos.org https://nixpkgs-wayland.cachix.org' >> /home/gitpod/.config/nix/nix.conf
-      echo 'trusted-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= nixpkgs-wayland.cachix.org-1:3lwxaILxMRkVhehr5StQprHdEo4IrE8sRho9R9HOLYA=' >> /home/gitpod/.config/nix/nix.conf
+      cachix use nixpkgs-wayland
     command: |
-      nix develop --command "true"
       direnv allow
 vscode:
   extensions:
     - bbenoist.Nix
+    - rogalmic.bash-debug
+    - mads-hartmann.bash-ide-vscode
