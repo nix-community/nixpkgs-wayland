@@ -138,6 +138,7 @@
             # wayfire stuff
             wayfire          = prev.callPackage ./pkgs/wayfire {
               meson = meson0581;
+              wayland-protocols = _wayland-protocols-master;
             };
 
             libvncserver_master = prev.callPackage ./pkgs/libvncserver_master {
