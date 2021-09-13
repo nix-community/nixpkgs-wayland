@@ -3,11 +3,6 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 set -euo pipefail
 set -x
 
-cd pkgs
-./update.sh
-echo "internal update status = $?"
-cd "${DIR}"
-
 unset NIX_PATH
 pkgentries=(); nixpkgentries=();
 cache="nixpkgs-wayland"
@@ -58,6 +53,12 @@ git commit README.md -m "${cprefix} README.md" || true
 
 # update flake
 nix "${nixargs[@]}" flake update --commit-lock-file
+
+# actual internal update
+cd pkgs
+./update.sh
+echo "internal update status = $?"
+cd "${DIR}"
 
 # build (uncached)
 set -x
