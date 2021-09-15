@@ -28,6 +28,7 @@
             ++ (with fullPkgs_.nixpkgs.${system}; [
                 nixUnstable nix-prefetch nix-build-uncached
                 bash cacert curl git jq mercurial openssh ripgrep parallel
+                haskellPackages.dhall-json
             ]); });
 
       defaultPackage = packagesBundle;
