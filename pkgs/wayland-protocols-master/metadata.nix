@@ -2,6 +2,6 @@
   repo_git = "https://gitlab.freedesktop.org/wayland/wayland-protocols";
   branch = "main";
   upattr = "wayland-protocols-master";
-  rev = "824cea61e686a739034b95473e557a7c29e75a83";
-  sha256 = "sha256-uNcDdaoXpiFhwnZ6vjWlq5B2EuYmnR+pyaqLQuF7Czc=";
+  rev = "cd153943618bcf157896a6d0f1154d0ad62078a7";
+  sha256 = "sha256-Al4hvoTjuHZd8CKKO1UHr0XjpkFicvb/4vyu0o9u5yQ=";
 }
