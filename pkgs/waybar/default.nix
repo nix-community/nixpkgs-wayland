@@ -1,9 +1,9 @@
 args_@{ stdenv, lib, fetchFromGitHub, waybar
-, libevdev, libxkbcommon, ...}:
+, libevdev, libxkbcommon, catch2, ...}:
 
 let
   metadata = import ./metadata.nix;
-  ignore = [ "waybar" "libevdev" "libxkbcommon" ];
+  ignore = [ "waybar" "libevdev" "libxkbcommon" "catch2" ];
   args = lib.filterAttrs (n: v: (!builtins.elem n ignore)) args_;
 in
 (waybar.override args).overrideAttrs(old: {
@@ -14,7 +14,7 @@ in
     repo = "Waybar";
     inherit (metadata) rev sha256;
   };
-  buildInputs = old.buildInputs ++ [ libevdev libxkbcommon ];
+  buildInputs = old.buildInputs ++ [ libevdev libxkbcommon catch2 ];
   prePatch = ''
     sed -i "s|version: '0.9.7'|version: '-git-${metadata.rev}'|g" meson.build
   '';
