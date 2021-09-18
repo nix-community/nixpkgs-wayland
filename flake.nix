@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs = { url = "github:nixos/nixpkgs/nixos-unstable"; };
-    cachix = { url = "github:nixos/nixpkgs/nixos-20.09"; };
+    cachix = { url = "github:nixos/nixpkgs/nixos-21.05"; };
   };
 
   outputs = inputs:
@@ -108,7 +108,7 @@
             wofi             = prev.callPackage ./pkgs/wofi {};
             wtype            = prev.callPackage ./pkgs/wtype {};
             xdg-desktop-portal-wlr = prev.callPackage ./pkgs/xdg-desktop-portal-wlr {};
-            
+
             wayland-protocols-master = _wayland-protocols-master;
 
             # misc
