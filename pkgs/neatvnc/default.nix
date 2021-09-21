@@ -4,7 +4,7 @@
 , libxkbcommon, libvncserver
 , libpthreadstubs, libdrm
 , pixman, libuv, libglvnd
-, gnutls
+, gnutls, mesa_noglu
 , aml, libjpeg_turbo
 }:
 
@@ -28,7 +28,7 @@ stdenv.mkDerivation rec {
     libxkbcommon libvncserver
     libpthreadstubs libdrm
     pixman libuv libglvnd
-    gnutls
+    gnutls mesa_noglu
     aml libjpeg_turbo
   ];
 
