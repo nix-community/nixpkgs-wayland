@@ -5,6 +5,14 @@ let
   }) {
     src = ./.;
   });
+
+  warn = msg: builtins.trace "[1;31mwarning: ${msg}[0m";
+  example = ''
+    nixpkgs.overlays=[(import "''${builtins.fetchurl "https://github.com/nix-community/nixpkgs-wayland/archive/master.tar.gz"}/overlay.nix")];
+  '';
+  warning = "change your 'nixpkgs-wayland' import statement to import 'overlay.nix' directly. example:\n  ${example}";
 in
-  self: prev:
-    flake.defaultNix.overlay self prev
+  warn warning (
+    self: prev:
+      flake.defaultNix.overlay self prev
+  )

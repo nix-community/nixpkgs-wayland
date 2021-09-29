@@ -21,6 +21,7 @@ Community chat is on Matrix: [#nixpkgs-wayland:matrix.org](https://matrix.to/#/#
   - [Tips](#tips)
       - [General](#general)
       - [`sway`](#sway)
+      - [NVIDIA Users](#nvidia-users)
   - [Development Guide](#development-guide)
 
 ## Usage
@@ -35,11 +36,11 @@ Packages from this overlay are regularly built against `nixos-unstable` and push
 
 - Build and run [the Wayland-fixed up](https://github.com/obsproject/obs-studio/pull/2484) version of [OBS-Studio](https://obsproject.com/):
   ```
-  nix shell "github:colemickens/nixpkgs-wayland#obs-studio" --command obs
+  nix shell "github:nix-community/nixpkgs-wayland#obs-studio" --command obs
   ```
 - Build and run `waybar`:
   ```
-  nix run "github:colemickens/nixpkgs-wayland#waybar"
+  nix run "github:nix-community/nixpkgs-wayland#waybar"
   ```
 
 * Use as an overlay or package set via flakes:
@@ -49,7 +50,7 @@ Packages from this overlay are regularly built against `nixos-unstable` and push
     # ...
     inputs = {
       # ...
-      nixpkgs-wayland  = { url = "github:colemickens/nixpkgs-wayland"; };
+      nixpkgs-wayland  = { url = "github:nix-community/nixpkgs-wayland"; };
 
       # only needed if you use as a package set:
       nixpkgs-wayland.inputs.nixpkgs.follows = "cmpkgs";
@@ -100,11 +101,9 @@ If you are not using Flakes, then consult the [NixOS Wiki page on Overlays](http
 ```nix
 { config, lib, pkgs, ... }:
 let
-  rev = "master";
-  # 'rev' could be a git rev, to pin the overla.
-  # if you pin, you should use a tool like `niv` maybe, but please consider trying flakes
-  url = "https://github.com/colemickens/nixpkgs-wayland/archive/${rev}.tar.gz";
-  waylandOverlay = (import (builtins.fetchTarball url));
+  rev = "master"; # 'rev' could be a git rev, to pin the overlay.
+  url = "https://github.com/nix-community/nixpkgs-wayland/archive/${rev}.tar.gz";
+  waylandOverlay = (import "${builtins.fetchTarball url}/overlay.nix");
 in
   {
     nixpkgs.overlays = [ waylandOverlay ];
@@ -144,19 +143,19 @@ Non-NixOS users have many options, but here are two explicitly:
    1. Add a new entry in ``~/.config/nixpkgs/overlays.nix`:
     ```nix
     let
-      url = "https://github.com/colemickens/nixpkgs-wayland/archive/master.tar.gz";
+      url = "https://github.com/nix-community/nixpkgs-wayland/archive/master.tar.gz";
     in
     [
-      (import (builtins.fetchTarball url))
+      (import "${builtins.fetchTarball url}/overlay.nix")
     ]
     ```
 
    2. Add a new file under a dir, `~/.config/nixpkgs/overlays/nixpkgs-wayland.nix`:
     ```nix
     let
-      url = "https://github.com/colemickens/nixpkgs-wayland/archive/master.tar.gz";
+      url = "https://github.com/nix-community/nixpkgs-wayland/archive/master.tar.gz";
     in
-      (import (builtins.fetchTarball url))
+      (import "${builtins.fetchTarball url}/overlay.nix")
     ```
 
   Note, this method does not pin `nixpkgs-wayland`. That's left to the reader. (Just use flakes...)
@@ -246,6 +245,27 @@ These packages were mostly recently built (and cached) against:
 
 - You will likely want a default config file to place at `$HOME/.config/sway/config`. You can use the upstream default as a starting point: https://github.com/swaywm/sway/blob/master/config.in
 - If you start `sway` from a raw TTY, make sure you use `exec sway` so that if sway crashes, an unlocked TTY is not exposed.
+
+
+#### NVIDIA Users
+
+Nvidia users may wish to use `outputs.overlay-egl` instead of `outputs.ovelay` to get tools that are built against
+[`wlroots-eglstream`](https://github.com/danvd/wlroots-eglstreams). This enables Sway on, for example, an RTX 3080.
+
+Non-flakes users will need to update their import statement, so that it looks more like this:
+```nix
+let
+  rev = "master";
+  url = "https://github.com/nix-community/nixpkgs-wayland/archive/${rev}.tar.gz";
+  waylandOverlay = (import "${builtins.fetchTarball url}/overlay.nix");
+  waylandOverlayEgl = (import "${builtins.fetchTarball url}/overlay-egl.nix");
+in
+  {
+    nixpkgs.overlays = [ waylandOverlayEgl ];
+    environment.systemPackages = with pkgs; [ wayvnc ];
+    # ...
+  }
+```
 
 ## Development Guide
 
