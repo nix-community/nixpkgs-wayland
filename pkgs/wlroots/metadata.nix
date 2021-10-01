@@ -1,6 +1,6 @@
 {
   repo_git = "https://github.com/swaywm/wlroots";
   branch = "master";
-  rev = "744a5c2fefc08980a3a4755ee8fc631a2f321736";
-  sha256 = "sha256-TaiYSbtTJLhBc5IwlQAAno/ulNvR1twn8SFtUx4IdaQ=";
+  rev = "6d281d96cb93b8de972039d5cb00bfce49d9a58c";
+  sha256 = "sha256-8Trwb4xpUaPXos1nypCJs8mt4qkNnAqwEcWG3vt6cgo=";
 }
