@@ -1,6 +1,6 @@
 {
   repo_git = "https://github.com/FreeRDP/FreeRDP";
   branch = "master";
-  rev = "32994b02f57943d0b3b08832ef055c7300bc3329";
-  sha256 = "sha256-TJnereIjPljXXHli9i71fvV1LZPA8uqUvWmjvUel/54=";
+  rev = "439ec62cffc02eae43119a6bbdac36a86d28df32";
+  sha256 = "sha256-nSsTj8ORLr2r5TSadoqTznCibNbSsWl6dfRkBTe4Zx0=";
 }
