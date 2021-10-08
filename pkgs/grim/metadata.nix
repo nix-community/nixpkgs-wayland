@@ -1,6 +1,6 @@
 {
   repo_git = "https://github.com/emersion/grim";
   branch = "master";
-  rev = "e658b13d169e59c44effb49b0cf65c6234576c70";
-  sha256 = "sha256-MgEMW3d7TmgHidjy9SuP1g50kZ27RZArM9KzqaMndtg=";
+  rev = "fcaba96aab42fbbbf4e424bee058c7af2561a0ef";
+  sha256 = "sha256-sz8kxzvg3BQ20bZfeIZxYVKYb0g1uw7BukHZ1yYs2iI=";
 }
