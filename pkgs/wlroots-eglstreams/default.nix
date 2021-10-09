@@ -9,7 +9,7 @@ in
   name = "wlroots-eglstreams-${metadata.rev}";
   version = "${metadata.rev}";
   src = fetchFromGitHub {
-    owner = "danvd";
+    owner = "colemickens";
     repo = "wlroots-eglstreams";
     inherit (metadata) rev sha256;
   };
