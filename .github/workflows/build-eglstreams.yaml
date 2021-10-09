@@ -1,4 +1,4 @@
-name: "Build"
+name: "Experimental EGLStreams Build"
 on:
   push:
     branches:
@@ -8,7 +8,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    concurrency: build-${{matrix.jobs.branch}}-${{matrix.jobs.target}}
+    concurrency: build-eglstreams-${{matrix.jobs.branch}}-${{matrix.jobs.target}}
     steps:
     - uses: actions/checkout@v2
     - name: setup-nix
@@ -30,7 +30,7 @@ jobs:
         EOF
     - name: build
       run: |
-        BUILD="packages.nix"
+        BUILD="packages-egl.nix"
         
         cat << EOF | .github/exec
           set -euo pipefail

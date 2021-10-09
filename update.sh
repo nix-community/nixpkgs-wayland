@@ -6,7 +6,7 @@ set -x
 unset NIX_PATH
 pkgentries=(); nixpkgentries=();
 cache="nixpkgs-wayland"
-cprefix="auto-update(${CI_JOB_ID:-"manual"}):"
+cprefix="auto-update:"
 
 set +x
 if [[ "${CACHIX_SIGNING_KEY:-}" != "" ]]; then

@@ -2,7 +2,8 @@
 
 [![Build](https://github.com/nix-community/nixpkgs-wayland/actions/workflows/build.yaml/badge.svg)](https://github.com/nix-community/nixpkgs-wayland/actions/workflows/build.yaml)
 [![Update](https://github.com/nix-community/nixpkgs-wayland/actions/workflows/update.yaml/badge.svg)](https://github.com/nix-community/nixpkgs-wayland/actions/workflows/update.yaml) &nbsp; &nbsp; &nbsp;
-[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-908a85?logo=gitpod)](https://gitpod.io/#https://github.com/nix-community/nixpkgs-wayland)
+[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-908a85?logo=gitpod)](https://gitpod.io/#https://github.com/nix-community/nixpkgs-wayland) &nbsp; &nbsp; &nbsp;
+[![Experimental EGLStreams Build](https://github.com/nix-community/nixpkgs-wayland/actions/workflows/build-eglstreams.yaml/badge.svg)](https://github.com/nix-community/nixpkgs-wayland/actions/workflows/build-eglstreams.yaml)
 
 ## overview
 

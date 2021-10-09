@@ -26,7 +26,6 @@ jobs:
       env:
         CACHIX_SIGNING_KEY: "${{ secrets.cachix_key_nixpkgs_wayland }}"
       run: |
-        export CI_JOB_ID="${GITHUB_RUN_ID}_${GITHUB_RUN_NUMBER}"
         .github/exec ./update.sh
     - name: push
       run: |

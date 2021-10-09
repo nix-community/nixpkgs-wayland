@@ -18,27 +18,23 @@
           config.allowUnfree = true;
         };
       pkgs_ = genAttrs (builtins.attrNames inputs) (inp: genAttrs supportedSystems (sys: pkgsFor inputs."${inp}" sys []));
-      fullPkgs_ = genAttrs (builtins.attrNames inputs) (inp: genAttrs supportedSystems (sys: pkgsFor inputs."${inp}" sys [inputs.self.overlay]));
+      opkgs_ = overlays: genAttrs (builtins.attrNames inputs) (inp: genAttrs supportedSystems (sys: pkgsFor inputs."${inp}" sys overlays));
     in
     rec {
       devShell = forAllSystems (system:
-        fullPkgs_.nixpkgs.${system}.mkShell {
+        pkgs_.nixpkgs.${system}.mkShell {
           nativeBuildInputs = []
             ++ (with pkgs_.cachix.${system}; [ cachix ])
-            ++ (with fullPkgs_.nixpkgs.${system}; [
+            ++ (with pkgs_.nixpkgs.${system}; [
                 nixUnstable nix-prefetch nix-build-uncached
                 bash cacert curl git jq mercurial openssh ripgrep parallel
                 haskellPackages.dhall-json
             ]); });
 
-      defaultPackage = packagesBundle;
-
       packages = forAllSystems (system:
-        fullPkgs_.nixpkgs.${system}.waylandPkgs);
-
-      packagesBundle = forAllSystems (system: with fullPkgs_.nixpkgs.${system};
-          linkFarmFromDrvs "wayland-packages-unstable"
-            (builtins.attrValues waylandPkgs));
+        (opkgs_ [overlay]).nixpkgs.${system}.waylandPkgs);
+      packages-egl = forAllSystems (system:
+        (opkgs_ [overlay-egl]).nixpkgs.${system}.waylandPkgs);
 
       overlay = overlay_ false;
       overlay-egl = overlay_ true;

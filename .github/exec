@@ -20,7 +20,6 @@ else
   #cat <(printf "set -x\n set -euo pipefail\n") /dev/stdin | \
   cat /dev/stdin | \
     nix-shell --pure \
-      --keep GITHUB_ACTION \
       --keep CI_JOB_ID \
       --keep CACHIX_SIGNING_KEY \
       --run "bash --noprofile --norc -eo pipefail </dev/stdin"
