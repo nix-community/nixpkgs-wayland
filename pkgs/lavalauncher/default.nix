@@ -34,7 +34,7 @@ stdenv.mkDerivation rec {
     description = "A simple launcher for Wayland.";
     homepage    = "https://git.sr.ht/~leon_plickat/lavalauncher";
     license     = licenses.gpl3;
-    platforms = [ "x86_64-linux" "i686-linux" ];
+    platforms   = platforms.linux;
     maintainers = with maintainers; [];
   };
 }
