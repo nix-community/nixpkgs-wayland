@@ -225,6 +225,7 @@ These packages were mostly recently built (and cached) against:
 | [wl-clipboard](https://github.com/bugaevc/wl-clipboard) | Select a region in a Wayland compositor |
 | [wl-gammactl](https://github.com/mischw/wl-gammactl) | Small GTK GUI application to set contrast, brightness and gamma for wayland compositors which support the wlr-gamma-control protocol extension. |
 | [wofi](https://hg.sr.ht/~scoopta/wofi) | Wofi is a launcher/menu program for wlroots based wayland compositors such as sway |
+| [wshowkeys](https://github.com/ammgws/wshowkeys) | Displays keypresses on screen on supported Wayland compositors |
 | [wtype](https://github.com/atx/wtype) | xdotool type for wayland |
 | [xdg-desktop-portal-wlr](https://github.com/emersion/xdg-desktop-portal-wlr) | xdg-desktop-portal backend for wlroots |
 <!--pkgs-->

@@ -105,6 +105,8 @@
             wtype            = prev.callPackage ./pkgs/wtype {};
             xdg-desktop-portal-wlr = prev.callPackage ./pkgs/xdg-desktop-portal-wlr {};
 
+            wshowkeys        = prev.callPackage ./pkgs/wshowkeys {};
+
             wayland-protocols-master = _wayland-protocols-master;
 
             # misc
