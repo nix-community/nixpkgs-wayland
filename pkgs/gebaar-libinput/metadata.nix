@@ -1,6 +1,6 @@
 {
   repo_git = "https://github.com/Osleg/gebaar-libinput-fork";
   branch = "master";
-  rev = "6d44b052bfd0fe72ac96b995a6dc56882620d08b";
-  sha256 = "sha256-kmGtznKReVRmjtoKhMmudYyg2mbIajF/yuxSQ1nDjq4=";
+  rev = "47cf9bc92508593d8042ca99a3fc4afab9c18ff0";
+  sha256 = "sha256-dkBo3KlQzGKB/8ZL5xQaMff+ZVz+suvYaNYsV6vRoww=";
 }
