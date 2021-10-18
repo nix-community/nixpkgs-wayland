@@ -7,6 +7,7 @@
 , libuuid
 , xorg # ?
 , xwayland
+, vulkan-headers, vulkan-loader, glslang
 }:
 
 let
@@ -37,6 +38,7 @@ in stdenv.mkDerivation rec {
     libseat
     libuuid
     xorg.xcbutilrenderutil
+    vulkan-headers vulkan-loader glslang
   ];
 
   mesonFlags = [
