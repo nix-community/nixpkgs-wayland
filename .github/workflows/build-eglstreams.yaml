@@ -2,9 +2,10 @@ name: "Experimental EGLStreams Build"
 on:
   push:
     branches:
-      master
+    - master
   schedule:
     - cron: '17 * * * *'
+  workflow_dispatch:
 jobs:
   build:
     runs-on: ubuntu-latest

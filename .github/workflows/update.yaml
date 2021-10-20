@@ -2,9 +2,10 @@ name: "Update"
 on:
   push:
     branches:
-      master
+    - master
   schedule:
     - cron: '*/10 * * * *'
+  workflow_dispatch:
 jobs:
   update:
     runs-on: ubuntu-latest
