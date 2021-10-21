@@ -6,7 +6,7 @@
 , libseat
 , libuuid
 , xorg # ?
-, xwayland
+, enableXWayland ? true, xwayland ? null
 , vulkan-headers, vulkan-loader, glslang
 }:
 
@@ -39,13 +39,12 @@ in stdenv.mkDerivation rec {
     libuuid
     xorg.xcbutilrenderutil
     vulkan-headers vulkan-loader glslang
-  ];
+  ] ++ lib.optional enableXWayland xwayland;
 
-  mesonFlags = [
-    "-Dlibcap=enabled" "-Dxwayland=enabled" "-Dx11-backend=enabled"
-    "-Dxcb-icccm=enabled" "-Dxcb-xkb=enabled" "-Dxcb-errors=enabled"
-    "-Dlibseat=enabled"
-  ];
+
+  mesonFlags =
+    lib.optional (!enableXWayland) "-Dxwayland=disabled"
+  ;
 
   postInstall = ''
     # Install ALL example programs to $examples:
