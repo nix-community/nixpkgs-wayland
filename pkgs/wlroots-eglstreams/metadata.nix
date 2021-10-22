@@ -1,6 +1,6 @@
 {
   repo_git = "https://github.com/colemickens/wlroots-eglstreams";
   branch = "master";
-  rev = "515a5650969b66846473318738da6657b37c215a";
-  sha256 = "sha256-qMgnMScml7cnn7uF6zuX3h3XrYS6RVDeb9s3NCTgc5M=";
+  rev = "0b41d4056b9b6d108321c5f25f2e4d13cccc91c6";
+  sha256 = "sha256-l9+tecsAStEoA5q220F0ACGLGoLzbKenPQg+VAxgdl0=";
 }
