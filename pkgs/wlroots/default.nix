@@ -1,5 +1,5 @@
-{ stdenv, lib, fetchFromGitHub, fetchpatch, meson, ninja, pkgconfig
-, wayland, libGL, wayland-protocols, libinput, libxkbcommon, pixman
+{ stdenv, lib, fetchFromGitLab, fetchpatch, meson, ninja, pkgconfig
+, wayland, wayland-protocols, libinput, libxkbcommon, pixman
 , xcbutilwm, libX11, libcap, xcbutilimage, xcbutilerrors, mesa_noglu
 , libglvnd
 , libpng, ffmpeg_4
@@ -17,8 +17,9 @@ let
 in stdenv.mkDerivation rec {
   inherit pname version;
 
-  src = fetchFromGitHub {
-    owner = "swaywm";
+  src = fetchFromGitLab {
+    domain = "gitlab.freedesktop.org";
+    owner = "wlroots";
     repo = "wlroots";
     rev = metadata.rev;
     sha256 = metadata.sha256;
@@ -31,7 +32,7 @@ in stdenv.mkDerivation rec {
   nativeBuildInputs = [ meson ninja pkgconfig xwayland ];
 
   buildInputs = [
-    wayland libGL wayland-protocols libinput libxkbcommon pixman
+    wayland wayland-protocols libinput libxkbcommon pixman
     xcbutilwm libX11 libcap xcbutilimage xcbutilerrors mesa_noglu
     libpng ffmpeg_4
     libglvnd

@@ -2,7 +2,7 @@ args_@{ stdenv, lib, fetchFromGitHub, wlroots, ... }:
 
 let
   metadata = import ./metadata.nix;
-  ignore = [ "wlroots" ];
+  ignore = [ "wlroots" "fetchFromGitHub" ];
   args = lib.filterAttrs (n: v: (!builtins.elem n ignore)) args_;
 in
 (wlroots.override args).overrideAttrs(old: {
