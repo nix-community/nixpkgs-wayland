@@ -96,7 +96,9 @@
             wl-clipboard     = prev.callPackage ./pkgs/wl-clipboard {};
             wl-gammactl      = prev.callPackage ./pkgs/wl-gammactl {};
             wldash           = prev.callPackage ./pkgs/wldash {};
-            wlogout          = prev.callPackage ./pkgs/wlogout {};
+            wlogout          = prev.callPackage ./pkgs/wlogout {
+              wlogout = prev.wlogout;
+            };
             wlroots          = _wlroots;
             wlroots-eglstreams = __wlroots-eglstreams;
             wlr-randr        = prev.callPackage ./pkgs/wlr-randr {};
