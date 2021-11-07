@@ -217,8 +217,8 @@ These packages were mostly recently built (and cached) against:
 | [wldash](https://wldash.org) | Wayland launcher/dashboard |
 | [wlfreerdp](http://www.freerdp.com/) | A Remote Desktop Protocol Client |
 | [wlogout](https://github.com/ArtsyMacaw/wlogout) | A wayland based logout menu |
-| [wlroots-eglstreams](https://github.com/swaywm/wlroots) | A modular Wayland compositor library |
-| [wlroots](https://github.com/swaywm/wlroots) | A modular Wayland compositor library |
+| [wlroots-eglstreams](https://gitlab.freedesktop.org/wlroots/wlroots/) | A modular Wayland compositor library |
+| [wlroots](https://gitlab.freedesktop.org/wlroots/wlroots/) | A modular Wayland compositor library |
 | [wlr-randr](https://github.com/emersion/wlr-randr) | An xrandr clone for wlroots compositors |
 | [wlsunset](https://git.sr.ht/~kennylevinsen/wlsunset) | Day/night gamma adjustments for Wayland |
 | [wlvncc](https://github.com/any1/wlvncc) | A Wayland Native VNC Client |
