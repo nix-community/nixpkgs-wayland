@@ -1,6 +1,6 @@
 {
   repo_git = "https://github.com/swaywm/swayidle";
   branch = "master";
-  rev = "0467c1e03a5780ed8e3ba611f099a838822ab550";
-  sha256 = "sha256-5hUBJhc2PWzMv5gXc6SayDTZJVAFrXAYAqNaWETRfoc=";
+  rev = "f37b06555e7cb16e8bb7f10f93975c0291691f40";
+  sha256 = "sha256-KtBiNovv+Y+ZdNVbL8/m6D/xqXv1YUF1RTkdoN7YFLY=";
 }
