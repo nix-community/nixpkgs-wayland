@@ -9,6 +9,7 @@
 , libcap, xcbutilerrors, xcbutilwm, libxml2
 , libuuid
 , libseat, xorg, xwayland, doctest
+, pango
 , buildDocs ? true
 }:
 
@@ -46,6 +47,7 @@ stdenv.mkDerivation rec {
     xwayland
     doctest
     xorg.xcbutilrenderutil
+    pango
   ];
   mesonFlags = [
     "-Duse_system_wlroots=disabled"
