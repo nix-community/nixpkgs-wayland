@@ -10,6 +10,7 @@
 , libuuid
 , libseat, xorg, xwayland, doctest
 , pango
+, vulkan-headers, vulkan-loader, glslang
 , buildDocs ? true
 }:
 
@@ -48,6 +49,7 @@ stdenv.mkDerivation rec {
     doctest
     xorg.xcbutilrenderutil
     pango
+    vulkan-headers vulkan-loader glslang
   ];
   mesonFlags = [
     "-Duse_system_wlroots=disabled"
