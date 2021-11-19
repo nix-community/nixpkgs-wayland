@@ -33,27 +33,18 @@
 
       packages = forAllSystems (system:
         (opkgs_ [overlay]).nixpkgs.${system}.waylandPkgs);
-      packages-egl = forAllSystems (system:
-        (opkgs_ [overlay-egl]).nixpkgs.${system}.waylandPkgs);
 
-      overlay = overlay_ false;
-      overlay-egl = overlay_ true;
-
-      overlay_ = isEgl: final: prev:
+      overlay = final: prev:
         let
           _wayland-protocols-master = prev.callPackage ./pkgs/wayland-protocols-master {
             wayland-protocols = prev.wayland-protocols;
           };
 
           meson0581 = prev.callPackage ./pkgs-temp/meson061 {};
-          __wlroots = prev.callPackage ./pkgs/wlroots {
+          _wlroots = prev.callPackage ./pkgs/wlroots {
             meson = meson0581;
             wayland-protocols = _wayland-protocols-master;
           };
-          __wlroots-eglstreams = prev.callPackage ./pkgs/wlroots-eglstreams {
-            wlroots = __wlroots; # use our wlroots def to start with
-          };
-          _wlroots = if isEgl then __wlroots-eglstreams else __wlroots;
           waylandPkgs = rec {
             # wlroots-related
             cage             = prev.callPackage ./pkgs/cage {
@@ -100,7 +91,6 @@
               wlogout = prev.wlogout;
             };
             wlroots          = _wlroots;
-            wlroots-eglstreams = __wlroots-eglstreams;
             wlr-randr        = prev.callPackage ./pkgs/wlr-randr {};
             wlsunset         = prev.callPackage ./pkgs/wlsunset {};
             wofi             = prev.callPackage ./pkgs/wofi {};
