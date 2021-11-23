@@ -1,10 +1,10 @@
 { stdenv, lib, fetchFromGitHub
-, pkgconfig, meson, ninja
+, pkg-config, meson, ninja
 , wayland, wayland-protocols
 , libxkbcommon, libvncserver
 , libpthreadstubs, libdrm
 , pixman, libuv, libglvnd
-, gnutls, mesa_noglu
+, gnutls, mesa
 , aml, libjpeg_turbo
 }:
 
@@ -22,13 +22,13 @@ stdenv.mkDerivation rec {
     sha256 = metadata.sha256;
   };
 
-  nativeBuildInputs = [ pkgconfig meson ninja ];
+  nativeBuildInputs = [ pkg-config meson ninja ];
   buildInputs = [
     wayland wayland-protocols
     libxkbcommon libvncserver
     libpthreadstubs libdrm
     pixman libuv libglvnd
-    gnutls mesa_noglu
+    gnutls mesa
     aml libjpeg_turbo
   ];
 

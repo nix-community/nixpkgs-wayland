@@ -1,5 +1,5 @@
 { stdenv, lib, fetchhg
-, meson, ninja, pkgconfig
+, meson, ninja, pkg-config
 , wayland, wayland-protocols
 , gtk3, json_c, libpulseaudio
 }:
@@ -19,7 +19,7 @@ stdenv.mkDerivation rec {
   };
 
   nativeBuildInputs = [
-    meson ninja pkgconfig
+    meson ninja pkg-config
   ];
 
   buildInputs = [

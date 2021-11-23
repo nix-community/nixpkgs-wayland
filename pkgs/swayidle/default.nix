@@ -1,6 +1,6 @@
 { stdenv, lib, fetchFromGitHub
 , meson, ninja
-, pkgconfig, scdoc
+, pkg-config, scdoc
 , wayland, wayland-protocols
 , systemd
 , buildDocs ? true
@@ -26,7 +26,7 @@ stdenv.mkDerivation rec {
   '';
 
   nativeBuildInputs = [
-    pkgconfig meson ninja
+    pkg-config meson ninja
   ] ++ lib.optional buildDocs scdoc;
 
   buildInputs = [

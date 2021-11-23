@@ -1,5 +1,5 @@
 {stdenv, lib, fetchFromGitHub
-, meson, ninja, pkgconfig
+, meson, ninja, pkg-config
 , gtk3, cairo, pango, systemd
 , wayland, wayland-protocols
 , scdoc, buildDocs ? true
@@ -20,7 +20,7 @@ stdenv.mkDerivation rec {
     sha256 = metadata.sha256;
   };
 
-  nativeBuildInputs = [ pkgconfig meson ninja wrapGAppsHook ] ++ lib.optional buildDocs scdoc;
+  nativeBuildInputs = [ pkg-config meson ninja wrapGAppsHook ] ++ lib.optional buildDocs scdoc;
   buildInputs = [ gtk3 cairo pango systemd wayland wayland-protocols ];
   mesonFlags = [
     "-Dauto_features=enabled"

@@ -1,5 +1,5 @@
 { stdenv, lib, fetchFromGitHub
-, pkgconfig, meson, ninja
+, pkg-config, meson, ninja
 , wayland, wayland-protocols
 , libxkbcommon, libvncserver
 , libpthreadstubs
@@ -23,7 +23,7 @@ stdenv.mkDerivation rec {
     sha256 = metadata.sha256;
   };
 
-  nativeBuildInputs = [ pkgconfig meson ninja ];
+  nativeBuildInputs = [ pkg-config meson ninja ];
   buildInputs = [
     wayland wayland-protocols
     libxkbcommon libvncserver

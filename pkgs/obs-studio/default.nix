@@ -20,7 +20,7 @@
 , curl
 , xorg
 , makeWrapper
-, pkgconfig
+, pkg-config
 , vlc
 , mbedtls
 
@@ -30,7 +30,7 @@
 , python3
 
 , alsaSupport ? stdenv.isLinux
-, alsaLib
+, alsa-lib
 , pulseaudioSupport ? config.pulseaudio or stdenv.isLinux
 , pipewire
 , libpulseaudio
@@ -49,7 +49,7 @@ in mkDerivation rec {
     inherit (metadata) rev sha256;
   };
 
-  nativeBuildInputs = [ cmake pkgconfig ];
+  nativeBuildInputs = [ cmake pkg-config ];
 
   buildInputs = [ curl
                   fdk_aac
@@ -71,7 +71,7 @@ in mkDerivation rec {
                   qtwayland wayland
                 ]
                 ++ optionals scriptingSupport [ luajit swig python3 ]
-                ++ optional alsaSupport alsaLib
+                ++ optional alsaSupport alsa-lib
                 ++ optional pulseaudioSupport libpulseaudio
                 ++ [ pipewire ];
 

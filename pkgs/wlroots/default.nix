@@ -1,9 +1,9 @@
-{ stdenv, lib, fetchFromGitLab, fetchpatch, meson, ninja, pkgconfig
+{ stdenv, lib, fetchFromGitLab, fetchpatch, meson, ninja, pkg-config
 , wayland, wayland-protocols, libinput, libxkbcommon, pixman
-, xcbutilwm, libX11, libcap, xcbutilimage, xcbutilerrors, mesa_noglu
+, xcbutilwm, libX11, libcap, xcbutilimage, xcbutilerrors, mesa
 , libglvnd
 , libpng, ffmpeg_4
-, libseat
+, seatd
 , libuuid
 , xorg # ?
 , enableXWayland ? true, xwayland ? null
@@ -29,14 +29,14 @@ in stdenv.mkDerivation rec {
   # programs (in examples) AND rootston
   outputs = [ "out" "examples" ];
 
-  nativeBuildInputs = [ meson ninja pkgconfig xwayland ];
+  nativeBuildInputs = [ meson ninja pkg-config xwayland ];
 
   buildInputs = [
     wayland wayland-protocols libinput libxkbcommon pixman
-    xcbutilwm libX11 libcap xcbutilimage xcbutilerrors mesa_noglu
+    xcbutilwm libX11 libcap xcbutilimage xcbutilerrors mesa
     libpng ffmpeg_4
     libglvnd
-    libseat
+    seatd
     libuuid
     xorg.xcbutilrenderutil
     vulkan-headers vulkan-loader glslang

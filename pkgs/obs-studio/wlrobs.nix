@@ -6,7 +6,7 @@
 # mkdir -p ~/.config/obs-studio/plugins/wlrobs/bin/64bit
 # ln -s ~/.nix-profile/share/obs/obs-plugins/wlrobs/bin/64bit/libwlrobs.so ~/.config/obs-studio/plugins/wlrobs/bin/64bit
 { stdenv, lib, fetchhg, wayland, obs-studio
-, meson, ninja, pkgconfig, libX11
+, meson, ninja, pkg-config, libX11
 , dmabufSupport ? false, libdrm ? null, libGL ? null}:
 
 assert dmabufSupport -> libdrm != null && libGL != null;
@@ -21,7 +21,7 @@ stdenv.mkDerivation {
     sha256 = "0j01wkhwhhla4qx8mwyrq2qj9cfhxksxaq2k8rskmy2qbdkvvdpb";
   };
 
-  buildInputs = [ libX11 libGL libdrm meson ninja pkgconfig wayland obs-studio ];
+  buildInputs = [ libX11 libGL libdrm meson ninja pkg-config wayland obs-studio ];
 
   installPhase = ''
     mkdir -p $out/share/obs/obs-plugins/wlrobs/bin/64bit

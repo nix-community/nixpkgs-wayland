@@ -1,5 +1,5 @@
 { gcc8Stdenv, lib, fetchFromGitHub
-, pkgconfig, cmake
+, pkg-config, cmake
 , libinput, zlib
 }:
 
@@ -19,7 +19,7 @@ gcc8Stdenv.mkDerivation rec {
     fetchSubmodules = true;
   };
 
-  nativeBuildInputs = [ pkgconfig cmake ];
+  nativeBuildInputs = [ pkg-config cmake ];
   buildInputs = [
     libinput zlib #cpptoml
   ];
