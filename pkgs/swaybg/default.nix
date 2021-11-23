@@ -1,7 +1,7 @@
 { stdenv, lib, fetchFromGitHub
-, meson, ninja, pkgconfig
+, meson, ninja, pkg-config
 , cairo, wayland, wayland-protocols
-, gdk_pixbuf, nonPngSupport ? true
+, gdk-pixbuf, nonPngSupport ? true
 , scdoc, buildDocs ? true
 }:
 
@@ -23,9 +23,9 @@ stdenv.mkDerivation rec {
     sed -iE "0,/version: '.*',/ s//version: '${version}',/" meson.build
   '';
 
-  nativeBuildInputs = [ pkgconfig meson ninja ] ++ lib.optional buildDocs scdoc;
+  nativeBuildInputs = [ pkg-config meson ninja ] ++ lib.optional buildDocs scdoc;
 
-  buildInputs = [ cairo wayland wayland-protocols ] ++ lib.optional nonPngSupport gdk_pixbuf;
+  buildInputs = [ cairo wayland wayland-protocols ] ++ lib.optional nonPngSupport gdk-pixbuf;
 
   mesonFlags = lib.optional nonPngSupport "-Dgdk-pixbuf=enabled"
     ++ lib.optional buildDocs "-Dman-pages=enabled";

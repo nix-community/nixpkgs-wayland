@@ -1,6 +1,6 @@
 { lib, rustPlatform, fetchFromGitHub
-, pkgconfig
-, dbus, libpulseaudio, alsaLib, libxkbcommon
+, pkg-config
+, dbus, libpulseaudio, alsa-lib, libxkbcommon
 , wayland, fontconfig
 }:
 
@@ -21,9 +21,9 @@ rustPlatform.buildRustPackage rec {
 
   cargoSha256 = metadata.cargoSha256;
 
-  nativeBuildInputs = [ pkgconfig ];
+  nativeBuildInputs = [ pkg-config ];
 
-  buildInputs = [ dbus libpulseaudio alsaLib fontconfig ];
+  buildInputs = [ dbus libpulseaudio alsa-lib fontconfig ];
 
   dontPatchELF = true;
   

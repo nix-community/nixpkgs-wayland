@@ -1,5 +1,5 @@
 { stdenv, lib, fetchFromGitHub
-, cmake, extra-cmake-modules, pkgconfig
+, cmake, extra-cmake-modules, pkg-config
 , wayland, wayland-protocols
 , epoxy, libpthreadstubs
 , libGL, glfw3
@@ -22,7 +22,7 @@ stdenv.mkDerivation rec {
     sha256 = metadata.sha256;
   };
 
-  nativeBuildInputs = [ pkgconfig cmake extra-cmake-modules ];
+  nativeBuildInputs = [ pkg-config cmake extra-cmake-modules ];
   buildInputs = [
     wayland wayland-protocols
     epoxy libpthreadstubs

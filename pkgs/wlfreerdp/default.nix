@@ -1,5 +1,5 @@
-{ stdenv, lib, fetchFromGitHub, cmake, pkgconfig
-, alsaLib, ffmpeg, glib, openssl, pcre, zlib
+{ stdenv, lib, fetchFromGitHub, cmake, pkg-config
+, alsa-lib, ffmpeg, glib, openssl, pcre, zlib
 , libX11, libXcursor, libXdamage, libXext, libXi, libXinerama, libXrandr, libXrender, libXv
 , libxkbcommon, libxkbfile
 , libusb1
@@ -42,7 +42,7 @@ stdenv.mkDerivation rec {
   '';
 
   buildInputs = with lib; [
-    alsaLib cups ffmpeg glib openssl pcre pcsclite libpulseaudio zlib
+    alsa-lib cups ffmpeg glib openssl pcre pcsclite libpulseaudio zlib
     gstreamer gst-plugins-base gst-plugins-good libunwind orc
     libX11 libXcursor libXdamage libXext libXi libXinerama libXrandr libXrender libXv
     libxkbcommon libxkbfile
@@ -50,7 +50,7 @@ stdenv.mkDerivation rec {
   ] ++ optional stdenv.isLinux systemd;
 
   nativeBuildInputs = [
-    cmake pkgconfig
+    cmake pkg-config
   ];
 
   enableParallelBuilding = true;

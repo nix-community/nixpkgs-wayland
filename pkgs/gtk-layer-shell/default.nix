@@ -1,5 +1,5 @@
 { stdenv, lib, fetchFromGitHub
-, meson, ninja, pkgconfig, scdoc
+, meson, ninja, pkg-config, scdoc
 , wayland, libinput, gtk3, gobject-introspection
 }:
 
@@ -17,7 +17,7 @@ stdenv.mkDerivation rec {
     sha256 = metadata.sha256;
   };
 
-  nativeBuildInputs = [ meson ninja pkgconfig scdoc ];
+  nativeBuildInputs = [ meson ninja pkg-config scdoc ];
   buildInputs = [
     wayland libinput gtk3 gobject-introspection
   ];

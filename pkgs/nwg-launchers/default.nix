@@ -1,5 +1,5 @@
 {stdenv, lib, fetchFromGitHub
-, meson, ninja, pkgconfig
+, meson, ninja, pkg-config
 , gtk3, gtkmm3, epoxy, nlohmann_json
 , gtk-layer-shell, librsvg
 , wayland, wayland-protocols
@@ -21,7 +21,7 @@ stdenv.mkDerivation rec {
   };
 
   nativeBuildInputs = [
-    pkgconfig meson ninja
+    pkg-config meson ninja
   ];
 
   buildInputs = [

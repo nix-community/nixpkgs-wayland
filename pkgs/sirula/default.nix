@@ -1,4 +1,4 @@
-{ stdenv, lib, fetchFromGitHub, rustPlatform, pkgconfig, glib, cairo, pango, atk
+{ stdenv, lib, fetchFromGitHub, rustPlatform, pkg-config, glib, cairo, pango, atk
 , gdk-pixbuf, gtk3, gtk-layer-shell }:
 
 let
@@ -17,7 +17,7 @@ rustPlatform.buildRustPackage rec {
 
   cargoSha256 = metadata.cargoSha256;
 
-  nativeBuildInputs = [ pkgconfig ];
+  nativeBuildInputs = [ pkg-config ];
   buildInputs = [ glib cairo pango atk gdk-pixbuf gtk3 gtk-layer-shell ];
 
   meta = with lib; {

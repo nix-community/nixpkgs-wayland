@@ -1,7 +1,7 @@
 { stdenv, lib, fetchFromGitHub, fetchpatch
-, pkgconfig, meson, ninja, scdoc
+, pkg-config, meson, ninja, scdoc
 , wayland, wayland-protocols
-, wlroots, pixman, libxkbcommon, libudev, libGL, libX11
+, wlroots, pixman, libxkbcommon, udev, libGL, libX11
 }:
 
 let
@@ -18,11 +18,11 @@ stdenv.mkDerivation rec {
     sha256 = metadata.sha256;
   };
 
-  nativeBuildInputs = [ pkgconfig meson ninja ];
+  nativeBuildInputs = [ pkg-config meson ninja ];
   buildInputs = [
     scdoc
     wayland wayland-protocols
-    wlroots pixman libxkbcommon libudev libGL libX11
+    wlroots pixman libxkbcommon udev libGL libX11
   ];
   mesonFlags = [ "-Dxwayland=true" ];
 

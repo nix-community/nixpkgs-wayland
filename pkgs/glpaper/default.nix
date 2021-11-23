@@ -1,8 +1,8 @@
 { stdenv, lib, fetchhg
-, meson, ninja, pkgconfig
+, meson, ninja, pkg-config
 , wlroots, wayland, wayland-protocols
 , pixman, libxkbcommon
-, libudev, mesa_noglu, libX11
+, udev, mesa, libX11
 , libGL, libglvnd
 }:
 
@@ -19,10 +19,10 @@ stdenv.mkDerivation rec {
     sha256 = metadata.sha256;
   };
 
-  nativeBuildInputs = [ meson ninja pkgconfig ];
+  nativeBuildInputs = [ meson ninja pkg-config ];
   buildInputs = [
     wlroots wayland wayland-protocols wlroots
-    pixman libxkbcommon libudev mesa_noglu libX11
+    pixman libxkbcommon udev mesa libX11
     libGL libglvnd
   ];
 

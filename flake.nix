@@ -16,6 +16,7 @@
         import pkgs {
           inherit system overlays;
           config.allowUnfree = true;
+          config.allowAliases = false;
         };
       pkgs_ = genAttrs (builtins.attrNames inputs) (inp: genAttrs supportedSystems (sys: pkgsFor inputs."${inp}" sys []));
       opkgs_ = overlays: genAttrs (builtins.attrNames inputs) (inp: genAttrs supportedSystems (sys: pkgsFor inputs."${inp}" sys overlays));

@@ -1,7 +1,7 @@
 { stdenv, lib, fetchgit
-, meson, ninja, pkgconfig, python3
+, meson, ninja, pkg-config, python3
 , wayland, wayland-protocols
-, libffi, mesa_noglu
+, libffi, mesa
 , lz4, zstd, ffmpeg_4, libva
 , scdoc, openssh
 }:
@@ -24,10 +24,10 @@ stdenv.mkDerivation rec {
       --replace "/usr/bin/ssh" "${openssh}/bin/ssh"
   '';
 
-  nativeBuildInputs = [ pkgconfig meson ninja python3 scdoc ];
+  nativeBuildInputs = [ pkg-config meson ninja python3 scdoc ];
   buildInputs = [
     wayland wayland-protocols
-    libffi mesa_noglu
+    libffi mesa
     lz4 zstd ffmpeg_4 libva
   ];
   mesonFlags = [ "-Dauto_features=enabled" ];

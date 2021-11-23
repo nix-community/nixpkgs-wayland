@@ -1,6 +1,6 @@
 { stdenv, lib, fetchFromGitHub
 , libdrm, json_c
-, meson, ninja, pkgconfig
+, meson, ninja, pkg-config
 , libpciaccess
 }:
 
@@ -18,7 +18,7 @@ stdenv.mkDerivation rec {
     sha256 = metadata.sha256;
   };
 
-  nativeBuildInputs = [ meson ninja pkgconfig ];
+  nativeBuildInputs = [ meson ninja pkg-config ];
   buildInputs = [ libdrm json_c libpciaccess ];
 
   mesonFlags = [ "-Dlibpci=disabled" ];

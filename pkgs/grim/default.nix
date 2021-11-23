@@ -1,5 +1,5 @@
 { stdenv, lib, fetchFromGitHub
-, meson, ninja, pkgconfig
+, meson, ninja, pkg-config
 , cairo, libjpeg, wayland, wayland-protocols
 , scdoc, buildDocs ? true
 }:
@@ -18,7 +18,7 @@ stdenv.mkDerivation rec {
     sha256 = metadata.sha256;
   };
 
-  nativeBuildInputs = [ pkgconfig meson ninja ] ++ lib.optional buildDocs scdoc;
+  nativeBuildInputs = [ pkg-config meson ninja ] ++ lib.optional buildDocs scdoc;
   buildInputs = [ cairo libjpeg wayland wayland-protocols ];
   mesonFlags = [ "-Djpeg=enabled" ]
     ++ lib.optional buildDocs "-Dman-pages=enabled";

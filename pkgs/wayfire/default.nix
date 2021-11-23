@@ -1,5 +1,5 @@
 { stdenv, lib, fetchFromGitHub
-, meson, pkgconfig, ninja, cmake
+, meson, pkg-config, ninja, cmake
 , wayland, wayland-protocols
 , cairo, glm
 , libevdev, freetype, libinput
@@ -8,7 +8,7 @@
 , libGL, mesa
 , libcap, xcbutilerrors, xcbutilwm, libxml2
 , libuuid
-, libseat, xorg, xwayland, doctest
+, seatd, xorg, xwayland, doctest
 , pango
 , vulkan-headers, vulkan-loader, glslang
 , buildDocs ? true
@@ -31,7 +31,7 @@ stdenv.mkDerivation rec {
   };
 
   nativeBuildInputs = [
-    pkgconfig meson ninja cmake
+    pkg-config meson ninja cmake
     doctest
   ];
   buildInputs = [
@@ -44,7 +44,7 @@ stdenv.mkDerivation rec {
     libGL mesa
     libcap xcbutilerrors xcbutilwm libxml2
     libuuid
-    libseat
+    seatd
     xwayland
     doctest
     xorg.xcbutilrenderutil
@@ -55,7 +55,7 @@ stdenv.mkDerivation rec {
     "-Duse_system_wlroots=disabled"
     "-Duse_system_wfconfig=disabled"
     "-Dwlroots:logind-provider=systemd"
-    "-Dwlroots:libseat=disabled"
+    "-Dwlroots:seatd=disabled"
   ];
 
   enableParallelBuilding = true;
