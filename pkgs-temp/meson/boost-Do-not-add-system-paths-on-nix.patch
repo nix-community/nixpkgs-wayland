@@ -1,0 +1,20 @@
+--- a/mesonbuild/dependencies/boost.py
++++ b/mesonbuild/dependencies/boost.py
+@@ -682,16 +682,7 @@ class BoostDependency(SystemDependency):
+         else:
+             tmp = []  # type: T.List[Path]
+
+-            # Add some default system paths
+-            tmp += [Path('/opt/local')]
+-            tmp += [Path('/usr/local/opt/boost')]
+-            tmp += [Path('/usr/local')]
+-            tmp += [Path('/usr')]
+-
+-            # Cleanup paths
+-            tmp = [x for x in tmp if x.is_dir()]
+-            tmp = [x.resolve() for x in tmp]
+-            roots += tmp
++            # Do not add any non-explicit paths on nix
+ 
+         self.check_and_set_roots(roots, use_system=True)
+ 

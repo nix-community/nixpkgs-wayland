@@ -54,8 +54,6 @@ stdenv.mkDerivation rec {
   mesonFlags = [
     "-Duse_system_wlroots=disabled"
     "-Duse_system_wfconfig=disabled"
-    "-Dwlroots:logind-provider=systemd"
-    "-Dwlroots:seatd=disabled"
   ];
 
   enableParallelBuilding = true;

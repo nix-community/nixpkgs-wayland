@@ -41,9 +41,9 @@
             wayland-protocols = prev.wayland-protocols;
           };
 
-          meson0581 = prev.callPackage ./pkgs-temp/meson061 {};
+          _mesonNewer = prev.callPackage ./pkgs-temp/meson {};
           _wlroots = prev.callPackage ./pkgs/wlroots {
-            meson = meson0581;
+            meson = _mesonNewer;
             wayland-protocols = _wayland-protocols-master;
           };
           waylandPkgs = rec {
@@ -66,7 +66,7 @@
             sirula           = prev.callPackage ./pkgs/sirula {};
             slurp            = prev.callPackage ./pkgs/slurp {};
             sway-unwrapped   = prev.callPackage ./pkgs/sway-unwrapped {
-              meson = meson0581;
+              meson = _mesonNewer;
               sway-unwrapped = prev.sway-unwrapped;
             };
             swaybg           = prev.callPackage ./pkgs/swaybg {};
@@ -129,7 +129,7 @@
             };
             # wayfire stuff
             wayfire          = prev.callPackage ./pkgs/wayfire {
-              meson = meson0581;
+              meson = _mesonNewer;
               wayland-protocols = _wayland-protocols-master;
             };
 
