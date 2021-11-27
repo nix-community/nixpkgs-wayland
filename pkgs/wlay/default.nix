@@ -1,7 +1,7 @@
 { stdenv, lib, fetchFromGitHub
 , cmake, extra-cmake-modules, pkg-config
 , wayland, wayland-protocols
-, epoxy, libpthreadstubs
+, libepoxy, libpthreadstubs
 , libGL, glfw3
 , libX11, libXau, libXdmcp, libXrandr, libXext, libXinerama
 , libXcursor, libXfixes
@@ -25,7 +25,7 @@ stdenv.mkDerivation rec {
   nativeBuildInputs = [ pkg-config cmake extra-cmake-modules ];
   buildInputs = [
     wayland wayland-protocols
-    epoxy libpthreadstubs
+    libepoxy libpthreadstubs
     libGL glfw3
     libX11 libXau libXdmcp libXrandr libXext libXinerama
     libXcursor libXfixes

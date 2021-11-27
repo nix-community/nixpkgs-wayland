@@ -1,6 +1,6 @@
 {stdenv, lib, fetchFromGitHub, fetchpatch
 , meson, ninja, pkg-config
-, gtk3, epoxy
+, gtk3, libepoxy
 , wayland, wayland-protocols
 , scdoc, buildDocs ? true
 }:
@@ -20,7 +20,7 @@ stdenv.mkDerivation rec {
   };
 
   nativeBuildInputs = [ pkg-config meson ninja ] ++ lib.optional buildDocs scdoc;
-  buildInputs = [ gtk3 epoxy wayland wayland-protocols ];
+  buildInputs = [ gtk3 libepoxy wayland wayland-protocols ];
   mesonFlags = [ "-Dauto_features=enabled" ]
     ++ lib.optional (!buildDocs) "-Dman-pages=disabled";
 

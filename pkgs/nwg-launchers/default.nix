@@ -1,6 +1,6 @@
 {stdenv, lib, fetchFromGitHub
 , meson, ninja, pkg-config
-, gtk3, gtkmm3, epoxy, nlohmann_json
+, gtk3, gtkmm3, libepoxy, nlohmann_json
 , gtk-layer-shell, librsvg
 , wayland, wayland-protocols
 , wrapGAppsHook
@@ -25,7 +25,7 @@ stdenv.mkDerivation rec {
   ];
 
   buildInputs = [
-    gtk3 gtkmm3 nlohmann_json epoxy wayland wayland-protocols
+    gtk3 gtkmm3 nlohmann_json libepoxy wayland wayland-protocols
     gtk-layer-shell librsvg
     wrapGAppsHook
   ];
