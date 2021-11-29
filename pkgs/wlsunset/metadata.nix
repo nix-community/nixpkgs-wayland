@@ -1,6 +1,6 @@
 {
   repo_git = "https://git.sr.ht/~kennylevinsen/wlsunset";
   branch = "master";
-  rev = "f32f6963b9f0c266f1974dfb3d9b21eca7b69446";
-  sha256 = "sha256-H1AABYFzeLXgB8FOAuuVYvoj7Xr+5QueXzSFgqYLgKE=";
+  rev = "601dfc87ff6ef0f14e3a56bef35d876135ffc937";
+  sha256 = "sha256-9SI+i1fKFpJrwPQUbr06QrDpGUv3TVhDU/yB9UZGzF0=";
 }
