@@ -24,7 +24,6 @@ stdenv.mkDerivation rec {
   buildInputs = [ gtk3 cairo pango systemd wayland wayland-protocols ];
   mesonFlags = [
     "-Dauto_features=enabled"
-    "-Dsystemd=disabled"
     "-Dsd-bus-provider=libsystemd"
   ] ++ lib.optional (!buildDocs) "-Dman-pages=disabled";
 

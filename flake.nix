@@ -60,7 +60,9 @@
               imv = prev.imv;
             };
             lavalauncher     = prev.callPackage ./pkgs/lavalauncher {};
-            mako             = prev.callPackage ./pkgs/mako {};
+            mako             = prev.callPackage ./pkgs/mako {
+              meson = _mesonNewer;
+            };
             oguri            = prev.callPackage ./pkgs/oguri {};
             rootbar          = prev.callPackage ./pkgs/rootbar {};
             sirula           = prev.callPackage ./pkgs/sirula {};
