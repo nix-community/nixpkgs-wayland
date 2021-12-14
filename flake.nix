@@ -45,7 +45,46 @@
           _wlroots = prev.callPackage ./pkgs/wlroots {
             meson = _mesonNewer;
             wayland-protocols = _wayland-protocols-master;
+            wayland = _waylandNewer;
           };
+          _waylandNewer = prev.wayland.overrideAttrs(old: {
+            version = "1.20.0";
+            src = prev.fetchFromGitLab {
+              domain = "gitlab.freedesktop.org";
+              owner = "wayland";
+              repo = "wayland";
+              rev = "1.20.0";
+              sha256 = "sha256-N+riSb3F3vcyUlNdlSnOUrKdDtBcGn9rUyCAi3nel6E=";
+            };
+            patches = [
+              (prev.writeText "patch.diff" ''
+                  From 378623b0e39b12bb04d3a3a1e08e64b31bd7d99d Mon Sep 17 00:00:00 2001
+                  From: Florian Klink <flokli@flokli.de>
+                  Date: Fri, 27 Nov 2020 10:22:20 +0100
+                  Subject: [PATCH] add placeholder for @nm@
+
+                  ---
+                  egl/meson.build | 2 +-
+                  1 file changed, 1 insertion(+), 1 deletion(-)
+
+                  diff --git a/egl/meson.build b/egl/meson.build
+                  index dee9b1d..e477546 100644
+                  --- a/egl/meson.build
+                  +++ b/egl/meson.build
+                  @@ -11,7 +11,7 @@ wayland_egl = library(
+                  
+                   executable('wayland-egl-abi-check', 'wayland-egl-abi-check.c')
+                  
+                  -nm_path = find_program('nm').path()
+                  +nm_path = find_program('${prev.stdenv.cc.targetPrefix}nm').path()
+                  
+                   test(
+                   	'wayland-egl symbols check',
+                  -- 
+                  2.29.2
+                '')
+            ];
+          });
           waylandPkgs = rec {
             # wlroots-related
             cage             = prev.callPackage ./pkgs/cage {
@@ -70,6 +109,8 @@
             sway-unwrapped   = prev.callPackage ./pkgs/sway-unwrapped {
               meson = _mesonNewer;
               sway-unwrapped = prev.sway-unwrapped;
+              wayland = _waylandNewer;
+              wayland-protocols =_wayland-protocols-master;
             };
             swaybg           = prev.callPackage ./pkgs/swaybg {};
             swayidle         = prev.callPackage ./pkgs/swayidle {};
