@@ -6,6 +6,7 @@
 , seatd
 , libuuid
 , xorg # ?
+, libdrm
 , enableXWayland ? true, xwayland ? null
 , vulkan-headers, vulkan-loader, glslang
 }:
@@ -40,6 +41,7 @@ in stdenv.mkDerivation rec {
     libuuid
     xorg.xcbutilrenderutil
     vulkan-headers vulkan-loader glslang
+    libdrm
   ] ++ lib.optional enableXWayland xwayland;
 
 
