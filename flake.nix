@@ -91,6 +91,7 @@
               wlroots = prev.wlroots;
             };
             drm_info         = prev.callPackage ./pkgs/drm_info {};
+            foot             = prev.callPackage ./pkgs/foot { inherit foot; };
             gebaar-libinput  = prev.callPackage ./pkgs/gebaar-libinput {};
             glpaper          = prev.callPackage ./pkgs/glpaper {};
             grim             = prev.callPackage ./pkgs/grim {};
