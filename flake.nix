@@ -92,7 +92,11 @@
               meson = _mesonNewer;
             };
             drm_info         = prev.callPackage ./pkgs/drm_info {};
-            foot             = prev.callPackage ./pkgs/foot { inherit foot; };
+            foot             = prev.callPackage ./pkgs/foot {
+              inherit foot;
+              wayland = _waylandNewer;
+              wayland-protocols =_wayland-protocols-master;
+            };
             gebaar-libinput  = prev.callPackage ./pkgs/gebaar-libinput {};
             glpaper          = prev.callPackage ./pkgs/glpaper {};
             grim             = prev.callPackage ./pkgs/grim {};
