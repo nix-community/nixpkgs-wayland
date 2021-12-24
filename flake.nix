@@ -89,6 +89,7 @@
             # wlroots-related
             cage             = prev.callPackage ./pkgs/cage {
               wlroots = prev.wlroots;
+              meson = _mesonNewer;
             };
             drm_info         = prev.callPackage ./pkgs/drm_info {};
             foot             = prev.callPackage ./pkgs/foot { inherit foot; };
