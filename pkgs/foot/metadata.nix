@@ -1,6 +1,6 @@
 {
   repo_git = "https://codeberg.org/dnkl/foot";
   branch = "master";
-  rev = "99ebff5a515c4645e2faa32fd51e975e60d95ddb";
-  sha256 = "sha256-GQnt3GlK7+mFUmU1eqOrBFbeY8UHwBYEQ/M8vqmITgQ=";
+  rev = "e37edba3876df82de0a526dbc266641a44089a90";
+  sha256 = "sha256-Ngdknpb0pF4TBcTtfoKwwN7GYii+32lTCMxW4IhaEog=";
 }
