@@ -1,6 +1,6 @@
 {
   repo_git = "https://github.com/nwg-piotr/nwg-launchers";
   branch = "master";
-  rev = "fbdaecfdccc33c5e77029f818d4343f223d034ae";
-  sha256 = "sha256-9RpaV/j2qht66bnq21WDUv7KOZ65RSButEfLXjpZJ4g=";
+  rev = "4dde40e2a0d82ae87a262e0c2babd22e309d28bf";
+  sha256 = "sha256-02CwVD2oS2r7a7xsLlLWjI4ZhHnWv4Dh5QCYC1inH70=";
 }
