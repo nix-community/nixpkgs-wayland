@@ -88,7 +88,6 @@
           waylandPkgs = rec {
             # wlroots-related
             cage             = prev.callPackage ./pkgs/cage {
-              cage = prev.cage;
               wayland = _waylandNewer;
               meson = _mesonNewer;
             };
