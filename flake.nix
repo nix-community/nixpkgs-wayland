@@ -111,7 +111,6 @@
             slurp            = prev.callPackage ./pkgs/slurp {};
             sway-unwrapped   = prev.callPackage ./pkgs/sway-unwrapped {
               meson = _mesonNewer;
-              sway-unwrapped = prev.sway-unwrapped;
               wayland = _waylandNewer;
               wayland-protocols =_wayland-protocols-master;
             };
