@@ -52,23 +52,29 @@ function update_readme() {
   mv README2.md README.md
 }
 
-pkgslist=()
-for p in `ls -v -d -- ./pkgs/*/ | sort -V`; do
-  readme_entry "${p}"
-done
-update_readme
-git commit README.md -m "${cprefix} README.md" || true
-
-## main
-
-# update flake
+# if first arg is "_nixpkgs" then we only update nixpkgs and stop
+# but everyone tries to advances inputs
 nix "${nixargs[@]}" flake update --commit-lock-file
 
-# actual internal update
-cd pkgs
-./update.sh
-echo "internal update status = $?"
-cd "${DIR}"
+if [[ "${1:-""}" != "_nixpkgs" ]]; then
+  # we were not just doing an internal nixpkgs advance attempt
+  # so DO update pkgs
+
+  # rewrite readme for consistency's sake
+  pkgslist=()
+  for p in `ls -v -d -- ./pkgs/*/ | sort -V`; do
+    readme_entry "${p}"
+  done
+  update_readme
+  git commit README.md -m "${cprefix} README.md" || true
+
+  # actual internal update
+  cd pkgs
+  ./update.sh
+  echo "internal update status = $?"
+  cd "${DIR}"
+fi
+
 
 # build (uncached)
 set -x
