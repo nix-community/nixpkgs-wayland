@@ -33,6 +33,16 @@ The [Cachix landing page for `nixpkgs-wayland`](https://nixpkgs-wayland.cachix.o
 
 Packages from this overlay are regularly built against `nixos-unstable` and pushed to this cache.
 
+### Continuous Integration
+
+We have multiple CI jobs:
+1. Update - this tries to advance nixpkgs and upgrade all packages. If it can successfully build them, the updates are push to master.
+2. Advance - this tries to advance nixpkgs without touching the packages. This can help show when nixpkgs upgrades via `nixos-unstable` has advanced
+   into a state where we are broken building against it.
+3. Build - this just proves that `master` was working against `nixos-unstable` at the point in time captured by whatever is in `flake.lock` on `master`.
+
+We don't have CI on Pull Requests, but I keep an eye on it after merging external contributions.
+
 ### Flake Usage
 
 - Build and run [the Wayland-fixed up](https://github.com/obsproject/obs-studio/pull/2484) version of [OBS-Studio](https://obsproject.com/):
