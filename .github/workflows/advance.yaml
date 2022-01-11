@@ -1,0 +1,34 @@
+name: "Advance"
+on:
+  push:
+    branches:
+    - master
+  schedule:
+    - cron: '*/10 * * * *'
+  workflow_dispatch:
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    concurrency: advance-${{matrix.jobs.branch}}-${{matrix.jobs.target}}
+    steps:
+    - uses: actions/checkout@v2
+    - uses: cachix/install-nix-action@v14
+    - name: prepare
+      run: |
+        .github/exec nix-build --version
+    - name: git-setup
+      run: |
+        cat << EOF | .github/exec
+          git config --global user.name 'Cole Botkens'
+          git config --global user.email 'cole.mickens+colebot@gmail.com'
+          git remote update
+        EOF
+    - name: update
+      run: |
+        .github/exec nix flake lock --recreate-lock-file --commit-lock-file
+    - name: build
+      run: |
+        .github/exec nix build -L -f packages.nix
+    - name: push
+      run: |
+        .github/exec git push origin HEAD
