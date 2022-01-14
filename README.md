@@ -22,7 +22,6 @@ Community chat is on Matrix: [#nixpkgs-wayland:matrix.org](https://matrix.to/#/#
   - [Tips](#tips)
       - [General](#general)
       - [`sway`](#sway)
-      - [NVIDIA Users](#nvidia-users)
   - [Development Guide](#development-guide)
 
 ## Usage
@@ -257,27 +256,6 @@ These packages were mostly recently built (and cached) against:
 
 - You will likely want a default config file to place at `$HOME/.config/sway/config`. You can use the upstream default as a starting point: https://github.com/swaywm/sway/blob/master/config.in
 - If you start `sway` from a raw TTY, make sure you use `exec sway` so that if sway crashes, an unlocked TTY is not exposed.
-
-
-#### NVIDIA Users
-
-Nvidia users may wish to use `outputs.overlay-egl` instead of `outputs.ovelay` to get tools that are built against
-[`wlroots-eglstream`](https://github.com/danvd/wlroots-eglstreams). This enables Sway on, for example, an RTX 3080.
-
-Non-flakes users will need to update their import statement, so that it looks more like this:
-```nix
-let
-  rev = "master";
-  url = "https://github.com/nix-community/nixpkgs-wayland/archive/${rev}.tar.gz";
-  waylandOverlay = (import "${builtins.fetchTarball url}/overlay.nix");
-  waylandOverlayEgl = (import "${builtins.fetchTarball url}/overlay-egl.nix");
-in
-  {
-    nixpkgs.overlays = [ waylandOverlayEgl ];
-    environment.systemPackages = with pkgs; [ wayvnc ];
-    # ...
-  }
-```
 
 ## Development Guide
 
