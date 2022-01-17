@@ -72,15 +72,15 @@
                   --- a/egl/meson.build
                   +++ b/egl/meson.build
                   @@ -11,7 +11,7 @@ wayland_egl = library(
-                  
+
                    executable('wayland-egl-abi-check', 'wayland-egl-abi-check.c')
-                  
+
                   -nm_path = find_program('nm').path()
                   +nm_path = find_program('${prev.stdenv.cc.targetPrefix}nm').path()
-                  
+
                    test(
                    	'wayland-egl symbols check',
-                  -- 
+                  --
                   2.29.2
                 '')
             ];
@@ -90,6 +90,7 @@
             cage             = prev.callPackage ./pkgs/cage {
               wayland = _waylandNewer;
               meson = _mesonNewer;
+              wlroots = prev.wlroots;
             };
             drm_info         = prev.callPackage ./pkgs/drm_info {};
             foot             = prev.callPackage ./pkgs/foot { inherit foot; };
