@@ -1,7 +1,7 @@
 {
   repo_git = "https://github.com/kennylevinsen/wldash";
   branch = "master";
-  rev = "43fe73bf096111b818e753903e1d5d988ca0c0f1";
-  sha256 = "sha256-OldFdN5iUx+2rwbcWLhMhEvLjWg3tT+dsQC+7lUgS9A=";
-  cargoSha256 = "sha256-iB5eTWkaGyIv5YGCQzPauVRne12YKOmr/RcF0HvFZvQ=";
+  rev = "2538e41f001fa363d3459efe3b8102a354b06dd0";
+  sha256 = "sha256-K8ths/YUi2ZBlhLkb8XVw6Xa0lgFtDJMlkTu2SbChrA=";
+  cargoSha256 = "sha256-ELFMBUDJomu/VILW4rZ8wHL6mSa6ppeHo+IPisaHyTs=";
 }
