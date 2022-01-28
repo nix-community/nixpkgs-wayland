@@ -35,7 +35,6 @@ stdenv.mkDerivation rec {
   ];
 
   mesonFlags = [
-    "-Dswaylock-version=${version}"
     "-Dpam=enabled"
     "-Dgdk-pixbuf=enabled"
   ] ++ lib.optional buildDocs "-Dman-pages=enabled";
