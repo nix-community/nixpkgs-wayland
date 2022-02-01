@@ -27,7 +27,7 @@
           nativeBuildInputs = []
             ++ (with pkgs_.cachix.${system}; [ cachix ])
             ++ (with pkgs_.nixpkgs.${system}; [
-                nixUnstable nix-prefetch nix-build-uncached
+                nixVersions.unstable nix-prefetch nix-build-uncached
                 bash cacert curl git jq mercurial openssh ripgrep parallel
                 haskellPackages.dhall-json
             ]); });
