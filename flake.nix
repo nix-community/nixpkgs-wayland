@@ -116,7 +116,9 @@
             };
             swaybg           = prev.callPackage ./pkgs/swaybg {};
             swayidle         = prev.callPackage ./pkgs/swayidle {};
-            swaylock         = prev.callPackage ./pkgs/swaylock {};
+            swaylock         = prev.callPackage ./pkgs/swaylock {
+              wayland-protocols =_wayland-protocols-master;
+            };
             waybar           = prev.callPackage ./pkgs/waybar {
               waybar = prev.waybar;
             };
