@@ -22,6 +22,7 @@ Community chat is on Matrix: [#nixpkgs-wayland:matrix.org](https://matrix.to/#/#
   - [Tips](#tips)
       - [General](#general)
       - [`sway`](#sway)
+      - [Nvidia Users](#nvidia-users)
   - [Development Guide](#development-guide)
 
 ## Usage
@@ -256,6 +257,12 @@ These packages were mostly recently built (and cached) against:
 
 - You will likely want a default config file to place at `$HOME/.config/sway/config`. You can use the upstream default as a starting point: https://github.com/swaywm/sway/blob/master/config.in
 - If you start `sway` from a raw TTY, make sure you use `exec sway` so that if sway crashes, an unlocked TTY is not exposed.
+
+#### Nvidia Users
+
+- Everything should just work now (aka, wlroots/sway don't need patching).
+- This is a known-good working config, at least at one point in time:
+  [mixins/nvidia.nix@ccd992](https://github.com/cole-mickens/nixcfg/blob/cdd9929d5d36ce5b4d64cf80bdeb1df3f2cba332/mixins/nvidia.nix)
 
 ## Development Guide
 
