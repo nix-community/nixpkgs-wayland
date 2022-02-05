@@ -41,6 +41,10 @@
             wayland-protocols = prev.wayland-protocols;
           };
 
+          _fcftNewer = prev.callPackage ./pkgs-temp/fcft {
+            fcft = prev.fcft;
+          };
+
           _mesonNewer = prev.callPackage ./pkgs-temp/meson {};
           _wlroots = prev.callPackage ./pkgs/wlroots {
             meson = _mesonNewer;
@@ -93,7 +97,10 @@
               wlroots = prev.wlroots;
             };
             drm_info         = prev.callPackage ./pkgs/drm_info {};
-            foot             = prev.callPackage ./pkgs/foot { inherit foot; };
+            foot             = prev.callPackage ./pkgs/foot {
+              inherit foot;
+              fcft = _fcftNewer;
+            };
             gebaar-libinput  = prev.callPackage ./pkgs/gebaar-libinput {};
             glpaper          = prev.callPackage ./pkgs/glpaper {};
             grim             = prev.callPackage ./pkgs/grim {};
