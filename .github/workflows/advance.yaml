@@ -10,7 +10,7 @@ jobs:
   update:
     runs-on: ubuntu-latest
     # leave the concurrency key the same, trying to advance+update often causes one to fail
-    concurrency: update-${{matrix.jobs.branch}}-${{matrix.jobs.target}}
+    concurrency: update
     steps:
     - uses: actions/checkout@v2
     - uses: cachix/install-nix-action@v14
