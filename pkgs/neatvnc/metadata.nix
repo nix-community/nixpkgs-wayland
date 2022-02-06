@@ -1,6 +1,6 @@
 {
   repo_git = "https://github.com/any1/neatvnc";
   branch = "master";
-  rev = "613761cf5fc3ad9f4d472f3a179215282c0601ea";
-  sha256 = "sha256-+sjEqmy36Fhg4NnVmTMkKLgShI3A1Qu4rNGmWfF0doQ=";
+  rev = "c0d1455686dc1793123c7283d2e421be2b1d4cf2";
+  sha256 = "sha256-gSIanZTpQiWg8MJAJELgnclF4vLwNc1UhizSgHNGb8s=";
 }
