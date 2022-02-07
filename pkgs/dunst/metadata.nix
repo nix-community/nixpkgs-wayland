@@ -1,6 +1,6 @@
 {
   repo_git = "https://github.com/dunst-project/dunst";
   branch = "master";
-  rev = "02e1938754f54fa221bdc0b65f4cc14349653eb5";
-  sha256 = "sha256-hdCG9zJY5mrwNscfGFDXI0IlQ2l3vInnEoxGqlM74+o=";
+  rev = "a63d5232e7f10e1a7357f786d5b7cfdd0c692d2f";
+  sha256 = "sha256-RYAeBo2FEdUrOsGfwMUz8KrFBtauUAm0hZo6l1GhVOU=";
 }
