@@ -21,6 +21,9 @@ stdenv.mkDerivation rec {
   buildInputs = [
     wayland libinput gtk3 gobject-introspection
   ];
+  mesonFlags = [
+    "-Dvapi=false"
+  ];
 
   enableParallelBuilding = true;
 
