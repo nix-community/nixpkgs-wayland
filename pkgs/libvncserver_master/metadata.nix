@@ -1,6 +1,6 @@
 {
   repo_git = "https://github.com/LibVNC/libvncserver";
   branch = "master";
-  rev = "2499602e7a975fa2882af4a65962a85963950991";
-  sha256 = "sha256-ZnAWu8JyUKs6UvpwyDkwBzOvecqcJXl2MVIU/YDg2xM=";
+  rev = "a7671adc4b84c606201bac968b29aa6e92ea1fab";
+  sha256 = "sha256-4mnJQJoyLiHmsXoCZXpkHYpv1dOHxvKVsCzSiNGE2WE=";
 }
