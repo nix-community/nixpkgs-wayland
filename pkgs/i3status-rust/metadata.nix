@@ -3,5 +3,5 @@
   branch = "master";
   rev = "e9ead0a5855bd7046bfb65964b64b7918a249f7d";
   sha256 = "sha256-FM5KxjNrSAwRn2vS+8p+TLxcbY9j8OSkLuLFG53WTY4=";
-  cargoSha256 = "sha256-Ne6vEqboJ/Cak0XVWB+ZM3fnqwF+g0qDhkn00KSOxco=";
+  cargoSha256 = "sha256-r3QviQIWeoh+G8nvfIbWbNRRXt0mfqReJhx7FC0bqLI=";
 }
