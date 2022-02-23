@@ -2,8 +2,7 @@
 
 [![Build](https://github.com/nix-community/nixpkgs-wayland/actions/workflows/build.yaml/badge.svg)](https://github.com/nix-community/nixpkgs-wayland/actions/workflows/build.yaml)
 [![Advance](https://github.com/nix-community/nixpkgs-wayland/actions/workflows/advance.yaml/badge.svg)](https://github.com/nix-community/nixpkgs-wayland/actions/workflows/advance.yaml)
-[![Update](https://github.com/nix-community/nixpkgs-wayland/actions/workflows/update.yaml/badge.svg)](https://github.com/nix-community/nixpkgs-wayland/actions/workflows/update.yaml) &nbsp; &nbsp; &nbsp;
-[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-908a85?logo=gitpod)](https://gitpod.io/#https://github.com/nix-community/nixpkgs-wayland)
+[![Update](https://github.com/nix-community/nixpkgs-wayland/actions/workflows/update.yaml/badge.svg)](https://github.com/nix-community/nixpkgs-wayland/actions/workflows/update.yaml)
 
 ## overview
 
@@ -11,19 +10,22 @@ Automated, pre-built packages for Wayland (sway/wlroots) tools for NixOS (**nixo
 
 Community chat is on Matrix: [#nixpkgs-wayland:matrix.org](https://matrix.to/#/#nixpkgs-wayland:matrix.org). We are not on Libera.
 
-- [nixpkgs-wayland](#nixpkgs-wayland)
-  - [overview](#overview)
-  - [Usage](#usage)
-    - [Binary Cache](#binary-cache)
-    - [Flake Usage](#flake-usage)
-    - [Install for NixOS (non-flakes, manual import)](#install-for-nixos-non-flakes-manual-import)
-    - [Install for non-NixOS users](#install-for-non-nixos-users)
-  - [Packages](#packages)
-  - [Tips](#tips)
-      - [General](#general)
-      - [`sway`](#sway)
-      - [Nvidia Users](#nvidia-users)
-  - [Development Guide](#development-guide)
+<!-- TOC -->
+- [overview](#overview)
+- [Usage](#usage)
+  - [Binary Cache](#binary-cache)
+  - [Continuous Integration](#continuous-integration)
+  - [Flake Usage](#flake-usage)
+  - [Install for NixOS (non-flakes, manual import)](#install-for-nixos-non-flakes-manual-import)
+  - [Install for non-NixOS users](#install-for-non-nixos-users)
+- [Packages](#packages)
+- [Tips](#tips)
+    - [General](#general)
+    - [`sway`](#sway)
+    - [Nvidia Users](#nvidia-users)
+- [Development Guide](#development-guide)
+<!-- /TOC -->
+
 
 ## Usage
 
@@ -92,7 +94,7 @@ We don't have CI on Pull Requests, but I keep an eye on it after merging externa
             # use it as an overlay
             nixpkgs.overlays = [ inputs.nixpkgs-wayland.overlay ];
 
-            # pull specific packages (built against inputs.nixpkgs, usually `nixos-unstable`)
+            # or, pull specific packages (built against inputs.nixpkgs, usually `nixos-unstable`)
             environment.systemPackages = with pkgs; [
               inputs.nixpkgs-wayland.packages.${system}.waybar
             ];
@@ -276,12 +278,3 @@ These packages were mostly recently built (and cached) against:
 If for some reason the overlay isn't progressing and you want to help, just clone the repo, run `nix-shell --command ./update.sh`
 and start fixing issues in the package definitions. Sometimes you might need to edit `default.nix` to change the version
 of `wlroots` a certain package uses.
-
-### GitPod
-
-This project can be opened and contributed to, within minutes, by using GitPod:
-
-[https://gitpod.io#https://github.com/nix-community/nixpkgs-wayland](https://gitpod.io#https://github.com/nix-community/nixpkgs-wayland)
-
-(Note the Nix sandbox is disabled in GitPod. Some users choose not to push artifacts from this environment to production caches.)
-
