@@ -208,7 +208,6 @@ These packages were mostly recently built (and cached) against:
 | [neatvnc](https://github.com/any1/neatvnc) | liberally licensed VNC server library that's intended to be fast and neat |
 | [nwg-launchers](https://github.com/nwg-piotr/nwg-launchers) |  GTK-based launchers: application grid, button bar, dmenu for sway and other window managers  |
 | [nwg-panel](https://github.com/nwg-piotr/nwg-panel) | GTK3-based panel for Sway window manager |
-| [obs-studio](https://obsproject.com) | Free and open source software for video recording and live streaming |
 | [obs-wlrobs](https://hg.sr.ht/~scoopta/wlrobs) | wlrobs is an obs-studio plugin that allows you to screen capture on wlroots based wayland compositors |
 | [oguri](https://github.com/vilhalmer/oguri) | A very nice animated wallpaper tool for Wayland compositors |
 | [rootbar](https://hg.sr.ht/~scoopta/rootbar) | Root Bar is a bar for wlroots based wayland compositors such as sway and was designed to address the lack of good bars for wayland |
@@ -220,7 +219,6 @@ These packages were mostly recently built (and cached) against:
 | [sway-unwrapped](https://swaywm.org) | An i3-compatible tiling Wayland compositor |
 | [waybar](https://github.com/alexays/waybar) | Highly customizable Wayland bar for Sway and Wlroots based compositors |
 | [wayfire](https://wayfire.org/) | 3D wayland compositor |
-| [wayland-protocols-master](https://gitlab.freedesktop.org/wayland/wayland-protocols) | Wayland protocol extensions |
 | [waypipe](https://gitlab.freedesktop.org/mstoeckl/waypipe/) | Network transparency with Wayland |
 | [wayvnc](https://github.com/any1/wayvnc) | A VNC server for wlroots based Wayland compositors |
 | [wdisplays](https://github.com/cyclopsian/wdisplays) | GUI display configurator for wlroots compositors |
