@@ -1,6 +1,6 @@
 {
   repo_git = "https://gitlab.freedesktop.org/wlroots/wlroots";
   branch = "master";
-  rev = "4741e9d8410fd66445b45500cb3589f52c5de36b";
-  sha256 = "sha256-/tZLZ3aRJn+mMfTxPHtaUTZD2ZRwig/HFoeBFh8ozys=";
+  rev = "0a5a65cf4819ebffb74c410735ba676b288bb82d";
+  sha256 = "sha256-HpAyLywbAcYCmCCCDgx2kOnr/WMDAn7/LcfsXtGRxTA=";
 }
