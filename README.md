@@ -218,7 +218,7 @@ These packages were mostly recently built (and cached) against:
 | [swaylock](https://swaywm.org) | Screen locker for Wayland |
 | [sway-unwrapped](https://swaywm.org) | An i3-compatible tiling Wayland compositor |
 | [waybar](https://github.com/alexays/waybar) | Highly customizable Wayland bar for Sway and Wlroots based compositors |
-| [wayfire](https://wayfire.org/) | 3D wayland compositor |
+| [wayfire-unstable](https://wayfire.org/) | 3D wayland compositor |
 | [waypipe](https://gitlab.freedesktop.org/mstoeckl/waypipe/) | Network transparency with Wayland |
 | [wayvnc](https://github.com/any1/wayvnc) | A VNC server for wlroots based Wayland compositors |
 | [wdisplays](https://github.com/cyclopsian/wdisplays) | GUI display configurator for wlroots compositors |
