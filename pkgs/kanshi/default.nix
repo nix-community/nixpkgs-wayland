@@ -1,40 +1,44 @@
-{ stdenv, lib, fetchFromGitHub
-, meson, ninja, pkg-config
-, udev, wayland, wayland-protocols
-, scdoc, buildDocs ? true
+{ lib
+, stdenv
+, fetchFromGitHub
+, meson
+, ninja
+, pkg-config
+, scdoc
+, wayland
+, libvarlink
 }:
 
 let
   metadata = import ./metadata.nix;
 in
 stdenv.mkDerivation rec {
-  name = "${pname}-${version}";
   pname = "kanshi";
   version = metadata.rev;
 
   src = fetchFromGitHub {
     owner = "emersion";
     repo = pname;
-    rev = version;
+    rev = metadata.rev;
     sha256 = metadata.sha256;
   };
 
-  nativeBuildInputs = [ pkg-config meson ninja scdoc ];
-
-  buildInputs = [
-    wayland wayland-protocols
-  ];
-
-  enableParallelBuilding = true;
-
-  mesonFlags = [ "-Dauto_features=disabled" ]
-    ++ lib.optional (!buildDocs) "-Dman-pages=disabled";
+  nativeBuildInputs = [ meson ninja pkg-config scdoc ];
+  buildInputs = [ wayland libvarlink ];
 
   meta = with lib; {
-    description = "Dynamic display configuration";
     homepage = "https://github.com/emersion/kanshi";
-    maintainers = with maintainers; [ colemickens ];
+    description = "Dynamic display configuration tool";
+    longDescription = ''
+      kanshi allows you to define output profiles that are automatically enabled
+      and disabled on hotplug. For instance, this can be used to turn a laptop's
+      internal screen off when docked.
+
+      kanshi can be used on Wayland compositors supporting the
+      wlr-output-management protocol.
+    '';
+    license = licenses.mit;
+    maintainers = with maintainers; [ balsoft ];
     platforms = platforms.linux;
-    #license = TODO;
   };
 }
