@@ -1,6 +1,6 @@
 {
   repo_git = "https://github.com/nwg-piotr/nwg-panel";
   branch = "master";
-  rev = "dccd857d42e7a5f99bb1217fbc244c164c349b6a";
-  sha256 = "sha256-lJ9tcT653zG5weponYts5PIWRkx0rm/hcIZEnD9s9p4=";
+  rev = "f5622e1a35e63840fb1826a2ef35a8edb9dfcbc2";
+  sha256 = "sha256-py9WjDERcompnYtmpB0+4H3qLI0eXNOBZBjKV7UoqcM=";
 }
