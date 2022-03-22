@@ -33,8 +33,12 @@
                 haskellPackages.dhall-json
             ]); });
 
-      packages = forAllSystems (system:
-        (opkgs_ [overlay]).nixpkgs.${system}.waylandPkgs);
+      packages = forAllSystems (system: let
+        pkgs = (opkgs_ [overlay]).nixpkgs.${system};
+        waylandPkgs = (opkgs_ [overlay]).nixpkgs.${system}.waylandPkgs;
+      in (waylandPkgs // {
+        default = pkgs.linkFarmFromDrvs "nixpkgs-wayland-pkgs" (builtins.attrValues waylandPkgs);
+      }));
 
       overlay = final: prev:
         let
