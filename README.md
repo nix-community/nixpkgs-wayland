@@ -215,6 +215,7 @@ These packages were mostly recently built (and cached) against:
 | [slurp](https://github.com/emersion/slurp) | Select a region in a Wayland compositor |
 | [swaybg](https://github.com/swaywm/swaybg) | Wallpaper tool for Wayland compositors |
 | [swayidle](https://swaywm.org) | Sway's idle management daemon |
+| [swaylock-effects](https://github.com/mortie/swaylock-effects) | Swaylock, with fancy effects |
 | [swaylock](https://swaywm.org) | Screen locker for Wayland |
 | [sway-unwrapped](https://swaywm.org) | An i3-compatible tiling Wayland compositor |
 | [waybar](https://github.com/alexays/waybar) | Highly customizable Wayland bar for Sway and Wlroots based compositors |
