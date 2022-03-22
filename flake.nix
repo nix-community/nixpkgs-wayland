@@ -60,6 +60,7 @@
             swaybg           = prev.callPackage ./pkgs/swaybg {};
             swayidle         = prev.callPackage ./pkgs/swayidle {};
             swaylock         = prev.callPackage ./pkgs/swaylock {};
+            swaylock-effects = prev.callPackage ./pkgs/swaylock-effects {};
             waybar           = prev.callPackage ./pkgs/waybar {
               waybar = prev.waybar;
             };
