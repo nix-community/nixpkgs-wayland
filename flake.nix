@@ -107,11 +107,7 @@
               i3status-rust = prev.i3status-rust;
             };
             neatvnc = prev.callPackage ./pkgs/neatvnc {};
-            nwg-launchers = prev.callPackage ./pkgs/nwg-launchers {};
-            nwg-panel = prev.callPackage ./pkgs/nwg-panel {
-              nwg-panel = prev.nwg-panel;
-            };
-            sirula           = prev.callPackage ./pkgs/sirula {};
+            sirula  = prev.callPackage ./pkgs/sirula {};
             wlfreerdp = prev.callPackage ./pkgs/wlfreerdp {
               inherit (prev) libpulseaudio;
               inherit (prev.gst_all_1) gstreamer gst-plugins-base gst-plugins-good;

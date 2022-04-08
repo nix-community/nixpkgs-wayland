@@ -206,7 +206,6 @@ These packages were mostly recently built (and cached) against:
 | [libvncserver_master](https://libvnc.github.io/) | VNC server library |
 | [mako](https://wayland.emersion.fr/mako) | A lightweight Wayland notification daemon |
 | [neatvnc](https://github.com/any1/neatvnc) | liberally licensed VNC server library that's intended to be fast and neat |
-| [nwg-launchers](https://github.com/nwg-piotr/nwg-launchers) |  GTK-based launchers: application grid, button bar, dmenu for sway and other window managers  |
 | [nwg-panel](https://github.com/nwg-piotr/nwg-panel) | GTK3-based panel for Sway window manager |
 | [obs-wlrobs](https://hg.sr.ht/~scoopta/wlrobs) | wlrobs is an obs-studio plugin that allows you to screen capture on wlroots based wayland compositors |
 | [oguri](https://github.com/vilhalmer/oguri) | A very nice animated wallpaper tool for Wayland compositors |
