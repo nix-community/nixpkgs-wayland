@@ -1,6 +1,8 @@
 { lib, stdenv, fetchFromGitHub, makeWrapper
 , meson, ninja, pkg-config, wayland-protocols
-, pipewire, wayland, systemd, libdrm, iniparser, inih, scdoc, grim, slurp }:
+, pipewire, wayland, systemd, libdrm, iniparser, inih, scdoc, grim, slurp
+, mesa
+}:
 
 let
   metadata = import ./metadata.nix;
@@ -17,7 +19,7 @@ stdenv.mkDerivation rec {
   };
 
   nativeBuildInputs = [ meson ninja pkg-config wayland-protocols makeWrapper ];
-  buildInputs = [ pipewire wayland systemd libdrm iniparser scdoc inih ];
+  buildInputs = [ pipewire wayland systemd libdrm iniparser scdoc inih mesa ];
 
   mesonFlags = [
     "-Dsd-bus-provider=libsystemd"
