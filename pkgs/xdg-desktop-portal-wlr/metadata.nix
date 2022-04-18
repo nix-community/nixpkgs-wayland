@@ -1,6 +1,6 @@
 {
   repo_git = "https://github.com/emersion/xdg-desktop-portal-wlr";
   branch = "master";
-  rev = "6cec421f92ae9b9b3f9a8af7c2e41926748e4c70";
-  sha256 = "sha256-8tKIBfllBydkJaAHxSeBI3W1WuY46a9OSvbvJpHdams=";
+  rev = "657b9edad5c3338b221d3c49fcb45f21cd1d6974";
+  sha256 = "sha256-NP3U+zQE1iHNhNfJwvlQDKnldrd6OGGoTE54uL8ZQSY=";
 }
