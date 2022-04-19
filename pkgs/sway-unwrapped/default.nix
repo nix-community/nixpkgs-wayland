@@ -4,6 +4,7 @@
 , pango, cairo, libinput, libcap, pam, gdk-pixbuf, librsvg
 , wlroots, wayland-protocols, libdrm, pcre2
 , nixosTests
+, xorg
 # Used by the NixOS module:
 , isNixOS ? false
 
@@ -52,6 +53,7 @@ stdenv.mkDerivation rec {
     pango cairo libinput libcap pam gdk-pixbuf librsvg
     wayland-protocols libdrm pcre2
     (wlroots.override { inherit enableXWayland; })
+    xorg.xcbutilwm
   ];
 
   mesonFlags = [
