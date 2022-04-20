@@ -25,7 +25,7 @@ stdenv.mkDerivation rec {
 
   meta = with lib; {
     description = "A very nice animated wallpaper tool for Wayland compositors";
-    homepage    = https://github.com/vilhalmer/oguri;
+    homepage    = "https://github.com/vilhalmer/oguri";
     license     = licenses.mit;
     platforms   = platforms.linux;
     maintainers = with maintainers; [ colemickens ];

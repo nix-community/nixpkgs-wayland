@@ -23,7 +23,7 @@ stdenv.mkDerivation rec {
 
   meta = with lib; {
     description = "Utility program for screen recording of wlroots-based compositors";
-    homepage = https://github.com/ammen99/wf-recorder;
+    homepage = "https://github.com/ammen99/wf-recorder";
     license = licenses.mit;
     maintainers = with maintainers; [ CrazedProgrammer ];
     platforms = platforms.linux;

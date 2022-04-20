@@ -43,7 +43,7 @@ stdenv.mkDerivation rec {
 
   meta = with lib; {
     description = "Screen locker for Wayland";
-    homepage    = https://swaywm.org;
+    homepage    = "https://swaywm.org";
     license     = licenses.mit;
     platforms   = platforms.linux;
     maintainers = with maintainers; [ primeos synthetica ]; # Trying to keep it up-to-date.
