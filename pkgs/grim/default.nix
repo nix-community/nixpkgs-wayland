@@ -27,7 +27,7 @@ stdenv.mkDerivation rec {
 
   meta = with lib; {
     description = "Grab images from a Wayland compositor";
-    homepage    = https://github.com/emersion/grim;
+    homepage    = "https://github.com/emersion/grim";
     license     = licenses.mit;
     platforms   = platforms.linux;
     maintainers = with maintainers; [ colemickens ];

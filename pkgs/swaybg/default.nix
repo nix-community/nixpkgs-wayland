@@ -34,7 +34,7 @@ stdenv.mkDerivation rec {
 
   meta = with lib; {
     description = "Wallpaper tool for Wayland compositors";
-    homepage    = https://github.com/swaywm/swaybg;
+    homepage    = "https://github.com/swaywm/swaybg";
     license     = licenses.mit;
     platforms   = platforms.linux;
     maintainers = with maintainers; [  ];

@@ -4,7 +4,7 @@
   inputs = {
     nixpkgs = { url = "github:nixos/nixpkgs/nixos-unstable"; };
     cachix = { url = "github:nixos/nixpkgs/nixos-21.05"; };
-    flake-compat = { url = github:edolstra/flake-compat; flake = false; };
+    flake-compat = { url = "github:edolstra/flake-compat"; flake = false; };
   };
 
   outputs = inputs:
