@@ -84,7 +84,7 @@
             wlogout          = prev.callPackage ./pkgs/wlogout {
               wlogout = prev.wlogout;
             };
-            wlroots          = prev.callPackage ./pkgs/wlroots {};
+            wlroots          = prev.callPackage ./pkgs/wlroots { wlroots = prev.wlroots; };
             wlr-randr        = prev.callPackage ./pkgs/wlr-randr {};
             wlsunset         = prev.callPackage ./pkgs/wlsunset {};
             wofi             = prev.callPackage ./pkgs/wofi {};
