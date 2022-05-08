@@ -59,12 +59,31 @@
     // {
       # overlays have to be outside of eachSystem block
       overlays.default = final: prev: let
+        fetcher = {
+          github = prev.fetchFromGitHub;
+          gitlab = prev.fetchFromGitLab;
+        };
+
+        makeLatest = attr: args @ {extraOverride ? {}, ...}:
+          (prev."${attr}".override args).overrideAttrs (_old: let
+            metadata = import ./pkgs/${attr}/metadata.nix;
+          in
+            {
+              version = "+rev=${metadata.rev}";
+              src =
+                (lib.getAttrFromPath [metadata.fetcher] fetcher) {
+                  inherit (metadata) owner repo rev sha256;
+                }
+                // lib.optionalAttrs (metadata.fetcher == "gitlab") {inherit (metadata) domain;};
+            }
+            // extraOverride);
+
         waylandPkgs = rec {
           # wlroots-related
           cage = prev.callPackage ./pkgs/cage {
             inherit (prev) wlroots;
           };
-          drm_info = prev.callPackage ./pkgs/drm_info {};
+          drm_info = makeLatest "drm_info" {};
           gebaar-libinput = prev.callPackage ./pkgs/gebaar-libinput {};
           glpaper = prev.callPackage ./pkgs/glpaper {};
           grim = prev.callPackage ./pkgs/grim {};
