@@ -10,4 +10,4 @@ let
     { src = ./.; }
   );
 in
-  flake.shellNix
+  flake.shellNix.default
