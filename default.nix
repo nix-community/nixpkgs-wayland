@@ -17,5 +17,5 @@ let
 in
   warn warning (
     self: prev:
-      flake.defaultNix.overlays self prev
+      flake.defaultNix.overlays.default self prev
   )

@@ -11,4 +11,4 @@ let
   );
 in
   self: prev:
-    flake.defaultNix.overlays self prev
+    flake.defaultNix.overlays.default self prev
