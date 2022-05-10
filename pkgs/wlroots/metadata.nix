@@ -4,6 +4,6 @@ rec {
   repo = "wlroots";
   repo_git = "https://${domain}/${owner}/${repo}";
   branch = "master";
-  rev = "8b0d4947cc77907f010a69bb9cd212a456cfdf08";
-  sha256 = "sha256-WUi03PtNHH9e1L0spISYvKbTXzt0xZW0ZXEg6DdT5Hs=";
+  rev = "fa9b61004b79460357556b67e95ad2740bf12751";
+  sha256 = "sha256-c/AGKsh82WWtwQ7CaqzScd1T20JScJ1NNnOpmkD4UVI=";
 }
