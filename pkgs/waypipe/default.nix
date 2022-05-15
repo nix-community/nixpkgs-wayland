@@ -2,7 +2,7 @@
 , meson, ninja, pkg-config, python3
 , wayland, wayland-protocols
 , libffi, mesa
-, lz4, zstd, ffmpeg_4, libva
+, lz4, zstd, ffmpeg, libva
 , scdoc, openssh
 }:
 
@@ -28,7 +28,7 @@ stdenv.mkDerivation rec {
   buildInputs = [
     wayland wayland-protocols
     libffi mesa
-    lz4 zstd ffmpeg_4 libva
+    lz4 zstd ffmpeg libva
   ];
   mesonFlags = [ "-Dauto_features=enabled" ];
   NIX_CFLAGS_COMPILE = "-Wno-error=unused-result";
