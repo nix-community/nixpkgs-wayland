@@ -4,6 +4,7 @@ set -euo pipefail
 set -x
 
 unset NIX_PATH
+cd "${DIR}"
 
 # build up commit msg
 cprefix="auto-update(${JOB_ID:-"manual"}):"

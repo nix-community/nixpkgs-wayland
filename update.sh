@@ -69,8 +69,7 @@ if [[ "${1:-""}" != "_nixpkgs" ]]; then
   git commit README.md -m "${cprefix} README.md" || true
 
   # actual internal update
-  cd pkgs
-  ./update.sh
+  "${DIR}/pkgs/update.sh"
   echo "internal update status = $?"
   cd "${DIR}"
 fi
