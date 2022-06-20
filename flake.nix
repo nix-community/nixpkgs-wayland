@@ -81,9 +81,7 @@
               inherit foot;
             };
             gtk-layer-shell = prev.callPackage ./pkgs/gtk-layer-shell { };
-            i3status-rust = prev.callPackage ./pkgs/i3status-rust {
-              inherit (prev) i3status-rust;
-            };
+            i3status-rust = prev.callPackage ./pkgs/i3status-rust { };
             neatvnc = prev.callPackage ./pkgs/neatvnc { };
             sirula = prev.callPackage ./pkgs/sirula { };
             wlfreerdp = prev.callPackage ./pkgs/wlfreerdp {
