@@ -44,6 +44,18 @@
             waybar = prev.callPackage ./pkgs/waybar {
               inherit (prev) waybar;
             };
+            # waybar needs 8.1.1
+            # https://github.com/NixOS/nixpkgs/pull/179584
+            fmt_8 = prev.fmt_8.overrideAttrs (oldAttrs: {
+              version = "8.1.1";
+              src = prev.fetchFromGitHub {
+                owner = "fmtlib";
+                repo = "fmt";
+                rev = "8.1.1";
+                sha256 = "sha256-leb2800CwdZMJRWF5b1Y9ocK0jXpOX/nwo95icDf308=";
+              };
+            });
+
             waypipe = prev.callPackage ./pkgs/waypipe { };
             wayvnc = prev.callPackage ./pkgs/wayvnc { };
             wlvncc = prev.callPackage ./pkgs/wlvncc {
