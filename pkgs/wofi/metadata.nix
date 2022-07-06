@@ -1,6 +1,6 @@
 {
   repo_hg = "https://hg.sr.ht/~scoopta/wofi";
   branch = "default";
-  rev = "32cf73cb5cb5";
-  sha256 = "sha256-YVHxxx+Wwgjz3M9iSycM+OLdH52ZUGqfzbfFBawgxIg=";
+  rev = "862653560269";
+  sha256 = "sha256-fBPy/oreNABd9FnF1tiWtzHPK/GUZ+HBpYmfz0r9kdg=";
 }
