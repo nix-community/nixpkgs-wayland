@@ -2,11 +2,12 @@
 , pkg-config, meson, ninja
 , wayland, wayland-protocols
 , libxkbcommon, libvncserver
-, libpthreadstubs
-, pixman, libuv, libglvnd
+, libpthreadstubs, lzo
+, pixman, libuv, libglvnd, libjpeg, libpng
 , neatvnc, libX11, libdrm
 , aml, mesa
 , ffmpeg
+, openssl
 }:
 
 let
@@ -27,11 +28,12 @@ stdenv.mkDerivation rec {
   buildInputs = [
     wayland wayland-protocols
     libxkbcommon libvncserver
-    libpthreadstubs
-    pixman libuv libglvnd
+    libpthreadstubs lzo
+    pixman libuv libglvnd libjpeg libpng
     neatvnc libX11 libdrm
     aml mesa
     ffmpeg
+    openssl
   ];
 
   enableParallelBuilding = true;
