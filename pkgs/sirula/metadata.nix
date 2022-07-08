@@ -1,7 +1,7 @@
 {
   repo_git = "https://github.com/DorianRudolph/sirula";
   branch = "master";
-  rev = "bf216d7e45fc2595302c6978d192d6f412d26f96";
-  sha256 = "sha256-LOMmvLKNfDhGCmHnREMo6IK+AUouwynq6cC2A5e0ngw=";
-  cargoSha256 = "sha256-8Mq/SG2HF56BSB6RNDjqg86GsFTpDM7nNj105VDomUQ=";
+  rev = "280cf41fb932c22d484984cc57f6b0d701623c96";
+  sha256 = "sha256-BLKAJmOn7MmbUUe23SV4cbbfjvb+TrAYowwm1lZYyHA=";
+  cargoSha256 = "sha256-Lv8ek/7LgnLZBoQ2RA8rgZVW3uWJEJkGE1C0i1uSIdc=";
 }
