@@ -1,6 +1,6 @@
 {
   repo_git = "https://github.com/ammen99/wf-recorder";
   branch = "master";
-  rev = "b09c86ff15ab0edeaf98e2e56547bd5fa4948a3f";
-  sha256 = "sha256-othFp97rUrdUoAXkup8VvpcyPHs5iYNFyRE3h3rcmqE=";
+  rev = "bf161b49c58c03056cb974365e64747dd35bb1d9";
+  sha256 = "sha256-/JDok8jHddMzlFvnfhxHemMNhPbaeDayndREJgQFhzw=";
 }
