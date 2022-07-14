@@ -2,6 +2,7 @@
 , pkg-config, meson, ninja
 , wayland, wayland-protocols
 , libxkbcommon, libvncserver
+, ffmpeg
 , libpthreadstubs, libdrm
 , pixman, libuv, libglvnd
 , gnutls, mesa
@@ -26,6 +27,7 @@ stdenv.mkDerivation rec {
   buildInputs = [
     wayland wayland-protocols
     libxkbcommon libvncserver
+    ffmpeg
     libpthreadstubs libdrm
     pixman libuv libglvnd
     gnutls mesa
