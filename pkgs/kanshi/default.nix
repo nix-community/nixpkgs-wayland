@@ -1,6 +1,6 @@
 { lib
 , stdenv
-, fetchFromGitHub
+, fetchgit
 , meson
 , ninja
 , pkg-config
@@ -16,9 +16,8 @@ stdenv.mkDerivation rec {
   pname = "kanshi";
   version = metadata.rev;
 
-  src = fetchFromGitHub {
-    owner = "emersion";
-    repo = pname;
+  src = fetchgit {
+    url = "https://git.sr.ht/~emersion/kanshi";
     rev = metadata.rev;
     sha256 = metadata.sha256;
   };
@@ -27,7 +26,7 @@ stdenv.mkDerivation rec {
   buildInputs = [ wayland libvarlink ];
 
   meta = with lib; {
-    homepage = "https://github.com/emersion/kanshi";
+    homepage = "https://wayland.emersion.fr/kanshi";
     description = "Dynamic display configuration tool";
     longDescription = ''
       kanshi allows you to define output profiles that are automatically enabled

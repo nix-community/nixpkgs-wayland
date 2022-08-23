@@ -200,7 +200,7 @@ These packages were mostly recently built (and cached) against:
 | [gtk-layer-shell](https://github.com/wmww/gtk-layer-shell) | A library to create panels and other desktop components for Wayland using the Layer Shell protocol |
 | [i3status-rust](https://github.com/greshake/i3status-rust) | Very resource-friendly and feature-rich replacement for i3status |
 | [imv](https://github.com/eXeC64/imv) | A command line image viewer for tiling window managers |
-| [kanshi](https://github.com/emersion/kanshi) | Dynamic display configuration tool |
+| [kanshi](https://wayland.emersion.fr/kanshi) | Dynamic display configuration tool |
 | [lavalauncher](https://git.sr.ht/~leon_plickat/lavalauncher) | A simple launcher for Wayland. |
 | [libvncserver_master](https://libvnc.github.io/) | VNC server library |
 | [mako](https://wayland.emersion.fr/mako) | A lightweight Wayland notification daemon |
