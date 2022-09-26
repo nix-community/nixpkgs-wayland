@@ -57,6 +57,7 @@
             });
 
             waypipe = prev.callPackage ./pkgs/waypipe { };
+            wayprompt = prev.callPackage ./pkgs/wayprompt { };
             wayvnc = prev.callPackage ./pkgs/wayvnc { };
             wlvncc = prev.callPackage ./pkgs/wlvncc {
               libvncserver = libvncserver_master;
