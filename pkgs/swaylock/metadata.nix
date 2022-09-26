@@ -1,6 +1,6 @@
 {
   repo_git = "https://github.com/swaywm/swaylock";
   branch = "master";
-  rev = "dafbef3ade130317ad0d941f9ce312bb68a708df";
-  sha256 = "sha256-dnpcAfW5x2VmDm5kV4k6HAO8O4dFK6QmMAfYxOl/RoI=";
+  rev = "cc2779330f3357cc5810b0079fd4460d65779a6d";
+  sha256 = "sha256-e5gouitGzetkgnbT4Q2/okx1KWPW6jMGIL2HEOavCMw=";
 }
