@@ -34,7 +34,7 @@ rustPlatform.buildRustPackage rec {
   meta = with lib; {
     description = "Wayland launcher/dashboard";
     homepage = "https://wldash.org";
-    licence = licenses.gpl3;
+    license = licenses.gpl3;
     maintainers = with maintainers; [ alexarice ];
     platforms = [ "x86_64-linux" "i686-linux" ];
   };
