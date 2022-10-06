@@ -1,6 +1,6 @@
 {
   repo_git = "https://git.sr.ht/~leon_plickat/wayprompt";
   branch = "master";
-  rev = "585e21a73d070c07d6f6481c516b316669e47aa5";
-  sha256 = "sha256-9DmYIpO7omiZowdIOu1EGH5Zae7YnPFfB1gQdzA4Yqc=";
+  rev = "916a8df9ce61fdd4367e9e3c1c85f3a527b00231";
+  sha256 = "sha256-qaC5CDqudHf9FSw1+qVYzhugE/Bslh9rDbobdbjfZTg=";
 }
