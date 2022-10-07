@@ -96,6 +96,7 @@
             gtk-layer-shell = prev.callPackage ./pkgs/gtk-layer-shell { };
             i3status-rust = prev.callPackage ./pkgs/i3status-rust { };
             neatvnc = prev.callPackage ./pkgs/neatvnc { };
+            shotman = prev.callPackage ./pkgs/shotman { };
             sirula = prev.callPackage ./pkgs/sirula { };
             wlfreerdp = prev.callPackage ./pkgs/wlfreerdp {
               inherit (prev) libpulseaudio;
