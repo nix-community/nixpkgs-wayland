@@ -1,33 +1,15 @@
-{ stdenv, lib, fetchFromGitHub
-, libdrm, json_c
-, meson, ninja, pkg-config
-, libpciaccess
-}:
+args_@{ lib, fetchFromGitLab, drm_info, ... }:
 
 let
   metadata = import ./metadata.nix;
+  # remove fetchFromGitLab once nixpkgs uses fetchFromGitLab for drm_info
+  ignore = [ "drm_info" "fetchFromGitLab" ];
+  args = lib.filterAttrs (n: _v: (!builtins.elem n ignore)) args_;
 in
-stdenv.mkDerivation rec {
-  pname = "drm_info";
+(drm_info.override args).overrideAttrs (_old: {
   version = metadata.rev;
-
-  src = fetchFromGitHub {
-    owner = "ascent12";
-    repo = "drm_info";
-    rev = version;
-    sha256 = metadata.sha256;
+  src = fetchFromGitLab {
+    inherit (metadata) domain owner repo rev sha256;
   };
+})
 
-  nativeBuildInputs = [ meson ninja pkg-config ];
-  buildInputs = [ libdrm json_c libpciaccess ];
-
-  mesonFlags = [ "-Dlibpci=disabled" ];
-
-  meta = with lib; {
-    description = "Small utility to dump info about DRM devices.";
-    homepage = "https://github.com/ascent12/drm_info";
-    license = licenses.mit;
-    maintainers = with maintainers; [ tadeokondrak ];
-    platforms = platforms.linux;
-  };
-}
