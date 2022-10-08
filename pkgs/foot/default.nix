@@ -159,7 +159,6 @@ stdenv.mkDerivation rec {
     meson configure -Db_pgo=generate
     ninja
     # make sure there is _some_ profiling data on all binaries
-    ./utils/xtgettcap name
     ./footclient --version
     ./foot --version
     ./tests/test-config
