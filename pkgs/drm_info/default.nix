@@ -1,7 +1,13 @@
-{ stdenv, lib, fetchFromGitHub
-, libdrm, json_c
-, meson, ninja, pkg-config
+{ stdenv
+, lib
+, fetchFromGitHub
+, libdrm
+, json_c
+, meson
+, ninja
+, pkg-config
 , libpciaccess
+, scdoc
 }:
 
 let
@@ -18,8 +24,17 @@ stdenv.mkDerivation rec {
     sha256 = metadata.sha256;
   };
 
-  nativeBuildInputs = [ meson ninja pkg-config ];
-  buildInputs = [ libdrm json_c libpciaccess ];
+  nativeBuildInputs = [
+    meson
+    ninja
+    pkg-config
+  ];
+  buildInputs = [
+    libdrm
+    json_c
+    libpciaccess
+    scdoc
+  ];
 
   mesonFlags = [ "-Dlibpci=disabled" ];
 
