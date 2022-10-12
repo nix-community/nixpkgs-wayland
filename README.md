@@ -191,7 +191,7 @@ These packages were mostly recently built (and cached) against:
 | [aml](https://github.com/any1/neatvnc) | liberally licensed VNC server library that's intended to be fast and neat |
 | [cage](https://www.hjdskes.nl/projects/cage/) | A Wayland kiosk that runs a single, maximized application |
 | [clipman](https://github.com/yory8/clipman) | A basic clipboard manager for Wayland, with support for persisting copy buffers after an application exits |
-| [drm_info](https://github.com/ascent12/drm_info) | Small utility to dump info about DRM devices |
+| [drm_info](https://github.com/ascent12/drm_info) | Small utility to dump info about DRM devices. |
 | [dunst](https://dunst-project.org/) | Lightweight and customizable notification daemon |
 | [foot](https://codeberg.org/dnkl/foot/) | A fast, lightweight and minimalistic Wayland terminal emulator |
 | [gebaar-libinput](https://github.com/Osleg/gebaar-libinput-fork) | Gebaar, A Super Simple WM Independent Touchpad Gesture Daemon for libinput |
