@@ -5,7 +5,10 @@
 
 ## overview
 
-Automated, pre-built packages for Wayland (sway/wlroots) tools for NixOS (**nixos-unstable** channel).
+Automated, pre-built, (potentially) pre-release packages for Wayland (sway/wlroots) tools for NixOS (**nixos-unstable** channel).
+
+These packages are auto-updated to the latest version available from their upstream source control. This means this overlay and package
+set will often contain **unreleased** versions.
 
 Community chat is on Matrix: [#nixpkgs-wayland:matrix.org](https://matrix.to/#/#nixpkgs-wayland:matrix.org). We are not on Libera.
 
