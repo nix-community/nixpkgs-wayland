@@ -35,6 +35,7 @@
             mako = prev.callPackage ./pkgs/mako { };
             oguri = prev.callPackage ./pkgs/oguri { };
             rootbar = prev.callPackage ./pkgs/rootbar { };
+            salut = prev.callPackage ./pkgs/salut { };
             slurp = prev.callPackage ./pkgs/slurp { };
             sway-unwrapped = prev.callPackage ./pkgs/sway-unwrapped { };
             swaybg = prev.callPackage ./pkgs/swaybg { };
