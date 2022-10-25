@@ -1,16 +1,17 @@
-args_@{ stdenv, lib, fetchFromGitHub, wlogout, ... }:
+args_@{ lib
+, fetchFromGitHub
+, wlogout
+, ...
+}:
 
 let
   metadata = import ./metadata.nix;
   ignore = [ "wlogout" ];
-  args = lib.filterAttrs (n: v: (!builtins.elem n ignore)) args_;
+  args = lib.filterAttrs (n: _: (!builtins.elem n ignore)) args_;
 in
-(wlogout.override args).overrideAttrs(old: {
-  name = "wlogout-${metadata.rev}";
-  version = "${metadata.rev}";
+(wlogout.override args).overrideAttrs (old: {
+  version = metadata.rev;
   src = fetchFromGitHub {
-    owner = "ArtsyMacaw";
-    repo = "wlogout";
-    inherit (metadata) rev sha256;
+    inherit (metadata) owner repo rev sha256;
   };
 })
