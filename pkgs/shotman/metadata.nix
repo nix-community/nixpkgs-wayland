@@ -1,7 +1,7 @@
 {
   repo_git = "https://git.sr.ht/~whynothugo/shotman";
   branch = "main";
-  rev = "3d8aab7cdc93647567f9e504635666455bc77ad2";
-  sha256 = "sha256-G16tw5TUkUcQfn2p46EmfvDwfTqCWcnsEquy/sF+M2g=";
-  cargoSha256 = "sha256-Vk4Gx4whZl+5lBs73pc2qfHWehWmN1m4SYJHM4VtZt8=";
+  rev = "ce4196af53d43469eaf5fec482c11714c932fa74";
+  sha256 = "sha256-Qbt0H+DL2ZU4VYLzGW2XvrbYGnCAY5CaSUKh3dAqqn4=";
+  cargoSha256 = "sha256-Kh/rD2bDbKRNJ5bunDNXz29dz0phOycwOXkC/978ttA=";
 }
