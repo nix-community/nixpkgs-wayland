@@ -18,14 +18,19 @@
 
       waylandOverlay = (final: prev:
         let
-          githubTemplate = { attrName }: prev.callPackage ./templates/github-template.nix { inherit prev attrName; };
+          githubTemplate = { attrName, extra ? {} }: prev.callPackage ./templates/github-template.nix { inherit prev attrName extra; };
           waylandPkgs = rec {
             # wlroots-related
             cage = prev.callPackage ./pkgs/cage {
               inherit (prev) wlroots;
             };
-            drm_info = prev.callPackage ./pkgs/drm_info { };
-            gebaar-libinput = prev.callPackage ./pkgs/gebaar-libinput { };
+            drm_info = githubTemplate {
+              attrName = "drm_info";
+              extra.nativeBuildInputs = [ prev.scdoc ];
+            };
+            gebaar-libinput = githubTemplate {
+              attrName = "gebaar-libinput";
+            };
             glpaper = prev.callPackage ./pkgs/glpaper { };
             grim = prev.callPackage ./pkgs/grim { };
             kanshi = prev.callPackage ./pkgs/kanshi { };
@@ -33,15 +38,28 @@
               inherit (prev) imv;
             };
             lavalauncher = prev.callPackage ./pkgs/lavalauncher { };
-            mako = prev.callPackage ./pkgs/mako { };
-            oguri = prev.callPackage ./pkgs/oguri { };
+            mako = githubTemplate {
+              attrName = "mako";
+            };
+            oguri = githubTemplate {
+              attrName = "oguri";
+            };
             rootbar = prev.callPackage ./pkgs/rootbar { };
             salut = prev.callPackage ./pkgs/salut { };
-            slurp = prev.callPackage ./pkgs/slurp { };
+            slurp = githubTemplate {
+              attrName = "slurp";
+            };
             sway-unwrapped = prev.callPackage ./pkgs/sway-unwrapped { };
-            swaybg = prev.callPackage ./pkgs/swaybg { };
-            swayidle = prev.callPackage ./pkgs/swayidle { };
-            swaylock = prev.callPackage ./pkgs/swaylock { };
+            swaybg = githubTemplate {
+              attrName = "swaybg";
+            };
+            swayidle = githubTemplate {
+              attrName = "swayidle";
+            };
+            swaylock = githubTemplate {
+              attrName = "swaylock";
+              extra.patches = [ ];
+            };
             swaylock-effects = prev.callPackage ./pkgs/swaylock-effects { };
             waybar = prev.callPackage ./pkgs/waybar {
               inherit (prev) waybar;
@@ -89,8 +107,8 @@
             # misc
             aml = prev.callPackage ./pkgs/aml { };
             clipman = prev.callPackage ./pkgs/clipman { };
-            dunst = prev.callPackage ./pkgs/dunst {
-              inherit (prev) dunst;
+            dunst = githubTemplate {
+              attrName = "dunst";
             };
             foot = prev.callPackage ./pkgs/foot {
               inherit foot;
