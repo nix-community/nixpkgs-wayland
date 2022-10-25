@@ -18,6 +18,7 @@
 
       waylandOverlay = (final: prev:
         let
+          githubTemplate = { attrName }: prev.callPackage ./templates/github-template.nix { inherit prev attrName; };
           waylandPkgs = rec {
             # wlroots-related
             cage = prev.callPackage ./pkgs/cage {
@@ -71,8 +72,8 @@
             wl-clipboard = prev.callPackage ./pkgs/wl-clipboard { };
             wl-gammactl = prev.callPackage ./pkgs/wl-gammactl { };
             wldash = prev.callPackage ./pkgs/wldash { };
-            wlogout = prev.callPackage ./pkgs/wlogout {
-              inherit (prev) wlogout;
+            wlogout = githubTemplate {
+              attrName = "wlogout";
             };
             wlroots = prev.callPackage ./pkgs/wlroots {
               inherit (prev) wlroots;
