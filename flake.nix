@@ -18,104 +18,129 @@
 
       waylandOverlay = (final: prev:
         let
-          githubTemplate = { attrName, extra ? {} }: prev.callPackage ./templates/github-template.nix { inherit prev attrName extra; };
-          waylandPkgs = rec {
-            # wlroots-related
-            cage = prev.callPackage ./pkgs/cage {
-              inherit (prev) wlroots;
-            };
-            drm_info = githubTemplate {
+          template = { attrName, nixpkgsAttrName ? "", extra ? { }, replace ? { }, replaceInput ? { } }: prev.callPackage ./templates/template.nix { inherit prev attrName extra replace nixpkgsAttrName replaceInput; };
+          checkMutuallyExclusive = lib.mutuallyExclusive (map (e: e.attrName) attrsExtraChangesNeeded) (map (e: e.attrName) attrsNoExtraChangesNeeded);
+          genPackagesGH =
+            if checkMutuallyExclusive then
+              lib.listToAttrs
+                (map
+                  (a: {
+                    name = a.attrName;
+                    value = template a;
+                  })
+                  (attrsExtraChangesNeeded ++ attrsNoExtraChangesNeeded)
+                )
+            else throw "some 'attrName' value is in both attrsExtraChangesNeeded and attrsNoExtraChangesNeeded";
+
+          # these need extra nativeBuildInputs or buildInputs or the patches cleared
+          attrsExtraChangesNeeded = [
+            {
               attrName = "drm_info";
               extra.nativeBuildInputs = [ prev.scdoc ];
-            };
-            gebaar-libinput = githubTemplate {
-              attrName = "gebaar-libinput";
-            };
-            glpaper = prev.callPackage ./pkgs/glpaper { };
-            grim = prev.callPackage ./pkgs/grim { };
-            kanshi = prev.callPackage ./pkgs/kanshi { };
-            imv = prev.callPackage ./pkgs/imv {
-              inherit (prev) imv;
-            };
-            lavalauncher = prev.callPackage ./pkgs/lavalauncher { };
-            mako = githubTemplate {
-              attrName = "mako";
-            };
-            oguri = githubTemplate {
-              attrName = "oguri";
-            };
-            rootbar = prev.callPackage ./pkgs/rootbar { };
-            salut = prev.callPackage ./pkgs/salut { };
-            slurp = githubTemplate {
-              attrName = "slurp";
-            };
-            sway-unwrapped = prev.callPackage ./pkgs/sway-unwrapped { };
-            swaybg = githubTemplate {
-              attrName = "swaybg";
-            };
-            swayidle = githubTemplate {
-              attrName = "swayidle";
-            };
-            swaylock = githubTemplate {
+            }
+            {
               attrName = "swaylock";
-              extra.patches = [ ];
-            };
-            swaylock-effects = prev.callPackage ./pkgs/swaylock-effects { };
-            waybar = prev.callPackage ./pkgs/waybar {
-              inherit (prev) waybar;
-            };
-            # waybar needs 8.1.1
-            # https://github.com/NixOS/nixpkgs/pull/179584
-            fmt_8 = prev.fmt_8.overrideAttrs (oldAttrs: {
-              version = "8.1.1";
-              src = prev.fetchFromGitHub {
-                owner = "fmtlib";
-                repo = "fmt";
-                rev = "8.1.1";
-                sha256 = "sha256-leb2800CwdZMJRWF5b1Y9ocK0jXpOX/nwo95icDf308=";
+              replace.patches = [ ];
+            }
+            {
+              attrName = "grim";
+              replace.patches = [ ];
+            }
+            {
+              attrName = "waybar";
+              extra.nativeBuildInputs = [ prev.libjack2 ];
+            }
+            {
+              attrName = "gtk-layer-shell";
+              extra.nativeBuildInputs = [ prev.vala ];
+            }
+            {
+              attrName = "wl-gammactl";
+              replace.postUnpack = ''
+                ln -s ${prev.wlr-protocols}/share/wlr-protocols .
+              '';
+            }
+            {
+              attrName = "sway-unwrapped";
+              extra.buildInputs = [ prev.xorg.xcbutilwm ];
+              replaceInput = {
+                pcre = prev.pcre2;
               };
-            });
+            }
+            {
+              attrName = "cage";
+              replaceInput = {
+                wlroots = prev.wlroots;
+              };
+            }
 
-            waypipe = prev.callPackage ./pkgs/waypipe { };
+
+          ];
+
+          # these do not need changes from the package that nixpkgs has
+          attrsNoExtraChangesNeeded = lib.attrValues (lib.genAttrs [
+            "dunst"
+            "gebaar-libinput"
+            "glpaper"
+            "imv"
+            "mako"
+            "neatvnc"
+            "oguri"
+            "slurp"
+            "swaybg"
+            "swayidle"
+            "swaylock-effects"
+            "wayvnc"
+            "wf-recorder"
+            "wl-clipboard"
+            "wlogout"
+            "wlr-randr"
+            "wofi"
+            "wtype"
+            "wshowkeys"
+            "aml"
+            "xdg-desktop-portal-wlr"
+            "wdisplays"
+            "kanshi"
+            "wev"
+            "lavalauncher"
+            "wlsunset"
+            "rootbar"
+            "waypipe"
+          ]
+            (s: { attrName = s; }));
+
+          waylandPkgs = genPackagesGH // (rec {
+            # wlroots-related
+            salut = prev.callPackage ./pkgs/salut { };
             wayprompt = prev.callPackage ./pkgs/wayprompt { };
-            wayvnc = prev.callPackage ./pkgs/wayvnc { };
             wlvncc = prev.callPackage ./pkgs/wlvncc {
               libvncserver = libvncserver_master;
             };
-            wdisplays = prev.callPackage ./pkgs/wdisplays { };
-            wev = prev.callPackage ./pkgs/wev { };
-            wf-recorder = prev.callPackage ./pkgs/wf-recorder { };
             wlay = prev.callPackage ./pkgs/wlay { };
-            obs-wlrobs = prev.callPackage ./pkgs/obs-wlrobs { };
-            wl-clipboard = prev.callPackage ./pkgs/wl-clipboard { };
-            wl-gammactl = prev.callPackage ./pkgs/wl-gammactl { };
-            wldash = prev.callPackage ./pkgs/wldash { };
-            wlogout = githubTemplate {
-              attrName = "wlogout";
+            obs-wlrobs = template {
+              nixpkgsAttrName = "obs-studio-plugins.wlrobs";
+              attrName = "obs-wlrobs";
             };
+            # the above should actually be, but there's eval error and doing
+            # 'nix build -f packages.nix' would build all packages in obs-studio-plugins
+            # obs-studio-plugins = prev.obs-studio-plugins // {
+            #   wlrobs = template {
+            #     nixpkgsAttrName = "obs-studio-plugins.wlrobs";
+            #     attrName = "wlrobs";
+            #   };
+            # };
+            wldash = prev.callPackage ./pkgs/wldash { };
             wlroots = prev.callPackage ./pkgs/wlroots {
               inherit (prev) wlroots;
             };
-            wlr-randr = prev.callPackage ./pkgs/wlr-randr { };
-            wlsunset = prev.callPackage ./pkgs/wlsunset { };
-            wofi = prev.callPackage ./pkgs/wofi { };
-            wtype = prev.callPackage ./pkgs/wtype { };
-            wshowkeys = prev.callPackage ./pkgs/wshowkeys { };
-
-            xdg-desktop-portal-wlr = prev.callPackage ./pkgs/xdg-desktop-portal-wlr { };
 
             # misc
-            aml = prev.callPackage ./pkgs/aml { };
             clipman = prev.callPackage ./pkgs/clipman { };
-            dunst = githubTemplate {
-              attrName = "dunst";
-            };
             foot = prev.callPackage ./pkgs/foot {
               inherit foot;
             };
-            gtk-layer-shell = prev.callPackage ./pkgs/gtk-layer-shell { };
             i3status-rust = prev.callPackage ./pkgs/i3status-rust { };
-            neatvnc = prev.callPackage ./pkgs/neatvnc { };
             shotman = prev.callPackage ./pkgs/shotman { };
             sirula = prev.callPackage ./pkgs/sirula { };
             wlfreerdp = prev.callPackage ./pkgs/wlfreerdp {
@@ -128,7 +153,7 @@
             libvncserver_master = prev.callPackage ./pkgs/libvncserver_master {
               inherit (prev) libvncserver;
             };
-          };
+          });
         in
         (waylandPkgs // { inherit waylandPkgs; })
       );
