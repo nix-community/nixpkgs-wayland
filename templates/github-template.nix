@@ -16,6 +16,7 @@ overridenAttr.overrideAttrs (old: (
     version = metadata.rev;
     src = prev.fetchFromGitHub {
       inherit (metadata) owner repo rev sha256;
+      fetchSubmodules = (builtins.hasAttr "fetchSubmodules" metadata && metadata.fetchSubmodules);
     };
   } // lib.optionalAttrs (extra ? nativeBuildInputs)
     {
