@@ -4,6 +4,7 @@ on:
   push:
     branches:
     - master
+    - ci
   schedule:
     - cron: '*/30 * * * *'
   workflow_dispatch:
@@ -11,23 +12,18 @@ jobs:
   update:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - uses: cachix/install-nix-action@v14
+    - uses: actions/checkout@v3
+    - name: setup-nix
+      uses: cachix/install-nix-action@v18
+      with:
+        extra_nix_config: |
+          experimental-features = nix-command flakes ca-references
+          extra-binary-caches = https://nixpkgs-wayland.cachix.org
+          extra-trusted-public-keys = nixpkgs-wayland.cachix.org-1:3lwxaILxMRkVhehr5StQprHdEo4IrE8sRho9R9HOLYA=
+          access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
     - name: prepare
-      run: |
-        .github/exec nix-build --version
-    - name: git-setup
-      run: |
-        cat << EOF | .github/exec
-          git config --global user.name 'Cole Botkens'
-          git config --global user.email 'cole.mickens+colebot@gmail.com'
-          git remote update
-        EOF
+      run: nix develop -c .github/init
     - name: update
       env:
         CACHIX_SIGNING_KEY_NIXPKGS_WAYLAND: "${{ secrets.cachix_signing_key_nixpkgs_wayland }}"
-      run: |
-        .github/exec ./update.sh
-    - name: push
-      run: |
-        .github/exec git push origin HEAD
+      run: nix develop -c ./update.sh update
