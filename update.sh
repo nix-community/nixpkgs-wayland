@@ -42,35 +42,43 @@ function update_readme() {
   mv README2.md README.md
 }
 
-# if first arg is "_nixpkgs" then we only update nixpkgs and stop
-# but everyone tries to advances inputs
-nix "${nixargs[@]}" flake update --commit-lock-file
+action="${1}"; shift
 
-if [[ "${1:-""}" != "_nixpkgs" ]]; then
-  # we were not just doing an internal nixpkgs advance attempt
-  # so DO update pkgs
 
-  # rewrite readme for consistency's sake
-  pkgslist=()
-  for p in `ls -v -d -- ./pkgs/*/ | sort -V`; do
-    readme_entry "${p}"
-  done
-  update_readme
-  git commit README.md -m "${cprefix} README.md" || true
-
-  # actual internal update
-  "${DIR}/pkgs/update.sh"
-  echo "internal update status = $?"
-  cd "${DIR}"
+if [[ "${action}" == "advance" || "${action}" == "update" ]]; then
+  ##
+  ## Advance nixpkgs 
+  nix "${nixargs[@]}" flake update --commit-lock-file
 fi
 
 
-# build (uncached)
+if [[ "${action}" == "update" ]]; then
+  ##
+  ## Update pkgs 
+  if [[ "${1:-""}" != "_nixpkgs" ]]; then
+    # rewrite readme for consistency's sake
+    pkgslist=()
+    for p in `ls -v -d -- ./pkgs/*/ | sort -V`; do
+      readme_entry "${p}"
+    done
+    update_readme
+    git commit README.md -m "${cprefix} README.md" || true
+  
+    # actual internal update
+    "${DIR}/pkgs/update.sh"
+    echo "internal update status = $?"
+    cd "${DIR}"
+  fi
+fi
+
+##
+## Build uncached 
 set -x
 out="$(mktemp -d)"
 nix-build-uncached -build-flags "$(printf '\"%s\" ' "${buildargs[@]}" "${nixargs[@]}" "--out-link" "${out}/result")" packages.nix
 
-# push to cachix
+##
+## Push anything built to Cachix
 if find ${out} | grep result; then
   nix "${nixargs[@]}" path-info --json -r ${out}/result* > ${out}/path-info.json
   jq -r 'map(select(.ca == null and .signatures == null)) | map(.path) | .[]' < "${out}/path-info.json" > "${out}/paths"
@@ -81,4 +89,10 @@ if find ${out} | grep result; then
   fi
   set -x
   cachix push "${cache}" < "${out}/paths"
+fi
+
+if [[ "${action}" == "advance" || "${action}" == "update" ]]; then
+  ##
+  ## Push to `master`
+  git push origin HEAD
 fi

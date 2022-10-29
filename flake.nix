@@ -177,8 +177,6 @@
               [ ]
               ++ (with pkgs_.cachix; [ cachix ])
               ++ (with pkgs_.nixpkgs; [
-                nixVersions.unstable
-                nix-prefetch
                 nix-build-uncached
                 bash
                 cacert
