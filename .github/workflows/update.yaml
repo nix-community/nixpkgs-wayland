@@ -25,7 +25,7 @@ jobs:
         EOF
     - name: update
       env:
-        CACHIX_SIGNING_KEY: "${{ secrets.cachix_key_nixpkgs_wayland }}"
+        CACHIX_SIGNING_KEY_NIXPKGS_WAYLAND: "${{ secrets.cachix_signing_key_nixpkgs_wayland }}"
       run: |
         .github/exec ./update.sh
     - name: push
