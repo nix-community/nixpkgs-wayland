@@ -189,7 +189,6 @@
                 openssh
                 ripgrep
                 parallel
-                haskellPackages.dhall-json
               ]);
           };
 
