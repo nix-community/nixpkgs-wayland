@@ -11,8 +11,6 @@ cprefix="auto-update:"
 set +x
 if [[ "${CACHIX_SIGNING_KEY:-}" != "" ]]; then
   cachixkey="${CACHIX_SIGNING_KEY}"
-elif [[ -f "/run/secrets/cachix.dhall" ]] &>/dev/null; then
-  cachixkey="$(cat /run/secrets/cachix.dhall| dhall-to-json | jq -r ".binaryCaches[] | select(.name == \"nixpkgs-wayland\") | .secretKey")"
 else
   echo "set CACHIX_SIGNING_KEY" && exit -1
 fi
