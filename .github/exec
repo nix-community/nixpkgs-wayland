@@ -13,7 +13,7 @@ elif [[ "${1-:""}" != "" ]] && [[ "${1-:""}" != ":" ]]; then
   nix-shell --pure \
     --keep GITHUB_ACTION \
     --keep CI_JOB_ID \
-    --keep CACHIX_SIGNING_KEY \
+    --keep CACHIX_SIGNING_KEY_NIXPKGS_WAYLAND \
     --run "$(printf '\"%s\" ' "${@}")"
   exit
 else
@@ -21,7 +21,7 @@ else
   cat /dev/stdin | \
     nix-shell --pure \
       --keep CI_JOB_ID \
-      --keep CACHIX_SIGNING_KEY \
+      --keep CACHIX_SIGNING_KEY_NIXPKGS_WAYLAND \
       --run "bash --noprofile --norc -eo pipefail </dev/stdin"
   exit
 fi

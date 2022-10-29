@@ -8,14 +8,6 @@ pkgentries=(); nixpkgentries=();
 cache="nixpkgs-wayland"
 cprefix="auto-update:"
 
-set +x
-if [[ "${CACHIX_SIGNING_KEY:-}" != "" ]]; then
-  cachixkey="${CACHIX_SIGNING_KEY}"
-else
-  echo "set CACHIX_SIGNING_KEY" && exit -1
-fi
-set -x
-
 nixargs=(--experimental-features 'nix-command flakes')
 buildargs=(
   --option 'extra-binary-caches' 'https://cache.nixos.org https://nixpkgs-wayland.cachix.org'
@@ -82,5 +74,11 @@ nix-build-uncached -build-flags "$(printf '\"%s\" ' "${buildargs[@]}" "${nixargs
 if find ${out} | grep result; then
   nix "${nixargs[@]}" path-info --json -r ${out}/result* > ${out}/path-info.json
   jq -r 'map(select(.ca == null and .signatures == null)) | map(.path) | .[]' < "${out}/path-info.json" > "${out}/paths"
+
+  set +x
+  if [[ "${CACHIX_SIGNING_KEY_NIXPKGS_WAYLAND:-}" != "" ]]; then
+    export CACHIX_SIGNING_KEY="${CACHIX_SIGNING_KEY_NIXPKGS_WAYLAND}"
+  fi
+  set -x
   cachix push "${cache}" < "${out}/paths"
 fi
