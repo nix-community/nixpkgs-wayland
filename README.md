@@ -12,6 +12,9 @@ set will often contain **unreleased** versions.
 
 Community chat is on Matrix: [#nixpkgs-wayland:matrix.org](https://matrix.to/#/#nixpkgs-wayland:matrix.org). We are not on Libera.
 
+Started by: [**@colemickens**](https://github.com/colemickens)
+and co-maintained by [**@Artturin**](https://github.com/Artturin) (🙏).
+
 <!-- TOC -->
 - [overview](#overview)
 - [Usage](#usage)
