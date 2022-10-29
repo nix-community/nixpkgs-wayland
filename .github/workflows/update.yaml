@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - uses: cachix/install-nix-action@v14
+    - uses: cachix/install-nix-action@v18
     - name: prepare
       run: |
         .github/exec nix-build --version

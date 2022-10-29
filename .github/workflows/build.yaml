@@ -13,7 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: setup-nix
-      uses: cachix/install-nix-action@v14
+      uses: cachix/install-nix-action@v18
       with:
         install_url: https://nixos-nix-install-tests.cachix.org/serve/a3xxamann3mf9s8fp7kzdfdppli2zzhi/install
         install_options: --tarball-url-prefix https://nixos-nix-install-tests.cachix.org/serve --daemon
