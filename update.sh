@@ -42,7 +42,7 @@ function update_readme() {
   mv README2.md README.md
 }
 
-action="${1}"; shift
+action="${1:-"update"}"; shift || true
 
 
 if [[ "${action}" == "advance" || "${action}" == "update" ]]; then
