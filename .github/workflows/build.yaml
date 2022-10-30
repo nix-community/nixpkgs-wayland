@@ -3,7 +3,6 @@ on:
   push:
     branches:
     - master
-    - ci
   schedule:
     - cron: '17 * * * *'
   workflow_dispatch:
