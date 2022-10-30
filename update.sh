@@ -88,7 +88,10 @@ if find ${out} | grep result; then
     export CACHIX_SIGNING_KEY="${CACHIX_SIGNING_KEY_NIXPKGS_WAYLAND}"
   fi
   set -x
-  cachix push "${cache}" < "${out}/paths"
+
+  cat "${out}/paths" \
+    | tee /dev/stderr \
+    | cachix push "${cache}" < "${out}/paths"
 fi
 
 if [[ "${action}" == "advance" || "${action}" == "update" ]]; then
