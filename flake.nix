@@ -18,7 +18,7 @@
 
       waylandOverlay = (final: prev:
         let
-          template = { attrName, nixpkgsAttrName ? "", extra ? { }, replace ? { }, replaceInput ? { } }: prev.callPackage ./templates/template.nix { inherit prev attrName extra replace nixpkgsAttrName replaceInput; };
+          template = { attrName, nixpkgsAttrName ? "", extra ? { }, replace ? { }, replaceInput ? { } }: import ./templates/template.nix { inherit prev attrName extra replace nixpkgsAttrName replaceInput; };
           checkMutuallyExclusive = lib.mutuallyExclusive (map (e: e.attrName) attrsExtraChangesNeeded) (map (e: e.attrName) attrsNoExtraChangesNeeded);
           genPackagesGH =
             if checkMutuallyExclusive then
