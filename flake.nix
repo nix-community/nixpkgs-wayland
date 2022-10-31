@@ -73,6 +73,10 @@
                 inherit (prev) wlroots;
               };
             }
+            {
+              attrName = "libvncserver_master";
+              nixpkgsAttrName = "libvncserver";
+            }
 
 
           ];
@@ -115,7 +119,7 @@
             salut = prev.callPackage ./pkgs/salut { };
             wayprompt = prev.callPackage ./pkgs/wayprompt { };
             wlvncc = prev.callPackage ./pkgs/wlvncc {
-              libvncserver = libvncserver_master;
+              libvncserver = final.libvncserver_master;
             };
             wlay = prev.callPackage ./pkgs/wlay { };
             obs-wlrobs = template {
@@ -149,10 +153,6 @@
             };
             # wayfire stuff
             wayfire-unstable = prev.callPackage ./pkgs/wayfire-unstable { };
-
-            libvncserver_master = prev.callPackage ./pkgs/libvncserver_master {
-              inherit (prev) libvncserver;
-            };
           };
         in
         waylandPkgs // { inherit waylandPkgs; };
