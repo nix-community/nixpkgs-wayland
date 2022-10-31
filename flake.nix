@@ -189,6 +189,8 @@
               ]);
           };
 
+          formatter = pkgs_.nixpkgs.nixpkgs-fmt;
+
           packages = waypkgs.waylandPkgs //
             {
               default = (waypkgs.linkFarmFromDrvs
