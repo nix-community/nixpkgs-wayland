@@ -174,8 +174,7 @@
               [ ]
               ++ (with pkgs_.cachix; [ cachix ])
               ++ (with pkgs_.nixpkgs; [
-                nix-build-uncached
-                bash
+                nushell
                 cacert
                 curl
                 git

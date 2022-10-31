@@ -22,4 +22,4 @@ jobs:
     - name: advance
       env:
         CACHIX_SIGNING_KEY_NIXPKGS_WAYLAND: "${{ secrets.cachix_signing_key_nixpkgs_wayland }}"
-      run: nix develop -c ./update.sh advance
+      run: nix develop -c ./main.nu advance
