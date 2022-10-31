@@ -193,8 +193,12 @@
           packages = (
             waypkgs.waylandPkgs //
             {
-              default = waypkgs.linkFarmFromDrvs "nixpkgs-wayland-pkgs"
-                (builtins.attrValues waypkgs.waylandPkgs);
+              default = (
+                (waypkgs.linkFarmFromDrvs
+                  "nixpkgs-wayland-pkgs"
+                  (builtins.attrValues waypkgs.waylandPkgs)
+                ).overrideAttrs(old: { allowSubstitutes = true; })
+              );
             }
           );
         })

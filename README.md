@@ -2,6 +2,7 @@
 
 [![Build](https://github.com/nix-community/nixpkgs-wayland/actions/workflows/build.yaml/badge.svg)](https://github.com/nix-community/nixpkgs-wayland/actions/workflows/build.yaml)
 [![Update](https://github.com/nix-community/nixpkgs-wayland/actions/workflows/update.yaml/badge.svg)](https://github.com/nix-community/nixpkgs-wayland/actions/workflows/update.yaml)
+[![Advance](https://github.com/nix-community/nixpkgs-wayland/actions/workflows/advance.yaml/badge.svg)](https://github.com/nix-community/nixpkgs-wayland/actions/workflows/advance.yaml)
 
 ## overview
 

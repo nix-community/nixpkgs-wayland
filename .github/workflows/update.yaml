@@ -1,10 +1,6 @@
 name: "Update"
 concurrency: update-advance
 on:
-  push:
-    branches:
-    - master
-    - ci
   schedule:
     - cron: '*/30 * * * *'
   workflow_dispatch:

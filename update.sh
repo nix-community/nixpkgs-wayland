@@ -42,7 +42,7 @@ function update_readme() {
   mv README2.md README.md
 }
 
-action="${1}"; shift
+action="${1:-"update"}"; shift || true
 
 
 if [[ "${action}" == "advance" || "${action}" == "update" ]]; then
@@ -88,7 +88,10 @@ if find ${out} | grep result; then
     export CACHIX_SIGNING_KEY="${CACHIX_SIGNING_KEY_NIXPKGS_WAYLAND}"
   fi
   set -x
-  cachix push "${cache}" < "${out}/paths"
+
+  cat "${out}/paths" \
+    | tee /dev/stderr \
+    | cachix push "${cache}" < "${out}/paths"
 fi
 
 if [[ "${action}" == "advance" || "${action}" == "update" ]]; then
