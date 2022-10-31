@@ -25,4 +25,4 @@ jobs:
     - name: build
       env:
         CACHIX_SIGNING_KEY_NIXPKGS_WAYLAND: "${{ secrets.cachix_signing_key_nixpkgs_wayland }}"
-      run: nix develop -c ./update.sh build
+      run: nix develop -c ./main.nu build
