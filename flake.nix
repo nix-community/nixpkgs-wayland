@@ -77,8 +77,10 @@
               attrName = "libvncserver_master";
               nixpkgsAttrName = "libvncserver";
             }
-
-
+            {
+              attrName = "wlfreerdp";
+              nixpkgsAttrName = "freerdp";
+            }
           ];
 
           # these do not need changes from the package that nixpkgs has
@@ -147,10 +149,6 @@
             i3status-rust = prev.callPackage ./pkgs/i3status-rust { };
             shotman = prev.callPackage ./pkgs/shotman { };
             sirula = prev.callPackage ./pkgs/sirula { };
-            wlfreerdp = prev.callPackage ./pkgs/wlfreerdp {
-              inherit (prev) libpulseaudio;
-              inherit (prev.gst_all_1) gstreamer gst-plugins-base gst-plugins-good;
-            };
             # wayfire stuff
             wayfire-unstable = prev.callPackage ./pkgs/wayfire-unstable { };
           };
