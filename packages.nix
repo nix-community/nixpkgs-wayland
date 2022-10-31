@@ -9,4 +9,4 @@ let
     )
     { src = ./.; };
 in
-  flake.defaultNix.packages."${builtins.currentSystem}".default
+flake.defaultNix.packages."${builtins.currentSystem}".default

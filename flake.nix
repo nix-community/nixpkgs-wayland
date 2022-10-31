@@ -192,12 +192,12 @@
           formatter = pkgs_.nixpkgs.nixpkgs-fmt;
 
           packages = waypkgs.waylandPkgs //
-            {
-              default = (waypkgs.linkFarmFromDrvs
-                  "nixpkgs-wayland-pkgs"
-                  (builtins.attrValues waypkgs.waylandPkgs)
-                ).overrideAttrs(old: { allowSubstitutes = true; });
-            };
+          {
+            default = (waypkgs.linkFarmFromDrvs
+              "nixpkgs-wayland-pkgs"
+              (builtins.attrValues waypkgs.waylandPkgs)
+            ).overrideAttrs (old: { allowSubstitutes = true; });
+          };
         })
     // {
       # overlays have to be outside of eachSystem block

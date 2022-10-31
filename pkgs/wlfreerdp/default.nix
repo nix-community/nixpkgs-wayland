@@ -1,10 +1,32 @@
-{ stdenv, lib, fetchFromGitHub, cmake, pkg-config
-, alsa-lib, ffmpeg, glib, openssl, pcre, zlib
-, libX11, libXcursor, libXdamage, libXext, libXi, libXinerama, libXrandr, libXrender, libXv
-, libxkbcommon, libxkbfile
+{ stdenv
+, lib
+, fetchFromGitHub
+, cmake
+, pkg-config
+, alsa-lib
+, ffmpeg
+, glib
+, openssl
+, pcre
+, zlib
+, libX11
+, libXcursor
+, libXdamage
+, libXext
+, libXi
+, libXinerama
+, libXrandr
+, libXrender
+, libXv
+, libxkbcommon
+, libxkbfile
 , libusb1
 , wayland
-, gstreamer, gst-plugins-base, gst-plugins-good, libunwind, orc
+, gstreamer
+, gst-plugins-base
+, gst-plugins-good
+, libunwind
+, orc
 , libpulseaudio ? null
 , cups ? null
 , pcsclite ? null
@@ -21,9 +43,9 @@ stdenv.mkDerivation rec {
   version = metadata.rev;
 
   src = fetchFromGitHub {
-    owner  = "FreeRDP";
-    repo   = "FreeRDP";
-    rev    = version;
+    owner = "FreeRDP";
+    repo = "FreeRDP";
+    rev = version;
     inherit (metadata) sha256;
   };
 
@@ -42,15 +64,38 @@ stdenv.mkDerivation rec {
   '';
 
   buildInputs = with lib; [
-    alsa-lib cups ffmpeg glib openssl pcre pcsclite libpulseaudio zlib
-    gstreamer gst-plugins-base gst-plugins-good libunwind orc
-    libX11 libXcursor libXdamage libXext libXi libXinerama libXrandr libXrender libXv
-    libxkbcommon libxkbfile
-    wayland libusb1
+    alsa-lib
+    cups
+    ffmpeg
+    glib
+    openssl
+    pcre
+    pcsclite
+    libpulseaudio
+    zlib
+    gstreamer
+    gst-plugins-base
+    gst-plugins-good
+    libunwind
+    orc
+    libX11
+    libXcursor
+    libXdamage
+    libXext
+    libXi
+    libXinerama
+    libXrandr
+    libXrender
+    libXv
+    libxkbcommon
+    libxkbfile
+    wayland
+    libusb1
   ] ++ optional stdenv.isLinux systemd;
 
   nativeBuildInputs = [
-    cmake pkg-config
+    cmake
+    pkg-config
   ];
 
   enableParallelBuilding = true;
@@ -61,11 +106,11 @@ stdenv.mkDerivation rec {
     "-DCMAKE_INSTALL_LIBDIR=lib"
     "-DWITH_CUNIT=OFF"
     "-DWITH_OSS=OFF"
-  ] ++ optional (libpulseaudio != null)       "-DWITH_PULSE=ON"
-    ++ optional (cups != null)                "-DWITH_CUPS=ON"
-    ++ optional (pcsclite != null)            "-DWITH_PCSC=ON"
-    ++ optional buildServer                   "-DWITH_SERVER=ON"
-    ++ optional stdenv.isx86_64             "-DWITH_SSE2=ON";
+  ] ++ optional (libpulseaudio != null) "-DWITH_PULSE=ON"
+  ++ optional (cups != null) "-DWITH_CUPS=ON"
+  ++ optional (pcsclite != null) "-DWITH_PCSC=ON"
+  ++ optional buildServer "-DWITH_SERVER=ON"
+  ++ optional stdenv.isx86_64 "-DWITH_SSE2=ON";
 
   meta = with lib; {
     description = "A Remote Desktop Protocol Client";

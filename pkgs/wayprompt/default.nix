@@ -53,7 +53,7 @@ stdenv.mkDerivation rec {
     ln -s "$out/bin/wayprompt" "$out/bin/wayprompt-cli"
     runHook postInstall
   '';
-  
+
   installFlags = [ "DESTDIR=$(out)" ];
 
   meta = with lib; {

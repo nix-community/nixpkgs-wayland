@@ -1,11 +1,25 @@
-{ stdenv, lib, fetchFromGitHub
-, pkg-config, meson, ninja
-, wayland, wayland-protocols
-, libxkbcommon, libvncserver
-, libpthreadstubs, lzo
-, pixman, libuv, libglvnd, libjpeg, libpng
-, neatvnc, libX11, libdrm
-, aml, mesa
+{ stdenv
+, lib
+, fetchFromGitHub
+, pkg-config
+, meson
+, ninja
+, wayland
+, wayland-protocols
+, libxkbcommon
+, libvncserver
+, libpthreadstubs
+, lzo
+, pixman
+, libuv
+, libglvnd
+, libjpeg
+, libpng
+, neatvnc
+, libX11
+, libdrm
+, aml
+, mesa
 , ffmpeg
 , openssl
 }:
@@ -26,12 +40,22 @@ stdenv.mkDerivation rec {
 
   nativeBuildInputs = [ pkg-config meson ninja ];
   buildInputs = [
-    wayland wayland-protocols
-    libxkbcommon libvncserver
-    libpthreadstubs lzo
-    pixman libuv libglvnd libjpeg libpng
-    neatvnc libX11 libdrm
-    aml mesa
+    wayland
+    wayland-protocols
+    libxkbcommon
+    libvncserver
+    libpthreadstubs
+    lzo
+    pixman
+    libuv
+    libglvnd
+    libjpeg
+    libpng
+    neatvnc
+    libX11
+    libdrm
+    aml
+    mesa
     ffmpeg
     openssl
   ];
@@ -40,9 +64,9 @@ stdenv.mkDerivation rec {
 
   meta = with lib; {
     description = "A Wayland Native VNC Client";
-    homepage    = "https://github.com/any1/wlvncc";
-    license     = licenses.isc;
-    platforms   = platforms.linux;
+    homepage = "https://github.com/any1/wlvncc";
+    license = licenses.isc;
+    platforms = platforms.linux;
     maintainers = with maintainers; [ colemickens ];
   };
 }

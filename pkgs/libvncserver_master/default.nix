@@ -2,7 +2,7 @@
 
 let metadata = import ./metadata.nix; in
 
-libvncserver.overrideAttrs(old: {
+libvncserver.overrideAttrs (old: {
   src = fetchFromGitHub {
     owner = "LibVNC";
     repo = "libvncserver";

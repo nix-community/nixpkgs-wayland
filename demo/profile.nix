@@ -14,8 +14,8 @@ in
   #networking.networkmanager.enable = true;
 
   fonts.fonts = with pkgs; [
-    dejavu_fonts    # just a basic good fond
-    font-awesome_5  # needed by i3status-rust
+    dejavu_fonts # just a basic good fond
+    font-awesome_5 # needed by i3status-rust
   ];
 
   # add sound support
@@ -46,7 +46,7 @@ in
   '';
 
   # manage those with home-manager
-  programs.sway-beta.extraPackages = [];
+  programs.sway-beta.extraPackages = [ ];
 
   # Add the required groups for the user to get access
   users.extraUsers."${user}" = {

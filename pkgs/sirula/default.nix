@@ -1,5 +1,16 @@
-{ stdenv, lib, fetchFromGitHub, rustPlatform, pkg-config, glib, cairo, pango, atk
-, gdk-pixbuf, gtk3, gtk-layer-shell }:
+{ stdenv
+, lib
+, fetchFromGitHub
+, rustPlatform
+, pkg-config
+, glib
+, cairo
+, pango
+, atk
+, gdk-pixbuf
+, gtk3
+, gtk-layer-shell
+}:
 
 let
   metadata = import ./metadata.nix;

@@ -1,16 +1,37 @@
-{ stdenv, lib, fetchFromGitHub
-, meson, pkg-config, ninja, cmake
-, wayland, wayland-protocols
-, cairo, glm
-, libevdev, freetype, libinput
-, pixman, libxkbcommon, libdrm
-, libjpeg, libpng
-, libGL, mesa
-, libcap, xcbutilerrors, xcbutilwm, libxml2
+{ stdenv
+, lib
+, fetchFromGitHub
+, meson
+, pkg-config
+, ninja
+, cmake
+, wayland
+, wayland-protocols
+, cairo
+, glm
+, libevdev
+, freetype
+, libinput
+, pixman
+, libxkbcommon
+, libdrm
+, libjpeg
+, libpng
+, libGL
+, mesa
+, libcap
+, xcbutilerrors
+, xcbutilwm
+, libxml2
 , libuuid
-, seatd, xorg, xwayland, doctest
+, seatd
+, xorg
+, xwayland
+, doctest
 , pango
-, vulkan-headers, vulkan-loader, glslang
+, vulkan-headers
+, vulkan-loader
+, glslang
 , buildDocs ? true
 }:
 
@@ -31,25 +52,41 @@ stdenv.mkDerivation rec {
   };
 
   nativeBuildInputs = [
-    pkg-config meson ninja cmake
+    pkg-config
+    meson
+    ninja
+    cmake
     doctest
   ];
   buildInputs = [
     # egl glesv2
-    wayland wayland-protocols
-    cairo glm
-    libevdev freetype libinput
-    pixman libxkbcommon libdrm
-    libjpeg libpng
-    libGL mesa
-    libcap xcbutilerrors xcbutilwm libxml2
+    wayland
+    wayland-protocols
+    cairo
+    glm
+    libevdev
+    freetype
+    libinput
+    pixman
+    libxkbcommon
+    libdrm
+    libjpeg
+    libpng
+    libGL
+    mesa
+    libcap
+    xcbutilerrors
+    xcbutilwm
+    libxml2
     libuuid
     seatd
     xwayland
     doctest
     xorg.xcbutilrenderutil
     pango
-    vulkan-headers vulkan-loader glslang
+    vulkan-headers
+    vulkan-loader
+    glslang
   ];
   mesonFlags = [
     "-Duse_system_wlroots=disabled"
@@ -60,9 +97,9 @@ stdenv.mkDerivation rec {
 
   meta = with lib; {
     description = "3D wayland compositor";
-    homepage    = "https://wayfire.org/";
-    license     = licenses.mit;
-    platforms   = platforms.linux;
+    homepage = "https://wayfire.org/";
+    license = licenses.mit;
+    platforms = platforms.linux;
     maintainers = with maintainers; [ colemickens ];
   };
 }

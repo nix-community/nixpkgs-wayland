@@ -14,4 +14,4 @@ let
     overlays = [ waylandOverlay ];
   };
 in
-  pkgs.waylandPkgs.waybar
+pkgs.waylandPkgs.waybar

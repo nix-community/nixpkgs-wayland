@@ -1,7 +1,13 @@
-{ lib, rustPlatform, fetchFromGitHub
+{ lib
+, rustPlatform
+, fetchFromGitHub
 , pkg-config
-, dbus, libpulseaudio, alsa-lib, libxkbcommon
-, wayland, fontconfig
+, dbus
+, libpulseaudio
+, alsa-lib
+, libxkbcommon
+, wayland
+, fontconfig
 }:
 
 let
@@ -26,7 +32,7 @@ rustPlatform.buildRustPackage rec {
   buildInputs = [ dbus libpulseaudio alsa-lib fontconfig ];
 
   dontPatchELF = true;
-  
+
   postInstall = ''
     patchelf --set-rpath ${libraryPath}:$(patchelf --print-rpath $out/bin/wldash) $out/bin/wldash
   '';
