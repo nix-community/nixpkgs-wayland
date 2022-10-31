@@ -56,6 +56,7 @@ let
 in
 overridenAttr.overrideAttrs (oldAttrs: (
   {
+    pname = attrName;
     version = metadata.rev;
     inherit src;
   } // lib.optionalAttrs (extra ? nativeBuildInputs)
