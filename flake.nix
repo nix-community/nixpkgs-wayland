@@ -16,7 +16,7 @@
       inherit (inputs.lib-aggregate) lib;
       inherit (inputs) self;
 
-      waylandOverlay = (final: prev:
+      waylandOverlay = final: prev:
         let
           template = { attrName, nixpkgsAttrName ? "", extra ? { }, replace ? { }, replaceInput ? { } }: import ./templates/template.nix { inherit prev attrName extra replace nixpkgsAttrName replaceInput; };
           checkMutuallyExclusive = lib.mutuallyExclusive (map (e: e.attrName) attrsExtraChangesNeeded) (map (e: e.attrName) attrsNoExtraChangesNeeded);
@@ -70,7 +70,7 @@
             {
               attrName = "cage";
               replaceInput = {
-                wlroots = prev.wlroots;
+                inherit (prev) wlroots;
               };
             }
 
@@ -110,7 +110,7 @@
           ]
             (s: { attrName = s; }));
 
-          waylandPkgs = genPackagesGH // (rec {
+          waylandPkgs = genPackagesGH // rec {
             # wlroots-related
             salut = prev.callPackage ./pkgs/salut { };
             wayprompt = prev.callPackage ./pkgs/wayprompt { };
@@ -153,10 +153,9 @@
             libvncserver_master = prev.callPackage ./pkgs/libvncserver_master {
               inherit (prev) libvncserver;
             };
-          });
+          };
         in
-        (waylandPkgs // { inherit waylandPkgs; })
-      );
+        waylandPkgs // { inherit waylandPkgs; };
     in
     lib.flake-utils.eachSystem [ "aarch64-linux" "x86_64-linux" ]
       (system:
@@ -190,17 +189,13 @@
               ]);
           };
 
-          packages = (
-            waypkgs.waylandPkgs //
+          packages = waypkgs.waylandPkgs //
             {
-              default = (
-                (waypkgs.linkFarmFromDrvs
+              default = (waypkgs.linkFarmFromDrvs
                   "nixpkgs-wayland-pkgs"
                   (builtins.attrValues waypkgs.waylandPkgs)
-                ).overrideAttrs(old: { allowSubstitutes = true; })
-              );
-            }
-          );
+                ).overrideAttrs(old: { allowSubstitutes = true; });
+            };
         })
     // {
       # overlays have to be outside of eachSystem block

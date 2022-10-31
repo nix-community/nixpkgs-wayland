@@ -15,11 +15,11 @@ rustPlatform.buildRustPackage rec {
 
   src = fetchgit {
     url = metadata.repo_git;
-    rev = metadata.rev;
-    sha256 = metadata.sha256;
+    inherit (metadata) rev;
+    inherit (metadata) sha256;
   };
 
-  cargoSha256 = metadata.cargoSha256;
+  inherit (metadata) cargoSha256;
 
   nativeBuildInputs = [ pkg-config ];
   buildInputs = [

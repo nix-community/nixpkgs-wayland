@@ -1,7 +1,7 @@
 { user }:
 { pkgs, ... }@args:
 let
-  home-manager = builtins.fetchTarball https://github.com/rycee/home-manager/archive/master.tar.gz;
+  home-manager = builtins.fetchTarball "https://github.com/rycee/home-manager/archive/master.tar.gz";
 in
 {
   imports = [

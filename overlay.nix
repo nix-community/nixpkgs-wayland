@@ -1,5 +1,5 @@
 let
-  flake = (import
+  flake = import
     (
       let lock = builtins.fromJSON (builtins.readFile ./flake.lock); in
       fetchTarball {
@@ -7,8 +7,6 @@ let
         sha256 = lock.nodes.flake-compat.locked.narHash;
       }
     )
-    { src = ./.; }
-  );
+    { src = ./.; };
 in
-  self: prev:
-    flake.defaultNix.overlays.default self prev
+  flake.defaultNix.overlays.default

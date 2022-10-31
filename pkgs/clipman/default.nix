@@ -8,11 +8,11 @@ buildGoModule rec {
   src = fetchFromGitHub {
     owner = "yory8";
     repo = "clipman";
-    rev = metadata.rev;
-    sha256 = metadata.sha256;
+    inherit (metadata) rev;
+    inherit (metadata) sha256;
   };
 
-  vendorSha256 = metadata.vendorSha256;
+  inherit (metadata) vendorSha256;
 
   meta = with lib; {
     description = "A basic clipboard manager for Wayland, with support for persisting copy buffers after an application exits";

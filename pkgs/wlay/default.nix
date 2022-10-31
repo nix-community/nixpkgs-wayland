@@ -19,7 +19,7 @@ stdenv.mkDerivation rec {
     repo = "wlay";
     fetchSubmodules = true;
     rev = version;
-    sha256 = metadata.sha256;
+    inherit (metadata) sha256;
   };
 
   nativeBuildInputs = [ pkg-config cmake extra-cmake-modules ];

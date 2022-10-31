@@ -18,8 +18,8 @@ stdenv.mkDerivation rec {
 
   src = fetchgit {
     url = md.repo_git;
-    rev = md.rev;
-    sha256 = md.sha256;
+    inherit (md) rev;
+    inherit (md) sha256;
   };
 
   nativeBuildInputs = [

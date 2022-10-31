@@ -6,7 +6,7 @@ libvncserver.overrideAttrs(old: {
   src = fetchFromGitHub {
     owner = "LibVNC";
     repo = "libvncserver";
-    rev = metadata.rev;
-    sha256 = metadata.sha256;
+    inherit (metadata) rev;
+    inherit (metadata) sha256;
   };
 })

@@ -1,5 +1,5 @@
 let
-  flake =(import
+  flake =import
   (
     let lock = builtins.fromJSON (builtins.readFile ./flake.lock); in
     fetchTarball {
@@ -7,7 +7,7 @@ let
       sha256 = lock.nodes.flake-compat.locked.narHash;
     }
   )
-  { src = ./.; });
+  { src = ./.; };
 
   warn = msg: builtins.trace "[1;31mwarning: ${msg}[0m";
   example = ''
@@ -15,7 +15,4 @@ let
   '';
   warning = "change your 'nixpkgs-wayland' import statement to import 'overlay.nix' directly. example:\n  ${example}";
 in
-  warn warning (
-    self: prev:
-      flake.defaultNix.overlays.default self prev
-  )
+  warn warning flake.defaultNix.overlays.default

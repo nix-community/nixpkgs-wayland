@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
     owner  = "FreeRDP";
     repo   = "FreeRDP";
     rev    = version;
-    sha256 = metadata.sha256;
+    inherit (metadata) sha256;
   };
 
   # outputs = [ "bin" "out" "dev" ];
@@ -65,7 +65,7 @@ stdenv.mkDerivation rec {
     ++ optional (cups != null)                "-DWITH_CUPS=ON"
     ++ optional (pcsclite != null)            "-DWITH_PCSC=ON"
     ++ optional buildServer                   "-DWITH_SERVER=ON"
-    ++ optional (stdenv.isx86_64)             "-DWITH_SSE2=ON";
+    ++ optional stdenv.isx86_64             "-DWITH_SSE2=ON";
 
   meta = with lib; {
     description = "A Remote Desktop Protocol Client";

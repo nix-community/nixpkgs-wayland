@@ -17,7 +17,7 @@ rustPlatform.buildRustPackage rec {
     inherit (metadata) owner repo rev sha256;
   };
 
-  cargoSha256 = metadata.cargoSha256;
+  inherit (metadata) cargoSha256;
 
   nativeBuildInputs = [
     pkg-config

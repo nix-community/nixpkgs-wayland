@@ -20,8 +20,8 @@ stdenv.mkDerivation rec {
   src = fetchFromGitHub {
     owner = "any1";
     repo = "wlvncc";
-    rev = metadata.rev;
-    sha256 = metadata.sha256;
+    inherit (metadata) rev;
+    inherit (metadata) sha256;
   };
 
   nativeBuildInputs = [ pkg-config meson ninja ];

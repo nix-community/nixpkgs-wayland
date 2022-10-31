@@ -26,7 +26,7 @@ stdenv.mkDerivation rec {
     owner = "WayfireWM";
     repo = "wayfire";
     rev = version;
-    sha256 = metadata.sha256;
+    inherit (metadata) sha256;
     fetchSubmodules = true;
   };
 

@@ -12,10 +12,10 @@ rustPlatform.buildRustPackage rec {
     owner = "DorianRudolph";
     repo = "sirula";
     rev = version;
-    sha256 = metadata.sha256;
+    inherit (metadata) sha256;
   };
 
-  cargoSha256 = metadata.cargoSha256;
+  inherit (metadata) cargoSha256;
 
   nativeBuildInputs = [ pkg-config ];
   buildInputs = [ glib cairo pango atk gdk-pixbuf gtk3 gtk-layer-shell ];
