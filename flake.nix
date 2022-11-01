@@ -152,7 +152,7 @@
             # wayfire stuff
             wayfire-unstable = prev.callPackage ./pkgs/wayfire-unstable { };
           };
-        in waylandPkgs;
+        in (waylandPkgs // { inherit waylandPkgs; });
     in
     lib.flake-utils.eachSystem [ "aarch64-linux" "x86_64-linux" ]
       (system:
@@ -187,7 +187,7 @@
 
           formatter = pkgs_.nixpkgs.nixpkgs-fmt;
 
-          packages = (waylandOverlay (pkgs_.nixpkgs) (pkgs_.nixpkgs));
+          packages = (waypkgs.waylandPkgs);
         })
     // {
       # overlays have to be outside of eachSystem block
