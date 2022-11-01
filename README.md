@@ -274,13 +274,12 @@ These packages were mostly recently built (and cached) against:
 
 ## Development Guide
 
-- Use `direnv` + `nix-direnv` (or if you can't, `nix develop`, (or if you can't, `nix-shell`)).
-- `./update.sh`:
-  - updates flake inputs
-  - updates `pkgs/<pkg>/metadata.nix` with the latest commit+hash for each package
-  - calls `nix-build-uncached ... packages.nix` to build uncached packages (see: [nix-build-uncached](https://github.com/Mic92/nix-build-uncached))
-  - pushes to ["nixpkgs-wayland" on cachix](https://nixpkgs-wayland.cachix.org)
+- Use `nix develop`
+- `./main.nu`:
+  - `./main.nu build` - builds and caches derivations that don't exist in the cache, use `nix-eval-jobs`
+  - `./main.nu advance` - advances the flake inputs, runs `main build`
+  - `./main.nu update` - advances the flake inputs, updates pkg revs, runs `main build`
+- `build` pushes to the `nixpkgs-wayland` cachix
 
-If for some reason the overlay isn't progressing and you want to help, just clone the repo, run `nix-shell --command ./update.sh`
-and start fixing issues in the package definitions. Sometimes you might need to edit `default.nix` to change the version
-of `wlroots` a certain package uses.
+If for some reason the overlay isn't progressing and you want to help,
+just clone the repo, run `nix develop -c ./main.nu update`
