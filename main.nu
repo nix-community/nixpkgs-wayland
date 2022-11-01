@@ -50,6 +50,35 @@ def buildDrv [ drvRef: string ] {
   $output
 }
 
+def "main rereadme" [] {
+  let packageNames = (nix eval --json $".#packages.($system)" --apply 'x: builtins.attrNames x' | str trim | from json)
+  let pkgList = ($packageNames | where ($it != "default"))
+  let rows = [
+    "| Package | Description |"
+    "| --- | --- |"
+  ]
+  let pkgrows = ($pkgList | each { |packageName|
+    print -e $packageName
+    let meta = (do -c {
+      nix eval --json $".#packages.($system).($packageName).meta" | str trim | from json
+    })
+    let home = (if "homepage" in ($meta | transpose | get column0) {
+      $meta.homepage
+    } else { "__missing__" })
+    ($"| [($packageName)]\(($home)\) | ($meta.description) |")
+  })
+  let tableText = ([ $rows $pkgrows ] | flatten | str join "\n")
+  
+  print -e $tableText
+  
+  ^rg --multiline '(?s)(.*)<!--pkgs-->(.*)<!--end-pkgs-->(.*)' "README.md" --replace $"\$1($tableText)\$3" | save --raw README2.md
+  mv README2.md README.md
+
+  (do -c {
+    ^git commit -m "auto-update: updated readme" "./README.md"
+  })
+}
+
 def "main build" [] {
   buildDrv $"packages.($system)"
 }
@@ -69,7 +98,8 @@ def "main update" [] {
       ./pkgs-update.nu
     }
     main build
-    ^git commit -m "auto-update: updated readme"
+    main rereadme
+    ^git push origin HEAD
   })
 }
 
