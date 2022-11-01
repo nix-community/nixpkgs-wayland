@@ -59,6 +59,10 @@ overridenAttr.overrideAttrs (oldAttrs: (
     pname = attrName;
     version = metadata.rev;
     inherit src;
+  } // lib.optionalAttrs (src ? meta.homepage) {
+    meta = oldAttrs.meta // {
+      homepage = src.meta.homepage;
+    };
   } // lib.optionalAttrs (extra ? nativeBuildInputs)
     {
       nativeBuildInputs = extra.nativeBuildInputs ++ oldAttrs.nativeBuildInputs;
