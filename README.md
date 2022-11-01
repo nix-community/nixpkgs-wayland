@@ -246,7 +246,7 @@ These packages were mostly recently built (and cached) against:
 | [wshowkeys](https://github.com/ammgws/wshowkeys) | Displays keys being pressed on a Wayland session |
 | [wtype](https://github.com/atx/wtype) | xdotool type for wayland |
 | [xdg-desktop-portal-wlr](https://github.com/emersion/xdg-desktop-portal-wlr) | xdg-desktop-portal backend for wlroots |
-<!--pkgs-->
+<!--end-pkgs-->
 
 </details>
 
