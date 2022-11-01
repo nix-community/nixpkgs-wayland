@@ -6,14 +6,8 @@ let-env CACHIX_CACHE = (
   else "nixpkgs-wayland"
 )
 
-def header [ color: string text: string spacer=" ": string ] {
-  let text = $"($text) "
-  let header = $" ($text | str rpad -c $spacer -l 80)"
-  print -e $"(ansi $color)($header)(ansi reset)"
-}
-
 def buildDrv [ drvRef: string ] {
-  print -e (header yellow_reverse $"eval [($drvRef)]")
+  print -e $"(ansi yellow) :: eval ($drvRef)(ansi reset)"
   let evalJobs = (
     ^nix-eval-jobs
       --flake $".#($drvRef)"
@@ -22,7 +16,7 @@ def buildDrv [ drvRef: string ] {
   )
   print -e $evalJobs
   
-  print -e (header blue_reverse $"build [($drvRef)]")
+  print -e $"(ansi blue) :: build ($drvRef)(ansi reset)"
   print -e ($evalJobs
     | where isCached == false
     | select name drvPath outputs)
@@ -34,20 +28,19 @@ def buildDrv [ drvRef: string ] {
       null
     }
 
-  print -e (header green_reverse $"cache [($drvRef)]")
-  $evalJobs | each { |drv|
+  print -e $"(ansi green) :: cache ($drvRef)(ansi reset)"
+  let pushPaths = ($evalJobs | each { |drv|
     $drv.outputs | each { |outPath|
       if ($outPath.out | path exists) {
-        ($outPath.out | ^cachix push $env.CACHIX_CACHE)
-        null
+        $outPath.out
       }
     }
-  }
-
-  let output = ($evalJobs | select name outputs)
-  print -e ($output | flatten)
+  })
   
-  $output
+  # collect paths to push
+  # call cachix push once
+  let arg = ($pushPaths | each {|it| $"($it)(char nl)"} | str collect)
+  $arg | ^cachix push $env.CACHIX_CACHE | complete
 }
 
 def "main rereadme" [] {

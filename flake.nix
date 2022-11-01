@@ -152,8 +152,7 @@
             # wayfire stuff
             wayfire-unstable = prev.callPackage ./pkgs/wayfire-unstable { };
           };
-        in
-        waylandPkgs // { inherit waylandPkgs; };
+        in waylandPkgs;
     in
     lib.flake-utils.eachSystem [ "aarch64-linux" "x86_64-linux" ]
       (system:
@@ -188,13 +187,7 @@
 
           formatter = pkgs_.nixpkgs.nixpkgs-fmt;
 
-          packages = waypkgs.waylandPkgs //
-          {
-            default = (waypkgs.linkFarmFromDrvs
-              "nixpkgs-wayland-pkgs"
-              (builtins.attrValues waypkgs.waylandPkgs)
-            ).overrideAttrs (old: { allowSubstitutes = true; });
-          };
+          packages = (waylandOverlay (pkgs_.nixpkgs) (pkgs_.nixpkgs));
         })
     // {
       # overlays have to be outside of eachSystem block
