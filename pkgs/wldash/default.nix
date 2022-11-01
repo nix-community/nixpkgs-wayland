@@ -15,7 +15,7 @@ let
   libraryPath = lib.makeLibraryPath [ wayland libxkbcommon ];
 in
 rustPlatform.buildRustPackage rec {
-  name = "wldash-${version}";
+  pname = "wldash";
   version = metadata.rev;
 
   src = fetchFromGitHub {

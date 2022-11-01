@@ -16,7 +16,7 @@ let
   metadata = import ./metadata.nix;
 in
 rustPlatform.buildRustPackage rec {
-  name = "sirula-${version}";
+  pname = "sirula";
   version = metadata.rev;
 
   src = fetchFromGitHub {

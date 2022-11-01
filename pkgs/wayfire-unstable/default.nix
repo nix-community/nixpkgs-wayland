@@ -39,7 +39,6 @@ let
   metadata = import ./metadata.nix;
 in
 stdenv.mkDerivation rec {
-  name = "${pname}-${version}";
   pname = "wayfire";
   version = metadata.rev;
 

@@ -10,7 +10,7 @@ let
   metadata = import ./metadata.nix;
 in
 rustPlatform.buildRustPackage rec {
-  name = "salut-${version}";
+  pname = "salut";
   version = metadata.rev;
 
   src = fetchFromGitLab {
