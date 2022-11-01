@@ -1,6 +1,6 @@
 { lib
 , stdenv
-, fetchgit
+, fetchFromSourcehut
 , fcft
 , libxkbcommon
 , pkg-config
@@ -11,15 +11,13 @@
 , zig
 }:
 
-let md = import ./metadata.nix; in
+let metadata = import ./metadata.nix; in
 stdenv.mkDerivation rec {
   pname = "wayprompt-unstable";
-  version = "${md.rev}";
+  version = "${metadata.rev}";
 
-  src = fetchgit {
-    url = md.repo_git;
-    inherit (md) rev;
-    inherit (md) sha256;
+  src = fetchFromSourcehut {
+    inherit (metadata) owner repo rev sha256 fetchSubmodules;
   };
 
   nativeBuildInputs = [

@@ -1,6 +1,6 @@
 { stdenv
 , lib
-, fetchgit
+, fetchFromSourcehut
 , rustPlatform
 , pkg-config
 , libxkbcommon
@@ -13,10 +13,8 @@ rustPlatform.buildRustPackage rec {
   pname = "shotman";
   version = metadata.rev;
 
-  src = fetchgit {
-    url = metadata.repo_git;
-    inherit (metadata) rev;
-    inherit (metadata) sha256;
+  src = fetchFromSourcehut {
+    inherit (metadata) owner repo rev sha256;
   };
 
   inherit (metadata) cargoSha256;

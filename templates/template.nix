@@ -1,6 +1,6 @@
 args_@{ attrName
   # the attr in nixpkgs could be different from what we want to provide
-  # ex: us libvncserver_master nixpkgs libvncserver
+  # example: us libvncserver_master nixpkgs libvncserver
 , nixpkgsAttrName
 , prev
 , extra
