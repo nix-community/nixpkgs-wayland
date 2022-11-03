@@ -190,9 +190,7 @@ nix-env -iA neatvnc
 
 ## Packages
 
-These packages were mostly recently built (and cached) against:
-
-<!--pkgs-->
+<!--pkgs-start-->
 | Package | Description |
 | --- | --- |
 | [aml](https://github.com/any1/aml) | Another main loop |
@@ -219,11 +217,11 @@ These packages were mostly recently built (and cached) against:
 | [shotman](https://git.sr.ht/~whynothugo/shotman) | Uncompromising screenshot GUI for Wayland |
 | [sirula](https://github.com/DorianRudolph/sirula) | Sirula (simple rust launcher) is an app launcher for wayland |
 | [slurp](https://github.com/emersion/slurp) | Select a region in a Wayland compositor |
+| [sway-unwrapped](https://github.com/swaywm/sway) | An i3-compatible tiling Wayland compositor |
 | [swaybg](https://github.com/swaywm/swaybg) | Wallpaper tool for Wayland compositors |
 | [swayidle](https://github.com/swaywm/swayidle) | Idle management daemon for Wayland |
-| [swaylock-effects](https://github.com/mortie/swaylock-effects) | Screen locker for Wayland |
 | [swaylock](https://github.com/swaywm/swaylock) | Screen locker for Wayland |
-| [sway-unwrapped](https://github.com/swaywm/sway) | An i3-compatible tiling Wayland compositor |
+| [swaylock-effects](https://github.com/mortie/swaylock-effects) | Screen locker for Wayland |
 | [waybar](https://github.com/Alexays/Waybar) | Highly customizable Wayland bar for Sway and Wlroots based compositors |
 | [wayfire-unstable](https://wayfire.org/) | 3D wayland compositor |
 | [waypipe](https://gitlab.freedesktop.org/mstoeckl/waypipe/) | A network proxy for Wayland clients (applications) |
@@ -232,21 +230,21 @@ These packages were mostly recently built (and cached) against:
 | [wdisplays](https://github.com/artizirk/wdisplays) | A graphical application for configuring displays in Wayland compositors |
 | [wev](https://git.sr.ht/~sircmpwn/wev) | Wayland event viewer |
 | [wf-recorder](https://github.com/ammen99/wf-recorder) | Utility program for screen recording of wlroots-based compositors |
+| [wl-clipboard](https://github.com/bugaevc/wl-clipboard) | Command-line copy/paste utilities for Wayland |
+| [wl-gammactl](https://github.com/mischw/wl-gammactl) | Contrast, brightness, and gamma adjustments for Wayland |
 | [wlay](https://github.com/atx/wlay) | Graphical output management for Wayland |
 | [wldash](https://wldash.org) | Wayland launcher/dashboard |
 | [wlfreerdp](https://github.com/FreeRDP/FreeRDP) | A Remote Desktop Protocol Client |
 | [wlogout](https://github.com/ArtsyMacaw/wlogout) | A wayland based logout menu |
-| [wlroots](https://gitlab.freedesktop.org/wlroots/wlroots/) | A modular Wayland compositor library |
 | [wlr-randr](https://github.com/emersion/wlr-randr) | An xrandr clone for wlroots compositors |
+| [wlroots](https://gitlab.freedesktop.org/wlroots/wlroots/) | A modular Wayland compositor library |
 | [wlsunset](https://git.sr.ht/~kennylevinsen/wlsunset) | Day/night gamma adjustments for Wayland |
 | [wlvncc](https://github.com/any1/wlvncc) | A Wayland Native VNC Client |
-| [wl-clipboard](https://github.com/bugaevc/wl-clipboard) | Command-line copy/paste utilities for Wayland |
-| [wl-gammactl](https://github.com/mischw/wl-gammactl) | Contrast, brightness, and gamma adjustments for Wayland |
 | [wofi](https://hg.sr.ht/~scoopta/wofi) | A launcher/menu program for wlroots based wayland compositors such as sway |
 | [wshowkeys](https://github.com/ammgws/wshowkeys) | Displays keys being pressed on a Wayland session |
 | [wtype](https://github.com/atx/wtype) | xdotool type for wayland |
 | [xdg-desktop-portal-wlr](https://github.com/emersion/xdg-desktop-portal-wlr) | xdg-desktop-portal backend for wlroots |
-<!--end-pkgs-->
+<!--pkgs-end-->
 
 </details>
 

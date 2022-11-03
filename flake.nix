@@ -5,10 +5,20 @@
     nixpkgs = { url = "github:nixos/nixpkgs/nixos-unstable"; };
     cachix = { url = "github:nixos/nixpkgs/nixos-21.11"; };
     lib-aggregate = { url = "github:nix-community/lib-aggregate"; };
+    nix-eval-jobs = { url = "github:nix-community/nix-eval-jobs"; inputs.nixpkgs.follows = "nixpkgs"; };
     flake-compat = {
       url = "github:edolstra/flake-compat";
       flake = false;
     };
+  };
+
+  nixConfig = {
+    extra-substituters = [
+      "https://nixpkgs-wayland.cachix.org"
+    ];
+    extra-trusted-public-keys = [
+      "nixpkgs-wayland.cachix.org-1:3lwxaILxMRkVhehr5StQprHdEo4IrE8sRho9R9HOLYA="
+    ];
   };
 
   outputs = inputs:
@@ -152,7 +162,8 @@
             # wayfire stuff
             wayfire-unstable = prev.callPackage ./pkgs/wayfire-unstable { };
           };
-        in (waylandPkgs // { inherit waylandPkgs; });
+        in
+        (waylandPkgs // { inherit waylandPkgs; });
     in
     lib.flake-utils.eachSystem [ "aarch64-linux" "x86_64-linux" ]
       (system:
@@ -182,6 +193,7 @@
                 openssh
                 ripgrep
                 parallel
+                inputs.nix-eval-jobs.outputs.packages.${system}.default
               ]);
           };
 
