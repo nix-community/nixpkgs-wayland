@@ -11,7 +11,7 @@ let-env CACHIX_SIGNING_KEY = $env.CACHIX_SIGNING_KEY_NIXPKGS_WAYLAND
 
 def header [ color: string text: string spacer="▒": string ] {
   let text = $"($text) "
-  let header = $" ($text | str rpad -c $spacer -l 80)"
+  let header = $" ($text | str rpad -c $spacer -l 100)"
   print -e $"(ansi $color)($header)(ansi reset)"
 }
 
@@ -46,7 +46,7 @@ def updatePkgs [] {
     
     let skip = (("skip" in ($verinfo | transpose | get column0)) && $verinfo.skip)
     if $skip {
-      header "light_yellow" $"update ($packageName) - (ansi light_cyan_underline)skipped(ansi reset)"
+      print -e "light_yellow" $"update ($packageName) - (ansi light_cyan_underline)skipped(ansi reset)"
     } else {
     
     # Try update rev
@@ -98,6 +98,7 @@ def updatePkgs [] {
 }
 
 def buildDrv [ drvRef: string ] {
+  header "white_reverse" $"build ($drvRef)" " "
   header "blue_reverse" $"eval ($drvRef)"
   let evalJobs = (
     ^nix-eval-jobs
@@ -113,7 +114,7 @@ def buildDrv [ drvRef: string ] {
 
   $evalJobs
     | where isCached == false
-    | each { |drv| (do -c {^nix build $drv.drvPath} | complete )}
+    | each { |drv| do -c  { ^nix build $drv.drvPath } }
 
   header "purple_reverse" $"cache: calculate paths: ($drvRef)"
   let pushPaths = ($evalJobs | each { |drv|
@@ -132,7 +133,8 @@ def buildDrv [ drvRef: string ] {
 }
 
 def "main rereadme" [] {
-  header "red_reverse" $"readme"
+  let color = "yellow"
+  header $"($color)_reverse" $"readme"
   let packageNames = (nix eval --json $".#packages.($system)" --apply 'x: builtins.attrNames x' | str trim | from json)
   let pkgList = ($packageNames | where ($it != "default"))
   let delimStart = "<!--pkgs-start-->"
@@ -153,18 +155,25 @@ def "main rereadme" [] {
     $pkgrows
     $delimEnd
   ]
-  let tableText = ($rows | str join "\n")
+  let tableText = ($rows | flatten | str join "\n")
 
   let regexString = ([ '(?s)(.*)' $delimStart '(.*)' $delimEnd '(.*)' ] | str join '')
   let replaceText = $"\$1($tableText)\$3"
   ^rg --multiline $regexString "README.md" --replace $replaceText | save --raw README2.md
   mv README2.md README.md
-
-  # ^git commit -m "auto-update: updated readme" "./README.md"
+  
+  let ec = ((do -c { ^git diff --exit-code "README.md" } | complete).exit_code)
+  if ($ec == 1) {
+    ^git commit -m "auto-update: updated readme" "./README.md"
+  } else {
+    print -e $"(ansi $color)readme: nothing to commit(ansi reset)"
+  }
 }
 
 def "main build" [] {
   buildDrv $"packages.($system)"
+  print -e ""
+  buildDrv $"devShells.($system).default.inputDerivation"
 }
 
 def flakeAdvance [] {
