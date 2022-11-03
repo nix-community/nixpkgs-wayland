@@ -186,13 +186,10 @@
               ++ (with pkgs_.nixpkgs; [
                 nushell
                 cacert
-                curl
                 git
-                jq
                 mercurial
-                openssh
                 ripgrep
-                parallel
+                sd
                 inputs.nix-eval-jobs.outputs.packages.${system}.default
               ]);
           };

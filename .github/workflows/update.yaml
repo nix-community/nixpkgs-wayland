@@ -13,7 +13,7 @@ jobs:
       uses: cachix/install-nix-action@v18
       with:
         extra_nix_config: |
-          experimental-features = nix-command flakes ca-references
+          experimental-features = nix-command flakes
           extra-binary-caches = https://nixpkgs-wayland.cachix.org
           extra-trusted-public-keys = nixpkgs-wayland.cachix.org-1:3lwxaILxMRkVhehr5StQprHdEo4IrE8sRho9R9HOLYA=
           access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
