@@ -11,7 +11,7 @@ let-env CACHIX_SIGNING_KEY = $env.CACHIX_SIGNING_KEY_NIXPKGS_WAYLAND
 
 def header [ color: string text: string spacer="▒": string ] {
   let text = $"($text) "
-  let header = $" ($text | str rpad -c $spacer -l 100)"
+  let header = $"("" | str rpad -c $spacer -l 2) ($text | str rpad -c $spacer -l 100)"
   print -e $"(ansi $color)($header)(ansi reset)"
 }
 
@@ -46,59 +46,58 @@ def updatePkgs [] {
     
     let skip = (("skip" in ($verinfo | transpose | get column0)) && $verinfo.skip)
     if $skip {
-      print -e "light_yellow" $"update ($packageName) - (ansi light_cyan_underline)skipped(ansi reset)"
+      print -e $"(ansi light_yellow) update ($packageName) - (ansi light_cyan_underline)skipped(ansi reset)"
     } else {
-    
-    # Try update rev
-    let newrev = (
-      if ("repo_git" in ($verinfo | transpose | get column0)) {
-        (do -c {
-          ^git ls-remote $verinfo.repo_git $"refs/heads/($verinfo.branch)"
-        } | complete | get stdout | str trim | str replace '(\s+)(.*)$' "")
-      } else if ( "repo_hg" in ($verinfo | transpose | get column0) ) {
-        (do -c {
-          ^hg identify $verinfo.repo_hg -r $verinfo.branch
-        } | complete | get stdout | str trim)
-      } else {
-        error make { msg: "unknown repo type" }
-      }
-    )
-    
-    let shouldUpdate = (if ($forceCheck) {
-      print -e $"(ansi light_yellow) update ($packageName) - (ansi light_yellow_underline)forced(ansi reset)"
-      true
-    } else if ($newrev != $verinfo.rev) {
-      print -e $"(ansi light_yellow) update ($packageName) - (ansi light_yellow_underline)update to ($newrev)(ansi reset)"
-      true
-    } else {
-      print -e $"(ansi dark_gray) update ($packageName) - noop(ansi reset)"
-      false
-    })
-    
-    if ($shouldUpdate) { 
-      do -c { ^sd -s $"($verinfo.rev)" $"($newrev)" $"($position)" }
-      print -e {packageName: $packageName, oldrev: $verinfo.rev, newrev: $newrev}
-  
-      replaceHash $packageName $position "sha256" $verinfo.sha256
-      if "vendorSha256" in ($verinfo | transpose | get column0) {
-        replaceHash $packageName $position "vendorSha256" $verinfo.vendorSha256
-      }
-      if "cargoSha256" in ($verinfo | transpose | get column0) {
-        replaceHash $packageName $position "cargoSha256" $verinfo.cargoSha256
-      }
+      # Try update rev
+      let newrev = (
+        if ("repo_git" in ($verinfo | transpose | get column0)) {
+          (do -c {
+            ^git ls-remote $verinfo.repo_git $"refs/heads/($verinfo.branch)"
+          } | complete | get stdout | str trim | str replace '(\s+)(.*)$' "")
+        } else if ( "repo_hg" in ($verinfo | transpose | get column0) ) {
+          (do -c {
+            ^hg identify $verinfo.repo_hg -r $verinfo.branch
+          } | complete | get stdout | str trim)
+        } else {
+          error make { msg: "unknown repo type" }
+        }
+      )
       
-      do -c {
-        ^git commit $position -m $"auto-update: ($packageName): ($verinfo.rev) => ($newrev)"
-      } | complete
-    }
-  
-    null
-  }
-  }
+      let shouldUpdate = (if ($forceCheck) {
+        print -e $"(ansi light_yellow) update ($packageName) - (ansi light_yellow_underline)forced(ansi reset)"
+        true
+      } else if ($newrev != $verinfo.rev) {
+        print -e $"(ansi light_yellow) update ($packageName) - (ansi light_yellow_underline)update to ($newrev)(ansi reset)"
+        true
+      } else {
+        print -e $"(ansi dark_gray) update ($packageName) - noop(ansi reset)"
+        false
+      })
+      
+      if ($shouldUpdate) { 
+        do -c { ^sd -s $"($verinfo.rev)" $"($newrev)" $"($position)" }
+        print -e {packageName: $packageName, oldrev: $verinfo.rev, newrev: $newrev}
+    
+        replaceHash $packageName $position "sha256" $verinfo.sha256
+        if "vendorSha256" in ($verinfo | transpose | get column0) {
+          replaceHash $packageName $position "vendorSha256" $verinfo.vendorSha256
+        }
+        if "cargoSha256" in ($verinfo | transpose | get column0) {
+          replaceHash $packageName $position "cargoSha256" $verinfo.cargoSha256
+        }
+        
+        do -c {
+          ^git commit $position -m $"auto-update: ($packageName): ($verinfo.rev) => ($newrev)"
+        } | complete
+      }
+    
+      null
+    } # end !skip
+  } # end each-pkg loop
 }
 
 def buildDrv [ drvRef: string ] {
-  header "white_reverse" $"build ($drvRef)" " "
+  header "white_reverse" $"build ($drvRef)" "░"
   header "blue_reverse" $"eval ($drvRef)"
   let evalJobs = (
     ^nix-eval-jobs
