@@ -180,14 +180,14 @@
         {
           devShells.default = pkgs_.nixpkgs.mkShell {
             nativeBuildInputs = with pkgs_.nixpkgs; [
-                nushell
-                cachix
-                cacert
-                git
-                mercurial
-                ripgrep
-                sd
-                inputs.nix-eval-jobs.outputs.packages.${system}.default
+              nushell
+              cachix
+              cacert
+              git
+              mercurial
+              ripgrep
+              sd
+              inputs.nix-eval-jobs.outputs.packages.${system}.default
             ];
           };
 
