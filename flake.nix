@@ -3,7 +3,6 @@
 
   inputs = {
     nixpkgs = { url = "github:nixos/nixpkgs/nixos-unstable"; };
-    cachix = { url = "github:nixos/nixpkgs/nixos-21.11"; };
     lib-aggregate = { url = "github:nix-community/lib-aggregate"; };
     nix-eval-jobs = { url = "github:nix-community/nix-eval-jobs"; inputs.nixpkgs.follows = "nixpkgs"; };
     flake-compat = {
@@ -180,18 +179,16 @@
         in
         {
           devShells.default = pkgs_.nixpkgs.mkShell {
-            nativeBuildInputs =
-              [ ]
-              ++ (with pkgs_.cachix; [ cachix ])
-              ++ (with pkgs_.nixpkgs; [
+            nativeBuildInputs = with pkgs_.nixpkgs; [
                 nushell
+                cachix
                 cacert
                 git
                 mercurial
                 ripgrep
                 sd
                 inputs.nix-eval-jobs.outputs.packages.${system}.default
-              ]);
+            ];
           };
 
           formatter = pkgs_.nixpkgs.nixpkgs-fmt;
