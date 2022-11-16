@@ -4,6 +4,6 @@ rec {
   repo = "swaylock";
   repo_git = "https://${domain}/${owner}/${repo}";
   branch = "master";
-  rev = "cc2779330f3357cc5810b0079fd4460d65779a6d";
-  sha256 = "sha256-e5gouitGzetkgnbT4Q2/okx1KWPW6jMGIL2HEOavCMw=";
+  rev = "f6f804013f36e8cb66e1b8da4552b39aa421b8ab";
+  sha256 = "sha256-VsAbtHnmeghQfWkha5vqYGvOvj26qKgrh4KuIBZp1pE=";
 }
