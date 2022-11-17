@@ -90,6 +90,11 @@
               attrName = "wlfreerdp";
               nixpkgsAttrName = "freerdp";
             }
+            {
+              attrName = "wayvnc";
+              nixpkgsAttrName = "wayvnc";
+              extra.buildInputs = [ prev.jansson ];
+            }
           ];
 
           # these do not need changes from the package that nixpkgs has
@@ -105,7 +110,6 @@
             "swaybg"
             "swayidle"
             "swaylock-effects"
-            "wayvnc"
             "wf-recorder"
             "wl-clipboard"
             "wlogout"
