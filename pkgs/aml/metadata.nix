@@ -4,6 +4,6 @@ rec {
   repo = "aml";
   repo_git = "https://${domain}/${owner}/${repo}";
   branch = "master";
-  rev = "ba8799844352cbe0aa574d0f9ae7de0d343f8302";
-  sha256 = "sha256-e//Lu9/v3PD5GjR6azYpedmz8jNg3kefnihB6p2XRWs=";
+  rev = "3285a4345deaf6ae63a88cb666ecd743090b0081";
+  sha256 = "sha256-Voe0GBcYTLlT7MSNpBfDuOLXc6+R5YqPbxe9bRO8EF4=";
 }
