@@ -210,6 +210,7 @@ nix-env -iA neatvnc
 | [libvncserver_master](https://github.com/LibVNC/libvncserver) | VNC server library |
 | [mako](https://github.com/emersion/mako) | A lightweight Wayland notification daemon |
 | [neatvnc](https://github.com/any1/neatvnc) | A VNC server library |
+| [new-wayland-protocols](https://gitlab.freedesktop.org/wayland/wayland-protocols/) | Wayland protocol extensions |
 | [obs-wlrobs](https://hg.sr.ht/~scoopta/wlrobs) | An obs-studio plugin that allows you to screen capture on wlroots based wayland compositors |
 | [oguri](https://github.com/vilhalmer/oguri) | A very nice animated wallpaper daemon for Wayland compositors |
 | [rootbar](https://hg.sr.ht/~scoopta/rootbar) | A bar for Wayland WMs |
