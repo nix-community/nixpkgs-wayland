@@ -136,6 +136,13 @@
             (s: { attrName = s; }));
 
           waylandPkgs = genPackagesGH // rec {
+            new-wayland-protocols = prev.wayland-protocols.overrideAttrs (_: _: rec {
+              version = "1.31";
+              src = prev.fetchurl {
+                url = "https://gitlab.freedesktop.org/wayland/wayland-protocols/-/releases/${version}/downloads/wayland-protocols-${version}.tar.xz";
+                hash = "sha256-oH+nIu2HZ27AINhncUvJovJMRk2nORLzlwbu71IZ4jg=";
+              };
+            });
             # wlroots-related
             salut = prev.callPackage ./pkgs/salut { };
             wayprompt = prev.callPackage ./pkgs/wayprompt { };
@@ -158,6 +165,7 @@
             wldash = prev.callPackage ./pkgs/wldash { };
             wlroots = prev.callPackage ./pkgs/wlroots {
               inherit (prev) wlroots;
+              wayland-protocols = final.new-wayland-protocols;
             };
 
             # misc
