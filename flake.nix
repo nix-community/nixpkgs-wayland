@@ -102,6 +102,10 @@
               nixpkgsAttrName = "xdg-desktop-portal-wlr";
               replace.patches = [];
             }
+            {
+              attrName = "new-wayland-protocols";
+              nixpkgsAttrName = "wayland-protocols";
+            }
           ];
 
           # these do not need changes from the package that nixpkgs has
@@ -136,13 +140,6 @@
             (s: { attrName = s; }));
 
           waylandPkgs = genPackagesGH // rec {
-            new-wayland-protocols = prev.wayland-protocols.overrideAttrs (_: _: rec {
-              version = "1.31";
-              src = prev.fetchurl {
-                url = "https://gitlab.freedesktop.org/wayland/wayland-protocols/-/releases/${version}/downloads/wayland-protocols-${version}.tar.xz";
-                hash = "sha256-oH+nIu2HZ27AINhncUvJovJMRk2nORLzlwbu71IZ4jg=";
-              };
-            });
             # wlroots-related
             salut = prev.callPackage ./pkgs/salut { };
             wayprompt = prev.callPackage ./pkgs/wayprompt { };
