@@ -78,6 +78,7 @@
             }
             {
               attrName = "cage";
+              extra.buildInputs = [ prev.xorg.xcbutilwm ];
               replaceInput = {
                 wlroots = prev.wlroots_0_16;
               };
