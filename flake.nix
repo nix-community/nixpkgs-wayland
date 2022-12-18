@@ -90,6 +90,7 @@
             {
               attrName = "wlfreerdp";
               nixpkgsAttrName = "freerdp";
+              extra.buildInputs = [ prev.icu ];
             }
             {
               attrName = "wayvnc";
