@@ -97,6 +97,11 @@
               nixpkgsAttrName = "wayvnc";
               extra.buildInputs = [ prev.jansson ];
             }
+            {
+              attrName = "xdg-desktop-portal-wlr";
+              nixpkgsAttrName = "xdg-desktop-portal-wlr";
+              replace.patches = [];
+            }
           ];
 
           # these do not need changes from the package that nixpkgs has
@@ -120,7 +125,6 @@
             "wtype"
             "wshowkeys"
             "aml"
-            "xdg-desktop-portal-wlr"
             "wdisplays"
             "kanshi"
             "wev"
