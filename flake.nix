@@ -79,7 +79,7 @@
             {
               attrName = "cage";
               replaceInput = {
-                inherit (prev) wlroots;
+                wlroots = prev.wlroots_0_16;
               };
             }
             {
