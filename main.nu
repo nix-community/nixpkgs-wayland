@@ -159,14 +159,9 @@ def "main rereadme" [] {
   let regexString = ([ '(?s)(.*)' $delimStart '(.*)' $delimEnd '(.*)' ] | str join '')
   let replaceText = $"\$1($tableText)\$3"
   ^rg --multiline $regexString "README.md" --replace $replaceText | save --raw README2.md
-  mv README2.md README.md
-  
-  let ec = ((do -c { ^git diff --exit-code "README.md" } | complete).exit_code)
-  if ($ec == 1) {
-    ^git commit -m "auto-update: updated readme" "./README.md"
-  } else {
-    print -e $"(ansi $color)readme: nothing to commit(ansi reset)"
-  }
+  mv -f README2.md README.md
+
+  do -i { ^git commit -m "auto-update: updated readme" "./README.md" }
 }
 
 def "main build" [] {
