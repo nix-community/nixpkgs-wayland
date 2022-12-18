@@ -203,6 +203,11 @@
 
           formatter = pkgs_.nixpkgs.nixpkgs-fmt;
 
+          bundle = pkgs_.nixpkgs.symlinkJoin {
+            name = "nixpkgs-wayland-bundle";
+            paths = builtins.attrValues waypkgs.waylandPkgs;
+          };
+
           packages = (waypkgs.waylandPkgs);
         })
     // {
