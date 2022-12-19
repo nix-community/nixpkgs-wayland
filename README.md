@@ -199,6 +199,7 @@ nix-env -iA neatvnc
 | [drm_info](https://github.com/ascent12/drm_info) | Small utility to dump info about DRM devices |
 | [dunst](https://github.com/dunst-project/dunst) | Lightweight and customizable notification daemon |
 | [foot](https://codeberg.org/dnkl/foot/) | A fast, lightweight and minimalistic Wayland terminal emulator |
+| [freerdp](https://github.com/FreeRDP/FreeRDP) | A Remote Desktop Protocol Client |
 | [gebaar-libinput](https://github.com/Osleg/gebaar-libinput-fork) | Gebaar, A Super Simple WM Independent Touchpad Gesture Daemon for libinput |
 | [glpaper](https://hg.sr.ht/~scoopta/glpaper) | Wallpaper program for wlroots based Wayland compositors such as sway that allows you to render glsl shaders as your wallpaper |
 | [grim](https://github.com/emersion/grim) | Grab images from a Wayland compositor |
