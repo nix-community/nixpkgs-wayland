@@ -44,7 +44,7 @@ def updatePkgs [] {
     let position = $"pkgs/($packageName)/metadata.nix"
     let verinfo = (^nix eval --json -f $position | str trim | from json)
     
-    let skip = (("skip" in ($verinfo | transpose | get column0)) && $verinfo.skip)
+    let skip = (("skip" in ($verinfo | transpose | get column0)) and $verinfo.skip)
     if $skip {
       print -e $"(ansi light_yellow) update ($packageName) - (ansi light_cyan_underline)skipped(ansi reset)"
     } else {
@@ -126,7 +126,7 @@ def buildDrv [ drvRef: string ] {
   print -e $pushPaths
   let cachePathsStr = ($pushPaths | each {|it| $"($it)(char nl)"} | str collect)
   
-  let cacheResults = ($cachePathsStr | ^cachix push $env.CACHIX_CACHE | complete)
+  let cacheResults = (echo $cachePathsStr | ^cachix push $env.CACHIX_CACHE | complete)
   header "purple_reverse" $"cache/push ($drvRef)"
   print -e $cacheResults
 }
