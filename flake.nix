@@ -72,9 +72,6 @@
             {
               attrName = "sway-unwrapped";
               extra.buildInputs = [ prev.xorg.xcbutilwm ];
-              replaceInput = {
-                pcre = prev.pcre2;
-              };
             }
             {
               attrName = "cage";
