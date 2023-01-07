@@ -57,7 +57,7 @@
             }
             {
               attrName = "waybar";
-              extra.nativeBuildInputs = [ prev.libjack2 ];
+              extra.buildInputs = [ prev.libjack2 prev.playerctl ];
             }
             {
               attrName = "gtk-layer-shell";
