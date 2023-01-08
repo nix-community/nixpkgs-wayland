@@ -4,7 +4,7 @@ rec {
   repo = "i3status-rust";
   repo_git = "https://${domain}/${owner}/${repo}";
   branch = "master";
-  rev = "af300f386efa89d9a3aa7ac33edb728faaa99852";
-  sha256 = "sha256-PMCOQgQyDJCH0o6ypsLkiIkmU9RNW55Abi+jcCwC/ig=";
-  cargoSha256 = "sha256-4KbUl5jF8wSksprcmnSN2c3eJEm9yWwxWxCLDVgO9Eo=";
+  rev = "d3532cc5c01f25e81ba381b02949e4f0e486653c";
+  sha256 = "sha256-B/f1G0d7IZqMnPALVoeOqnrLMaiFCXprGt6x7AM8aNs=";
+  cargoSha256 = "sha256-opm4JKus3SHNvsYsq/3hv0fG7/FY1VXYhYaan+vW3I0=";
 }
