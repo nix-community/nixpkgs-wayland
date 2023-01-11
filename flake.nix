@@ -89,7 +89,7 @@
             }
             {
               attrName = "freerdp";
-              extra.buildInputs = [ prev.icu ];
+              extra.buildInputs = [ prev.icu prev.SDL2 ];
             }
             {
               attrName = "wayvnc";
