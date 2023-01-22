@@ -79,11 +79,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1674380397,
-        "narHash": "sha256-8nFseSTAIGJdB4P/K/cXAehvdrSLcTTBZLQNs/ZC+I8=",
+        "lastModified": 1674381152,
+        "narHash": "sha256-Ctmx6zRkrr8X87JlN2I2jyNLd/voBb1ao2avILXcCpk=",
         "owner": "nix-community",
         "repo": "nix-eval-jobs",
-        "rev": "2e0855be9eecaa06df837f998a050ea69dbee03b",
+        "rev": "a0b4134df252c929a39f59610b3ceb563d854892",
         "type": "github"
       },
       "original": {
