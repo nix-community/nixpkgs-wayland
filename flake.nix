@@ -4,7 +4,7 @@
   inputs = {
     nixpkgs = { url = "github:nixos/nixpkgs/nixos-unstable"; };
     lib-aggregate = { url = "github:nix-community/lib-aggregate"; };
-    nix-eval-jobs = { url = "github:nix-community/nix-eval-jobs"; inputs.nixpkgs.follows = "nixpkgs"; };
+    nix-eval-jobs = { url = "github:nix-community/nix-eval-jobs"; };
     flake-compat = {
       url = "github:edolstra/flake-compat";
       flake = false;
