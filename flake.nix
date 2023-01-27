@@ -89,7 +89,7 @@
               nixpkgsAttrName = "libvncserver";
             }
             {
-              attrName = "freerdp";
+              attrName = "freerdp3";
               extra.buildInputs = [ prev.icu prev.SDL2 ];
             }
             {
@@ -165,7 +165,7 @@
               wayland-protocols = final.new-wayland-protocols;
             };
 
-            wlfreerdp = lib.warn "nixpkgs-wayland: 'wlfreerdp' is deprecated in favor of 'freerdp'; the 'wlfreerdp' alias will be dropped in March 2023." final.freerdp;
+            wlfreerdp = lib.warn "nixpkgs-wayland: 'wlfreerdp' is deprecated in favor of 'freerdp3'; the 'wlfreerdp' alias will be dropped in June 2023." final.freerdp3;
 
             # misc
             clipman = prev.callPackage ./pkgs/clipman { };
