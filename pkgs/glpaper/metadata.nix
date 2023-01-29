@@ -5,6 +5,6 @@ rec {
   repo = "glpaper";
   repo_hg = "https://${domain}/${owner}/${repo}";
   branch = "default";
-  rev = "9ba380656131";
-  sha256 = "sha256-//IKW2BfpqwcR2WAPShs0kzn5nkV/yyABPvOYm3zMPU=";
+  rev = "14c158c49545";
+  sha256 = "sha256-jYOUmyXwTffzwUmYEY1SQx2ClZiRiMZLanveE9zWOLI=";
 }
