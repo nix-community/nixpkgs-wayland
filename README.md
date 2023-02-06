@@ -213,7 +213,6 @@ nix-env -iA neatvnc
 | [neatvnc](https://github.com/any1/neatvnc) | A VNC server library |
 | [new-wayland-protocols](https://gitlab.freedesktop.org/wayland/wayland-protocols/) | Wayland protocol extensions |
 | [obs-wlrobs](https://hg.sr.ht/~scoopta/wlrobs) | An obs-studio plugin that allows you to screen capture on wlroots based wayland compositors |
-| [oguri](https://github.com/vilhalmer/oguri) | A very nice animated wallpaper daemon for Wayland compositors |
 | [rootbar](https://hg.sr.ht/~scoopta/rootbar) | A bar for Wayland WMs |
 | [salut](https://gitlab.com/snakedye/salut) | A sleek notification daemon |
 | [shotman](https://git.sr.ht/~whynothugo/shotman) | Uncompromising screenshot GUI for Wayland |
@@ -224,6 +223,7 @@ nix-env -iA neatvnc
 | [swayidle](https://github.com/swaywm/swayidle) | Idle management daemon for Wayland |
 | [swaylock](https://github.com/swaywm/swaylock) | Screen locker for Wayland |
 | [swaylock-effects](https://github.com/mortie/swaylock-effects) | Screen locker for Wayland |
+| [swww](https://github.com/Horus645/swww) | A Solution to your Wayland Wallpaper Woes |
 | [waybar](https://github.com/Alexays/Waybar) | Highly customizable Wayland bar for Sway and Wlroots based compositors |
 | [wayfire-unstable](https://wayfire.org/) | 3D wayland compositor |
 | [waypipe](https://gitlab.freedesktop.org/mstoeckl/waypipe/) | A network proxy for Wayland clients (applications) |
