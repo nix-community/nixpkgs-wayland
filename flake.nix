@@ -115,7 +115,6 @@
             "imv"
             "mako"
             "neatvnc"
-            "oguri"
             "slurp"
             "swaybg"
             "swayidle"
@@ -141,6 +140,7 @@
           waylandPkgs = genPackagesGH // rec {
             # wlroots-related
             salut = prev.callPackage ./pkgs/salut { };
+            swww = prev.callPackage ./pkgs/swww { };
             wayprompt = prev.callPackage ./pkgs/wayprompt { };
             wlvncc = prev.callPackage ./pkgs/wlvncc {
               libvncserver = final.libvncserver_master;
