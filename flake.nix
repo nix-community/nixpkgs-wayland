@@ -62,6 +62,7 @@
             {
               attrName = "gtk-layer-shell";
               extra.nativeBuildInputs = [ prev.vala ];
+              replace.patches = [ ];
             }
             {
               attrName = "wl-gammactl";
