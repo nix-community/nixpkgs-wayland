@@ -88,11 +88,6 @@
               attrName = "libvncserver_master";
               nixpkgsAttrName = "libvncserver";
             }
-            # {
-            #   attrName = "freerdp3";
-            #   nixpkgsAttrName = "freerdp";
-            #   extra.buildInputs = [ prev.icu prev.SDL2 ];
-            # }
             {
               attrName = "wayvnc";
               nixpkgsAttrName = "wayvnc";
