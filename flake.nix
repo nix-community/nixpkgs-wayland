@@ -88,10 +88,11 @@
               attrName = "libvncserver_master";
               nixpkgsAttrName = "libvncserver";
             }
-            {
-              attrName = "freerdp3";
-              extra.buildInputs = [ prev.icu prev.SDL2 ];
-            }
+            # {
+            #   attrName = "freerdp3";
+            #   nixpkgsAttrName = "freerdp";
+            #   extra.buildInputs = [ prev.icu prev.SDL2 ];
+            # }
             {
               attrName = "wayvnc";
               nixpkgsAttrName = "wayvnc";
@@ -166,6 +167,10 @@
             };
 
             wlfreerdp = lib.warn "nixpkgs-wayland: 'wlfreerdp' is deprecated in favor of 'freerdp3'; the 'wlfreerdp' alias will be dropped in June 2023." final.freerdp3;
+            freerdp3 = prev.callPackage ./pkgs/freerdp3 {
+              inherit (prev.darwin.apple_sdk.frameworks) AudioToolbox AVFoundation Carbon Cocoa CoreMedia;
+              inherit (prev.gst_all_1) gstreamer gst-plugins-base gst-plugins-good;
+            };
 
             # misc
             clipman = prev.callPackage ./pkgs/clipman { };
