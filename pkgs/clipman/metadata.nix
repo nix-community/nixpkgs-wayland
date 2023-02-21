@@ -4,7 +4,7 @@ rec {
   repo = "clipman";
   repo_git = "https://${domain}/${owner}/${repo}";
   branch = "master";
-  rev = "00690232b897252196c29c7dd9dfacd46eb7ccdf";
-  sha256 = "sha256-+nkv00iYP3hQVOBTq5y7GxP4fcT6t8aOJTl3MoPb0AM=";
+  rev = "9b77b9dfd0004812b84de1a90f2d5dd6520912ca";
+  sha256 = "sha256-wHSdrpFy2ShxjFl6UFtvhiegKM7On7P1FTbGowACmyM=";
   vendorSha256 = "sha256-Z/sVCJz/igPDdeczC6pemLub6X6z4ZGlBwBmRsEnXKI=";
 }
