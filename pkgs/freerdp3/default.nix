@@ -49,6 +49,7 @@
 , Carbon
 , Cocoa
 , CoreMedia
+, fuse3
 , withUnfree ? false
 }:
 
@@ -104,6 +105,7 @@ stdenv.mkDerivation rec {
     cups
     faad2
     ffmpeg
+    fuse3
     glib
     gst-plugins-base
     gst-plugins-good
