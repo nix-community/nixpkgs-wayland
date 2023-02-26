@@ -4,6 +4,6 @@ rec {
   repo = "wayvnc";
   repo_git = "https://${domain}/${owner}/${repo}";
   branch = "master";
-  rev = "4700716d004a4a2d3f5c12ea03c4dc58686d8dc8";
-  sha256 = "sha256-4J5ffMNYgGQtEjg/4CjHLs5h0lL5LiEF0mcEEYJQxBM=";
+  rev = "ab1fbdf98a546a9eed0f8cdfdded9f092c2bab31";
+  sha256 = "sha256-BABoIZutQC8/0Envtc3nvz8z9OPWoDK2drUaZACirv4=";
 }
