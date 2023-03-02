@@ -178,15 +178,13 @@ stdenv.mkDerivation rec {
     WITH_X11 = true;
   };
 
-  NIX_CFLAGS_COMPILE = lib.optionals stdenv.isDarwin [
-    "-DTARGET_OS_IPHONE=0"
-    "-DTARGET_OS_WATCH=0"
-    "-include AudioToolbox/AudioToolbox.h"
-  ];
+  env = {
+    NIX_CFLAGS_COMPILE = lib.optionalString stdenv.isDarwin
+      "-DTARGET_OS_IPHONE=0 -DTARGET_OS_WATCH=0 -include AudioToolbox/AudioToolbox.h";
 
-  NIX_LDFLAGS = lib.optionals stdenv.isDarwin [
-    "-framework AudioToolbox"
-  ];
+    NIX_LDFLAGS = lib.optionalString stdenv.isDarwin
+      "-framework AudioToolbox";
+  };
 
   meta = with lib; {
     description = "A Remote Desktop Protocol Client";
