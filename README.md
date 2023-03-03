@@ -238,7 +238,7 @@ nix-env -iA neatvnc
 | [wldash](https://wldash.org) | Wayland launcher/dashboard |
 | [wlfreerdp](https://www.freerdp.com/) | A Remote Desktop Protocol Client |
 | [wlogout](https://github.com/ArtsyMacaw/wlogout) | A wayland based logout menu |
-| [wlr-randr](https://github.com/emersion/wlr-randr) | An xrandr clone for wlroots compositors |
+| [wlr-randr](https://sr.ht/~emersion/wlr-randr) | An xrandr clone for wlroots compositors |
 | [wlroots](https://gitlab.freedesktop.org/wlroots/wlroots/) | A modular Wayland compositor library |
 | [wlsunset](https://git.sr.ht/~kennylevinsen/wlsunset) | Day/night gamma adjustments for Wayland |
 | [wlvncc](https://github.com/any1/wlvncc) | A Wayland Native VNC Client |
