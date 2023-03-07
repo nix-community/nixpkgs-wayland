@@ -42,6 +42,7 @@
 , libjpeg_turbo
 , icu
 , SDL2
+, krb5
 , buildServer ? true
 , nocaps ? false
 , AudioToolbox
@@ -135,6 +136,7 @@ stdenv.mkDerivation rec {
     pcsclite
     zlib
     SDL2
+    krb5
   ] ++ optionals stdenv.isLinux [
     alsa-lib
     systemd
