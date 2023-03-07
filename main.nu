@@ -11,7 +11,7 @@ let-env CACHIX_SIGNING_KEY = $env.CACHIX_SIGNING_KEY_NIXPKGS_WAYLAND
 
 def header [ color: string text: string spacer="▒": string ] {
   let text = $"($text) "
-  let header = $"("" | str rpad -c $spacer -l 2) ($text | str rpad -c $spacer -l 100)"
+  let header = $"("" | fill -c $spacer -w 2) ($text | fill -c $spacer -w 100)"
   print -e $"(ansi $color)($header)(ansi reset)"
 }
 
