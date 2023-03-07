@@ -21,6 +21,7 @@ jobs:
           extra-trusted-public-keys = nixpkgs-wayland.cachix.org-1:3lwxaILxMRkVhehr5StQprHdEo4IrE8sRho9R9HOLYA=
           access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
           accept-flake-config = true
+          log-lines = 50
     - name: prepare
       run: nix develop -c .github/init
     - name: build
