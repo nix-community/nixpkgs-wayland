@@ -155,16 +155,16 @@
             #     attrName = "wlrobs";
             #   };
             # };
-            # remove when https://github.com/NixOS/nixpkgs/pull/220046
-            libdisplay-info = prev.libdisplay-info.overrideAttrs (previousAttrs: {
-              postInstall = (previousAttrs.postInstall or "") + ''
-                ln -s $out/lib/pkgconfig/display-info.pc $out/lib/pkgconfig/libdisplay-info.pc
-              '';
-            });
             wldash = prev.callPackage ./pkgs/wldash { };
             wlroots = prev.callPackage ./pkgs/wlroots {
               inherit (prev) wlroots;
               wayland-protocols = final.new-wayland-protocols;
+              # remove when https://github.com/NixOS/nixpkgs/pull/220046
+              libdisplay-info = prev.libdisplay-info.overrideAttrs (previousAttrs: {
+                postInstall = (previousAttrs.postInstall or "") + ''
+                  ln -s $out/lib/pkgconfig/display-info.pc $out/lib/pkgconfig/libdisplay-info.pc
+                '';
+              });
             };
 
             wlfreerdp = lib.warn "nixpkgs-wayland: 'wlfreerdp' is deprecated in favor of 'freerdp3'; the 'wlfreerdp' alias will be dropped in June 2023." final.freerdp3;
