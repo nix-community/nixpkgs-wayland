@@ -43,6 +43,7 @@
 , icu
 , SDL2
 , krb5
+, cjson
 , buildServer ? true
 , nocaps ? false
 , AudioToolbox
@@ -137,6 +138,7 @@ stdenv.mkDerivation rec {
     zlib
     SDL2
     krb5
+    cjson
   ] ++ optionals stdenv.isLinux [
     alsa-lib
     systemd
