@@ -161,6 +161,8 @@
               wayland-protocols = final.new-wayland-protocols;
             };
 
+            wl-gammarelay-rs = prev.callPackage ./pkgs/wl-gammarelay-rs { };
+
             wlfreerdp = lib.warn "nixpkgs-wayland: 'wlfreerdp' is deprecated in favor of 'freerdp3'; the 'wlfreerdp' alias will be dropped in June 2023." final.freerdp3;
             freerdp3 = prev.callPackage ./pkgs/freerdp3 {
               inherit (prev.darwin.apple_sdk.frameworks) AudioToolbox AVFoundation Carbon Cocoa CoreMedia;
