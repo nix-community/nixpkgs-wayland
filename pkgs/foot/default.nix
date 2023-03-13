@@ -1,7 +1,6 @@
 { stdenv
 , lib
 , fetchFromGitea
-, fetchurl
 , runCommand
 , fcft
 , freetype

@@ -5,7 +5,7 @@ args_@{ lib, fetchFromGitLab, wlroots, libdisplay-info
 let
   metadata = import ./metadata.nix;
   ignore = [ "wlroots" "hwdata" "libdisplay-info" ];
-  args = lib.filterAttrs (n: v: (!builtins.elem n ignore)) args_;
+  args = lib.filterAttrs (n: _v: (!builtins.elem n ignore)) args_;
 in
 (wlroots.override args).overrideAttrs (old: {
   version = "${metadata.rev}";

@@ -32,7 +32,6 @@
 , vulkan-headers
 , vulkan-loader
 , glslang
-, buildDocs ? true
 }:
 
 let
