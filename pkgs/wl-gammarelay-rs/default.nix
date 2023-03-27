@@ -14,7 +14,10 @@ rustPlatform.buildRustPackage rec {
     inherit (metadata) owner repo rev sha256;
   };
 
-  inherit (metadata) cargoSha256;
+  cargoLock = {
+    lockFile = src + "/Cargo.lock";
+    allowBuiltinFetchGit = true;
+  };
 
   meta = with lib; {
     description = "A simple program that provides DBus interface to control display temperature and brightness under wayland without flickering ";

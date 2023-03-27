@@ -32,7 +32,7 @@ def replaceHash [ packageName: string, position: string, hashName: string, oldHa
   do -c { ^sd -s $"($oldHash)" $"($fakeSha256)" $"($position)" }
   let newHash = (getBadHash $".#($packageName)")
   do -c { ^sd -s $"($fakeSha256)" $"($newHash)" $"($position)" }
-  
+
   print -e {packageName: $packageName, hashName: $hashName, oldHash: $oldHash, newHash: $newHash}
 }
 
@@ -43,7 +43,7 @@ def updatePkgs [] {
   $pkgs | each { |packageName|
     let position = $"pkgs/($packageName)/metadata.nix"
     let verinfo = (^nix eval --json -f $position | str trim | from json)
-    
+
     let skip = (("skip" in ($verinfo | transpose | get column0)) and $verinfo.skip)
     if $skip {
       print -e $"(ansi light_yellow) update ($packageName) - (ansi light_cyan_underline)skipped(ansi reset)"
@@ -62,7 +62,7 @@ def updatePkgs [] {
           error make { msg: "unknown repo type" }
         }
       )
-      
+
       let shouldUpdate = (if ($forceCheck) {
         print -e $"(ansi light_yellow) update ($packageName) - (ansi light_yellow_underline)forced(ansi reset)"
         true
@@ -73,24 +73,21 @@ def updatePkgs [] {
         print -e $"(ansi dark_gray) update ($packageName) - noop(ansi reset)"
         false
       })
-      
-      if ($shouldUpdate) { 
+
+      if ($shouldUpdate) {
         do -c { ^sd -s $"($verinfo.rev)" $"($newrev)" $"($position)" }
         print -e {packageName: $packageName, oldrev: $verinfo.rev, newrev: $newrev}
-    
+
         replaceHash $packageName $position "sha256" $verinfo.sha256
         if "vendorSha256" in ($verinfo | transpose | get column0) {
           replaceHash $packageName $position "vendorSha256" $verinfo.vendorSha256
         }
-        if "cargoSha256" in ($verinfo | transpose | get column0) {
-          replaceHash $packageName $position "cargoSha256" $verinfo.cargoSha256
-        }
-        
+
         do -c {
           ^git commit $position -m $"auto-update: ($packageName): ($verinfo.rev) => ($newrev)"
         } | complete
       }
-    
+
       null
     } # end !skip
   } # end each-pkg loop
@@ -105,7 +102,7 @@ def buildDrv [ drvRef: string ] {
       --check-cache-status
         | each { |it| ( $it | from json ) }
   )
-  
+
   header "green_reverse" $"build ($drvRef)"
   print -e ($evalJobs
     | where isCached == false
@@ -125,7 +122,7 @@ def buildDrv [ drvRef: string ] {
   })
   print -e $pushPaths
   let cachePathsStr = ($pushPaths | each {|it| $"($it)(char nl)"} | str collect)
-  
+
   let cacheResults = (echo $cachePathsStr | ^cachix push $env.CACHIX_CACHE | complete)
   header "purple_reverse" $"cache/push ($drvRef)"
   print -e $cacheResults

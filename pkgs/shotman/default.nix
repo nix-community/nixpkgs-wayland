@@ -16,7 +16,10 @@ rustPlatform.buildRustPackage rec {
     inherit (metadata) owner repo rev sha256;
   };
 
-  inherit (metadata) cargoSha256;
+  cargoLock = {
+    lockFile = src + "/Cargo.lock";
+    allowBuiltinFetchGit = true;
+  };
 
   nativeBuildInputs = [ pkg-config ];
   buildInputs = [
