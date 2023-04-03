@@ -1,13 +1,16 @@
+# This file provides backward compatibility to nix < 2.4 clients
+{ system ? builtins.currentSystem }:
 let
-  flake = import
-    (
-      let lock = builtins.fromJSON (builtins.readFile ./flake.lock); in
-      fetchTarball {
-        url = "https://github.com/edolstra/flake-compat/archive/${lock.nodes.flake-compat.locked.rev}.tar.gz";
-        sha256 = lock.nodes.flake-compat.locked.narHash;
-      }
-    )
-    { src = ./.; };
+  lock = builtins.fromJSON (builtins.readFile ./flake.lock);
+
+  inherit (lock.nodes.flake-compat.locked) owner repo rev narHash;
+
+  flake-compat = fetchTarball {
+    url = "https://github.com/${owner}/${repo}/archive/${rev}.tar.gz";
+    sha256 = narHash;
+  };
+
+  flake = import flake-compat { inherit system; src = ./.; };
 
   warn = msg: builtins.trace "[1;31mwarning: ${msg}[0m";
   example = ''
@@ -15,4 +18,4 @@ let
   '';
   warning = "change your 'nixpkgs-wayland' import statement to import 'overlay.nix' directly. example:\n  ${example}";
 in
-warn warning flake.defaultNix.overlays.default
+warn warning flake.defaultNix

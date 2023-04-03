@@ -5,10 +5,7 @@
     nixpkgs = { url = "github:nixos/nixpkgs/nixos-unstable"; };
     lib-aggregate = { url = "github:nix-community/lib-aggregate"; };
     nix-eval-jobs = { url = "github:nix-community/nix-eval-jobs"; };
-    flake-compat = {
-      url = "github:edolstra/flake-compat";
-      flake = false;
-    };
+    flake-compat = { url = "github:nix-community/flake-compat"; };
   };
 
   nixConfig = {
