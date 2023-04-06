@@ -4,7 +4,7 @@ let system = "x86_64-linux";
 let forceCheck = false; # use for development to re-update all pkgs
 
 let-env CACHIX_CACHE = (
-  if "CACHIX_CACHE" in ($env | transpose | get column0) { $env.CACHIX_CACHE }
+  if "CACHIX_CACHE" in $env { $env.CACHIX_CACHE }
   else "nixpkgs-wayland"
 )
 let-env CACHIX_SIGNING_KEY = $env.CACHIX_SIGNING_KEY_NIXPKGS_WAYLAND
@@ -121,7 +121,7 @@ def buildDrv [ drvRef: string ] {
     }
   })
   print -e $pushPaths
-  let cachePathsStr = ($pushPaths | each {|it| $"($it)(char nl)"} | str collect)
+  let cachePathsStr = ($pushPaths | each {|it| $"($it)(char nl)"} | str join)
 
   let cacheResults = (echo $cachePathsStr | ^cachix push $env.CACHIX_CACHE | complete)
   header "purple_reverse" $"cache/push ($drvRef)"
