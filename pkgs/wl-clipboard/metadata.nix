@@ -4,6 +4,6 @@ rec {
   repo = "wl-clipboard";
   repo_git = "https://${domain}/${owner}/${repo}";
   branch = "master";
-  rev = "7463d266cc85fe502d959d6de3674e50ec9e3d92";
-  sha256 = "sha256-4YOhtFC8VC7jr68CwgAWeiurSjG2Ht8DJfb9ddaMwWw=";
+  rev = "e541d9a2d04a74f31a69abe53778f9c710fc4cc4";
+  sha256 = "sha256-weo6FZtGMy5g/KHiFKQ5iou3Ey2WkbTSTBVkjMLMmRo=";
 }
