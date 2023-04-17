@@ -110,7 +110,7 @@ def buildDrv [ drvRef: string ] {
 
   $evalJobs
     | where isCached == false
-    | each { |drv| do -c  { ^nix build $drv.drvPath } }
+    | each { |drv| do -c  { ^nix build $drv.drvPath^* } }
 
   header "purple_reverse" $"cache: calculate paths: ($drvRef)"
   let pushPaths = ($evalJobs | each { |drv|
