@@ -54,7 +54,14 @@
             }
             {
               attrName = "waybar";
-              extra.buildInputs = [ prev.libjack2 prev.playerctl ];
+              extra.mesonFlags = [
+                # requires a fork of cava
+                "-Dcava=disabled"
+              ];
+              extra.buildInputs = [
+                prev.libjack2
+                prev.playerctl
+              ];
             }
             {
               attrName = "gtk-layer-shell";
