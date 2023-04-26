@@ -181,8 +181,6 @@
             i3status-rust = prev.callPackage ./pkgs/i3status-rust { };
             shotman = prev.callPackage ./pkgs/shotman { };
             sirula = prev.callPackage ./pkgs/sirula { };
-            # wayfire stuff
-            wayfire-unstable = prev.callPackage ./pkgs/wayfire-unstable { };
           };
         in
         (waylandPkgs // { inherit waylandPkgs; });
