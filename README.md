@@ -225,7 +225,6 @@ nix-env -iA neatvnc
 | [swaylock-effects](https://github.com/mortie/swaylock-effects) | Screen locker for Wayland |
 | [swww](https://github.com/Horus645/swww) | A Solution to your Wayland Wallpaper Woes |
 | [waybar](https://github.com/Alexays/Waybar) | Highly customizable Wayland bar for Sway and Wlroots based compositors |
-| [wayfire-unstable](https://wayfire.org/) | 3D wayland compositor |
 | [waypipe](https://gitlab.freedesktop.org/mstoeckl/waypipe/) | A network proxy for Wayland clients (applications) |
 | [wayprompt](https://git.sr.ht/~leon_plickat/wayprompt) | multi-purpose prompt tool for Wayland |
 | [wayvnc](https://github.com/any1/wayvnc) | A VNC server for wlroots based Wayland compositors |
