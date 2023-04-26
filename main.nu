@@ -100,7 +100,7 @@ def buildDrv [ drvRef: string ] {
     ^nix-eval-jobs
       --flake $".#($drvRef)"
       --check-cache-status
-        | each { |it| ( $it | from json ) }
+        | from json --objects
   )
 
   header "green_reverse" $"build ($drvRef)"

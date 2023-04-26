@@ -4,7 +4,7 @@
   inputs = {
     nixpkgs = { url = "github:nixos/nixpkgs/nixos-unstable"; };
     lib-aggregate = { url = "github:nix-community/lib-aggregate"; };
-    nix-eval-jobs = { url = "github:nix-community/nix-eval-jobs/4d674c352e1292bbf5f28f50b6c8eac86ea8bdff"; };
+    nix-eval-jobs = { url = "github:nix-community/nix-eval-jobs"; };
     flake-compat = { url = "github:nix-community/flake-compat"; };
   };
 

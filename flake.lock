@@ -79,17 +79,16 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1682349467,
-        "narHash": "sha256-j5OIXfF6N2kSm3f9GNxv374zGLh7U69H3kkvSJyEvyQ=",
+        "lastModified": 1682480188,
+        "narHash": "sha256-4LG8Vl/fLWsJg+QAb5/PvZTdLtPFsYFxuGDfEAR5szA=",
         "owner": "nix-community",
         "repo": "nix-eval-jobs",
-        "rev": "4d674c352e1292bbf5f28f50b6c8eac86ea8bdff",
+        "rev": "73ee1712faeb5db609fc9f991e2dc1de265acff5",
         "type": "github"
       },
       "original": {
         "owner": "nix-community",
         "repo": "nix-eval-jobs",
-        "rev": "4d674c352e1292bbf5f28f50b6c8eac86ea8bdff",
         "type": "github"
       }
     },
