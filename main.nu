@@ -7,7 +7,11 @@ let-env CACHIX_CACHE = (
   if "CACHIX_CACHE" in $env { $env.CACHIX_CACHE }
   else "nixpkgs-wayland"
 )
-let-env CACHIX_SIGNING_KEY = $env.CACHIX_SIGNING_KEY_NIXPKGS_WAYLAND
+
+let-env CACHIX_SIGNING_KEY = (
+  if "CACHIX_SIGNING_KEY_NIXPKGS_WAYLAND" in $env { $env.CACHIX_SIGNING_KEY_NIXPKGS_WAYLAND }
+  else "null"
+)
 
 def header [ color: string text: string spacer="▒": string ] {
   let text = $"($text) "
@@ -121,11 +125,16 @@ def buildDrv [ drvRef: string ] {
     }
   })
   print -e $pushPaths
-  let cachePathsStr = ($pushPaths | each {|it| $"($it)(char nl)"} | str join)
 
-  let cacheResults = (echo $cachePathsStr | ^cachix push $env.CACHIX_CACHE | complete)
-  header "purple_reverse" $"cache/push ($drvRef)"
-  print -e $cacheResults
+  if ($env.CACHIX_SIGNING_KEY != "null") {
+    let cachePathsStr = ($pushPaths | each {|it| $"($it)(char nl)"} | str join)
+
+    let cacheResults = (echo $cachePathsStr | ^cachix push $env.CACHIX_CACHE | complete)
+    header "purple_reverse" $"cache/push ($drvRef)"
+    print -e $cacheResults
+  } else {
+    print -e "'$CACHIX_SIGNING_KEY_NIXPKGS_WAYLAND' not set, not pushing to cachix."
+  }
 }
 
 def "main rereadme" [] {
