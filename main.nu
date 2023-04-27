@@ -3,10 +3,17 @@
 let system = "x86_64-linux";
 let forceCheck = false; # use for development to re-update all pkgs
 
-source ./nixlib.nu
-
-let cachix_cache = "nixpkgs-wayland"
+let-env CACHIX_CACHE = (
+  if "CACHIX_CACHE" in $env { $env.CACHIX_CACHE }
+  else "nixpkgs-wayland"
+)
 let-env CACHIX_SIGNING_KEY = $env.CACHIX_SIGNING_KEY_NIXPKGS_WAYLAND
+
+def header [ color: string text: string spacer="▒": string ] {
+  let text = $"($text) "
+  let header = $"("" | fill -c $spacer -w 2) ($text | fill -c $spacer -w 100)"
+  print -e $"(ansi $color)($header)(ansi reset)"
+}
 
 def getBadHash [ attrName: string ] {
   let val = ((do -i { ^nix build --no-link $attrName }| complete)
@@ -86,6 +93,41 @@ def updatePkgs [] {
   } # end each-pkg loop
 }
 
+def buildDrv [ drvRef: string ] {
+  header "white_reverse" $"build ($drvRef)" "░"
+  header "blue_reverse" $"eval ($drvRef)"
+  let evalJobs = (
+    ^nix-eval-jobs
+      --flake $".#($drvRef)"
+      --check-cache-status
+        | from json --objects
+  )
+
+  header "green_reverse" $"build ($drvRef)"
+  print -e ($evalJobs
+    | where isCached == false
+    | select name isCached)
+
+  $evalJobs
+    | where isCached == false
+    | each { |drv| do -c  { ^nix build $'($drv.drvPath)^*' } }
+
+  header "purple_reverse" $"cache: calculate paths: ($drvRef)"
+  let pushPaths = ($evalJobs | each { |drv|
+    $drv.outputs | each { |outPath|
+      if ($outPath.out | path exists) {
+        $outPath.out
+      }
+    }
+  })
+  print -e $pushPaths
+  let cachePathsStr = ($pushPaths | each {|it| $"($it)(char nl)"} | str join)
+
+  let cacheResults = (echo $cachePathsStr | ^cachix push $env.CACHIX_CACHE | complete)
+  header "purple_reverse" $"cache/push ($drvRef)"
+  print -e $cacheResults
+}
+
 def "main rereadme" [] {
   let color = "yellow"
   header $"($color)_reverse" $"readme"
@@ -120,15 +162,9 @@ def "main rereadme" [] {
 }
 
 def "main build" [] {
-  let drvs = (evalDrv $".#packages.($system)")
-  let drvs = ($drvs | where { |it| $it.drvPath != ""}) # TODO: nushell workaround
-  print -e "::: building packages"
-  buildDrvs true $drvs
-  
-  print -e "::: building devshell"
-  let drvs = (evalDrv $".#devShells.($system).default.inputDerivation")
-  let drvs = ($drvs | where { |it| $it.drvPath != ""}) # TODO: nushell workaround
-  buildDrvs true $drvs
+  buildDrv $"packages.($system)"
+  print -e ""
+  buildDrv $"devShells.($system).default.inputDerivation"
 }
 
 def flakeAdvance [] {
