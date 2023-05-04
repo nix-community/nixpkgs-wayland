@@ -1,7 +1,5 @@
 name: "Update"
-concurrency:
-  group: ${{ github.ref }}
-  cancel-in-progress: true
+concurrency: update-advance
 on:
   schedule:
     - cron: '*/30 * * * *'
