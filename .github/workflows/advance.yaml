@@ -1,5 +1,7 @@
 name: "Advance"
-concurrency: update-advance
+concurrency:
+  group: ${{ github.ref }}
+  cancel-in-progress: true
 on:
   schedule:
     - cron: '*/10 * * * *'
