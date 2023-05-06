@@ -1,5 +1,4 @@
 # This file provides backward compatibility to nix < 2.4 clients
-{ system ? builtins.currentSystem }:
 let
   lock = builtins.fromJSON (builtins.readFile ./flake.lock);
 
@@ -10,6 +9,6 @@ let
     sha256 = narHash;
   };
 
-  flake = import flake-compat { inherit system; src = ./.; };
+  flake = import flake-compat { src = ./.; };
 in
 flake.defaultNix.overlays.default
