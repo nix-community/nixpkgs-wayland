@@ -193,7 +193,7 @@
         in
         (waylandPkgs // { inherit waylandPkgs; });
     in
-    lib.flake-utils.eachSystem [ "aarch64-linux" "x86_64-linux" ]
+    lib.flake-utils.eachSystem [ "aarch64-linux" "x86_64-linux" "riscv64-linux" ]
       (system:
         let
           pkgsFor = pkgs: overlays:
