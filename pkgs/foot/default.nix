@@ -17,12 +17,11 @@
 , wayland-scanner
 , pkg-config
 , utf8proc
-, allowPgo ? true
+, allowPgo ? !stdenv.hostPlatform.isMusl
 , python3  # for PGO
   # for clang stdenv check
 , foot
 , llvmPackages
-, llvmPackages_latest
 }:
 
 let
@@ -150,6 +149,8 @@ stdenv.mkDerivation rec {
     "-Ddefault-terminfo=foot"
     # Tell foot to set TERMINFO and where to install the terminfo files
     "-Dcustom-terminfo-install-location=${terminfoDir}"
+    # Install systemd user units for foot-server
+    "-Dsystemd-units-dir=${placeholder "out"}/lib/systemd/user"
   ];
 
   # build and run binary generating PGO profiles,
@@ -158,9 +159,9 @@ stdenv.mkDerivation rec {
     meson configure -Db_pgo=generate
     ninja
     # make sure there is _some_ profiling data on all binaries
-    ./utils/xtgettcap
     ./footclient --version
     ./foot --version
+    ./utils/xtgettcap
     ./tests/test-config
     # generate pgo data of wayland independent code
     ./pgo ${stimuliFile} ${stimuliFile} ${stimuliFile}
@@ -180,10 +181,6 @@ stdenv.mkDerivation rec {
   passthru.tests = {
     clang-default-compilation = foot.override {
       inherit (llvmPackages) stdenv;
-    };
-
-    clang-latest-compilation = foot.override {
-      inherit (llvmPackages_latest) stdenv;
     };
 
     noPgo = foot.override {
