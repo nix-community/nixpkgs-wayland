@@ -4,6 +4,6 @@ rec {
   repo = "libvncserver";
   repo_git = "https://${domain}/${owner}/${repo}";
   branch = "master";
-  rev = "3acb43eb9e96ce0cb76b63e1694705fb39a95add";
-  sha256 = "sha256-WhZM1jiwKdEn5IvXVzjtCpunfa5p1jpN/3h/+JbOFXM=";
+  rev = "3ea549b672abcf8556cff11c392b0122c012805b";
+  sha256 = "sha256-JBptWzZlATA/AGfeC4DPxIbrPt7be3hIQcc+qrymfyA=";
 }
