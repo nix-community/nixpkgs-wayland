@@ -4,6 +4,6 @@ rec {
   repo = "neatvnc";
   repo_git = "https://${domain}/${owner}/${repo}";
   branch = "master";
-  rev = "c006936fd0401e56b1b1a8387b94a653907df0ba";
-  sha256 = "sha256-3tOzFIyfOCCyuaLDH4Ms3aUw+HzK93IOat/1w+PSYrE=";
+  rev = "b5f37d0227c42c1f4b7f99741dbb24435ff4f164";
+  sha256 = "sha256-tFW5PM+u/oU2mcV2mAbSsMiDLuLgqTd7W10QQeDhZeo=";
 }
