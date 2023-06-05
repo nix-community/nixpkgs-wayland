@@ -47,7 +47,6 @@ stdenv.mkDerivation rec {
     runHook preInstall
     zig build -Drelease-safe -Dcpu=baseline --prefix $out install
     ln -s "$out/bin/wayprompt" "$out/bin/hiprompt-wayprompt"
-    ln -s "$out/bin/wayprompt" "$out/bin/pinentry-wayprompt"
     ln -s "$out/bin/wayprompt" "$out/bin/wayprompt-cli"
     runHook postInstall
   '';
