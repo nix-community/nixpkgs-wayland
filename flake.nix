@@ -212,6 +212,7 @@
         {
           devShells.default = pkgs_.nixpkgs.mkShell {
             nativeBuildInputs = with pkgs_.nixpkgs; [
+              nix
               nushell
               cachix
               cacert
