@@ -66,14 +66,11 @@ We don't have CI on Pull Requests, but I keep an eye on it after merging externa
 
   ```nix
   {
-    # ...
     inputs = {
-      # ...
-      nixpkgs-wayland  = { url = "github:nix-community/nixpkgs-wayland"; };
+      nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
 
       # only needed if you use as a package set:
-      nixpkgs-wayland.inputs.nixpkgs.follows = "cmpkgs";
-      nixpkgs-wayland.inputs.master.follows = "master";
+      nixpkgs-wayland.inputs.nixpkgs.follows = "nixpkgs";
     };
 
     outputs = inputs: {
@@ -83,17 +80,15 @@ We don't have CI on Pull Requests, but I keep an eye on it after merging externa
         inherit system;
         modules = [({pkgs, config, ... }: {
           config = {
-            nix = {
+            nix.settings = {
               # add binary caches
-              binaryCachePublicKeys = [
+              trusted-public-keys = [
                 "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
                 "nixpkgs-wayland.cachix.org-1:3lwxaILxMRkVhehr5StQprHdEo4IrE8sRho9R9HOLYA="
-                # ...
               ];
-              binaryCaches = [
+              substituters = [
                 "https://cache.nixos.org"
                 "https://nixpkgs-wayland.cachix.org"
-                # ...
               ];
             };
 
@@ -101,7 +96,7 @@ We don't have CI on Pull Requests, but I keep an eye on it after merging externa
             nixpkgs.overlays = [ inputs.nixpkgs-wayland.overlay ];
 
             # or, pull specific packages (built against inputs.nixpkgs, usually `nixos-unstable`)
-            environment.systemPackages = with pkgs; [
+            environment.systemPackages = [
               inputs.nixpkgs-wayland.packages.${system}.waybar
             ];
           };
