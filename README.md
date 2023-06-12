@@ -237,6 +237,7 @@ nix-env -iA neatvnc
 | [wlroots](https://gitlab.freedesktop.org/wlroots/wlroots/) | A modular Wayland compositor library |
 | [wlsunset](https://git.sr.ht/~kennylevinsen/wlsunset) | Day/night gamma adjustments for Wayland |
 | [wlvncc](https://github.com/any1/wlvncc) | A Wayland Native VNC Client |
+| [wob](https://github.com/francma/wob) | A lightweight overlay bar for Wayland |
 | [wofi](https://hg.sr.ht/~scoopta/wofi) | A launcher/menu program for wlroots based wayland compositors such as sway |
 | [wshowkeys](https://github.com/ammgws/wshowkeys) | Displays keys being pressed on a Wayland session |
 | [wtype](https://github.com/atx/wtype) | xdotool type for wayland |
