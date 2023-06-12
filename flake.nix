@@ -100,6 +100,10 @@
               replace.CFLAGS = "";
             }
             {
+              attrName = "wob";
+              extra.buildInputs = [ prev.pixman prev.cmocka ];
+            }
+            {
               attrName = "libvncserver_master";
               nixpkgsAttrName = "libvncserver";
             }
