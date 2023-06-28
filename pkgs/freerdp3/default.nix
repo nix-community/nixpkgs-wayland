@@ -44,6 +44,7 @@
 , SDL2
 , krb5
 , cjson
+, pkcs11helper
 , buildServer ? true
 , nocaps ? false
 , AudioToolbox
@@ -139,6 +140,7 @@ stdenv.mkDerivation rec {
     SDL2
     krb5
     cjson
+    pkcs11helper
   ] ++ optionals stdenv.isLinux [
     alsa-lib
     systemd
