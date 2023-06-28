@@ -62,6 +62,9 @@
                 prev.libjack2
                 prev.playerctl
               ];
+              replaceInput = {
+                spdlog = prev.spdlog.override { fmt = prev.fmt_9; };
+              };
             }
             {
               attrName = "gtk-layer-shell";
