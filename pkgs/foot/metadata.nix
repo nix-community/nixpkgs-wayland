@@ -5,6 +5,6 @@ rec {
   repo = "foot";
   repo_git = "https://${domain}/${owner}/${repo}";
   branch = "master";
-  rev = "1dddb63d9fade867f5493903da67a46f45232ec8";
-  sha256 = "sha256-dzCk7RU9R1AeXLZKzj/j9J1IhDEkpvwYCaE82rqrnvA=";
+  rev = "df71d9c6dea5cb87f76debcf149438fa2fe2d43a";
+  sha256 = "sha256-5rft3ChtaLm2LSWDouSXWUAbL+2Nj650Sa8vCmYbiSs=";
 }
