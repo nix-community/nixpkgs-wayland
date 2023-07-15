@@ -153,10 +153,13 @@
             "wlsunset"
             "rootbar"
             "waypipe"
+            "eww"
           ]
             (s: { attrName = s; }));
 
           waylandPkgs = genPackagesGH // rec {
+
+            eww-wayland = final.eww.override { withWayland = true; };
             # wlroots-related
             salut = prev.callPackage ./pkgs/salut { };
             swww = prev.callPackage ./pkgs/swww { };
