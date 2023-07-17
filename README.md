@@ -193,6 +193,8 @@ nix-env -iA neatvnc
 | [clipman](https://github.com/yory8/clipman) | A basic clipboard manager for Wayland, with support for persisting copy buffers after an application exits |
 | [drm_info](https://github.com/ascent12/drm_info) | Small utility to dump info about DRM devices |
 | [dunst](https://github.com/dunst-project/dunst) | Lightweight and customizable notification daemon |
+| [eww](https://github.com/elkowar/eww) | ElKowars wacky widgets |
+| [eww-wayland](https://github.com/elkowar/eww) | ElKowars wacky widgets |
 | [foot](https://codeberg.org/dnkl/foot/) | A fast, lightweight and minimalistic Wayland terminal emulator |
 | [freerdp3](https://www.freerdp.com/) | A Remote Desktop Protocol Client |
 | [gebaar-libinput](https://github.com/Osleg/gebaar-libinput-fork) | Gebaar, A Super Simple WM Independent Touchpad Gesture Daemon for libinput |
