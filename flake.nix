@@ -158,7 +158,6 @@
             (s: { attrName = s; }));
 
           waylandPkgs = genPackagesGH // rec {
-
             eww-wayland = final.eww.override { withWayland = true; };
             # wlroots-related
             salut = prev.callPackage ./pkgs/salut { };
