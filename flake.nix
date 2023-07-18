@@ -65,6 +65,26 @@
               replaceInput = {
                 spdlog = prev.spdlog.override { fmt = prev.fmt_9; };
               };
+              replace.postUnpack =
+                let
+                  # Derived from subprojects/cava.wrap
+                  libcava = rec {
+                    version = "0.8.5";
+                    src = prev.fetchFromGitHub {
+                      owner = "LukashonakV";
+                      repo = "cava";
+                      rev = version;
+                      hash = "sha256-b/XfqLh8PnW018sGVKRRlFvBpo2Ru1R2lUeTR7pugBo=";
+                    };
+                  };
+                in
+                ''
+                  (
+                    cd "$sourceRoot"
+                    cp -R --no-preserve=mode,ownership ${libcava.src} subprojects/cava-0.8.4
+                    patchShebangs .
+                  )
+                '';
             }
             {
               attrName = "gtk-layer-shell";
