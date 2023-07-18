@@ -81,7 +81,7 @@
                 ''
                   (
                     cd "$sourceRoot"
-                    cp -R --no-preserve=mode,ownership ${libcava.src} subprojects/cava-0.8.4
+                    cp -R --no-preserve=mode,ownership ${libcava.src} subprojects/cava-0.8.5
                     patchShebangs .
                   )
                 '';
