@@ -42,7 +42,7 @@
 , libjpeg_turbo
 , icu
 , SDL2
-, SDL2_TTF
+, SDL2_ttf
 , krb5
 , cjson
 , pkcs11helper
@@ -139,7 +139,7 @@ stdenv.mkDerivation rec {
     pcsclite
     zlib
     SDL2
-    SDL2_TTF
+    SDL2_ttf
     krb5
     cjson
     pkcs11helper
