@@ -102,6 +102,7 @@
               extra.buildInputs = [ prev.xorg.xcbutilwm ];
               replaceInput = {
                 wlroots = final.wlroots;
+                wayland-protocols = final.new-wayland-protocols;
               };
               replace.patches = let
                 conflicting-patch = (prev.fetchpatch {
