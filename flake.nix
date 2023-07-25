@@ -62,9 +62,6 @@
                 prev.libjack2
                 prev.playerctl
               ];
-              replaceInput = {
-                spdlog = prev.spdlog.override { fmt = prev.fmt_9; };
-              };
               replace.postUnpack =
                 let
                   # Derived from subprojects/cava.wrap
