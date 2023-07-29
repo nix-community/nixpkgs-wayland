@@ -3,12 +3,12 @@
 let system = "x86_64-linux";
 let forceCheck = false; # use for development to re-update all pkgs
 
-let-env CACHIX_CACHE = (
+$env.CACHIX_CACHE = (
   if "CACHIX_CACHE" in $env { $env.CACHIX_CACHE }
   else "nixpkgs-wayland"
 )
 
-let-env CACHIX_SIGNING_KEY = (
+$env.CACHIX_SIGNING_KEY = (
   if "CACHIX_SIGNING_KEY_NIXPKGS_WAYLAND" in $env { $env.CACHIX_SIGNING_KEY_NIXPKGS_WAYLAND }
   else "null"
 )
