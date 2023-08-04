@@ -46,6 +46,7 @@
 , krb5
 , cjson
 , pkcs11helper
+, webkitgtk
 , buildServer ? true
 , nocaps ? false
 , AudioToolbox
@@ -143,6 +144,7 @@ stdenv.mkDerivation rec {
     krb5
     cjson
     pkcs11helper
+    webkitgtk
   ] ++ optionals stdenv.isLinux [
     alsa-lib
     systemd
