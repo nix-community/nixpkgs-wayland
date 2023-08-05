@@ -134,6 +134,10 @@
               extra.buildInputs = [ prev.jansson ];
             }
             {
+              attrName = "wf-recorder";
+              extra.buildInputs = [ prev.mesa ];
+            }
+            {
               attrName = "xdg-desktop-portal-wlr";
               nixpkgsAttrName = "xdg-desktop-portal-wlr";
               replace.patches = [];
@@ -156,7 +160,6 @@
             "swaybg"
             "swayidle"
             "swaylock-effects"
-            "wf-recorder"
             "wl-clipboard"
             "wlogout"
             "wlr-randr"
