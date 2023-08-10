@@ -183,7 +183,9 @@
             # wlroots-related
             salut = prev.callPackage ./pkgs/salut { };
             swww = prev.callPackage ./pkgs/swww { };
-            wayprompt = prev.callPackage ./pkgs/wayprompt { };
+            wayprompt = prev.callPackage ./pkgs/wayprompt {
+              zig = prev.zig_0_10;
+            };
             wlvncc = prev.callPackage ./pkgs/wlvncc {
               libvncserver = final.libvncserver_master;
             };
