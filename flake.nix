@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs = { url = "github:nixos/nixpkgs/nixos-unstable"; };
+    nixpkgs_sirula = { url = "github:nixos/nixpkgs/da45bf6ec7bbcc5d1e14d3795c025199f28e0de0"; };
     lib-aggregate = { url = "github:nix-community/lib-aggregate"; };
     nix-eval-jobs = { url = "github:nix-community/nix-eval-jobs"; };
     flake-compat = { url = "github:nix-community/flake-compat"; };
@@ -101,13 +102,14 @@
                 wlroots = final.wlroots;
                 wayland-protocols = final.new-wayland-protocols;
               };
-              replace.patches = let
-                conflicting-patch = (prev.fetchpatch {
-                  name = "LIBINPUT_CONFIG_ACCEL_PROFILE_CUSTOM.patch";
-                  url = "https://github.com/swaywm/sway/commit/dee032d0a0ecd958c902b88302dc59703d703c7f.diff";
-                  hash = "sha256-dx+7MpEiAkxTBnJcsT3/1BO8rYRfNLecXmpAvhqGMD0=";
-                });
-              in
+              replace.patches =
+                let
+                  conflicting-patch = (prev.fetchpatch {
+                    name = "LIBINPUT_CONFIG_ACCEL_PROFILE_CUSTOM.patch";
+                    url = "https://github.com/swaywm/sway/commit/dee032d0a0ecd958c902b88302dc59703d703c7f.diff";
+                    hash = "sha256-dx+7MpEiAkxTBnJcsT3/1BO8rYRfNLecXmpAvhqGMD0=";
+                  });
+                in
                 lib.remove conflicting-patch prev.sway-unwrapped.patches;
             }
             {
@@ -140,7 +142,7 @@
             {
               attrName = "xdg-desktop-portal-wlr";
               nixpkgsAttrName = "xdg-desktop-portal-wlr";
-              replace.patches = [];
+              replace.patches = [ ];
             }
             {
               attrName = "new-wayland-protocols";
@@ -223,7 +225,10 @@
             };
             i3status-rust = prev.callPackage ./pkgs/i3status-rust { };
             shotman = prev.callPackage ./pkgs/shotman { };
-            sirula = prev.callPackage ./pkgs/sirula { };
+
+            sirula = lib.warn "nixpkgs-wayland: 'sirula' is broken with modern versions of rust (>=1.71), it will be dropped in October if upstream does not fix."
+              inputs.nixpkgs_sirula.legacyPackages.${prev.stdenv.hostPlatform.system}.callPackage ./pkgs/sirula
+              { };
           };
         in
         (waylandPkgs // { inherit waylandPkgs; });
