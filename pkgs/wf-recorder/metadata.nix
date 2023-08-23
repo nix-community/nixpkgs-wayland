@@ -4,6 +4,6 @@ rec {
   repo = "wf-recorder";
   repo_git = "https://${domain}/${owner}/${repo}";
   branch = "master";
-  rev = "7e42d6c4dcb650808cc9ec3b7c2375764e5a2662";
-  sha256 = "sha256-HSNogz99fh25bGnYrIFkQC8SZ/EjG9Ak1kQpVmSlliU=";
+  rev = "62bc883ee973ab045f3ff805fd67c420169d3cf1";
+  sha256 = "sha256-qzpG4Im5bMxcHwILhGox8lnlp17gy9x0qlbvs7iL24k=";
 }
