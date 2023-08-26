@@ -24,7 +24,7 @@ def getBadHash [ attrName: string ] {
       | get stderr
       | split row "\n"
       | where ($it | str contains "got:")
-      | str replace '\s+got:(.*)(sha256-.*)' '$2'
+      | str replace --regex '\s+got:(.*)(sha256-.*)' '$2'
       | get 0
   )
   $val
@@ -57,7 +57,7 @@ def updatePkgs [] {
         if ("repo_git" in ($verinfo | transpose | get column0)) {
           (do -c {
             ^git ls-remote $verinfo.repo_git $"refs/heads/($verinfo.branch)"
-          } | complete | get stdout | str trim | str replace '(\s+)(.*)$' "")
+          } | complete | get stdout | str trim | str replace --regex '(\s+)(.*)$' "")
         } else if ( "repo_hg" in ($verinfo | transpose | get column0) ) {
           (do -c {
             ^hg identify $verinfo.repo_hg -r $verinfo.branch
