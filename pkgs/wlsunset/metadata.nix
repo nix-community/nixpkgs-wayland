@@ -5,6 +5,6 @@ rec {
   repo = "wlsunset";
   repo_git = "https://${domain}/${owner}/${repo}";
   branch = "master";
-  rev = "eac926fc210477dee6f36eb6c237206f81a280ca";
-  sha256 = "sha256-jGYPWaRUqDL4htdAOA9CAQfoHLBPvK7O9vAzcE81f/E=";
+  rev = "966728a29b9d3702d23c21f5359b1e9bf86d1983";
+  sha256 = "sha256-OaKXMJw+UytViPqwPLFIxIvLFmd5nz/Mfu0GdKH16Ig=";
 }
