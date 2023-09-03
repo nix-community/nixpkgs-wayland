@@ -233,7 +233,6 @@ nix-env -iA neatvnc
 | [wl-gammarelay-rs](https://github.com/MaxVerevkin/wl-gammarelay-rs) | A simple program that provides DBus interface to control display temperature and brightness under wayland without flickering  |
 | [wlay](https://github.com/atx/wlay) | Graphical output management for Wayland |
 | [wldash](https://wldash.org) | Wayland launcher/dashboard |
-| [wlfreerdp](https://www.freerdp.com/) | A Remote Desktop Protocol Client |
 | [wlogout](https://github.com/ArtsyMacaw/wlogout) | A wayland based logout menu |
 | [wlr-randr](https://git.sr.ht/~emersion/wlr-randr) | An xrandr clone for wlroots compositors |
 | [wlroots](https://gitlab.freedesktop.org/wlroots/wlroots/) | A modular Wayland compositor library |
