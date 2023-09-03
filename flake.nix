@@ -3,7 +3,6 @@
 
   inputs = {
     nixpkgs = { url = "github:nixos/nixpkgs/nixos-unstable"; };
-    nixpkgs_sirula = { url = "github:nixos/nixpkgs/da45bf6ec7bbcc5d1e14d3795c025199f28e0de0"; };
     lib-aggregate = { url = "github:nix-community/lib-aggregate"; };
     nix-eval-jobs = { url = "github:nix-community/nix-eval-jobs"; };
     flake-compat = { url = "github:nix-community/flake-compat"; };
@@ -226,9 +225,7 @@
             i3status-rust = prev.callPackage ./pkgs/i3status-rust { };
             shotman = prev.callPackage ./pkgs/shotman { };
 
-            sirula = lib.warn "nixpkgs-wayland: 'sirula' is broken with modern versions of rust (>=1.71), it will be dropped in October if upstream does not fix."
-              inputs.nixpkgs_sirula.legacyPackages.${prev.stdenv.hostPlatform.system}.callPackage ./pkgs/sirula
-              { };
+            sirula = prev.callPackage ./pkgs/sirula { };
           };
         in
         (waylandPkgs // { inherit waylandPkgs; });
