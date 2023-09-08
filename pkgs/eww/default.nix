@@ -4,6 +4,8 @@
 , pkg-config
 , gtk3
 , gdk-pixbuf
+, wrapGAppsHook
+, librsvg
 , withWayland ? false
 , gtk-layer-shell
 , stdenv
@@ -24,9 +26,9 @@ rustPlatform.buildRustPackage rec {
     lockFile = src + "/Cargo.lock";
   };
 
-  nativeBuildInputs = [ pkg-config ];
+  nativeBuildInputs = [ pkg-config wrapGAppsHook ];
 
-  buildInputs = [ gtk3 gdk-pixbuf ] ++ lib.optional withWayland gtk-layer-shell;
+  buildInputs = [ gtk3 gdk-pixbuf librsvg ] ++ lib.optional withWayland gtk-layer-shell;
 
   buildNoDefaultFeatures = true;
   buildFeatures = [
