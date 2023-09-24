@@ -52,6 +52,11 @@ let
 
   src = fetchers.${metadata.type or "github"};
 
+  cargoLock = {
+    lockFile = src + "/Cargo.lock";
+    allowBuiltinFetchGit = true;
+  };
+
 
 in
 overridenAttr.overrideAttrs (oldAttrs: (
@@ -72,5 +77,9 @@ overridenAttr.overrideAttrs (oldAttrs: (
     } // lib.optionalAttrs (extra ? buildInputs)
     {
       buildInputs = extra.buildInputs ++ oldAttrs.buildInputs;
+    } // lib.optionalAttrs (oldAttrs ? cargoDeps)
+    {
+      cargoDeps = prev.rustPlatform.importCargoLock cargoLock;
+      cargoHash = null;
     } // replace
 ))

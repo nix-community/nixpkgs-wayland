@@ -175,6 +175,7 @@
             "wlsunset"
             "rootbar"
             "waypipe"
+            "wl-screenrec"
           ]
             (s: { attrName = s; }));
 
@@ -210,8 +211,6 @@
             };
 
             wl-gammarelay-rs = prev.callPackage ./pkgs/wl-gammarelay-rs { };
-
-            wl-screenrec = prev.callPackage ./pkgs/wl-screenrec { };
 
             freerdp3 = prev.callPackage ./pkgs/freerdp3 {
               inherit (prev.darwin.apple_sdk.frameworks) AudioToolbox AVFoundation Carbon Cocoa CoreMedia;
