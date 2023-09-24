@@ -147,6 +147,12 @@
               attrName = "new-wayland-protocols";
               nixpkgsAttrName = "wayland-protocols";
             }
+            {
+              attrName = "wl-screenrec";
+              # soon in nixpkgs
+              extra.buildInputs = [ prev.libdrm ];
+              replace.doCheck = false;
+            }
           ];
 
           # these do not need changes from the package that nixpkgs has
@@ -175,7 +181,6 @@
             "wlsunset"
             "rootbar"
             "waypipe"
-            "wl-screenrec"
           ]
             (s: { attrName = s; }));
 
