@@ -181,22 +181,25 @@
             "wlsunset"
             "rootbar"
             "waypipe"
+            "sirula"
+            "eww"
+            "eww-wayland"
+            "swww"
+            "wlay"
+            "i3status-rust"
+            "shotman"
           ]
             (s: { attrName = s; }));
 
           waylandPkgs = genPackagesGH // rec {
-            eww = prev.callPackage ./pkgs/eww { };
-            eww-wayland = final.eww.override { withWayland = true; };
             # wlroots-related
             salut = prev.callPackage ./pkgs/salut { };
-            swww = prev.callPackage ./pkgs/swww { };
             wayprompt = prev.callPackage ./pkgs/wayprompt {
               zig = prev.zig_0_10;
             };
             wlvncc = prev.callPackage ./pkgs/wlvncc {
               libvncserver = final.libvncserver_master;
             };
-            wlay = prev.callPackage ./pkgs/wlay { };
             obs-wlrobs = template {
               nixpkgsAttrName = "obs-studio-plugins.wlrobs";
               attrName = "obs-wlrobs";
@@ -227,10 +230,6 @@
             foot = prev.callPackage ./pkgs/foot {
               inherit foot;
             };
-            i3status-rust = prev.callPackage ./pkgs/i3status-rust { };
-            shotman = prev.callPackage ./pkgs/shotman { };
-
-            sirula = prev.callPackage ./pkgs/sirula { };
           };
         in
         (waylandPkgs // { inherit waylandPkgs; });
