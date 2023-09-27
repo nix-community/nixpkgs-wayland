@@ -212,15 +212,15 @@ nix-env -iA neatvnc
 | [obs-wlrobs](https://hg.sr.ht/~scoopta/wlrobs) | An obs-studio plugin that allows you to screen capture on wlroots based wayland compositors |
 | [rootbar](https://hg.sr.ht/~scoopta/rootbar) | A bar for Wayland WMs |
 | [salut](https://gitlab.com/snakedye/salut) | A sleek notification daemon |
-| [shotman](https://git.sr.ht/~whynothugo/shotman) | Uncompromising screenshot GUI for Wayland |
-| [sirula](https://github.com/DorianRudolph/sirula) | Sirula (simple rust launcher) is an app launcher for wayland |
+| [shotman](https://git.sr.ht/~whynothugo/shotman) | The uncompromising screenshot GUI for Wayland compositors |
+| [sirula](https://github.com/DorianRudolph/sirula) | Simple app launcher for wayland written in rust |
 | [slurp](https://github.com/emersion/slurp) | Select a region in a Wayland compositor |
 | [sway-unwrapped](https://github.com/swaywm/sway) | An i3-compatible tiling Wayland compositor |
 | [swaybg](https://github.com/swaywm/swaybg) | Wallpaper tool for Wayland compositors |
 | [swayidle](https://github.com/swaywm/swayidle) | Idle management daemon for Wayland |
 | [swaylock](https://github.com/swaywm/swaylock) | Screen locker for Wayland |
 | [swaylock-effects](https://github.com/mortie/swaylock-effects) | Screen locker for Wayland |
-| [swww](https://github.com/Horus645/swww) | A Solution to your Wayland Wallpaper Woes |
+| [swww](https://github.com/Horus645/swww) | Efficient animated wallpaper daemon for wayland, controlled at runtime |
 | [waybar](https://github.com/Alexays/Waybar) | Highly customizable Wayland bar for Sway and Wlroots based compositors |
 | [waypipe](https://gitlab.freedesktop.org/mstoeckl/waypipe/) | A network proxy for Wayland clients (applications) |
 | [wayprompt](https://git.sr.ht/~leon_plickat/wayprompt) | multi-purpose prompt tool for Wayland |
