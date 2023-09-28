@@ -153,6 +153,13 @@
               extra.buildInputs = [ prev.libdrm ];
               replace.doCheck = false;
             }
+            {
+              attrName = "wbg";
+              extra.buildInputs = [ prev.pixman ];
+              replaceInput = {
+                wayland-protocols = final.new-wayland-protocols;
+              };
+            }
           ];
 
           # these do not need changes from the package that nixpkgs has

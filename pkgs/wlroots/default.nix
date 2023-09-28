@@ -1,6 +1,10 @@
-args_@{ lib, fetchFromGitLab, wlroots, libdisplay-info
+args_@{ lib
+, fetchFromGitLab
+, wlroots
+, libdisplay-info
 , hwdata
-, ... }:
+, ...
+}:
 
 let
   metadata = import ./metadata.nix;
