@@ -155,6 +155,10 @@
               extra.buildInputs = [ prev.libdrm ];
               replace.doCheck = false;
             }
+            {
+              attrName = "wbg";
+              extra.buildInputs = [ prev.pixman ];
+            }
           ];
 
           # these do not need changes from the package that nixpkgs has
