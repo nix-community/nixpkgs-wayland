@@ -226,7 +226,6 @@
             };
 
             # misc
-            clipman = prev.callPackage ./pkgs/clipman { };
             foot = prev.callPackage ./pkgs/foot {
               inherit foot;
             };
