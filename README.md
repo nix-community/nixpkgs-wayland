@@ -190,7 +190,6 @@ nix-env -iA neatvnc
 | --- | --- |
 | [aml](https://github.com/any1/aml) | Another main loop |
 | [cage](https://github.com/Hjdskes/cage) | A Wayland kiosk that runs a single, maximized application |
-| [clipman](https://github.com/yory8/clipman) | A basic clipboard manager for Wayland, with support for persisting copy buffers after an application exits |
 | [drm_info](https://github.com/ascent12/drm_info) | Small utility to dump info about DRM devices |
 | [dunst](https://github.com/dunst-project/dunst) | Lightweight and customizable notification daemon |
 | [eww](https://github.com/elkowar/eww) | ElKowars wacky widgets |
