@@ -224,6 +224,7 @@ nix-env -iA neatvnc
 | [waypipe](https://gitlab.freedesktop.org/mstoeckl/waypipe/) | A network proxy for Wayland clients (applications) |
 | [wayprompt](https://git.sr.ht/~leon_plickat/wayprompt) | multi-purpose prompt tool for Wayland |
 | [wayvnc](https://github.com/any1/wayvnc) | A VNC server for wlroots based Wayland compositors |
+| [wbg](https://codeberg.org/dnkl/wbg) | Wallpaper application for Wayland compositors |
 | [wdisplays](https://github.com/artizirk/wdisplays) | A graphical application for configuring displays in Wayland compositors |
 | [wev](https://git.sr.ht/~sircmpwn/wev) | Wayland event viewer |
 | [wf-recorder](https://github.com/ammen99/wf-recorder) | Utility program for screen recording of wlroots-based compositors |
