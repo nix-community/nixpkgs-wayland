@@ -78,7 +78,7 @@ overridenAttr.overrideAttrs (oldAttrs: (
       nativeBuildInputs = extra.nativeBuildInputs ++ oldAttrs.nativeBuildInputs;
     } // lib.optionalAttrs (extra ? mesonFlags)
     {
-      mesonFlags = extra.mesonFlags ++ oldAttrs.mesonFlags;
+      mesonFlags = oldAttrs.mesonFlags ++ extra.mesonFlags;
     } // lib.optionalAttrs (extra ? buildInputs)
     {
       buildInputs = extra.buildInputs ++ oldAttrs.buildInputs;
