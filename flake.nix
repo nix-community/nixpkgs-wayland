@@ -54,10 +54,6 @@
             }
             {
               attrName = "waybar";
-              extra.mesonFlags = [
-                # requires a fork of cava
-                "-Dcava=disabled"
-              ];
               extra.buildInputs = [
                 prev.libjack2
                 prev.playerctl
@@ -66,19 +62,19 @@
                 let
                   # Derived from subprojects/cava.wrap
                   libcava = rec {
-                    version = "0.8.5";
+                    version = "0.9.1";
                     src = prev.fetchFromGitHub {
                       owner = "LukashonakV";
                       repo = "cava";
                       rev = version;
-                      hash = "sha256-b/XfqLh8PnW018sGVKRRlFvBpo2Ru1R2lUeTR7pugBo=";
+                      hash = "sha256-FnRJJV0poRmw+y4nt1X7Z0ipX86LRK1TJhNKHFk0rTw=";
                     };
                   };
                 in
                 ''
                   (
                     cd "$sourceRoot"
-                    cp -R --no-preserve=mode,ownership ${libcava.src} subprojects/cava-0.8.5
+                    cp -R --no-preserve=mode,ownership ${libcava.src} subprojects/cava-${libcava.version}
                     patchShebangs .
                   )
                 '';
