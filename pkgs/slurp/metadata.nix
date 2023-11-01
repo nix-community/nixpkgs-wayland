@@ -4,6 +4,6 @@ rec {
   repo = "slurp";
   repo_git = "https://${domain}/${owner}/${repo}";
   branch = "master";
-  rev = "0a4c335a40e843bffecb93a9732caed3be9249bb";
-  sha256 = "sha256-Ciyg+tOW80xdPjxd4VIP4VQQP/YaUU0/pXxLK3DnuwQ=";
+  rev = "57a797f56ee1cc918c04dfd7596e64df8ac3c33d";
+  sha256 = "sha256-BVRJ4Z6laGufkcR+7To9ukVUSZLm9Iiyu/3mNcJuQ4E=";
 }
