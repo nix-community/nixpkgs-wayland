@@ -4,9 +4,7 @@ let
   home-manager = builtins.fetchTarball "https://github.com/rycee/home-manager/archive/master.tar.gz";
 in
 {
-  imports = [
-    "${home-manager}/nixos"
-  ];
+  imports = [ "${home-manager}/nixos" ];
 
   nixpkgs.overlays = [ (import ../.) ];
 
@@ -62,5 +60,4 @@ in
       "networkmanager"
     ];
   };
-
 }

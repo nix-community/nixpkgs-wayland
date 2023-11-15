@@ -1,27 +1,28 @@
-{ stdenv
-, lib
-, fetchFromGitHub
-, pkg-config
-, meson
-, ninja
-, wayland
-, wayland-protocols
-, libxkbcommon
-, libvncserver
-, libpthreadstubs
-, lzo
-, pixman
-, libuv
-, libglvnd
-, libjpeg
-, libpng
-, neatvnc
-, libX11
-, libdrm
-, aml
-, mesa
-, ffmpeg
-, openssl
+{
+  stdenv,
+  lib,
+  fetchFromGitHub,
+  pkg-config,
+  meson,
+  ninja,
+  wayland,
+  wayland-protocols,
+  libxkbcommon,
+  libvncserver,
+  libpthreadstubs,
+  lzo,
+  pixman,
+  libuv,
+  libglvnd,
+  libjpeg,
+  libpng,
+  neatvnc,
+  libX11,
+  libdrm,
+  aml,
+  mesa,
+  ffmpeg,
+  openssl,
 }:
 
 let
@@ -38,7 +39,11 @@ stdenv.mkDerivation rec {
     inherit (metadata) sha256;
   };
 
-  nativeBuildInputs = [ pkg-config meson ninja ];
+  nativeBuildInputs = [
+    pkg-config
+    meson
+    ninja
+  ];
   buildInputs = [
     wayland
     wayland-protocols
