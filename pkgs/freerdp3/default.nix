@@ -202,9 +202,7 @@ stdenv.mkDerivation rec {
     };
 
   env = {
-    NIX_CFLAGS_COMPILE =
-      lib.optionalString stdenv.isDarwin
-        "-DTARGET_OS_IPHONE=0 -DTARGET_OS_WATCH=0 -include AudioToolbox/AudioToolbox.h";
+    NIX_CFLAGS_COMPILE = lib.optionalString stdenv.isDarwin "-DTARGET_OS_IPHONE=0 -DTARGET_OS_WATCH=0 -include AudioToolbox/AudioToolbox.h";
 
     NIX_LDFLAGS = lib.optionalString stdenv.isDarwin "-framework AudioToolbox";
   };
