@@ -1,9 +1,9 @@
 rec {
   domain = "github.com";
-  owner = "mortie";
+  owner = "jirutka";
   repo = "swaylock-effects";
   repo_git = "https://${domain}/${owner}/${repo}";
   branch = "master";
-  rev = "a863c2fd3c8b313f4d39ff03bcb8dad299727480";
-  sha256 = "sha256-ENCtBn3QwOiMQKeO/IcpxCeAAytKhda3OSDJNNFZQGM=";
+  rev = "7c5681ce96587ce3090c6698501faeccdfdc157d";
+  sha256 = "sha256-09Kq90wIIF9lPjiY2anf9MSgi/EqeXKXW1mFmhxA/aM=";
 }
