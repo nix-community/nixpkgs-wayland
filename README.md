@@ -218,7 +218,7 @@ nix-env -iA neatvnc
 | [swaybg](https://github.com/swaywm/swaybg) | Wallpaper tool for Wayland compositors |
 | [swayidle](https://github.com/swaywm/swayidle) | Idle management daemon for Wayland |
 | [swaylock](https://github.com/swaywm/swaylock) | Screen locker for Wayland |
-| [swaylock-effects](https://github.com/mortie/swaylock-effects) | Screen locker for Wayland |
+| [swaylock-effects](https://github.com/jirutka/swaylock-effects) | Screen locker for Wayland |
 | [swww](https://github.com/Horus645/swww) | Efficient animated wallpaper daemon for wayland, controlled at runtime |
 | [waybar](https://github.com/Alexays/Waybar) | Highly customizable Wayland bar for Sway and Wlroots based compositors |
 | [waypipe](https://gitlab.freedesktop.org/mstoeckl/waypipe/) | A network proxy for Wayland clients (applications) |
