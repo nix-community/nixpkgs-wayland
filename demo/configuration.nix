@@ -1,9 +1,11 @@
-{ ... }: {
-  imports = [
-    (import ./profile.nix { user = "demo"; })
-  ];
+{ ... }:
+{
+  imports = [ (import ./profile.nix { user = "demo"; }) ];
 
-  nix.trustedUsers = [ "root" "@wheel" ];
+  nix.trustedUsers = [
+    "root"
+    "@wheel"
+  ];
 
   security.sudo.enable = true;
 
@@ -12,10 +14,11 @@
     isNormalUser = true;
     password = "demo1234";
     #hashedPassword = "$6$3vp.8UtiX$XSiK9o.4OMB1e.NWH9TebK2GigdAX2HvH9w0XUnv9gU2a96b6zLQCRS7HNnApafK16K2puxWjnC0A.eriwpUD1";
-    extraGroups = [
-      # allow demo to administer the machine
-      "wheel"
-    ];
+    extraGroups =
+      [
+        # allow demo to administer the machine
+        "wheel"
+      ];
   };
 
   users.users.root = {
@@ -34,4 +37,3 @@
     Once logged-in, type `sway` to start the desktop environment.
   '';
 }
-

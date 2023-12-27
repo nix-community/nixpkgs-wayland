@@ -2,41 +2,69 @@
   description = "nixpkgs-wayland";
 
   inputs = {
-    nixpkgs = { url = "github:nixos/nixpkgs/nixos-unstable"; };
-    lib-aggregate = { url = "github:nix-community/lib-aggregate"; };
-    nix-eval-jobs = { url = "github:nix-community/nix-eval-jobs"; };
-    flake-compat = { url = "github:nix-community/flake-compat"; };
+    nixpkgs = {
+      url = "github:nixos/nixpkgs/nixos-unstable";
+    };
+    lib-aggregate = {
+      url = "github:nix-community/lib-aggregate";
+    };
+    nix-eval-jobs = {
+      url = "github:nix-community/nix-eval-jobs";
+    };
+    flake-compat = {
+      url = "github:nix-community/flake-compat";
+    };
   };
 
   nixConfig = {
-    extra-substituters = [
-      "https://nixpkgs-wayland.cachix.org"
-    ];
+    extra-substituters = [ "https://nixpkgs-wayland.cachix.org" ];
     extra-trusted-public-keys = [
       "nixpkgs-wayland.cachix.org-1:3lwxaILxMRkVhehr5StQprHdEo4IrE8sRho9R9HOLYA="
     ];
   };
 
-  outputs = inputs:
+  outputs =
+    inputs:
     let
       inherit (inputs.lib-aggregate) lib;
       inherit (inputs) self;
 
-      waylandOverlay = final: prev:
+      waylandOverlay =
+        final: prev:
         let
-          template = { attrName, nixpkgsAttrName ? "", extra ? { }, replace ? { }, replaceInput ? { } }: import ./templates/template.nix { inherit prev attrName extra replace nixpkgsAttrName replaceInput; };
-          checkMutuallyExclusive = lib.mutuallyExclusive (map (e: e.attrName) attrsExtraChangesNeeded) (map (e: e.attrName) attrsNoExtraChangesNeeded);
+          template =
+            {
+              attrName,
+              nixpkgsAttrName ? "",
+              extra ? { },
+              replace ? { },
+              replaceInput ? { },
+            }:
+            import ./templates/template.nix {
+              inherit
+                prev
+                attrName
+                extra
+                replace
+                nixpkgsAttrName
+                replaceInput
+              ;
+            };
+          checkMutuallyExclusive = lib.mutuallyExclusive (map (e: e.attrName) attrsExtraChangesNeeded) (
+            map (e: e.attrName) attrsNoExtraChangesNeeded
+          );
           genPackagesGH =
             if checkMutuallyExclusive then
-              lib.listToAttrs
-                (map
+              lib.listToAttrs (
+                map
                   (a: {
                     name = a.attrName;
                     value = template a;
                   })
                   (attrsExtraChangesNeeded ++ attrsNoExtraChangesNeeded)
-                )
-            else throw "some 'attrName' value is in both attrsExtraChangesNeeded and attrsNoExtraChangesNeeded";
+              )
+            else
+              throw "some 'attrName' value is in both attrsExtraChangesNeeded and attrsNoExtraChangesNeeded";
 
           # these need extra nativeBuildInputs or buildInputs or the patches cleared
           attrsExtraChangesNeeded = [
@@ -100,11 +128,12 @@
               replace = oldAttrs: {
                 patches =
                   let
-                    conflicting-patch = (prev.fetchpatch {
-                      name = "LIBINPUT_CONFIG_ACCEL_PROFILE_CUSTOM.patch";
-                      url = "https://github.com/swaywm/sway/commit/dee032d0a0ecd958c902b88302dc59703d703c7f.diff";
-                      hash = "sha256-dx+7MpEiAkxTBnJcsT3/1BO8rYRfNLecXmpAvhqGMD0=";
-                    });
+                    conflicting-patch =
+                      (prev.fetchpatch {
+                        name = "LIBINPUT_CONFIG_ACCEL_PROFILE_CUSTOM.patch";
+                        url = "https://github.com/swaywm/sway/commit/dee032d0a0ecd958c902b88302dc59703d703c7f.diff";
+                        hash = "sha256-dx+7MpEiAkxTBnJcsT3/1BO8rYRfNLecXmpAvhqGMD0=";
+                      });
                   in
                   lib.remove conflicting-patch oldAttrs.patches;
               };
@@ -121,7 +150,10 @@
             }
             {
               attrName = "wob";
-              extra.buildInputs = [ prev.pixman prev.cmocka ];
+              extra.buildInputs = [
+                prev.pixman
+                prev.cmocka
+              ];
             }
             {
               attrName = "libvncserver_master";
@@ -158,50 +190,49 @@
           ];
 
           # these do not need changes from the package that nixpkgs has
-          attrsNoExtraChangesNeeded = lib.attrValues (lib.genAttrs [
-            "dunst"
-            "gebaar-libinput"
-            "glpaper"
-            "imv"
-            "mako"
-            "neatvnc"
-            "slurp"
-            "swaybg"
-            "swayidle"
-            "swaylock-effects"
-            "wl-clipboard"
-            "wlogout"
-            "wlr-randr"
-            "wofi"
-            "wtype"
-            "wshowkeys"
-            "aml"
-            "wdisplays"
-            "kanshi"
-            "wev"
-            "lavalauncher"
-            "wlsunset"
-            "rootbar"
-            "waypipe"
-            "sirula"
-            "eww"
-            "eww-wayland"
-            "swww"
-            "wlay"
-            "i3status-rust"
-            "shotman"
-          ]
-            (s: { attrName = s; }));
+          attrsNoExtraChangesNeeded = lib.attrValues (
+            lib.genAttrs
+              [
+                "dunst"
+                "gebaar-libinput"
+                "glpaper"
+                "imv"
+                "mako"
+                "neatvnc"
+                "slurp"
+                "swaybg"
+                "swayidle"
+                "swaylock-effects"
+                "wl-clipboard"
+                "wlogout"
+                "wlr-randr"
+                "wofi"
+                "wtype"
+                "wshowkeys"
+                "aml"
+                "wdisplays"
+                "kanshi"
+                "wev"
+                "lavalauncher"
+                "wlsunset"
+                "rootbar"
+                "waypipe"
+                "sirula"
+                "eww"
+                "eww-wayland"
+                "swww"
+                "wlay"
+                "i3status-rust"
+                "shotman"
+              ]
+              (s: { attrName = s; })
+          );
 
           waylandPkgs = genPackagesGH // rec {
             # wlroots-related
             salut = prev.callPackage ./pkgs/salut { };
-            wayprompt = prev.callPackage ./pkgs/wayprompt {
-              zig = prev.zig_0_10;
-            };
-            wlvncc = prev.callPackage ./pkgs/wlvncc {
-              libvncserver = final.libvncserver_master;
-            };
+            wayprompt = prev.callPackage ./pkgs/wayprompt { zig = prev.zig_0_10; };
+            wlvncc = prev.callPackage ./pkgs/wlvncc { libvncserver = final.libvncserver_master; };
             obs-wlrobs = template {
               nixpkgsAttrName = "obs-studio-plugins.wlrobs";
               attrName = "obs-wlrobs";
@@ -223,22 +254,33 @@
             wl-gammarelay-rs = prev.callPackage ./pkgs/wl-gammarelay-rs { };
 
             freerdp3 = prev.callPackage ./pkgs/freerdp3 {
-              inherit (prev.darwin.apple_sdk.frameworks) AudioToolbox AVFoundation Carbon Cocoa CoreMedia;
+              inherit (prev.darwin.apple_sdk.frameworks)
+                AudioToolbox
+                AVFoundation
+                Carbon
+                Cocoa
+                CoreMedia
+              ;
               inherit (prev.gst_all_1) gstreamer gst-plugins-base gst-plugins-good;
             };
 
             # misc
-            foot = prev.callPackage ./pkgs/foot {
-              inherit foot;
-            };
+            foot = prev.callPackage ./pkgs/foot { inherit foot; };
           };
         in
         (waylandPkgs // { inherit waylandPkgs; });
     in
-    lib.flake-utils.eachSystem [ "aarch64-linux" "x86_64-linux" "riscv64-linux" ]
-      (system:
+    lib.flake-utils.eachSystem
+      [
+        "aarch64-linux"
+        "x86_64-linux"
+        "riscv64-linux"
+      ]
+      (
+        system:
         let
-          pkgsFor = pkgs: overlays:
+          pkgsFor =
+            pkgs: overlays:
             import pkgs {
               inherit system overlays;
               config.allowUnfree = true;
@@ -271,7 +313,8 @@
           };
 
           packages = (waypkgs.waylandPkgs);
-        })
+        }
+      )
     // {
       # overlays have to be outside of eachSystem block
       overlay = waylandOverlay;

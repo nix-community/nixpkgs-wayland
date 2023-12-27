@@ -1,6 +1,7 @@
-{ lib
-, fetchFromGitHub
-, rustPlatform
+{
+  lib,
+  fetchFromGitHub,
+  rustPlatform,
 }:
 
 let
@@ -11,7 +12,12 @@ rustPlatform.buildRustPackage rec {
   version = metadata.rev;
 
   src = fetchFromGitHub {
-    inherit (metadata) owner repo rev sha256;
+    inherit (metadata)
+      owner
+      repo
+      rev
+      sha256
+    ;
   };
 
   cargoLock = {

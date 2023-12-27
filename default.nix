@@ -2,7 +2,12 @@
 let
   lock = builtins.fromJSON (builtins.readFile ./flake.lock);
 
-  inherit (lock.nodes.flake-compat.locked) owner repo rev narHash;
+  inherit (lock.nodes.flake-compat.locked)
+    owner
+    repo
+    rev
+    narHash
+  ;
 
   flake-compat = fetchTarball {
     url = "https://github.com/${owner}/${repo}/archive/${rev}.tar.gz";
@@ -15,6 +20,8 @@ let
   example = ''
     nixpkgs.overlays=[(import "''${builtins.fetchurl "https://github.com/nix-community/nixpkgs-wayland/archive/master.tar.gz"}/overlay.nix")];
   '';
-  warning = "change your 'nixpkgs-wayland' import statement to import 'overlay.nix' directly. example:\n  ${example}";
+  warning = ''
+    change your 'nixpkgs-wayland' import statement to import 'overlay.nix' directly. example:
+      ${example}'';
 in
 warn warning flake.defaultNix

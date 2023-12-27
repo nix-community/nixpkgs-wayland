@@ -1,9 +1,10 @@
-{ lib
-, rustPlatform
-, fetchFromGitLab
-, pkg-config
-, libxkbcommon
-, fontconfig
+{
+  lib,
+  rustPlatform,
+  fetchFromGitLab,
+  pkg-config,
+  libxkbcommon,
+  fontconfig,
 }:
 
 let
@@ -14,7 +15,12 @@ rustPlatform.buildRustPackage rec {
   version = metadata.rev;
 
   src = fetchFromGitLab {
-    inherit (metadata) owner repo rev sha256;
+    inherit (metadata)
+      owner
+      repo
+      rev
+      sha256
+    ;
   };
 
   cargoLock = {
@@ -22,9 +28,7 @@ rustPlatform.buildRustPackage rec {
     allowBuiltinFetchGit = true;
   };
 
-  nativeBuildInputs = [
-    pkg-config
-  ];
+  nativeBuildInputs = [ pkg-config ];
 
   buildInputs = [
     libxkbcommon
