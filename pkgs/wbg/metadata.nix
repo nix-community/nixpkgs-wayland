@@ -5,6 +5,6 @@ rec {
   repo = "wbg";
   repo_git = "https://${domain}/${owner}/${repo}";
   branch = "master";
-  rev = "51de02c51f06bda67c40474d148e21d4717ba086";
-  sha256 = "sha256-yXnVFoYoNWoJoz+V9Tf/oq345yQEX2UToDS9nee6SXI=";
+  rev = "6e6b068dfab7c0e93017389a5074cae667fcd31b";
+  sha256 = "sha256-Akwj2xnEiDn+zhy+L7FqA0geGjVLJOF+ScRnMxjhE9c=";
 }
