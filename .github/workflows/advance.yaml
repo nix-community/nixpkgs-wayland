@@ -10,7 +10,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: setup-nix
-      uses: cachix/install-nix-action@v24
+      uses: cachix/install-nix-action@v25
       with:
         extra_nix_config: |
           experimental-features = nix-command flakes
