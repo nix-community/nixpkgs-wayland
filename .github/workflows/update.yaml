@@ -10,15 +10,11 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: setup-nix
-      uses: cachix/install-nix-action@v24
+      uses: DeterminateSystems/nix-installer-action@main
       with:
-        extra_nix_config: |
-          experimental-features = nix-command flakes
+        extra-config: |
           extra-binary-caches = https://nixpkgs-wayland.cachix.org
           extra-trusted-public-keys = nixpkgs-wayland.cachix.org-1:3lwxaILxMRkVhehr5StQprHdEo4IrE8sRho9R9HOLYA=
-          access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
-          accept-flake-config = true
-          log-lines = 50
     - name: prepare
       run: nix develop -c .github/init
     - name: update
