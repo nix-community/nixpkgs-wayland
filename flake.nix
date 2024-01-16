@@ -85,12 +85,6 @@
               replace.patches = [ ];
             }
             {
-              attrName = "wl-gammactl";
-              replace.postUnpack = ''
-                ln -s ${prev.wlr-protocols}/share/wlr-protocols .
-              '';
-            }
-            {
               attrName = "sway-unwrapped";
               extra.buildInputs = [ prev.xorg.xcbutilwm ];
               replaceInput = {
