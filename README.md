@@ -229,7 +229,6 @@ nix-env -iA neatvnc
 | [wev](https://git.sr.ht/~sircmpwn/wev) | Wayland event viewer |
 | [wf-recorder](https://github.com/ammen99/wf-recorder) | Utility program for screen recording of wlroots-based compositors |
 | [wl-clipboard](https://github.com/bugaevc/wl-clipboard) | Command-line copy/paste utilities for Wayland |
-| [wl-gammactl](https://github.com/mischw/wl-gammactl) | Contrast, brightness, and gamma adjustments for Wayland |
 | [wl-gammarelay-rs](https://github.com/MaxVerevkin/wl-gammarelay-rs) | A simple program that provides DBus interface to control display temperature and brightness under wayland without flickering  |
 | [wl-screenrec](https://github.com/russelltg/wl-screenrec) | High performance wlroots screen recording, featuring hardware encoding |
 | [wlay](https://github.com/atx/wlay) | Graphical output management for Wayland |
