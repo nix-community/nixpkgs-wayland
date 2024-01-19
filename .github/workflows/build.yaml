@@ -15,7 +15,7 @@ jobs:
     - name: setup-nix
       uses: DeterminateSystems/nix-installer-action@main
       with:
-        extra-config: |
+        extra-conf: |
           extra-substituters = https://nixpkgs-wayland.cachix.org
           extra-trusted-public-keys = nixpkgs-wayland.cachix.org-1:3lwxaILxMRkVhehr5StQprHdEo4IrE8sRho9R9HOLYA=
     - name: prepare
