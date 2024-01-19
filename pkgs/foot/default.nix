@@ -17,6 +17,7 @@
 , wayland-scanner
 , pkg-config
 , utf8proc
+, fetchpatch
 , allowPgo ? !stdenv.hostPlatform.isMusl
 , python3  # for PGO
   # for clang stdenv check
@@ -111,6 +112,15 @@ stdenv.mkDerivation rec {
     pkg-config
   ] ++ lib.optionals (compilerName == "clang") [
     stdenv.cc.cc.libllvm.out
+  ];
+
+  patches = [
+    # https://codeberg.org/dnkl/foot/pulls/1578
+    (fetchpatch {
+      name = "fix-build-with-FOOT_TERMINFO_PATH";
+      url = "https://codeberg.org/dnkl/foot/pulls/1578.patch";
+      sha256 = "sha256-3aX9Gz0EelO7B4DcIVMNHw5H+A5J/lG29IHJkwtmiyE=";
+    })
   ];
 
   buildInputs = [
