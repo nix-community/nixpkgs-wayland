@@ -202,7 +202,7 @@
             # wlroots-related
             salut = prev.callPackage ./pkgs/salut { };
             wayprompt = prev.callPackage ./pkgs/wayprompt {
-              zig = prev.zig_0_10;
+              zig = prev.zig_0_11;
             };
             wlvncc = prev.callPackage ./pkgs/wlvncc {
               libvncserver = final.libvncserver_master;
