@@ -48,7 +48,7 @@
                 replace
                 nixpkgsAttrName
                 replaceInput
-              ;
+                ;
             };
           checkMutuallyExclusive = lib.mutuallyExclusive (map (e: e.attrName) attrsExtraChangesNeeded) (
             map (e: e.attrName) attrsNoExtraChangesNeeded
@@ -128,12 +128,13 @@
               replace = oldAttrs: {
                 patches =
                   let
-                    conflicting-patch =
-                      (prev.fetchpatch {
+                    conflicting-patch = (
+                      prev.fetchpatch {
                         name = "LIBINPUT_CONFIG_ACCEL_PROFILE_CUSTOM.patch";
                         url = "https://github.com/swaywm/sway/commit/dee032d0a0ecd958c902b88302dc59703d703c7f.diff";
                         hash = "sha256-dx+7MpEiAkxTBnJcsT3/1BO8rYRfNLecXmpAvhqGMD0=";
-                      });
+                      }
+                    );
                   in
                   lib.remove conflicting-patch oldAttrs.patches;
               };
@@ -260,7 +261,7 @@
                 Carbon
                 Cocoa
                 CoreMedia
-              ;
+                ;
               inherit (prev.gst_all_1) gstreamer gst-plugins-base gst-plugins-good;
             };
 

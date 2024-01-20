@@ -10,7 +10,7 @@ let
     repo
     rev
     narHash
-  ;
+    ;
 
   flake-compat = fetchTarball {
     url = "https://github.com/${owner}/${repo}/archive/${rev}.tar.gz";

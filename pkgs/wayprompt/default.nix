@@ -26,7 +26,7 @@ stdenv.mkDerivation rec {
       rev
       sha256
       fetchSubmodules
-    ;
+      ;
   };
 
   nativeBuildInputs = [

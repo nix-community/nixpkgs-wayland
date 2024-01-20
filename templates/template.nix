@@ -41,7 +41,7 @@ let
           repo
           rev
           sha256
-        ;
+          ;
         inherit fetchSubmodules;
       };
       gitlab = prev.fetchFromGitLab {
@@ -50,7 +50,7 @@ let
           repo
           rev
           sha256
-        ;
+          ;
         domain = metadata.domain or "gitlab.com";
         # uncomment after https://github.com/NixOS/nixpkgs/pull/198489
         #inherit fetchSubmodules;
@@ -62,7 +62,7 @@ let
           rev
           sha256
           domain
-        ;
+          ;
         inherit fetchSubmodules;
       };
       gitsourcehut = prev.fetchFromSourcehut {
@@ -71,7 +71,7 @@ let
           repo
           rev
           sha256
-        ;
+          ;
         inherit fetchSubmodules;
       };
       hgsourcehut = prev.fetchFromSourcehut {
@@ -80,7 +80,7 @@ let
           repo
           rev
           sha256
-        ;
+          ;
         vc = "hg";
       };
     };

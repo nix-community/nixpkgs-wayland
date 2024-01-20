@@ -30,7 +30,7 @@ in
         repo
         rev
         sha256
-      ;
+        ;
     };
   }
 )

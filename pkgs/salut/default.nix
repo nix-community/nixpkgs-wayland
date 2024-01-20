@@ -20,7 +20,7 @@ rustPlatform.buildRustPackage rec {
       repo
       rev
       sha256
-    ;
+      ;
   };
 
   cargoLock = {
