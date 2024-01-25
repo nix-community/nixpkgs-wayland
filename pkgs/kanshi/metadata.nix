@@ -5,6 +5,6 @@ rec {
   repo = "kanshi";
   repo_git = "https://${domain}/${owner}/${repo}";
   branch = "master";
-  rev = "1063ce6f28cb33f6104b7a84b1c644d62334fc35";
-  sha256 = "sha256-vxysZWFcfYwOgFMcRuPzYpWmFOFMiwc62DqI+nTQ4MI=";
+  rev = "cec99a56a32b2d7f9eebcc729aa2e16d15150c15";
+  sha256 = "sha256-AniC5BWtj2QzCc2dwLPg+QNQUsne45No7uF2oIJiTOs=";
 }
