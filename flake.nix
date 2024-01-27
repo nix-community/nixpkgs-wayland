@@ -117,6 +117,9 @@
             {
               attrName = "cage";
               extra.buildInputs = [ prev.xorg.xcbutilwm ];
+              replaceInput = {
+                wlroots = prev.wlroots_0_16;
+              };
               # _FORTIFY_SOURCE requires compiling with optimization (-O)
               # PR https://github.com/NixOS/nixpkgs/pull/232917 added -O0
               replace.CFLAGS = "";
