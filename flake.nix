@@ -275,7 +275,9 @@
 
           bundle = pkgs_.nixpkgs.symlinkJoin {
             name = "nixpkgs-wayland-bundle";
-            paths = builtins.attrValues waypkgs.waylandPkgs;
+            paths = builtins.attrValues (lib.filterAttrs
+              (_: v: lib.meta.availableOn pkgs_.nixpkgs.stdenv.hostPlatform v) waypkgs.waylandPkgs
+            );
           };
 
           packages = (waypkgs.waylandPkgs);
