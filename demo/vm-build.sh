@@ -1,4 +1,2 @@
 #!/usr/bin/env bash
-nix-build '<nixpkgs/nixos>' \
-  --argstr configuration "$PWD/configuration.nix" \
-  -A vm
+nix build ".#packages.x86_64-linux.demo-vm"
