@@ -225,19 +225,7 @@ bindsym XF86MonBrightnessUp exec brightnessctl set +5%
 bindsym XF86LaunchB exec $menu
 #
 # Status Bar:
-#
-# Read `man 5 sway-bar` for more information about this section.
+
 bar {
-    position top
-
-    # When the status_command prints a new line to stdout, swaybar updates.
-    # The default just shows the current date and time.
-    #status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
-    status_command i3status-rs @i3status@
-
-    colors {
-        statusline #ffffff
-        background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
-    }
+    swaybar_command waybar
 }

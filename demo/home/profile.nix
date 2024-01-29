@@ -9,13 +9,11 @@
     xwayland
   ] ++ (with waylandPkgs; [
     grim # screenshot CLI
-    i3status-rust # menu bar
+    waybar
     kanshi # broken: display configurator
     mako # notification manager
-    redshift-wayland # ???
     slurp # dimension-grabbing CLI, to use with grim
     swayidle # lock screen manager
-    wlstream # screen recording CLI
   ]);
 
   programs.termite.enable = true;
@@ -33,12 +31,7 @@
       name = "sway-config";
       src = ./sway-config;
       wallpaper = ./wallpaper.jpg;
-      i3status = ./i3status-rs.toml;
     };
-    onChange = ''
-      echo "Reloading sway"
-      #FIXME: swaymsg reload
-    '';
   };
 
   xdg.configFile."chromium-flags.conf" = {
@@ -48,5 +41,6 @@
   };
 
   gtk.enable = true;
-  gtk.gtk3.waylandSupport = true;
+
+  home.stateVersion = "23.11";
 }

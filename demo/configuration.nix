@@ -3,7 +3,7 @@
     (import ./profile.nix { user = "demo"; })
   ];
 
-  nix.trustedUsers = [ "root" "@wheel" ];
+  nix.settings.trusted-users = [ "root" "@wheel" ];
 
   security.sudo.enable = true;
 
@@ -11,7 +11,6 @@
     uid = 1000;
     isNormalUser = true;
     password = "demo1234";
-    #hashedPassword = "$6$3vp.8UtiX$XSiK9o.4OMB1e.NWH9TebK2GigdAX2HvH9w0XUnv9gU2a96b6zLQCRS7HNnApafK16K2puxWjnC0A.eriwpUD1";
     extraGroups = [
       # allow demo to administer the machine
       "wheel"
@@ -24,7 +23,7 @@
 
   services.xserver.enable = false;
 
-  services.mingetty.helpLine = ''
+  services.getty.helpLine = ''
 
        Welcome to the Sway demo
 
@@ -34,4 +33,3 @@
     Once logged-in, type `sway` to start the desktop environment.
   '';
 }
-
