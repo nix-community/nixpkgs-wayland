@@ -105,11 +105,11 @@
               replace = oldAttrs: {
                 patches =
                   let
-                    conflicting-patch = (prev.fetchpatch {
+                    conflicting-patch = prev.fetchpatch {
                       name = "LIBINPUT_CONFIG_ACCEL_PROFILE_CUSTOM.patch";
                       url = "https://github.com/swaywm/sway/commit/dee032d0a0ecd958c902b88302dc59703d703c7f.diff";
                       hash = "sha256-dx+7MpEiAkxTBnJcsT3/1BO8rYRfNLecXmpAvhqGMD0=";
-                    });
+                    };
                   in
                   lib.remove conflicting-patch oldAttrs.patches;
               };
@@ -241,7 +241,7 @@
             };
           };
         in
-        (waylandPkgs // { inherit waylandPkgs; });
+        waylandPkgs // { inherit waylandPkgs; };
     in
     lib.flake-utils.eachSystem [ "aarch64-linux" "x86_64-linux" "riscv64-linux" ]
       (system:
@@ -280,7 +280,7 @@
             );
           };
 
-          packages = (waypkgs.waylandPkgs);
+          packages = waypkgs.waylandPkgs;
         })
     // {
       # overlays have to be outside of eachSystem block

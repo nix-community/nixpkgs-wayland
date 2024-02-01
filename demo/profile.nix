@@ -1,7 +1,7 @@
 { user }:
 { pkgs, inputs, ... }@args:
 let
-  home-manager = inputs.home-manager;
+  inherit (inputs) home-manager;
 in
 {
   imports = [

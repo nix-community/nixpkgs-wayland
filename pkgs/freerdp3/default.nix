@@ -58,11 +58,9 @@
 , withUnfree ? false
 }:
 
-let metadata = import ./metadata.nix; in
-let
+let metadata = import ./metadata.nix; 
   cmFlag = flag: if flag then "ON" else "OFF";
-  disabledTests = [
-  ] ++ lib.optionals stdenv.isDarwin [
+  disabledTests = lib.optionals stdenv.isDarwin [
     {
       dir = "winpr/libwinpr/sysinfo/test";
       file = "TestGetComputerName.c";
@@ -172,15 +170,15 @@ stdenv.mkDerivation rec {
   ]
   ++ lib.mapAttrsToList (k: v: "-D${k}=${cmFlag v}") {
     BUILD_TESTING = false; # false is recommended by upstream
-    WITH_CAIRO = (cairo != null);
-    WITH_CUPS = (cups != null);
-    WITH_FAAC = (withUnfree && faac != null);
-    WITH_FAAD2 = (faad2 != null);
-    WITH_JPEG = (libjpeg_turbo != null);
-    WITH_OPENH264 = (openh264 != null);
+    WITH_CAIRO = cairo != null;
+    WITH_CUPS = cups != null;
+    WITH_FAAC = withUnfree && faac != null;
+    WITH_FAAD2 = faad2 != null;
+    WITH_JPEG = libjpeg_turbo != null;
+    WITH_OPENH264 = openh264 != null;
     WITH_OSS = false;
-    WITH_PCSC = (pcsclite != null);
-    WITH_PULSE = (libpulseaudio != null);
+    WITH_PCSC = pcsclite != null;
+    WITH_PULSE = libpulseaudio != null;
     WITH_SERVER = buildServer;
     WITH_VAAPI = false; # false is recommended by upstream
     WITH_X11 = true;

@@ -71,7 +71,7 @@ overridenAttr.overrideAttrs (oldAttrs: (
     inherit src;
   } // lib.optionalAttrs (src ? meta.homepage) {
     meta = oldAttrs.meta // {
-      homepage = src.meta.homepage;
+      inherit (src.meta) homepage;
     };
   } // lib.optionalAttrs (extra ? nativeBuildInputs)
     {
