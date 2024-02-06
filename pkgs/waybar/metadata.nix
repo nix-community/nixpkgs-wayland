@@ -4,6 +4,6 @@ rec {
   repo = "Waybar";
   repo_git = "https://${domain}/${owner}/${repo}";
   branch = "master";
-  rev = "4c5ff80bbde40af78f5f829101ec71760caaa762";
-  sha256 = "sha256-ySlvGf8rU9r3zkW9J3eyynEfPOEsKf5UZfeKrB8wwzw=";
+  rev = "b6f4a0dae2c2a438e91ac60681d2494aca12e359";
+  sha256 = "sha256-y/PrfwrAua2v1c8gRBP3zY8qCY/HEpXMIuYvWWchhhU=";
 }
