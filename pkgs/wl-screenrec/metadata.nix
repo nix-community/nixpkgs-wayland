@@ -4,6 +4,6 @@ rec {
   repo = "wl-screenrec";
   repo_git = "https://${domain}/${owner}/${repo}";
   branch = "main";
-  rev = "3ce2067e2114e61976d0b4bb98331ccf881e08e2";
-  sha256 = "sha256-bs13iFvus0kuIksLqNfBSYEz+OOOMKGSnVqDqUDkov0=";
+  rev = "ebb5bbcb3ec49ec0e139ac1dd9c24e4de1f5bba4";
+  sha256 = "sha256-2v/Nc0wINtNVEjn5NdiQvjQfhugHBIUlfOW9OJx0GNU=";
 }
