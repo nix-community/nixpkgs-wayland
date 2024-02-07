@@ -4,6 +4,6 @@ rec {
   repo = "wlogout";
   repo_git = "https://${domain}/${owner}/${repo}";
   branch = "master";
-  rev = "dacbe4a1d61005f97299891691f02bb810eb83b3";
-  sha256 = "sha256-H7l8NZSwfGUrmCTBrb0pM5kjLrPe+fFyF5OG7QhiN/k=";
+  rev = "f1db286b8f6e95df0f2e0bc389142a5e1ea4fbeb";
+  sha256 = "sha256-cTscfx+erHVFHwwYpN7pADQWt5sq75sQSyXSP/H8kOs=";
 }
