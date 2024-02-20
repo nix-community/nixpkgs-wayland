@@ -58,6 +58,7 @@
                 prev.libjack2
                 prev.playerctl
               ];
+              replace.mesonFlags = lib.remove "-Dgtk-layer-shell=enabled" prev.waybar.mesonFlags;
               replace.postUnpack =
                 let
                   # Derived from subprojects/cava.wrap
