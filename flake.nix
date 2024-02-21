@@ -63,22 +63,12 @@
                 let
                   # Derived from subprojects/cava.wrap
                   libcava = rec {
-                    version = "0.9.1";
+                    version = "0.10.1";
                     src = prev.fetchFromGitHub {
                       owner = "LukashonakV";
                       repo = "cava";
                       rev = version;
-                      hash = "sha256-FnRJJV0poRmw+y4nt1X7Z0ipX86LRK1TJhNKHFk0rTw=";
-                    };
-                  };
-                  # Derived from subprojects/catch2.wrap
-                  catch2 = rec {
-                    version = "3.5.1";
-                    src = prev.fetchFromGitHub {
-                      owner = "catchorg";
-                      repo = "Catch2";
-                      rev = "v${version}";
-                      hash = "sha256-OyYNUfnu6h1+MfCF8O+awQ4Usad0qrdCtdZhYgOY+Vw=";
+                      hash = "sha256-iIYKvpOWafPJB5XhDOSIW9Mb4I3A4pcgIIPQdQYEqUw=";
                     };
                   };
                 in
@@ -86,7 +76,6 @@
                   (
                     cd "$sourceRoot"
                     cp -R --no-preserve=mode,ownership ${libcava.src} subprojects/cava-${libcava.version}
-                    cp -R --no-preserve=mode,ownership ${catch2.src} subprojects/Catch2-${catch2.version}
                     patchShebangs .
                   )
                 '';
@@ -277,7 +266,8 @@
           bundle = pkgs_.nixpkgs.symlinkJoin {
             name = "nixpkgs-wayland-bundle";
             paths = builtins.attrValues (lib.filterAttrs
-              (_: v: lib.meta.availableOn pkgs_.nixpkgs.stdenv.hostPlatform v) waypkgs.waylandPkgs
+              (_: v: lib.meta.availableOn pkgs_.nixpkgs.stdenv.hostPlatform v)
+              waypkgs.waylandPkgs
             );
           };
 
