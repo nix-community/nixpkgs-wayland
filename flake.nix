@@ -63,12 +63,12 @@
                 let
                   # Derived from subprojects/cava.wrap
                   libcava = rec {
-                    version = "0.9.1";
+                    version = "0.10.1";
                     src = prev.fetchFromGitHub {
                       owner = "LukashonakV";
                       repo = "cava";
                       rev = version;
-                      hash = "sha256-FnRJJV0poRmw+y4nt1X7Z0ipX86LRK1TJhNKHFk0rTw=";
+                      hash = "sha256-iIYKvpOWafPJB5XhDOSIW9Mb4I3A4pcgIIPQdQYEqUw=";
                     };
                   };
                   # Derived from subprojects/catch2.wrap
