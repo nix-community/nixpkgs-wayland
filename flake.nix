@@ -194,7 +194,6 @@
             "waypipe"
             "sirula"
             "eww"
-            "eww-wayland"
             "swww"
             "wlay"
             "i3status-rust"
