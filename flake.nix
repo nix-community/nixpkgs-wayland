@@ -100,7 +100,7 @@
               attrName = "sway-unwrapped";
               extra.buildInputs = [ prev.xorg.xcbutilwm ];
               replaceInput = {
-                wlroots_0_16 = final.wlroots;
+                wlroots = final.wlroots;
                 wayland-protocols = final.new-wayland-protocols;
               };
               replace = oldAttrs: {
