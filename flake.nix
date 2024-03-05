@@ -164,11 +164,20 @@
               attrName = "wbg";
               extra.buildInputs = [ prev.pixman ];
             }
+            {
+              attrName = "dunst";
+              # remove once nixpkgs is above 1.10.1
+              replace.postInstall = builtins.replaceStrings [ ''
+                install -D contrib/_dunst.zshcomp $out/share/zsh/site-functions/_dunst
+                install -D contrib/_dunstctl.zshcomp $out/share/zsh/site-functions/_dunstctl
+                substituteInPlace $out/share/zsh/site-functions/_dunstctl \
+                  --replace "jq -M" "${prev.jq}/bin/jq -M"
+              '' ] [ "" ] prev.dunst.postInstall;
+            }
           ];
 
           # these do not need changes from the package that nixpkgs has
           attrsNoExtraChangesNeeded = lib.attrValues (lib.genAttrs [
-            "dunst"
             "gebaar-libinput"
             "glpaper"
             "imv"
