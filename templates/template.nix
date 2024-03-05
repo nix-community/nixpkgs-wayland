@@ -57,34 +57,34 @@ let
     allowBuiltinFetchGit = true;
   };
 
-  replace' = oldAttrs:
+  replace' = previousAttrs:
     if builtins.isFunction replace then
-      replace oldAttrs
+      replace previousAttrs
     else
       replace;
 
 in
-overridenAttr.overrideAttrs (oldAttrs: (
+overridenAttr.overrideAttrs (previousAttrs: (
   {
     pname = attrName;
     version = "+${lib.substring 0 7 metadata.rev}";
     inherit src;
   } // lib.optionalAttrs (src ? meta.homepage) {
-    meta = oldAttrs.meta // {
+    meta = previousAttrs.meta // {
       inherit (src.meta) homepage;
     };
   } // lib.optionalAttrs (extra ? nativeBuildInputs)
     {
-      nativeBuildInputs = extra.nativeBuildInputs ++ oldAttrs.nativeBuildInputs;
+      nativeBuildInputs = extra.nativeBuildInputs ++ previousAttrs.nativeBuildInputs;
     } // lib.optionalAttrs (extra ? mesonFlags)
     {
-      mesonFlags = oldAttrs.mesonFlags ++ extra.mesonFlags;
+      mesonFlags = previousAttrs.mesonFlags ++ extra.mesonFlags;
     } // lib.optionalAttrs (extra ? buildInputs)
     {
-      buildInputs = extra.buildInputs ++ oldAttrs.buildInputs;
-    } // lib.optionalAttrs (oldAttrs ? cargoDeps)
+      buildInputs = extra.buildInputs ++ previousAttrs.buildInputs;
+    } // lib.optionalAttrs (previousAttrs ? cargoDeps)
     {
       cargoDeps = prev.rustPlatform.importCargoLock cargoLock;
       cargoHash = null;
-    } // replace' oldAttrs
+    } // replace' previousAttrs
 ))

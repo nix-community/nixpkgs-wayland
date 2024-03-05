@@ -103,7 +103,7 @@
                 wlroots = final.wlroots;
                 wayland-protocols = final.new-wayland-protocols;
               };
-              replace = oldAttrs: {
+              replace = previousAttrs: {
                 patches =
                   let
                     conflicting-patch = prev.fetchpatch {
@@ -112,7 +112,7 @@
                       hash = "sha256-dx+7MpEiAkxTBnJcsT3/1BO8rYRfNLecXmpAvhqGMD0=";
                     };
                   in
-                  lib.remove conflicting-patch oldAttrs.patches;
+                  lib.remove conflicting-patch previousAttrs.patches;
               };
             }
             {
@@ -167,12 +167,17 @@
             {
               attrName = "dunst";
               # remove once nixpkgs is above 1.10.1
-              replace.postInstall = builtins.replaceStrings [ ''
-                install -D contrib/_dunst.zshcomp $out/share/zsh/site-functions/_dunst
-                install -D contrib/_dunstctl.zshcomp $out/share/zsh/site-functions/_dunstctl
-                substituteInPlace $out/share/zsh/site-functions/_dunstctl \
-                  --replace "jq -M" "${prev.jq}/bin/jq -M"
-              '' ] [ "" ] prev.dunst.postInstall;
+              replace = previousAttrs: {
+                postInstall = builtins.replaceStrings [
+                  ''
+                    install -D contrib/_dunst.zshcomp $out/share/zsh/site-functions/_dunst
+                    install -D contrib/_dunstctl.zshcomp $out/share/zsh/site-functions/_dunstctl
+                    substituteInPlace $out/share/zsh/site-functions/_dunstctl \
+                      --replace "jq -M" "${prev.jq}/bin/jq -M"
+                  ''
+                ] [ "" ]
+                  previousAttrs.postInstall;
+              };
             }
           ];
 
@@ -285,7 +290,8 @@
           bundle = pkgs_.nixpkgs.symlinkJoin {
             name = "nixpkgs-wayland-bundle";
             paths = builtins.attrValues (lib.filterAttrs
-              (_: v: lib.meta.availableOn pkgs_.nixpkgs.stdenv.hostPlatform v) waypkgs.waylandPkgs
+              (_: v: lib.meta.availableOn pkgs_.nixpkgs.stdenv.hostPlatform v)
+              waypkgs.waylandPkgs
             );
           };
 
