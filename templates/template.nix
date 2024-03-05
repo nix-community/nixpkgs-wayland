@@ -11,7 +11,7 @@ args_@{ attrName
 
 let
   inherit (prev) lib;
-  metadata = import ../pkgs//${attrName}/metadata.nix;
+  metadata = import ../pkgs/${attrName}/metadata.nix;
   ignore = [ "attrName" "nixpkgsAttrName" "prev" "extra" "replace" "replaceInput" ];
   args = builtins.removeAttrs (args_ // replaceInput) ignore;
   nixpkgsAttr = if nixpkgsAttrName != "" then nixpkgsAttrName else attrName;
