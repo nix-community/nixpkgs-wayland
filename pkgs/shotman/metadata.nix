@@ -5,6 +5,6 @@ rec {
   repo = "shotman";
   repo_git = "https://${domain}/${owner}/${repo}";
   branch = "main";
-  rev = "478547482d45db761b65a7e8c90cf035aba2226b";
-  sha256 = "sha256-wEz6F13nsrSqMhqXiE0dbSSQhrbVO01nxqVAu/6ebrs=";
+  rev = "308e1eebec4677b7c0f1fa2849c2c880cbeaca0e";
+  sha256 = "sha256-IWT8ZtH0E7+gLXNoX3mVBoMk90b91mGaSqyYkn4s16M=";
 }
