@@ -5,7 +5,7 @@ rec {
   repo = "wayprompt";
   repo_git = "https://${domain}/${owner}/${repo}";
   branch = "master";
-  rev = "d6f28ee8197cbb203f6ed1e386b446b5d7b185d7";
-  sha256 = "sha256-dIkceDButu0xpafDzhizuMyDW5QqGLqdi0aHTeaenCs=";
+  rev = "d163b25d5e7370f4857ab84b3c1a2751046c7243";
+  sha256 = "sha256-6Jahgrs+AFBUXw6P2yvGWlSaUd0ST8rgjm++6G0Z+tU=";
   fetchSubmodules = true;
 }
