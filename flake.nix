@@ -58,38 +58,42 @@
                 prev.libjack2
                 prev.playerctl
               ];
-              replace.mesonFlags = lib.remove "-Dgtk-layer-shell=enabled" prev.waybar.mesonFlags;
-              replace.postUnpack =
-                let
-                  # Derived from subprojects/cava.wrap
-                  libcava = rec {
-                    version = "0.10.1";
-                    src = prev.fetchFromGitHub {
-                      owner = "LukashonakV";
-                      repo = "cava";
-                      rev = version;
-                      hash = "sha256-iIYKvpOWafPJB5XhDOSIW9Mb4I3A4pcgIIPQdQYEqUw=";
-                    };
-                  };
-                  # Derived from subprojects/catch2.wrap
-                  catch2 = rec {
-                    version = "3.5.1";
-                    src = prev.fetchFromGitHub {
-                      owner = "catchorg";
-                      repo = "Catch2";
-                      rev = "v${version}";
-                      hash = "sha256-OyYNUfnu6h1+MfCF8O+awQ4Usad0qrdCtdZhYgOY+Vw=";
-                    };
-                  };
-                in
-                ''
-                  (
-                    cd "$sourceRoot"
-                    cp -R --no-preserve=mode,ownership ${libcava.src} subprojects/cava-${libcava.version}
-                    cp -R --no-preserve=mode,ownership ${catch2.src} subprojects/Catch2-${catch2.version}
-                    patchShebangs .
-                  )
-                '';
+              replace = previousAttrs:
+                {
+                  buildInputs = (lib.remove (lib.elemAt previousAttrs.buildInputs 27) previousAttrs.buildInputs) ++ [ prev.wireplumber ];
+                  mesonFlags = lib.remove "-Dgtk-layer-shell=enabled" prev.waybar.mesonFlags;
+                  postUnpack =
+                    let
+                      # Derived from subprojects/cava.wrap
+                      libcava = rec {
+                        version = "0.10.1";
+                        src = prev.fetchFromGitHub {
+                          owner = "LukashonakV";
+                          repo = "cava";
+                          rev = version;
+                          hash = "sha256-iIYKvpOWafPJB5XhDOSIW9Mb4I3A4pcgIIPQdQYEqUw=";
+                        };
+                      };
+                      # Derived from subprojects/catch2.wrap
+                      catch2 = rec {
+                        version = "3.5.1";
+                        src = prev.fetchFromGitHub {
+                          owner = "catchorg";
+                          repo = "Catch2";
+                          rev = "v${version}";
+                          hash = "sha256-OyYNUfnu6h1+MfCF8O+awQ4Usad0qrdCtdZhYgOY+Vw=";
+                        };
+                      };
+                    in
+                    ''
+                      (
+                        cd "$sourceRoot"
+                        cp -R --no-preserve=mode,ownership ${libcava.src} subprojects/cava-${libcava.version}
+                        cp -R --no-preserve=mode,ownership ${catch2.src} subprojects/Catch2-${catch2.version}
+                        patchShebangs .
+                      )
+                    '';
+                };
             }
             {
               attrName = "gtk-layer-shell";
