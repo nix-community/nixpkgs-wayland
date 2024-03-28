@@ -3,7 +3,6 @@ args_@{ lib
 , wlroots
 , libdisplay-info
 , hwdata
-, fetchpatch
 , ...
 }:
 
@@ -18,13 +17,4 @@ in
   src = fetchFromGitLab {
     inherit (metadata) domain owner repo rev sha256;
   };
-  patches =
-    let
-      conflicting-patch = fetchpatch {
-        name = "tinywl-fix-wlroots-dependency-constraint-in-Makefile.patch";
-        url = "https://gitlab.freedesktop.org/wlroots/wlroots/-/commit/fe53ec693789afb44c899cad8c2df70c8f9f9023.patch";
-        hash = "sha256-wU62hXgmsAyT5j/bWeCFBkvM9cYjUntdCycQt5HAhb8=";
-      };
-    in
-    lib.remove conflicting-patch old.patches;
 })
