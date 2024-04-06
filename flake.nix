@@ -146,6 +146,11 @@
               extra.buildInputs = [ prev.jansson ];
             }
             {
+              attrName = "eww";
+              nixpkgsAttrName = "eww";
+              extra.buildInputs = [ prev.libdbusmenu ];
+            }
+            {
               attrName = "wf-recorder";
               extra.buildInputs = [ prev.mesa ];
             }
@@ -211,7 +216,6 @@
             "rootbar"
             "waypipe"
             "sirula"
-            "eww"
             "swww"
             "wlay"
             "i3status-rust"
