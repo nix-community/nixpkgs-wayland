@@ -148,7 +148,7 @@
             {
               attrName = "eww";
               nixpkgsAttrName = "eww";
-              extra.buildInputs = [ prev.libdbusmenu ];
+              extra.buildInputs = [ prev.libdbusmenu prev.libdbusmenu-gtk3 ];
             }
             {
               attrName = "wf-recorder";
