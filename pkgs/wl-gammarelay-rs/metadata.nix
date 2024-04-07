@@ -4,6 +4,6 @@ rec {
   repo = "wl-gammarelay-rs";
   repo_git = "https://${domain}/${owner}/${repo}";
   branch = "main";
-  rev = "cf7906769a6260d5a97ead60b40fa0c07c50a12f";
-  sha256 = "sha256-36u2s+Yv+0/lZErHonVvzyBuZ2xES2MGMG4PRjaM74k=";
+  rev = "79b896806dba8e2231ca5abb0eed6ff9fbda501c";
+  sha256 = "sha256-DRP9ArDpT/QXxjkkYYEcPY/tgjtMTw8XuKDoE3SE9x0=";
 }
