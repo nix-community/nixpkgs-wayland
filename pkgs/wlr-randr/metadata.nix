@@ -5,6 +5,6 @@ rec {
   repo = "wlr-randr";
   repo_git = "https://${domain}/${owner}/${repo}";
   branch = "master";
-  rev = "2277ca73f03cf2970cb8f5c47e8c58315ba00efa";
-  sha256 = "sha256-m0TcYPLq2G6bWHKpu42sdfHusCnBTF1rgv4q0pc6vKw=";
+  rev = "2afe7c0c1c4c0c7a88182ec04412165b3ad234cd";
+  sha256 = "sha256-8AScEeRJPppFKLAOsokog8R8jHuyvSqIrP+k4pAHoy4=";
 }
