@@ -16,21 +16,19 @@ let
   ];
   args = lib.filterAttrs (n: _v: (!builtins.elem n ignore)) args_;
 in
-(wlroots.override args).overrideAttrs (
-  old: {
-    version = "${metadata.rev}";
-    buildInputs = old.buildInputs ++ [
-      hwdata
-      libdisplay-info
-    ];
-    src = fetchFromGitLab {
-      inherit (metadata)
-        domain
-        owner
-        repo
-        rev
-        sha256
-        ;
-    };
-  }
-)
+(wlroots.override args).overrideAttrs (old: {
+  version = "${metadata.rev}";
+  buildInputs = old.buildInputs ++ [
+    hwdata
+    libdisplay-info
+  ];
+  src = fetchFromGitLab {
+    inherit (metadata)
+      domain
+      owner
+      repo
+      rev
+      sha256
+      ;
+  };
+})

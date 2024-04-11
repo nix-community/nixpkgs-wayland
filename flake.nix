@@ -56,12 +56,10 @@
           genPackagesGH =
             if checkMutuallyExclusive then
               lib.listToAttrs (
-                map
-                  (a: {
-                    name = a.attrName;
-                    value = template a;
-                  })
-                  (attrsExtraChangesNeeded ++ attrsNoExtraChangesNeeded)
+                map (a: {
+                  name = a.attrName;
+                  value = template a;
+                }) (attrsExtraChangesNeeded ++ attrsNoExtraChangesNeeded)
               )
             else
               throw "some 'attrName' value is in both attrsExtraChangesNeeded and attrsNoExtraChangesNeeded";
@@ -226,7 +224,9 @@
                 "i3status-rust"
                 "shotman"
               ]
-              (s: { attrName = s; })
+              (s: {
+                attrName = s;
+              })
           );
 
           waylandPkgs = genPackagesGH // rec {

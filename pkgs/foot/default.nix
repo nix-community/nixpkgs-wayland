@@ -93,7 +93,7 @@ let
       "gcc" = "gcc-ar";
       "unknown" = "ar";
     }
-      ."${compilerName}";
+    ."${compilerName}";
 
   # PGO only makes sense if we are not cross compiling and
   # using a compiler which foot's PGO build supports (clang or gcc)
@@ -191,9 +191,9 @@ stdenv.mkDerivation rec {
     # By changing name, this will get rebuilt everytime we change version,
     # even if the hash stays the same. Consequently it'll fail if we introduce
     # a hash mismatch when updating.
-    stimulus-script-is-current = stimulusGenerator.src.overrideAttrs (
-      _: { name = "generate-alt-random-writes-${version}.py"; }
-    );
+    stimulus-script-is-current = stimulusGenerator.src.overrideAttrs (_: {
+      name = "generate-alt-random-writes-${version}.py";
+    });
   };
 
   meta = with lib; {
