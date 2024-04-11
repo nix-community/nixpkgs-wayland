@@ -1,18 +1,22 @@
-{ lib
-, rustPlatform
-, fetchFromGitHub
-, pkg-config
-, dbus
-, libpulseaudio
-, alsa-lib
-, libxkbcommon
-, wayland
-, fontconfig
+{
+  lib,
+  rustPlatform,
+  fetchFromGitHub,
+  pkg-config,
+  dbus,
+  libpulseaudio,
+  alsa-lib,
+  libxkbcommon,
+  wayland,
+  fontconfig,
 }:
 
 let
   metadata = import ./metadata.nix;
-  libraryPath = lib.makeLibraryPath [ wayland libxkbcommon ];
+  libraryPath = lib.makeLibraryPath [
+    wayland
+    libxkbcommon
+  ];
 in
 rustPlatform.buildRustPackage rec {
   pname = "wldash";
@@ -32,7 +36,12 @@ rustPlatform.buildRustPackage rec {
 
   nativeBuildInputs = [ pkg-config ];
 
-  buildInputs = [ dbus libpulseaudio alsa-lib fontconfig ];
+  buildInputs = [
+    dbus
+    libpulseaudio
+    alsa-lib
+    fontconfig
+  ];
 
   dontPatchELF = true;
 
@@ -45,6 +54,9 @@ rustPlatform.buildRustPackage rec {
     homepage = "https://wldash.org";
     license = licenses.gpl3;
     maintainers = with maintainers; [ alexarice ];
-    platforms = [ "x86_64-linux" "i686-linux" ];
+    platforms = [
+      "x86_64-linux"
+      "i686-linux"
+    ];
   };
 }

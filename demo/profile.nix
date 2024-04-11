@@ -4,9 +4,7 @@ let
   inherit (inputs) home-manager;
 in
 {
-  imports = [
-    "${home-manager}/nixos"
-  ];
+  imports = [ "${home-manager}/nixos" ];
 
   nixpkgs.overlays = [ (import ../overlay.nix) ];
 
@@ -59,5 +57,4 @@ in
       "networkmanager"
     ];
   };
-
 }

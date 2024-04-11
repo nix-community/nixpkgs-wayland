@@ -1,23 +1,32 @@
-{ lib
-, stdenv
-, fetchFromSourcehut
-, fcft
-, libxkbcommon
-, pkg-config
-, pixman
-, scdoc
-, wayland
-, wayland-protocols
-, zig
+{
+  lib,
+  stdenv,
+  fetchFromSourcehut,
+  fcft,
+  libxkbcommon,
+  pkg-config,
+  pixman,
+  scdoc,
+  wayland,
+  wayland-protocols,
+  zig,
 }:
 
-let metadata = import ./metadata.nix; in
+let
+  metadata = import ./metadata.nix;
+in
 stdenv.mkDerivation rec {
   pname = "wayprompt-unstable";
   version = "${metadata.rev}";
 
   src = fetchFromSourcehut {
-    inherit (metadata) owner repo rev sha256 fetchSubmodules;
+    inherit (metadata)
+      owner
+      repo
+      rev
+      sha256
+      fetchSubmodules
+      ;
   };
 
   nativeBuildInputs = [

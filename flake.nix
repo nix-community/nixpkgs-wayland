@@ -2,41 +2,67 @@
   description = "nixpkgs-wayland";
 
   inputs = {
-    nixpkgs = { url = "github:nixos/nixpkgs/nixos-unstable"; };
-    lib-aggregate = { url = "github:nix-community/lib-aggregate"; };
-    nix-eval-jobs = { url = "github:nix-community/nix-eval-jobs"; };
-    flake-compat = { url = "github:nix-community/flake-compat"; };
+    nixpkgs = {
+      url = "github:nixos/nixpkgs/nixos-unstable";
+    };
+    lib-aggregate = {
+      url = "github:nix-community/lib-aggregate";
+    };
+    nix-eval-jobs = {
+      url = "github:nix-community/nix-eval-jobs";
+    };
+    flake-compat = {
+      url = "github:nix-community/flake-compat";
+    };
   };
 
   nixConfig = {
-    extra-substituters = [
-      "https://nixpkgs-wayland.cachix.org"
-    ];
+    extra-substituters = [ "https://nixpkgs-wayland.cachix.org" ];
     extra-trusted-public-keys = [
       "nixpkgs-wayland.cachix.org-1:3lwxaILxMRkVhehr5StQprHdEo4IrE8sRho9R9HOLYA="
     ];
   };
 
-  outputs = inputs:
+  outputs =
+    inputs:
     let
       inherit (inputs.lib-aggregate) lib;
       inherit (inputs) self;
 
-      waylandOverlay = final: prev:
+      waylandOverlay =
+        final: prev:
         let
-          template = { attrName, nixpkgsAttrName ? "", extra ? { }, replace ? { }, replaceInput ? { } }: import ./templates/template.nix { inherit prev attrName extra replace nixpkgsAttrName replaceInput; };
-          checkMutuallyExclusive = lib.mutuallyExclusive (map (e: e.attrName) attrsExtraChangesNeeded) (map (e: e.attrName) attrsNoExtraChangesNeeded);
+          template =
+            {
+              attrName,
+              nixpkgsAttrName ? "",
+              extra ? { },
+              replace ? { },
+              replaceInput ? { },
+            }:
+            import ./templates/template.nix {
+              inherit
+                prev
+                attrName
+                extra
+                replace
+                nixpkgsAttrName
+                replaceInput
+                ;
+            };
+          checkMutuallyExclusive = lib.mutuallyExclusive (map (e: e.attrName) attrsExtraChangesNeeded) (
+            map (e: e.attrName) attrsNoExtraChangesNeeded
+          );
           genPackagesGH =
             if checkMutuallyExclusive then
-              lib.listToAttrs
-                (map
-                  (a: {
-                    name = a.attrName;
-                    value = template a;
-                  })
-                  (attrsExtraChangesNeeded ++ attrsNoExtraChangesNeeded)
-                )
-            else throw "some 'attrName' value is in both attrsExtraChangesNeeded and attrsNoExtraChangesNeeded";
+              lib.listToAttrs (
+                map (a: {
+                  name = a.attrName;
+                  value = template a;
+                }) (attrsExtraChangesNeeded ++ attrsNoExtraChangesNeeded)
+              )
+            else
+              throw "some 'attrName' value is in both attrsExtraChangesNeeded and attrsNoExtraChangesNeeded";
 
           # these need extra nativeBuildInputs or buildInputs or the patches cleared
           attrsExtraChangesNeeded = [
@@ -58,42 +84,43 @@
                 prev.libjack2
                 prev.playerctl
               ];
-              replace = previousAttrs:
-                {
-                  buildInputs = (lib.remove (lib.elemAt previousAttrs.buildInputs 27) previousAttrs.buildInputs) ++ [ prev.wireplumber ];
-                  mesonFlags = lib.remove "-Dgtk-layer-shell=enabled" prev.waybar.mesonFlags;
-                  postUnpack =
-                    let
-                      # Derived from subprojects/cava.wrap
-                      libcava = rec {
-                        version = "0.10.1";
-                        src = prev.fetchFromGitHub {
-                          owner = "LukashonakV";
-                          repo = "cava";
-                          rev = version;
-                          hash = "sha256-iIYKvpOWafPJB5XhDOSIW9Mb4I3A4pcgIIPQdQYEqUw=";
-                        };
+              replace = previousAttrs: {
+                buildInputs = (lib.remove (lib.elemAt previousAttrs.buildInputs 27) previousAttrs.buildInputs) ++ [
+                  prev.wireplumber
+                ];
+                mesonFlags = lib.remove "-Dgtk-layer-shell=enabled" prev.waybar.mesonFlags;
+                postUnpack =
+                  let
+                    # Derived from subprojects/cava.wrap
+                    libcava = rec {
+                      version = "0.10.1";
+                      src = prev.fetchFromGitHub {
+                        owner = "LukashonakV";
+                        repo = "cava";
+                        rev = version;
+                        hash = "sha256-iIYKvpOWafPJB5XhDOSIW9Mb4I3A4pcgIIPQdQYEqUw=";
                       };
-                      # Derived from subprojects/catch2.wrap
-                      catch2 = rec {
-                        version = "3.5.1";
-                        src = prev.fetchFromGitHub {
-                          owner = "catchorg";
-                          repo = "Catch2";
-                          rev = "v${version}";
-                          hash = "sha256-OyYNUfnu6h1+MfCF8O+awQ4Usad0qrdCtdZhYgOY+Vw=";
-                        };
+                    };
+                    # Derived from subprojects/catch2.wrap
+                    catch2 = rec {
+                      version = "3.5.1";
+                      src = prev.fetchFromGitHub {
+                        owner = "catchorg";
+                        repo = "Catch2";
+                        rev = "v${version}";
+                        hash = "sha256-OyYNUfnu6h1+MfCF8O+awQ4Usad0qrdCtdZhYgOY+Vw=";
                       };
-                    in
-                    ''
-                      (
-                        cd "$sourceRoot"
-                        cp -R --no-preserve=mode,ownership ${libcava.src} subprojects/cava-${libcava.version}
-                        cp -R --no-preserve=mode,ownership ${catch2.src} subprojects/Catch2-${catch2.version}
-                        patchShebangs .
-                      )
-                    '';
-                };
+                    };
+                  in
+                  ''
+                    (
+                      cd "$sourceRoot"
+                      cp -R --no-preserve=mode,ownership ${libcava.src} subprojects/cava-${libcava.version}
+                      cp -R --no-preserve=mode,ownership ${catch2.src} subprojects/Catch2-${catch2.version}
+                      patchShebangs .
+                    )
+                  '';
+              };
             }
             {
               attrName = "gtk-layer-shell";
@@ -134,7 +161,10 @@
             }
             {
               attrName = "wob";
-              extra.buildInputs = [ prev.pixman prev.cmocka ];
+              extra.buildInputs = [
+                prev.pixman
+                prev.cmocka
+              ];
             }
             {
               attrName = "libvncserver_master";
@@ -148,7 +178,10 @@
             {
               attrName = "eww";
               nixpkgsAttrName = "eww";
-              extra.buildInputs = [ prev.libdbusmenu prev.libdbusmenu-gtk3 ];
+              extra.buildInputs = [
+                prev.libdbusmenu
+                prev.libdbusmenu-gtk3
+              ];
             }
             {
               attrName = "wf-recorder";
@@ -184,54 +217,54 @@
                     substituteInPlace $out/share/zsh/site-functions/_dunstctl \
                       --replace "jq -M" "${prev.jq}/bin/jq -M"
                   ''
-                ] [ "" ]
-                  previousAttrs.postInstall;
+                ] [ "" ] previousAttrs.postInstall;
               };
             }
           ];
 
           # these do not need changes from the package that nixpkgs has
-          attrsNoExtraChangesNeeded = lib.attrValues (lib.genAttrs [
-            "gebaar-libinput"
-            "glpaper"
-            "imv"
-            "mako"
-            "neatvnc"
-            "slurp"
-            "swaybg"
-            "swayidle"
-            "swaylock-effects"
-            "wl-clipboard"
-            "wlogout"
-            "wlr-randr"
-            "wofi"
-            "wtype"
-            "wshowkeys"
-            "aml"
-            "wdisplays"
-            "kanshi"
-            "wev"
-            "lavalauncher"
-            "wlsunset"
-            "rootbar"
-            "waypipe"
-            "sirula"
-            "swww"
-            "wlay"
-            "i3status-rust"
-            "shotman"
-          ]
-            (s: { attrName = s; }));
+          attrsNoExtraChangesNeeded = lib.attrValues (
+            lib.genAttrs
+              [
+                "gebaar-libinput"
+                "glpaper"
+                "imv"
+                "mako"
+                "neatvnc"
+                "slurp"
+                "swaybg"
+                "swayidle"
+                "swaylock-effects"
+                "wl-clipboard"
+                "wlogout"
+                "wlr-randr"
+                "wofi"
+                "wtype"
+                "wshowkeys"
+                "aml"
+                "wdisplays"
+                "kanshi"
+                "wev"
+                "lavalauncher"
+                "wlsunset"
+                "rootbar"
+                "waypipe"
+                "sirula"
+                "swww"
+                "wlay"
+                "i3status-rust"
+                "shotman"
+              ]
+              (s: {
+                attrName = s;
+              })
+          );
 
           waylandPkgs = genPackagesGH // rec {
             # wlroots-related
             salut = prev.callPackage ./pkgs/salut { };
-            wayprompt = prev.callPackage ./pkgs/wayprompt {
-              zig = prev.zig_0_11;
-            };
-            wlvncc = prev.callPackage ./pkgs/wlvncc {
-              libvncserver = final.libvncserver_master;
-            };
+            wayprompt = prev.callPackage ./pkgs/wayprompt { zig = prev.zig_0_11; };
+            wlvncc = prev.callPackage ./pkgs/wlvncc { libvncserver = final.libvncserver_master; };
             obs-wlrobs = template {
               nixpkgsAttrName = "obs-studio-plugins.wlrobs";
               attrName = "obs-wlrobs";
@@ -253,22 +286,33 @@
             wl-gammarelay-rs = prev.callPackage ./pkgs/wl-gammarelay-rs { };
 
             freerdp3 = prev.callPackage ./pkgs/freerdp3 {
-              inherit (prev.darwin.apple_sdk.frameworks) AudioToolbox AVFoundation Carbon Cocoa CoreMedia;
+              inherit (prev.darwin.apple_sdk.frameworks)
+                AudioToolbox
+                AVFoundation
+                Carbon
+                Cocoa
+                CoreMedia
+                ;
               inherit (prev.gst_all_1) gstreamer gst-plugins-base gst-plugins-good;
             };
 
             # misc
-            foot = prev.callPackage ./pkgs/foot {
-              inherit foot;
-            };
+            foot = prev.callPackage ./pkgs/foot { inherit foot; };
           };
         in
         waylandPkgs // { inherit waylandPkgs; };
     in
-    lib.flake-utils.eachSystem [ "aarch64-linux" "x86_64-linux" "riscv64-linux" ]
-      (system:
+    lib.flake-utils.eachSystem
+      [
+        "aarch64-linux"
+        "x86_64-linux"
+        "riscv64-linux"
+      ]
+      (
+        system:
         let
-          pkgsFor = pkgs: overlays:
+          pkgsFor =
+            pkgs: overlays:
             import pkgs {
               inherit system overlays;
               config.allowUnfree = true;
@@ -297,14 +341,14 @@
 
           bundle = pkgs_.nixpkgs.symlinkJoin {
             name = "nixpkgs-wayland-bundle";
-            paths = builtins.attrValues (lib.filterAttrs
-              (_: v: lib.meta.availableOn pkgs_.nixpkgs.stdenv.hostPlatform v)
-              waypkgs.waylandPkgs
+            paths = builtins.attrValues (
+              lib.filterAttrs (_: v: lib.meta.availableOn pkgs_.nixpkgs.stdenv.hostPlatform v) waypkgs.waylandPkgs
             );
           };
 
           packages = waypkgs.waylandPkgs;
-        })
+        }
+      )
     // {
       # overlays have to be outside of eachSystem block
       overlay = waylandOverlay;

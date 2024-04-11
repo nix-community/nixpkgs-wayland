@@ -1,9 +1,11 @@
-{ ... }: {
-  imports = [
-    (import ./profile.nix { user = "demo"; })
-  ];
+{ ... }:
+{
+  imports = [ (import ./profile.nix { user = "demo"; }) ];
 
-  nix.settings.trusted-users = [ "root" "@wheel" ];
+  nix.settings.trusted-users = [
+    "root"
+    "@wheel"
+  ];
 
   security.sudo.enable = true;
 

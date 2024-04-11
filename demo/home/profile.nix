@@ -1,20 +1,24 @@
-{ pkgs, ... }: {
-  home.packages = with pkgs; [
-    brightnessctl
-    dmenu
-    pavucontrol
-    playerctl
-    termite
-    xdg_utils # needed for termite URL opening
-    xwayland
-  ] ++ (with waylandPkgs; [
-    grim # screenshot CLI
-    waybar
-    kanshi # broken: display configurator
-    mako # notification manager
-    slurp # dimension-grabbing CLI, to use with grim
-    swayidle # lock screen manager
-  ]);
+{ pkgs, ... }:
+{
+  home.packages =
+    with pkgs;
+    [
+      brightnessctl
+      dmenu
+      pavucontrol
+      playerctl
+      termite
+      xdg_utils # needed for termite URL opening
+      xwayland
+    ]
+    ++ (with waylandPkgs; [
+      grim # screenshot CLI
+      waybar
+      kanshi # broken: display configurator
+      mako # notification manager
+      slurp # dimension-grabbing CLI, to use with grim
+      swayidle # lock screen manager
+    ]);
 
   programs.termite.enable = true;
   programs.termite.scrollbackLines = 10000;

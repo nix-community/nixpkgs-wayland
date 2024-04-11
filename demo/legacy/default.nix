@@ -10,8 +10,6 @@ let
   url = "https://github.com/colemickens/nixpkgs-wayland/archive/${rev}.tar.gz";
   waylandOverlay = import (builtins.fetchTarball url);
 
-  pkgs = import nixpkgs {
-    overlays = [ waylandOverlay ];
-  };
+  pkgs = import nixpkgs { overlays = [ waylandOverlay ]; };
 in
 pkgs.waylandPkgs.waybar
