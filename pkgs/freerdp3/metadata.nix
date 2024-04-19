@@ -4,6 +4,6 @@ rec {
   repo = "FreeRDP";
   repo_git = "https://${domain}/${owner}/${repo}";
   branch = "master";
-  rev = "4900b1539167ca739f2f07a9a9e2041fb67e80c8";
-  sha256 = "sha256-V+B8muqYKk7k3plqYurDVc82JUXa+/RvJpnIdPr60Pk=";
+  rev = "b1f11bd8a499d272b2ec9e73d89b725f85f16c59";
+  sha256 = "sha256-H5F+dtELdX+oGl3xPCd5eUQkoDY0NOpz/1SNQA9FhHI=";
 }
