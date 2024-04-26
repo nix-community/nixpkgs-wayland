@@ -4,6 +4,7 @@ args_@{
   wlroots,
   libdisplay-info,
   hwdata,
+  lcms2,
   ...
 }:
 
@@ -13,6 +14,7 @@ let
     "wlroots"
     "hwdata"
     "libdisplay-info"
+    "lcms2"
   ];
   args = lib.filterAttrs (n: _v: (!builtins.elem n ignore)) args_;
 in
@@ -21,6 +23,7 @@ in
   buildInputs = old.buildInputs ++ [
     hwdata
     libdisplay-info
+    lcms2
   ];
   src = fetchFromGitLab {
     inherit (metadata)
