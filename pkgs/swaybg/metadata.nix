@@ -4,6 +4,6 @@ rec {
   repo = "swaybg";
   repo_git = "https://${domain}/${owner}/${repo}";
   branch = "master";
-  rev = "a48604c871e197423969059cb233428de79a9fbb";
-  sha256 = "sha256-OqQmuagOni3K8cas5x8pRy+o9R/RY0PGMkMOJxa+Bq8=";
+  rev = "4262e0198957d1c1523f266beb7e79dc3d27f852";
+  sha256 = "sha256-v8V5lIBha/zVV9P8sNjin4gNLAa7o1x9aseUV7Rvwxw=";
 }
