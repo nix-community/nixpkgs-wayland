@@ -206,6 +206,23 @@
               attrName = "wbg";
               extra.buildInputs = [ prev.pixman ];
             }
+            {
+              attrName = "dunst";
+              # remove once nixpkgs is above 1.11.1
+              replace = previousAttrs: {
+                postInstall = builtins.replaceStrings [
+                  ''
+                    substituteInPlace $out/share/zsh/site-functions/_dunstctl $out/share/fish/vendor_completions.d/{dunstctl,dunstify} \
+                      --replace-fail "jq" "${lib.getExe prev.jq}"
+                  ''
+                ] [
+                  ''
+                    substituteInPlace $out/share/zsh/site-functions/_dunstctl $out/share/fish/vendor_completions.d/{dunstctl,dunstify}.fish \
+                      --replace-fail "jq" "${lib.getExe prev.jq}"
+                  ''
+                ] previousAttrs.postInstall;
+              };
+            }
           ];
 
           # these do not need changes from the package that nixpkgs has
@@ -240,7 +257,6 @@
                 "wlay"
                 "i3status-rust"
                 "shotman"
-                "dunst"
               ]
               (s: {
                 attrName = s;
