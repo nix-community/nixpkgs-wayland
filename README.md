@@ -192,7 +192,7 @@ nix-env -iA neatvnc
 | [cage](https://github.com/Hjdskes/cage) | A Wayland kiosk that runs a single, maximized application |
 | [drm_info](https://github.com/ascent12/drm_info) | Small utility to dump info about DRM devices |
 | [dunst](https://github.com/dunst-project/dunst) | Lightweight and customizable notification daemon |
-| [eww](https://github.com/elkowar/eww) | ElKowars wacky widgets |
+| [eww](https://github.com/elkowar/eww) | A widget system made in Rust to create widgets for any WM |
 | [foot](https://codeberg.org/dnkl/foot/) | A fast, lightweight and minimalistic Wayland terminal emulator |
 | [freerdp3](https://www.freerdp.com/) | A Remote Desktop Protocol Client |
 | [gebaar-libinput](https://github.com/Osleg/gebaar-libinput-fork) | Gebaar, A Super Simple WM Independent Touchpad Gesture Daemon for libinput |
