@@ -4,6 +4,6 @@ rec {
   repo = "xdg-desktop-portal-wlr";
   repo_git = "https://${domain}/${owner}/${repo}";
   branch = "master";
-  rev = "d13d6a4fa16978837652e16ba826feba61e516f5";
-  sha256 = "sha256-Qg/AknIvwX9ZZrwVoeVuZsIZPvjQqi3Z2MAd98NHJ2k=";
+  rev = "c23c8865650adee02f27b625255646b2e6efade7";
+  sha256 = "sha256-pBPnBhNHF6FjwEReMW9i7ll6ShF4PJ+S42Y2xTl5E6g=";
 }
