@@ -135,6 +135,7 @@
                 wayland-protocols = final.new-wayland-protocols;
               };
               replace = previousAttrs: {
+                mesonFlags = lib.remove "-Dxwayland=disabled" (lib.remove "-Dxwayland=enabled" prev.sway-unwrapped.mesonFlags);
                 patches =
                   let
                     conflicting-patch = prev.fetchpatch {
