@@ -5,6 +5,6 @@ rec {
   repo = "waypipe";
   repo_git = "https://${domain}/${owner}/${repo}";
   branch = "master";
-  rev = "7bde9d634fa0877de8df58186e482723b4e61aa2";
-  sha256 = "sha256-o/MA3gCDLXpob6JzrmgAjEU0xhAVXerqssC/kY7tX1k=";
+  rev = "4b62e794b662bd7da2af7ce74adfd0fa10bf9dba";
+  sha256 = "sha256-4I8ohllhIA3/LNgFAKH5GwwHKO5QKNex0+Be0OOgR14=";
 }
