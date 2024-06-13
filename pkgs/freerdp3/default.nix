@@ -28,6 +28,7 @@
   libXv,
   libxkbcommon,
   libxkbfile,
+  libv4l,
   wayland,
   gstreamer,
   gst-plugins-base,
@@ -151,6 +152,7 @@ stdenv.mkDerivation rec {
     ]
     ++ optionals stdenv.isLinux [
       alsa-lib
+      libv4l
       systemd
       wayland
     ]
