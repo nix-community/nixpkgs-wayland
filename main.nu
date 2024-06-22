@@ -103,17 +103,14 @@ def buildDrv [ drvRef: string ] {
   let evalJobs = (
     ^nix-eval-jobs
       --flake $".#($drvRef)"
-      --check-cache-status
         | from json --objects
   )
 
   header "green_reverse" $"build ($drvRef)"
   print -e ($evalJobs
-    | where isCached == false
-    | select name isCached)
+    | select name)
 
   $evalJobs
-    | where isCached == false
     | each { |drv| do -c  { ^nix build $'($drv.drvPath)^*' } }
 
   header "purple_reverse" $"cache: calculate paths: ($drvRef)"
