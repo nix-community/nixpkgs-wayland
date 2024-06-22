@@ -33,12 +33,12 @@
         final: prev:
         let
           template =
-            {
-              attrName,
-              nixpkgsAttrName ? "",
-              extra ? { },
-              replace ? { },
-              replaceInput ? { },
+            { attrName
+            , nixpkgsAttrName ? ""
+            , extra ? { }
+            , replace ? { }
+            , replaceInput ? { }
+            ,
             }:
             import ./templates/template.nix {
               inherit
@@ -55,12 +55,15 @@
           );
           genPackagesGH =
             if checkMutuallyExclusive then
-              lib.listToAttrs (
-                map (a: {
-                  name = a.attrName;
-                  value = template a;
-                }) (attrsExtraChangesNeeded ++ attrsNoExtraChangesNeeded)
-              )
+              lib.listToAttrs
+                (
+                  map
+                    (a: {
+                      name = a.attrName;
+                      value = template a;
+                    })
+                    (attrsExtraChangesNeeded ++ attrsNoExtraChangesNeeded)
+                )
             else
               throw "some 'attrName' value is in both attrsExtraChangesNeeded and attrsNoExtraChangesNeeded";
 
@@ -221,7 +224,8 @@
                     substituteInPlace $out/share/zsh/site-functions/_dunstctl $out/share/fish/vendor_completions.d/{dunstctl,dunstify}.fish \
                       --replace-fail "jq" "${lib.getExe prev.jq}"
                   ''
-                ] previousAttrs.postInstall;
+                ]
+                  previousAttrs.postInstall;
               };
             }
           ];
@@ -326,7 +330,7 @@
           opkgs_ = overlays: lib.genAttrs (builtins.attrNames inputs) (inp: pkgsFor inputs."${inp}" overlays);
           waypkgs = (opkgs_ [ self.overlays.default ]).nixpkgs;
         in
-        {
+        rec {
           devShells.default = pkgs_.nixpkgs.mkShell {
             nativeBuildInputs = with pkgs_.nixpkgs; [
               nix
@@ -350,7 +354,7 @@
             );
           };
 
-          packages = waypkgs.waylandPkgs;
+          packages = waypkgs.waylandPkgs // { default = bundle; };
         }
       )
     // {
