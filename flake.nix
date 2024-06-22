@@ -200,12 +200,12 @@
               attrName = "new-wayland-protocols";
               nixpkgsAttrName = "wayland-protocols";
             }
-            {
-              attrName = "wl-screenrec";
-              # soon in nixpkgs
-              extra.buildInputs = [ prev.libdrm ];
-              replace.doCheck = false;
-            }
+            # {
+            #   attrName = "wl-screenrec";
+            #   # soon in nixpkgs
+            #   extra.buildInputs = [ prev.libdrm ];
+            #   replace.doCheck = false;
+            # }
             {
               attrName = "wbg";
               extra.buildInputs = [ prev.libjxl prev.pixman ];
