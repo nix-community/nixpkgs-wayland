@@ -208,7 +208,7 @@
             }
             {
               attrName = "wbg";
-              extra.buildInputs = [ prev.pixman ];
+              extra.buildInputs = [ prev.libjxl prev.pixman ];
             }
             {
               attrName = "dunst";
