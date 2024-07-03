@@ -189,7 +189,7 @@
             }
             {
               attrName = "wf-recorder";
-              extra.buildInputs = [ prev.mesa ];
+              extra.buildInputs = [ prev.mesa prev.pipewire ];
             }
             {
               attrName = "xdg-desktop-portal-wlr";
