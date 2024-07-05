@@ -136,6 +136,16 @@
               replaceInput = {
                 wlroots = final.wlroots;
                 wayland-protocols = final.new-wayland-protocols;
+                # https://nixpk.gs/pr-tracker.html?pr=323012
+                libinput = final.libinput.overrideAttrs {
+                  src = final.fetchFromGitLab {
+                    domain = "gitlab.freedesktop.org";
+                    owner = "libinput";
+                    repo = "libinput";
+                    rev = "1.26.1";
+                    hash = "sha256-3iWKqg9HSicocDAyp1Lk87nBbj+Slg1/e1VKEOIQkyQ=";
+                  };
+                };
               };
               replace = previousAttrs: {
                 mesonFlags = lib.remove "-Dxwayland=disabled" (lib.remove "-Dxwayland=enabled" prev.sway-unwrapped.mesonFlags);
