@@ -297,7 +297,7 @@
             # };
             wldash = prev.callPackage ./pkgs/wldash { };
             wlroots = prev.callPackage ./pkgs/wlroots {
-              inherit (prev) wlroots;
+              wlroots = prev.wlroots_0_18;
               wayland-protocols = final.new-wayland-protocols;
             };
 
