@@ -169,9 +169,6 @@
               # _FORTIFY_SOURCE requires compiling with optimization (-O)
               # PR https://github.com/NixOS/nixpkgs/pull/232917 added -O0
               replace.CFLAGS = "";
-              # https://github.com/cage-kiosk/cage/commit/c801544d6144b396e7a7601b2d9108b4e5fbee61
-              #        > meson.build:1:0: ERROR: Value "true" (of type "string") for combo option "Enable support for X11 applications" is not one of the choices. Possible choices are (as string): "enabled", "disabled", "auto".
-              replace.mesonFlags = [ "-Dxwayland=auto" ];
             }
             {
               attrName = "wob";
