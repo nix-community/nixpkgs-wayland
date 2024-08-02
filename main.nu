@@ -40,60 +40,64 @@ def replaceHash [ packageName: string, position: string, hashName: string, oldHa
   print -e {packageName: $packageName, hashName: $hashName, oldHash: $oldHash, newHash: $newHash}
 }
 
+def updatePkg [packageName: string] {
+  let position = $"pkgs/($packageName)/metadata.nix"
+  let verinfo = (^nix eval --json -f $position | str trim | from json)
+
+  let skip = (("skip" in ($verinfo | transpose | get column0)) and $verinfo.skip)
+  if $skip {
+    print -e $"(ansi light_yellow) update ($packageName) - (ansi light_cyan_underline)skipped(ansi reset)"
+  } else {
+    # Try update rev
+    let newrev = (
+      if ("repo_git" in ($verinfo | transpose | get column0)) {
+        (do -c {
+          ^git ls-remote $verinfo.repo_git $"refs/heads/($verinfo.branch)"
+        } | complete | get stdout | str trim | str replace --regex '(\s+)(.*)$' "")
+      } else if ( "repo_hg" in ($verinfo | transpose | get column0) ) {
+        (do -c {
+          ^hg identify $verinfo.repo_hg -r $verinfo.branch
+        } | complete | get stdout | str trim)
+      } else {
+        error make { msg: "unknown repo type" }
+      }
+    )
+
+    let shouldUpdate = (if ($forceCheck) {
+      print -e $"(ansi light_yellow) update ($packageName) - (ansi light_yellow_underline)forced(ansi reset)"
+      true
+    } else if ($newrev != $verinfo.rev) {
+      print -e $"(ansi light_yellow) update ($packageName) - (ansi light_yellow_underline)update to ($newrev)(ansi reset)"
+      true
+    } else {
+      print -e $"(ansi dark_gray) update ($packageName) - noop(ansi reset)"
+      false
+    })
+
+    if ($shouldUpdate) {
+      do -c { ^sd -s $"($verinfo.rev)" $"($newrev)" $"($position)" }
+      print -e {packageName: $packageName, oldrev: $verinfo.rev, newrev: $newrev}
+
+      replaceHash $packageName $position "sha256" $verinfo.sha256
+      if "vendorSha256" in ($verinfo | transpose | get column0) {
+        replaceHash $packageName $position "vendorSha256" $verinfo.vendorSha256
+      }
+
+      do -c {
+        ^git commit $position -m $"auto-update: ($packageName): ($verinfo.rev) => ($newrev)"
+      } | complete
+    }
+
+    null
+  } # end !skip
+}
+
 def updatePkgs [] {
   header "light_yellow_reverse" "update packages"
   let pkgs = (^nix eval --json $".#packages.($system)" --apply 'x: builtins.attrNames x' | str trim | from json)
   let pkgs = ($pkgs | where ($it != "default"))
   $pkgs | each { |packageName|
-    let position = $"pkgs/($packageName)/metadata.nix"
-    let verinfo = (^nix eval --json -f $position | str trim | from json)
-
-    let skip = (("skip" in ($verinfo | transpose | get column0)) and $verinfo.skip)
-    if $skip {
-      print -e $"(ansi light_yellow) update ($packageName) - (ansi light_cyan_underline)skipped(ansi reset)"
-    } else {
-      # Try update rev
-      let newrev = (
-        if ("repo_git" in ($verinfo | transpose | get column0)) {
-          (do -c {
-            ^git ls-remote $verinfo.repo_git $"refs/heads/($verinfo.branch)"
-          } | complete | get stdout | str trim | str replace --regex '(\s+)(.*)$' "")
-        } else if ( "repo_hg" in ($verinfo | transpose | get column0) ) {
-          (do -c {
-            ^hg identify $verinfo.repo_hg -r $verinfo.branch
-          } | complete | get stdout | str trim)
-        } else {
-          error make { msg: "unknown repo type" }
-        }
-      )
-
-      let shouldUpdate = (if ($forceCheck) {
-        print -e $"(ansi light_yellow) update ($packageName) - (ansi light_yellow_underline)forced(ansi reset)"
-        true
-      } else if ($newrev != $verinfo.rev) {
-        print -e $"(ansi light_yellow) update ($packageName) - (ansi light_yellow_underline)update to ($newrev)(ansi reset)"
-        true
-      } else {
-        print -e $"(ansi dark_gray) update ($packageName) - noop(ansi reset)"
-        false
-      })
-
-      if ($shouldUpdate) {
-        do -c { ^sd -s $"($verinfo.rev)" $"($newrev)" $"($position)" }
-        print -e {packageName: $packageName, oldrev: $verinfo.rev, newrev: $newrev}
-
-        replaceHash $packageName $position "sha256" $verinfo.sha256
-        if "vendorSha256" in ($verinfo | transpose | get column0) {
-          replaceHash $packageName $position "vendorSha256" $verinfo.vendorSha256
-        }
-
-        do -c {
-          ^git commit $position -m $"auto-update: ($packageName): ($verinfo.rev) => ($newrev)"
-        } | complete
-      }
-
-      null
-    } # end !skip
+    updatePkg $packageName
   } # end each-pkg loop
 }
 
@@ -187,6 +191,10 @@ def "main advance" [] {
   flakeAdvance
   main build
   gitPush
+}
+
+def "main update1" [packageName: string] {
+  updatePkg $packageName
 }
 
 def "main update" [] {
