@@ -354,7 +354,7 @@
             ];
           };
 
-          formatter = pkgs_.nixpkgs.nixpkgs-fmt;
+          formatter = pkgs_.nixpkgs.nixfmt-rfc-style;
 
           bundle = pkgs_.nixpkgs.symlinkJoin {
             name = "nixpkgs-wayland-bundle";
