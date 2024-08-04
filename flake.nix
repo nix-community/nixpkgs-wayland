@@ -33,12 +33,12 @@
         final: prev:
         let
           template =
-            { attrName
-            , nixpkgsAttrName ? ""
-            , extra ? { }
-            , replace ? { }
-            , replaceInput ? { }
-            ,
+            {
+              attrName,
+              nixpkgsAttrName ? "",
+              extra ? { },
+              replace ? { },
+              replaceInput ? { },
             }:
             import ./templates/template.nix {
               inherit
@@ -55,15 +55,12 @@
           );
           genPackagesGH =
             if checkMutuallyExclusive then
-              lib.listToAttrs
-                (
-                  map
-                    (a: {
-                      name = a.attrName;
-                      value = template a;
-                    })
-                    (attrsExtraChangesNeeded ++ attrsNoExtraChangesNeeded)
-                )
+              lib.listToAttrs (
+                map (a: {
+                  name = a.attrName;
+                  value = template a;
+                }) (attrsExtraChangesNeeded ++ attrsNoExtraChangesNeeded)
+              )
             else
               throw "some 'attrName' value is in both attrsExtraChangesNeeded and attrsNoExtraChangesNeeded";
 
@@ -148,7 +145,9 @@
                 };
               };
               replace = previousAttrs: {
-                mesonFlags = lib.remove "-Dxwayland=disabled" (lib.remove "-Dxwayland=enabled" prev.sway-unwrapped.mesonFlags);
+                mesonFlags = lib.remove "-Dxwayland=disabled" (
+                  lib.remove "-Dxwayland=enabled" prev.sway-unwrapped.mesonFlags
+                );
                 patches =
                   let
                     conflicting-patch = prev.fetchpatch {
@@ -170,7 +169,9 @@
               # PR https://github.com/NixOS/nixpkgs/pull/232917 added -O0
               replace.CFLAGS = "";
               # https://github.com/cage-kiosk/cage/commit/d3fb99d6654325ec46277cfdb589f89316bed701
-              replace.mesonFlags = lib.remove "-Dxwayland=true" (lib.remove "-Dxwayland=false" prev.cage.mesonFlags);
+              replace.mesonFlags = lib.remove "-Dxwayland=true" (
+                lib.remove "-Dxwayland=false" prev.cage.mesonFlags
+              );
             }
             {
               attrName = "wob";
@@ -198,7 +199,10 @@
             }
             {
               attrName = "wf-recorder";
-              extra.buildInputs = [ prev.mesa prev.pipewire ];
+              extra.buildInputs = [
+                prev.mesa
+                prev.pipewire
+              ];
             }
             {
               attrName = "xdg-desktop-portal-wlr";
@@ -217,24 +221,30 @@
             # }
             {
               attrName = "wbg";
-              extra.buildInputs = [ prev.libjxl prev.pixman ];
+              extra.buildInputs = [
+                prev.libjxl
+                prev.pixman
+              ];
             }
             {
               attrName = "dunst";
               # remove once nixpkgs is above 1.11.1
               replace = previousAttrs: {
-                postInstall = builtins.replaceStrings [
-                  ''
-                    substituteInPlace $out/share/zsh/site-functions/_dunstctl $out/share/fish/vendor_completions.d/{dunstctl,dunstify} \
-                      --replace-fail "jq" "${lib.getExe prev.jq}"
-                  ''
-                ] [
-                  ''
-                    substituteInPlace $out/share/zsh/site-functions/_dunstctl $out/share/fish/vendor_completions.d/{dunstctl,dunstify}.fish \
-                      --replace-fail "jq" "${lib.getExe prev.jq}"
-                  ''
-                ]
-                  previousAttrs.postInstall;
+                postInstall =
+                  builtins.replaceStrings
+                    [
+                      ''
+                        substituteInPlace $out/share/zsh/site-functions/_dunstctl $out/share/fish/vendor_completions.d/{dunstctl,dunstify} \
+                          --replace-fail "jq" "${lib.getExe prev.jq}"
+                      ''
+                    ]
+                    [
+                      ''
+                        substituteInPlace $out/share/zsh/site-functions/_dunstctl $out/share/fish/vendor_completions.d/{dunstctl,dunstify}.fish \
+                          --replace-fail "jq" "${lib.getExe prev.jq}"
+                      ''
+                    ]
+                    previousAttrs.postInstall;
               };
             }
           ];
@@ -363,7 +373,9 @@
             );
           };
 
-          packages = waypkgs.waylandPkgs // { default = bundle; };
+          packages = waypkgs.waylandPkgs // {
+            default = bundle;
+          };
         }
       )
     // {

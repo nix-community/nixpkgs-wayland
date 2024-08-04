@@ -211,9 +211,7 @@ stdenv.mkDerivation rec {
     '';
     homepage = "https://www.freerdp.com/";
     license = licenses.asl20;
-    maintainers = with maintainers; [
-      peterhoeg
-    ];
+    maintainers = with maintainers; [ peterhoeg ];
     platforms = platforms.unix;
   };
 }
