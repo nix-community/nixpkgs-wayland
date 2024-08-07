@@ -5,6 +5,6 @@ rec {
   repo = "rootbar";
   repo_hg = "https://${domain}/${owner}/${repo}";
   branch = "default";
-  rev = "01763bed7d56";
-  sha256 = "sha256-MmDvCOVlmQHuqsy6HsszXqNh/WzyK7Kw93GIneHpsuE=";
+  rev = "36333af9fd8d";
+  sha256 = "sha256-CpORCSJyHZhcK14EhjxoPt/h0026NU5J/kicL1dX96o=";
 }
