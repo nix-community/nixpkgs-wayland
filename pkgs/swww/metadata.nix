@@ -3,6 +3,6 @@ rec {
   repo = "swww";
   repo_git = "https://github.com/${owner}/${repo}";
   branch = "main";
-  rev = "bfd5d0023ed386e55da3d1a9a271fc64e60b3445";
-  sha256 = "sha256-jJRccNbZiFWHAeaUEYoJh3etb6qRPuHc57r1iEFSa4E=";
+  rev = "8d347f6e2875c7dae73d15acc21216cd9c81bc6d";
+  sha256 = "sha256-MNuUXUAb18eNMn4ha6dGxeWJq+5aeRvkB8/4Ci0rFWw=";
 }
