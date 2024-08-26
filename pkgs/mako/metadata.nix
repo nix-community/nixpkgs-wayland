@@ -4,6 +4,6 @@ rec {
   repo = "mako";
   repo_git = "https://${domain}/${owner}/${repo}";
   branch = "master";
-  rev = "4d48aca5f3c92d9c01282cd40b8d3b2c959bdac6";
-  sha256 = "sha256-6ucr9vdKw4Jt0OVbQE6vpPvGG6893rj/gudVOJirOAw=";
+  rev = "8ca44be2f5cdfb8960b3c7e864e7881086a9fd65";
+  sha256 = "sha256-20ZnYroCWPjNJIdwn8LJ1bLRD7LfZ3+MC6T0Ht2YxT8=";
 }
