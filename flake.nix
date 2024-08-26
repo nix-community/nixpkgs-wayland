@@ -183,6 +183,8 @@
             {
               attrName = "libvncserver_master";
               nixpkgsAttrName = "libvncserver";
+              # The version in nixpkgs has different paths so the patch is updated here.
+              replace.patches = [ ./pkgs/libvncserver_master/pkgconfig.patch ];
             }
             {
               attrName = "wayvnc";
