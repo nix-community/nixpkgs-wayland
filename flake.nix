@@ -196,6 +196,10 @@
                 prev.libdbusmenu
                 prev.libdbusmenu-gtk3
               ];
+              # patch was applied upstream
+              replace.cargoPatches = [ ];
+              # cargoPatches is addded to patches
+              replace.patches = [ ];
             }
             {
               attrName = "wf-recorder";
