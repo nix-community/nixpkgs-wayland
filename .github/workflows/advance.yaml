@@ -13,8 +13,7 @@ jobs:
       uses: DeterminateSystems/nix-installer-action@main
       with:
         extra-conf: |
-          extra-substituters = https://nixpkgs-wayland.cachix.org
-          extra-trusted-public-keys = nixpkgs-wayland.cachix.org-1:3lwxaILxMRkVhehr5StQprHdEo4IrE8sRho9R9HOLYA=
+          accept-flake-config = true
     - name: prepare
       run: nix develop -c .github/init
     - name: advance
