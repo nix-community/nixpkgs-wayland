@@ -14,13 +14,9 @@ jobs:
     - uses: actions/checkout@v4
     - name: setup-nix
       uses: DeterminateSystems/nix-installer-action@main
-      with:
-        extra-conf: |
-          extra-substituters = https://nixpkgs-wayland.cachix.org
-          extra-trusted-public-keys = nixpkgs-wayland.cachix.org-1:3lwxaILxMRkVhehr5StQprHdEo4IrE8sRho9R9HOLYA=
     - name: prepare
-      run: nix develop -c .github/init
+      run: nix develop --accept-flake-config -c .github/init
     - name: build
       env:
         CACHIX_SIGNING_KEY_NIXPKGS_WAYLAND: "${{ secrets.cachix_signing_key_nixpkgs_wayland }}"
-      run: nix develop -c ./main.nu build
+      run: nix develop --accept-flake-config -c ./main.nu build
