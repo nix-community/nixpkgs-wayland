@@ -20,7 +20,7 @@ def header [ color: string text: string spacer="▒": string ] {
 }
 
 def getBadHash [ attrName: string ] {
-  let val = ((do -i { ^nix build --no-link $attrName }| complete)
+  let val = ((do -i { ^nix build --accept-flake-config --no-link $attrName }| complete)
       | get stderr
       | split row "\n"
       | where ($it | str contains "got:")
@@ -42,7 +42,7 @@ def replaceHash [ packageName: string, position: string, hashName: string, oldHa
 
 def updatePkg [packageName: string] {
   let position = $"pkgs/($packageName)/metadata.nix"
-  let verinfo = (^nix eval --json -f $position | str trim | from json)
+  let verinfo = (^nix eval --accept-flake-config --json -f $position | str trim | from json)
 
   let skip = (("skip" in ($verinfo | transpose | get column0)) and $verinfo.skip)
   if $skip {
@@ -94,7 +94,7 @@ def updatePkg [packageName: string] {
 
 def updatePkgs [] {
   header "light_yellow_reverse" "update packages"
-  let pkgs = (^nix eval --json $".#packages.($system)" --apply 'x: builtins.attrNames x' | str trim | from json)
+  let pkgs = (^nix eval --accept-flake-config --json $".#packages.($system)" --apply 'x: builtins.attrNames x' | str trim | from json)
   let pkgs = ($pkgs | where ($it != "default"))
   $pkgs | each { |packageName|
     updatePkg $packageName
@@ -115,7 +115,7 @@ def buildDrv [ drvRef: string ] {
     | select name)
 
   $evalJobs
-    | each { |drv| do -c  { ^nix build $'($drv.drvPath)^*' } }
+    | each { |drv| do -c  { ^nix build --accept-flake-config $'($drv.drvPath)^*' } }
 
   header "purple_reverse" $"cache: calculate paths: ($drvRef)"
   let pushPaths = ($evalJobs | each { |drv|
@@ -141,13 +141,13 @@ def buildDrv [ drvRef: string ] {
 def "main rereadme" [] {
   let color = "yellow"
   header $"($color)_reverse" $"readme"
-  let packageNames = (nix eval --json $".#packages.($system)" --apply 'x: builtins.attrNames x' | str trim | from json)
+  let packageNames = (nix eval --accept-flake-config --json $".#packages.($system)" --apply 'x: builtins.attrNames x' | str trim | from json)
   let pkgList = ($packageNames | where ($it != "default"))
   let delimStart = "<!--pkgs-start-->"
   let delimEnd = "<!--pkgs-end-->"
   let pkgrows = ($pkgList | each { |packageName|
     let meta = (do -c {
-      nix eval --json $".#packages.($system).($packageName).meta" | str trim | from json
+      nix eval --accept-flake-config --json $".#packages.($system).($packageName).meta" | str trim | from json
     })
     let home = (if "homepage" in ($meta | transpose | get column0) {
       $meta.homepage
@@ -179,7 +179,7 @@ def "main build" [] {
 
 def flakeAdvance [] {
   header "purple_reverse" "advance flake inputs"
-  ^nix flake lock --recreate-lock-file --commit-lock-file
+  ^nix flake lock --accept-flake-config --recreate-lock-file --commit-lock-file
 }
 
 def gitPush [] {
