@@ -219,6 +219,20 @@
               attrName = "new-wayland-protocols";
               nixpkgsAttrName = "wayland-protocols";
             }
+            {
+              attrName = "swayidle";
+              nixpkgsAttrName = "swayidle";
+              extra.nativeBuildInputs = [ prev.wayland-scanner ];
+              # TODO: this shouldn't be needed, but is:
+              extra.buildInputs = [ prev.wayland-scanner ];
+            }
+            {
+              attrName = "swaylock-effects";
+              nixpkgsAttrName = "swaylock-effects";
+              extra.nativeBuildInputs = [ prev.wayland-scanner ];
+              # TODO: this shouldn't be needed, but is:
+              extra.buildInputs = [ prev.wayland-scanner ];
+            }
             # {
             #   attrName = "wl-screenrec";
             #   # soon in nixpkgs
@@ -266,8 +280,6 @@
                 "neatvnc"
                 "slurp"
                 "swaybg"
-                "swayidle"
-                "swaylock-effects"
                 "wl-clipboard"
                 "wlogout"
                 "wlr-randr"
