@@ -7,6 +7,7 @@
   ninja,
   wayland,
   wayland-protocols,
+  wayland-scanner,
   libxkbcommon,
   libvncserver,
   libpthreadstubs,
@@ -41,6 +42,7 @@ stdenv.mkDerivation rec {
 
   nativeBuildInputs = [
     pkg-config
+    wayland-scanner
     meson
     ninja
   ];
