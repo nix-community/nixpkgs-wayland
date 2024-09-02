@@ -9,6 +9,7 @@
   scdoc,
   wayland,
   wayland-protocols,
+  wayland-scanner,
   zig,
 }:
 
@@ -34,7 +35,7 @@ stdenv.mkDerivation rec {
     pkg-config
     scdoc
     wayland
-    # wayland-scanner
+    wayland-scanner
   ];
   buildInputs = [
     fcft
