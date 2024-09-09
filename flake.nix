@@ -14,6 +14,9 @@
     flake-compat = {
       url = "github:nix-community/flake-compat";
     };
+    nix-update = {
+      url = "github:Mic92/nix-update";
+    };
   };
 
   nixConfig = {
@@ -367,6 +370,7 @@
               ripgrep
               sd
               inputs.nix-eval-jobs.outputs.packages.${system}.default
+              inputs.nix-update.outputs.packages.${system}.default
             ];
           };
 
