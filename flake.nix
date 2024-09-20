@@ -85,6 +85,7 @@
                 prev.playerctl
               ];
               replace = previousAttrs: {
+                patches = lib.remove (lib.elemAt previousAttrs.patches 0) previousAttrs.patches;
                 buildInputs = (lib.remove (lib.elemAt previousAttrs.buildInputs 27) previousAttrs.buildInputs) ++ [
                   prev.wireplumber
                 ];
