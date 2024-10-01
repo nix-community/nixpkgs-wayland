@@ -83,6 +83,7 @@
               extra.buildInputs = [
                 prev.libjack2
                 prev.playerctl
+                prev.upower
               ];
               replace = previousAttrs: {
                 patches = lib.remove (lib.elemAt previousAttrs.patches 0) previousAttrs.patches;
