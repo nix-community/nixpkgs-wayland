@@ -80,17 +80,8 @@
             }
             {
               attrName = "waybar";
-              extra.buildInputs = [
-                prev.libjack2
-                prev.playerctl
-                prev.upower
-              ];
               replace = previousAttrs: {
-                patches = lib.remove (lib.elemAt previousAttrs.patches 0) previousAttrs.patches;
-                buildInputs = (lib.remove (lib.elemAt previousAttrs.buildInputs 27) previousAttrs.buildInputs) ++ [
-                  prev.wireplumber
-                ];
-                mesonFlags = lib.remove "-Dgtk-layer-shell=enabled" prev.waybar.mesonFlags;
+                patches = [];
                 postUnpack =
                   let
                     # Derived from subprojects/cava.wrap
