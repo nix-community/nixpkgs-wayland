@@ -246,6 +246,12 @@
                     previousAttrs.postInstall;
               };
             }
+            {
+              attrName = "neatvnc";
+              replaceInput = {
+                ffmpeg = prev.ffmpeg_7;
+              };
+            }
           ];
 
           # these do not need changes from the package that nixpkgs has
@@ -256,7 +262,6 @@
                 "glpaper"
                 "imv"
                 "mako"
-                "neatvnc"
                 "slurp"
                 "swaybg"
                 "swayidle"
