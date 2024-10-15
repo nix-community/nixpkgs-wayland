@@ -107,6 +107,9 @@ overridenAttr.overrideAttrs (
         inherit (src.meta) homepage;
       };
     }
+    // lib.optionalAttrs (extra ? depsBuildBuild) {
+      depsBuildBuild = extra.depsBuildBuild ++ previousAttrs.depsBuildBuild;
+    }
     // lib.optionalAttrs (extra ? nativeBuildInputs) {
       nativeBuildInputs = extra.nativeBuildInputs ++ previousAttrs.nativeBuildInputs;
     }
