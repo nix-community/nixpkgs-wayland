@@ -30,6 +30,7 @@
   libxkbfile,
   libv4l,
   wayland,
+  wayland-scanner,
   gstreamer,
   gst-plugins-base,
   gst-plugins-good,
@@ -170,6 +171,8 @@ stdenv.mkDerivation rec {
     libxslt
     docbook-xsl-nons
     pkg-config
+  ] ++ optionals stdenv.isLinux [
+    wayland-scanner
   ];
 
   doCheck = true;
