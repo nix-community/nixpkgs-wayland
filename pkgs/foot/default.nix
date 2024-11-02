@@ -2,6 +2,7 @@
   stdenv,
   lib,
   fetchFromGitea,
+  fetchurl,
   runCommand,
   fcft,
   freetype,
@@ -18,7 +19,6 @@
   wayland-scanner,
   pkg-config,
   utf8proc,
-  fetchpatch,
   allowPgo ? !stdenv.hostPlatform.isMusl,
   python3, # for PGO
   # for clang stdenv check
@@ -102,19 +102,27 @@ let
 
   terminfoDir = "${placeholder "terminfo"}/share/terminfo";
 in
-stdenv.mkDerivation rec {
+stdenv.mkDerivation {
   inherit version pname src;
 
-  depsBuildBuild = [ pkg-config ];
+  separateDebugInfo = true;
 
-  nativeBuildInputs = [
-    wayland-scanner
-    meson
-    ninja
-    ncurses
-    scdoc
+  depsBuildBuild = [
     pkg-config
-  ] ++ lib.optionals (compilerName == "clang") [ stdenv.cc.cc.libllvm.out ];
+  ];
+
+  nativeBuildInputs =
+    [
+      wayland-scanner
+      meson
+      ninja
+      ncurses
+      scdoc
+      pkg-config
+    ]
+    ++ lib.optionals (compilerName == "clang") [
+      stdenv.cc.cc.libllvm.out
+    ];
 
   buildInputs = [
     tllist
@@ -130,7 +138,7 @@ stdenv.mkDerivation rec {
 
   # recommended build flags for performance optimized foot builds
   # https://codeberg.org/dnkl/foot/src/branch/master/INSTALL.md#release-build
-  CFLAGS = if !doPgo then "-O3 -fno-plt" else pgoCflags;
+  CFLAGS = if !doPgo then "-O3" else pgoCflags;
 
   # ar with gcc plugins for lto objects
   preConfigure = ''
@@ -151,6 +159,8 @@ stdenv.mkDerivation rec {
     "-Dcustom-terminfo-install-location=${terminfoDir}"
     # Install systemd user units for foot-server
     "-Dsystemd-units-dir=${placeholder "out"}/lib/systemd/user"
+    # Especially -Wunused-command-line-argument is a problem with clang
+    "-Dwerror=false"
   ];
 
   # build and run binary generating PGO profiles,
@@ -160,10 +170,10 @@ stdenv.mkDerivation rec {
       meson configure -Db_pgo=generate
       ninja
       # make sure there is _some_ profiling data on all binaries
+      meson test
       ./footclient --version
       ./foot --version
       ./utils/xtgettcap
-      ./tests/test-config
       # generate pgo data of wayland independent code
       ./pgo ${stimuliFile} ${stimuliFile} ${stimuliFile}
       meson configure -Db_pgo=use
@@ -178,6 +188,10 @@ stdenv.mkDerivation rec {
     moveToOutput share/foot/themes "$themes"
   '';
 
+  doCheck = true;
+
+  strictDeps = true;
+
   outputs = [
     "out"
     "terminfo"
@@ -185,9 +199,13 @@ stdenv.mkDerivation rec {
   ];
 
   passthru.tests = {
-    clang-default-compilation = foot.override { inherit (llvmPackages) stdenv; };
+    clang-default-compilation = foot.override {
+      inherit (llvmPackages) stdenv;
+    };
 
-    noPgo = foot.override { allowPgo = false; };
+    noPgo = foot.override {
+      allowPgo = false;
+    };
 
     # By changing name, this will get rebuilt everytime we change version,
     # even if the hash stays the same. Consequently it'll fail if we introduce
@@ -200,22 +218,13 @@ stdenv.mkDerivation rec {
   meta = with lib; {
     homepage = "https://codeberg.org/dnkl/foot/";
     changelog = "https://codeberg.org/dnkl/foot/releases/tag/${version}";
-    description = "A fast, lightweight and minimalistic Wayland terminal emulator";
+    description = "Fast, lightweight and minimalistic Wayland terminal emulator";
     license = licenses.mit;
-    maintainers = [ maintainers.sternenseemann ];
+    maintainers = [
+      maintainers.sternenseemann
+      maintainers.abbe
+    ];
     platforms = platforms.linux;
-    # From (presumably) ncurses version 6.3, it will ship a foot
-    # terminfo file. This however won't include some non-standard
-    # capabilities foot's bundled terminfo file contains. Unless we
-    # want to have some features in e. g. vim or tmux stop working,
-    # we need to make sure that the foot terminfo overwrites ncurses'
-    # one. Due to <nixpkgs/nixos/modules/config/system-path.nix>
-    # ncurses is always added to environment.systemPackages on
-    # NixOS with its priority increased by 3, so we need to go
-    # one bigger.
-    # This doesn't matter a lot for local use since foot sets
-    # TERMINFO to a store path, but allows installing foot.terminfo
-    # on remote systems for proper foot terminfo support.
-    priority = (ncurses.meta.priority or 5) + 3 + 1;
+    mainProgram = "foot";
   };
 }
