@@ -248,6 +248,7 @@
             }
             {
               attrName = "neatvnc";
+              replace.patches = [];
               replaceInput = {
                 ffmpeg = prev.ffmpeg_7;
               };
