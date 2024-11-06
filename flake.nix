@@ -198,6 +198,7 @@
             }
             {
               attrName = "wf-recorder";
+              replace.patches = [];
               extra.buildInputs = [
                 prev.mesa
                 prev.pipewire
