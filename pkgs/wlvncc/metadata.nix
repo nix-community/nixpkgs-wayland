@@ -4,6 +4,6 @@ rec {
   repo = "wlvncc";
   repo_git = "https://${domain}/${owner}/${repo}";
   branch = "master";
-  rev = "bed225e92033680d7ac26b5d681750dfcab04241";
-  sha256 = "sha256-F97lzbxAzJjXhLF7PQW1Nqc3CwRFJ3Y1BYpDtr3KB3U=";
+  rev = "0489e29fba374a08be8ba4a64d492a3c74018f41";
+  sha256 = "sha256-jFP4O6zo1fYULOVX9+nuTNAy4NuBKsDKOy+WUQRUjdI=";
 }
