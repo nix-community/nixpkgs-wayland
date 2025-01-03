@@ -303,7 +303,7 @@
           waylandPkgs = genPackagesGH // rec {
             # wlroots-related
             salut = prev.callPackage ./pkgs/salut { };
-            wayprompt = prev.callPackage ./pkgs/wayprompt { zig = prev.zig_0_11; };
+            wayprompt = prev.callPackage ./pkgs/wayprompt { };
             wlvncc = prev.callPackage ./pkgs/wlvncc { libvncserver = final.libvncserver_master; };
             obs-wlrobs = template {
               nixpkgsAttrName = "obs-studio-plugins.wlrobs";
