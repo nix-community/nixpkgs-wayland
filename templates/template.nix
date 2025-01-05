@@ -105,6 +105,8 @@ overridenAttr.overrideAttrs (
     // lib.optionalAttrs (src ? meta.homepage) {
       meta = previousAttrs.meta // {
         inherit (src.meta) homepage;
+        # null changelog as it may use `finalAttrs.src.tag` while we use `rev`
+        changelog = null;
       };
     }
     // lib.optionalAttrs (extra ? depsBuildBuild) {
