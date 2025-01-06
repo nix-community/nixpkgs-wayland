@@ -221,7 +221,6 @@ nix-env -iA neatvnc
 | [swww](https://github.com/Horus645/swww) | Efficient animated wallpaper daemon for wayland, controlled at runtime |
 | [waybar](https://github.com/Alexays/Waybar) | Highly customizable Wayland bar for Sway and Wlroots based compositors |
 | [waypipe](https://gitlab.freedesktop.org/mstoeckl/waypipe/) | Network proxy for Wayland clients (applications) |
-| [wayprompt](https://git.sr.ht/~leon_plickat/wayprompt) | multi-purpose prompt tool for Wayland |
 | [wayvnc](https://github.com/any1/wayvnc) | VNC server for wlroots based Wayland compositors |
 | [wbg](https://codeberg.org/dnkl/wbg) | Wallpaper application for Wayland compositors |
 | [wdisplays](https://github.com/artizirk/wdisplays) | Graphical application for configuring displays in Wayland compositors |
