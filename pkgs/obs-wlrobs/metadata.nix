@@ -5,6 +5,6 @@ rec {
   repo = "wlrobs";
   repo_hg = "https://${domain}/${owner}/${repo}";
   branch = "default";
-  rev = "958a52be0f0f";
-  sha256 = "sha256-ZR9c9FXUY7OVv/DxJf/73X+wS5f4eGHezfT+GrwgkuM=";
+  rev = "b8668b4d6d6d";
+  sha256 = "sha256-gqGnDrfID5hTcpX3EkSGg4yDwa/ZKCQCqJ3feq44I1I=";
 }
