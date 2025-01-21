@@ -6,10 +6,13 @@
 
 ## overview
 
-Automated, pre-built, (potentially) pre-release packages for Wayland (sway/wlroots) tools for NixOS (**nixos-unstable** channel).
+Automated, pre-built packages of Wayland (wlroots ecosystem) tools for NixOS (**nixos-unstable** channel).
 
-These packages are auto-updated to the latest version available from their upstream source control. This means this overlay and package
-set will often contain **unreleased** versions.
+These packages are auto-updated to the latest versions available from their upstream source control. This means this overlay and package
+set will often contain **unreleased versions**. This repo isn't meant to compete with nixpkgs, rather it is meant to provide up-to-date 
+versions of packages already in nixpkgs, or which haven't had a release yet. If a package here isn't in nixpkgs, consider [submitting a PR](https://nixos.wiki/wiki/Nixpkgs/Contributing#Create_pull_requests).
+
+
 
 Community chat is on Matrix: [#nixpkgs-wayland:matrix.org](https://matrix.to/#/#nixpkgs-wayland:matrix.org). We are not on Libera.
 
