@@ -126,16 +126,6 @@
               replaceInput = {
                 wlroots = final.wlroots;
                 wayland-protocols = final.new-wayland-protocols;
-                # https://nixpk.gs/pr-tracker.html?pr=323012
-                libinput = final.libinput.overrideAttrs {
-                  src = final.fetchFromGitLab {
-                    domain = "gitlab.freedesktop.org";
-                    owner = "libinput";
-                    repo = "libinput";
-                    rev = "1.26.1";
-                    hash = "sha256-3iWKqg9HSicocDAyp1Lk87nBbj+Slg1/e1VKEOIQkyQ=";
-                  };
-                };
               };
               replace = previousAttrs: {
                 mesonFlags = lib.remove "-Dxwayland=disabled" (
@@ -143,13 +133,23 @@
                 );
                 patches =
                   let
-                    conflicting-patch = prev.fetchpatch {
-                      name = "LIBINPUT_CONFIG_ACCEL_PROFILE_CUSTOM.patch";
-                      url = "https://github.com/swaywm/sway/commit/dee032d0a0ecd958c902b88302dc59703d703c7f.diff";
-                      hash = "sha256-dx+7MpEiAkxTBnJcsT3/1BO8rYRfNLecXmpAvhqGMD0=";
-                    };
+                    patchesToRemove = [
+                      (prev.fetchpatch {
+                        name = "libinput-1.27-p1.patch";
+                        url = "https://github.com/swaywm/sway/commit/bbadf9b8b10d171a6d5196da7716ea50ee7a6062.patch";
+                        hash = "sha256-lA+oL1vqGQOm7K+AthzHYBzmOALrDgxzX/5Dx7naq84=";
+                      })
+                      (prev.fetchpatch {
+                        name = "libinput-1.27-p2.patch";
+                        url = "https://github.com/swaywm/sway/commit/e2409aa49611bee1e1b99033461bfab0a7550c48.patch";
+                        hash = "sha256-l598qfq+rpKy3/0arQruwd+BsELx85XDjwIDkb/o6og=";
+                      })
+                    ];
                   in
-                  lib.remove conflicting-patch previousAttrs.patches;
+                  (lib.filter (
+                    patch: !(lib.any (rmpatch: rmpatch != patch) patchesToRemove)
+                  ) previousAttrs.patches);
+
               };
             }
             {
