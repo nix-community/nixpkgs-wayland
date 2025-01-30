@@ -2,7 +2,7 @@ name: "Update"
 concurrency: update-advance
 on:
   schedule:
-    - cron: '0 */1 * * *'
+    - cron: '38 */12 * * *'
   workflow_dispatch:
 jobs:
   update:
