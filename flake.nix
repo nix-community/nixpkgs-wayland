@@ -18,6 +18,7 @@
 
   nixConfig = {
     extra-substituters = [ "https://nixpkgs-wayland.cachix.org" ];
+    extra-trusted-substituters = [ "https://nixpkgs-wayland.cachix.org" ];
     extra-trusted-public-keys = [
       "nixpkgs-wayland.cachix.org-1:3lwxaILxMRkVhehr5StQprHdEo4IrE8sRho9R9HOLYA="
     ];
