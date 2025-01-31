@@ -1,0 +1,20 @@
+name: "Test"
+on:
+  pull_request:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: DeterminateSystems/nix-installer-action@main
+      with:
+        extra-conf: |
+          accept-flake-config = true
+    - name: prepare
+      run: nix develop -c .github/init
+    - name: build
+      env:
+        CACHIX_SIGNING_KEY_NIXPKGS_WAYLAND: "${{ secrets.cachix_signing_key_nixpkgs_wayland }}"
+      run: |
+        nix build -vvv .#bundle.x86_64-linux
