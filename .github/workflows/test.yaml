@@ -18,8 +18,14 @@ jobs:
     #     CACHIX_SIGNING_KEY_NIXPKGS_WAYLAND: "${{ secrets.cachix_signing_key_nixpkgs_wayland }}"
     #   run: |
     #     nix build -vvv .#bundle.x86_64-linux
+    # - name: build-in-shell
+    #   env:
+    #     CACHIX_SIGNING_KEY_NIXPKGS_WAYLAND: "${{ secrets.cachix_signing_key_nixpkgs_wayland }}"
+    #   run: |
+    #     nix develop -c nix build -vvv .#bundle.x86_64-linux
     - name: build-in-shell
       env:
         CACHIX_SIGNING_KEY_NIXPKGS_WAYLAND: "${{ secrets.cachix_signing_key_nixpkgs_wayland }}"
       run: |
-        nix develop -c nix build -vvv .#bundle.x86_64-linux
+        nix eval --raw .#packages.x86_64-linux.salut.drvPath > /tmp/out
+        nix build -vv "$(cat /tmp/out)^*"
