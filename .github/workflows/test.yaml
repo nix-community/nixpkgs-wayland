@@ -13,8 +13,13 @@ jobs:
           accept-flake-config = true
     - name: prepare
       run: nix develop -c .github/init
-    - name: build
+    # - name: build
+    #   env:
+    #     CACHIX_SIGNING_KEY_NIXPKGS_WAYLAND: "${{ secrets.cachix_signing_key_nixpkgs_wayland }}"
+    #   run: |
+    #     nix build -vvv .#bundle.x86_64-linux
+    - name: build-in-shell
       env:
         CACHIX_SIGNING_KEY_NIXPKGS_WAYLAND: "${{ secrets.cachix_signing_key_nixpkgs_wayland }}"
       run: |
-        nix build -vvv .#bundle.x86_64-linux
+        nix develop -c nix build -vvv .#bundle.x86_64-linux
