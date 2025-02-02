@@ -8,9 +8,6 @@
     lib-aggregate = {
       url = "github:nix-community/lib-aggregate";
     };
-    nix-eval-jobs = {
-      url = "github:nix-community/nix-eval-jobs";
-    };
     flake-compat = {
       url = "github:nix-community/flake-compat";
     };
@@ -373,7 +370,6 @@
               mercurial
               ripgrep
               sd
-              inputs.nix-eval-jobs.outputs.packages.${system}.default
             ];
           };
 

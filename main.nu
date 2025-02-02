@@ -13,12 +13,6 @@ $env.CACHIX_SIGNING_KEY = (
   else "null"
 )
 
-def header [ color: string text: string spacer="▒": string ] {
-  let text = $"($text) "
-  let header = $"("" | fill -c $spacer -w 2) ($text | fill -c $spacer -w 100)"
-  print -e $"(ansi $color)($header)(ansi reset)"
-}
-
 def getBadHash [ attrName: string ] {
   let val = ((do -i { ^nix build --no-link $attrName }| complete)
       | get stderr
@@ -93,7 +87,6 @@ def updatePkg [packageName: string] {
 }
 
 def updatePkgs [] {
-  header "light_yellow_reverse" "update packages"
   let pkgs = (^nix eval --json $".#packages.($system)" --apply 'x: builtins.attrNames x' | str trim | from json)
   let pkgs = ($pkgs | where ($it != "default"))
   $pkgs | each { |packageName|
@@ -101,46 +94,8 @@ def updatePkgs [] {
   } # end each-pkg loop
 }
 
-def buildDrv [ drvRef: string ] {
-  header "white_reverse" $"build ($drvRef)" "░"
-  header "blue_reverse" $"eval ($drvRef)"
-  let evalJobs = (
-    ^nix-eval-jobs
-      --flake $".#($drvRef)"
-        | from json --objects
-  )
-
-  header "green_reverse" $"build ($drvRef)"
-  print -e ($evalJobs
-    | select name)
-
-  $evalJobs
-    | each { |drv| do -c  { ^nix build $'($drv.drvPath)^*' } }
-
-  header "purple_reverse" $"cache: calculate paths: ($drvRef)"
-  let pushPaths = ($evalJobs | each { |drv|
-    $drv.outputs | each { |outPath|
-      if ($outPath.out | path exists) {
-        $outPath.out
-      }
-    }
-  })
-  print -e $pushPaths
-
-  if ($env.CACHIX_SIGNING_KEY != "null") {
-    let cachePathsStr = ($pushPaths | each {|it| $"($it)(char nl)"} | str join)
-
-    let cacheResults = (echo $cachePathsStr | ^cachix push $env.CACHIX_CACHE | complete)
-    header "purple_reverse" $"cache/push ($drvRef)"
-    print -e $cacheResults
-  } else {
-    print -e "'$CACHIX_SIGNING_KEY_NIXPKGS_WAYLAND' not set, not pushing to cachix."
-  }
-}
-
 def "main rereadme" [] {
   let color = "yellow"
-  header $"($color)_reverse" $"readme"
   let packageNames = (nix eval --json $".#packages.($system)" --apply 'x: builtins.attrNames x' | str trim | from json)
   let pkgList = ($packageNames | where ($it != "default"))
   let delimStart = "<!--pkgs-start-->"
@@ -171,20 +126,21 @@ def "main rereadme" [] {
   do -i { ^git commit -m "auto-update: updated readme" "./README.md" }
 }
 
-def "main build" [] {
-  buildDrv $"packages.($system)"
-  print -e ""
-  buildDrv $"devShells.($system).default.inputDerivation"
-}
-
 def flakeAdvance [] {
-  header "purple_reverse" "advance flake inputs"
-  ^nix flake lock --recreate-lock-file --commit-lock-file
+  ^nix flake update --recreate-lock-file --commit-lock-file
 }
 
 def gitPush [] {
-  header "purple_reverse" "git push origin HEAD"
+  print -e ":: git push origin HEAD"
   ^git push origin HEAD
+}
+
+def "main build" [] {
+  print -e ":: nix build bundle (cachix)"
+  ^nix build --keep-going --print-out-paths '.#bundle.x86_64-linux' | cachix push $env.CACHIX_CACHE
+
+  print -e ":: nix build devshell-inputDrv (cachix)"
+  ^nix build --keep-going --print-out-paths $"devShells.($system).default.inputDerivation" | cachix push $env.CACHIX_CACHE
 }
 
 def "main advance" [] {
@@ -193,16 +149,17 @@ def "main advance" [] {
   gitPush
 }
 
-def "main update1" [packageName: string] {
-  updatePkg $packageName
-}
-
-def "main update" [] {
-  flakeAdvance
-  updatePkgs
-  main build
-  main rereadme
-  gitPush
+def "main update" [packageName?: string] {
+  print -e ":: update"
+  if $packageName == null {
+    flakeAdvance
+    updatePkgs
+    main build
+    main rereadme
+    gitPush
+  } else {
+    updatePkg $packageName
+  }
 }
 
 def main [] {
