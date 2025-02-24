@@ -101,6 +101,8 @@ overridenAttr.overrideAttrs (
       pname = attrName;
       version = "+${lib.substring 0 7 metadata.rev}";
       inherit src;
+      # `--version` will be different than the version above
+      dontVersionCheck = true;
     }
     // lib.optionalAttrs (src ? meta.homepage) {
       meta = previousAttrs.meta // {
