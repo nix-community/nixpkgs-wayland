@@ -4,6 +4,6 @@ rec {
   repo = "dunst";
   repo_git = "https://${domain}/${owner}/${repo}";
   branch = "master";
-  rev = "7f85725a035cec3fc3535cf054c8d9457619c701";
-  sha256 = "sha256-rJDFepcc7s8Nm/q/iU3IaSS/pKS/dDxBErs29+eW/JE=";
+  rev = "5b863520a1cebe6a4a29b70e116f458bb9cd5e87";
+  sha256 = "sha256-rochmZtfUo2JRVSAWsxaV4I3hR08H8FM9aO7vm0Akco=";
 }
