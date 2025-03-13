@@ -21,7 +21,7 @@
   libX11,
   libdrm,
   aml,
-  mesa,
+  libgbm,
   ffmpeg,
   openssl,
 }:
@@ -62,7 +62,7 @@ stdenv.mkDerivation rec {
     libX11
     libdrm
     aml
-    mesa
+    libgbm
     ffmpeg
     openssl
   ];
