@@ -4,6 +4,6 @@ rec {
   repo = "wldash";
   repo_git = "https://${domain}/${owner}/${repo}";
   branch = "master";
-  rev = "ab2655556fccb7b375744e596aafe7dbd30df4c8";
-  sha256 = "sha256-/KfhtLw826dXyl2XGY5shbcfTk8HHmY+XkW2CUQ/JHc=";
+  rev = "456d61de018b83357e9d9314ec08f230df8bf6a8";
+  sha256 = "sha256-1vGIJS4lJ6v8xm0q1Ko3WqtztewaKU0MbCRjRjyRmPQ=";
 }
