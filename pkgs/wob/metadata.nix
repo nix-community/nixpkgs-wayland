@@ -4,6 +4,6 @@ rec {
   repo = "wob";
   repo_git = "https://${domain}/${owner}/${repo}";
   branch = "master";
-  rev = "ba7a8b9e95c2d4ddd5a9496e5ba72c905b88c045";
-  sha256 = "sha256-fpd0vpNbqklPQI72ReG1cxCvM17hMDGVU02xsxAg1lc=";
+  rev = "3c2524477965d5d8e082652d7fae3c34bd38b6a2";
+  sha256 = "sha256-6tVJA2wjyjwEcqSq1Uj28fJRQh6HKgDP75KKPUauVmo=";
 }
