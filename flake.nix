@@ -78,6 +78,7 @@
             }
             {
               attrName = "waybar";
+              extra.buildInputs = [ prev.gpsd ];
               replace = previousAttrs: {
                 patches = [];
                 postUnpack =
