@@ -80,6 +80,7 @@
             }
             {
               attrName = "waybar";
+              deprecationWarning = "'waybar' will be removed in October 2025. Please use the flake from https://github.com/Alexays/Waybar.";
               extra.buildInputs = [ prev.gpsd ];
               replace = previousAttrs: {
                 patches = [];
