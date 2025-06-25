@@ -7,6 +7,7 @@ args_@{
   extra,
   replace,
   replaceInput,
+  deprecationWarning,
   ...
 }:
 
@@ -20,6 +21,7 @@ let
     "extra"
     "replace"
     "replaceInput"
+    "deprecationWarning"
   ];
   args = builtins.removeAttrs (args_ // replaceInput) ignore;
   nixpkgsAttr = if nixpkgsAttrName != "" then nixpkgsAttrName else attrName;
@@ -29,6 +31,9 @@ let
       prev
     ).override
       args;
+  overridenAttr' = lib.warnIf (
+    deprecationWarning != ""
+  ) "nixpkgs-wayland: ${deprecationWarning}" overridenAttr;
 
   fetchers =
     let
@@ -94,7 +99,7 @@ let
 
   replace' = previousAttrs: if builtins.isFunction replace then replace previousAttrs else replace;
 in
-overridenAttr.overrideAttrs (
+overridenAttr'.overrideAttrs (
   previousAttrs:
   (
     {

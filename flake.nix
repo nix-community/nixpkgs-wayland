@@ -37,6 +37,7 @@
               extra ? { },
               replace ? { },
               replaceInput ? { },
+              deprecationWarning ? "",
             }:
             import ./templates/template.nix {
               inherit
@@ -46,6 +47,7 @@
                 replace
                 nixpkgsAttrName
                 replaceInput
+                deprecationWarning
                 ;
             };
           checkMutuallyExclusive = lib.mutuallyExclusive (map (e: e.attrName) attrsExtraChangesNeeded) (
