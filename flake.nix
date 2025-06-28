@@ -37,6 +37,7 @@
               extra ? { },
               replace ? { },
               replaceInput ? { },
+              deprecationWarning ? "",
             }:
             import ./templates/template.nix {
               inherit
@@ -46,6 +47,7 @@
                 replace
                 nixpkgsAttrName
                 replaceInput
+                deprecationWarning
                 ;
             };
           checkMutuallyExclusive = lib.mutuallyExclusive (map (e: e.attrName) attrsExtraChangesNeeded) (
@@ -78,6 +80,7 @@
             }
             {
               attrName = "waybar";
+              deprecationWarning = "'waybar' will be removed in October 2025. Please use the flake from https://github.com/Alexays/Waybar.";
               extra.buildInputs = [ prev.gpsd ];
               replace = previousAttrs: {
                 patches = [];
