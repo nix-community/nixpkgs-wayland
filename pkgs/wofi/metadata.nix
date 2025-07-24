@@ -5,6 +5,6 @@ rec {
   repo = "wofi";
   repo_hg = "https://${domain}/${owner}/${repo}";
   branch = "default";
-  rev = "e79244f7c626";
-  sha256 = "sha256-ZTSOVK4WMeOjFeQnpoY80h7KEYPoY8XqbY8fav9zAtk=";
+  rev = "cf90b7608efc";
+  sha256 = "sha256-ZLObrugm9YTyJgRQWYHShSaASJYVu1J4bRhuzPsKedE=";
 }
