@@ -4,6 +4,6 @@ rec {
   repo = "wdisplays";
   repo_git = "https://${domain}/${owner}/${repo}";
   branch = "master";
-  rev = "6233901a887c2bce4989dbb936c2cb51e02b23a0";
-  sha256 = "sha256-FZpUzUKyoJ+Di36wx/35PDjeZjFL/fDuT/2sO9XINBA=";
+  rev = "157b8c51e850dc5f6b490f56f35cb101a9054e4c";
+  sha256 = "sha256-KabaW2BH4zAS0xWkzCM8YaAnP/hkZL7Wq3EARantRis=";
 }
