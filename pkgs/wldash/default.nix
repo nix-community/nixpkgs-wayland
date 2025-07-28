@@ -15,7 +15,6 @@ let
   metadata = import ./metadata.nix;
   libraryPath = lib.makeLibraryPath [
     wayland
-    libxkbcommon
   ];
 in
 rustPlatform.buildRustPackage rec {
@@ -41,6 +40,7 @@ rustPlatform.buildRustPackage rec {
     libpulseaudio
     alsa-lib
     fontconfig
+    libxkbcommon
   ];
 
   dontPatchELF = true;
