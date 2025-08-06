@@ -135,7 +135,7 @@ def gitPush [] {
   ^git push origin HEAD
 }
 
-def "main build" [] {
+def build [] {
   print -e ":: nix build bundle (cachix)"
   ^nix build --keep-going --print-out-paths '.#bundle.x86_64-linux' | cachix push $env.CACHIX_CACHE
 
@@ -162,14 +162,14 @@ def "main update" [packageName?: string] {
   }
 }
 
-def "main ci" [packageName?: string] {
+def "main check" [] {
   print -e ":: ci checks"
   flakeAdvance
   updatePkgs
-  main build
+  nix flake check # we can't cache anyway, and this is nicer
   main rereadme
 }
 
 def main [] {
-  print -e "commands: [advance, update, build]"
+  print -e "commands: [advance, update, check]"
 }

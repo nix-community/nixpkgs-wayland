@@ -1,4 +1,4 @@
-name: "Build"
+name: "Check"
 on:
   push:
     branches:
@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
   workflow_call:
 jobs:
-  build:
+  check:
     runs-on: ubuntu-latest
     concurrency: build-${{matrix.jobs.branch}}-${{matrix.jobs.target}}
     steps:
@@ -20,7 +20,7 @@ jobs:
           accept-flake-config = true
     - name: prepare
       run: nix develop -c .github/init
-    - name: build
+    - name: check
       env:
         CACHIX_SIGNING_KEY_NIXPKGS_WAYLAND: "${{ secrets.cachix_signing_key_nixpkgs_wayland }}"
-      run: nix develop -c ./main.nu build
+      run: nix develop -c ./main.nu check
