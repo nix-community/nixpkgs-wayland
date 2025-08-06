@@ -5,4 +5,4 @@ on:
   pull_request:
 jobs:
   checks:
-    uses: ./.github/workflows/update.yaml
+    uses: ./.github/workflows/check.yaml
