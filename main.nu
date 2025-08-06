@@ -89,9 +89,9 @@ def updatePkg [packageName: string] {
 def updatePkgs [] {
   let pkgs = (^nix eval --json $".#packages.($system)" --apply 'x: builtins.attrNames x' | str trim | from json)
   let pkgs = ($pkgs | where ($it != "default"))
-  $pkgs | each { |packageName|
-    updatePkg $packageName
-  } # end each-pkg loop
+  for pkg in $pkgs {
+    updatePkg $pkg
+  }
 }
 
 def "main rereadme" [] {
