@@ -162,7 +162,7 @@ def "main update" [packageName?: string] {
   }
 }
 
-def "main ci" [packageName?: string] {
+def "main check" [packageName?: string] {
   print -e ":: ci checks"
   flakeAdvance
   updatePkgs
