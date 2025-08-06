@@ -5,6 +5,7 @@ on:
     - master
   schedule:
     - cron: '17 */14 * * *'
+  pull_request:
   workflow_dispatch:
   workflow_call:
 jobs:
@@ -22,3 +23,5 @@ jobs:
       run: nix develop -c .github/init
     - name: check
       run: nix develop -c ./main.nu check
+    - name: success
+      run: echo "we made it, yay"
