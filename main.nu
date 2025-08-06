@@ -162,6 +162,14 @@ def "main update" [packageName?: string] {
   }
 }
 
+def "main ci" [packageName?: string] {
+  print -e ":: ci checks"
+  flakeAdvance
+  updatePkgs
+  main build
+  main rereadme
+}
+
 def main [] {
   print -e "commands: [advance, update, build]"
 }
