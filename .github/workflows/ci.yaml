@@ -1,0 +1,8 @@
+# This is meant to be used as a singular required check for GitHub PRs
+
+name: "CI"
+on:
+  pull_request:
+jobs:
+  checks:
+    uses: ./.github/workflows/update.yaml
