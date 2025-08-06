@@ -1,0 +1,24 @@
+name: "Check"
+on:
+  push:
+    branches:
+    - master
+  schedule:
+    - cron: '17 */14 * * *'
+  workflow_dispatch:
+  workflow_call:
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    concurrency: build-${{matrix.jobs.branch}}-${{matrix.jobs.target}}
+    steps:
+    - uses: actions/checkout@v4
+    - name: setup-nix
+      uses: DeterminateSystems/nix-installer-action@main
+      with:
+        extra-conf: |
+          accept-flake-config = true
+    - name: prepare
+      run: nix develop -c .github/init
+    - name: check
+      run: nix develop -c ./main.nu check
