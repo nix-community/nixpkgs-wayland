@@ -139,12 +139,12 @@ def "main build" [] {
   print -e ":: nix build bundle (cachix)"
   rm -rf result*
   ^nix build --keep-going '.#bundle.x86_64-linux'
-  ^ls -d result* | ^tee "/dev/stderr" | cachix push colemickens
+  ^ls -d result* | ^tee "/dev/stderr" | cachix push $"($env.CACHIX_CACHE)"
 
   rm -rf result*
   print -e ":: nix build devshell-inputDrv (cachix)"
-  ^nix build --keep-going $"devShells.($system).default.inputDerivation"
-  ^ls -d result* | ^tee "/dev/stderr" | cachix push colemickens
+  ^nix build --keep-going $".#devShells.($system).default.inputDerivation"
+  ^ls -d result* | ^tee "/dev/stderr" | cachix push $"($env.CACHIX_CACHE)"
 }
 
 def "main advance" [] {
