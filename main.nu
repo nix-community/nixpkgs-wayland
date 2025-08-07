@@ -135,16 +135,20 @@ def gitPush [] {
   ^git push origin HEAD
 }
 
-def "main build" [] {
+def "main build" [--cache] {
   print -e ":: nix build bundle (cachix)"
   rm -rf result*
   ^nix build --keep-going '.#bundle.x86_64-linux'
-  ^ls -d result* | ^tee "/dev/stderr" | cachix push colemickens
+  if $cache {
+    ^ls -d result* | ^tee "/dev/stderr" | cachix push $"($env.CACHIX_CACHE)"
+  }
 
   rm -rf result*
   print -e ":: nix build devshell-inputDrv (cachix)"
-  ^nix build --keep-going $"devShells.($system).default.inputDerivation"
-  ^ls -d result* | ^tee "/dev/stderr" | cachix push colemickens
+  ^nix build --keep-going $".#devShells.($system).default.inputDerivation"
+  if $cache {
+    ^ls -d result* | ^tee "/dev/stderr" | cachix push $"($env.CACHIX_CACHE)"
+  }
 }
 
 def "main advance" [] {
@@ -158,7 +162,7 @@ def "main update" [packageName?: string] {
   if $packageName == null {
     flakeAdvance
     updatePkgs
-    main build
+    main build --cache=true
     main rereadme
     gitPush
   } else {
@@ -168,9 +172,7 @@ def "main update" [packageName?: string] {
 
 def "main check" [packageName?: string] {
   print -e ":: ci checks"
-  flakeAdvance
-  updatePkgs
-  main build
+  main build --cache=false
   main rereadme
 }
 
