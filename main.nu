@@ -168,8 +168,6 @@ def "main update" [packageName?: string] {
 
 def "main check" [packageName?: string] {
   print -e ":: ci checks"
-  flakeAdvance
-  updatePkgs
   main build
   main rereadme
 }
