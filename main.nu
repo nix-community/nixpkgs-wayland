@@ -137,10 +137,14 @@ def gitPush [] {
 
 def "main build" [] {
   print -e ":: nix build bundle (cachix)"
-  ^nix build --keep-going --print-out-paths '.#bundle.x86_64-linux' | cachix push $env.CACHIX_CACHE
+  rm -rf result*
+  ^nix build --keep-going '.#bundle.x86_64-linux'
+  ^ls -d result* | ^tee "/dev/stderr" | cachix push colemickens
 
+  rm -rf result*
   print -e ":: nix build devshell-inputDrv (cachix)"
-  ^nix build --keep-going --print-out-paths $"devShells.($system).default.inputDerivation" | cachix push $env.CACHIX_CACHE
+  ^nix build --keep-going $"devShells.($system).default.inputDerivation"
+  ^ls -d result* | ^tee "/dev/stderr" | cachix push colemickens
 }
 
 def "main advance" [] {
