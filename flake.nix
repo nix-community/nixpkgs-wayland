@@ -326,17 +326,8 @@
 
             wl-gammarelay-rs = prev.callPackage ./pkgs/wl-gammarelay-rs { };
 
-            freerdp3 = prev.callPackage ./pkgs/freerdp3 {
-              inherit (prev.darwin.apple_sdk.frameworks)
-                AudioToolbox
-                AVFoundation
-                Carbon
-                Cocoa
-                CoreMedia
-                ;
-              inherit (prev.gst_all_1) gstreamer gst-plugins-base gst-plugins-good;
-            };
-
+            freerdp3 = prev.callPackage ./pkgs/freerdp3 { };
+            
             # misc
             foot = prev.callPackage ./pkgs/foot { inherit foot; };
           };
