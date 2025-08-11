@@ -5,6 +5,6 @@ rec {
   repo = "wayland-protocols";
   repo_git = "https://${domain}/${owner}/${repo}";
   branch = "main";
-  rev = "6a73aacd7c04a1e40d64ce28d48fe10df550b6fb";
-  sha256 = "sha256-ykzFUVSg8kCkhYwO8IBiwiCAURumU5bQqqjn2gHi1sA=";
+  rev = "6ac53b159fb2de810a43eb0bf80f1667f246c20d";
+  sha256 = "sha256-q3VDqAkK6tMjDzAvV6PI8Gibc8x7h/odN905hRFYLS4=";
 }
