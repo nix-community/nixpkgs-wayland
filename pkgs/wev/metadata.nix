@@ -5,6 +5,6 @@ rec {
   repo = "wev";
   repo_git = "https://${domain}/${owner}/${repo}";
   branch = "master";
-  rev = "2a46014ec5e375139f91aed456d5f01065964f86";
-  sha256 = "sha256-0ZA44dMDuVYfplfutOfI2EdPNakE9KnOuRfk+CEDCRk=";
+  rev = "b09b664dd2d1b11dd68e03f8c0363ac0ef76f1e0";
+  sha256 = "sha256-gk2n5RCFfMq/6X6nZbxw6Mc4oTtiSAjwDIm+BJmpnV0=";
 }
