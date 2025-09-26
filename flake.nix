@@ -83,7 +83,7 @@
               deprecationWarning = "'waybar' will be removed in October 2025. Please use the flake from https://github.com/Alexays/Waybar.";
               extra.buildInputs = [ prev.gpsd ];
               replace = previousAttrs: {
-                patches = [];
+                patches = [ ];
                 postUnpack =
                   let
                     # Derived from subprojects/cava.wrap
@@ -148,9 +148,7 @@
                       })
                     ];
                   in
-                  (lib.filter (
-                    patch: !(lib.any (rmpatch: rmpatch != patch) patchesToRemove)
-                  ) previousAttrs.patches);
+                  (lib.filter (patch: !(lib.any (rmpatch: rmpatch != patch) patchesToRemove)) previousAttrs.patches);
 
               };
             }
@@ -178,8 +176,24 @@
             {
               attrName = "libvncserver_master";
               nixpkgsAttrName = "libvncserver";
-              # The version in nixpkgs has different paths so the patch is updated here.
-              replace.patches = [ ./pkgs/libvncserver_master/pkgconfig.patch ];
+              replace = previousAttrs: {
+                # The version in nixpkgs has different paths so the patch is updated here.
+                patches = [ ./pkgs/libvncserver_master/pkgconfig.patch ];
+                postPatch =
+                  builtins.replaceStrings
+                    [
+                      ''
+                        --replace-fail 'add_test(NAME includetest COMMAND' '# add_test(NAME includetest COMMAND'
+                      ''
+                    ]
+                    [
+                      ''
+                        --replace-fail 'add_test(NAME includetest_server COMMAND' '# add_test(NAME includetest_server COMMAND' \
+                        --replace-fail 'add_test(NAME includetest_client COMMAND' '# add_test(NAME includetest_client COMMAND'
+                      ''
+                    ]
+                    previousAttrs.postPatch;
+              };
             }
             {
               attrName = "wayvnc";
@@ -200,7 +214,7 @@
             }
             {
               attrName = "wf-recorder";
-              replace.patches = [];
+              replace.patches = [ ];
               extra.buildInputs = [
                 prev.mesa
                 prev.pipewire
@@ -251,7 +265,7 @@
             }
             {
               attrName = "neatvnc";
-              replace.patches = [];
+              replace.patches = [ ];
               replaceInput = {
                 ffmpeg = prev.ffmpeg_7;
               };
@@ -260,7 +274,10 @@
               attrName = "waypipe";
               extra = {
                 depsBuildBuild = [ prev.pkg-config ];
-                nativeBuildInputs = [ prev.pkg-config prev.wayland-scanner ];
+                nativeBuildInputs = [
+                  prev.pkg-config
+                  prev.wayland-scanner
+                ];
                 buildInputs = [ prev.wayland ];
               };
             }
@@ -327,7 +344,7 @@
             wl-gammarelay-rs = prev.callPackage ./pkgs/wl-gammarelay-rs { };
 
             freerdp3 = prev.callPackage ./pkgs/freerdp3 { };
-            
+
             # misc
             foot = prev.callPackage ./pkgs/foot { inherit foot; };
           };
