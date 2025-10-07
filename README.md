@@ -94,6 +94,7 @@ We don't have CI on Pull Requests, but I keep an eye on it after merging externa
 
             # use it as an overlay
             nixpkgs.overlays = [ inputs.nixpkgs-wayland.overlay ];
+            # If using home-manager, you must also set home-manager.useGlobalPkgs = true;
 
             # or, pull specific packages (built against inputs.nixpkgs, usually `nixos-unstable`)
             environment.systemPackages = [
