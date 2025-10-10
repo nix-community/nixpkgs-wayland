@@ -12,4 +12,4 @@ let
 
   pkgs = import nixpkgs { overlays = [ waylandOverlay ]; };
 in
-pkgs.waylandPkgs.waybar
+pkgs.waylandPkgs.wev

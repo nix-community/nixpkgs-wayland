@@ -57,9 +57,9 @@ We don't have CI on Pull Requests, but I keep an eye on it after merging externa
   ```
   nix shell "github:nix-community/nixpkgs-wayland#obs-studio" --command obs
   ```
-- Build and run `waybar`:
+- Build and run `wev`:
   ```
-  nix run "github:nix-community/nixpkgs-wayland#waybar"
+  nix run "github:nix-community/nixpkgs-wayland#wev"
   ```
 
 * Use as an overlay or package set via flakes:
@@ -98,7 +98,7 @@ We don't have CI on Pull Requests, but I keep an eye on it after merging externa
 
             # or, pull specific packages (built against inputs.nixpkgs, usually `nixos-unstable`)
             environment.systemPackages = [
-              inputs.nixpkgs-wayland.packages.${system}.waybar
+              inputs.nixpkgs-wayland.packages.${system}.wev
             ];
           };
         })];
@@ -220,7 +220,6 @@ nix-env -iA neatvnc
 | [swaylock](https://github.com/swaywm/swaylock) | Screen locker for Wayland |
 | [swaylock-effects](https://github.com/jirutka/swaylock-effects) | Screen locker for Wayland |
 | [swww](https://github.com/Horus645/swww) | Efficient animated wallpaper daemon for wayland, controlled at runtime |
-| [waybar](https://github.com/Alexays/Waybar) | Highly customizable Wayland bar for Sway and Wlroots based compositors |
 | [waypipe](https://gitlab.freedesktop.org/mstoeckl/waypipe/) | Network proxy for Wayland clients (applications) |
 | [wayvnc](https://github.com/any1/wayvnc) | VNC server for wlroots based Wayland compositors |
 | [wbg](https://codeberg.org/dnkl/wbg) | Wallpaper application for Wayland compositors |
@@ -252,7 +251,6 @@ nix-env -iA neatvnc
 - I recommend using [`home-manager`](https://github.com/rycee/home-manager/)!
 - It has modules and options for:
   - `sway`
-  - `waybar`
   - `obs` and plugins!
   - more!
 

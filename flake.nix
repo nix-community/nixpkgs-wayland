@@ -79,45 +79,6 @@
               replace.patches = [ ];
             }
             {
-              attrName = "waybar";
-              deprecationWarning = "'waybar' will be removed in October 2025. Please use the flake from https://github.com/Alexays/Waybar.";
-              extra.buildInputs = [ prev.gpsd ];
-              replace = previousAttrs: {
-                patches = [ ];
-                postUnpack =
-                  let
-                    # Derived from subprojects/cava.wrap
-                    libcava = rec {
-                      version = "0.10.4";
-                      src = prev.fetchFromGitHub {
-                        owner = "LukashonakV";
-                        repo = "cava";
-                        rev = version;
-                        hash = "sha256-9eTDqM+O1tA/3bEfd1apm8LbEcR9CVgELTIspSVPMKM=";
-                      };
-                    };
-                    # Derived from subprojects/catch2.wrap
-                    catch2 = rec {
-                      version = "3.7.0";
-                      src = prev.fetchFromGitHub {
-                        owner = "catchorg";
-                        repo = "Catch2";
-                        rev = "v${version}";
-                        hash = "sha256-U9hv6DaqN5eCMcAQdfFPqWpsbqDFxRQixELSGbNlc0g=";
-                      };
-                    };
-                  in
-                  ''
-                    (
-                      cd "$sourceRoot"
-                      cp -R --no-preserve=mode,ownership ${libcava.src} subprojects/cava-${libcava.version}
-                      cp -R --no-preserve=mode,ownership ${catch2.src} subprojects/Catch2-${catch2.version}
-                      patchShebangs .
-                    )
-                  '';
-              };
-            }
-            {
               attrName = "gtk-layer-shell";
               extra.nativeBuildInputs = [ prev.vala ];
               replace.patches = [ ];
