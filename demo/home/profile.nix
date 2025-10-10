@@ -13,7 +13,7 @@
     ]
     ++ (with waylandPkgs; [
       grim # screenshot CLI
-      waybar
+      wev
       kanshi # broken: display configurator
       mako # notification manager
       slurp # dimension-grabbing CLI, to use with grim
