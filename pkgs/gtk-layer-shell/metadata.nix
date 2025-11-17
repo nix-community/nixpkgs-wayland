@@ -4,6 +4,6 @@ rec {
   repo = "gtk-layer-shell";
   repo_git = "https://${domain}/${owner}/${repo}";
   branch = "master";
-  rev = "c208f1655597028042094db9adde46b3623abb91";
-  sha256 = "sha256-Rl0cSIOsHDXlvjGesVoF98S3ehvTIzKOyetEyBCXDgk=";
+  rev = "577b2f0da53e98a7bad7d6431530e207060d2691";
+  sha256 = "sha256-QMMk8KlDTxdkn2ZVD9YI9XghZM26uQ6G9nlJsphGXBs=";
 }
