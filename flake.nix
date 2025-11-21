@@ -239,6 +239,14 @@
                 buildInputs = [ prev.wayland ];
               };
             }
+            {
+              attrName = "imv";
+              extra = {
+                nativeBuildInputs = [
+                  prev.unixtools.xxd
+                ];
+              };
+            }
           ];
 
           # these do not need changes from the package that nixpkgs has
@@ -247,7 +255,6 @@
               [
                 "gebaar-libinput"
                 "glpaper"
-                "imv"
                 "mako"
                 "slurp"
                 "swaybg"
