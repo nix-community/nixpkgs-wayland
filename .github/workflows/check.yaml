@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     concurrency: build-${{matrix.jobs.branch}}-${{matrix.jobs.target}}
     steps:
-    - uses: actions/checkout@v5
+    - uses: actions/checkout@v6
     - name: setup-nix
       uses: DeterminateSystems/nix-installer-action@main
       with:
