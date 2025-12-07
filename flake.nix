@@ -245,6 +245,7 @@
                 nativeBuildInputs = [
                   prev.unixtools.xxd
                 ];
+                buildInputs = [ prev.lcms2 ];
               };
             }
           ];
