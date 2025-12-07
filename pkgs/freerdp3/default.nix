@@ -61,7 +61,7 @@
   remmina,
 }:
 
-let 
+let
   metadata = import ./metadata.nix;
 in
 stdenv.mkDerivation (finalAttrs: {
