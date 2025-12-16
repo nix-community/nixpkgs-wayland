@@ -4,6 +4,6 @@ rec {
   repo = "wshowkeys";
   repo_git = "https://${domain}/${owner}/${repo}";
   branch = "main";
-  rev = "e8bfc78f08ebdd1316daae59ecc77e62bba68b2b";
-  sha256 = "sha256-/HvNCQWsXOJZeCxHWmsLlbBDhBzF7XP/SPLdDiWMDC4=";
+  rev = "308fc9f1c8946bfe398b18891dcc4ff14bd15113";
+  sha256 = "sha256-YbNZfvlkilbX5LCi9uub/LziwP39FTemf4EtKcVLhvo=";
 }
