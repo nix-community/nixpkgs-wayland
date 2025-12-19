@@ -4,6 +4,6 @@ rec {
   repo = "cage";
   repo_git = "https://${domain}/${owner}/${repo}";
   branch = "master";
-  rev = "ea2069f4278a0e7c86ecae739a77ff3f16dc870e";
-  sha256 = "sha256-gPvTwsFoJaoXPiAW9L30glQnpxV68E99ZwC/VcPf+tE=";
+  rev = "cb8582c0565fb127a77f74eb20c202ae5f2b5e3c";
+  sha256 = "sha256-31RlmcKl19Or4PJ+lTVaT/8jl8dlsz3vIs+CFVOnL1c=";
 }
