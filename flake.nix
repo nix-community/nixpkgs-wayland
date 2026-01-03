@@ -123,6 +123,7 @@
               replace.mesonFlags = lib.remove "-Dxwayland=true" (
                 lib.remove "-Dxwayland=false" prev.cage.mesonFlags
               );
+              replace.patches = [ ];
             }
             {
               attrName = "wob";
