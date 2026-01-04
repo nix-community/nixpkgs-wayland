@@ -109,7 +109,7 @@
                       })
                     ];
                   in
-                  (lib.filter (patch: !(lib.any (rmpatch: rmpatch != patch) patchesToRemove)) previousAttrs.patches);
+                  (lib.filter (patch: (lib.any (rmpatch: rmpatch != patch) patchesToRemove)) previousAttrs.patches);
 
               };
             }
