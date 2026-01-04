@@ -118,11 +118,23 @@
               extra.buildInputs = [ prev.xorg.xcbutilwm ];
               # _FORTIFY_SOURCE requires compiling with optimization (-O)
               # PR https://github.com/NixOS/nixpkgs/pull/232917 added -O0
-              replace.CFLAGS = "";
-              # https://github.com/cage-kiosk/cage/commit/d3fb99d6654325ec46277cfdb589f89316bed701
-              replace.mesonFlags = lib.remove "-Dxwayland=true" (
-                lib.remove "-Dxwayland=false" prev.cage.mesonFlags
-              );
+              replace = previousAttrs: {
+                CFLAGS = "";
+                # https://github.com/cage-kiosk/cage/commit/d3fb99d6654325ec46277cfdb589f89316bed701
+                mesonFlags = lib.remove "-Dxwayland=true" (lib.remove "-Dxwayland=false" prev.cage.mesonFlags);
+                patches =
+                  let
+                    patchesToRemove = [
+                      (prev.fetchpatch {
+                        url = "https://github.com/cage-kiosk/cage/commit/832e88b0c964a324bb09c7af02ed0650b73dfb9b.patch";
+                        hash = "sha256-8dyJL46xXGkw3pF9uskX8H72s0hUO1BhU2UMaoEwz4U=";
+                      })
+                    ];
+                  in
+                  (lib.filter (patch: (lib.any (rmpatch: rmpatch != patch) patchesToRemove)) (
+                    lib.warnIf (!previousAttrs ? patches) "nixpkgs-wayland: The patches attr of `cage` is empty, there is no need to remove patches from it!" (previousAttrs.patches or [ ])
+                  ));
+              };
             }
             {
               attrName = "wob";
