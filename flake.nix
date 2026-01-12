@@ -269,7 +269,6 @@
             lib.genAttrs
               [
                 "gebaar-libinput"
-                "glpaper"
                 "mako"
                 "slurp"
                 "swaybg"
