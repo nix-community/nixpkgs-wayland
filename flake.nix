@@ -132,7 +132,9 @@
                     ];
                   in
                   (lib.filter (patch: (lib.any (rmpatch: rmpatch != patch) patchesToRemove)) (
-                    lib.warnIf (!previousAttrs ? patches) "nixpkgs-wayland: The patches attr of `cage` is empty, there is no need to remove patches from it!" (previousAttrs.patches or [ ])
+                    lib.warnIf (!previousAttrs ? patches)
+                      "nixpkgs-wayland: The patches attr of `cage` is empty, there is no need to remove patches from it!"
+                      (previousAttrs.patches or [ ])
                   ));
               };
             }
@@ -285,7 +287,6 @@
                 "wev"
                 "lavalauncher"
                 "wlsunset"
-                "rootbar"
                 "sirula"
                 "swww"
                 "wlay"
