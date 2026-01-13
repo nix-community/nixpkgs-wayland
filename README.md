@@ -197,7 +197,6 @@ nix-env -iA neatvnc
 | [foot](https://codeberg.org/dnkl/foot/) | Fast, lightweight and minimalistic Wayland terminal emulator |
 | [freerdp3](https://www.freerdp.com/) | Remote Desktop Protocol Client |
 | [gebaar-libinput](https://github.com/Osleg/gebaar-libinput-fork) | Gebaar, A Super Simple WM Independent Touchpad Gesture Daemon for libinput |
-| [glpaper](https://hg.sr.ht/~scoopta/glpaper) | Wallpaper program for wlroots based Wayland compositors such as sway that allows you to render glsl shaders as your wallpaper |
 | [grim](https://github.com/emersion/grim) | Grab images from a Wayland compositor |
 | [gtk-layer-shell](https://github.com/wmww/gtk-layer-shell) | Library to create panels and other desktop components for Wayland using the Layer Shell protocol |
 | [i3status-rust](https://github.com/greshake/i3status-rust) | Very resource-friendly and feature-rich replacement for i3status |
@@ -209,7 +208,6 @@ nix-env -iA neatvnc
 | [neatvnc](https://github.com/any1/neatvnc) | VNC server library |
 | [new-wayland-protocols](https://gitlab.freedesktop.org/wayland/wayland-protocols/) | Wayland protocol extensions |
 | [obs-wlrobs](https://hg.sr.ht/~scoopta/wlrobs) | Obs-studio plugin that allows you to screen capture on wlroots based wayland compositors |
-| [rootbar](https://hg.sr.ht/~scoopta/rootbar) | Bar for Wayland WMs |
 | [salut](https://gitlab.com/snakedye/salut) | A sleek notification daemon |
 | [shotman](https://git.sr.ht/~whynothugo/shotman) | Uncompromising screenshot GUI for Wayland compositors |
 | [sirula](https://github.com/DorianRudolph/sirula) | Simple app launcher for wayland written in rust |
