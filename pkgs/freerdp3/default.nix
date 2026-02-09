@@ -19,17 +19,17 @@
   pkcs11helper,
   uriparser,
   zlib,
-  libX11,
-  libXcursor,
-  libXdamage,
-  libXdmcp,
-  libXext,
-  libXi,
-  libXinerama,
-  libXrandr,
-  libXrender,
-  libXtst,
-  libXv,
+  libx11,
+  libxcursor,
+  libxdamage,
+  libxdmcp,
+  libxext,
+  libxi,
+  libxinerama,
+  libxrandr,
+  libxrender,
+  libxtst,
+  libxv,
   libxkbcommon,
   libxkbfile,
   wayland,
@@ -111,17 +111,17 @@ stdenv.mkDerivation (finalAttrs: {
     ffmpeg
     glib
     icu
-    libX11
-    libXcursor
-    libXdamage
-    libXdmcp
-    libXext
-    libXi
-    libXinerama
-    libXrandr
-    libXrender
-    libXtst
-    libXv
+    libx11
+    libxcursor
+    libxdamage
+    libxdmcp
+    libxext
+    libxi
+    libxinerama
+    libxrandr
+    libxrender
+    libxtst
+    libxv
     libjpeg_turbo
     libkrb5
     libopus

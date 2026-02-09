@@ -10,7 +10,7 @@
   wayland-scanner,
   libxkbcommon,
   libvncserver,
-  libpthreadstubs,
+  libpthread-stubs,
   lzo,
   pixman,
   libuv,
@@ -18,7 +18,7 @@
   libjpeg,
   libpng,
   neatvnc,
-  libX11,
+  libx11,
   libdrm,
   aml,
   libgbm,
@@ -51,7 +51,7 @@ stdenv.mkDerivation rec {
     wayland-protocols
     libxkbcommon
     libvncserver
-    libpthreadstubs
+    libpthread-stubs
     lzo
     pixman
     libuv
@@ -59,7 +59,7 @@ stdenv.mkDerivation rec {
     libjpeg
     libpng
     neatvnc
-    libX11
+    libx11
     libdrm
     aml
     libgbm
