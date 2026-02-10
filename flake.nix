@@ -85,7 +85,7 @@
             }
             {
               attrName = "sway-unwrapped";
-              extra.buildInputs = [ prev.xorg.xcbutilwm ];
+              extra.buildInputs = [ prev.libxcb-wm ];
               replaceInput = {
                 wlroots_0_19 = final.wlroots;
                 wayland-protocols = final.new-wayland-protocols;
@@ -115,7 +115,7 @@
             }
             {
               attrName = "cage";
-              extra.buildInputs = [ prev.xorg.xcbutilwm ];
+              extra.buildInputs = [ prev.libxcb-wm ];
               # _FORTIFY_SOURCE requires compiling with optimization (-O)
               # PR https://github.com/NixOS/nixpkgs/pull/232917 added -O0
               replace = previousAttrs: {
