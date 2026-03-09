@@ -241,6 +241,9 @@
               replaceInput = {
                 ffmpeg = prev.ffmpeg_7;
               };
+              extra = {
+                nativeBuildInputs = [ prev.openssl ];
+              };
             }
             {
               attrName = "waypipe";
