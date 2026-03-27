@@ -5,6 +5,6 @@ rec {
   repo = "sway";
   repo_git = "https://${domain}/${owner}/${repo}";
   branch = "master";
-  rev = "f50f78c0d92e441111c8183636f4c3c589aff8b1";
-  sha256 = "sha256-IdDycms/z5MyGuI41bsC04DRtNsf9j0kNUTLlqm7Jzo=";
+  rev = "909a2ddb5fff528e735341529a028d2ef21836db";
+  sha256 = "sha256-Qjz4XGiggSj6kg6GXMMPl4JYE8yYy1byvNNBvvXnuZI=";
 }
