@@ -261,6 +261,7 @@
               extra = {
                 nativeBuildInputs = [
                   prev.unixtools.xxd
+                  prev.wayland-scanner
                 ];
                 buildInputs = [ prev.lcms2 ];
               };
