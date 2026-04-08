@@ -27,6 +27,31 @@
       inherit (inputs.lib-aggregate) lib;
       inherit (inputs) self;
 
+      packageSystems = [
+        "x86_64-linux"
+        "aarch64-linux"
+        "riscv64-linux"
+      ];
+
+      devShellSystems = packageSystems ++ [
+        "aarch64-darwin"
+      ];
+      forSystems =
+        systems: f:
+        inputs.nixpkgs.lib.genAttrs systems (
+          system:
+          f {
+            inherit system;
+            pkgs = import inputs.nixpkgs {
+              inherit system;
+              overlays = [
+                inputs.self.overlays.default
+              ];
+              config.allowUnfree = true;
+            };
+          }
+        );
+
       waylandOverlay =
         final: prev:
         let
@@ -333,29 +358,26 @@
         in
         waylandPkgs // { inherit waylandPkgs; };
     in
-    lib.flake-utils.eachSystem
-      [
-        "aarch64-linux"
-        "x86_64-linux"
-        "riscv64-linux"
-      ]
-      (
-        system:
-        let
-          pkgsFor =
-            pkgs: overlays:
-            import pkgs {
-              inherit system overlays;
-              config.allowUnfree = true;
-              config.allowAliases = false;
-            };
-          pkgs_ = lib.genAttrs (builtins.attrNames inputs) (inp: pkgsFor inputs."${inp}" [ ]);
-          opkgs_ = overlays: lib.genAttrs (builtins.attrNames inputs) (inp: pkgsFor inputs."${inp}" overlays);
-          waypkgs = (opkgs_ [ self.overlays.default ]).nixpkgs;
-        in
-        rec {
-          devShells.default = pkgs_.nixpkgs.mkShell {
-            nativeBuildInputs = with pkgs_.nixpkgs; [
+    {
+
+      overlay = waylandOverlay;
+      overlays.default = waylandOverlay;
+
+      packages = forSystems packageSystems (
+        { pkgs, system, ... }:
+        (
+          pkgs.waylandPkgs
+          // {
+            default = inputs.self.bundle.${system};
+          }
+        )
+      );
+
+      devShells = forSystems devShellSystems (
+        { pkgs, system, ... }:
+        {
+          default = pkgs.mkShell {
+            nativeBuildInputs = with pkgs; [
               nix
               nushell
               cachix
@@ -366,25 +388,19 @@
               sd
             ];
           };
-
-          formatter = pkgs_.nixpkgs.nixfmt;
-
-          bundle = pkgs_.nixpkgs.symlinkJoin {
-            name = "nixpkgs-wayland-bundle";
-            paths = builtins.attrValues (
-              lib.filterAttrs (_: v: lib.meta.availableOn pkgs_.nixpkgs.stdenv.hostPlatform v) waypkgs.waylandPkgs
-            );
-          };
-
-          packages = waypkgs.waylandPkgs // {
-            default = bundle;
-          };
         }
-      )
-    // {
-      # overlays have to be outside of eachSystem block
-      overlay = waylandOverlay;
+      );
 
-      overlays.default = waylandOverlay;
+      formatter = forSystems devShellSystems ({ pkgs, system, ... }: pkgs.nixfmt);
+
+      bundle = forSystems packageSystems (
+        { pkgs, system, ... }:
+        pkgs.symlinkJoin {
+          name = "nixpkgs-wayland-bundle";
+          paths = builtins.attrValues (
+            lib.filterAttrs (_: v: lib.meta.availableOn pkgs.stdenv.hostPlatform v) pkgs.waylandPkgs
+          );
+        }
+      );
     };
 }

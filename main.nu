@@ -13,22 +13,37 @@ $env.CACHIX_SIGNING_KEY = (
   else "null"
 )
 
-def getBadHash [ attrName: string ] {
-  let val = ((do -i { ^nix build --no-link $attrName }| complete)
-      | get stderr
-      | split row "\n"
-      | where ($it | str contains "got:")
-      | str replace --regex '\s+got:(.*)(sha256-.*)' '$2'
-      | get 0
+def getBadHash [ packageName: string ] {
+  let attr = (
+    if "NIXPKGS_WAYLAND_BUILD_SYSTEM" in $env { $".#packages.($env.NIXPKGS_WAYLAND_BUILD_SYSTEM).($packageName)" }
+    else $".#($packageName)"
   )
-  $val
+  print -e $"check: ($attr)"
+  let val = ((do -i { ^nix build --no-link $attr }| complete)
+      | get stderr)
+  # print -e $"val: ($val)"
+
+  mut val_hash = $val
+  try {
+    $val_hash = ($val
+        | split row "\n"
+        | where ($it | str contains "got:")
+        | str replace --regex '\s+got:(.*)(sha256-.*)' '$2'
+        | get 0
+    )
+  } catch {
+    print -e $"FAILED TO BUILD ($packageName): stderr:"
+    print -e $val
+    exit -1
+  }
+  $val_hash
 }
 
 def replaceHash [ packageName: string, position: string, hashName: string, oldHash: string ] {
   let fakeSha256 = "0000000000000000000000000000000000000000000000000000";
 
   do -c { ^sd -s $"($oldHash)" $"($fakeSha256)" $"($position)" }
-  let newHash = (getBadHash $".#($packageName)")
+  let newHash = (getBadHash $packageName)
   do -c { ^sd -s $"($fakeSha256)" $"($newHash)" $"($position)" }
 
   print -e {packageName: $packageName, hashName: $hashName, oldHash: $oldHash, newHash: $newHash}
