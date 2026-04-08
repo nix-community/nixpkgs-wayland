@@ -115,7 +115,7 @@
             }
             {
               attrName = "cage";
-              extra.buildInputs = [ prev.libxcb-wm ];
+              extra.buildInputs = [ prev.libxcb-wm prev.wlroots ];
               # _FORTIFY_SOURCE requires compiling with optimization (-O)
               # PR https://github.com/NixOS/nixpkgs/pull/232917 added -O0
               replace = previousAttrs: {
@@ -261,6 +261,7 @@
               extra = {
                 nativeBuildInputs = [
                   prev.unixtools.xxd
+                  prev.wayland-scanner
                 ];
                 buildInputs = [ prev.lcms2 ];
               };
