@@ -190,6 +190,7 @@ nix-env -iA neatvnc
 | Package | Description |
 | --- | --- |
 | [aml](https://github.com/any1/aml) | Another main loop |
+| [awww](https://codeberg.org/LGFae/awww) | Efficient animated wallpaper daemon for wayland, controlled at runtime |
 | [cage](https://github.com/Hjdskes/cage) | Wayland kiosk that runs a single, maximized application |
 | [drm_info](https://github.com/ascent12/drm_info) | Small utility to dump info about DRM devices |
 | [dunst](https://github.com/dunst-project/dunst) | Lightweight and customizable notification daemon |
@@ -217,7 +218,6 @@ nix-env -iA neatvnc
 | [swayidle](https://github.com/swaywm/swayidle) | Idle management daemon for Wayland |
 | [swaylock](https://github.com/swaywm/swaylock) | Screen locker for Wayland |
 | [swaylock-effects](https://github.com/jirutka/swaylock-effects) | Screen locker for Wayland |
-| [swww](https://github.com/Horus645/swww) | Efficient animated wallpaper daemon for wayland, controlled at runtime |
 | [waypipe](https://gitlab.freedesktop.org/mstoeckl/waypipe/) | Network proxy for Wayland clients (applications) |
 | [wayvnc](https://github.com/any1/wayvnc) | VNC server for wlroots based Wayland compositors |
 | [wbg](https://codeberg.org/dnkl/wbg) | Wallpaper application for Wayland compositors |
