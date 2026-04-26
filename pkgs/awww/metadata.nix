@@ -5,6 +5,6 @@ rec {
   repo = "awww";
   repo_git = "https://codeberg.org/${owner}/${repo}";
   branch = "main";
-  rev = "27d68a7b8b81b3b9afced39b32e06639d470c040";
-  sha256 = "sha256-78QngptaPiKhlDuhUMrN/GDSHhXtEgMqnRSe3sjhjhM=";
+  rev = "f66e12a76dbc4c669b2f1375f78bce49f5b19d66";
+  sha256 = "sha256-owyQdC2vi0kYC119fzyVQp0J4G0t1n4xXUwryhlBbqA=";
 }
