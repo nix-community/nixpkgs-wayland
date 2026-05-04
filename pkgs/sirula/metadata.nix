@@ -4,6 +4,6 @@ rec {
   repo = "sirula";
   repo_git = "https://${domain}/${owner}/${repo}";
   branch = "master";
-  rev = "1abed3e213c8100d1b2390c7cad7f95586ffcbf2";
-  sha256 = "sha256-F4ryh/BwDCkpBRCDuLr26XKmlY02geTWfNYJfkELH9A=";
+  rev = "563896877aa5b1f41c5ea8f2e3203f4fd8024964";
+  sha256 = "sha256-kg4zin0Rio0TOcfwzmjlZDCPLfg5YIY6qqHQwU3GYeQ=";
 }
