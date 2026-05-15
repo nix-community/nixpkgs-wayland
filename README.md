@@ -109,7 +109,7 @@ We don't have CI on Pull Requests, but I keep an eye on it after merging externa
 
 ### Install for NixOS (non-flakes, manual import)
 
-If you are not using Flakes, then consult the [NixOS Wiki page on Overlays](https://nixos.wiki/wiki/Overlays). Also, you can expand this section for a more literal, direct example. If you do pin, use a tool like `niv` to do the pinning so that you don't forget and wind up stuck on an old version.
+If you are not using Flakes, then consult the [NixOS Wiki page on Overlays](https://wiki.nixos.org/wiki/Overlays). Also, you can expand this section for a more literal, direct example. If you do pin, use a tool like `niv` to do the pinning so that you don't forget and wind up stuck on an old version.
 
 <details>
 
