@@ -140,7 +140,10 @@
             }
             {
               attrName = "cage";
-              extra.buildInputs = [ prev.libxcb-wm prev.wlroots ];
+              extra.buildInputs = [
+                prev.libxcb-wm
+                prev.wlroots
+              ];
               # _FORTIFY_SOURCE requires compiling with optimization (-O)
               # PR https://github.com/NixOS/nixpkgs/pull/232917 added -O0
               replace = previousAttrs: {
@@ -344,7 +347,7 @@
             # };
             wldash = prev.callPackage ./pkgs/wldash { };
             wlroots = prev.callPackage ./pkgs/wlroots {
-              wlroots = prev.wlroots_0_18;
+              inherit (prev) wlroots;
               wayland-protocols = final.new-wayland-protocols;
             };
 
