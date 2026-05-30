@@ -271,6 +271,15 @@
               };
               extra = {
                 nativeBuildInputs = [ prev.openssl ];
+                buildInputs = [
+                  (prev.nettle.overrideAttrs rec {
+                    version = "4.0";
+                    src = prev.fetchurl {
+                      url = "mirror://gnu/nettle/nettle-${version}.tar.gz";
+                      hash = "sha256-Ot28ANoBhGsjL7O8RTU46lRo2kMDPyG7NFyx6Qc/UJQ=";
+                    };
+                  })
+                ];
               };
             }
             {
