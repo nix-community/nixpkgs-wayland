@@ -151,17 +151,19 @@ def gitPush [] {
 }
 
 def "main build" [--cache] {
-  print -e ":: nix build bundle (cachix)"
+  if $cache { $env.cachesuffix = "(Will be uploaded to cachix)" } else { $env.cachesuffix = "(Won't be uploaded to cachix)" }
+  print -e $":: nix build bundle ($env.cachesuffix)"
   rm -rf result*
-  ^nix build --keep-going '.#bundle.x86_64-linux'
+  ^nix build --keep-going $".#bundle.($system)"
   if $cache {
     ^ls -d result* | ^tee "/dev/stderr" | cachix push $"($env.CACHIX_CACHE)"
   }
 
   rm -rf result*
-  print -e ":: nix build devshell-inputDrv (cachix)"
+  print -e $":: nix build devshell-inputDrv ($env.cachesuffix)"
   ^nix build --keep-going $".#devShells.($system).default.inputDerivation"
   if $cache {
+    print -e $":: Uploading outputs from `devShells.($system).default.inputDerivation` to cachix ($env.CACHIX_CACHE)"
     ^ls -d result* | ^tee "/dev/stderr" | cachix push $"($env.CACHIX_CACHE)"
   }
 }
