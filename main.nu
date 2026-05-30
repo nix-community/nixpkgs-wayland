@@ -170,7 +170,7 @@ def "main build" [--cache] {
 
 def "main advance" [] {
   flakeAdvance
-  main build
+  main build --cache=true
   gitPush
 }
 
