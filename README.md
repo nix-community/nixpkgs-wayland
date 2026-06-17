@@ -189,7 +189,7 @@ nix-env -iA neatvnc
 <!--pkgs-start-->
 | Package | Description |
 | --- | --- |
-| [aml](https://github.com/any1/aml) | Another main loop |
+| [aml](https://github.com/any1/aml) | Andri's Main Loop |
 | [awww](https://codeberg.org/LGFae/awww) | Efficient animated wallpaper daemon for wayland, controlled at runtime |
 | [cage](https://github.com/Hjdskes/cage) | Wayland kiosk that runs a single, maximized application |
 | [drm_info](https://github.com/ascent12/drm_info) | Small utility to dump info about DRM devices |
