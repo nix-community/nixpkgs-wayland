@@ -94,6 +94,23 @@
             {
               attrName = "drm_info";
               extra.nativeBuildInputs = [ prev.scdoc ];
+              replace = previousAttrs: {
+                postPatch =
+                  builtins.replaceStrings
+                    [
+                      ''
+                        substituteInPlace meson.build \
+                      ''
+                      ''
+                        --replace-fail "'<2.4.134'" "'<2.4.133'"
+                      ''
+                    ]
+                    [
+                      ""
+                      ""
+                    ]
+                    previousAttrs.postPatch;
+              };
             }
             {
               attrName = "swaylock";
