@@ -109,7 +109,7 @@
                       ""
                       ""
                     ]
-                    previousAttrs.postPatch;
+                    previousAttrs.postPatch or "";
               };
             }
             {
