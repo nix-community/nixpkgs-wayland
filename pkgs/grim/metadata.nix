@@ -1,9 +1,10 @@
 rec {
-  domain = "github.com";
+  type = "gitlab";
+  domain = "gitlab.freedesktop.org";
   owner = "emersion";
   repo = "grim";
   repo_git = "https://${domain}/${owner}/${repo}";
   branch = "master";
-  rev = "47e2658619c6b5a790732c5876fb84e8273f08a9";
-  sha256 = "sha256-X3NHAFe27hnjM6YQ5YsFJWkGYe+mRAFUjiR20R5tTAQ=";
+  rev = "07eb6914ceb2931894670875fabda3c65014d5b8";
+  sha256 = "sha256-GSqZ3veRdUED1747Wg70oGyObzv9timm/88bVW3tRXI=";
 }
