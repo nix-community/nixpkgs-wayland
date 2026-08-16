@@ -1,7 +1,6 @@
 rec {
-  type = "gitsourcehut";
-  domain = "git.sr.ht";
-  owner = "~emersion";
+  domain = "gitlab.freedesktop.org";
+  owner = "emersion";
   repo = "kanshi";
   repo_git = "https://${domain}/${owner}/${repo}";
   branch = "master";
