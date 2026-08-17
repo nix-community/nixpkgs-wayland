@@ -1,4 +1,5 @@
 rec {
+  type = "gitlab";
   domain = "gitlab.freedesktop.org";
   owner = "emersion";
   repo = "kanshi";
