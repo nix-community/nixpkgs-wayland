@@ -142,7 +142,7 @@ def "main rereadme" [] {
 }
 
 def flakeAdvance [] {
-  ^nix flake update --recreate-lock-file --commit-lock-file
+  ^nix flake update --commit-lock-file
 }
 
 def gitPush [] {
