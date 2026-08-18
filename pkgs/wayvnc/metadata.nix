@@ -6,4 +6,6 @@ rec {
   branch = "master";
   rev = "3423d09178721b4eab8ee38d760cc5a4f2fc7d58";
   sha256 = "sha256-WnbyR7dexh8kEkxjOMTxJmSz1ryF1Q4b5JyRUnw5F4g=";
+  # Until neatvnc is unskipped
+  skip = true;
 }
