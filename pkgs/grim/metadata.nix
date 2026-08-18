@@ -5,6 +5,6 @@ rec {
   repo = "grim";
   repo_git = "https://${domain}/${owner}/${repo}";
   branch = "master";
-  rev = "07eb6914ceb2931894670875fabda3c65014d5b8";
-  sha256 = "sha256-GSqZ3veRdUED1747Wg70oGyObzv9timm/88bVW3tRXI=";
+  rev = "f63e1d2ed7245053a41d1e94c891c47b523772b6";
+  sha256 = "sha256-F7uOTuJ0nAyVCWtQDJgCl2IcjCYXodpnXCWDXSMuEG8=";
 }
