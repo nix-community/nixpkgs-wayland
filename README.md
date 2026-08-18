@@ -198,11 +198,11 @@ nix-env -iA neatvnc
 | [foot](https://codeberg.org/dnkl/foot/) | Fast, lightweight and minimalistic Wayland terminal emulator |
 | [freerdp3](https://www.freerdp.com/) | Remote Desktop Protocol Client |
 | [gebaar-libinput](https://github.com/Osleg/gebaar-libinput-fork) | Gebaar, A Super Simple WM Independent Touchpad Gesture Daemon for libinput |
-| [grim](https://github.com/emersion/grim) | Grab images from a Wayland compositor |
+| [grim](https://gitlab.freedesktop.org/emersion/grim/) | Grab images from a Wayland compositor |
 | [gtk-layer-shell](https://github.com/wmww/gtk-layer-shell) | Library to create panels and other desktop components for Wayland using the Layer Shell protocol |
 | [i3status-rust](https://github.com/greshake/i3status-rust) | Very resource-friendly and feature-rich replacement for i3status |
 | [imv](https://git.sr.ht/~exec64/imv) | Command line image viewer for tiling window managers |
-| [kanshi](https://git.sr.ht/~emersion/kanshi) | Dynamic display configuration tool |
+| [kanshi](https://gitlab.freedesktop.org/emersion/kanshi/) | Dynamic display configuration tool |
 | [lavalauncher](https://git.sr.ht/~leon_plickat/lavalauncher) | Simple launcher panel for Wayland desktops |
 | [libvncserver_master](https://github.com/LibVNC/libvncserver) | VNC server library |
 | [mako](https://github.com/emersion/mako) | Lightweight Wayland notification daemon |
