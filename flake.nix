@@ -311,6 +311,14 @@
                 buildInputs = [ prev.lcms2 ];
               };
             }
+            {
+              attrName = "sirula";
+              extra = {
+                nativeBuildInputs = [
+                  prev.git
+                ];
+              };
+            }
           ];
 
           # these do not need changes from the package that nixpkgs has
@@ -336,7 +344,6 @@
                 "lavalauncher"
                 "wlsunset"
                 "awww"
-                "sirula"
                 "wlay"
                 "i3status-rust"
                 "shotman"
