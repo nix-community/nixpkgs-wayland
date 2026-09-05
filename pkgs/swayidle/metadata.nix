@@ -4,6 +4,6 @@ rec {
   repo = "swayidle";
   repo_git = "https://${domain}/${owner}/${repo}";
   branch = "master";
-  rev = "f089aacc03dba5aca16959ca45087990c9722097";
-  sha256 = "sha256-RHpH7Jx1/AO85ilZzCP9e+DidfZiFWdj2AMhWHrkbXY=";
+  rev = "a959e59c64b55dd17a974dda4c4b71dff520af3a";
+  sha256 = "sha256-U874D7FsHtGndBwnxNIW0MKebJTrYzX9ix7Cn2X4N/0=";
 }
