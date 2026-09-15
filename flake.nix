@@ -355,7 +355,6 @@
 
           waylandPkgs = genPackagesGH // rec {
             # wlroots-related
-            salut = prev.callPackage ./pkgs/salut { };
             wlvncc = prev.callPackage ./pkgs/wlvncc { libvncserver = final.libvncserver_master; };
             obs-wlrobs = template {
               nixpkgsAttrName = "obs-studio-plugins.wlrobs";
