@@ -209,7 +209,6 @@ nix-env -iA neatvnc
 | [neatvnc](https://github.com/any1/neatvnc) | VNC server library |
 | [new-wayland-protocols](https://gitlab.freedesktop.org/wayland/wayland-protocols/) | Wayland protocol extensions |
 | [obs-wlrobs](https://hg.sr.ht/~scoopta/wlrobs) | Obs-studio plugin that allows you to screen capture on wlroots based wayland compositors |
-| [salut](https://gitlab.com/snakedye/salut) | A sleek notification daemon |
 | [shotman](https://git.sr.ht/~whynothugo/shotman) | Uncompromising screenshot GUI for Wayland compositors |
 | [sirula](https://github.com/DorianRudolph/sirula) | Simple app launcher for wayland written in rust |
 | [slurp](https://github.com/emersion/slurp) | Select a region in a Wayland compositor |
