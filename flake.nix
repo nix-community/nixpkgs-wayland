@@ -319,6 +319,16 @@
                 ];
               };
             }
+            {
+              attrName = "i3status-rust";
+              extra = {
+                nativeBuildInputs = [
+                  # boring-sys https://github.com/cloudflare/boring/blob/45512aac61eba490da88133d545a05419cc62d91/boring-sys/build/main.rs#L500
+                  prev.git
+                  prev.cmake
+                ];
+              };
+            }
           ];
 
           # these do not need changes from the package that nixpkgs has
@@ -345,7 +355,6 @@
                 "wlsunset"
                 "awww"
                 "wlay"
-                "i3status-rust"
                 "shotman"
               ]
               (s: {
