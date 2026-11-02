@@ -134,7 +134,7 @@
               };
               replace = previousAttrs: {
                 mesonFlags = lib.remove "-Dxwayland=disabled" (
-                  lib.remove "-Dxwayland=enabled" prev.sway-unwrapped.mesonFlags
+                  lib.remove "-Dxwayland=enabled" (previousAttrs.mesonFlags or [ ])
                 );
                 patches =
                   let
@@ -151,7 +151,9 @@
                       })
                     ];
                   in
-                  (lib.filter (patch: (lib.any (rmpatch: rmpatch != patch) patchesToRemove)) previousAttrs.patches);
+                  (lib.filter (patch: (lib.any (rmpatch: rmpatch != patch) patchesToRemove)) (
+                    previousAttrs.patches or [ ]
+                  ));
 
               };
             }
@@ -163,10 +165,12 @@
               ];
               # _FORTIFY_SOURCE requires compiling with optimization (-O)
               # PR https://github.com/NixOS/nixpkgs/pull/232917 added -O0
-              replace = {
+              replace = previousAttrs: {
                 CFLAGS = "";
                 # https://github.com/cage-kiosk/cage/commit/d3fb99d6654325ec46277cfdb589f89316bed701
-                mesonFlags = lib.remove "-Dxwayland=true" (lib.remove "-Dxwayland=false" prev.cage.mesonFlags);
+                mesonFlags = lib.remove "-Dxwayland=true" (
+                  lib.remove "-Dxwayland=false" (previousAttrs.mesonFlags or [ ])
+                );
               };
             }
             {
@@ -195,7 +199,7 @@
                         --replace-fail 'add_test(NAME includetest_client COMMAND' '# add_test(NAME includetest_client COMMAND'
                       ''
                     ]
-                    previousAttrs.postPatch;
+                    (previousAttrs.postPatch or "");
               };
             }
             {
@@ -263,7 +267,7 @@
                           --replace-fail "jq" "${lib.getExe prev.jq}"
                       ''
                     ]
-                    previousAttrs.postInstall;
+                    (previousAttrs.postInstall or "");
               };
             }
             {
