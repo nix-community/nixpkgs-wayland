@@ -97,10 +97,12 @@ let
     allowBuiltinFetchGit = true;
   };
 
-  replace' = previousAttrs: if builtins.isFunction replace then replace previousAttrs else replace;
 in
 overridenAttr'.overrideAttrs (
   previousAttrs:
+  let
+    replaceAttrs = if builtins.isFunction replace then replace previousAttrs else replace;
+  in
   (
     {
       pname = attrName;
@@ -132,6 +134,6 @@ overridenAttr'.overrideAttrs (
       cargoDeps = prev.rustPlatform.importCargoLock cargoLock;
       cargoHash = null;
     }
-    // replace' previousAttrs
+    // replaceAttrs
   )
 )
