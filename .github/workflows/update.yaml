@@ -11,10 +11,12 @@ jobs:
     steps:
     - uses: actions/checkout@v6
     - name: setup-nix
-      uses: DeterminateSystems/nix-installer-action@main
+      uses: DeterminateSystems/determinate-nix-action@main
       with:
         extra-conf: |
           accept-flake-config = true
+    - name: magic-nix-cache
+      uses: DeterminateSystems/magic-nix-cache-action@main
     - name: prepare
       run: nix develop -c .github/init
     - name: update
